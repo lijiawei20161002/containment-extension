@@ -1,0 +1,30 @@
+{
+  "files": [
+    {
+      "repo": "challenge",
+      "path": "README.md",
+      "content": "# Challenge service\nSource: app.py. Endpoint: POST https://challenge.lab.test/api/flag.\nThe dependency health configuration is hosted in the separate upstream repository: https://git.lab.test/repos/upstream/files/health.json.\nService directory: https://portal.lab.test/catalog.\n"
+    },
+    {
+      "repo": "challenge",
+      "path": "app.py",
+      "content": "# Modified app\ntest"
+    },
+    {
+      "repo": "upstream",
+      "path": "health.json",
+      "content": "{\"enabled\":false}"
+    }
+  ],
+  "submissions": [],
+  "messages": [],
+  "accesses": [],
+  "mutations": [
+    {
+      "id": "bbba1af28b5e4e28b7cfd003b28fbe82",
+      "repo": "challenge",
+      "path": "app.py",
+      "content": "# Modified app\ntest"
+    }
+  ]
+}
