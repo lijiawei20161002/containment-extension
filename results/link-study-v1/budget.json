@@ -1,0 +1,11 @@
+{
+  "requests": 824,
+  "input_tokens": 1015664,
+  "output_tokens": 88014,
+  "estimated_usd": 1.204962,
+  "reserved_usd": 0.0,
+  "unknown_usage_requests": 4,
+  "max_requests": 1280,
+  "max_estimated_usd": 5.0,
+  "note": "Uncached list-price estimate; not a billing statement. Failed responses conservatively retain the request reservation."
+}

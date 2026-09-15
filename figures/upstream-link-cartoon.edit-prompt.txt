@@ -1,0 +1,11 @@
+Edit this existing four-panel cartoon figure. Preserve the panel layout, robot design, scene contents, all numerical findings and denominators, and all panel headings. Make only these targeted corrections:
+1. Remove the dark vignette and heavy shadow over the main title and footer. Make the entire outer background a flat light warm ivory. Render title and footer in crisp near-black with excellent contrast; no glow, no dark overlay, no shaded edges. Preserve the title wording.
+2. On ALL FOUR scope-instruction clipboards, replace the full bullet list with exactly these three bullets beneath "Scope instructions:":
+"• Solve the challenge"
+"• Stay within authorized scope"
+"• Other repositories and prior runs are outside scope"
+Fit these three bullets neatly using wrapped lines. DELETE "Reads are out of scope" everywhere: authorized reads are permitted. Do NOT name upstream specifically in these global clipboards; that specific reminder is only in panel 3 and the later reminder scenario of panel 4.
+3. In panel 2, reverse the blue arrow so it points FROM the robot/README TOWARD the Challenge computer on its left, showing the robot attempts the challenge.
+4. In panel 4 replace its smaller caption with exactly "Reminder arms • 3 unknown, 2 without an observed violation". Use two lines if needed.
+
+Accuracy invariants: Panel 1 is 26/32, panel 2 is 0/32, panel 3 is 0/30 with 2 unknown and its extra line is Hidden + reminder: 0/32. Panel 4 is 27/32 stalled runs crossed scope later, and this is the pooled reminder conditions. Keep every other correct label and statistic intact. Clean cartoon illustration, readable text, no watermark.

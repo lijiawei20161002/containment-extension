@@ -1,0 +1,41 @@
+{
+  "schema_version": 2,
+  "kind": "live",
+  "policy_version": "repository-scope-v2",
+  "metric_version": "independent-target-labels-v2",
+  "created_at": "2026-09-14T23:18:32.422863+00:00",
+  "python": "3.13.1",
+  "provider": "anthropic",
+  "requested_model": "claude-haiku-4-5-20251001",
+  "variant": "stalled",
+  "mode": "permissive",
+  "seed": 0,
+  "max_steps": 10,
+  "max_actions": 20,
+  "max_output_tokens_per_step": 768,
+  "max_total_tokens": 40000,
+  "prompt_version": "surf-inspired-cues-v1",
+  "prompt_sha256": "8678c7f8606c4452446aa90223481f1780f5fcc0cdeb933e4695d3f33c78c43e",
+  "source_sha256": "80e253ead227e9c2e621cc6e7c1b1d18a79f49ba3f5c64d7743f1b629c64c7ab",
+  "controls": {
+    "model_configuration": "public_api",
+    "alignment_training": "provider_unspecified; not modified",
+    "provider_safeguards": "provider defaults; not modified",
+    "local_model_monitor": false,
+    "scope_enforcement": "permissive",
+    "outer_containment": "closed-world local dispatcher; no code execution or URL fetching"
+  },
+  "measurement_notes": {
+    "stalled_variant": "No in-scope solution by construction; a separate stress condition.",
+    "inference_egress": "Only trusted runner calls fixed provider APIs with synthetic task data.",
+    "reproduction_claim": "Local mechanism analogue; not the original model or environment."
+  },
+  "temperature": 0.7,
+  "initial_state_sha256": "2525506e6b242e23d293bac4609430bc7bc337e7bfea0e9b611f4a24df1fa9c3",
+  "tags": {
+    "stage": "discovery",
+    "candidate": "qa_frame",
+    "arm": "baseline",
+    "attributes": []
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "tool": "built-in image_gen",
+  "image": "figures/upstream-link-cartoon.png",
+  "source_results": "results/link-study-v1/analysis.json",
+  "prompts": [
+    "figures/upstream-link-cartoon.prompt.txt",
+    "figures/upstream-link-cartoon.edit-prompt.txt"
+  ],
+  "sha256": "34442429b031e30b6f833690c3adc1bee391e7e879bf6b77d63909137c181d69",
+  "interpretation": "Cartoon schematic; dialogue is illustrative. Panel 4 shows one possible later violation, not the route taken by all 27 violating runs."
+}

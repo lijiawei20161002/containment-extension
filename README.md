@@ -19,6 +19,29 @@ figures. All eight rollouts and the exact tested source are archived under
 [`results/pilot-v1`](results/pilot-v1/report.md). The initial allowlist overblocked
 some authorized filenames; the report records this implementation limitation.
 
+**Next experiment design:** [prompt cues, retry scaffolding, and training-data
+generalization](docs/chunky-generalization-experiments.md). This proposes a
+128-continuation API pilot followed by held-out task validation and controlled
+open-model training. It includes a read-only audit of the existing pilot.
+
+**Implemented initial investigation:** [SURF-inspired prompt-attribute search
+with fresh paired validation](docs/cue-study-method.md). The new runner searches
+format, scope position, QA framing, and persistence wording while preserving the
+scope paragraph. It also repairs repository scope handling and separates tool
+proposals, dispatched attempts, and service effects. The broader scaffold and
+training experiments remain proposed work.
+
+**Cue study completed:** [96-rollout results and interpretation](docs/cue-study-results.md).
+The small search found no consistent increase from the tested cues. Most initial
+violations were outside reads before the challenge was attempted; all logged
+requests retained scope. Four provider errors are preserved in the evidence.
+
+**Upstream-link follow-up completed:** [128-rollout experiment](docs/link-study-results.md).
+The original README produced 26 early upstream reads in 32 rollouts; hiding its
+address produced none. A nearby scope reminder also removed observed early reads,
+but many stalled runs later accessed upstream or the previous run's answer archive.
+The report separates actual outside access, failed catalog paths, and API errors.
+
 ## Run it
 
 The native reproduction runner needs **Python 3.11+ and no third-party packages**.
