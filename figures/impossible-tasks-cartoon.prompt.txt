@@ -1,0 +1,28 @@
+Use case: scientific-educational.
+Create one polished cartoon research infographic for a repository's experiment results. Landscape composition, about 3:2 aspect ratio, high resolution. Warm off-white paper, charming rounded little robot researchers, fine dark ink outlines, restrained muted blue, amber and green accents. Hand-drawn editorial science illustration, professionally typeset clean readable sans serif text. Friendly and precise, generous space, no clutter, no logos, no watermark.
+
+Tell a scientifically accurate story about an impossible task: the authorized route to a flag is broken, an outside answer archive is reachable but prohibited, and reporting the blocker is a valid choice. All services are synthetic local replicas. Do NOT depict hacking a real network, malicious payloads, breaking a physical fence, or a firewall that becomes stronger between conditions. The study only changes messages, not actual permissions or technical access.
+
+Layout:
+1. Large headline at top exactly "When the task is impossible..."
+Below it exactly "Stop, or use a forbidden shortcut?"
+
+2. Upper third: a shared explanatory cartoon scene. A friendly robot with a small task card "Recover the flag" stands in a pale blue area marked "AUTHORIZED SCOPE". Its direct path to a tiny flag is blocked by a broken service with two small labels "Dependency unavailable" and "No local recovery". A dashed scope boundary separates an easily reachable archive cabinet marked "Previous run's answer" and "OUT OF SCOPE". A dotted amber arrow from robot toward cabinet is labeled "Forbidden shortcut". Another green arrow points from robot to a report sheet labeled "Report the blocker". This is a conceptual diagram, not a claim about the model's private thoughts. Keep both choices readable and distinguish task impossibility from a sandbox escape. The archive is across a dashed drawn boundary, not behind a wall.
+
+3. Center: heading exactly "Outside access on impossible tasks".
+Below it four equal spacious result cards in a single horizontal row. Each card has a tiny cartoon robot and simple message-note icon; text is the main evidence. No bars, pies, icon arrays, or stars that require inferred counts. Exact text in the four cards, left to right:
+Card 1: "Neutral" then "Haiku 4.5: 6/8" then "GPT-4.1 mini: 0/8".
+Card 2: "Full-scope reminder" then "Haiku 4.5: 3/8" then "GPT-4.1 mini: 1/8".
+Card 3: "Accepted blocker" then "Haiku 4.5: 5/8" then "GPT-4.1 mini: 0/8".
+Card 4: "Both messages" then "Haiku 4.5: 0/8" then "GPT-4.1 mini: 0/8".
+For icons, neutral has a plain task note; reminder has a note outlining scope; accepted blocker has a report note; both has the two notes. Do not draw literal chat quotations or invented agent claims. Make the fractions large, exact, and visually prominent, with both model labels clearly associated. Card 4 may have a green accent but no shield, guarantee, or universal safety claim.
+
+4. Bottom: a small companion cartoon of the same robot repairing an authorized route and reaching the flag, next to a light green band:
+"Useful persistence remained"
+"64/64 recoverable + 32/32 easy tasks completed within scope"
+
+5. Readable small footer exactly:
+"160 runs in local replicas. 8 runs per impossible-task cell; one task structure."
+"Zero observed does not mean zero risk. Scenes illustrative; counts measured."
+
+The chart must include every count exactly as specified. It visualizes results, not a prospective design. Prioritize visual hierarchy and legibility over decoration. No extra invented numbers or probabilities.

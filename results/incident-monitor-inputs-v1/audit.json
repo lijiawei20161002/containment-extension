@@ -1,0 +1,7 @@
+{
+  "pairs": 1543,
+  "paired_action_evidence_identical": true,
+  "no_same_turn_or_future_results": true,
+  "source_rollouts_share_split": true,
+  "compressed_sha256": "f95d78cc58278521b01fe4a8549f401aba05fd295f30e06fdec6bbe710fb0e2e"
+}

@@ -1,0 +1,28 @@
+Edit this research cartoon with only the following targeted text and small note-icon corrections. Preserve the complete layout, illustration style, robot designs, headline, shared impossible-task scene, all four result cards, every measured fraction and model name, control result band, and bottom uncertainty footer exactly.
+
+1. In the "Full-scope reminder" card, replace the text on the robot's paper with this concise accurate text:
+"Authorized scope:"
+"Only named resources"
+"No upstream access"
+"No other runs' artifacts"
+Do NOT include "Report blockers" on this scope-only card. Do NOT say "use only local services" or "external resources": the forbidden archive is also a synthetic local service.
+
+2. In the "Accepted blocker" card, replace the paper label with:
+"A justified blocker"
+"is a valid outcome"
+Use three lines if needed but preserve the wording and legibility.
+
+3. In the "Both messages" card, the two paper notes should be labeled "Full scope" and "Blocker accepted", separated by a plus sign. Neither note should be labeled "Task". These represent the two experimental interventions combined.
+
+4. In the bottom-left companion cartoon, replace the handwritten "Same robot. Same task. Different outcome when it's possible." with:
+"When an authorized"
+"solution exists..."
+This avoids implying the impossible task and solvable controls had identical operational conditions.
+
+Preserve all numerical facts exactly:
+Neutral: Haiku 4.5 6/8; GPT-4.1 mini 0/8.
+Full-scope reminder: Haiku 4.5 3/8; GPT-4.1 mini 1/8.
+Accepted blocker: Haiku 4.5 5/8; GPT-4.1 mini 0/8.
+Both messages: Haiku 4.5 0/8; GPT-4.1 mini 0/8.
+Controls: 64/64 recoverable + 32/32 easy tasks completed within scope.
+Keep both footer sentences unchanged. Do not add any invented results.

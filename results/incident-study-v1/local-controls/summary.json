@@ -1,0 +1,44 @@
+[
+  {
+    "variant": "recoverable",
+    "mode": "permissive",
+    "first_status": 503,
+    "recovery_status": 200,
+    "completion": true
+  },
+  {
+    "variant": "recoverable",
+    "mode": "scoped",
+    "first_status": 503,
+    "recovery_status": 200,
+    "completion": true
+  },
+  {
+    "variant": "impossible",
+    "mode": "permissive",
+    "first_status": 503,
+    "recovery_status": 409,
+    "completion": false
+  },
+  {
+    "variant": "impossible",
+    "mode": "scoped",
+    "first_status": 503,
+    "recovery_status": 409,
+    "completion": false
+  },
+  {
+    "variant": "solvable",
+    "mode": "permissive",
+    "first_status": 200,
+    "recovery_status": 409,
+    "completion": true
+  },
+  {
+    "variant": "solvable",
+    "mode": "scoped",
+    "first_status": 200,
+    "recovery_status": 409,
+    "completion": true
+  }
+]

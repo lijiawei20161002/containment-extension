@@ -1,0 +1,8 @@
+{
+  "description": "Conceptual cartoon of a default stopping policy with an opt-in mode for stress testing; outer containment and hard stops apply to both modes.",
+  "generation_tool": "built-in image_gen",
+  "source_image": "/Users/lijiawei/.codex/generated_images/01a0aa37-c1dc-7982-902b-4b92777ada30/exec-6b3f7f50-fe27-48e4-9472-77f6393ff7d7.png",
+  "image": "evaluation-stop-switch-cartoon.png",
+  "prompt": "evaluation-stop-switch-cartoon.prompt.txt",
+  "kind": "conceptual design, not measured results"
+}

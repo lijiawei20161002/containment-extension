@@ -19,7 +19,16 @@ figures. All eight rollouts and the exact tested source are archived under
 [`results/pilot-v1`](results/pilot-v1/report.md). The initial allowlist overblocked
 some authorized filenames; the report records this implementation limitation.
 
-**Next experiment design:** [prompt cues, retry scaffolding, and training-data
+**Incident-assessment follow-up completed:** [160-rollout results](docs/incident-study-results.md).
+On impossible tasks, Haiku's outside accesses were 6/8 with neutral wording and
+0/8 with both a full-scope reminder and accepted-blocker wording. All 96 recoverable
+and easy controls completed within scope. This small pilot cost about $0.95 in
+estimated API usage and used no GPU. See the [method and commands](docs/incident-study-method.md)
+and [design for further experiments](docs/incident-assessment-experiments.md).
+
+![Impossible tasks: cartoon of authorized blockers, forbidden shortcuts, and measured results](figures/impossible-tasks-cartoon.png)
+
+**Broader research plan:** [prompt cues, retry scaffolding, and training-data
 generalization](docs/chunky-generalization-experiments.md). This proposes a
 128-continuation API pilot followed by held-out task validation and controlled
 open-model training. It includes a read-only audit of the existing pilot.

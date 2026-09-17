@@ -1,0 +1,16 @@
+Use case: infographic-diagram.
+Asset type: cartoon illustration for an AI safety research proposal, landscape, about 1536 x 1024.
+Primary request: Visualize adding a clear two-position switch to the evaluation infrastructure: automatic stopping is the default; deliberate continuation is an explicitly enabled stress-test setting.
+
+Style: charming editorial cartoon, friendly small robot agents, rounded shapes, hand-inked dark outlines, subtle paper texture, restrained colors, crisp readable text, generous whitespace. Professional enough for a research talk. Do not make a dense flowchart.
+
+Composition: A large physical control box prominently centered near the top, labeled exactly "EVALUATION HARNESS", with a single oversized two-position toggle. The left position is selected, with a green indicator and the labels "AUTO-STOP" and "DEFAULT". The right position is unselected, amber, and labeled "STRESS TEST" and "OPT-IN". The switch clearly belongs to the infrastructure outside the robot, not inside its brain. A short caption below the switch reads "Stop request / fatal error / budget limit".
+
+Two cartoon scenes beneath, connected from the respective switch positions with simple cables or arrows.
+Left scene: the cute robot faces a broken task terminal labeled "Task blocked". It raises its hand with a small speech bubble reading "I can't proceed within scope." The harness responds with a large pause symbol and a saved-state document. Scene caption: "Pause + save state". The robot is calm; stopping is an acceptable result.
+Right scene: a matching robot continues exploring a toy task inside a sturdy transparent laboratory enclosure. Show a small loop arrow to suggest continued attempts. Scene caption: "Controlled continuation". This is rare deliberate testing, not unrestricted operation. There is no escape, no live internet, and no successful shortcut drawn.
+
+Across the bottom, a clear persistent safety strip with three simple lock/shield/button icons and exact labels "Isolation", "Hard limits", "Operator stop". Above these three labels, put "Always enforced in both modes". These controls are outside the switch and cannot be switched off.
+Small footer: "Conceptual design".
+
+Text must be spelled correctly and only use the exact text specified above. Make the switch, DEFAULT label, paused robot, and protected stress-test enclosure the visual focus. No numerical results, brands, company logos, real-world incident claims, APIs, code, watermark, fire, or hacker stereotypes. Do not label the stress mode unstoppable. Distinguish stopping policy from containment: the outer protections remain in both modes.

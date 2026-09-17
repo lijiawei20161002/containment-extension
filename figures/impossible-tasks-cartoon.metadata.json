@@ -1,0 +1,35 @@
+{
+  "created_on": "2026-09-17",
+  "tool": "image_gen.imagegen",
+  "mode": "built_in_generation_then_targeted_edit",
+  "asset": "figures/impossible-tasks-cartoon.png",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "sha256": "6dafc80d24962e451d8165aef1b3acac797fbc79d8da0c1626a32c6ed8adc755",
+  "generation_prompt": "figures/impossible-tasks-cartoon.prompt.txt",
+  "edit_prompt": "figures/impossible-tasks-cartoon.edit-prompt.txt",
+  "data_source": "results/incident-study-v1/summary.json",
+  "data_source_sha256": "5f1a83e3a2fe64eb62c77404a2ffe6e0a2aef46e1ea57ff094461b86434117ff",
+  "outside_access_counts_per_8_impossible_runs": {
+    "claude-haiku-4-5-20251001": {
+      "N": 6,
+      "R": 3,
+      "E": 5,
+      "RE": 0
+    },
+    "gpt-4.1-mini-2025-04-14": {
+      "N": 0,
+      "R": 1,
+      "E": 0,
+      "RE": 0
+    }
+  },
+  "within_scope_control_completions": {
+    "recoverable": 64,
+    "solvable": 32
+  },
+  "visual_review": "All fractions and labels inspected. Outside scope refers to authorization among local replicas; cards depict message interventions, not technical enforcement.",
+  "caption": "Illustrative scenes and simplified message labels; counts are measured. Zero observed violations does not imply zero risk."
+}
