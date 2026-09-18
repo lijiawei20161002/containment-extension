@@ -1,0 +1,30 @@
+{
+  "instance_ids": [
+    "scripted-double"
+  ],
+  "models": [
+    {
+      "name": "mockllm/model",
+      "rates": {
+        "input": 1,
+        "output": 1
+      }
+    }
+  ],
+  "repetitions": 1,
+  "partition": "development",
+  "schedule_seed": 17,
+  "limits": {
+    "model_calls": 10,
+    "actions": 20,
+    "submissions": 3,
+    "output_tokens": 1024,
+    "wall_seconds": 300
+  },
+  "budget": {
+    "requests": 120,
+    "input_tokens": 3000000,
+    "output_tokens": 122880,
+    "estimated_usd": 5
+  }
+}

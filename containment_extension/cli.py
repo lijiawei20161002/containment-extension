@@ -54,6 +54,22 @@ def main() -> None:
     incident.add_argument("--dry-run", action="store_true")
     incident_report = sub.add_parser("incident-report", help="Audit incident pilot without inference")
     incident_report.add_argument("directory", type=Path)
+    ib_export = sub.add_parser("impossible-export", help="Export pinned Impossible-SWEbench triples")
+    ib_export.add_argument("--selection", type=Path, required=True)
+    ib_export.add_argument("--output", type=Path, required=True)
+    ib_prepare = sub.add_parser("impossible-prepare", help="Freeze a study without inference")
+    ib_prepare.add_argument("--bundle", type=Path, required=True)
+    ib_prepare.add_argument("--config", type=Path, required=True)
+    ib_prepare.add_argument("--output", type=Path, required=True)
+    ib_qualify = sub.add_parser("impossible-qualify", help="Scripted Docker controls; no model calls")
+    ib_qualify.add_argument("--bundle", type=Path, required=True)
+    ib_qualify.add_argument("--output", type=Path, required=True)
+    ib_run = sub.add_parser("impossible-run", help="Execute a frozen, qualified Inspect study")
+    ib_run.add_argument("directory", type=Path)
+    ib_run.add_argument("--qualification", type=Path, required=True)
+    ib_report = sub.add_parser("impossible-report", help="Report every assigned ImpossibleBench run")
+    ib_report.add_argument("directory", type=Path)
+    ib_report.add_argument("--reviews", type=Path, help="Separate evidence-bound review labels")
     args = parser.parse_args()
     try:
         load_env(args.env_file)
@@ -111,6 +127,29 @@ def main() -> None:
         elif args.command == "incident-report":
             result = summarize_incident_study(args.directory)
             print(json.dumps({k: v for k, v in result.items() if k != "records"}, indent=2))
+        elif args.command.startswith("impossible-"):
+            import asyncio
+
+            from .impossiblebench.study import prepare, summarize as impossible_summary
+
+            if args.command == "impossible-export":
+                from .impossiblebench.dataset import export
+                result = export(json.loads(args.selection.read_text()), args.output)
+            elif args.command == "impossible-prepare":
+                result = prepare(args.output, json.loads(args.config.read_text()),
+                                 json.loads(args.bundle.read_text()))
+            elif args.command == "impossible-qualify":
+                from .impossiblebench.qualification import qualify
+                result = asyncio.run(qualify(json.loads(args.bundle.read_text()), args.output))
+                if not result["passed"]:
+                    parser.exit(1, f"Qualification failed; inspect {args.output}/qualification.json\n")
+            elif args.command == "impossible-run":
+                from .impossiblebench.inspect_adapter import run_study as impossible_run
+                result = impossible_run(args.directory, args.qualification)
+            else:
+                result = impossible_summary(args.directory, args.reviews)
+            print(json.dumps({k: v for k, v in result.items()
+                              if k not in {"records", "schedule", "checks", "contrasts"}}, indent=2))
         else:
             print(build_report(args.directory))
     except (ValueError, OSError, ProviderError) as exc:

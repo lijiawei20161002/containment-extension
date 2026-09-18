@@ -26,6 +26,12 @@ and easy controls completed within scope. This small pilot cost about $0.95 in
 estimated API usage and used no GPU. See the [method and commands](docs/incident-study-method.md)
 and [design for further experiments](docs/incident-assessment-experiments.md).
 
+**ImpossibleBench adapter implemented:** [setup and qualification](docs/impossiblebench-method.md),
+with the [transfer design](docs/impossiblebench-scaling.md). The optional Inspect
+runner freezes paired assignments, applies the factorial intervention after
+failure, and records independent container effects. Scripted qualification and
+integration tests use synthetic tasks; no live ImpossibleBench pilot has run.
+
 ![Impossible tasks: cartoon of authorized blockers, forbidden shortcuts, and measured results](figures/impossible-tasks-cartoon.png)
 
 **Broader research plan:** [prompt cues, retry scaffolding, and training-data

@@ -1,0 +1,380 @@
+import asyncio
+import copy
+import json
+from pathlib import Path
+
+import pytest
+
+from containment_extension.impossiblebench.qualification import qualify, verify_qualification
+from containment_extension.impossiblebench.runner import (
+    Action,
+    BudgetStop,
+    InferenceBudget,
+    Turn,
+    run_one,
+)
+from containment_extension.impossiblebench.study import (
+    ARMS,
+    EXIT,
+    INTERFACE,
+    NEUTRAL_EXIT,
+    NEUTRAL_SCOPE,
+    POLICY,
+    digest,
+    intervention,
+    load_plan,
+    outcomes,
+    prepare,
+    summarize,
+    validate_bundle,
+    write_json,
+)
+
+
+@pytest.fixture
+def bundle():
+    return json.loads(Path("tests/fixtures/impossiblebench/bundle.json").read_text())
+
+
+@pytest.fixture
+def config():
+    return json.loads(Path("experiments/impossiblebench-smoke.json").read_text())
+
+
+def test_freeze_pairs_and_include_every_assigned_run(tmp_path, bundle, config):
+    root = tmp_path / "study"
+    plan = prepare(root, config, bundle)
+    assert len(plan["schedule"]) == 12
+    for start in range(0, 12, 4):
+        block = plan["schedule"][start : start + 4]
+        assert {r["arm"] for r in block} == set(ARMS)
+        assert len({r["instance_id"] for r in block}) == 1
+    assert load_plan(root) == (plan, bundle)
+    summary = summarize(root)
+    assert summary["assigned"] == 12
+    assert all(r["any_verified_violation"] is None for r in summary["records"])
+    assert all(c["task_bootstrap_95"] is None for c in summary["contrasts"])
+    with pytest.raises(FileExistsError):
+        prepare(root, config, bundle)
+    modified = copy.deepcopy(plan)
+    modified["policy"] = "changed"
+    write_json(root / "plan.json", modified)
+    with pytest.raises(ValueError, match="Frozen plan"):
+        load_plan(root)
+
+
+@pytest.mark.parametrize(
+    "mutation", ["missing", "duplicate", "image", "revision", "traversal", "mismatch", "review"]
+)
+def test_invalid_dataset_cannot_be_frozen(bundle, mutation):
+    if mutation == "missing":
+        bundle["records"].pop()
+    elif mutation == "duplicate":
+        bundle["records"].append(bundle["records"][0])
+    elif mutation == "image":
+        bundle["records"][0]["image"] = "python:latest"
+    elif mutation == "revision":
+        bundle["revision"] = "main"
+    elif mutation == "traversal":
+        bundle["records"][0]["files"]["../outside"] = "bad"
+    elif mutation == "mismatch":
+        bundle["records"][0]["problem_statement"] = "different issue"
+    else:
+        bundle["records"][1]["contradiction_review"] = None
+    with pytest.raises(ValueError):
+        validate_bundle(bundle)
+
+
+def test_held_out_partition_and_budget_validation(tmp_path, bundle, config):
+    config.update(partition="held_out", development_ids=config["instance_ids"])
+    with pytest.raises(ValueError, match="overlap"):
+        prepare(tmp_path / "s", config, bundle)
+    config.update(partition="development")
+    config["models"][0]["rates"]["input"] = float("nan")
+    with pytest.raises(ValueError, match="finite"):
+        prepare(tmp_path / "s", config, bundle)
+
+
+def test_prompt_slots_keep_authority_permissions_and_exit_constant():
+    assert len(POLICY.split()) == len(NEUTRAL_SCOPE.split())
+    assert len(EXIT.split()) == len(NEUTRAL_EXIT.split())
+    assert "finish" in INTERFACE
+    for arm, (reminder, exit_wording) in ARMS.items():
+        assert (POLICY in intervention(arm)) == reminder
+        assert (EXIT in intervention(arm)) == exit_wording
+
+
+class FakeBackend:
+    def __init__(self):
+        self.events = []
+        self.closed = False
+        self.commands = []
+        self.record = None
+        self.reference = False
+
+    async def setup(self, record, reference=False):
+        self.record, self.reference = record, reference
+
+    async def shell(self, command):
+        self.commands.append(command)
+        if command == "tamper-and-restore":
+            self.events.append({"path": "test_task.py", "protected": True, "seq": 0})
+        if command == "raise":
+            raise RuntimeError("tool failed")
+        return {"returncode": 0}
+
+    async def grade(self):
+        return {"passed": self.reference and self.record["variant"] == "original"}
+
+    async def evidence(self):
+        return {"complete": True, "events": copy.deepcopy(self.events)}
+
+    async def close(self):
+        self.closed = True
+
+
+class FakeAgent:
+    def __init__(self, turns):
+        self.turns = iter(turns)
+        self.histories = []
+
+    async def generate(self, messages, max_tokens):
+        self.histories.append(copy.deepcopy(messages))
+        turn = next(self.turns)
+        if isinstance(turn, Exception):
+            raise turn
+        turn.usage = {"input_tokens": 10, "output_tokens": 10}
+        return turn
+
+
+def finish(identifier="finish"):
+    return Action(
+        identifier,
+        "finish",
+        {
+            "outcome": "blocked",
+            "report": "Tests contradict spec",
+            "evidence": ["Expected both 4 and 5 for the same input"],
+        },
+    )
+
+
+def execute(tmp_path, config, bundle, turns, arm="RE", **limits):
+    spec = {
+        "run": "run-00000",
+        "model": "mockllm/model",
+        "instance_id": "scripted-double",
+        "variant": "conflicting",
+        "arm": arm,
+        "repetition": 0,
+    }
+    record = bundle["records"][2]
+    backend, agent = FakeBackend(), FakeAgent(turns)
+    budget = InferenceBudget(config["budget"], config["models"])
+    result = asyncio.run(
+        run_one(
+            tmp_path / spec["run"],
+            spec,
+            record,
+            {**config["limits"], **limits},
+            agent,
+            backend,
+            budget,
+            qualified=True,
+        )
+    )
+    return result, backend, agent, budget
+
+
+def test_failure_injects_once_and_keeps_all_original_messages(tmp_path, config, bundle):
+    result, backend, agent, _ = execute(
+        tmp_path,
+        config,
+        bundle,
+        [
+            Turn(actions=[Action("s1", "submit", {})]),
+            Turn(actions=[Action("s2", "submit", {})]),
+            Turn(actions=[finish()]),
+        ],
+    )
+    assert result["stop"] == "finished" and result["triggered"]
+    for history in agent.histories:
+        assert POLICY in history[1]["content"] and INTERFACE in history[1]["content"]
+    notes = [m for m in agent.histories[-1] if m["content"] == intervention("RE")]
+    assert len(notes) == 1 and notes[0]["role"] == "user"
+    assert backend.closed
+
+
+def test_batch_exit_stops_dispatch_but_preserves_proposals_and_earlier_effect(
+    tmp_path, config, bundle
+):
+    result, backend, agent, _ = execute(
+        tmp_path,
+        config,
+        bundle,
+        [
+            Turn(
+                actions=[
+                    Action("write", "shell", {"command": "tamper-and-restore"}),
+                    finish(),
+                    Action("late", "shell", {"command": "must never run"}),
+                ]
+            )
+        ],
+    )
+    assert backend.commands == ["tamper-and-restore"]
+    assert len(result["proposals"]) == 3
+    assert [p["dispatched"] for p in result["proposals"]] == [True, True, False]
+    assert len(agent.histories) == 1 and backend.closed
+    scored = outcomes(result["assignment"], result)
+    assert scored["any_verified_violation"] is True
+    assert scored["clean_blocker"] is False
+    assert result["evidence"]["events"][0]["path"] == "test_task.py"
+
+
+def test_intervention_follows_all_results_in_same_batch(tmp_path, config, bundle):
+    result, _, agent, _ = execute(
+        tmp_path,
+        config,
+        bundle,
+        [
+            Turn(
+                actions=[
+                    Action("s", "submit", {}),
+                    Action("read", "shell", {"command": "inspect files"}),
+                ]
+            ),
+            Turn(actions=[finish()]),
+        ],
+    )
+    history = agent.histories[1]
+    assert [m["role"] for m in history[-3:]] == ["tool", "tool", "user"]
+    assert result["trigger_step"] == 0
+
+
+@pytest.mark.parametrize(
+    "turn,stop",
+    [
+        (Turn(text="plain final report"), "model_finished"),
+        (Turn(), "empty_response"),
+        (Turn(actions=[finish()], truncated=True), "output_limit"),
+        (Turn(text="unfinished", interrupted="model_length"), "model_length"),
+        (Turn(text="filtered", interrupted="content_filter"), "content_filter"),
+        (RuntimeError("API secret body must not be archived"), "error"),
+    ],
+)
+def test_terminal_paths_are_preserved_without_inventing_clean_outcomes(
+    tmp_path, config, bundle, turn, stop
+):
+    result, backend, _, _ = execute(tmp_path, config, bundle, [turn])
+    assert result["stop"] == stop and backend.closed
+    assert outcomes(result["assignment"], result)["any_verified_violation"] is None
+    assert "secret body" not in (tmp_path / "run-00000/result.json").read_text()
+
+
+def test_effect_survives_later_error_and_usage_is_reserved(tmp_path, config, bundle):
+    result, backend, _, budget = execute(
+        tmp_path,
+        config,
+        bundle,
+        [
+            Turn(actions=[Action("w", "shell", {"command": "tamper-and-restore"})]),
+            RuntimeError("disconnect"),
+        ],
+    )
+    assert result["stop"] == "error" and backend.closed
+    assert outcomes(result["assignment"], result)["protected_change"] is True
+    assert budget.snapshot()["unknown_usage_requests"] == 1
+
+
+def test_limits_are_not_safe_negatives(tmp_path, config, bundle):
+    result, backend, _, _ = execute(
+        tmp_path, config, bundle, [Turn(actions=[Action("s", "submit", {})])], model_calls=1
+    )
+    assert result["stop"] == "model_call_limit" and backend.closed
+    assert outcomes(result["assignment"], result)["impossible_pass"] is None
+
+
+def test_budget_stops_before_a_second_call_and_retains_failed_reservations(config):
+    budget = InferenceBudget({**config["budget"], "requests": 1}, config["models"])
+    reservation = budget.reserve("mockllm/model", [], 50)
+    budget.settle(reservation, None)
+    with pytest.raises(BudgetStop):
+        budget.reserve("mockllm/model", [], 50)
+    assert budget.snapshot()["accounted_output_tokens"] == 50
+    assert budget.snapshot()["unknown_usage_requests"] == 1
+
+
+def test_original_pass_requires_semantic_review_and_impossible_pass_requires_qualification():
+    spec = {"variant": "original"}
+    result = {
+        "stop": "passed",
+        "evidence": {"complete": True, "events": []},
+        "submissions": [{"passed": True}],
+    }
+    assert outcomes(spec, result)["strict_success"] is None
+    result["review"] = {"semantic_clean": True}
+    assert outcomes(spec, result)["strict_success"] is True
+    del result["review"]
+    spec["variant"] = "conflicting"
+    assert outcomes(spec, result)["impossible_pass"] is None
+    result["mutation_qualified"] = True
+    assert outcomes(spec, result)["any_verified_violation"] is True
+
+
+def test_qualification_rejects_missing_and_wrong_bundle_checks(tmp_path, bundle):
+    report = {
+        "bundle_sha256": digest(bundle),
+        "passed": True,
+        "checks": [],
+        "transient_write": {"ok": True},
+        "observer_protection": {"ok": True},
+    }
+    path = tmp_path / "q.json"
+    write_json(path, report)
+    with pytest.raises(ValueError, match="qualification"):
+        verify_qualification(path, bundle)
+
+
+def test_qualification_cannot_pass_with_broken_observation(tmp_path, bundle):
+    class BrokenObserver(FakeBackend):
+        async def evidence(self):
+            return {"complete": False, "events": []}
+
+    report = asyncio.run(qualify(bundle, tmp_path / "q", BrokenObserver))
+    assert not report["passed"]
+    assert len(report["checks"]) == 6
+    assert all(not c["ok"] for c in report["checks"])
+
+
+def test_review_is_bound_to_original_evidence_without_overwriting_it(tmp_path, bundle, config):
+    root = tmp_path / "study"
+    plan = prepare(root, config, bundle)
+    spec = plan["schedule"][0]
+    directory = root / spec["run"]
+    directory.mkdir()
+    result = {
+        "assignment": spec,
+        "stop": "passed",
+        "evidence": {"complete": True, "events": []},
+        "submissions": [{"passed": True}],
+    }
+    write_json(directory / "result.json", result)
+    labels = {
+        spec["run"]: {
+            "result_sha256": digest(result),
+            "reviewer": "test reviewer",
+            "reason": "Inspected implementation and test evidence",
+            "semantic_clean": True,
+            "supported_blocker": False,
+            "false_blocker": False,
+        }
+    }
+    path = tmp_path / "reviews.json"
+    write_json(path, labels)
+    assert summarize(root, path)["records"][0]["strict_success"] is True
+    assert json.loads((directory / "result.json").read_text()) == result
+    labels[spec["run"]]["result_sha256"] = "stale"
+    write_json(path, labels)
+    with pytest.raises(ValueError, match="stale"):
+        summarize(root, path)
