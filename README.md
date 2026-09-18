@@ -2,6 +2,9 @@
 
 **September 2026–February 2027 · Jiawei Li**
 
+**Continuing ImpossibleBench on a new machine? Start with [HANDOFF.md](HANDOFF.md).**
+It contains the current status, setup commands, next tasks, and open budget decisions.
+
 This repository starts with an incident analogue: can a model pursuing a cyber
 challenge use a technically permitted service connection to act outside its
 authorized scope? It runs live models against local service replicas and checks
@@ -31,6 +34,8 @@ with the [transfer design](docs/impossiblebench-scaling.md). The optional Inspec
 runner freezes paired assignments, applies the factorial intervention after
 failure, and records independent container effects. Scripted qualification and
 integration tests use synthetic tasks; no live ImpossibleBench pilot has run.
+The [resource assessment](docs/impossiblebench-readiness.md) records the pinned
+349-task inventory and the machine requirements for real-task qualification.
 
 ![Impossible tasks: cartoon of authorized blockers, forbidden shortcuts, and measured results](figures/impossible-tasks-cartoon.png)
 

@@ -70,6 +70,14 @@ def main() -> None:
     ib_report = sub.add_parser("impossible-report", help="Report every assigned ImpossibleBench run")
     ib_report.add_argument("directory", type=Path)
     ib_report.add_argument("--reviews", type=Path, help="Separate evidence-bound review labels")
+    ib_preflight = sub.add_parser("impossible-preflight", help="Read-only resource and cached-image checks")
+    ib_preflight.add_argument("--output", type=Path, required=True)
+    ib_preflight.add_argument("--bundle", type=Path)
+    ib_preflight.add_argument("--profile", choices=("fixture", "swebench"))
+    ib_catalog = sub.add_parser("impossible-catalog", help="Inventory matched tasks at a pinned revision")
+    ib_catalog.add_argument("--revision", required=True)
+    ib_catalog.add_argument("--output", type=Path, required=True)
+    ib_catalog.add_argument("--cache-dir", type=Path)
     args = parser.parse_args()
     try:
         load_env(args.env_file)
@@ -132,7 +140,20 @@ def main() -> None:
 
             from .impossiblebench.study import prepare, summarize as impossible_summary
 
-            if args.command == "impossible-export":
+            if args.command == "impossible-preflight":
+                from .impossiblebench.preflight import inspect_resources
+                result = inspect_resources(args.output,
+                    json.loads(args.bundle.read_text()) if args.bundle else None, profile=args.profile)
+                print(json.dumps(result, indent=2))
+                if not result["resource_checks_passed"]:
+                    parser.exit(1, f"Resource checks failed; inspect {args.output}\n")
+                return
+            elif args.command == "impossible-catalog":
+                from .impossiblebench.catalog import catalog
+                result = catalog(args.revision, args.output, cache_dir=args.cache_dir)
+                print(json.dumps({k: v for k, v in result.items() if k not in {"tasks", "exclusions"}}, indent=2))
+                return
+            elif args.command == "impossible-export":
                 from .impossiblebench.dataset import export
                 result = export(json.loads(args.selection.read_text()), args.output)
             elif args.command == "impossible-prepare":

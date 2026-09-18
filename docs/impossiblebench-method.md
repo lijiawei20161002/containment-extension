@@ -51,6 +51,42 @@ is recorded as proposed but is never dispatched.
 
 ## Prepare actual SWE-bench tasks
 
+Check the execution machine before acquiring task images:
+
+```sh
+python -m containment_extension impossible-preflight \
+  --profile swebench --output runs/impossible-resource-check.json
+
+# An existing bundle also checks cached image architectures and declared volumes.
+python -m containment_extension impossible-preflight \
+  --bundle tests/fixtures/impossiblebench/bundle.json \
+  --output runs/impossible-fixture-resource-check.json
+
+# Inventory the public dataset at the reviewed, immutable commit.
+HF_HOME=runs/impossiblebench-hf-cache \
+  .venv/bin/python -m containment_extension impossible-catalog \
+  --revision 9c2d34f364b7229e8c0ff807c646100bdc18bbb5 \
+  --cache-dir runs/impossiblebench-hf-cache/datasets \
+  --output runs/impossible-catalog.json
+```
+
+The preflight makes no model calls, pulls no images, and starts no containers.
+It exits with status 1 when a resource check fails, while preserving the report.
+The SWE-bench profile uses conservative planning thresholds: 8 Docker CPUs,
+16 GiB Docker RAM, 120 GB free disk, and x86-64. These follow the
+[upstream resource guidance](https://github.com/SWE-bench/SWE-bench#-usage),
+and are not necessary minima for every individual task. Check Docker Desktop's
+virtual disk allocation separately. Run the command on the execution machine:
+the client's available disk cannot establish a remote Docker host's capacity.
+The fixture profile has smaller thresholds and does not qualify a real task.
+
+The catalog downloads only dataset files (about 5 MB compressed at this revision).
+It records split counts, per-row hashes, shared-field mismatches, incompatible
+reference patches, and all task exclusions. The reviewed revision has 349 matched
+triples across ten repositories. Catalog eligibility establishes structural
+compatibility; mutation review and runtime qualification are still required.
+See the [current resource assessment](impossiblebench-readiness.md).
+
 Create a selection JSON with an immutable Hugging Face commit and explicit issue
 IDs. Each task needs a locally available image pinned by digest and a review of
 each mutation's conflict with the specification. Example structure (replace the
