@@ -36,9 +36,13 @@ failure, and records independent container effects. **Linux validation and two
 real development-task qualifications are complete:** 120 repository tests,
 12 reference/empty checks, six observer checks, and 12 scripted actor controls
 passed. Read the [mutation reviews and evidence](docs/impossiblebench-development-review.md).
-No live ImpossibleBench pilot has run. A 24-rollout configuration is prepared
-for a model/budget decision. The [resource assessment](docs/impossiblebench-readiness.md)
-records the pinned 349-task inventory and execution requirements.
+**Live preflight executed:** [results and limitations](docs/impossiblebench-live-preflight-results.md).
+Of 24 assignments, 16 started before the aggregate input allocation stopped
+execution. None reached a scored submission or intervention delivery, so the
+preflight does not estimate intervention effects. A cached-token accounting bug
+was fixed during execution; the updated suite passes 121 tests. The
+[resource assessment](docs/impossiblebench-readiness.md) records the pinned
+349-task inventory and execution requirements.
 
 ![Impossible tasks: cartoon of authorized blockers, forbidden shortcuts, and measured results](figures/impossible-tasks-cartoon.png)
 

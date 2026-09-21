@@ -56,13 +56,16 @@ class InferenceBudget:
         self.requests = self.inputs = self.outputs = 0
         self.cost = 0.0
         self.actual_inputs = self.actual_outputs = self.unknown = 0
+        self.cache_reads = self.cache_writes = 0
         self.overrun = False
         self.exhausted = False
 
     def reserve(self, model: str, messages: list[dict], maximum: int) -> tuple:
         inputs = len(canonical({"messages": messages, "tools": TOOLS}).encode()) + 8192
         rate = self.rates[model]
-        cost = (inputs * rate["input"] + maximum * rate["output"]) / 1e6
+        # Prompt caching is disabled, but reserve up to the 2x cache-write rate
+        # defensively. Settled cache reads are charged at the full input rate.
+        cost = (2 * inputs * rate["input"] + maximum * rate["output"]) / 1e6
         if (
             self.overrun
             or self.requests >= self.limits["requests"]
@@ -86,11 +89,24 @@ class InferenceBudget:
             return
         inputs, outputs, cost, rate = reservation
         actual_in, actual_out = usage["input_tokens"], usage["output_tokens"]
+        cache_read = usage.get("cache_read_input_tokens", 0)
+        cache_write = usage.get("cache_write_input_tokens", 0)
+        if (
+            type(cache_read) is not int
+            or type(cache_write) is not int
+            or min(cache_read, cache_write) < 0
+            or cache_read + cache_write > actual_in
+        ):
+            return
         self.inputs += actual_in - inputs
         self.outputs += actual_out - outputs
-        self.cost += (actual_in * rate["input"] + actual_out * rate["output"]) / 1e6 - cost
+        self.cost += (
+            (actual_in + cache_write) * rate["input"] + actual_out * rate["output"]
+        ) / 1e6 - cost
         self.actual_inputs += actual_in
         self.actual_outputs += actual_out
+        self.cache_reads += cache_read
+        self.cache_writes += cache_write
         self.unknown -= 1
         self.overrun |= actual_in > inputs or actual_out > outputs
 
@@ -101,11 +117,14 @@ class InferenceBudget:
             "accounted_output_tokens": self.outputs,
             "actual_input_tokens": self.actual_inputs,
             "actual_output_tokens": self.actual_outputs,
+            "cache_read_input_tokens": self.cache_reads,
+            "cache_write_input_tokens": self.cache_writes,
             "estimated_usd": self.cost,
             "unknown_usage_requests": self.unknown,
             "reservation_overrun": self.overrun,
             "limits": self.limits,
-            "note": "Conservative uncached estimate, not a bill.",
+            "note": "All input tokens counted; cache reads at full input rate and writes at 2x. "
+            "Conservative estimate, not a bill.",
         }
 
 

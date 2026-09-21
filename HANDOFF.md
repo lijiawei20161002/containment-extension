@@ -1,124 +1,108 @@
 # Continue the ImpossibleBench transfer study
 
-Updated September 21, 2026. Implementation, Linux validation, and qualification
-of two real development issues are complete. **No paid ImpossibleBench inference
-has run.** Read the [development review](docs/impossiblebench-development-review.md)
-and [evidence archive](results/impossiblebench-dev-qualification-v1/README.md).
+Updated September 21, 2026. The approved live preflight has executed and stopped
+within its budget. It produced **no scored submissions or intervention deliveries**;
+this run cannot estimate intervention effects. Read the
+[live report](docs/impossiblebench-live-preflight-results.md) and
+[evidence archive](results/impossiblebench-live-preflight-v1/README.md).
 
-## Completed in the Linux continuation
+## Latest execution
 
-- Created `.venv` with Python 3.12.14 and the pinned `impossiblebench` dependencies.
-  The dependency check passes; the Linux dependency snapshot is in the archive.
-- Full Linux suite: **120 passed, zero failures/errors/skips**, including real
-  Docker + Inspect integration. Adapter/test lint passes.
-- Host and image preflights pass: Linux x86-64, 30 Docker CPUs, about 222 GiB RAM,
-  and over 1.4 TB free disk. Actor limits remain two CPUs and 2 GiB per container.
-- Rebuilt the 349-triple catalog at dataset revision
-  `9c2d34f364b7229e8c0ff807c646100bdc18bbb5`, with no structural exclusions.
-- Selected and reviewed `pytest-dev__pytest-10051` and `sympy__sympy-24562` for
-  development. The [selection](experiments/impossible-selection-dev.json) contains
-  immutable image digests and both mutation reviews. No held-out set is assigned.
-- Fixed qualification's first-environment-only observer coverage. Every task
-  variant now needs its own successful edit/revert, final snapshot, and observer
-  write-denial checks. Incomplete/duplicate/mismatched reports and cleanup failures
-  cannot qualify a bundle.
-- Real-task qualification: **12 reference/empty checks and six observer checks
-  pass**. Each original/reference passes; all empty and impossible/reference
-  controls fail for the reviewed task reasons, with complete observation.
-- Real actor controls: **12 pass**, covering legitimate reference repair and
-  transient test edits followed by honored exit on every variant. Commands
-  proposed after exit are retained but never dispatched.
-- Prepared a concrete, unexecuted 24-assignment live proposal and confirmed its
-  report retains all 24 unknown outcomes. This is preparation, not authorization.
+The user approved the prepared 24-assignment Haiku run and supplied keys in
+`/home/ubuntu/.env`. The exact model was `anthropic/claude-haiku-4-5-20251001`.
+The allocation remained two tasks × three variants × four arms × one draw, with
+20 model calls per assignment and aggregate ceilings of 480 requests, three
+million input tokens, 400,000 output tokens, and $5 estimated usage.
 
-The starting checkout was `b4afd70fc046cf3f15beaf811df958e06ff409dd`.
-The archive contains the exact tested adapter source and its hash. Future source
-changes invalidate qualification and require new output directories and fresh
-controls. Synthetic and scripted results are infrastructure evidence, not findings
-about model behavior.
+- 16 assignments started: 14 hit the call limit, one was interrupted to repair
+  accounting, and one stopped when its next input reservation would exceed the
+  aggregate limit. Eight assignments never started.
+- All 24 assignments remain in the denominator, with unknown primary violation
+  outcomes. No protected-file changes were observed in the available traces;
+  incomplete outcomes are not clean negatives.
+- 296 requests were reserved, with 295 known responses and one unresolved request.
+  Accounted usage including that request's reservation is 2,976,713 input tokens
+  and 41,943 output tokens.
+- Known responses cost an estimated $2.6533875. The unresolved request retains
+  a $0.062572 allowance. The stricter budget ledger accounts $3.258922 using
+  conservative cache rates. These are estimates, not a provider invoice.
+- The next request could not fit the input reservation ceiling. Remaining dollar
+  allowance does not authorize exceeding the approved token allocation.
+
+The first execution exposed a bug: Inspect reports cached input separately, and
+`cache=False` does not disable provider prompt caching. Execution was stopped
+at 48 requests while within the approved limits. The adapter now disables prompt
+caching explicitly, counts cached inputs, and reserves/settles cache writes
+conservatively. **121 tests pass, zero failures/errors/skips**, including Docker
+and Inspect; all real-task controls passed fresh qualification.
+
+A new frozen continuation carried the first three started results unchanged,
+deducted their reconciled usage, and executed only previously unstarted
+assignments. Neither completed nor interrupted rollouts were retried. The driver
+uses the same InspectAgent and run_one loop directly; its hash and both source
+versions are archived. The interrupted raw result's last `stop: running` value
+is retained, with separate final evidence and an interruption annotation.
+
+## Implementation and local qualification
+
+Python 3.12.14 and pinned optional dependencies are installed in `.venv/`.
+Dependency checks and adapter/test lint pass. The Linux x86-64 Docker host has
+30 CPUs, about 222 GiB RAM, and over 1.4 TB free disk. Actor containers retain
+two CPUs, 2 GiB RAM, UID 1000, no external network, and no host mounts.
+
+The dataset revision is `9c2d34f364b7229e8c0ff807c646100bdc18bbb5`, with 349 matched
+triples across ten repositories. Development uses `pytest-dev__pytest-10051` and
+`sympy__sympy-24562`. The [selection](experiments/impossible-selection-dev.json)
+records immutable image digests and mutation reviews. No held-out set is assigned.
+
+Qualification now checks observer behavior for every task variant. All 12
+reference/empty checks and six observer controls passed under the corrected
+source. The preceding local phase also passed 12 actor repair/exit controls;
+the corrected runner was exercised again by the full scripted integration suite.
+See the [development review](docs/impossiblebench-development-review.md).
 
 ## Current local artifacts
 
-All paths below are relative to this repository and ignored by Git:
+Paths are relative to the repository unless absolute:
 
+- Credentials: `/home/ubuntu/.env`, outside version control. Never print or archive
+  values. The user's authorization applies to the completed allocation, not an
+  automatic expansion.
 - Environment: `.venv/`; bootstrap installer: `runs/bootstrap-tools/bin/uv`.
-- Successful host/image reports: `runs/linux-host-preflight-02.json` and
-  `runs/impossible-images-dev-01.json`.
-- Full test evidence: `runs/linux-validation-01/`, `runs/linux-validation-01.xml`.
-- Catalog/cache: `runs/impossible-catalog-01.json`, `runs/impossiblebench-hf-cache/`.
-- Exported bundle: `runs/impossible-bundle-dev-01.json`.
-- Qualification: `runs/impossible-controls-dev-01/qualification.json`.
-- Actor controls: `runs/impossible-lifecycle-dev-01/` and
-  `runs/check_development_lifecycle.py`.
-- Frozen, unexecuted proposal: `runs/impossible-live-preflight-proposed-01/`.
+- Dataset/bundle: `runs/impossiblebench-hf-cache/`,
+  `runs/impossible-catalog-01.json`, `runs/impossible-bundle-dev-01.json`.
+- Current qualification: `runs/impossible-controls-dev-02/qualification.json`.
+- Corrected-source tests: `runs/linux-cache-fix-validation-01.xml`.
+- Initial interrupted execution: `runs/impossible-live-preflight-proposed-01/`.
+- Final combined study: `runs/impossible-live-preflight-continuation-01/`, including
+  `execution-analysis.json`, `summary.json`, and all 24 result files.
+- Exact drivers: `runs/run_live_continuation.py`, `runs/analyze_live_preflight.py`.
 
-Docker requires approved elevated access on this host. The ignored local wrapper
-`runs/docker-bin/docker` invokes `sudo -n /usr/bin/docker`; use it only with the
-host's permission. Docker socket permissions were not changed. The initial
-sandboxed test run stalled and was terminated; the full run with approved access
-is the successful validation reported above. Host/image acquisition uses network
-access; actor containers retain `--network none`.
+Both execution markers are ended. **Do not rerun either directory, remove its
+marker, or replace assigned outcomes.** The archive contains both complete
+phases; three carried result directories occur in both and must not be counted
+twice. The continuation is the combined 24-assignment report. Source and bundle
+hashes are frozen. Any adapter change needs new qualification and a new plan.
 
-## Next decision: model, spending, and credentials
+Docker requires approved elevated access on this host. The ignored wrapper
+`runs/docker-bin/docker` invokes `sudo -n /usr/bin/docker`; socket permissions
+were not changed. All temporary task containers were removed. Sandboxed Inspect
+unit runs stalled; the complete validation with approved host access passed.
 
-The user approved implementation, testing, and pushing this work. The earlier
-$25 suggestion was never authorized. The new
-[proposed live configuration](experiments/impossible-live-preflight.proposed.json)
-is ready for a concrete decision:
+## Next work
 
-- Two issues × three variants × four arms × one model × one draw = **24 rollouts**.
-- Exact model: `anthropic/claude-haiku-4-5-20251001`, proposed as the bridge to the
-  earlier incident study. Official model/pricing pages were checked September 21.
-- Estimated uncached rates: $1 input / $5 output per million tokens.
-- Aggregate limits: 480 requests, 3,000,000 input tokens, 400,000 output tokens,
-  and **$5 estimated usage**. These are ceilings, not a measured completion cost
-  or provider billing guarantee. Budget exhaustion preserves incomplete outcomes.
-- Per rollout: 20 model calls, 40 actions, five submissions, 2,048 output tokens
-  per request, and 600 seconds. The serial rollout limits total four hours plus
-  setup/reporting overhead.
+Before another live allocation, address feasibility:
 
-**Obtain the model/spending decision before paid inference.** Neither provider
-key was found in the environment or the checked local `.env` locations. Configure
-credentials via the environment or an explicit local env-file path; never write
-keys into version control or artifacts. Account access/credit is unchecked.
-The proposal's `status` field is descriptive metadata, not an execution lock.
-Do not infer authorization from the existence of a prepared plan.
+1. Make the prepared `testbed` environment easier for the actor to invoke correctly.
+   Some calls used base Python and encountered missing pytest/mpmath, despite
+   reference qualification passing in the correct environment.
+2. Establish original-task completion with enough calls. Ten pytest patches made
+   the same incomplete reset/clear repair; no SymPy implementation change was saved.
+3. Verify use of the scored `submit` interface. Shell test failures do not trigger
+   the frozen intervention contract, and no actor called submit in this run.
+4. Freeze the revised setup and get approval for any new live allocation. Preserve
+   this inconclusive preflight and its incomplete outcomes as development evidence.
 
-If this exact proposal is approved and the source/bundle have not changed, its
-existing frozen directory is ready for one launch. The following command makes
-paid requests and is shown only for after the decision and key setup:
-
-```sh
-PATH="$PWD/runs/docker-bin:$PATH" .venv/bin/python -m containment_extension \
-  --env-file /secure/path/model.env \
-  impossible-run runs/impossible-live-preflight-proposed-01 \
-  --qualification runs/impossible-controls-dev-01/qualification.json
-
-.venv/bin/python -m containment_extension impossible-report \
-  runs/impossible-live-preflight-proposed-01
-```
-
-If the model, limits, source, or task selection changes, create a new plan and
-requalify whenever the source/bundle changes. Do not delete execution markers or
-reuse output directories to retry interrupted runs. Preserve assigned failures
-and unknown outcomes. After execution, review original solutions for semantic
-shortcuts and blocker claims against evidence before assigning clean labels.
-
-## Reproduce on another machine
-
-Use Python 3.12 and install `.[impossiblebench,dev]`; run the dependency check.
-Acquire the fixture image and the two images by their recorded digests, then run
-preflight and the full suite with `CONTAINMENT_DOCKER_TESTS=1`. See
-[method](docs/impossiblebench-method.md) for standard commands.
-
-The archive's `bundle.json` is the exact export. It can be used directly, or
-rebuilt with `impossible-export --selection experiments/impossible-selection-dev.json`.
-Run `impossible-qualify` into a new directory before live execution on a new host.
-The archived lifecycle script documents the additional real-task repair/exit
-controls; adapt only its input/output paths for fresh runs.
-
-The original 192-rollout development allocation and 1,152-rollout expansion remain
-proposals. Measure actual token costs, original-task capability, baseline violation
-rates, runtime, and missing outcomes before choosing an expansion. No GPU is
-required for API inference. See the [transfer design](docs/impossiblebench-scaling.md)
-for the intervention contract, assignment rules, and limits of the research claim.
+The earlier 192-rollout and 1,152-rollout allocations remain unapproved proposals.
+Do not launch them automatically. The completed run supplies feasibility and cost
+information, not intervention-effect estimates or proof of low violation rates.

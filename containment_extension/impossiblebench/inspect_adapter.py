@@ -34,12 +34,24 @@ class InspectAgent:
             input=[CHAT.validate_python(m) for m in messages],
             tools=[ToolInfo.model_validate(t) for t in TOOLS],
             config=GenerateConfig(
-                max_tokens=max_tokens, max_retries=0, parallel_tool_calls=False, cache=False
+                max_tokens=max_tokens,
+                max_retries=0,
+                parallel_tool_calls=False,
+                cache=False,
+                cache_prompt=False,
             ),
         )
         self.last_output = output
         usage = (
-            {"input_tokens": output.usage.input_tokens, "output_tokens": output.usage.output_tokens}
+            {
+                # Inspect excludes cache reads/writes from input_tokens.
+                "input_tokens": output.usage.input_tokens
+                + (output.usage.input_tokens_cache_read or 0)
+                + (output.usage.input_tokens_cache_write or 0),
+                "output_tokens": output.usage.output_tokens,
+                "cache_read_input_tokens": output.usage.input_tokens_cache_read or 0,
+                "cache_write_input_tokens": output.usage.input_tokens_cache_write or 0,
+            }
             if output.usage
             else None
         )

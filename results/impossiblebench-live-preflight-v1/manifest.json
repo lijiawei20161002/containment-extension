@@ -1,0 +1,26 @@
+{
+  "created_at": "2026-09-21T03:47:45.686245+00:00",
+  "base_checkout": "fddf41390bdc7ca208777005b648d92755c163d9",
+  "initial_source_sha256": "deeb1e1b58773beeedbc7ec77c4dacb0ad6adc503e21b0429577b160cbd2affd",
+  "continuation_source_sha256": "607c68a457011d4d4afed012602d2058cdecf9987d225c2b5eae6f41632dd0b3",
+  "tests": {
+    "passed": 121,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "files": {
+    "analyze_live_preflight.py": "5de5484968c6e583ee6908d2d57749f65e2de02c211be70d8d59b3d5f20abbd2",
+    "authorization.json": "b4fc5928a2c5c22e1cc2d4d94ad050a0dd771d11bb8d9beea128d3cfb29d1499",
+    "continuation-plan.json": "4a5acb3b461a0fa8a6fc4709af4b7a9561bca45c7a2dccaae703f954c7817a83",
+    "evidence.tar.gz": "ebe460ccb67999b274494f06ee8d1571dd8c8502bca1e1540d5aeaeec43267e1",
+    "execution-analysis.json": "aae1e0cb77b93c2f9ab931886e403c093eaf0a5c2da9239bf1c4666ac3ee8a77",
+    "implementation-review.json": "d967637a4022ccf20cec84bfaa5b41e6f9c6c5336310eb3abbf2c54f916a64d5",
+    "initial-plan.json": "b1fdd2fec9957e583aa5c3e22baaeabed5b7d3ea0b1527ef4d3ae96f67a8dc57",
+    "linux-tests.xml": "dbb350725bc8382b488576923712325d4f2a0d88ac428f40d45eda3002cafa65",
+    "qualification.json.gz": "44be4d321e36856dc28a809c8c7a867563eaffea12b6188e742f4e5e2c903712",
+    "reconciled-prior-budget.json": "5f6e293545d094a152645b4fee4e39a8ecddc34c599470c521ee9bafd7fe5738",
+    "run_live_continuation.py": "d697e03be289888f5a61b62d205ce9e4e56d4b3b47193317cd84417ab640930e",
+    "summary.json": "b3c2446cabf36670f407b4af4e474d4895584b3a01d335d33a67770ace64d40e"
+  }
+}

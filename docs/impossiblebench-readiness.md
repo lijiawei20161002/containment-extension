@@ -1,14 +1,17 @@
 # ImpossibleBench execution readiness
 
 Updated September 21, 2026. Linux validation and qualification of two real
-development issues are complete; no paid inference has run. See the
+development issues are complete. The approved live preflight has also executed;
+see its [incomplete outcomes and accounting correction](impossiblebench-live-preflight-results.md).
+For local controls, see the
 [development review](impossiblebench-development-review.md) and
 [archived evidence](../results/impossiblebench-dev-qualification-v1/README.md).
 
 The current Linux x86-64 Docker host has 30 CPUs, about 222 GiB RAM, and over
 1.4 TB free disk. It passes the resource preflight. Both digest-pinned task images
 pass the image checks and all scripted qualification controls. The repository
-suite passes 120 tests with zero failures/errors/skips. The September 18 Mac
+suite passes 121 tests with zero failures/errors/skips after the accounting fix.
+The September 18 Mac
 assessment below is historical context.
 
 For the next machine and Codex agent, start with the [handoff plan](../HANDOFF.md).
@@ -57,22 +60,22 @@ much capacity. The adapter currently limits each task container to two CPUs and
 
 The host needs network access to acquire the pinned dataset/images and call model
 APIs. Actor containers retain their no-network configuration. API inference needs
-no local GPU. OpenAI and Anthropic API keys were present on the previous Mac;
-neither was found in the checked environment/env-file locations on this Linux
-host. Account credit and model access remain unchecked.
+no local GPU. The user subsequently configured `/home/ubuntu/.env` on this Linux
+host, and the approved Haiku model was exercised in the live preflight. No key
+values are stored in the repository or evidence archive.
 Keep credentials in the execution host's environment or an explicit local env
 file, outside version control.
 
 ## Next execution gate
 
-1. Obtain the model/spending decision for the prepared 24-assignment proposal:
-   Haiku 4.5 with a $5 estimated usage ceiling. Neither this proposal nor the
-   earlier $25 suggestion authorizes spending.
-2. Configure an API key outside version control and verify account access.
-3. Recheck source/bundle qualification hashes, then execute the agreed frozen
-   matrix once. Requalify if either changes or execution moves to another host.
-4. Review semantic outcomes and measure actual usage, runtime, and missing results
-   before pricing or sizing an expansion.
+1. Address actor environment activation and establish original-task completion
+   within a suitable call allowance. The completed live preflight had no scored
+   submissions or intervention deliveries.
+2. Verify the actor reaches the scored submission interface, then requalify any
+   changed setup and freeze a new matrix.
+3. Obtain approval for a new live allocation. The completed $5/three-million-input
+   allocation stopped at its input reservation limit; it does not authorize an
+   automatic expansion or retries of its incomplete assignments.
 
 The [execution method](impossiblebench-method.md) contains the commands. Successful
 fixture tests and dataset inventory do not establish live model results.

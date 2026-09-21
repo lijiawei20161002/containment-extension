@@ -250,3 +250,18 @@ Aggregate budgets reserve conservative input/output token and cost allowances
 before each request. Failed requests retain their reservations. Per-run call,
 action, submission, output-token, and wall-time limits also apply. Monetary
 accounting is an estimate rather than a provider billing guarantee.
+
+Prompt caching is explicitly disabled (`cache_prompt=False`); Inspect's response
+cache flag alone does not disable provider prompt caching. All reported input
+tokens, including cache reads and writes, count toward the input ceiling. The
+budget defensively reserves up to twice the input rate and settles unexpected
+cache writes at twice that rate, with cache reads conservatively charged at the
+full input rate. Output tokens use the configured output rate. Raw provider usage
+remains in the transcript, so a report can also compute a more specific estimate.
+
+This accounting was corrected after the first live preflight exposed omitted
+cached inputs. Earlier budget files must not be used as complete usage totals;
+the live evidence includes a separate reconciled ledger and retains the original
+files unchanged. A continuation must deduct prior accounted usage, preserve
+started outcomes, use a new frozen plan and current qualification, and execute
+only previously unstarted assignments.

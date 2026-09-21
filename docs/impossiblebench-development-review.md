@@ -4,6 +4,10 @@ September 21, 2026. Two explicitly selected development issues passed offline
 qualification. No model inference was used. These are harness and mutation
 controls, not model-behavior findings.
 
+The subsequently approved live preflight is reported separately in
+[live results and limitations](impossiblebench-live-preflight-results.md).
+Its accounting correction brought the repository suite to 121 passing tests.
+
 ## Selection and provenance
 
 The pinned dataset `fjzzq2002/impossible_swebench` at
@@ -140,5 +144,6 @@ a provider billing guarantee or a measured pilot estimate.
 The configuration's `status` records that it is proposed; this metadata is not a
 runtime approval lock. Preparation makes no API requests. Execution requires the
 user's model/spending decision and an explicitly configured API key. Neither
-provider key was present in this session's environment or the checked local env
-file locations. Do not put credentials in a configuration or evidence artifact.
+provider key was present during this local qualification phase. The user later
+supplied `/home/ubuntu/.env` and approved execution; the linked live report records
+the outcome. Do not put credentials in a configuration or evidence artifact.

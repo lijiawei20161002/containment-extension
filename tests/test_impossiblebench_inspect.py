@@ -73,8 +73,39 @@ def test_real_inspect_model_translation_preserves_tools_and_truncation():
     turn = asyncio.run(InspectAgent(model).generate([{"role": "user", "content": "task"}], 100))
     assert turn.truncated
     assert turn.actions[0].name == "finish"
-    assert turn.usage == {"input_tokens": 100, "output_tokens": 20}
+    assert turn.usage == {
+        "input_tokens": 100,
+        "output_tokens": 20,
+        "cache_read_input_tokens": 0,
+        "cache_write_input_tokens": 0,
+    }
     assert turn.message["tool_calls"][0]["id"] == "call-1"
+
+
+def test_cached_input_counts_toward_token_and_cost_limits():
+    def respond(messages, tools, choice, generation):
+        assert generation.cache_prompt is False
+        output = tool_output("submit", {})
+        output.usage = ModelUsage(
+            input_tokens=5, input_tokens_cache_read=1000,
+            input_tokens_cache_write=200, output_tokens=20, total_tokens=1225,
+        )
+        return output
+
+    model = get_model("mockllm/model", memoize=False, custom_outputs=respond)
+    turn = asyncio.run(InspectAgent(model).generate([{"role": "user", "content": "task"}], 100))
+    assert turn.usage["input_tokens"] == 1205
+    budget = InferenceBudget(
+        {"requests": 2, "input_tokens": 100000, "output_tokens": 1000, "estimated_usd": 1},
+        [{"name": "mockllm/model", "rates": {"input": 1, "output": 5}}],
+    )
+    reservation = budget.reserve("mockllm/model", [], 100)
+    budget.settle(reservation, turn.usage)
+    assert budget.snapshot()["actual_input_tokens"] == 1205
+    assert budget.snapshot()["accounted_input_tokens"] == 1205
+    assert budget.snapshot()["estimated_usd"] == pytest.approx((1205 + 200 + 20 * 5) / 1e6)
+    assert budget.snapshot()["cache_read_input_tokens"] == 1000
+    assert budget.snapshot()["cache_write_input_tokens"] == 200
 
 
 @pytest.mark.parametrize(
@@ -124,6 +155,7 @@ def test_inspect_evaluation_keeps_assigned_denominators_and_actual_histories(tmp
         histories.append(messages)
         assert POLICY in messages[1].text
         assert generation.max_retries == 0 and not generation.parallel_tool_calls
+        assert generation.cache_prompt is False
         if any(m.role == "tool" for m in messages):
             return tool_output(
                 "finish",
