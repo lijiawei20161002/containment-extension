@@ -5,11 +5,12 @@ with a custom Inspect solver, a disposable Docker backend, frozen assignments,
 and separate raw-score and policy-violation accounting. The native service runner
 remains dependency-free.
 
-The implementation has been exercised with scripted model outputs and synthetic
-original/one-off/conflicting task triples. These checks validate the harness;
-they are not evidence about model behavior or results on Impossible-SWEbench.
-Actual SWE-bench issues and images must pass their own qualification before a
-study can execute. No paid model pilot is included in these checks.
+The implementation has been exercised with scripted model outputs, synthetic
+task triples, and two real development issues on Linux. Read the
+[development review and qualification](impossiblebench-development-review.md).
+These checks validate the harness and selected environments; they are not
+model-behavior findings. Each new bundle must pass its own qualification before
+a study can execute. No paid model pilot is included in these checks.
 
 ## Install and test
 
@@ -43,6 +44,13 @@ Output directories must be new. Qualification reports bind the dataset contents
 and adapter source hash. A source change requires fresh qualification. The
 default test suite skips the opt-in Docker test, and skips optional integration
 modules when their dependencies are absent.
+
+Qualification runs reference/empty scoring and separate observer controls for
+every task variant, including variants that share an image. The `observer_checks`
+list records exact-path transient detection, restoration confirmed by complete
+final snapshots, and observer write denial. Cleanup errors fail qualification.
+Reports that omit, duplicate, or mismatch a variant's observer checks are rejected;
+older reports with only a single aggregate observer check must be regenerated.
 
 The end-to-end Docker test runs all twelve task-variant/arm assignments for one
 scripted model, exercises legitimate repair and supported stopping, and separately
@@ -89,8 +97,10 @@ See the [current resource assessment](impossiblebench-readiness.md).
 
 Create a selection JSON with an immutable Hugging Face commit and explicit issue
 IDs. Each task needs a locally available image pinned by digest and a review of
-each mutation's conflict with the specification. Example structure (replace the
-placeholder values before use):
+each mutation's conflict with the specification. The qualified development
+selection is available in
+[`experiments/impossible-selection-dev.json`](../experiments/impossible-selection-dev.json).
+Example structure for additional issues (replace the placeholder values):
 
 ```json
 {

@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-21",
+  "scripted": true,
+  "api_requests": 0,
+  "base_checkout": "b4afd70fc046cf3f15beaf811df958e06ff409dd",
+  "source_sha256": "deeb1e1b58773beeedbc7ec77c4dacb0ad6adc503e21b0429577b160cbd2affd",
+  "bundle_sha256": "f929b57bd4ef06c4e8a5cde3385a5d049d0d4086ce3d85fcc94efbbf6313a85e",
+  "python": "Python 3.12.14",
+  "tests": {
+    "passed": 120,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "qualification": {
+    "passed": true,
+    "score_controls": 12,
+    "observer_controls": 6
+  },
+  "lifecycle": {
+    "passed": true,
+    "controls": 12
+  },
+  "files": {
+    "bundle.json": "3340ce4f25ac9626708c3ac33c2aa30d2f784ffde09e3c7f4522b475a2da6ca7",
+    "catalog.json": "9f12cdf71e250bb8c8ea2ee3a8a0684795796b3a78bc0d4e384ad71fe614e92b",
+    "check_development_lifecycle.py": "2bd6d7257e0639a55ecc16a58a81540db8fb3d8fb058f6cfc08793db953ad4b6",
+    "host-preflight.json": "b642a5862b2eec20d3a92b36c1d7988c7f38f6537e1a9f9c7cfb49c930f9b426",
+    "image-preflight.json": "75e90b04dd868ac03269c8c43bb958dcb85fe5dd1d04c312f74b51085ddd78f6",
+    "lifecycle-report.json": "4ff050eb8db7d23c56c45da6a58e26074c63f083131f3c698f57d7970b38d22a",
+    "lifecycle.tar.gz": "293bcf8be225e3aa96e8623f059cb33a13318c1e885e6f97efd01d14290f08bb",
+    "linux-dependencies.txt": "574b9156b3b1987f7e945f26504d97323f65dcb7f0638133819b24a631846144",
+    "linux-tests.xml": "931d9a1baafe3e556995e80a98aa7e90b72c0743d4f9b24014c22c13024b7b9f",
+    "qualification.json.gz": "cbc00ff01aab7eba7d3c729f8ef2b3d439f6c72dfbc69783edfba09b909f18a3",
+    "source/__init__.py": "dfa0403bcd8fd509a4113850929c50f36ccd542557c9dc544dac707a7c3f8247",
+    "source/catalog.py": "0335c0006f0e30c6662d9c50d84e9f91ab4dde148707a387aeaa7cb9773708e6",
+    "source/dataset.py": "36efe412a47f1c87bb2aa2cc18d2f81711e89ebe5641de8b1518f01be854e22d",
+    "source/docker.py": "29bb88719d944ce8f74959a74c7b4332ff679e5f79fc1b9039f638c044717137",
+    "source/inspect_adapter.py": "690cec923d844c5d19bca70ee7801596b13d9f7a421605b839d4638ee09fe31f",
+    "source/observer.py": "8ad0971acfdf94efad13d0558b290037002908ad51f67479a9accdfc7d28c1d8",
+    "source/preflight.py": "7bfdba68037df38d1802a8144f15b00003e4dbb54e060cbfc0bb06869c8c084c",
+    "source/qualification.py": "80b3222761d50388d10b556c5cb9f47cce4c7cc1280c030a562878bc2d630f4b",
+    "source/runner.py": "40307ac901613888096753dfa8b48549c7cc53dbbe70cdeecc78c6568bffcf07",
+    "source/study.py": "53bf1ccc87ea101bfae08ed68402e761e30ddbe1cf2727ebce34cbb02524f3c8"
+  }
+}

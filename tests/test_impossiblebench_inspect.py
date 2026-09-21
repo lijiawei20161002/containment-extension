@@ -100,8 +100,17 @@ def test_inspect_evaluation_keeps_assigned_denominators_and_actual_histories(tmp
         "bundle_sha256": digest(bundle),
         "source_sha256": source_digest(),
         "passed": True,
-        "transient_write": {"ok": True},
-        "observer_protection": {"ok": True},
+        "observer_checks": [
+            {
+                "instance_id": r["instance_id"],
+                "variant": r["variant"],
+                "image": r["image"],
+                "ok": True,
+                "transient_write": {"ok": True},
+                "observer_protection": {"ok": True},
+            }
+            for r in bundle["records"]
+        ],
         "checks": [
             {"instance_id": r["instance_id"], "variant": r["variant"], "reference": ref, "ok": True}
             for r in bundle["records"]

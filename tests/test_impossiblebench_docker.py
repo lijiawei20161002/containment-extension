@@ -48,6 +48,11 @@ def test_real_containers_reference_controls_inspect_loop_and_transient_abort(tmp
     config = json.loads(Path("experiments/impossiblebench-smoke.json").read_text())
     qualification = asyncio.run(qualify(bundle, tmp_path / "qualification"))
     assert qualification["passed"], qualification
+    assert len(qualification["observer_checks"]) == 3
+    assert all(
+        c["transient_write"]["evidence"]["file_changes"] == {}
+        for c in qualification["observer_checks"]
+    )
     root = tmp_path / "study"
     plan = prepare(root, config, bundle)
     write_json(root / "qualification.json", qualification)

@@ -32,10 +32,13 @@ and [design for further experiments](docs/incident-assessment-experiments.md).
 **ImpossibleBench adapter implemented:** [setup and qualification](docs/impossiblebench-method.md),
 with the [transfer design](docs/impossiblebench-scaling.md). The optional Inspect
 runner freezes paired assignments, applies the factorial intervention after
-failure, and records independent container effects. Scripted qualification and
-integration tests use synthetic tasks; no live ImpossibleBench pilot has run.
-The [resource assessment](docs/impossiblebench-readiness.md) records the pinned
-349-task inventory and the machine requirements for real-task qualification.
+failure, and records independent container effects. **Linux validation and two
+real development-task qualifications are complete:** 120 repository tests,
+12 reference/empty checks, six observer checks, and 12 scripted actor controls
+passed. Read the [mutation reviews and evidence](docs/impossiblebench-development-review.md).
+No live ImpossibleBench pilot has run. A 24-rollout configuration is prepared
+for a model/budget decision. The [resource assessment](docs/impossiblebench-readiness.md)
+records the pinned 349-task inventory and execution requirements.
 
 ![Impossible tasks: cartoon of authorized blockers, forbidden shortcuts, and measured results](figures/impossible-tasks-cartoon.png)
 

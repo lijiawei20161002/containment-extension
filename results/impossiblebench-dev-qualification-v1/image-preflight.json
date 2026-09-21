@@ -1,0 +1,119 @@
+{
+  "profile": "swebench",
+  "resource_checks_passed": true,
+  "host": {
+    "docker_available": true,
+    "free_disk_bytes": 1423328116736,
+    "os": "linux",
+    "cpus": 30,
+    "memory_bytes": 238546337792,
+    "architecture": "x86_64",
+    "docker_version": "29.2.1",
+    "local_docker": true
+  },
+  "images": [
+    {
+      "image": "swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10051@sha256:e38365e835d4ba57f3e7331778894f51ac20bf6c5893827065da8657525e123f",
+      "available": true,
+      "architecture": "amd64",
+      "size_bytes": 1028984068,
+      "image_id": "sha256:e38365e835d4ba57f3e7331778894f51ac20bf6c5893827065da8657525e123f",
+      "volumes": null
+    },
+    {
+      "image": "swebench/sweb.eval.x86_64.sympy_1776_sympy-24562@sha256:776086d668f184408eb410669894ed1721bd813aa01af4ffd2884e3312a843da",
+      "available": true,
+      "architecture": "amd64",
+      "size_bytes": 1106168814,
+      "image_id": "sha256:776086d668f184408eb410669894ed1721bd813aa01af4ffd2884e3312a843da",
+      "volumes": null
+    }
+  ],
+  "checks": [
+    {
+      "name": "docker_available",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linux_containers",
+      "passed": true,
+      "detail": "linux"
+    },
+    {
+      "name": "cpus",
+      "passed": true,
+      "detail": {
+        "observed": 30,
+        "planning_threshold": 8
+      }
+    },
+    {
+      "name": "memory_bytes",
+      "passed": true,
+      "detail": {
+        "observed": 238546337792,
+        "planning_threshold": 17179869184
+      }
+    },
+    {
+      "name": "free_disk_bytes",
+      "passed": true,
+      "detail": {
+        "observed": 1423328116736,
+        "planning_threshold": 120000000000
+      }
+    },
+    {
+      "name": "storage_on_execution_host",
+      "passed": true,
+      "detail": "Run this command on the Docker host; client disk space cannot qualify a remote daemon."
+    },
+    {
+      "name": "recommended_architecture",
+      "passed": true,
+      "detail": "SWE-bench recommends x86-64; ARM requires separate image qualification."
+    },
+    {
+      "name": "cached_image:swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10051@sha256:e38365e835d4ba57f3e7331778894f51ac20bf6c5893827065da8657525e123f",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "image_architecture:swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10051@sha256:e38365e835d4ba57f3e7331778894f51ac20bf6c5893827065da8657525e123f",
+      "passed": true,
+      "detail": {
+        "image": "amd64",
+        "docker": "x86_64"
+      }
+    },
+    {
+      "name": "image_without_volumes:swebench/sweb.eval.x86_64.pytest-dev_1776_pytest-10051@sha256:e38365e835d4ba57f3e7331778894f51ac20bf6c5893827065da8657525e123f",
+      "passed": true,
+      "detail": "Image-declared volumes would create mounts prohibited by the backend."
+    },
+    {
+      "name": "cached_image:swebench/sweb.eval.x86_64.sympy_1776_sympy-24562@sha256:776086d668f184408eb410669894ed1721bd813aa01af4ffd2884e3312a843da",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "image_architecture:swebench/sweb.eval.x86_64.sympy_1776_sympy-24562@sha256:776086d668f184408eb410669894ed1721bd813aa01af4ffd2884e3312a843da",
+      "passed": true,
+      "detail": {
+        "image": "amd64",
+        "docker": "x86_64"
+      }
+    },
+    {
+      "name": "image_without_volumes:swebench/sweb.eval.x86_64.sympy_1776_sympy-24562@sha256:776086d668f184408eb410669894ed1721bd813aa01af4ffd2884e3312a843da",
+      "passed": true,
+      "detail": "Image-declared volumes would create mounts prohibited by the backend."
+    }
+  ],
+  "notes": [
+    "Read-only check: no image pulls, containers, model calls, or credential values.",
+    "Planning thresholds are conservative; a pass does not qualify task behavior.",
+    "Network access is needed for image acquisition and API inference on the host; actor containers remain offline."
+  ]
+}

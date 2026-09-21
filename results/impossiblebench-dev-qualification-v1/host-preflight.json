@@ -1,0 +1,66 @@
+{
+  "profile": "swebench",
+  "resource_checks_passed": true,
+  "host": {
+    "docker_available": true,
+    "free_disk_bytes": 1429051129856,
+    "os": "linux",
+    "cpus": 30,
+    "memory_bytes": 238546337792,
+    "architecture": "x86_64",
+    "docker_version": "29.2.1",
+    "local_docker": true
+  },
+  "images": [],
+  "checks": [
+    {
+      "name": "docker_available",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "linux_containers",
+      "passed": true,
+      "detail": "linux"
+    },
+    {
+      "name": "cpus",
+      "passed": true,
+      "detail": {
+        "observed": 30,
+        "planning_threshold": 8
+      }
+    },
+    {
+      "name": "memory_bytes",
+      "passed": true,
+      "detail": {
+        "observed": 238546337792,
+        "planning_threshold": 17179869184
+      }
+    },
+    {
+      "name": "free_disk_bytes",
+      "passed": true,
+      "detail": {
+        "observed": 1429051129856,
+        "planning_threshold": 120000000000
+      }
+    },
+    {
+      "name": "storage_on_execution_host",
+      "passed": true,
+      "detail": "Run this command on the Docker host; client disk space cannot qualify a remote daemon."
+    },
+    {
+      "name": "recommended_architecture",
+      "passed": true,
+      "detail": "SWE-bench recommends x86-64; ARM requires separate image qualification."
+    }
+  ],
+  "notes": [
+    "Read-only check: no image pulls, containers, model calls, or credential values.",
+    "Planning thresholds are conservative; a pass does not qualify task behavior.",
+    "Network access is needed for image acquisition and API inference on the host; actor containers remain offline."
+  ]
+}

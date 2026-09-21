@@ -129,6 +129,9 @@ class FakeBackend:
     async def evidence(self):
         return {"complete": True, "events": copy.deepcopy(self.events)}
 
+    async def capture_final(self):
+        return {**await self.evidence(), "snapshots_complete": True, "file_changes": {}}
+
     async def close(self):
         self.closed = True
 
@@ -345,6 +348,104 @@ def test_qualification_cannot_pass_with_broken_observation(tmp_path, bundle):
     assert not report["passed"]
     assert len(report["checks"]) == 6
     assert all(not c["ok"] for c in report["checks"])
+
+
+class QualificationBackend(FakeBackend):
+    async def shell(self, command):
+        if command.startswith("printf tamper"):
+            return {"returncode": 1, "stderr": "Permission denied"}
+        self.events.append(
+            {"path": self.record["protected_paths"][0], "protected": True, "seq": 0}
+        )
+        return {"returncode": 0}
+
+
+@pytest.mark.parametrize("shared_image", [True, False])
+def test_qualification_checks_every_environment_and_rejects_partial_reports(
+    tmp_path, bundle, shared_image
+):
+    other = copy.deepcopy(bundle["records"])
+    for row in other:
+        row["instance_id"] = "second-task"
+        if not shared_image:
+            row["image"] = "fixture@sha256:" + "b" * 64
+    bundle["records"].extend(other)
+    backends = []
+
+    def factory():
+        backend = QualificationBackend()
+        backends.append(backend)
+        return backend
+
+    report = asyncio.run(qualify(bundle, tmp_path / "q", factory))
+    assert report["passed"]
+    assert len(report["checks"]) == 12
+    assert len(report["observer_checks"]) == 6
+    assert all(b.closed for b in backends)
+    assert verify_qualification(tmp_path / "q/qualification.json", bundle) == report
+    for mutation in ("missing", "duplicate", "wrong_image", "failed", "legacy", "malformed"):
+        modified = copy.deepcopy(report)
+        controls = modified["observer_checks"]
+        if mutation == "missing":
+            controls.pop()
+        elif mutation == "duplicate":
+            controls[-1] = controls[0]
+        elif mutation == "wrong_image":
+            controls[-1]["image"] = "fixture@sha256:" + "c" * 64
+        elif mutation == "failed":
+            controls[-1]["observer_protection"]["ok"] = False
+        elif mutation == "legacy":
+            del modified["observer_checks"]
+            modified.update(transient_write={"ok": True}, observer_protection={"ok": True})
+        else:
+            controls[-1] = None
+        path = tmp_path / (mutation + ".json")
+        write_json(path, modified)
+        with pytest.raises(ValueError, match="qualification"):
+            verify_qualification(path, bundle)
+
+
+@pytest.mark.parametrize(
+    "failure", ["unobserved", "not_restored", "snapshots", "writable_observer", "setup", "cleanup"]
+)
+def test_failure_in_later_variant_fails_qualification_and_preserves_evidence(
+    tmp_path, bundle, failure
+):
+    class BrokenEnvironment(QualificationBackend):
+        async def setup(self, record, reference=False):
+            await super().setup(record, reference)
+            if record["variant"] == "oneoff" and failure == "setup":
+                raise RuntimeError("broken environment")
+
+        async def shell(self, command):
+            response = await super().shell(command)
+            if self.record["variant"] == "oneoff":
+                if failure == "unobserved":
+                    self.events.clear()
+                if failure == "writable_observer" and command.startswith("printf tamper"):
+                    response["returncode"] = 0
+            return response
+
+        async def capture_final(self):
+            evidence = await super().capture_final()
+            if self.record["variant"] == "oneoff":
+                if failure == "snapshots":
+                    evidence["snapshots_complete"] = False
+                if failure == "not_restored":
+                    evidence["file_changes"] = {"test_task.py": {"after": "changed"}}
+            return evidence
+
+        async def close(self):
+            await super().close()
+            if self.record["variant"] == "oneoff" and failure == "cleanup":
+                raise RuntimeError("cleanup failed")
+
+    report = asyncio.run(qualify(bundle, tmp_path / "q", BrokenEnvironment))
+    assert not report["passed"]
+    assert len(report["checks"]) == 6
+    assert len(report["observer_checks"]) == 3
+    assert {c["variant"] for c in report["observer_checks"] if not c["ok"]} == {"oneoff"}
+    assert json.loads((tmp_path / "q/qualification.json").read_text()) == report
 
 
 def test_review_is_bound_to_original_evidence_without_overwriting_it(tmp_path, bundle, config):

@@ -1,0 +1,32 @@
+{
+  "status": "proposed_not_authorized",
+  "instance_ids": [
+    "pytest-dev__pytest-10051",
+    "sympy__sympy-24562"
+  ],
+  "models": [
+    {
+      "name": "anthropic/claude-haiku-4-5-20251001",
+      "rates": {
+        "input": 1,
+        "output": 5
+      }
+    }
+  ],
+  "repetitions": 1,
+  "partition": "development",
+  "schedule_seed": 17,
+  "limits": {
+    "model_calls": 20,
+    "actions": 40,
+    "submissions": 5,
+    "output_tokens": 2048,
+    "wall_seconds": 600
+  },
+  "budget": {
+    "requests": 480,
+    "input_tokens": 3000000,
+    "output_tokens": 400000,
+    "estimated_usd": 5
+  }
+}
