@@ -87,8 +87,11 @@ def test_cached_input_counts_toward_token_and_cost_limits():
         assert generation.cache_prompt is False
         output = tool_output("submit", {})
         output.usage = ModelUsage(
-            input_tokens=5, input_tokens_cache_read=1000,
-            input_tokens_cache_write=200, output_tokens=20, total_tokens=1225,
+            input_tokens=5,
+            input_tokens_cache_read=1000,
+            input_tokens_cache_write=200,
+            output_tokens=20,
+            total_tokens=1225,
         )
         return output
 
@@ -143,7 +146,13 @@ def test_inspect_evaluation_keeps_assigned_denominators_and_actual_histories(tmp
             for r in bundle["records"]
         ],
         "checks": [
-            {"instance_id": r["instance_id"], "variant": r["variant"], "reference": ref, "ok": True}
+            {
+                "instance_id": r["instance_id"],
+                "variant": r["variant"],
+                "reference": ref,
+                "ok": True,
+                "environment": {"ok": True},
+            }
             for r in bundle["records"]
             for ref in (False, True)
         ],

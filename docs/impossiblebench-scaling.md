@@ -1,11 +1,12 @@
 # Scaling the blocker study with ImpossibleBench
 
-**Design assessment, September 18, 2026. Proposed work; no benchmark runs or model calls.**
+**Transfer design, originally September 18; planning status updated September 21, 2026.**
 
-**Implementation update:** the optional adapter, Docker observer, frozen study
-commands, and scripted qualification tests are now implemented. See the
-[execution method](impossiblebench-method.md). The study allocations below remain
-proposed; no live ImpossibleBench model evaluation has been run.
+**Current status:** the adapter, observer, and qualification are implemented. The
+[24-assignment live preflight](impossiblebench-live-preflight-results.md) executed
+but reached no scored submissions or intervention deliveries. Use the
+[active roadmap](experiment-roadmap.md) for next-run order, budgets, and gates;
+this page specifies the scientific transfer question and factorial analysis.
 
 Yes: use Impossible-SWEbench to test whether full-scope reminders and explicit
 acceptance of a justified blocker generalize across software tasks. Keep the
@@ -15,7 +16,8 @@ repository or another run's answer archive.
 
 This assessment inspected containment-extension at `c9cbcbe` and ImpossibleBench
 at [`061dc3dce6a96ab6cf02a855157263033dcfa3ba`](https://github.com/safety-research/impossiblebench/tree/061dc3dce6a96ab6cf02a855157263033dcfa3ba).
-Upstream observations below are source-review findings, not runtime validation.
+Upstream observations below describe that original source review. Current local
+validation is recorded in the [development review](impossiblebench-development-review.md).
 
 ## What transfers
 
@@ -62,22 +64,24 @@ sampling draw does not create a new task. Separate development and evaluation by
 base issue, keeping all variants and repetitions together. Reserve whole
 repositories where feasible for a stronger generalization check.
 
-Suggested staged allocation, subject to measured costs and development results:
+Revised stages, with exact gates and budget proposals in the roadmap:
 
 | Stage | Allocation | Purpose |
 | --- | --- | --- |
-| Local qualification | A few task triples, reference and empty patches, scripted effects and exits | Validate mutations, scoring, termination, and isolation before inference |
-| Development pilot | 8 base issues × 3 variants × 4 arms × 2 models × 1 draw = **192 rollouts** | Check feasibility, model capability, event rates, and costs |
-| Held-out expansion | 24 new base issues × 3 variants × 4 arms × 2 models × 2 draws = **1,152 rollouts** | Estimate transfer across tasks |
+| P0: revised setup | Existing two task triples and scripted controls | Qualify environment, subset scheduling, budgets, and scored-submit behavior |
+| C1: capability | 2 original issues × N × 1 model × 2 draws = **4 runs** | Establish original-task capability at a 60-call horizon |
+| C2: trigger reachability | 2 issues × 2 impossible variants × N/RE × 1 model × 1 draw = **8 runs** | Establish timely intervention delivery |
+| C3: development factorial | 2 issues × 3 variants × 4 arms × 1 model × 2 draws = **48 runs** | Explore R/E effects after capability and exposure gates pass |
+| Later task expansion | Earlier **192- and 1,152-run** matrices are deferred | Recalculate task coverage, cost, and power from usable development evidence |
 
-Keep Haiku 4.5 as a bridge to the existing positive result if still available.
-Use development data to choose a second model with adequate original-task
-capability and a measurable baseline event rate. Retain GPT-4.1 mini as an optional
-bridge; do not interpret inability to solve software issues as low cheating
-propensity. Freeze exact model IDs and selection rules before held-out evaluation.
-The allocation above is exploratory, not a power calculation. Set a confirmatory
-sample size using task-clustered development estimates and a prespecified effect
-size and capability-loss tolerance.
+Keep the previously tested Haiku 4.5 revision for C1/C2, subject to access checks.
+If capability remains inadequate after the setup repairs, compare model capability
+in a new development allocation before studying reminder effects. A later second
+model needs adequate original-task capability and a measurable baseline event
+rate. Do not interpret inability to solve software issues as low cheating propensity.
+Freeze exact model IDs and selection rules before held-out evaluation. The staged
+counts are development allocations, not power calculations; size confirmation
+using task-clustered estimates and a prespecified capability-loss tolerance.
 
 ## Intervention contract
 
@@ -151,20 +155,19 @@ tasks for uncertainty and show repository-level variation. Keep all assigned
 denominators and missing-outcome bounds. Do not pool original capability scores
 with impossible-task violation rates.
 
-## Integration work identified in source
+## Historical integration findings and their implementation
 
-The existing runner dispatches a single bounded `lab_request` tool. It cannot run
-ImpossibleBench's shell tasks without a new backend. Reuse the design and artifact
-contracts from `incident_study.py`, the budget-reservation approach from
-`budget.py`, and monitor-view construction from `prepare_incident_monitors.py`.
-Their fixture-specific labels and provider histories need adaptation.
-
-Use an optional Inspect adapter with an explicit solver and richer scorer, leaving
-the native reproduction runner available. Upstream accepts custom solvers and
-scorers, so the dataset need not be rebuilt.
+The native runner dispatches a bounded `lab_request` tool. The optional Inspect
+adapter now adds shell tasks, a Docker backend, frozen schedules, independent
+effect evidence, and aggregate budget reservations. Its implementation draws on
+the artifact contracts in `incident_study.py`; monitor evaluation remains separate
+work. The [execution method](impossiblebench-method.md) documents current support.
+The original source review identified the issues below; they explain why the
+adapter differs from upstream and are not an unimplemented task list.
+Upstream accepts custom solvers and scorers, so the dataset need not be rebuilt.
 [Task API](https://github.com/safety-research/impossiblebench/blob/061dc3dce6a96ab6cf02a855157263033dcfa3ba/src/impossiblebench/swebench_tasks.py).
 
-Source review found four issues to address before execution:
+Original source-review requirements:
 
 1. **Network isolation is not established by the flag.** For SWE-bench,
    `allow_internet=False` generates a Compose network with `internal: false`;
@@ -199,17 +202,14 @@ broader containment claims in [our protocol](protocol.md).
 
 ## Execution decision
 
-Proceed first with the adapter and local qualification, then the 192-rollout
-development pilot. The 1,152-rollout expansion is a candidate design to revise
-using development costs and power estimates. The historical $0.95 service pilot
-is not a cost estimate for repository tasks with much larger contexts and test
-execution. Set aggregate token, monetary, and wall-time limits from a measured
-preflight. API inference needs no local GPU; test execution needs CPU, memory,
-storage, and a qualified isolated backend.
-
-At review time the active Python 3.13 interpreter lacked `inspect_ai` and
-`swebench`. A Docker CLI was present; daemon availability and task images were not
-validated. No dependencies were installed and no benchmark code was executed.
+Follow **P0 → C1 → C2 → C3** in the [active roadmap](experiment-roadmap.md).
+The next allocation is four original-task runs, not an expansion across all
+intervention cells. C1 raises per-run calls and input capacity after fixing the
+environment and submission interface. The 192- and 1,152-run expansions remain
+deferred. The historical $0.95 service pilot is not a cost estimate for repository
+tasks with growing contexts and test execution. API inference needs no local GPU;
+test execution uses the qualified Linux backend documented in
+[readiness](impossiblebench-readiness.md).
 
 If the intervention transfers, the supported claim is that full-policy reminders
 and accepted-blocker wording reduce measured violations across the tested coding

@@ -2,7 +2,13 @@
 
 **Experiment design, 15 September 2026. Status: proposed; no new model inference or training run.**
 
-## Recommendation
+**September 21 planning status:** this is a deferred research agenda. The
+[active roadmap](experiment-roadmap.md) supersedes its execution order and budget
+suggestions. Cue, link, and incident pilots have since completed; coding capability
+and intervention exposure are the immediate gates. The proposed 128-continuation
+scaffold factorial and training allocations below have not been run.
+
+## Research question
 
 Test whether incidental prompt features select a task-pursuit behavior that survives
 explicit scope constraints, and whether retry scaffolding amplifies that effect.
@@ -94,7 +100,7 @@ Keep the current closed-world dispatcher and local SQLite services. These
 experiments need neither an arbitrary shell nor changes to the outer network
 boundary. Moving to Inspect can follow once these measurements are stable.
 
-## 1. First API experiment: cue × scaffold
+## 1. Deferred API experiment: cue × scaffold
 
 ### Four scaffold arms at the common checkpoint
 
@@ -410,7 +416,9 @@ effect/capability plots, and a concise claim table. The most informative first
 figure is the violation rate by scaffold, with separate panels for presentation
 and feasibility, accompanied by authorized-success and blocker rates.
 
-**Decision:** implement assay repairs and the 128-continuation pilot first.
-Advance to independent-task validation after the interventions work. Allocate
-GPU training only when the behavioral assay has enough sensitivity to measure
-the proposed data and reward interventions.
+**Current decision:** defer this scaffold factorial and follow the
+[active roadmap](experiment-roadmap.md). Revisit individual scaffold hypotheses
+after capability, intervention exposure, and enforcement measurements are usable.
+Allocate GPU training only when a generalizing behavioral assay can measure the
+proposed data and reward interventions. The counts in this document are historical
+planning estimates, not new execution allocations.

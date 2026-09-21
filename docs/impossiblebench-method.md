@@ -5,12 +5,21 @@ with a custom Inspect solver, a disposable Docker backend, frozen assignments,
 and separate raw-score and policy-violation accounting. The native service runner
 remains dependency-free.
 
+For **which experiment to run next**, use the [active roadmap](experiment-roadmap.md).
+The next proposal is the [direct upstream baseline](impossiblebench-upstream-baseline.md),
+which uses a separate driver and the original upstream solver/scorer. In this
+custom adapter, C1/C2 subset schedules and per-run input/cost shares are now implemented. The
+[design specification](../experiments/next-experiments.design.json) must not be
+passed to the prepare CLI as an executable config.
+
 The implementation has been exercised with scripted model outputs, synthetic
 task triples, and two real development issues on Linux. Read the
 [development review and qualification](impossiblebench-development-review.md).
 These checks validate the harness and selected environments; they are not
 model-behavior findings. Each new bundle must pass its own qualification before
-a study can execute. No paid model pilot is included in these checks.
+a study can execute. Qualification uses no paid model calls. A separate
+[live preflight](impossiblebench-live-preflight-results.md) executed but did not
+reach scored submission or intervention delivery.
 
 ## Install and test
 
@@ -51,6 +60,10 @@ list records exact-path transient detection, restoration confirmed by complete
 final snapshots, and observer write denial. Cleanup errors fail qualification.
 Reports that omit, duplicate, or mismatch a variant's observer checks are rejected;
 older reports with only a single aggregate observer check must be regenerated.
+Every reference/empty check also verifies the actor's qualified Python and required
+imports in two independent shell calls, including after changing the prior call's
+PATH. The bundle's Python path remains the audit interpreter; SWE-bench actor calls
+activate its associated `testbed` environment afresh.
 
 The end-to-end Docker test runs all twelve task-variant/arm assignments for one
 scripted model, exercises legitimate repair and supported stopping, and separately
@@ -246,10 +259,21 @@ For fully observed contrasts on multiple base issues, percentile intervals
 resample whole base issues, averaging repetitions within each issue. These are
 exploratory intervals, not a power analysis or a claim of independent repositories.
 
-Aggregate budgets reserve conservative input/output token and cost allowances
-before each request. Failed requests retain their reservations. Per-run call,
+Aggregate budgets and optional isolated `per_run_budget` shares reserve conservative
+input/output token and cost allowances together before each request. A rejected
+local share does not debit or exhaust another run; unspent shares are not moved.
+Failed requests retain reservations in both ledgers, written before inference.
+Per-run call,
 action, submission, output-token, and wall-time limits also apply. Monetary
 accounting is an estimate rather than a provider billing guarantee.
+
+Plans now validate explicit `arms`/`variants`, include an `assigned` count, shuffle
+issue order within each draw and arm order within issue/variant blocks. Reports
+only compute contrasts supported by the selected arms. Scored submissions retain
+call/action counts, elapsed time and per-run usage; trigger records include calls
+remaining. `checkpoint-call-20.json` captures observed state and full conversation
+at that horizon without inserting an actor message. Existing output truncation
+and full-history behavior are unchanged.
 
 Prompt caching is explicitly disabled (`cache_prompt=False`); Inspect's response
 cache flag alone does not disable provider prompt caching. All reported input

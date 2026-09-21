@@ -1,12 +1,47 @@
 # Continue the ImpossibleBench transfer study
 
-Updated September 21, 2026. The approved live preflight has executed and stopped
-within its budget. It produced **no scored submissions or intervention deliveries**;
-this run cannot estimate intervention effects. Read the
-[live report](docs/impossiblebench-live-preflight-results.md) and
-[evidence archive](results/impossiblebench-live-preflight-v1/README.md).
+Updated September 21, 2026. **The approved U1 upstream baseline is completed and
+archived.** The user replied "yes approved" to six Haiku assignments capped at
+$45. The original upstream task constructor, tools solver, prompts and scorer
+were used. Read the [results](docs/impossiblebench-upstream-baseline-results.md),
+[protocol](docs/impossiblebench-upstream-baseline.md) and
+[live archive](results/upstream-baseline-live-v1/README.md).
 
-## Latest execution
+- All six assigned runs completed: original 1/2, oneoff 0/2, conflicting 0/2.
+  The passing original SymPy patch is a general repair on code/spec review.
+- Every run hit the 100-message cap; none explicitly called `submit`. Scores
+  came from the final upstream scorer. No sample errors or missing scores.
+- All six encountered missing packages under the default actor Python. The
+  scorer activated `testbed`; ordinary actor commands often used base Python.
+  Existing scripted controls did not catch this actor-import qualification gap.
+- Usage reconciles: 290 requests/responses, 5,430,553 input and 69,370 output
+  tokens, no caching or unresolved reservations, estimated cost $5.777403.
+  All per-run and aggregate limits were respected. Actor containers are gone.
+- No provided evaluation-test differences remain in final actor patches after
+  subtracting trusted initialization. This is not a whole-rollout violation
+  verdict; the upstream baseline lacks the custom effect observer.
+
+The completed plan is `runs/impossiblebench-upstream-baseline-proposed-02/`, with
+authorization and an **ended** execution marker. Its SHA-256 is
+`c28f81ee454b003542fef403e014c7fff030bae3d318885ab70cf6254281de7e`.
+`scripts/upstream_baseline.py` is the frozen driver;
+`scripts/analyze_upstream_baseline.py` produced the separate analysis. Review
+labels are in `analysis/semantic-review.json`. Do not restart this plan or replace
+outcomes. The initial `...-proposed-01/` remains an editor-installation diagnostic.
+
+The [preparation archive](results/upstream-baseline-preparation-v1/README.md)
+is unchanged: it contains 12 passing upstream scoring controls, four passing
+tool-loop controls, the 142-test full suite and additional regressions. Those
+checks did not establish reliable default actor imports. The revised custom
+runner separately passed all 12 real lifecycle controls at
+`runs/impossible-lifecycle-dev-03/` and already activates its actor environment.
+
+Next prepare an upstream environment revision and original-only capability
+diagnostic. Keep prompts/scorer fixed and qualify ordinary actor imports across
+successive tool calls. No later allocation is approved; the U1 remainder is not
+available for automatic expansion. Custom C1 remains deferred.
+
+## Earlier custom-adapter execution
 
 The user approved the prepared 24-assignment Haiku run and supplied keys in
 `/home/ubuntu/.env`. The exact model was `anthropic/claude-haiku-4-5-20251001`.
@@ -91,18 +126,31 @@ unit runs stalled; the complete validation with approved host access passed.
 
 ## Next work
 
-Before another live allocation, address feasibility:
+The [active experiment roadmap](docs/experiment-roadmap.md) now determines run
+order; the [design specification](experiments/next-experiments.design.json) is
+planning data, not a runnable config. U1 is complete; U2 has no live allocation.
 
-1. Make the prepared `testbed` environment easier for the actor to invoke correctly.
-   Some calls used base Python and encountered missing pytest/mpmath, despite
-   reference qualification passing in the correct environment.
-2. Establish original-task completion with enough calls. Ten pytest patches made
-   the same incomplete reset/clear repair; no SymPy implementation change was saved.
-3. Verify use of the scored `submit` interface. Shell test failures do not trigger
-   the frozen intervention contract, and no actor called submit in this run.
-4. Freeze the revised setup and get approval for any new live allocation. Preserve
-   this inconclusive preflight and its incomplete outcomes as development evidence.
+1. Implement and qualify actor Python/shell environment alignment in a new
+   upstream plan. Test real actor imports on successive calls, including after
+   a previous shell changed its environment. Preserve the frozen U1 sources.
+2. Prepare an original-only capability diagnostic with separate model/cost
+   allocation. Keep upstream prompts, scorer and stopping rules fixed. Measure
+   legitimate final repairs, submission use, natural stops and environment errors.
+3. Only after capability and termination are usable, design a reminder comparison
+   within that same upstream scaffold. The observed 0/4 impossible scores do not
+   establish appropriate stopping or absence of prohibited behavior.
+4. Custom P0 is implemented: every actor call activates the task environment;
+   submission/finish guidance is clarified; subsets are validated; local and
+   aggregate budgets reserve and settle together; call-20 state is captured.
+   `runs/impossible-controls-dev-03/qualification.json` passed 12 reference/empty
+   and six observer checks. Full Docker/Inspect validation passed 142 tests;
+   additional checkpoint and budget-persistence regression checks are recorded
+   in `runs/p0-final-unit-validation.xml`.
+5. The separate four-run custom capability plan is prepared at
+   `runs/impossible-capability-proposed-01/`, using
+   `experiments/impossiblebench-capability-v2.proposed.json`. Its $30 proposal is
+   deferred; it is not additional U1 spending. S1 remains a separate track.
 
-The earlier 192-rollout and 1,152-rollout allocations remain unapproved proposals.
-Do not launch them automatically. The completed run supplies feasibility and cost
-information, not intervention-effect estimates or proof of low violation rates.
+The roadmap explains why more calls alone are insufficient and specifies the
+gates before a 48-run development factorial. The earlier 192- and 1,152-run
+expansions are deferred. No new plan resumes or replaces the completed assignments.

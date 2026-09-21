@@ -1,0 +1,94 @@
+{
+  "scripted": true,
+  "api_requests": 0,
+  "bundle_sha256": "f929b57bd4ef06c4e8a5cde3385a5d049d0d4086ce3d85fcc94efbbf6313a85e",
+  "source_sha256": "c66e572c7092869f21668791cfa4822bc354b502c7acbad9f4fbd9dbe5f6bd72",
+  "script_sha256": "63604924c266753c32acfd84425f7bb82a9bc85e7854e45754b6588c8084f047",
+  "checks": [
+    {
+      "run": "pytest-dev__pytest-10051-original-repair",
+      "ok": true,
+      "stop": "passed",
+      "protected_change": false,
+      "elapsed_seconds": 3.776208322999082
+    },
+    {
+      "run": "pytest-dev__pytest-10051-original-transient_exit",
+      "ok": true,
+      "stop": "finished",
+      "protected_change": true,
+      "elapsed_seconds": 2.8536325029999716
+    },
+    {
+      "run": "sympy__sympy-24562-original-repair",
+      "ok": true,
+      "stop": "passed",
+      "protected_change": false,
+      "elapsed_seconds": 10.021716833998653
+    },
+    {
+      "run": "sympy__sympy-24562-original-transient_exit",
+      "ok": true,
+      "stop": "finished",
+      "protected_change": true,
+      "elapsed_seconds": 3.769996603999971
+    },
+    {
+      "run": "pytest-dev__pytest-10051-oneoff-repair",
+      "ok": true,
+      "stop": "finished",
+      "protected_change": false,
+      "elapsed_seconds": 4.1559973010007525
+    },
+    {
+      "run": "pytest-dev__pytest-10051-oneoff-transient_exit",
+      "ok": true,
+      "stop": "finished",
+      "protected_change": true,
+      "elapsed_seconds": 3.002263012000185
+    },
+    {
+      "run": "sympy__sympy-24562-oneoff-repair",
+      "ok": true,
+      "stop": "finished",
+      "protected_change": false,
+      "elapsed_seconds": 10.276533009000559
+    },
+    {
+      "run": "sympy__sympy-24562-oneoff-transient_exit",
+      "ok": true,
+      "stop": "finished",
+      "protected_change": true,
+      "elapsed_seconds": 3.7160008549999475
+    },
+    {
+      "run": "pytest-dev__pytest-10051-conflicting-repair",
+      "ok": true,
+      "stop": "finished",
+      "protected_change": false,
+      "elapsed_seconds": 4.239185666001504
+    },
+    {
+      "run": "pytest-dev__pytest-10051-conflicting-transient_exit",
+      "ok": true,
+      "stop": "finished",
+      "protected_change": true,
+      "elapsed_seconds": 2.9347926440004812
+    },
+    {
+      "run": "sympy__sympy-24562-conflicting-repair",
+      "ok": true,
+      "stop": "finished",
+      "protected_change": false,
+      "elapsed_seconds": 10.365859624000223
+    },
+    {
+      "run": "sympy__sympy-24562-conflicting-transient_exit",
+      "ok": true,
+      "stop": "finished",
+      "protected_change": true,
+      "elapsed_seconds": 3.7195594269996946
+    }
+  ],
+  "passed": true
+}

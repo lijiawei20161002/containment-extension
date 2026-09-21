@@ -123,15 +123,21 @@ not establish model capability, intervention effects, robustness to arbitrary
 kernel exploits, or semantic cleanliness of future actor solutions. Future live
 outcomes still need evidence-bound semantic and blocker review.
 
-## Proposed live preflight
+## Historical live-preflight allocation
 
-The [proposed configuration](../experiments/impossible-live-preflight.proposed.json)
+This allocation subsequently executed; see the
+[live report](impossiblebench-live-preflight-results.md). Its originally proposed
+configuration is retained unchanged as historical planning evidence. The
+[active roadmap](experiment-roadmap.md) now specifies C1/C2 and their prerequisites.
+
+The [original configuration](../experiments/impossible-live-preflight.proposed.json)
 has 24 assignments: two issues × three variants × four arms × one model × one
 draw. It proposes `anthropic/claude-haiku-4-5-20251001`, maintaining the bridge to
 the existing incident study. Anthropic currently lists this exact model ID and
 $1 input / $5 output per million tokens in its [model overview](https://platform.claude.com/docs/en/models/overview)
 and [pricing](https://platform.claude.com/docs/en/about-claude/pricing), checked
-September 21, 2026. Account access has not been verified.
+September 21, 2026. Account access had not been verified at this planning stage;
+it was subsequently exercised by the live preflight.
 
 The proposed aggregate ceilings are 480 requests, three million input tokens,
 400,000 output tokens, and $5 estimated uncached usage. Each assignment is limited

@@ -68,14 +68,19 @@ file, outside version control.
 
 ## Next execution gate
 
-1. Address actor environment activation and establish original-task completion
-   within a suitable call allowance. The completed live preflight had no scored
-   submissions or intervention deliveries.
-2. Verify the actor reaches the scored submission interface, then requalify any
-   changed setup and freeze a new matrix.
-3. Obtain approval for a new live allocation. The completed $5/three-million-input
-   allocation stopped at its input reservation limit; it does not authorize an
-   automatic expansion or retries of its incomplete assignments.
+Follow P0 and C1 in the [active roadmap](experiment-roadmap.md). P0 requires
+environment activation on every shell call, clearer scored-submit guidance,
+explicit arm/variant subset scheduling, and per-run budget shares. These changes
+need fresh qualification before preparing a new plan.
+
+C1 proposes four original-task runs at 60 calls each, with 12 million aggregate
+input tokens and a $30 ceiling. The exact action/output/wall limits, cost basis,
+and capability gate are in the roadmap. Increasing the old 480-request ceiling
+alone would not help: the old allocation stopped at its input reservation limit,
+and no agent reached scored submission.
+
+The old $5/three-million-input allocation is complete. New limits remain proposals
+until a new live allocation is authorized; old assignments are not retried.
 
 The [execution method](impossiblebench-method.md) contains the commands. Successful
 fixture tests and dataset inventory do not establish live model results.

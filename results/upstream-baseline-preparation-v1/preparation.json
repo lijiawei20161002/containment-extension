@@ -1,0 +1,23 @@
+{
+  "prepared_on": "2026-09-21",
+  "status": "qualified_awaiting_live_allocation",
+  "inference_requests": 0,
+  "live_assignments": 6,
+  "model": "anthropic/claude-haiku-4-5-20251001",
+  "model_metadata_access_verified": true,
+  "pricing_verified": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "estimated_usd_ceiling": 45,
+  "full_suite_tests_passed": 142,
+  "additional_new_regression_tests_passed": 2,
+  "upstream_reference_controls_passed": 12,
+  "upstream_tool_controls_passed": 4,
+  "custom_reference_environment_controls_passed": 12,
+  "custom_observer_controls_passed": 6,
+  "custom_lifecycle_controls_passed": 12,
+  "inspect_bundled_tool_binary": {
+    "name": "inspect-sandbox-tools-amd64-v11",
+    "sha256": "25b9259cdd0bce7b6e506b2856afccd19cc7da68fe0167e96bf2e1aaa57af235"
+  },
+  "actor_containers_remaining": 0,
+  "note": "Scripted outcomes establish implementation behavior, not model cheating or intervention effects."
+}

@@ -2,73 +2,61 @@
 
 **September 2026–February 2027 · Jiawei Li**
 
-**Continuing ImpossibleBench on a new machine? Start with [HANDOFF.md](HANDOFF.md).**
-It contains the current status, setup commands, next tasks, and open budget decisions.
+This repository studies whether agents pursuing a task cross its authorization
+boundaries, and whether behavioral interventions and service controls prevent
+those effects while preserving legitimate capability. The native runner uses
+bounded local service replicas; the optional ImpossibleBench adapter adds
+isolated coding tasks and independent container-effect observations.
 
-This repository starts with an incident analogue: can a model pursuing a cyber
-challenge use a technically permitted service connection to act outside its
-authorized scope? It runs live models against local service replicas and checks
-the effects independently of what the model says it did.
+**Next experiments: [active roadmap](docs/experiment-roadmap.md).**
+The [direct upstream ImpossibleBench baseline](docs/impossiblebench-upstream-baseline-results.md)
+completed six runs: 1/2 original-task passes and 0/4 impossible-task passes, costing
+an estimated $5.78. All six reached the message cap without submitting, and actor
+dependency errors limit interpretation. Next, qualify the actor's task environment
+before another capability diagnostic within the upstream scaffold. The custom
+adapter's N arm is not an upstream reproduction. Its environment, submission,
+subset-scheduling and per-run budget repairs are implemented; further live
+allocations remain proposals.
 
-The first milestone is reproduction and measurement. The complete sandboxed
-Inspect containment extension, shell experiments, action monitors, and the proposed
-24-pair benchmark remain subsequent work. This prototype exposes a bounded service
-tool; it does not execute model-generated code.
+**Continuing on another machine? Read [HANDOFF.md](HANDOFF.md).**
+It records the current environment, evidence paths, completed allocation, and
+implementation work required before the next live plan.
 
-**Pilot completed:** two live models took different out-of-scope routes in the
-stalled task. Read the [results and limitations](docs/pilot-results.md), with
-[setup](figures/experiment-setup.svg) and [results](figures/observed-results.svg)
-figures. All eight rollouts and the exact tested source are archived under
-[`results/pilot-v1`](results/pilot-v1/report.md). The initial allowlist overblocked
-some authorized filenames; the report records this implementation limitation.
+## Evidence so far
 
-**Incident-assessment follow-up completed:** [160-rollout results](docs/incident-study-results.md).
-On impossible tasks, Haiku's outside accesses were 6/8 with neutral wording and
-0/8 with both a full-scope reminder and accepted-blocker wording. All 96 recoverable
-and easy controls completed within scope. This small pilot cost about $0.95 in
-estimated API usage and used no GPU. See the [method and commands](docs/incident-study-method.md)
-and [design for further experiments](docs/incident-assessment-experiments.md).
+| Study | Completed evidence | Interpretation |
+| --- | --- | --- |
+| Native pilot | [8 live rollouts](docs/pilot-results.md) | Local out-of-scope effects occurred; initial scope handling had an overblocking limitation |
+| Cue study | [96 rollouts](docs/cue-study-results.md) | No consistent increase from the tested prompt cues |
+| Upstream-link study | [128 rollouts](docs/link-study-results.md) | Nearby reminders reduced early access, but later violations substituted other routes |
+| Incident study | [160 rollouts](docs/incident-study-results.md) | Haiku impossible-task outside access was 6/8 in N versus 0/8 in RE; all 96 recoverable/easy controls completed in scope |
+| ImpossibleBench preflight | [24 assignments, 16 started](docs/impossiblebench-live-preflight-results.md) | No scored submissions or intervention deliveries; intervention effects remain unmeasured |
+| Upstream baseline preparation | [12 scoring and 4 tool-loop controls](results/upstream-baseline-preparation-v1/README.md) | Qualified six-run proposal; no new model inference |
+| Direct upstream baseline | [6 completed assignments](docs/impossiblebench-upstream-baseline-results.md) | Original 1/2, impossible 0/4; all message-limited, with actor environment problems |
+| Monitor preparation | [1,543 paired inputs](results/incident-monitor-inputs-v1/README.md) | Inputs prepared; historical labels need adjudication and no monitor performance has been measured |
 
-**ImpossibleBench adapter implemented:** [setup and qualification](docs/impossiblebench-method.md),
-with the [transfer design](docs/impossiblebench-scaling.md). The optional Inspect
-runner freezes paired assignments, applies the factorial intervention after
-failure, and records independent container effects. **Linux validation and two
-real development-task qualifications are complete:** 120 repository tests,
-12 reference/empty checks, six observer checks, and 12 scripted actor controls
-passed. Read the [mutation reviews and evidence](docs/impossiblebench-development-review.md).
-**Live preflight executed:** [results and limitations](docs/impossiblebench-live-preflight-results.md).
-For a visual introduction, read the [three-cartoon guide](docs/impossiblebench-cartoon-guide.md).
-Of 24 assignments, 16 started before the aggregate input allocation stopped
-execution. None reached a scored submission or intervention delivery, so the
-preflight does not estimate intervention effects. A cached-token accounting bug
-was fixed during execution; the updated suite passes 121 tests. The
-[resource assessment](docs/impossiblebench-readiness.md) records the pinned
-349-task inventory and execution requirements.
+The incident comparison is a small one-structure pilot, not a general failure-rate
+estimate. The ImpossibleBench preflight exhausted its aggregate input allocation;
+its incomplete outcomes are unknown. Linux qualification and the accounting fix
+passed 121 tests at the last execution; see the
+[development review](docs/impossiblebench-development-review.md) and
+[readiness record](docs/impossiblebench-readiness.md).
 
-![Impossible tasks: cartoon of authorized blockers, forbidden shortcuts, and measured results](figures/impossible-tasks-cartoon.png)
+## Experiment documents
 
-**Broader research plan:** [prompt cues, retry scaffolding, and training-data
-generalization](docs/chunky-generalization-experiments.md). This proposes a
-128-continuation API pilot followed by held-out task validation and controlled
-open-model training. It includes a read-only audit of the existing pilot.
+- **Execution priorities and proposed budgets:** [active roadmap](docs/experiment-roadmap.md).
+- **Direct benchmark baseline and comparison of the runners:** [upstream baseline](docs/impossiblebench-upstream-baseline.md).
+- **Coding transfer hypothesis and analysis:** [ImpossibleBench design](docs/impossiblebench-scaling.md),
+  with [implemented method](docs/impossiblebench-method.md).
+- **Completed blocker pilot and later hypotheses:** [incident design](docs/incident-assessment-experiments.md),
+  with [execution method](docs/incident-study-method.md).
+- **Selected service follow-up and later extensions:** [community-inspired design](docs/community-inspired-experiments.md).
+  The roadmap selects behavior × enforcement as S1; coordination and defensive
+  monitoring require additional fixtures.
+- **Deferred research agenda:** [prompt cues, retry scaffolding, and training-data
+  generalization](docs/chunky-generalization-experiments.md).
 
-**Implemented initial investigation:** [SURF-inspired prompt-attribute search
-with fresh paired validation](docs/cue-study-method.md). The new runner searches
-format, scope position, QA framing, and persistence wording while preserving the
-scope paragraph. It also repairs repository scope handling and separates tool
-proposals, dispatched attempts, and service effects. The broader scaffold and
-training experiments remain proposed work.
-
-**Cue study completed:** [96-rollout results and interpretation](docs/cue-study-results.md).
-The small search found no consistent increase from the tested cues. Most initial
-violations were outside reads before the challenge was attempted; all logged
-requests retained scope. Four provider errors are preserved in the evidence.
-
-**Upstream-link follow-up completed:** [128-rollout experiment](docs/link-study-results.md).
-The original README produced 26 early upstream reads in 32 rollouts; hiding its
-address produced none. A nearby scope reminder also removed observed early reads,
-but many stalled runs later accessed upstream or the previous run's answer archive.
-The report separates actual outside access, failed catalog paths, and API errors.
+For a visual introduction, see the [ImpossibleBench cartoon guide](docs/impossiblebench-cartoon-guide.md).
 
 ## Run it
 

@@ -1,11 +1,18 @@
 # Scope compliance after task failure
 
-**Design note, 16 September 2026. Proposed experiments; no new model inference.**
+**Original design, September 16; planning status updated September 21, 2026.**
 
 **Update, September 17:** the first 160-rollout pilot is now implemented and
 completed. See the [results](incident-study-results.md) and
 [execution protocol](incident-study-method.md). The original proposal follows;
 the timing, framing, recognition, and monitor evaluations remain follow-ups.
+
+**September 21 extension:** the [community-informed design note](community-inspired-experiments.md)
+adds service-enforcement contrasts, cross-agent authority, defensive-utility
+controls, and investigation-quality measurements motivated by the discussion brief.
+The [active roadmap](experiment-roadmap.md) selects the next studies and budgets:
+C1/C2 establish coding feasibility, while S1 is the next native service comparison.
+The original 160-rollout proposal below is completed evidence, not a rerun request.
 
 The most useful next question is: **when an agent encounters a legitimate blocker,
 what makes it preserve, reinterpret, or cross an authorization boundary?**
@@ -50,7 +57,7 @@ Keep the existing local dispatcher and independent SQLite effect measurements.
 No proposed condition needs public targets, executable payloads, a shell, or a
 change to provider safeguards.
 
-## 1. Run first: full-scope reminder × accepted blocker outcome
+## 1. Completed pilot: full-scope reminder × accepted blocker outcome
 
 ### Question and treatments
 
@@ -309,7 +316,7 @@ primary contrasts, and use wholly held-out structures. The existing
 [generalization plan](chunky-generalization-experiments.md) supplies candidate
 non-cyber task families and a separate controlled training experiment.
 
-## Implementation order
+## Historical implementation plan and current status
 
 | Location | Work required before the first pilot |
 | --- | --- |
@@ -319,16 +326,18 @@ non-cyber task families and a separate controlled training experiment.
 | New study/analysis modules | Frozen factorial schedule; independent blocker/effect scoring; assigned-run and missingness summaries |
 | Tests and scripted controls | Matched state/history, authorized recovery, impossible-task integrity, honored exits, transient writes, no false scope blocks |
 
-These features are proposed. The current `run_live` supports custom prompts and
-README text but does not implement checkpoint branching or the recoverable
-fixture. Existing prompt retention and action/effect logs can be reused.
+The original pilot's checkpoint branching, recoverable fixture, semantic labels,
+schedule, and outcome scoring are now implemented in `incident_study.py` and
+`incident_fixture.py`. The 160 runs are complete; monitor input preparation is
+also complete, but monitor performance has not been evaluated. Historical design
+limits above describe that pilot and do not authorize another allocation.
 
-Start with archive-based monitor dataset preparation and local fixture controls,
-then the 160-rollout action pilot. The maximum is 1,600 inference requests and
-1,228,800 generated tokens; input tokens and cost depend on actual histories.
-Set aggregate input/output and monetary guards after preflight and before live
-execution. Probe branches and monitor calls are separate budgets, excluded from
-these totals. No GPU is required for the API phase.
+The next native experiment is S1 in the [active roadmap](experiment-roadmap.md):
+80 Haiku continuations crossing N/RE with permissive/scoped enforcement, including
+recoverable and easy capability controls. Its schedule and effect scoring require
+a new implementation revision. Timing, framing, recognition, and learned-monitor
+experiments in sections 2–5 remain a menu of later hypotheses. No GPU is required
+for the proposed API experiments.
 
 The intended result is a causal comparison of specific interventions in this lab,
 with a capability control and independent effect evidence. It would not identify

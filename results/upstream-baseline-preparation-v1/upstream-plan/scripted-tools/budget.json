@@ -1,0 +1,108 @@
+{
+  "requests": 26,
+  "accounted_input_tokens": 0,
+  "accounted_output_tokens": 0,
+  "actual_input_tokens": 0,
+  "actual_output_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_write_input_tokens": 0,
+  "estimated_usd": 0.0,
+  "unknown_usage_requests": 0,
+  "reservation_overrun": false,
+  "limits": {
+    "requests": 360,
+    "input_tokens": 18000000,
+    "output_tokens": 737280,
+    "estimated_usd": 45
+  },
+  "exhausted": false,
+  "per_run_limits": {
+    "requests": 60,
+    "input_tokens": 3000000,
+    "output_tokens": 122880,
+    "estimated_usd": 7.5
+  },
+  "runs": {
+    "run-00001": {
+      "requests": 6,
+      "accounted_input_tokens": 0,
+      "accounted_output_tokens": 0,
+      "actual_input_tokens": 0,
+      "actual_output_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "estimated_usd": 0.0,
+      "unknown_usage_requests": 0,
+      "reservation_overrun": false,
+      "limits": {
+        "requests": 60,
+        "input_tokens": 3000000,
+        "output_tokens": 122880,
+        "estimated_usd": 7.5
+      },
+      "exhausted": false,
+      "note": "All input tokens counted; cache reads at full input rate and writes at 2x. Conservative estimate, not a bill."
+    },
+    "run-00002": {
+      "requests": 7,
+      "accounted_input_tokens": 0,
+      "accounted_output_tokens": 0,
+      "actual_input_tokens": 0,
+      "actual_output_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "estimated_usd": 0.0,
+      "unknown_usage_requests": 0,
+      "reservation_overrun": false,
+      "limits": {
+        "requests": 60,
+        "input_tokens": 3000000,
+        "output_tokens": 122880,
+        "estimated_usd": 7.5
+      },
+      "exhausted": false,
+      "note": "All input tokens counted; cache reads at full input rate and writes at 2x. Conservative estimate, not a bill."
+    },
+    "run-00003": {
+      "requests": 7,
+      "accounted_input_tokens": 0,
+      "accounted_output_tokens": 0,
+      "actual_input_tokens": 0,
+      "actual_output_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "estimated_usd": 0.0,
+      "unknown_usage_requests": 0,
+      "reservation_overrun": false,
+      "limits": {
+        "requests": 60,
+        "input_tokens": 3000000,
+        "output_tokens": 122880,
+        "estimated_usd": 7.5
+      },
+      "exhausted": false,
+      "note": "All input tokens counted; cache reads at full input rate and writes at 2x. Conservative estimate, not a bill."
+    },
+    "run-00004": {
+      "requests": 6,
+      "accounted_input_tokens": 0,
+      "accounted_output_tokens": 0,
+      "actual_input_tokens": 0,
+      "actual_output_tokens": 0,
+      "cache_read_input_tokens": 0,
+      "cache_write_input_tokens": 0,
+      "estimated_usd": 0.0,
+      "unknown_usage_requests": 0,
+      "reservation_overrun": false,
+      "limits": {
+        "requests": 60,
+        "input_tokens": 3000000,
+        "output_tokens": 122880,
+        "estimated_usd": 7.5
+      },
+      "exhausted": false,
+      "note": "All input tokens counted; cache reads at full input rate and writes at 2x. Conservative estimate, not a bill."
+    }
+  },
+  "note": "All input tokens counted; cache reads at full input rate and writes at 2x. Conservative estimate, not a bill."
+}

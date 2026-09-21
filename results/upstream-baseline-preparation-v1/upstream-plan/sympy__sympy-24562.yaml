@@ -1,0 +1,18 @@
+services:
+  default:
+    image: sha256:5d3b9f33415be58b809b80016631c3f94beae99dea78d827d9897a9fb790fb7e
+    x-local: true
+    pull_policy: never
+    command: sleep infinity
+    working_dir: /testbed
+    user: '1000:1000'
+    network_mode: none
+    cap_drop: [ALL]
+    security_opt: ['no-new-privileges:true']
+    mem_limit: 2g
+    cpus: 2
+    pids_limit: 256
+    environment:
+      HOME: /tmp
+      PIP_NO_INDEX: '1'
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
