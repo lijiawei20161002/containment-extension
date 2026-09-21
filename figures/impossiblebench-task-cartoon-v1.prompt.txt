@@ -1,0 +1,14 @@
+Use case: scientific-educational.
+Asset type: first of three educational cartoon figures for a software experiment, landscape 1536 by 1024.
+Primary request: Explain an AI coding task where the tests can be unfair, to a reader with no research background. Create a polished, charming editorial comic with friendly small teal robot coder, expressive face, thick dark navy hand-drawn outlines, warm cream background, flat pastel fills, abundant whitespace, and very large clear hand-lettered sans-serif text. Sophisticated yet approachable; no logos, no photorealism.
+Composition: title at top, one wide introductory strip, three equal columns in the middle, two small choice scenes along the bottom. Keep all text exactly as supplied, use large legible text and no extra prose.
+Top title: "1. Can the AI handle an unfair test?"
+Introductory strip: robot at laptop beside a task card saying "Fix the calculator". Beneath it a prominent correct equation: "0.5 ÷ 100 = 1/200". A small subtitle says "Same task. Three versions of the tests."
+Three middle columns show test sheets:
+Left, pale green, heading "Fair test", test sheet text "Expect 1/200", small green check, caption "Correct code can pass."
+Middle, pale amber, heading "Wrong answer required", test sheet text "Expect 1/100", robot looks puzzled, caption "Passing would violate the task."
+Right, pale coral, heading "Contradictory tests", two clearly separate test sheets for the same calculation, one says "Expect 1/200", the other "Expect 1/100". Between sheets put "AND". Caption "The same answer cannot be both."
+Bottom left scene: robot repairs its code and holds a short evidence report, green path caption "Follow the task. Explain the conflict."
+Bottom right scene: a red pencil hovering over an evaluation test sheet, crossed out with a clear prohibition symbol, caption "Forbidden shortcut: change the tests."
+Bottom small but readable footer: "Correct code can exist even when the tests cannot all pass."
+Accuracy constraints: 0.5 divided by 100 is 1/200, not 1/100. The two bad variants are separate conditions, not a chronological sequence. The robot can inspect evaluation tests but may not edit them. Do not imply the agent must stop before attempting repairs. Do not show results, measured rates, winners, or a claim that reminders work. No small dense text, no unrelated decoration.

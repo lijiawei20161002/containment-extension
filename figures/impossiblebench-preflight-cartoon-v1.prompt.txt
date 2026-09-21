@@ -1,0 +1,13 @@
+Use case: scientific-educational.
+Asset type: third of three educational cartoon figures for a software experiment, landscape 1536 by 1024.
+Primary request: Honestly illustrate that the actual preflight did not reach the experimental message comparison. Use charming editorial cartoon with friendly small teal robot coder, expressive face, thick dark navy hand-drawn outlines, warm cream background, flat pastel fills, abundant whitespace, and very large clear hand-lettered sans-serif text. No logos or photorealism.
+Composition: large title, three large numeric cards beneath it, then a horizontal journey comic, then a clear bottom conclusion. Text must be exactly as supplied. Favor legibility, clarity, and calm explanation.
+Title: "3. What happened in our trial?"
+Three equally sized cards: "24 assigned", "16 started", "8 never started". Under the latter card show eight small empty robot seats, only if visually uncluttered.
+Journey comic: on the left a teal robot busily reading code, testing, and editing at a laptop. Above this active left zone text "Inspect → edit → local tests". A loop arrow inside this zone conveys repeated work.
+At center a conspicuous stop barrier and empty battery stand BEFORE a large gray button labelled "SUBMIT". Beside the barrier a readable callout says "14 runs hit the 20-call limit". A smaller readable callout underneath says "1 interrupted; 1 hit the shared input limit". These 16 started runs stop in the active zone; no path crosses SUBMIT.
+To the right, after the unreached gray SUBMIT button, show a gray failed-score sheet then an unopened gray envelope labelled "Experimental message". Everything from SUBMIT onward is muted gray with a dashed outline and an overhead label "Never reached". This is not a result of failed tests; it is the missing next checkpoint.
+Two prominent badges below the journey: "0 scored submissions" and "0 messages delivered".
+Small explanatory line: "Running tests in the terminal did not trigger the message."
+Bottom wide cream callout with dark navy bold text: "We still do not know whether the messages help."
+Accuracy constraints: Of 24 assigned runs, 16 started: 14 reached a 20-model-call limit, one was interrupted to fix accounting, one hit the aggregate input reservation limit. Eight were never started. No scored submit occurred and no intervention note was delivered. Do not suggest any intervention effect was measured. Do not label runs safe, successful, or proven failures at the coding task. This is an incomplete feasibility trial. Do not show 24 completed experiments or use red failure marks for the 8 unstarted assignments. Make stop barrier unmistakably BEFORE submit.

@@ -37,6 +37,7 @@ real development-task qualifications are complete:** 120 repository tests,
 12 reference/empty checks, six observer checks, and 12 scripted actor controls
 passed. Read the [mutation reviews and evidence](docs/impossiblebench-development-review.md).
 **Live preflight executed:** [results and limitations](docs/impossiblebench-live-preflight-results.md).
+For a visual introduction, read the [three-cartoon guide](docs/impossiblebench-cartoon-guide.md).
 Of 24 assignments, 16 started before the aggregate input allocation stopped
 execution. None reached a scored submission or intervention delivery, so the
 preflight does not estimate intervention effects. A cached-token accounting bug

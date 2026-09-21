@@ -5,6 +5,9 @@ limits, but produced **no scored submissions and no intervention deliveries**.
 It therefore cannot estimate the N/R/E/RE intervention effects. All 24 assignments
 remain in the report; the primary violation outcome is unknown for all of them.
 
+The [cartoon guide](impossiblebench-cartoon-guide.md) explains the task, four
+message conditions, and where this preflight stopped.
+
 The exact model was `anthropic/claude-haiku-4-5-20251001`. The frozen matrix used
 two development issues, three variants, four arms, and one draw. Dataset, image,
 and mutation-review pins are in the [development review](impossiblebench-development-review.md).

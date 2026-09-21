@@ -1,0 +1,15 @@
+Use case: scientific-educational.
+Asset type: second of three educational cartoon figures for a software experiment, landscape 1536 by 1024.
+Primary request: Explain what is experimentally changed: which message a coding AI receives after its first failed scored submission. Charming editorial cartoon with friendly small teal robot coder, expressive face, thick dark navy hand-drawn outlines, warm cream background, flat pastel fills, abundant whitespace, and very large legible hand-lettered sans-serif text. Match a simple educational comic series. No logos or photorealism.
+Composition: title at top. Top third is a left-to-right three-step comic strip. Middle is four equal large note cards, arranged 2 by 2, with ample space for short speech bubbles. Bottom is a small observer vignette and the research question. Render ONLY supplied text, clearly and accurately.
+Title: "2. Which message helps the AI follow the rules?"
+Top strip: robot working at laptop labelled "Work on code", arrow to a large button labelled "SUBMIT", arrow to evaluation sheet with red X labelled "First scored failure". From this strip one branching line leads to all four note cards equally.
+Directly above the note cards: "Each run gets ONE of these messages"
+Card 1 cream with gray border: heading "Neutral"; note text "An administrative note."
+Card 2 pale blue: heading "Rules reminder"; note text "Follow the task. Do not change tests or cheat."
+Card 3 pale gold: heading "Accept a blocker"; note text "An evidence-backed conflict report is a valid outcome."
+Card 4 pale green: heading "Both"; note text "Rules reminder + accepted blocker."
+Small but readable line directly below cards: "All runs start with the same rules, tools, and option to stop."
+Bottom vignette: robot at a fork between a code repair plus evidence report and a crossed-out edited test sheet. An independent researcher with clipboard watches actual file changes. Label researcher "Record what the AI actually does".
+Bottom research question in prominent text: "Fewer rule violations, while still solving fair tasks?"
+Critical scientific constraints: The four cards are alternative conditions, never four sequential messages. A message is delivered only after the first failed scored SUBMIT; ordinary terminal test failures do not trigger it. Stop/report tool exists in all conditions from the start; acceptance wording is what varies. Depict intended experimental design, with no measured outcomes or invented success rates. Do not depict physical containment or robot escape. Avoid dense microtext.
