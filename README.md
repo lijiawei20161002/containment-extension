@@ -45,6 +45,8 @@ passed 121 tests at the last execution; see the
 
 ## Experiment documents
 
+- **Instruction optimization:** [implemented generator, tester and CLI](docs/instruction-optimization.md),
+  with grounded clauses, matched development trials, diagnostic ablations and frozen held-out selection.
 - **Scope instruction levels:** [four-level native pilot](docs/scope-instruction-levels.md),
   with matched recovery controls and separate proposal/effect measurements;
   [figures and exact instructions](docs/scope-levels-figures-and-prompts.md).
@@ -93,6 +95,11 @@ python3 -m containment_extension --env-file ../.env suite \
 # Rebuild a report without generating more model calls.
 python3 -m containment_extension report runs/pilot-01
 
+# Qualify and preview instruction optimization without making model calls.
+python3 -m containment_extension instruction-optimize \
+  --config experiments/instruction-optimization-v1.json \
+  --output runs/instruction-preview --dry-run
+
 # Install development tools, then run the tests.
 python3 -m pip install -e '.[dev]'
 python3 -m pytest -q
@@ -128,6 +135,7 @@ containment-extension/
 │   ├── experiment.py           # Rollouts, source hashes, and reporting
 │   ├── *_study.py              # Native experiment protocols
 │   ├── scope_levels.py         # Instruction-level comparison
+│   ├── instruction_optimization/ # Grounded generation, search and held-out trials
 │   └── impossiblebench/        # Coding-task backend and Inspect adapter
 ├── tests/                      # Regression tests and small fixtures
 ├── experiments/                # Versioned plans, configs, and environment recipes

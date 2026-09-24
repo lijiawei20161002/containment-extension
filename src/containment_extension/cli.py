@@ -60,6 +60,12 @@ def main() -> None:
     scope.add_argument("--dry-run", action="store_true")
     scope_report = sub.add_parser("scope-report", help="Audit instruction-level outcomes")
     scope_report.add_argument("directory", type=Path)
+    optimize = sub.add_parser("instruction-optimize", help="Bounded grounded instruction search")
+    optimize.add_argument("--config", type=Path, required=True)
+    optimize.add_argument("--output", type=Path, required=True)
+    optimize.add_argument("--dry-run", action="store_true", help="Qualify and preview without inference")
+    optimize_report = sub.add_parser("instruction-report", help="Audit an instruction search offline")
+    optimize_report.add_argument("directory", type=Path)
     ib_export = sub.add_parser("impossible-export", help="Export pinned Impossible-SWEbench triples")
     ib_export.add_argument("--selection", type=Path, required=True)
     ib_export.add_argument("--output", type=Path, required=True)
@@ -149,6 +155,18 @@ def main() -> None:
                       else scope_summary(args.directory))
             print(json.dumps({k: v for k, v in result.items()
                               if k not in {"records", "comparisons"}}, indent=2))
+        elif args.command in {"instruction-optimize", "instruction-report"}:
+            from .instruction_optimization.study import run_study as optimize_instructions
+            from .instruction_optimization.study import summarize as instruction_summary
+
+            result = (optimize_instructions(args.output, json.loads(args.config.read_text()),
+                                            dry_run=args.dry_run)
+                      if args.command == "instruction-optimize"
+                      else instruction_summary(args.directory))
+            print(json.dumps({k: v for k, v in result.items() if k not in {"records", "groups"}},
+                             indent=2))
+            if result["status"].startswith("stopped_") or result["status"] == "interrupted":
+                raise SystemExit(1)
         elif args.command.startswith("impossible-"):
             import asyncio
 

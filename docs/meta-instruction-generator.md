@@ -4,7 +4,7 @@ For the broader experiment design, see the [cartoon marking five optimization op
 
 ![Cartoon of instruction generation, sandbox trials, independent evaluation, and held-out testing](../figures/meta-generator-workflow-cartoon.png)
 
-This is a proposed architecture around the existing containment sandbox, not an implemented generator or a report of new agent trials. The cartoon's instruction and failure message are illustrative.
+The cartoon describes the broader proposed architecture; its instruction and failure message are illustrative. A [first native implementation](instruction-optimization.md) now supports constrained clause generation, matched development trials, selection, diagnostic ablations and held-out testing. It has been qualified offline, without new live model results.
 
 1. The generator receives the user task, trusted scope policy, tool capabilities, and README context. README contents cannot grant permission. Missing authorization requires clarification rather than invented permission.
 2. The generator writes candidate guidance. The original task and scope remain in the actor's context; the generator cannot change the policy or grading rules.
