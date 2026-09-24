@@ -1,0 +1,21 @@
+{
+  "mode": "built-in image_gen",
+  "use_case": "infographic-diagram",
+  "status": "proposed architecture; no new agent trials",
+  "output": "figures/meta-generator-workflow-cartoon.png",
+  "prompts": [
+    "figures/meta-generator-workflow-cartoon.prompt.txt",
+    "figures/meta-generator-workflow-cartoon.edit-prompt.txt",
+    "figures/meta-generator-workflow-cartoon.routing-prompt.txt"
+  ],
+  "design_notes": "docs/meta-instruction-generator.md",
+  "existing_infrastructure": [
+    "src/containment_extension/scope_levels.py",
+    "src/containment_extension/incident_fixture.py",
+    "src/containment_extension/incident_study.py",
+    "src/containment_extension/lab.py",
+    "src/containment_extension/experiment.py"
+  ],
+  "sha256": "d74c3151aec29e854ded4950a2e7b18019092636a4d1ef281bcf175ab18a40c4",
+  "review": "Visually checked six-stage development and held-out workflow, candidate text, local sandbox components, API request/response connection, explicit agent scorer submission, excluded resources, shared policy versus hidden certificate, independent behavioral metrics, feedback direction, and no held-out feedback. Figure labels the generator as proposed and evidence-text verification as a planned upgrade."
+}

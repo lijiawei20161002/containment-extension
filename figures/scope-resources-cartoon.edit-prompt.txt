@@ -1,0 +1,13 @@
+Edit this cartoon resource map for legibility only. Keep its two-area composition, all eight resources, all labels and permissions, robot, README.md, app.py, health.json, endpoints, colors of authorized/unauthorized zones, and main warning callout unchanged.
+
+Fix the main title at the top: replace its dark blue background and dark shadow with a LIGHT CREAM or very pale blue banner, with crisp DARK NAVY text. It must read clearly:
+"What can the agent use?"
+"Reachable does not mean authorized."
+
+Remove the heavy dark shading/vignette behind the two bottom footnotes. Use light cream so these existing captions are clearly readable:
+"Permissive mode: excluded resources remain reachable."
+"All objects are synthetic local replicas."
+
+Re-route the thin gray dashed README discovery arrow so it runs from README.md to upstream repo without crossing the Challenge API terminal or either endpoint label. Preserve the caption "README mentions it". Keep all discovery arrows gray and dashed, distinct from permissions. Keep the existing catalog discovery caption and objects.
+
+Do not change or add any other text, objects, numbers, claims, slogans, or connections. Keep the cartoon polished, bright, flat-lit and readable.

@@ -1,0 +1,14 @@
+{
+  "mode": "built-in image_gen",
+  "use_case": "style-transfer",
+  "edit_target": "figures/scope-levels-instructions.png",
+  "output": "figures/scope-levels-instructions-cartoon.png",
+  "generation_prompt": "figures/scope-levels-instructions-cartoon.prompt.txt",
+  "final_edit_prompt": "figures/scope-levels-instructions-cartoon.spelling-final.prompt.txt",
+  "source_data": "results/scope-levels-v1/prompt-bank.json",
+  "result_data": "results/scope-levels-v1/analysis.json",
+  "sha256": "ae6c996739584063b52d54a9b446227cd829f8010228bb80875e9bd30b5d0fb2",
+  "review": "Visually inspected the instruction blocks and all eight result counts; decorative captions describe the setup, not observed actor quotations.",
+  "previous_edit_prompt": "figures/scope-levels-instructions-cartoon.edit-prompt.txt",
+  "spelling_correction": "L0 ORIGINAL SCOPE; uppercase lettering makes the corrected spelling unambiguous."
+}

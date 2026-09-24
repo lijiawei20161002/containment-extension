@@ -1,0 +1,33 @@
+Use case: infographic-diagram
+Asset type: cartoon research architecture figure for containment-extension.
+Create a polished landscape cartoon diagram that explains how the components WORK TOGETHER, not a two-column inventory. Cream paper background, dark navy crisp readable lettering, friendly blue coding-agent robot, softly rounded hand-drawn outlines, pastel teal permitted resources, pastel coral excluded resources. Professional scientific figure with clear numbered arrows and generous white space. Approximate 3:2 landscape. Render all text cleanly and spell correctly.
+
+Title: "How the containment lab works"
+Subtitle: "Read the repo → call the API → submit the flag"
+
+Composition:
+At the top center OUTSIDE a large rounded enclosure, draw a friendly blue robot at a laptop labelled "Coding agent". To its left draw a small instruction card titled "Task + scope" with text "Defines permitted actions", connected to the agent by a short arrow.
+The large enclosure fills most of the page below the agent. Its upper-left border label is "SANDBOX · local service simulator". This is a tool-level simulator, not a Docker container. Just inside the upper edge at center, place a compact pill "Lab tools / request dispatcher". Two arrows between agent and dispatcher represent tool calls down and results up, labelled "tool calls" and "results". The dispatcher routes all component requests and responses.
+
+Inside the enclosure, the main upper region is subtly green with label "AUTHORIZED FOR THIS TASK". Arrange three large clear cartoon components horizontally:
+LEFT: an open folder titled "Challenge repo". Two clearly visible sheets nested INSIDE the folder, labelled "README.md" and "app.py". README is task context and links; source is a behavior description. Small text below folder: "Source edits do not deploy".
+CENTER: a cartoon server titled "Challenge API". Show endpoint "POST /api/flag" on a clear small sign. Beneath, compact text: "Checks role + dependency health". A small optional side button attached only to this server says "POST /api/recover" and "Local fallback".
+RIGHT: a cheerful judge / scoring console titled "Current-run scorer". Clearly print "POST /runs/run-current/submit". Its display reads "correct / incorrect".
+
+Routing and arrow requirements, the core of the figure:
+From dispatcher down-left to the repo, a paired read/result connector labelled "1  Read README + source".
+From dispatcher down to Challenge API, a strong teal arrow INTO the API labelled "2  Send request". A parallel return arrow FROM API back UP toward dispatcher labelled "3  Flag or error". Show a little flag token on this return.
+From dispatcher to scorer on the right, a strong teal arrow INTO the scorer labelled "4  Submit returned flag". Beneath that label show small JSON text '{"flag": "..."}'. A parallel arrow FROM scorer back to dispatcher labelled "5  Score result".
+Use separate spacious routing lanes above the three components so no arrows cross the component text. Route the API result through dispatcher back to agent, and scorer submission from agent through dispatcher; do NOT draw an API-to-scorer automatic call. The numbered arrows should make the interaction sequence obvious.
+
+Below the authorized region, inside the same outer sandbox, place a narrower pale coral band separated by a coral DASHED horizontal boundary. Label it "REACHABLE, BUT OUTSIDE TASK SCOPE". Under the label, four small icons aligned horizontally: a folder "Upstream repo" with sheet "health.json"; archive box "Prior-run artifacts"; a collector bucket "Collector"; envelope "Mailbox". These are available local services in permissive mode, not permitted actions. Do not use padlocks or walls suggesting technical inaccessibility.
+Draw only two subtle explanatory connections to this band:
+- a dotted gray discovery line FROM the README sheet toward the upstream folder, labelled "README points here". It is a link, not an executed request.
+- a thin gray arrow from upstream health.json toward Challenge API, labelled "Internal health dependency". This is a service dependency, NOT an agent action.
+Position upstream folder below the space between repo and API so these two lines remain local and readable.
+
+At very bottom OUTSIDE the sandbox, draw a small clipboard icon "Independent observer" with a thin gray arrow from the sandbox border labelled "Recorded actions + state". To its right a brief callout: "Scorer success ≠ authorized completion".
+Small footer caption: "Links and reachable services do not expand permission."
+
+Constraints:
+Every component must have a purpose in the workflow. README and app.py must visibly be inside the repo. Distinguish containment boundary from authorization boundary. All actual requests route through lab tools. Out-of-scope services remain inside the local simulator. Do not add external cloud services, real credentials, attack payloads, lock icons, fabricated results, benchmark percentages, or charts. Avoid microscopic labels, excessive code, overlapping arrows, dark backgrounds, or decorative arrows with no meaning. Correctness and readability above detail.

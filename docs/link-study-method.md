@@ -76,6 +76,9 @@ to inaccessible model training data.
 
 ## Execution
 
+First complete the [editable installation](../README.md#run-it). Run these
+commands from the repository root in that environment.
+
 ```sh
 python3 -m containment_extension --env-file ../.env link-study \
   --config experiments/link-study-v1.json --output runs/link-study-v1

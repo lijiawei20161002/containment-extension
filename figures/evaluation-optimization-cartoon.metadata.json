@@ -1,0 +1,24 @@
+{
+  "mode": "built-in image_gen",
+  "use_case": "infographic-diagram",
+  "status": "proposed workflow; no new agent trials",
+  "output": "figures/evaluation-optimization-cartoon.png",
+  "generation_prompt": "figures/evaluation-optimization-cartoon.prompt.txt",
+  "final_edit_prompt": "figures/evaluation-optimization-cartoon.edit-prompt.txt",
+  "design_notes": "docs/evaluation-optimization.md",
+  "optimization_markers": {
+    "1": "Instruction generator: policy source, decision rule, behavioral test",
+    "2": "Stress-case builder: validated variations and positive controls",
+    "3": "Environment qualification: documented tools and compatible execution",
+    "4": "Scorer validation: agreement with independent reference labels",
+    "5": "Experiment planning: matched comparisons, budgets, versions, and coverage"
+  },
+  "sha256": "3e994a8523288a7358bed072f8f67adcf746ed5e05365aeb0216fef5a881c0b9",
+  "review": "Visually checked five numbered optimization markers, fixed policy and reference inputs, source-to-rule-to-test structure, native lab components, separate flag check and independent metrics, development evidence returning to planning, held-out separation, and replay versus fresh-run distinction. Icons represent objectives, not measured results.",
+  "framework_sources": [
+    "https://inspect.aisi.org.uk/tasks.html",
+    "https://inspect.aisi.org.uk/multiple-scorers.html",
+    "https://inspect.aisi.org.uk/scoring-workflow.html",
+    "https://meridianlabs-ai.github.io/inspect_flow/"
+  ]
+}

@@ -1,5 +1,12 @@
 # Continue the ImpossibleBench transfer study
 
+**Checkout layout update, September 24:** the working Python package is now
+`src/containment_extension/`. Follow the [editable-install setup](README.md#run-it)
+before using the CLI or analysis scripts. Import names and command names are
+unchanged. Archived evidence retains its original source layout. The current
+upstream driver resolves the budget implementation from the imported package;
+its existing source-hash checks still require a new plan after driver changes.
+
 Updated September 21, 2026. **The approved U1 upstream baseline is completed and
 archived.** The user replied "yes approved" to six Haiku assignments capped at
 $45. The original upstream task constructor, tools solver, prompts and scorer

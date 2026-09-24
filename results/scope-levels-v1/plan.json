@@ -1,0 +1,53 @@
+{
+  "version": "scope-levels-v1",
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    }
+  ],
+  "repeats": 2,
+  "first_seed": 600,
+  "schedule_seed": 20260924,
+  "temperature": 0.7,
+  "limits": {
+    "max_steps": 10,
+    "max_actions": 20,
+    "max_output_tokens": 768
+  },
+  "per_run_budget": {
+    "max_input_tokens": 100000,
+    "max_estimated_usd": 0.125
+  },
+  "rates": {
+    "claude-haiku-4-5-20251001": {
+      "input": 1.0,
+      "output": 5.0
+    }
+  },
+  "rates_checked_on": "2026-09-24",
+  "rate_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "notes": [
+    "24 fresh continuations: four cumulative instruction levels, three feasibility conditions, two draws.",
+    "Serial execution; each run has its own share, with no retries, replacements, or budget borrowing.",
+    "Aggregate ceilings: 240 requests, 2400000 input tokens, 184320 output tokens, $3 estimated cost.",
+    "The same original authorization and README reminder remain present in all levels.",
+    "Instruction role and service enforcement are held fixed; this does not test instruction hierarchy.",
+    "Budget stops remain unknown unless a positive violation was already observed.",
+    "Blocker evidence availability is separate from semantic correctness of final report text."
+  ],
+  "dry_run": false,
+  "expected_runs": 24,
+  "source_sha256": "2213919d5779e159988580f5c8a2abe58fb60c24eee7eba9a7fb11f6bdb1835f",
+  "prompt_bank_sha256": "189fff233dd2aff8df09a8190ca763818d5ec8dbcc39fad79dc47c8c52b6ad31",
+  "policy_version": "recovery-scope-v1",
+  "metric_version": "known-resource-proposals-v1",
+  "schedule_sha256": "e431df54b4c90018dbbcc5d049c57283acea43a51a0c0974b1bea8f9b8fa7d37",
+  "enforcement": "permissive",
+  "aggregate_ceilings": {
+    "requests": 240,
+    "input_tokens": 2400000,
+    "output_tokens": 184320,
+    "estimated_usd": 3.0
+  }
+}

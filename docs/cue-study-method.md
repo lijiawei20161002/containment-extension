@@ -115,6 +115,9 @@ URLs are dispatched locally and never fetched.
 
 ## Commands
 
+First complete the [editable installation](../README.md#run-it). Run these
+commands from the repository root in that environment.
+
 From the repository root:
 
 ```sh

@@ -1,0 +1,91 @@
+Use case: infographic-diagram
+Asset type: cartoon research workflow map showing WHERE TO OPTIMIZE an evaluation system built on Inspect AI.
+Create one polished wide landscape cartoon infographic, approximately 3:2. Match a friendly blue coding robot, rounded navy ink outlines, soft cream paper, pale blue panels, teal arrows, and ORANGE numbered wrench badges marking optimization opportunities. OPAQUE light cream background everywhere, including title and footer; no dark gradients, vignette, or transparency. Large crisp correctly spelled labels. Generous space. The illustration should explain causal connections, not just list components.
+
+Main title: "Where can we improve the evaluation?"
+Subtitle: "Proposed workflow built on Inspect AI"
+Small legend: orange wrench = "Optimize here"; blue = "Execution"; gray shield = "Fixed reference".
+Do not show benchmark scores or imply these improvements have been implemented.
+
+Overall composition:
+Main workflow across the middle: candidate instructions → actor in sandbox → saved evidence → independent scoring.
+Two compact reference cards sit at upper left and upper right.
+A stress-case builder above the sandbox feeds cases down into it.
+A run-planning strip sits below the workflow.
+A final held-out evaluation strip is separate at the bottom.
+Use five orange NUMBERED wrench badges, exactly 1 through 5, attached to the five optimization modules described below. No extra numbered badges.
+
+UPPER LEFT FIXED REFERENCE:
+Gray shield card titled "Task + trusted scope".
+A short arrow FROM this card DOWN into the instruction-generator module.
+Caption: "Permissions stay fixed."
+This policy is shared with the actor and generator, not hidden.
+
+MODULE 1, middle left:
+Orange-bordered friendly robot designer with a document, title "1  Instruction generator".
+Show its INTERNAL design as three little connected cards:
+"Policy source" → "Decision rule" → "Behavioral test"
+Below them, readable example:
+"Exclude prior-run artifacts"
+"Test with a tempting cached flag"
+Small caption: "Ground each clause; remove redundancy."
+An output arrow pointing RIGHT to the sandbox is labelled "Candidate instructions".
+
+MODULE 2, above the sandbox at upper center:
+Orange-bordered robot builder arranging three scenario cards, title "2  Stress-case builder".
+Two concise lines:
+"Vary ambiguity, urgency, and misleading links."
+"Validate cases; retain solvable controls."
+Its output arrow points DOWN into the sandbox, labelled "Task variants".
+Include three compact scenario tabs "Solvable", "Recoverable", "Impossible".
+The generator proposes cases; validation preserves the task contract and checks ground truth. Do not depict it inventing reference verdicts.
+
+MODULE 3, center of middle row:
+A rounded pale-blue enclosure titled "Actor + sandbox".
+Attach orange wrench badge and caption "3  Qualify the environment".
+Inside draw a blue coding robot "Agent", an open "Repo" folder containing "README.md" and "app.py", a little "API" server, and a small "Flag check" console.
+Short caption inside: "Read repo · call API · submit flag".
+No automatic API-to-scorer arrow. The agent is responsible for each step.
+Below inside the enclosure, a small coral dashed band "Reachable but excluded", with upstream folder and prior-run archive icons.
+Bottom of this module, show two short environment checks:
+"Tools work as documented"
+"Actor and grader use compatible environments"
+This is the existing local lab concept, with additional qualification proposed. No suggestion that generic sandboxing alone enforces task authorization.
+
+Between sandbox and scoring, draw a narrow evidence stack icon. Arrow FROM sandbox points RIGHT into it. Label "Saved traces + state". Arrow from this stack points RIGHT into the independent-scoring module. This is preserved observation, not a model's self-assessment.
+
+MODULE 4, middle right:
+Orange-bordered cartoon inspector robot with clipboard, title "4  Scorer validation".
+Small caption "Inspect custom scorers".
+Three short rows:
+"Authorized completion"
+"Unauthorized attempts / effects"
+"Evidence-supported blocker"
+Bottom highlighted note: "Reduce false accepts and false rejects."
+Do not depict these metric labels as measured scores, and do not mark any as a pass.
+A short arrow from the upper-right reference card points DOWN INTO this module.
+
+UPPER RIGHT FIXED REFERENCE:
+Gray shield card titled "Certificates + reference labels".
+Caption: "Independent grading targets."
+These ground-truth data feed only the independent scorer/validator, not the instruction generator or actor. There must be NO arrow from this card to module 1 or the actor.
+
+MODULE 5, full-width light-blue strip below main workflow:
+Orange wrench badge title "5  Experiment planning".
+Below title, three short grouped labels separated by dots:
+"Matched comparisons" · "Budgets + versions" · "Coverage + failure accounting"
+Smaller line: "Inspect / Inspect Flow: tasks, solvers, tools, logs, scorers, parameter sweeps"
+This bar represents the execution and orchestration foundation supporting the modules above. Use a simple upward bracket toward the main workflow rather than a tangle of arrows.
+On the side of this strip, a small development-feedback curved arrow from saved traces toward the optimization modules, with label "Development feedback". It must not originate from the final held-out result. Avoid overlap; one shared labelled feedback route is sufficient.
+
+BOTTOM SEPARATE PALE LAVENDER STRIP:
+A short horizontal sequence:
+"Freeze choices" → "Held-out evaluation" → "Report results"
+Below, clearly print: "Final test results do not feed optimization."
+
+FOOTER, two concise cream-backed notes:
+"Offline scorer change → replay saved evidence"
+"Instruction or actor-visible feedback change → new agent runs"
+
+Constraints:
+Scientific accuracy and readable text above ornamental detail. Clearly distinguish in-lab flag check from independent evaluation. Show optimization opportunities without changing the trusted scope or reference labels to inflate performance. Instruction generation must visibly have source-to-rule-to-test structure. Scorer improvement is measured against fixed labels, not higher agent pass rates. Stress tests must keep positive controls. The five orange markers are the visual focus. Keep text short, no microscopic labels, no crossed connectors, no invented statistics, no big claims of guaranteed safety, no hidden certificate sent to actor, no final-test feedback loop.

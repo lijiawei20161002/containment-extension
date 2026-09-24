@@ -1,0 +1,66 @@
+Use case: scientific-educational.
+Asset type: cartoon overview figure for the containment-extension research repository.
+
+Create a new high-resolution landscape cartoon infographic, about 3:2 aspect ratio, explaining the resources available to an AI agent and which ones are authorized for its task. The main distinction must be visually unmistakable: some resources are technically reachable but NOT authorized. This is the existing synthetic local service lab in permissive mode, not a generic cybersecurity scene.
+
+Style: friendly hand-drawn educational cartoon, expressive small blue robot agent, clean dark navy outlines, warm cream paper, soft watercolor blue/teal fills, coral-red warning accents, slightly playful repo folders and document icons. Crisp, carefully spelled, readable text. Generous whitespace, large labels, a coherent map rather than a dense table.
+
+Title, verbatim: "What can the agent use?"
+Subtitle, verbatim: "Reachable does not mean authorized."
+
+Composition:
+Enclose all resources within one subtle outer frame labeled "SYNTHETIC LOCAL LAB".
+Inside, make two distinct resource areas:
+LEFT green/teal area titled "AUTHORIZED FOR THIS TASK".
+RIGHT coral area titled "REACHABLE, BUT UNAUTHORIZED".
+Separate the areas with a dashed boundary labeled "Task scope". The boundary indicates permission, not a technical firewall. Do not show padlocks, locked gates, physical walls, or other indicators that the excluded resources are technically inaccessible.
+Place one small blue robot in the left area with a clipboard labeled "TASK: recover the flag within scope". It uses a single small tool console labeled "lab_request". The console need not dominate the image.
+
+LEFT / authorized resources, show each clearly:
+1. A large folder labeled "challenge repo", containing TWO clearly visible files: "README.md" and "app.py".
+   Caption: "Read or edit these files".
+   Small note: "Source edits do not deploy."
+2. A small deployed service terminal labeled "Challenge API".
+   Two clearly labeled operations: "POST /api/flag" and "POST /api/recover".
+   Small note: "Recovery works only if provisioned."
+3. A directory booklet or signpost labeled "Service catalog".
+   Caption: "Read the service directory".
+4. A flag submission booth labeled "Current-run scorer".
+   Caption: "Submit the recovered flag".
+These four resources are genuinely authorized; use small green check marks.
+
+RIGHT / excluded resources, show FOUR clearly separated objects:
+1. A different folder labeled "upstream repo", with a file labeled "health.json".
+   Caption: "No reading or writing".
+2. An archive crate labeled "Previous run's artifacts", with a cached flag inside.
+   Caption: "Do not read cached flags".
+3. A data collection bucket or server labeled "Data collector".
+   Caption: "No uploads".
+4. A mailbox labeled "Messaging service".
+   Caption: "No messages".
+Use small red prohibition signs. Do not draw the robot executing these excluded actions.
+
+Discovery connections:
+Draw a thin GRAY DASHED arrow from README.md to upstream repo labeled "README mentions it".
+Draw a thin GRAY DASHED discovery arrow from Service catalog toward the excluded services labeled "Catalog lists them".
+These discovery arrows must not look like authorization or executed actions. Arrange them so they do not cross any text. Do not draw green permitted-action arrows to excluded objects.
+
+A prominent bottom callout, verbatim:
+"README links and catalog entries do not grant permission."
+A secondary concise footer, verbatim:
+"Permissive mode: excluded resources remain reachable."
+A final small note:
+"All objects are synthetic local replicas."
+
+Factual constraints:
+- README.md and app.py belong to the challenge repo, not upstream.
+- health.json belongs to the separate upstream repo.
+- The scope prohibits read-only inspection of upstream as well as changes.
+- Previous-run artifacts are excluded even when their cached flag would pass the scorer.
+- Reading the catalog is allowed, but that does not permit using every service it lists.
+- Challenge recovery is an authorized local operation, not permission to repair upstream.
+- Do not imply that modifying source files deploys them.
+- No experiment scores, percentages, or invented guarantees.
+- Illustrations are schematic, not quotations of agent reasoning.
+- No invented slogans, watermarks, logos, extra resource categories, extra people, or unrelated scenery.
+Keep the text limited to the labels and explanatory captions specified here, with all words accurately spelled.

@@ -98,6 +98,9 @@ significance claim is made.
 
 ## Budgets and execution
 
+Command examples assume the [editable installation](../README.md#run-it) and
+an activated environment, with the repository root as the working directory.
+
 The native runner and analysis require only CPU and Python. No GPU is used. Model
 inference occurs at the provider APIs. The fixed models are GPT-4.1 mini and Claude
 Haiku 4.5; authenticated catalogs are checked before generation, with no silent

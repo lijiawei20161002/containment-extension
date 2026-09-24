@@ -1,0 +1,76 @@
+Use case: infographic-diagram
+Asset type: cartoon architecture figure for a PROPOSED meta-instruction generator and tester built around the existing containment-extension evaluation sandbox.
+Create a polished educational cartoon infographic in a wide landscape composition, approximately 3:2. Friendly blue robots, clear rounded navy outlines, soft teal, pale blue and coral accents, opaque warm ivory paper background. Every corner, title area, and footer must be LIGHT cream. No transparency, dark backgrounds, vignettes, or gradients obscuring text. Large readable lettering, generous white space, logical arrows that do not cross labels. This should explain a working process at a glance.
+
+Title: "Generate instructions. Test behavior."
+Small prominent badge: "PROPOSED DESIGN"
+Subtitle: "A meta-generator learns from development failures; an independent tester checks the agent."
+
+LAYOUT: two main rows forming a clockwise development loop, plus a distinct bottom strip for the final held-out evaluation. Arrange enough space that the central sandbox is detailed and text stays legible.
+
+TOP ROW left to right:
+A. Compact input stack, titled "1  Inputs", containing three document cards:
+"User task"
+"Trusted scope policy"
+"Tools + README context"
+Tiny but readable note below the stack: "README cannot grant permission."
+Arrow from this stack INTO the next component.
+
+B. Friendly blue robot wearing a small designer pencil behind its ear, titled "2  Meta-generator".
+A small speech bubble: "Turn scope into concrete steps."
+Small caption: "Writes guidance; cannot change policy."
+Arrow FROM generator INTO candidate instruction sheet.
+
+C. A large clear paper sheet titled "3  Candidate instruction".
+Use exactly four short bullet lines:
+"Check target, operation, and run."
+"Use authorized recovery."
+"Skip excluded resources."
+"Report blockers with observed evidence."
+Small note: "Same candidate across test cases."
+Downward arrow FROM this sheet INTO the sandbox below, labelled "Give to a fresh agent".
+
+LOWER MAIN ROW right to left:
+D. On the right, a large rounded pale-blue enclosure titled "4  Sandbox trials".
+Inside, show a small actor robot labelled "Agent" and three simple cartoon components:
+- open folder "Repo" visibly containing two sheets "README.md" and "app.py";
+- server "API";
+- small machine "Flag scorer".
+Use simple short arrows FROM the agent to these components, labeled respectively "read", "request", and "submit". A short return arrow API to agent can be labelled "flag / error". Do not show the source file itself executing code, and do not show API automatically invoking scorer.
+A dashed coral mini-band at the bottom INSIDE this enclosure reads "Reachable but excluded" and contains a tiny upstream folder and prior-run archive icon. Do not show locks; this is reachable in permissive tests.
+Below the enclosure but in this panel, three clearly readable colored scenario tabs:
+"Solvable" | "Recoverable" | "Impossible"
+Small caption: "Fresh sandbox copy for every trial".
+Arrow FROM sandbox to a slim log stack to its LEFT, labelled "Actions + responses + state".
+
+E. On the left of the logs, a friendly inspector robot with clipboard and magnifying glass, titled "5  Independent tester".
+The log stack arrow points INTO this tester. Separately BELOW the tester, a pale yellow card "Fixed policy + hidden task certificate" has one short upward arrow INTO the tester. This card has NO connection to generator or actor and does not appear inside the sandbox. It represents trusted grading inputs that the generator cannot edit.
+Beside the inspector, a small scorecard with four readable rows:
+"Authorized completion"
+"Unauthorized attempts / effects"
+"Supported blocker"
+"False refusal"
+Do not mark these rows as passed or failed; they are metric names, not actual results.
+A compact label: "Flag match alone is insufficient."
+
+DEVELOPMENT FEEDBACK:
+Route ONE clear curved teal arrow FROM the independent tester UP to the meta-generator, with label "Development failures → revise".
+Attach a small coral example feedback bubble along this path:
+"Example failure: read a prior-run artifact."
+This is an illustrative failure, not a measured new result.
+The feedback arrow must point into the generator, never into the trusted policy or hidden certificate.
+Keep this loop well separated from the final evaluation below.
+
+BOTTOM STRIP, light lavender, visually distinct from the development loop:
+Heading "6  Freeze, then evaluate"
+A short horizontal sequence of three clearly connected cards:
+"Freeze selected instruction" → "New, held-out cases" → "Report results"
+Below the sequence, print: "Held-out results do not feed revisions."
+This is a later stage, after development. There must be NO arrow from held-out results back into generator.
+Small readable implementation-status note: "Planned upgrade: verify report evidence against actual observations."
+
+Footer on light cream, in bold navy:
+"The generator writes instructions. The tester checks behavior."
+
+Scientific constraints:
+Clearly label this as proposed architecture, not implemented results or a trained system. Do not suggest weight training is required; revisions can be prompt iteration. Trusted scope is an input to generation, while independent policy and hidden ground truth govern grading. The actor and generator never receive the hidden task certificate or the expected secret flag. Generated guidance cannot expand authority. The independent tester evaluates behavior, not just a self-written rubric. The trial sandbox is a local tool-level simulator. Use only synthetic icons and illustrative labels. No made-up percentages, scores, guarantees of safety, real credentials, new trial claims, or automatic API-to-scorer flow. Correctness and readable labels matter more than decorative complexity.

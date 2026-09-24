@@ -27,11 +27,16 @@ dev = ["pytest>=8", "ruff>=0.11"]
 [project.scripts]
 safe-frontier = "containment_extension.cli:main"
 
+[tool.setuptools]
+package-dir = {"" = "src"}
+
 [tool.setuptools.packages.find]
+where = ["src"]
 include = ["containment_extension*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["src"]
 
 [tool.ruff]
 line-length = 100

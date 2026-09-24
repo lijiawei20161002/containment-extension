@@ -1,0 +1,14 @@
+Edit this cartoon infographic with four precise corrections. Preserve the complete composition, all five orange numbered wrench badges, illustrations, light background, and all other labels.
+
+1. Correct the teal development-feedback connector. REMOVE the existing two-headed curved teal loop between "Saved traces + state" and the bottom edge of the actor sandbox. Instead draw ONE simple teal arrow FROM the saved-evidence stack DOWN into the blue "5 Experiment planning" strip. Its ONLY arrowhead is at the planning strip. Label the arrow "Development feedback". The planning strip already connects upward to development modules via navy support lines; preserve those. No feedback arrow may originate at the held-out evaluation strip. Avoid crossing text.
+
+2. In the center module's small "Flag check" monitor, remove the invented terminal command "$ check_flag" and replace the screen text with exactly two lines:
+"Flag match?"
+"true / false"
+Keep the external "Flag check" label unchanged. This is a boolean service checker, not a shell command.
+
+3. In the excluded-resources band, replace the text "(e.g., original source)" below "Upstream repository" with "health.json". Keep the folder and all other excluded-resource labels unchanged.
+
+4. In the bottom purple final-evaluation strip, replace the parenthetical phrase "(run once on unseen test set)" beneath "Held-out evaluation" with "(evaluate frozen choices on unseen cases)". It may wrap onto two short lines. Do not imply that statistical replication is disallowed.
+
+Preserve the title, legend, source-to-rule-to-test diagram, fixed policy/reference labels, final-test separation, and footer notes. All letters crisp and readable. Opaque light cream background remains unchanged.

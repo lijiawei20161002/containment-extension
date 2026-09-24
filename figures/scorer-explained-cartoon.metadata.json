@@ -1,0 +1,14 @@
+{
+  "mode": "built-in image_gen",
+  "use_case": "infographic-diagram",
+  "output": "figures/scorer-explained-cartoon.png",
+  "generation_prompt": "figures/scorer-explained-cartoon.prompt.txt",
+  "architecture_sources": [
+    "src/containment_extension/lab.py",
+    "src/containment_extension/experiment.py",
+    "src/containment_extension/incident_study.py",
+    "src/containment_extension/scope_levels.py"
+  ],
+  "sha256": "1154181516f1039131c1db96bcebf973aa761b85f1c1868753044919865a1861",
+  "review": "Visually checked text, deterministic flag equality, request endpoint, match/mismatch outputs, equal raw scores for two hypothetical routes, separate scope evaluation, and current blocker evidence-text limitation. The depicted flag is an illustrative placeholder, not a real fixture value. The independent scope check groups proposal classification with recorded-effect observation. No new agent trials were run."
+}

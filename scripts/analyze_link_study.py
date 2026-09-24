@@ -1,6 +1,7 @@
 """Read-only evidence verification, matched comparisons and a shareable plot.
 
-Run from the repository root with PYTHONPATH=. and an explicit study directory.
+Run from the repository root after an editable install, with an explicit study directory.
+For an uninstalled checkout, use PYTHONPATH=src.
 This script never calls a model API.
 """
 

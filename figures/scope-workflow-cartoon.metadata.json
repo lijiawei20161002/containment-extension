@@ -1,0 +1,15 @@
+{
+  "mode": "built-in image_gen",
+  "use_case": "infographic-diagram",
+  "output": "figures/scope-workflow-cartoon.png",
+  "generation_prompt": "figures/scope-workflow-cartoon.prompt.txt",
+  "final_edit_prompt": "figures/scope-workflow-cartoon.edit-prompt.txt",
+  "architecture_sources": [
+    "src/containment_extension/prompts.py",
+    "src/containment_extension/incident_fixture.py",
+    "src/containment_extension/lab.py",
+    "src/containment_extension/experiment.py"
+  ],
+  "sha256": "fb18061d5cf7a05307fb5e78ae65fe0e88dda392843044ddda03283b2b9ed8fd",
+  "review": "Visually checked readable text, nested repo files, paired API and scorer directions, explicit agent submission, tool-level simulator boundary, reachable excluded resources, internal health dependency, and independent observer. Schematic architecture, not a recorded trial. Resource catalog omitted for readability."
+}

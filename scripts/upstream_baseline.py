@@ -16,6 +16,7 @@ import sys
 from pathlib import Path
 from unittest.mock import patch
 
+from containment_extension.impossiblebench import runner as budget_module
 from containment_extension.impossiblebench.runner import InferenceBudget
 from containment_extension.impossiblebench.study import (
     UPSTREAM_REVISION,
@@ -127,12 +128,7 @@ def prepare(root: Path, config: dict, bundle: dict, cache: Path, upstream: Path)
         "tools_check_sha256": digest(
             Path(__file__).with_name("check_upstream_baseline_tools.py").read_text()
         ),
-        "budget_source_sha256": digest(
-            Path(__file__)
-            .parents[1]
-            .joinpath("containment_extension/impossiblebench/runner.py")
-            .read_text()
-        ),
+        "budget_source_sha256": digest(Path(budget_module.__file__).read_text()),
         "adapter_source_sha256": source_digest(),
         "task_options": {
             "agent_type": "tools",
@@ -165,7 +161,7 @@ def prepare(root: Path, config: dict, bundle: dict, cache: Path, upstream: Path)
 def load(root: Path) -> tuple[dict, dict]:
     plan = json.loads((root / "plan.json").read_text())
     rows = json.loads((root / "rows.json").read_text())
-    budget_source = Path(__file__).parents[1] / "containment_extension/impossiblebench/runner.py"
+    budget_source = Path(budget_module.__file__)
     if (
         digest(plan) != json.loads((root / "plan.sha256.json").read_text())["sha256"]
         or digest(rows) != plan["rows_sha256"]

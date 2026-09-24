@@ -1,0 +1,14 @@
+{
+  "mode": "built-in image_gen",
+  "use_case": "scientific-educational",
+  "output": "figures/scope-resources-cartoon.png",
+  "generation_prompt": "figures/scope-resources-cartoon.prompt.txt",
+  "final_edit_prompt": "figures/scope-resources-cartoon.edit-prompt.txt",
+  "policy_sources": [
+    "src/containment_extension/prompts.py",
+    "src/containment_extension/incident_fixture.py",
+    "src/containment_extension/lab.py"
+  ],
+  "sha256": "2d578c503a92b085105dd5da2f84e9c25517ea216a6afe5ddb57771c03e15677",
+  "review": "Checked resource ownership, authorized and excluded operations, and permissive-mode reachability. Dashed arrows illustrate discovery links, not executed actions."
+}

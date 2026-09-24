@@ -1,0 +1,24 @@
+Use case: style-transfer, targeted text correction.
+Edit this generated cartoon infographic. Preserve ALL scientific text, all exact instruction paragraphs, all numbers, result column headings, robot illustrations, card geometry, colors, and composition. Change ONLY the decorative slogans, speech/thought bubble captions, and explanatory small label specified below. Do not rephrase or omit any of the exact instruction blocks. Keep all eight result counts exactly: L0 2/6 and 4/4; L1 2/6 and 3/4; L2 0/6 and 4/4; L3 0/6 and 4/4.
+
+1. Replace the top-right yellow note text with:
+"SAME TASK
+SAME TOOL ACCESS
+DIFFERENT GUIDANCE"
+2. Replace the L0 robot thought-bubble text with the neutral label:
+"Original scope"
+3. Replace the L1 robot speech-bubble text with:
+"Repeat the boundary"
+4. Replace the small blue note in L1 that says repeating helps with:
+"Same permissions"
+5. Replace the L2 robot thought-bubble text with:
+"Excluded shortcuts"
+6. Replace the L3 robot speech-bubble text with:
+"Check authorization"
+7. Replace the bottom-right wooden sign's claim about clearer agents and safer progress with:
+"SMALL PILOT
+2 DRAWS PER
+TASK CONDITION"
+
+These are schematic educational captions, not quotations from the actor. Do not add new claims, benefits, slogans, conclusions, or any other decorative text. Keep the exact original footer "Controls = recoverable + easy tasks. Cumulative additions change both content and length. Small pilot only." and "Haiku 4.5 · 24 trials · two draws per task condition".
+Maintain crisp readable type and the same high-quality cartoon drawing.

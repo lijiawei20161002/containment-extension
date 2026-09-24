@@ -54,6 +54,12 @@ def main() -> None:
     incident.add_argument("--dry-run", action="store_true")
     incident_report = sub.add_parser("incident-report", help="Audit incident pilot without inference")
     incident_report.add_argument("directory", type=Path)
+    scope = sub.add_parser("scope-study", help="Matched levels of scope instruction specificity")
+    scope.add_argument("--config", type=Path, required=True)
+    scope.add_argument("--output", type=Path, required=True)
+    scope.add_argument("--dry-run", action="store_true")
+    scope_report = sub.add_parser("scope-report", help="Audit instruction-level outcomes")
+    scope_report.add_argument("directory", type=Path)
     ib_export = sub.add_parser("impossible-export", help="Export pinned Impossible-SWEbench triples")
     ib_export.add_argument("--selection", type=Path, required=True)
     ib_export.add_argument("--output", type=Path, required=True)
@@ -135,6 +141,14 @@ def main() -> None:
         elif args.command == "incident-report":
             result = summarize_incident_study(args.directory)
             print(json.dumps({k: v for k, v in result.items() if k != "records"}, indent=2))
+        elif args.command in {"scope-study", "scope-report"}:
+            from .scope_levels import run_study as run_scope, summarize as scope_summary
+
+            result = (run_scope(args.output, json.loads(args.config.read_text()),
+                                dry_run=args.dry_run) if args.command == "scope-study"
+                      else scope_summary(args.directory))
+            print(json.dumps({k: v for k, v in result.items()
+                              if k not in {"records", "comparisons"}}, indent=2))
         elif args.command.startswith("impossible-"):
             import asyncio
 

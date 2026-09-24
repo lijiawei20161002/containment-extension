@@ -1,0 +1,6 @@
+Make one precise text correction in the orange L0 title banner, at approximately x=26..341, y=554..604 of this 1024x1536 cartoon.
+Replace the entire heading with clean bold SANS-SERIF typography reading exactly:
+L0 ORIGINAL SCOPE
+
+The word ORIGINAL is spelled O R I G I N A L — eight letters. Use all capitals to avoid the extra lowercase-i artifact. No duplicated I. The exact character sequence is ORIGINAL.
+Do not change any other pixel region intentionally: preserve all cartoons, layout, full instruction text, numerical results, backgrounds, other headings and footnotes. Focus ONLY on replacing the text inside this one orange banner.

@@ -1,0 +1,7 @@
+Use case: text-localization / precise typo correction.
+Edit the provided cartoon infographic with one minimal text change.
+In the orange L0 heading, correct the misspelled word "Origiinal" (extra i) to "Original".
+The complete orange heading must read exactly: "L0  Original scope".
+Spell Original as O-r-i-g-i-n-a-l, seven letters. Use clear, separated letterforms in the same cartoon lettering style so it cannot be read as having an extra i.
+Ensure the other occurrences remain correctly spelled: "original" in "Shared scope — already in every original task", and "Original scope" in the L0 speech bubble.
+Keep every other part of the image unchanged: exact instruction paragraphs, all eight numerical results, result headings, all robots, speech bubbles, colors, backgrounds, card layout, borders, and footer. Do not add, delete, summarize, reflow, or rewrite any other content. This is a spelling fix only.

@@ -1,0 +1,8 @@
+Make two precise corrections to this cartoon infographic and preserve everything else: layout, illustrations, all other text, colors, arrows, and six numbered stages.
+1. In stage 5, next to the yellow "Fixed policy + hidden task certificate" card, replace the current caption "Trusted grading inputs. Not visible to generator or agent." with exactly:
+"Policy is shared.
+Hidden certificate stays
+with the tester."
+The trusted scope policy IS available to the generator and the actor; only hidden task ground truth is withheld. Preserve the yellow card and its upward arrow into the independent tester.
+2. Inside stage 4, correct the "flag / error" response connector between API and agent. Draw ONE single-direction arrow beginning at the API on the RIGHT and pointing LEFT into the agent, labelled "flag / error". Remove the stray right-pointing arrowhead near the API end. Keep the distinct request arrow pointing from agent RIGHT into API, and the separate submit arrow pointing from agent RIGHT into scorer. No API-to-scorer connection.
+Keep the warm ivory background fully light and opaque. Keep every other element exactly as it is.

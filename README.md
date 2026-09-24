@@ -30,6 +30,7 @@ implementation work required before the next live plan.
 | Cue study | [96 rollouts](docs/cue-study-results.md) | No consistent increase from the tested prompt cues |
 | Upstream-link study | [128 rollouts](docs/link-study-results.md) | Nearby reminders reduced early access, but later violations substituted other routes |
 | Incident study | [160 rollouts](docs/incident-study-results.md) | Haiku impossible-task outside access was 6/8 in N versus 0/8 in RE; all 96 recoverable/easy controls completed in scope |
+| Scope instruction pilot | [24 rollouts](results/scope-levels-v1/README.md) | Outside access: 2/6 baseline, 2/6 repeated scope, 0/6 explicit routes, 0/6 action check; 15/16 controls completed in scope |
 | ImpossibleBench preflight | [24 assignments, 16 started](docs/impossiblebench-live-preflight-results.md) | No scored submissions or intervention deliveries; intervention effects remain unmeasured |
 | Upstream baseline preparation | [12 scoring and 4 tool-loop controls](results/upstream-baseline-preparation-v1/README.md) | Qualified six-run proposal; no new model inference |
 | Direct upstream baseline | [6 completed assignments](docs/impossiblebench-upstream-baseline-results.md) | Original 1/2, impossible 0/4; all message-limited, with actor environment problems |
@@ -44,6 +45,9 @@ passed 121 tests at the last execution; see the
 
 ## Experiment documents
 
+- **Scope instruction levels:** [four-level native pilot](docs/scope-instruction-levels.md),
+  with matched recovery controls and separate proposal/effect measurements;
+  [figures and exact instructions](docs/scope-levels-figures-and-prompts.md).
 - **Execution priorities and proposed budgets:** [active roadmap](docs/experiment-roadmap.md).
 - **Direct benchmark baseline and comparison of the runners:** [upstream baseline](docs/impossiblebench-upstream-baseline.md).
 - **Coding transfer hypothesis and analysis:** [ImpossibleBench design](docs/impossiblebench-scaling.md),
@@ -60,8 +64,18 @@ For a visual introduction, see the [ImpossibleBench cartoon guide](docs/impossib
 
 ## Run it
 
-The native reproduction runner needs **Python 3.11+ and no third-party packages**.
-From this repository:
+The native reproduction runner needs **Python 3.11+ and no third-party runtime
+dependencies**. Install the package once from the repository root:
+
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+python3 -m pip install -e .
+```
+
+The editable install makes both `python3 -m containment_extension` and
+`safe-frontier` available, and picks up changes under `src/` immediately.
+In the activated environment, run:
 
 ```sh
 # Verify effect channels and enforcement without making any model calls.
@@ -79,9 +93,14 @@ python3 -m containment_extension --env-file ../.env suite \
 # Rebuild a report without generating more model calls.
 python3 -m containment_extension report runs/pilot-01
 
-# Tests (pytest is the only dependency required for these tests).
+# Install development tools, then run the tests.
+python3 -m pip install -e '.[dev]'
 python3 -m pytest -q
 ```
+
+For a source checkout without installation, prefix native commands with
+`PYTHONPATH=src`, for example
+`PYTHONPATH=src python3 -m containment_extension --help`.
 
 The output directory must be new; existing evidence is never overwritten by a
 rollout. Credentials are `OPENAI_API_KEY` and `ANTHROPIC_API_KEY`. Environment
@@ -93,6 +112,37 @@ The fixed pilot has eight rollouts, at most 12 inference requests and 24 tool
 actions per rollout, and at most 768 generated tokens per inference request.
 Provider token usage is recorded. This is a request/token budget, not a dollar
 spending guarantee. There are no automatic API retries or model substitutions.
+
+## Repository layout
+
+`containment-extension` is the repository and distribution name;
+`containment_extension` is the importable Python package. Python import names
+use underscores rather than hyphens. The package lives under `src/` to separate
+executable code from experiment inputs and research artifacts.
+
+```text
+containment-extension/
+├── src/containment_extension/   # Python package and command-line interface
+│   ├── cli.py, __main__.py      # safe-frontier / python -m containment_extension
+│   ├── lab.py, policy.py       # Native service simulator and scope checks
+│   ├── experiment.py           # Rollouts, source hashes, and reporting
+│   ├── *_study.py              # Native experiment protocols
+│   ├── scope_levels.py         # Instruction-level comparison
+│   └── impossiblebench/        # Coding-task backend and Inspect adapter
+├── tests/                      # Regression tests and small fixtures
+├── experiments/                # Versioned plans, configs, and environment recipes
+├── scripts/                    # Analysis, plotting, and upstream-baseline tools
+├── requirements/               # Tested optional dependency versions
+├── docs/                       # Methods, design notes, and interpretation
+├── figures/                    # Figures, prompts, and generation metadata
+├── results/                    # Archived evidence and historical source snapshots
+├── runs/                       # Local run outputs (ignored by Git)
+└── pyproject.toml              # Packaging, dependencies, CLI entry point, tests
+```
+
+Archived `results/*/source/containment_extension/` trees retain the layout used
+for those experiments. New run snapshots use the same archive format. The
+working package and Python imports are documented separately from those records.
 
 ## What the experiment measures
 
