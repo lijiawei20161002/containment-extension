@@ -1,0 +1,210 @@
+{
+  "cases": 28,
+  "entries": [
+    {
+      "family": "counter",
+      "id": "counter-foreign_read_forbidden",
+      "path": "development/counter-foreign_read_forbidden/case.json",
+      "sha256": "bdea192c3617293d51a08636f12d8cdbc25b472636bdb203cdf46f94d2ef2f7e",
+      "split": "development"
+    },
+    {
+      "family": "counter",
+      "id": "counter-foreign_read_allowed",
+      "path": "development/counter-foreign_read_allowed/case.json",
+      "sha256": "d516c836f1f0b9d8643889d737bab9d79d7217cc66c652a9a4b791e0c127f0af",
+      "split": "development"
+    },
+    {
+      "family": "counter",
+      "id": "counter-private_read_after_violation",
+      "path": "development/counter-private_read_after_violation/case.json",
+      "sha256": "bf2cab3ec2de6642f152fa712f949ab9c2b7f97c2bc76425eba3b7d217661d00",
+      "split": "development"
+    },
+    {
+      "family": "counter",
+      "id": "counter-shared_write_forbidden",
+      "path": "development/counter-shared_write_forbidden/case.json",
+      "sha256": "76067675c081016f5dd6b0b1b7da7d2637d16bb809b73390897534b7b30301ad",
+      "split": "development"
+    },
+    {
+      "family": "counter",
+      "id": "counter-shared_write_allowed",
+      "path": "development/counter-shared_write_allowed/case.json",
+      "sha256": "90ecedcf58f28d3939ed1976843c38599c60969860af0a646a23f61de4315e8d",
+      "split": "development"
+    },
+    {
+      "family": "counter",
+      "id": "counter-partitioned_write",
+      "path": "development/counter-partitioned_write/case.json",
+      "sha256": "dc3d579376ea68f30ad2bfffdee42a7bc6a50f9721a5dd3b5b6971ed55f8c820",
+      "split": "development"
+    },
+    {
+      "family": "counter",
+      "id": "counter-clean_read",
+      "path": "development/counter-clean_read/case.json",
+      "sha256": "39fe3838229f11ed588388057e246431763ff5d4ff77af28e14917182c88d8f5",
+      "split": "development"
+    },
+    {
+      "family": "named_counter",
+      "id": "named_counter-foreign_read_forbidden",
+      "path": "development/named_counter-foreign_read_forbidden/case.json",
+      "sha256": "3edec492f4917d14c2a94e0a22f6f7da7bb06ce3a4a65f029de59db4b3706d16",
+      "split": "development"
+    },
+    {
+      "family": "named_counter",
+      "id": "named_counter-foreign_read_allowed",
+      "path": "development/named_counter-foreign_read_allowed/case.json",
+      "sha256": "263a558e5bdac7b6ee8c8b8f0491c8127cc179dddd45deb2802811cfe9cbe070",
+      "split": "development"
+    },
+    {
+      "family": "named_counter",
+      "id": "named_counter-private_read_after_violation",
+      "path": "development/named_counter-private_read_after_violation/case.json",
+      "sha256": "36f2f6b9c8d28aa0c259eda88474e373dab7f113aaf09f767d75e85855c7ceb6",
+      "split": "development"
+    },
+    {
+      "family": "named_counter",
+      "id": "named_counter-shared_write_forbidden",
+      "path": "development/named_counter-shared_write_forbidden/case.json",
+      "sha256": "83eb80bc9899a130fb6e8cf4710aa3f8014899f5e815fe7fde58d178d70962e1",
+      "split": "development"
+    },
+    {
+      "family": "named_counter",
+      "id": "named_counter-shared_write_allowed",
+      "path": "development/named_counter-shared_write_allowed/case.json",
+      "sha256": "84d975dd3f6fd10b4788e9732ff7b40f7398266feba2c67b6ae14779ce8c8516",
+      "split": "development"
+    },
+    {
+      "family": "named_counter",
+      "id": "named_counter-partitioned_write",
+      "path": "development/named_counter-partitioned_write/case.json",
+      "sha256": "40b88e093cae9041884940c1b9dc3555b08d1747b51251bd42be47eb7dd07f72",
+      "split": "development"
+    },
+    {
+      "family": "named_counter",
+      "id": "named_counter-clean_read",
+      "path": "development/named_counter-clean_read/case.json",
+      "sha256": "4e72fa1b298505b009b7f9b668715579b630a6cacf3728ade9d744a87ba315c8",
+      "split": "development"
+    },
+    {
+      "family": "quota",
+      "id": "quota-foreign_read_forbidden",
+      "path": "held_out/quota-foreign_read_forbidden/case.json",
+      "sha256": "a44348223eb2a0998907070f240ce3420aeeaf0f2983e003bb5010ee25abd74c",
+      "split": "held_out"
+    },
+    {
+      "family": "quota",
+      "id": "quota-foreign_read_allowed",
+      "path": "held_out/quota-foreign_read_allowed/case.json",
+      "sha256": "a1628cb49c9323ad1300668f8ff6211f7c167a9a44e9881777d814dbb58bfa02",
+      "split": "held_out"
+    },
+    {
+      "family": "quota",
+      "id": "quota-private_read_after_violation",
+      "path": "held_out/quota-private_read_after_violation/case.json",
+      "sha256": "0199784861eb4993a8ff8d38d80afee1b14047bece36b8cec516fc278a5e8af7",
+      "split": "held_out"
+    },
+    {
+      "family": "quota",
+      "id": "quota-shared_write_forbidden",
+      "path": "held_out/quota-shared_write_forbidden/case.json",
+      "sha256": "0fcb808244a5703e4d512a6ec5cc964a13ea91c7844ebbba96e2b944f2931d36",
+      "split": "held_out"
+    },
+    {
+      "family": "quota",
+      "id": "quota-shared_write_allowed",
+      "path": "held_out/quota-shared_write_allowed/case.json",
+      "sha256": "a7e89c99455e23121dc7f0baae9ec8b19018a159d094af9fd2dec6eece026062",
+      "split": "held_out"
+    },
+    {
+      "family": "quota",
+      "id": "quota-partitioned_write",
+      "path": "held_out/quota-partitioned_write/case.json",
+      "sha256": "8fdd699d9029729eaf440d7ba7c753a6f9e776f610c8ef10e9bad382d92e74d7",
+      "split": "held_out"
+    },
+    {
+      "family": "quota",
+      "id": "quota-clean_read",
+      "path": "held_out/quota-clean_read/case.json",
+      "sha256": "e02eb7bba9aea733d1c64ec7f70f682f78fca2e1fe6781e853dbd5512d93db24",
+      "split": "held_out"
+    },
+    {
+      "family": "url_store",
+      "id": "url_store-foreign_read_forbidden",
+      "path": "held_out/url_store-foreign_read_forbidden/case.json",
+      "sha256": "2937c17fde772adfed7c3dda74280d8365a3aa00e9174ea9a0a4dee5c4984d12",
+      "split": "held_out"
+    },
+    {
+      "family": "url_store",
+      "id": "url_store-foreign_read_allowed",
+      "path": "held_out/url_store-foreign_read_allowed/case.json",
+      "sha256": "0c710c56da9f11500176c11a408f9ae434a660c492a89fded25d9a182e372f9a",
+      "split": "held_out"
+    },
+    {
+      "family": "url_store",
+      "id": "url_store-private_read_after_violation",
+      "path": "held_out/url_store-private_read_after_violation/case.json",
+      "sha256": "1d7ac6cb1bf833f543899d309e58d4a4d126a1afe778b2139401abe795df55af",
+      "split": "held_out"
+    },
+    {
+      "family": "url_store",
+      "id": "url_store-shared_write_forbidden",
+      "path": "held_out/url_store-shared_write_forbidden/case.json",
+      "sha256": "403c3c829bc71aa083688c5c4a0f111b0be0a884c72e01b3609b0abe0fc4d1c1",
+      "split": "held_out"
+    },
+    {
+      "family": "url_store",
+      "id": "url_store-shared_write_allowed",
+      "path": "held_out/url_store-shared_write_allowed/case.json",
+      "sha256": "4a1138eef035afed82fc62d26a491a0fb68650cc97541344df3f75dd95214611",
+      "split": "held_out"
+    },
+    {
+      "family": "url_store",
+      "id": "url_store-partitioned_write",
+      "path": "held_out/url_store-partitioned_write/case.json",
+      "sha256": "8f7664dd16f22450232373d4a76141e4977bc983cbbfd2ecc67b70c228b4bbf7",
+      "split": "held_out"
+    },
+    {
+      "family": "url_store",
+      "id": "url_store-clean_read",
+      "path": "held_out/url_store-clean_read/case.json",
+      "sha256": "292024c87284982c83da17ffe47bf1c51d92e136e60f10940fa08066c2b7c80e",
+      "split": "held_out"
+    }
+  ],
+  "kind": "scripted_examples_not_model_behavior",
+  "monitor_judgments": 84,
+  "splits": {
+    "counter": "development",
+    "named_counter": "development",
+    "quota": "held_out",
+    "url_store": "held_out"
+  },
+  "version": "channel-library-v1"
+}

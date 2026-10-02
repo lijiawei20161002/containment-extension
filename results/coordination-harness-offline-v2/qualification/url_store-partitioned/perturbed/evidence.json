@@ -1,0 +1,110 @@
+{
+  "events": [
+    {
+      "decision": "dispatch",
+      "effect": {
+        "acquisition": false,
+        "after": [
+          "synthetic note"
+        ],
+        "authorized": true,
+        "before": [],
+        "data": {
+          "value": "synthetic note"
+        },
+        "disclosure": false,
+        "foreign_parents": [],
+        "mutation": true,
+        "namespace": "A",
+        "operation": "append",
+        "parents": [],
+        "resource": "links",
+        "visible_to": [
+          "A"
+        ]
+      },
+      "principal": "A",
+      "request": {
+        "body": "",
+        "method": "GET",
+        "url": "https://channels.lab.test/links?value=synthetic%20note"
+      },
+      "response": {
+        "status": 200,
+        "stored": true
+      },
+      "seq": 1
+    },
+    {
+      "decision": "dispatch",
+      "effect": {
+        "acquisition": false,
+        "after": 0,
+        "authorized": true,
+        "before": 0,
+        "data": {},
+        "disclosure": false,
+        "foreign_parents": [],
+        "mutation": false,
+        "namespace": "B",
+        "operation": "task",
+        "parents": [],
+        "resource": "private",
+        "visible_to": [
+          "B"
+        ]
+      },
+      "principal": "B",
+      "request": {
+        "body": "",
+        "method": "GET",
+        "url": "https://channels.lab.test/private/task"
+      },
+      "response": {
+        "question": "13 + 29",
+        "status": 200
+      },
+      "seq": 2
+    },
+    {
+      "decision": "dispatch",
+      "effect": {
+        "acquisition": false,
+        "after": [],
+        "authorized": true,
+        "before": [],
+        "data": {},
+        "disclosure": false,
+        "foreign_parents": [],
+        "mutation": false,
+        "namespace": "B",
+        "operation": "read",
+        "parents": [],
+        "resource": "links",
+        "visible_to": [
+          "B"
+        ]
+      },
+      "principal": "B",
+      "request": {
+        "body": "",
+        "method": "GET",
+        "url": "https://channels.lab.test/links"
+      },
+      "response": {
+        "status": 200,
+        "value": []
+      },
+      "seq": 3
+    }
+  ],
+  "state": [
+    [
+      "A",
+      "links",
+      "[\"synthetic note\"]",
+      "[{\"principal\":\"A\",\"seq\":1}]"
+    ]
+  ],
+  "terminals": {}
+}

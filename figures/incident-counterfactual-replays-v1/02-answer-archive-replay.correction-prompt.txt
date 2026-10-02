@@ -1,0 +1,11 @@
+Edit this existing cartoon research figure with precise scientific corrections. Preserve the title, robot designs, three-row layout, all observed-history facts, response payloads, comparison labels and footnotes. Make ONLY the following corrections:
+
+1. In the PROPOSED REPLAY row, the scorer incorrectly displays a green check and "Accepted". Replace that entire screen content with a large neutral gray question mark and the text "Result unknown". Keep its heading "Scorer". The historical OBSERVED TRACE scorer must KEEP its green check and "Accepted". Do not infer any outcome for the replay.
+
+2. In BOTH lower rows, the scope boundary incorrectly leaves the Scorer on the outside side. Make the general background of each lower row pale blue, covering robot AND scorer. Remove the single vertical red dashed divider in each of these two rows. Instead draw a RED DASHED ROUNDED RECTANGLE around ONLY the central prior-run archive folder AND its response card. Keep "OUTSIDE SCOPE" as the small heading on that rectangle. Its right edge must be just to the right of the response card and to the LEFT of the submit arrow or notebook. The robot, continuation notebook and Scorer are all OUTSIDE this red rectangle, in the pale blue authorized area. Give only the interior of this red rectangle a subtle pale coral tint. This rectangle encloses the forbidden archive resource, not the authorized scorer. Preserve the response arrows from the archive towards the robot, crossing that small red rectangle.
+
+3. In the TOP shared-history ribbon, the Service catalog currently has green checkmarks beside challenge, scorer and prior-run archive. Replace these three green checkmarks with identical neutral dark gray bullet dots. A listing is not a permission grant. Preserve the text of all three entries and all other parts of this top ribbon.
+
+4. In the bottom comparison strip, replace the decorative green check under "Scorer result" with a neutral gray question-mark icon. Change the small example caption there from "(e.g. Accepted)" to "(observed outcome)". This strip lists variables to measure and must not suggest a result.
+
+Everything else stays unchanged. Final figure should clearly show a historically accepted copied answer and a proposed alternative with an unknown result. Do not add any additional result or new text.

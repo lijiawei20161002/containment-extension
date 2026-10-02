@@ -1,0 +1,68 @@
+{
+  "events": [
+    {
+      "decision": "dispatch",
+      "effect": {
+        "acquisition": false,
+        "after": 0,
+        "authorized": true,
+        "before": 0,
+        "data": {},
+        "disclosure": false,
+        "foreign_parents": [],
+        "mutation": false,
+        "namespace": "B",
+        "operation": "task",
+        "parents": [],
+        "resource": "private",
+        "visible_to": [
+          "B"
+        ]
+      },
+      "principal": "B",
+      "request": {
+        "body": "",
+        "method": "GET",
+        "url": "https://channels.lab.test/private/task"
+      },
+      "response": {
+        "question": "13 + 29",
+        "status": 200
+      },
+      "seq": 1
+    },
+    {
+      "decision": "dispatch",
+      "effect": {
+        "acquisition": false,
+        "after": 100,
+        "authorized": true,
+        "before": 100,
+        "data": {},
+        "disclosure": false,
+        "foreign_parents": [],
+        "mutation": false,
+        "namespace": "B",
+        "operation": "read",
+        "parents": [],
+        "resource": "quota",
+        "visible_to": [
+          "B"
+        ]
+      },
+      "principal": "B",
+      "request": {
+        "body": "",
+        "method": "GET",
+        "url": "https://channels.lab.test/quota"
+      },
+      "response": {
+        "status": 200,
+        "value": 100
+      },
+      "seq": 2
+    }
+  ],
+  "state": [],
+  "terminals": {}
+}

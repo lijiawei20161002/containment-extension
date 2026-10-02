@@ -1,0 +1,67 @@
+Use case: scientific-educational
+Asset type: ONE wide landscape cartoon architecture figure for a research proposal, approximately 16:9.
+Primary request: propose COUNTERFACTUAL REPLAY as a reusable external diagnostic TOOL that connects to different agent sandboxes, diagnoses security incidents, and builds an executable incident library. This is one integrated system illustration, not separate incident comics. Make colorful cartoon OBJECTS carry the explanation: sandbox dioramas, a plug adapter, an open toolbox with rewind tools, paired replay screens, a magnifying-glass report, and a library/database.
+
+Title, large: "COUNTERFACTUAL REPLAY"
+Subtitle: "A diagnostic toolbox for sandbox incidents"
+Small badge beside title: "PROPOSED ARCHITECTURE"
+
+Composition: three spacious regions, read left to right, with one clear feedback loop along the bottom. White/ivory background; dark navy lettering; teal sandbox objects; orange toolbox; blue evidence report; purple library. Polished friendly editorial cartoon, crisp ink, soft flat shading, attractive research-slide quality. No full paragraphs and no decorative filler copy. A few small consistent friendly robot agents appear ONLY inside the sandbox dioramas.
+
+LEFT — sandbox inputs, about 25% width:
+Heading: "Connect your sandbox"
+Three stacked miniature illustrated glass-box worlds:
+1. A robot at a terminal and repository files, label "Coding".
+2. A robot with browser pages, label "Browser".
+3. A robot facing API servers and a shared counter, label "API / multi-agent".
+Each connects by a simple cable to ONE large plug/socket adapter labeled "Sandbox adapter".
+On the adapter, use just three short socket labels:
+"Reset state"
+"Capture tool I/O"
+"Trusted event log"
+A single directional arrow FROM the adapter TO the central toolbox reads "Checkpoint + trace".
+Do not imply these integrations already exist or that every sandbox inherently supports snapshotting.
+
+CENTER — the main tool, about 40% width:
+A large, visually dominant OPEN ORANGE TOOLBOX labeled "Counterfactual Replay".
+Inside and around it are a rewind-arrow tool, a screwdriver, a magnifying glass, and two small paired replay monitors. A shared save-point icon above both monitors is labeled "Same checkpoint".
+Left monitor: "A: original"
+Right monitor: "B: one change"
+The original monitor depicts a tiny README link, answer card and counter; the other highlights ONE changed element with an amber outline. These are schematic experiment variables, not claimed outcomes.
+A short selector card on the front of the toolbox reads "Change a cue, response, or action".
+Two small method buttons on the toolbox:
+"Fixed calls → compare effects"
+"New continuations → compare behavior"
+Use short lines and clear readable text; these buttons are distinct modes, not simultaneous claims that actions are both fixed and changing.
+Under the paired monitors, a small comparison bracket with a magnifying glass says "Find the first difference".
+An arrow FROM toolbox TO upper-right report says "Compare evidence".
+
+UPPER RIGHT — diagnostic evidence:
+A blue clipboard/report with a large magnifying glass icon and title "Incident diagnosis".
+Exactly four concise rows:
+"First changed observation"
+"Originating event / resource"
+"Scope or information-flow effect"
+"Uncertainty"
+Small visual accents: matching timeline dots with one highlighted divergence, a causal arrow, a scope boundary. No fake numeric measurements and no invented conclusions.
+Below the report a downward arrow TO the library says "Save a reproducible case".
+
+LOWER RIGHT — reusable incident corpus:
+Draw a charming purple bookshelf integrated with a database cylinder, clearly one object titled "Executable incident library".
+Three clearly readable book spines:
+"Upstream link"
+"Cached answer"
+"Counter signal"
+A compact manifest card at its base reads:
+"State + permissions"
+"Trace + intervention"
+"Expected effects + controls"
+Beside the shelf a small closed drawer marked "Held-out cases" has a tiny lock icon; this represents evaluation separation, not network access control.
+One feedback arrow curves along the bottom FROM the incident library BACK TO the toolbox, labeled "Regression tests + new investigations". Arrowhead must point into the TOOLBOX, never into the agent sandboxes. This library is for researcher tooling, not a source of answers delivered to evaluated agents.
+
+Bottom line in small but readable type:
+"Requires reset/replay hooks. Repeat stochastic continuations and report uncertainty."
+Small source/context tag:
+"Proposed method for containment-extension"
+
+Visual priorities: toolbox is the central hero; sandbox adapter makes portability tangible; the library makes reusable cases tangible; the arrows show capture → replay → diagnose → preserve → reuse. This must feel like a useful engineering instrument, not an abstract game, an app screenshot, or a dense text infographic. Do not include green PASS/FAIL badges, measured efficacy claims, real API keys, external addresses, an implementation claim, or a claim that all security risks can be certified. No irrelevant toy tickets or library-book checkout metaphor: the library at the right is specifically an incident-case repository. Accurately spell all labels.

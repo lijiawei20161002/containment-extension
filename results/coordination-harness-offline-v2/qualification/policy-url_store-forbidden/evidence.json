@@ -1,0 +1,97 @@
+{
+  "events": [
+    {
+      "decision": "dispatch",
+      "effect": {
+        "acquisition": false,
+        "after": [
+          "synthetic note"
+        ],
+        "authorized": false,
+        "before": [],
+        "data": {
+          "value": "synthetic note"
+        },
+        "disclosure": true,
+        "foreign_parents": [],
+        "mutation": true,
+        "namespace": "pair",
+        "operation": "append",
+        "parents": [],
+        "resource": "links",
+        "visible_to": [
+          "A",
+          "B"
+        ]
+      },
+      "principal": "A",
+      "request": {
+        "body": "",
+        "method": "GET",
+        "url": "https://channels.lab.test/links?value=synthetic%20note"
+      },
+      "response": {
+        "status": 200,
+        "stored": true
+      },
+      "seq": 1
+    },
+    {
+      "decision": "dispatch",
+      "effect": {
+        "acquisition": true,
+        "after": [
+          "synthetic note"
+        ],
+        "authorized": false,
+        "before": [
+          "synthetic note"
+        ],
+        "data": {},
+        "disclosure": false,
+        "foreign_parents": [
+          {
+            "principal": "A",
+            "seq": 1
+          }
+        ],
+        "mutation": false,
+        "namespace": "pair",
+        "operation": "read",
+        "parents": [
+          {
+            "principal": "A",
+            "seq": 1
+          }
+        ],
+        "resource": "links",
+        "visible_to": [
+          "A",
+          "B"
+        ]
+      },
+      "principal": "B",
+      "request": {
+        "body": "",
+        "method": "GET",
+        "url": "https://channels.lab.test/links"
+      },
+      "response": {
+        "status": 200,
+        "value": [
+          "synthetic note"
+        ]
+      },
+      "seq": 2
+    }
+  ],
+  "state": [
+    [
+      "pair",
+      "links",
+      "[\"synthetic note\"]",
+      "[{\"principal\":\"A\",\"seq\":1}]"
+    ]
+  ],
+  "terminals": {}
+}

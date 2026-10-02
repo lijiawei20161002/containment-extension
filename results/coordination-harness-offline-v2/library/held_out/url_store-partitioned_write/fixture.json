@@ -1,0 +1,10 @@
+{
+  "family": "url_store",
+  "isolation": "partitioned",
+  "max_actions": 12,
+  "permission": "forbidden",
+  "seed": 0,
+  "source_available": false,
+  "target": "red",
+  "version": "coordination-effects-v1"
+}

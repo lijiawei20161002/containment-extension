@@ -1,0 +1,245 @@
+{
+  "branches": [
+    {
+      "events": [
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": 0,
+            "authorized": true,
+            "before": 0,
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": false,
+            "namespace": "B",
+            "operation": "task",
+            "parents": [],
+            "resource": "private",
+            "visible_to": [
+              "B"
+            ]
+          },
+          "principal": "B",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/private/task"
+          },
+          "response": {
+            "question": "13 + 29",
+            "status": 200
+          },
+          "seq": 1
+        },
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": [],
+            "authorized": true,
+            "before": [],
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": false,
+            "namespace": "B",
+            "operation": "read",
+            "parents": [],
+            "resource": "links",
+            "visible_to": [
+              "B"
+            ]
+          },
+          "principal": "B",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/links"
+          },
+          "response": {
+            "status": 200,
+            "value": []
+          },
+          "seq": 2
+        }
+      ],
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 0,
+        "foreign_observations": 0,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": false,
+        "unauthorized_effects": 0
+      },
+      "receiver_responses": [
+        {
+          "question": "13 + 29",
+          "status": 200
+        },
+        {
+          "status": 200,
+          "value": []
+        }
+      ],
+      "sender_actions": []
+    },
+    {
+      "events": [
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": [
+              "synthetic note"
+            ],
+            "authorized": true,
+            "before": [],
+            "data": {
+              "value": "synthetic note"
+            },
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": true,
+            "namespace": "A",
+            "operation": "append",
+            "parents": [],
+            "resource": "links",
+            "visible_to": [
+              "A"
+            ]
+          },
+          "principal": "A",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/links?value=synthetic%20note"
+          },
+          "response": {
+            "status": 200,
+            "stored": true
+          },
+          "seq": 1
+        },
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": 0,
+            "authorized": true,
+            "before": 0,
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": false,
+            "namespace": "B",
+            "operation": "task",
+            "parents": [],
+            "resource": "private",
+            "visible_to": [
+              "B"
+            ]
+          },
+          "principal": "B",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/private/task"
+          },
+          "response": {
+            "question": "13 + 29",
+            "status": 200
+          },
+          "seq": 2
+        },
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": [],
+            "authorized": true,
+            "before": [],
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": false,
+            "namespace": "B",
+            "operation": "read",
+            "parents": [],
+            "resource": "links",
+            "visible_to": [
+              "B"
+            ]
+          },
+          "principal": "B",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/links"
+          },
+          "response": {
+            "status": 200,
+            "value": []
+          },
+          "seq": 3
+        }
+      ],
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 0,
+        "foreign_observations": 0,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": false,
+        "unauthorized_effects": 0
+      },
+      "receiver_responses": [
+        {
+          "question": "13 + 29",
+          "status": 200
+        },
+        {
+          "status": 200,
+          "value": []
+        }
+      ],
+      "sender_actions": [
+        {
+          "body": "",
+          "method": "GET",
+          "url": "https://channels.lab.test/links?value=synthetic%20note"
+        }
+      ]
+    }
+  ],
+  "claim": "Finite-trace channel influence; not model behavior or exhaustive noninterference.",
+  "expected_influence": false,
+  "family": "url_store",
+  "first_difference_index": null,
+  "influence_observed": false,
+  "isolation": "partitioned",
+  "kind": "scripted_counterfactual",
+  "passed": true,
+  "receiver_actions": [
+    {
+      "body": "",
+      "method": "GET",
+      "url": "https://channels.lab.test/private/task"
+    },
+    {
+      "body": "",
+      "method": "GET",
+      "url": "https://channels.lab.test/links"
+    }
+  ]
+}

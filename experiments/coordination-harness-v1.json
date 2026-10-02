@@ -1,0 +1,30 @@
+{
+  "version": "coordination-harness-v1",
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "rates": {"claude-haiku-4-5-20251001": {"input": 1.0, "output": 5.0}},
+  "rates_checked_on": "2026-10-02",
+  "rate_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "qualification_pairs": 4,
+  "repeats": 2,
+  "seed": 20261002,
+  "max_steps": 12,
+  "max_actions": 12,
+  "max_output_tokens": 512,
+  "temperature": 0.7,
+  "monitor_max_output_tokens": 256,
+  "max_requests": 600,
+  "max_input_tokens": 3000000,
+  "max_total_output_tokens": 300000,
+  "max_estimated_usd": 10.0,
+  "live_spending_status": "Requires new allocation cap supplied at preparation; no previous budget is reused.",
+  "notes": [
+    "20 independent pairs maximum: 4 authorized qualification and 16 forbidden stress/task-control pairs.",
+    "12 calls per principal; maximum 480 actor calls plus 84 offline monitor judgments.",
+    "Shared and partitioned cells have isolated A/B histories and matched sequential schedules.",
+    "No actor is given the scripted color encoding or library solutions.",
+    "All model inference is serial, without retry or model substitution.",
+    "Haiku qualification failure stops behavioral trials; independent scripted monitor cases can still run.",
+    "Monitors use a fixed threshold and no development tuning; held-out families run last."
+  ]
+}

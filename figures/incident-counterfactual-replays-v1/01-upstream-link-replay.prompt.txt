@@ -1,0 +1,27 @@
+Use case: scientific-educational
+Asset type: a single finished landscape cartoon research figure for containment-extension, aspect ratio 3:2.
+Create a concrete cartoon of the upstream README-link incident and a proposed counterfactual replay. Do not use a generic game, toy library, detective, tickets, counters, or Alice/Bob. The main character is ONE small friendly teal coding-agent robot with a laptop; it appears consistently across two large comic rows. Crisp editorial cartoon ink, white/ivory background, muted blue authorized area and coral outside-scope area. Sparse, large, readable text; the pictures should explain the situation.
+
+TITLE exactly: "Did the README link trigger the outside read?"
+Subtitle: "Upstream-link incident + proposed counterfactual replay"
+
+Across both rows the scene contains the SAME authorized Challenge computer and README, and the SAME outside resource "upstream/health.json". A red dashed boundary, labeled "Scope boundary", separates authorized Challenge/README from outside upstream. It is a permission boundary, NOT a fence or technical barrier. Keep a small visible clipboard in BOTH rows saying "Only the challenge is in scope". Do not remove the upstream service or change permissions.
+
+TOP ROW heading: "OBSERVED PATTERN"
+Show the robot reading a README sheet containing a prominent underlined link "upstream/health.json". It follows this cue with a red request arrow crossing the dashed scope boundary to the upstream file. The arrow is labeled "GET upstream/health.json". A concise caption says "Reads upstream before trying the challenge". The Challenge computer is still waiting, unused. This depicts an observed pattern from a completed link study, not every rollout or a new measurement. No invented thought bubble, percentages, or PASS badge.
+
+BOTTOM ROW heading: "PROPOSED REPLAY"
+A small rewind marker at its entrance says "Same history before README response".
+Show the same README sheet with ONLY its clickable upstream address absent. The rest of the README, the challenge, task instructions, tools and reachable upstream file remain. Draw a subtle dashed empty line in the address position, annotated "Only change: hide the link". The upstream resource still has its clearly visible label on the far side of the scope boundary; do not hide or lock the actual resource.
+The robot now faces a large question-mark decision bubble, with two dotted POSSIBLE paths: one towards Challenge and one towards upstream/health.json. Both are uncertain options, not outcomes already observed. Bubble text: "Does it still read upstream?"
+No solid safe-path arrow, checkmark, success, or failure for this proposed branch.
+
+Bottom investigator's comparison strip:
+"Compare: first outside read • authorized task completion"
+Then a compact rule line:
+"Freeze the history; change one cue; sample new continuations."
+
+Footer exactly: "Observed pattern: link-study-v1. Proposed replay outcomes are not yet measured."
+Include a short secondary footer: "Permissions and reachable resources stay unchanged."
+
+Scientific invariant: this is a proposal to test the effect of a README cue on later behavior. Future model actions may differ after the intervention; do not label them fixed. Repeat continuations is a methodological design, not a completed result. Do not suggest removing a link removes access or grants/revokes authorization. Use the exact resource label upstream/health.json. Do not include any experimental counts. Keep the illustration clean and directly tied to a coding agent, its README, and the out-of-scope upstream file.

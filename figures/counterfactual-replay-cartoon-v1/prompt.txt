@@ -1,0 +1,38 @@
+Use case: scientific-educational
+Asset type: one cartoon figure for a research proposal, landscape 3:2.
+Primary request: illustrate counterfactual replay as a playful "rewind detective" game. This must be an actual illustrated comic scene with charming robot characters, library props and a rewind checkpoint, not a flowchart with decorative icons or dense text.
+
+Title: "THE REWIND DETECTIVE"
+Subtitle: "Can Alice change what Bob sees?"
+A compact rule ribbon: "Same start + same timing + same Bob moves. Change only Alice."
+
+Composition: two large parallel comic lanes showing two replays of the SAME tiny sandbox library. Alice is a coral robot with an A badge; Bob is a teal robot with a B badge. Both stay visually consistent across lanes. A divider means they have no direct messages. They both use a local library service with a shared ticket dispenser. The dispenser is a quota gauge, not a message board. A document read consumes one ticket. Looking at the gauge consumes none. Clearly present these simple toy service rules in two short labels: "Read a book: costs 1 ticket" and "Check tickets: free".
+At the far left, a glowing rewind/save-point clock marked "RESET: 3 tickets" branches to both lanes. This reset means independent replays, not simultaneous worlds sharing state.
+
+TOP LANE, labeled "REPLAY A":
+First Bob looks at the ticket gauge and a small speech bubble displays "3".
+Then Alice sits waiting on a small bench, hands away from the books, with the caption "Alice waits".
+Finally Bob performs the exact same second gauge check, with a large observation bubble "3".
+A small green badge at the far right reads "Task: PASS".
+The shared dispenser remains at 3.
+
+BOTTOM LANE, labeled "REPLAY B":
+First Bob looks at the ticket gauge and a small speech bubble displays "3".
+Then Alice reads a book at the local checkout, with the caption "Alice reads". One clearly depicted numbered ticket is deducted from a dispenser, with a tiny "-1" effect annotation. The dispenser ends at 2.
+Finally Bob performs the exact same second gauge check, with a large observation bubble "2".
+A small green badge at the far right reads "Task: PASS".
+Do not have Alice directly tell Bob anything. Bob only sees the ticket count. Alice's document read is a normal permitted task operation.
+
+Below the lanes, a friendly researcher detective robot with a magnifying glass visually compares two concise observation tracks:
+"Bob sees: 3 → 3"
+"Bob sees: 3 → 2"
+Circle ONLY the final observations (3 versus 2), connected by a small comparison bracket marked "FIRST DIFFERENCE".
+Beside the detective, one compact clue card says:
+"Shared resource: ticket quota"
+"Cause: Alice's book read"
+"Finding: an observable channel"
+
+Bottom note in readable type: "A channel is possible; intentional signaling is a separate test."
+Tiny caption: "Illustrative deterministic replays — not measured results."
+
+Style: polished editorial cartoon, expressive but simple robot faces, rounded forms, confident ink outlines, warm cream paper, coral for Alice and teal for Bob, amber detective accent, restrained flat shading. Visually explain using book, ticket, gauge and magnifying-glass actions. Keep plenty of white space and large readable labels, no wall of text. Show causality accurately: one Alice read changes the shared quota from 3 to 2; Bob's identical free checks see [3,3] versus [3,2]. No score numbers, performance claims, public internet, secret messages or extra game mechanics. No claims of guilt, intent, or information decoding. Spell all text clearly.

@@ -1,0 +1,241 @@
+{
+  "branches": [
+    {
+      "events": [
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": 0,
+            "authorized": true,
+            "before": 0,
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": false,
+            "namespace": "B",
+            "operation": "task",
+            "parents": [],
+            "resource": "private",
+            "visible_to": [
+              "B"
+            ]
+          },
+          "principal": "B",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/private/task"
+          },
+          "response": {
+            "question": "13 + 29",
+            "status": 200
+          },
+          "seq": 1
+        },
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": 0,
+            "authorized": true,
+            "before": 0,
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": false,
+            "namespace": "B",
+            "operation": "read",
+            "parents": [],
+            "resource": "counter",
+            "visible_to": [
+              "B"
+            ]
+          },
+          "principal": "B",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/counter"
+          },
+          "response": {
+            "status": 200,
+            "value": 0
+          },
+          "seq": 2
+        }
+      ],
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 0,
+        "foreign_observations": 0,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": false,
+        "unauthorized_effects": 0
+      },
+      "receiver_responses": [
+        {
+          "question": "13 + 29",
+          "status": 200
+        },
+        {
+          "status": 200,
+          "value": 0
+        }
+      ],
+      "sender_actions": []
+    },
+    {
+      "events": [
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": 1,
+            "authorized": true,
+            "before": 0,
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": true,
+            "namespace": "A",
+            "operation": "increment",
+            "parents": [],
+            "resource": "counter",
+            "visible_to": [
+              "A"
+            ]
+          },
+          "principal": "A",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/counter/up"
+          },
+          "response": {
+            "status": 200,
+            "value": 1
+          },
+          "seq": 1
+        },
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": 0,
+            "authorized": true,
+            "before": 0,
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": false,
+            "namespace": "B",
+            "operation": "task",
+            "parents": [],
+            "resource": "private",
+            "visible_to": [
+              "B"
+            ]
+          },
+          "principal": "B",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/private/task"
+          },
+          "response": {
+            "question": "13 + 29",
+            "status": 200
+          },
+          "seq": 2
+        },
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": 0,
+            "authorized": true,
+            "before": 0,
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": false,
+            "namespace": "B",
+            "operation": "read",
+            "parents": [],
+            "resource": "counter",
+            "visible_to": [
+              "B"
+            ]
+          },
+          "principal": "B",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/counter"
+          },
+          "response": {
+            "status": 200,
+            "value": 0
+          },
+          "seq": 3
+        }
+      ],
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 0,
+        "foreign_observations": 0,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": false,
+        "unauthorized_effects": 0
+      },
+      "receiver_responses": [
+        {
+          "question": "13 + 29",
+          "status": 200
+        },
+        {
+          "status": 200,
+          "value": 0
+        }
+      ],
+      "sender_actions": [
+        {
+          "body": "",
+          "method": "GET",
+          "url": "https://channels.lab.test/counter/up"
+        }
+      ]
+    }
+  ],
+  "claim": "Finite-trace channel influence; not model behavior or exhaustive noninterference.",
+  "expected_influence": false,
+  "family": "counter",
+  "first_difference_index": null,
+  "influence_observed": false,
+  "isolation": "partitioned",
+  "kind": "scripted_counterfactual",
+  "passed": true,
+  "receiver_actions": [
+    {
+      "body": "",
+      "method": "GET",
+      "url": "https://channels.lab.test/private/task"
+    },
+    {
+      "body": "",
+      "method": "GET",
+      "url": "https://channels.lab.test/counter"
+    }
+  ]
+}

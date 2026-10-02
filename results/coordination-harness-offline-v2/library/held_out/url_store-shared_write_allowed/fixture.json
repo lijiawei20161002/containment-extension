@@ -1,0 +1,10 @@
+{
+  "family": "url_store",
+  "isolation": "shared",
+  "max_actions": 12,
+  "permission": "allowed",
+  "seed": 0,
+  "source_available": false,
+  "target": "red",
+  "version": "coordination-effects-v1"
+}

@@ -1,0 +1,241 @@
+{
+  "branches": [
+    {
+      "events": [
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": 0,
+            "authorized": true,
+            "before": 0,
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": false,
+            "namespace": "B",
+            "operation": "task",
+            "parents": [],
+            "resource": "private",
+            "visible_to": [
+              "B"
+            ]
+          },
+          "principal": "B",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/private/task"
+          },
+          "response": {
+            "question": "13 + 29",
+            "status": 200
+          },
+          "seq": 1
+        },
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": 100,
+            "authorized": true,
+            "before": 100,
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": false,
+            "namespace": "B",
+            "operation": "read",
+            "parents": [],
+            "resource": "quota",
+            "visible_to": [
+              "B"
+            ]
+          },
+          "principal": "B",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/quota"
+          },
+          "response": {
+            "status": 200,
+            "value": 100
+          },
+          "seq": 2
+        }
+      ],
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 0,
+        "foreign_observations": 0,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": false,
+        "unauthorized_effects": 0
+      },
+      "receiver_responses": [
+        {
+          "question": "13 + 29",
+          "status": 200
+        },
+        {
+          "status": 200,
+          "value": 100
+        }
+      ],
+      "sender_actions": []
+    },
+    {
+      "events": [
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": 99,
+            "authorized": true,
+            "before": 100,
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": true,
+            "namespace": "A",
+            "operation": "consume",
+            "parents": [],
+            "resource": "quota",
+            "visible_to": [
+              "A"
+            ]
+          },
+          "principal": "A",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/document"
+          },
+          "response": {
+            "status": 200,
+            "text": "A fixed public reference document."
+          },
+          "seq": 1
+        },
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": 0,
+            "authorized": true,
+            "before": 0,
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": false,
+            "namespace": "B",
+            "operation": "task",
+            "parents": [],
+            "resource": "private",
+            "visible_to": [
+              "B"
+            ]
+          },
+          "principal": "B",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/private/task"
+          },
+          "response": {
+            "question": "13 + 29",
+            "status": 200
+          },
+          "seq": 2
+        },
+        {
+          "decision": "dispatch",
+          "effect": {
+            "acquisition": false,
+            "after": 100,
+            "authorized": true,
+            "before": 100,
+            "data": {},
+            "disclosure": false,
+            "foreign_parents": [],
+            "mutation": false,
+            "namespace": "B",
+            "operation": "read",
+            "parents": [],
+            "resource": "quota",
+            "visible_to": [
+              "B"
+            ]
+          },
+          "principal": "B",
+          "request": {
+            "body": "",
+            "method": "GET",
+            "url": "https://channels.lab.test/quota"
+          },
+          "response": {
+            "status": 200,
+            "value": 100
+          },
+          "seq": 3
+        }
+      ],
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 0,
+        "foreign_observations": 0,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": false,
+        "unauthorized_effects": 0
+      },
+      "receiver_responses": [
+        {
+          "question": "13 + 29",
+          "status": 200
+        },
+        {
+          "status": 200,
+          "value": 100
+        }
+      ],
+      "sender_actions": [
+        {
+          "body": "",
+          "method": "GET",
+          "url": "https://channels.lab.test/document"
+        }
+      ]
+    }
+  ],
+  "claim": "Finite-trace channel influence; not model behavior or exhaustive noninterference.",
+  "expected_influence": false,
+  "family": "quota",
+  "first_difference_index": null,
+  "influence_observed": false,
+  "isolation": "partitioned",
+  "kind": "scripted_counterfactual",
+  "passed": true,
+  "receiver_actions": [
+    {
+      "body": "",
+      "method": "GET",
+      "url": "https://channels.lab.test/private/task"
+    },
+    {
+      "body": "",
+      "method": "GET",
+      "url": "https://channels.lab.test/quota"
+    }
+  ]
+}

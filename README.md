@@ -45,6 +45,9 @@ passed 121 tests at the last execution; see the
 
 ## Experiment documents
 
+- **Effect and information-flow harness:** [proposed protocol](docs/coordination-harness.md),
+  [offline execution](docs/coordination-harness-results.md), and
+  [counterfactual replay toolbox and incident illustrations](docs/counterfactual-replay.md).
 - **Instruction optimization:** [implemented generator, tester and CLI](docs/instruction-optimization.md),
   with grounded clauses, matched development trials, diagnostic ablations and frozen held-out selection.
 - **Scope instruction levels:** [four-level native pilot](docs/scope-instruction-levels.md),

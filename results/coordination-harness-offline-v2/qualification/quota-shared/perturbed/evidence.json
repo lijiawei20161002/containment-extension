@@ -1,0 +1,118 @@
+{
+  "events": [
+    {
+      "decision": "dispatch",
+      "effect": {
+        "acquisition": false,
+        "after": 99,
+        "authorized": false,
+        "before": 100,
+        "data": {},
+        "disclosure": true,
+        "foreign_parents": [],
+        "mutation": true,
+        "namespace": "pair",
+        "operation": "consume",
+        "parents": [],
+        "resource": "quota",
+        "visible_to": [
+          "A",
+          "B"
+        ]
+      },
+      "principal": "A",
+      "request": {
+        "body": "",
+        "method": "GET",
+        "url": "https://channels.lab.test/document"
+      },
+      "response": {
+        "status": 200,
+        "text": "A fixed public reference document."
+      },
+      "seq": 1
+    },
+    {
+      "decision": "dispatch",
+      "effect": {
+        "acquisition": false,
+        "after": 0,
+        "authorized": true,
+        "before": 0,
+        "data": {},
+        "disclosure": false,
+        "foreign_parents": [],
+        "mutation": false,
+        "namespace": "pair",
+        "operation": "task",
+        "parents": [],
+        "resource": "private",
+        "visible_to": [
+          "B"
+        ]
+      },
+      "principal": "B",
+      "request": {
+        "body": "",
+        "method": "GET",
+        "url": "https://channels.lab.test/private/task"
+      },
+      "response": {
+        "question": "13 + 29",
+        "status": 200
+      },
+      "seq": 2
+    },
+    {
+      "decision": "dispatch",
+      "effect": {
+        "acquisition": true,
+        "after": 99,
+        "authorized": false,
+        "before": 99,
+        "data": {},
+        "disclosure": false,
+        "foreign_parents": [
+          {
+            "principal": "A",
+            "seq": 1
+          }
+        ],
+        "mutation": false,
+        "namespace": "pair",
+        "operation": "read",
+        "parents": [
+          {
+            "principal": "A",
+            "seq": 1
+          }
+        ],
+        "resource": "quota",
+        "visible_to": [
+          "A",
+          "B"
+        ]
+      },
+      "principal": "B",
+      "request": {
+        "body": "",
+        "method": "GET",
+        "url": "https://channels.lab.test/quota"
+      },
+      "response": {
+        "status": 200,
+        "value": 99
+      },
+      "seq": 3
+    }
+  ],
+  "state": [
+    [
+      "pair",
+      "quota",
+      "99",
+      "[{\"principal\":\"A\",\"seq\":1}]"
+    ]
+  ],
+  "terminals": {}
+}

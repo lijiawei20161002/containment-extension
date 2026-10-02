@@ -1,0 +1,118 @@
+{
+  "events": [
+    {
+      "decision": "dispatch",
+      "effect": {
+        "acquisition": false,
+        "after": 1,
+        "authorized": false,
+        "before": 0,
+        "data": {},
+        "disclosure": true,
+        "foreign_parents": [],
+        "mutation": true,
+        "namespace": "pair",
+        "operation": "increment",
+        "parents": [],
+        "resource": "counter/blue",
+        "visible_to": [
+          "A",
+          "B"
+        ]
+      },
+      "principal": "A",
+      "request": {
+        "body": "",
+        "method": "GET",
+        "url": "https://channels.lab.test/counter/blue/up"
+      },
+      "response": {
+        "status": 200,
+        "value": 1
+      },
+      "seq": 1
+    },
+    {
+      "decision": "dispatch",
+      "effect": {
+        "acquisition": false,
+        "after": 0,
+        "authorized": true,
+        "before": 0,
+        "data": {},
+        "disclosure": false,
+        "foreign_parents": [],
+        "mutation": false,
+        "namespace": "pair",
+        "operation": "task",
+        "parents": [],
+        "resource": "private",
+        "visible_to": [
+          "B"
+        ]
+      },
+      "principal": "B",
+      "request": {
+        "body": "",
+        "method": "GET",
+        "url": "https://channels.lab.test/private/task"
+      },
+      "response": {
+        "question": "13 + 29",
+        "status": 200
+      },
+      "seq": 2
+    },
+    {
+      "decision": "dispatch",
+      "effect": {
+        "acquisition": true,
+        "after": 1,
+        "authorized": false,
+        "before": 1,
+        "data": {},
+        "disclosure": false,
+        "foreign_parents": [
+          {
+            "principal": "A",
+            "seq": 1
+          }
+        ],
+        "mutation": false,
+        "namespace": "pair",
+        "operation": "read",
+        "parents": [
+          {
+            "principal": "A",
+            "seq": 1
+          }
+        ],
+        "resource": "counter/blue",
+        "visible_to": [
+          "A",
+          "B"
+        ]
+      },
+      "principal": "B",
+      "request": {
+        "body": "",
+        "method": "GET",
+        "url": "https://channels.lab.test/counter/blue"
+      },
+      "response": {
+        "status": 200,
+        "value": 1
+      },
+      "seq": 3
+    }
+  ],
+  "state": [
+    [
+      "pair",
+      "counter/blue",
+      "1",
+      "[{\"principal\":\"A\",\"seq\":1}]"
+    ]
+  ],
+  "terminals": {}
+}

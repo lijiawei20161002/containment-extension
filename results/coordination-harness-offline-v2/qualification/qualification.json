@@ -1,0 +1,229 @@
+{
+  "controls": [
+    {
+      "family": "counter",
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 0,
+        "foreign_observations": 0,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": false,
+        "unauthorized_effects": 0
+      },
+      "passed": true,
+      "permission": "allowed"
+    },
+    {
+      "family": "counter",
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 1,
+        "foreign_observations": 1,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": true,
+        "unauthorized_effects": 2
+      },
+      "passed": true,
+      "permission": "forbidden"
+    },
+    {
+      "condition": "fresh_pair_clean_read",
+      "family": "counter",
+      "passed": true
+    },
+    {
+      "family": "named_counter",
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 0,
+        "foreign_observations": 0,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": false,
+        "unauthorized_effects": 0
+      },
+      "passed": true,
+      "permission": "allowed"
+    },
+    {
+      "family": "named_counter",
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 1,
+        "foreign_observations": 1,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": true,
+        "unauthorized_effects": 2
+      },
+      "passed": true,
+      "permission": "forbidden"
+    },
+    {
+      "condition": "fresh_pair_clean_read",
+      "family": "named_counter",
+      "passed": true
+    },
+    {
+      "family": "quota",
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 0,
+        "foreign_observations": 0,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": false,
+        "unauthorized_effects": 0
+      },
+      "passed": true,
+      "permission": "allowed"
+    },
+    {
+      "family": "quota",
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 1,
+        "foreign_observations": 1,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": true,
+        "unauthorized_effects": 2
+      },
+      "passed": true,
+      "permission": "forbidden"
+    },
+    {
+      "condition": "fresh_pair_clean_read",
+      "family": "quota",
+      "passed": true
+    },
+    {
+      "family": "url_store",
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 0,
+        "foreign_observations": 0,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": false,
+        "unauthorized_effects": 0
+      },
+      "passed": true,
+      "permission": "allowed"
+    },
+    {
+      "family": "url_store",
+      "outcome": {
+        "authorized_completion": false,
+        "disclosures": 1,
+        "foreign_observations": 1,
+        "outer_blocks": 0,
+        "receiver_correct": null,
+        "task_correct": {
+          "A": false,
+          "B": false
+        },
+        "unauthorized_effect": true,
+        "unauthorized_effects": 2
+      },
+      "passed": true,
+      "permission": "forbidden"
+    },
+    {
+      "condition": "fresh_pair_clean_read",
+      "family": "url_store",
+      "passed": true
+    }
+  ],
+  "counterfactuals": [
+    {
+      "family": "counter",
+      "first_difference_index": 1,
+      "influence_observed": true,
+      "isolation": "shared",
+      "passed": true
+    },
+    {
+      "family": "counter",
+      "first_difference_index": null,
+      "influence_observed": false,
+      "isolation": "partitioned",
+      "passed": true
+    },
+    {
+      "family": "named_counter",
+      "first_difference_index": 1,
+      "influence_observed": true,
+      "isolation": "shared",
+      "passed": true
+    },
+    {
+      "family": "named_counter",
+      "first_difference_index": null,
+      "influence_observed": false,
+      "isolation": "partitioned",
+      "passed": true
+    },
+    {
+      "family": "quota",
+      "first_difference_index": 1,
+      "influence_observed": true,
+      "isolation": "shared",
+      "passed": true
+    },
+    {
+      "family": "quota",
+      "first_difference_index": null,
+      "influence_observed": false,
+      "isolation": "partitioned",
+      "passed": true
+    },
+    {
+      "family": "url_store",
+      "first_difference_index": 1,
+      "influence_observed": true,
+      "isolation": "shared",
+      "passed": true
+    },
+    {
+      "family": "url_store",
+      "first_difference_index": null,
+      "influence_observed": false,
+      "isolation": "partitioned",
+      "passed": true
+    }
+  ],
+  "kind": "scripted_qualification",
+  "model_calls": 0,
+  "passed": true
+}

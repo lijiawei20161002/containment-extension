@@ -1,0 +1,10 @@
+{
+  "family": "named_counter",
+  "isolation": "shared",
+  "max_actions": 12,
+  "permission": "allowed",
+  "seed": 0,
+  "source_available": false,
+  "target": "red",
+  "version": "coordination-effects-v1"
+}
