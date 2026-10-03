@@ -1,0 +1,27 @@
+{
+  "created_on": "2026-10-03",
+  "status": "proposal_illustration_not_experimental_results",
+  "tool": "built-in image_gen.imagegen",
+  "asset": "counterfactual-eval-infrastructure.png",
+  "source_image_path": "/Users/lijiawei/.codex/generated_images/01a100c0-0d16-78d1-ba91-d1befa0f3ad8/exec-9b9be847-db32-4d06-a72c-974a12946a04.png",
+  "initial_generation_path": "/Users/lijiawei/.codex/generated_images/01a100c0-0d16-78d1-ba91-d1befa0f3ad8/exec-7dad876f-b950-47b6-ae02-9da0c72e3ee4.png",
+  "first_correction_path": "/Users/lijiawei/.codex/generated_images/01a100c0-0d16-78d1-ba91-d1befa0f3ad8/exec-75094612-3f3e-4f3d-8b41-35694835f589.png",
+  "width": 1672,
+  "height": 941,
+  "sha256": "6265e226b058742c95830f296582ea7400bf487f5e8b76646a83a57236209dd4",
+  "prompts": [
+    "prompt.txt",
+    "correction-prompt.txt",
+    "final-routing-prompt.txt"
+  ],
+  "protocol": "../../docs/counterfactual-evaluation-infrastructure.md",
+  "visual_review": {
+    "matched_case_variants_present": true,
+    "difficulty_qualification_present": true,
+    "offline_audit_separate_from_actor": true,
+    "hidden_reference_to_comparator_only": true,
+    "actor_input_and_grader_input_routing_checked": true,
+    "proposal_status_present": true,
+    "measured_performance_claims_present": false
+  }
+}

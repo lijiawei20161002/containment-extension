@@ -10,6 +10,12 @@ counter-signaling incidents. The [sandbox overview](../figures/sandbox-proposals
 marks the five proposed extensions on their components.
 The figures show proposed comparisons and illustrative mechanisms, not measured results.
 
+The proposed [counterfactual evaluation infrastructure](counterfactual-evaluation-infrastructure.md)
+extends these evidence and replay conventions to matched task families,
+independent reference-label qualification, and grader regression tests. It is
+researcher tooling for diagnosing evaluation failures; the actor's existing
+tools and stopping behavior remain fixed within each comparison.
+
 ## Motivation and scope
 
 [TIRx Harness](https://blog.mlc.ai/2026/09/29/tirx-harness-an-open-compiler-harness-for-agentic-gpu-programming)

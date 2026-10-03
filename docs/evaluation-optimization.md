@@ -4,6 +4,11 @@
 
 Orange wrench markers identify proposed optimization work. The figure is an architecture proposal, not a report of new experiments. The task contract, authorization policy, and independently established reference labels remain fixed within a comparison. Final held-out results do not feed candidate selection or revision.
 
+**Next iteration:** [counterfactual task families and grader regression tests](counterfactual-evaluation-infrastructure.md)
+make markers 2–4 concrete. Inspired by Arcadia's matched feasibility experiments,
+the proposal adds independently qualified task variants and controlled evidence
+views for testing graders, with a [new architecture figure](../figures/counterfactual-eval-infrastructure-v1/counterfactual-eval-infrastructure.png).
+
 | Marker | What can change | What establishes improvement |
 | --- | --- | --- |
 | 1. Instruction generator | Clause selection, specificity, ordering, and wording | Each clause cites a policy or capability source, defines a decision rule, and has a behavioral test. Matched runs and clause removal experiments check effects on authorized completion, violations, and false refusal. |

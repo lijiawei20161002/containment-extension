@@ -1,0 +1,13 @@
+Edit this research diagram. Preserve the title, visual style, the four matched task cards on the left, and the three qualification checks in the center. Fix the DATA FLOW so the figure correctly separates the evaluated actor, the grader under test, and the hidden reference comparison. The current bottom arrows land on the trace instead of the actor and the hidden-evidence folder has no clear destination.
+
+Keep the right column header "3  Test the grader". Keep the three evidence cards and their arrow into "Grader under test". Change the lower-right report header to "Reference comparison" and add its small subtitle "Grader decisions + hidden labels". Keep its four diagnostic rows. The grader-under-test arrow points DOWN to this reference-comparison report. The hidden gold labels must go ONLY to the reference-comparison report, never to the actor or grader under test.
+
+Rearrange just the two artifacts at the bottom of the CENTER panel: place "Actor-visible task" on the LEFT and "Hidden reference evidence" on the RIGHT. Both receive separate arrows from the trusted test bench. Draw:
+1. A clear blue arrow from Actor-visible task DOWN AND LEFT into "Frozen qualified cases" in the bottom lane, or directly into Existing actor if that is simpler. It must not land on Trace + effect log.
+2. A clear purple arrow from Hidden reference evidence RIGHT into Reference comparison. Keep it visibly separate from the actor path. Label this arrow "Evaluator only". No gold-evidence arrow enters Grader under test.
+3. Bottom lane remains Frozen qualified cases → Existing actor → Trace + effect log.
+4. From Trace + effect log draw an arrow UP to the evidence cards in Test the grader, labeled "Grader inputs".
+5. From Reference comparison draw an arrow DOWN to Diagnostic scores.
+Remove the current direct Trace + effect log → Diagnostic scores arrow and all old incorrect routing or redundant "to grader testing" connector labels.
+
+Make paths readable, with distinct arrowheads and no ambiguous intersections. Small layout shifts within the center/right and bottom lane are permitted to leave enough room. Keep the original left panel unchanged. Keep "PROPOSED NEXT ITERATION" and the bottom qualification that difficulty is measured for a specified model and budget. Keep all other existing accurate content. The feature is benchmark and evaluator infrastructure, with no new reviewer or debate tool for the actor.

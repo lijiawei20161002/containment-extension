@@ -45,6 +45,10 @@ passed 121 tests at the last execution; see the
 
 ## Experiment documents
 
+- **Next iteration of evaluation infrastructure:** [proposal and figure](docs/counterfactual-evaluation-infrastructure.md)
+  adapt Arcadia's matched cases and verified local criticisms into task-family
+  construction, reference-label qualification, and grader regression tests.
+  Design only; not yet implemented.
 - **Effect and information-flow harness:** [proposed protocol](docs/coordination-harness.md),
   [offline execution](docs/coordination-harness-results.md), and
   [counterfactual replay toolbox and incident illustrations](docs/counterfactual-replay.md).

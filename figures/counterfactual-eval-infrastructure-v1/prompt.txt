@@ -1,0 +1,68 @@
+Use case: scientific-educational
+Asset type: A polished wide landscape research-proposal illustration for the containment-extension repository. Aim for 16:9, high resolution, readable on a slide. One integrated figure.
+Primary request: Illustrate an EVALUATION INFRASTRUCTURE improvement inspired by the Arcadia chess experiments: construct matched tasks with the same initial failed approach but different underlying feasibility, independently qualify their labels, and stress-test graders against misleading conclusions from truthful local criticism. This is researcher tooling, not a new debate feature inside the evaluated agent.
+
+Title: "COUNTERFACTUAL EVALUATION HARNESS"
+Subtitle: "Separate task difficulty, impossibility, and broken environments"
+Small status badge: "PROPOSED NEXT ITERATION"
+
+Style: crisp editorial cartoon engineering diagram with small illustrated puzzle boards, tools, evidence folders, and laboratory equipment. Warm white background, dark navy text, blue-teal infrastructure, amber checks, violet grader testing, red only for an actual blocked route or error. Clear hierarchy, generous whitespace, few words, all text accurately spelled. Attractive and professional. No wall of text and no invented numerical results.
+
+Layout: three left-to-right regions across the top two-thirds, with a clear connected evaluation lane across the bottom third.
+
+LEFT REGION, heading "1  Build matched cases"
+At top show one small task card and shared failing attempt, labeled "Same objective" and "Initial attempt fails".
+Branch into FOUR compact illustrated cards in a 2-by-2 arrangement. They look like variations of the same small route puzzle with a starting dot, paths, and a target flag:
+- "Feasible: short repair" — the direct path is blocked but a short allowed alternative reaches the target.
+- "Feasible: longer repair" — the same direct path is blocked; a longer allowed route through several prerequisite nodes reaches the target. This is a candidate difficulty manipulation, not a claim of measured difficulty.
+- "Impossible in this domain" — no allowed route reaches the target; show a closed boundary and a tiny proof sheet.
+- "Broken environment" — the task board retains a valid route but a disconnected tool/plug prevents execution.
+Put a shared caption under the four: "Similar failure evidence; different causes".
+No gold answers or reference solutions should go to the actor.
+
+CENTER REGION, heading "2  Qualify the benchmark"
+A substantial trusted test bench with three illustrated instruments: a solution trace, a constraint checker, and an environment diagnostic.
+Three exact short labels:
+"Replay reference solutions"
+"Check impossibility evidence"
+"Verify actor environment"
+A small two-person argument sketch beside the bench is labeled "Repair / critic audit".
+Arrow from that sketch into the bench labeled "Candidate counterexamples". This debate is OFFLINE benchmark development only; the bench independently checks proposals.
+A side tray beneath the bench labeled "Unverified cases" receives a distinct uncertain-case arrow. Do not imply every generated case has certified truth.
+The bench outputs TWO clearly separated artifacts:
+- upper locked blue folder labeled "Hidden reference evidence"
+- lower plain task card labeled "Actor-visible task"
+The lock denotes evaluation separation only, not a security guarantee.
+An arrow from "Actor-visible task" goes DOWN to the agent in the bottom lane.
+An arrow from "Hidden reference evidence" goes RIGHT to grader testing. NO arrow from this folder to the agent.
+
+RIGHT REGION, heading "3  Test the grader"
+Show a magnifying glass over three stacked transcript cards with labels:
+"Failed attempt"
+"+ True local criticism"
+"+ Alternative approach"
+A short caption: "Keep the task label fixed".
+Show a grader instrument receiving these cards plus the hidden reference evidence from center.
+An output report has four short lines:
+"Unsupported impossibility"
+"Premature abandonment"
+"Environment failure"
+"Scope violations"
+Small note beneath: "One failed plan is not a global proof".
+
+BOTTOM LANE, separated by a thin rule, heading "Run the evaluation"
+Left-to-right flow:
+"Frozen qualified cases" → a small robot inside a sandbox labeled "Existing actor" → a log scroll labeled "Trace + effect log" → a report labeled "Diagnostic scores".
+The actor is the ONLY robot that acts in a sandbox; it has no advocates, critics, repair assistants, or extra debate tools.
+Connect "Trace + effect log" upward to the grader-testing panel; connect that panel down to "Diagnostic scores".
+Near the bottom report put the short phrase "Completion, stopping, cost, and uncertainty".
+A small bottom footnote reads: "Difficulty is measured for a specified model and budget. Illustrative design; no new results."
+
+Constraints:
+- The main message is BETTER TASKS AND BETTER EVALUATORS, not an agent-facing feasibility reviewer.
+- Distinguish theoretical impossibility in a bounded declared domain from a missing environment dependency.
+- Similar starting failure does not itself determine the label.
+- Repair and critic audit only proposes candidates; independent checks establish labels.
+- No automatic early-stop controller, no majority-vote truth, no actor access to gold labels, no invented accuracy or improvement percentages.
+- Keep arrows sparse, orthogonal or smooth, directional, and semantically correct. Prefer large recognizable objects and concise labels over text density.
+- No website mockup, no code screenshots, no external logos, no decorative filler.

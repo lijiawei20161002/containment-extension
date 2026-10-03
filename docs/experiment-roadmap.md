@@ -239,6 +239,24 @@ assay development, not a substitute for held-out validation.
 
 ## Deferred questions and reporting contract
 
+### Counterfactual evaluation infrastructure
+
+Added October 3, 2026: the [next iteration proposal and figure](counterfactual-evaluation-infrastructure.md)
+adapt Arcadia's matched tasks and verified local criticism into benchmark
+construction and evaluator validation. The [design specification](../experiments/counterfactual-evaluation-v1.design.json)
+is not executable and contains no live allocation.
+
+First build a bounded workflow family with short/long feasible variants, an
+independently checked impossible variant, and a paired broken-environment control.
+Export separate actor inputs, hidden reference evidence, and grader regression
+cases. Qualify task labels and environment health before testing whether graders
+confuse a failed approach with global impossibility. Preserve the existing actor
+setup and independently observed effects. Difficulty needs model/budget
+calibration; failed search cannot establish impossibility. Coding transfer still
+depends on U2, and completed allocations are not reused.
+
+### Other deferred work
+
 | Topic | Revisit when |
 | --- | --- |
 | Learned action monitors and defensive utility | Historical labels are adjudicated and verifier-scored defensive controls exist |

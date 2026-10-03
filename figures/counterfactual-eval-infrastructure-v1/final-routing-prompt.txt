@@ -1,0 +1,5 @@
+Make ONE routing correction to this diagram and otherwise preserve everything exactly.
+The blue arrow labeled "Grader inputs" currently goes up from "Trace + effect log" and ends in blank space below the CENTER panel. This is incorrect.
+Erase ONLY that blue connector and its old label. Draw a replacement blue elbow connector STARTING at the RIGHT edge of "Trace + effect log", traveling right through the whitespace below the three main panels, then UP into the BOTTOM edge of the transcript stack in the RIGHT panel ("+ Alternative approach"). Its arrowhead must visibly touch the transcript stack. Label the new connector "Grader inputs".
+If the blue connector must cross the purple "Evaluator only" arrow, show a small crossover bridge with no connection dot. Those two flows must remain separate.
+Keep the purple hidden-evidence-to-reference-comparison arrow, actor task input arrow, all panels, all text, all illustrations, and all other arrows unchanged. Do not add any other connector.
