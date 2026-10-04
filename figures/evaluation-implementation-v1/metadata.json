@@ -1,0 +1,15 @@
+{
+  "title": "What is implemented and what has run",
+  "snapshot_date": "2026-10-04",
+  "generator": "scripts/draw_evaluation_implementation.py",
+  "sources": {
+    "results/counterfactual-evaluation-offline-v1/summary.json": "55bd7c944ef2a1fd1f4eb2f582c88efa56514ef884e7240c0ff4d3bc3d2f9e3b",
+    "results/researcharena-monitoring-offline-v1/summary.json": "ed9c24639193a92beb6bc4b4dfd8f8fbcd869a1172d65e1db5ebec3c9f9a3e8f"
+  },
+  "worked_example_case_id": "case-aa89bec9acad",
+  "model_calls_for_figure": 0,
+  "formats": [
+    "SVG",
+    "PNG"
+  ]
+}

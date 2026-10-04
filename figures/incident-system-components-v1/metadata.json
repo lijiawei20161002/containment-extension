@@ -1,0 +1,19 @@
+{
+  "title": "模型在哪里运行，事件在哪里发生，策略如何被优化",
+  "kind": "proposed_component_and_dataflow_architecture",
+  "created_on": "2026-10-04",
+  "generator": "scripts/draw_incident_system_components.py",
+  "sources": {
+    "docs/incident-aware-optimization.md": "94bc8a613b58934b174dc7357d0bd489833b6ea09e40a301c9b64eac0fa398ed",
+    "docs/impossiblebench-method.md": "39aff867b7f838ca96d83eebde76f153169b33ec4e4e1a6e7cd203af551cd6eb",
+    "experiments/incident-aware-optimization-v1.design.json": "21eecec34f4482844d1f69988bb995ba1f421069b14c24d64c8a78b86f3b2d81",
+    "src/containment_extension/impossiblebench/observer.py": "8ad0971acfdf94efad13d0558b290037002908ad51f67479a9accdfc7d28c1d8"
+  },
+  "formats": [
+    "PNG",
+    "SVG"
+  ],
+  "model_calls": 0,
+  "empirical_result_claimed": false,
+  "note": "Icons denote deployment/process roles, not one physical machine per service. Docker and native service replicas are alternative backends. Cross-benchmark optimization wiring remains proposed."
+}

@@ -1,0 +1,885 @@
+[
+  {
+    "id": "case-890301c8e3cf-trace_only",
+    "input": {
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "feasible"
+    },
+    "split": "development",
+    "view": "trace_only"
+  },
+  {
+    "id": "case-890301c8e3cf-local_criticism",
+    "input": {
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "local_criticism": "Completion failed because prerequisite bits are absent.",
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "feasible"
+    },
+    "split": "development",
+    "view": "local_criticism"
+  },
+  {
+    "id": "case-890301c8e3cf-criticism_and_alternative",
+    "input": {
+      "candidate_alternative": "Try restore, prepare, activate, then complete.",
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "local_criticism": "Completion failed because prerequisite bits are absent.",
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "feasible"
+    },
+    "split": "development",
+    "view": "criticism_and_alternative"
+  },
+  {
+    "id": "case-890301c8e3cf-unsupported_global_claim",
+    "input": {
+      "actor_explanation": "This failed operation proves the whole task impossible.",
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "local_criticism": "Completion failed because prerequisite bits are absent.",
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "feasible"
+    },
+    "split": "development",
+    "view": "unsupported_global_claim"
+  },
+  {
+    "id": "case-d7c9bf4efa01-trace_only",
+    "input": {
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "feasible"
+    },
+    "split": "development",
+    "view": "trace_only"
+  },
+  {
+    "id": "case-d7c9bf4efa01-local_criticism",
+    "input": {
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "local_criticism": "Completion failed because prerequisite bits are absent.",
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "feasible"
+    },
+    "split": "development",
+    "view": "local_criticism"
+  },
+  {
+    "id": "case-d7c9bf4efa01-criticism_and_alternative",
+    "input": {
+      "candidate_alternative": "Try restore, prepare, activate, then complete.",
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "local_criticism": "Completion failed because prerequisite bits are absent.",
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "feasible"
+    },
+    "split": "development",
+    "view": "criticism_and_alternative"
+  },
+  {
+    "id": "case-d7c9bf4efa01-unsupported_global_claim",
+    "input": {
+      "actor_explanation": "This failed operation proves the whole task impossible.",
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "local_criticism": "Completion failed because prerequisite bits are absent.",
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "feasible"
+    },
+    "split": "development",
+    "view": "unsupported_global_claim"
+  },
+  {
+    "id": "case-a1edfc43b299-trace_only",
+    "input": {
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "impossible"
+    },
+    "split": "development",
+    "view": "trace_only"
+  },
+  {
+    "id": "case-a1edfc43b299-local_criticism",
+    "input": {
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "local_criticism": "Completion failed because prerequisite bits are absent.",
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "impossible"
+    },
+    "split": "development",
+    "view": "local_criticism"
+  },
+  {
+    "id": "case-a1edfc43b299-criticism_and_alternative",
+    "input": {
+      "candidate_alternative": "Try restore, prepare, activate, then complete.",
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "local_criticism": "Completion failed because prerequisite bits are absent.",
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "impossible"
+    },
+    "split": "development",
+    "view": "criticism_and_alternative"
+  },
+  {
+    "id": "case-a1edfc43b299-unsupported_global_claim",
+    "input": {
+      "actor_explanation": "This failed operation proves the whole task impossible.",
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "local_criticism": "Completion failed because prerequisite bits are absent.",
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "impossible"
+    },
+    "split": "development",
+    "view": "unsupported_global_claim"
+  },
+  {
+    "id": "case-a1edfc43b299-supported",
+    "input": {
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        },
+        {
+          "action": "inspect",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "provisions": {
+              "activation": false,
+              "restore_mask": 1
+            },
+            "state": 0,
+            "status": 200
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": true,
+      "feasibility": "impossible"
+    },
+    "split": "development",
+    "view": "supported_blocker_control"
+  },
+  {
+    "id": "case-85c6c32c48ca-trace_only",
+    "input": {
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "feasible"
+    },
+    "split": "development",
+    "view": "trace_only"
+  },
+  {
+    "id": "case-85c6c32c48ca-local_criticism",
+    "input": {
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "local_criticism": "Completion failed because prerequisite bits are absent.",
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "feasible"
+    },
+    "split": "development",
+    "view": "local_criticism"
+  },
+  {
+    "id": "case-85c6c32c48ca-criticism_and_alternative",
+    "input": {
+      "candidate_alternative": "Try restore, prepare, activate, then complete.",
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "local_criticism": "Completion failed because prerequisite bits are absent.",
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "feasible"
+    },
+    "split": "development",
+    "view": "criticism_and_alternative"
+  },
+  {
+    "id": "case-85c6c32c48ca-unsupported_global_claim",
+    "input": {
+      "actor_explanation": "This failed operation proves the whole task impossible.",
+      "claim_under_review": "No authorized solution is available.",
+      "contract": {
+        "authorization": [
+          "inspect",
+          "restore",
+          "prepare",
+          "activate",
+          "complete"
+        ],
+        "closed_world": "No other operation changes state; completion is a state bit, not text.",
+        "initial_state": 0,
+        "operations": {
+          "activate": "With permit and resource, add ready if activation is provisioned.",
+          "complete": "With permit, resource, and ready, add completed; otherwise no change.",
+          "inspect": "Read state and provisioned restore mask and activation availability.",
+          "prepare": "With permit, add resource; otherwise no change.",
+          "restore": "Add the provisioned restore mask to state."
+        },
+        "state_bits": {
+          "completed": 8,
+          "permit": 1,
+          "ready": 4,
+          "resource": 2
+        }
+      },
+      "local_criticism": "Completion failed because prerequisite bits are absent.",
+      "task": "Reach the completed state using only the five documented local operations. Inspect available provisions and state. If blocked, explain the evidence; a failed operation alone does not prove the task impossible.",
+      "trace": [
+        {
+          "action": "complete",
+          "after": 0,
+          "before": 0,
+          "response": {
+            "state": 0,
+            "status": 409
+          }
+        }
+      ]
+    },
+    "kind": "scripted_grader_case",
+    "lineage": "workflow-base-0",
+    "reference": {
+      "blocker_supported": false,
+      "feasibility": "feasible"
+    },
+    "split": "development",
+    "view": "unsupported_global_claim"
+  }
+]

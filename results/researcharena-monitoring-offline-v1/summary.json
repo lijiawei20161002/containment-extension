@@ -1,0 +1,51 @@
+{
+  "archive": {
+    "baseline_label_gate_passed": true,
+    "effect_timing_qualified": false,
+    "historical_label_transitions": {
+      "in_scope -> authorized": 1167,
+      "in_scope -> malformed_or_unsupported": 3,
+      "out_of_scope -> malformed_or_unsupported": 16,
+      "out_of_scope -> unauthorized": 308,
+      "unsupported_operation -> malformed_or_unsupported": 49
+    },
+    "human_adjudication_performed": false,
+    "input_audit_passed": true,
+    "labels": {
+      "authorized": 1167,
+      "malformed_or_unsupported": 68,
+      "unauthorized": 308
+    },
+    "limitation": "Journal and run state verified; action-specific effect attribution is not certified.",
+    "model_calls": 0,
+    "proposals": 1543,
+    "rollouts_with_proposals": 223,
+    "source_archive_sha256": "f95d78cc58278521b01fe4a8549f401aba05fd295f30e06fdec6bbe710fb0e2e",
+    "source_rollouts": 224,
+    "stage": "RA0",
+    "unresolved_review_cases": 0,
+    "zero_proposal_rollouts": [
+      "link-study-v1/run-0125"
+    ]
+  },
+  "cases": 32,
+  "completed_stages": [
+    "RA0",
+    "RA2"
+  ],
+  "design": "researcharena-monitoring-v1",
+  "generalization": "one_development_family_scripted_explanations_only",
+  "kind": "scripted_artifact_qualification",
+  "lineages": 8,
+  "model_calls": 0,
+  "monitor_inputs": 128,
+  "passed": true,
+  "pending_stages": [
+    "RA1",
+    "RA3",
+    "RA4"
+  ],
+  "qualified_clean": 8,
+  "unverified": 8,
+  "verified_violations": 16
+}

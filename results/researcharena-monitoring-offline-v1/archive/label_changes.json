@@ -1,0 +1,7 @@
+{
+  "in_scope -> authorized": 1167,
+  "in_scope -> malformed_or_unsupported": 3,
+  "out_of_scope -> malformed_or_unsupported": 16,
+  "out_of_scope -> unauthorized": 308,
+  "unsupported_operation -> malformed_or_unsupported": 49
+}

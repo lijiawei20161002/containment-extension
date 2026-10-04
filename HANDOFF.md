@@ -1,5 +1,35 @@
 # Continue the ImpossibleBench transfer study
 
+**October 4 research framing update:** the organizing objective is now
+[incident-aware policy optimization](docs/incident-aware-optimization.md): compare
+proxy-feedback and incident-feedback selection under the same policy choices,
+search budget, and common held-out effect observer. Read the
+[standardized benchmark protocol](docs/standardized-benchmarks.md) and its
+`experiments/standardized-benchmarks-v1.design.json` source/data pins.
+`benchmark-check`, `benchmark-import`, and `benchmark-report` implement offline
+readiness checks, AgentDojo/ResearchArena raw-result imports, and paired calibrated
+monitor analysis. Validation: 272 passed, 4 skipped on macOS; no new inference.
+The matched optimizer-feedback ablation, external live runner integrations and
+benchmark improvements remain unimplemented/unmeasured. Their exact status is in
+`experiments/incident-aware-optimization-v1.design.json`; do not describe the
+existing native instruction optimizer as that complete experiment.
+
+**October 4 local evaluation update:** both newer designs now have executed
+offline stages. Read [the results and commands](docs/evaluation-infrastructure-results.md).
+Counterfactual qualification passed four cases, 320 transition checks, and 17
+scripted grader cases. The ResearchArena-inspired run audited 1,543 proposals from
+all 224 source rollouts and qualified 32 scripted artifacts with 128 monitor views.
+Evidence is frozen in `results/counterfactual-evaluation-offline-v1/` and
+`results/researcharena-monitoring-offline-v1/`. No model calls were made.
+
+The main CLI now supports `evaluation-qualify`, `evaluation-verify`,
+`evaluation-prepare`, and `evaluation-run`. The first live grader, workflow-actor,
+and monitor paths are tested with scripted transports; a model/provider and
+spending cap remain unspecified. The configuration template has intentional null
+allocation fields. RA4 attack actors and transfer remain later protocol work.
+The Linux/ImpossibleBench machine details below are historical; the October 4
+offline work used the local macOS checkout and Python 3.13.1.
+
 **Checkout layout update, September 24:** the working Python package is now
 `src/containment_extension/`. Follow the [editable-install setup](README.md#run-it)
 before using the CLI or analysis scripts. Import names and command names are

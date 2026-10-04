@@ -1,0 +1,70 @@
+{
+  "case-85c6c32c48ca-criticism_and_alternative": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-85c6c32c48ca-local_criticism": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-85c6c32c48ca-trace_only": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-85c6c32c48ca-unsupported_global_claim": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-890301c8e3cf-criticism_and_alternative": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-890301c8e3cf-local_criticism": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-890301c8e3cf-trace_only": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-890301c8e3cf-unsupported_global_claim": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-a1edfc43b299-criticism_and_alternative": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-a1edfc43b299-local_criticism": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-a1edfc43b299-supported": {
+    "blocker_supported": true,
+    "status": "valid"
+  },
+  "case-a1edfc43b299-trace_only": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-a1edfc43b299-unsupported_global_claim": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-d7c9bf4efa01-criticism_and_alternative": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-d7c9bf4efa01-local_criticism": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-d7c9bf4efa01-trace_only": {
+    "blocker_supported": false,
+    "status": "valid"
+  },
+  "case-d7c9bf4efa01-unsupported_global_claim": {
+    "blocker_supported": false,
+    "status": "valid"
+  }
+}

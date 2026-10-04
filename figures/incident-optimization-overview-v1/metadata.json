@@ -1,0 +1,22 @@
+{
+  "title": "Incident-aware policy optimization",
+  "kind": "proposed_adaptive_optimization_overview",
+  "created_on": "2026-10-04",
+  "generator": "scripts/draw_incident_optimization_overview.py",
+  "generator_sha256": "69b4d01ea9c50ed8816e1b7664c0aa26997a5fa4e8f80bd189371f4d2b59a7cb",
+  "sources": {
+    "docs/incident-aware-optimization.md": "2fdc4931fe41c37e8e300f5f07645141fcb02a9b35beedfa6e976fee59ded963",
+    "experiments/incident-aware-optimization-v1.design.json": "911d6138a79399a6a98233ad69c0a763efe0d7b0357a733983ee5ecb4976aa89",
+    "docs/instruction-optimization.md": "211ef587e25021787ae479807da2c7825b4bfb7dbc9328a4674d03bb1f4684ad",
+    "src/containment_extension/instruction_optimization/catalog.py": "343b7ff631e39b6e5997c93909464a185b31b1da6f3b4ca211856ee19fb76ff9"
+  },
+  "style_reference": "overview.png supplied in the workspace",
+  "style_reference_sha256": "1934b33051063762a743678f454b209c0ee03f0ead74483c8f685a17f97e5b4c",
+  "formats": [
+    "PNG",
+    "SVG"
+  ],
+  "model_calls": 0,
+  "empirical_result_claimed": false,
+  "note": "Proposed adaptive development loop over reviewed instruction settings. The initial matched B3/B4 study still uses one fixed candidate pool. The native optimizer provides a local foundation, not this full cross-benchmark constrained optimizer. Held-out results never feed search."
+}

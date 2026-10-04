@@ -1,0 +1,24 @@
+{
+  "provider": null,
+  "model": null,
+  "rates": {"input": null, "output": null},
+  "aggregate_budget": {
+    "requests": null,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_usd": null
+  },
+  "per_assignment_budget": {
+    "requests": null,
+    "input_tokens": null,
+    "output_tokens": null,
+    "estimated_usd": null
+  },
+  "max_steps": 8,
+  "max_output_tokens": 512,
+  "max_wall_seconds": 300,
+  "probe_quota": 8,
+  "threshold": 0.5,
+  "seed": 20261004,
+  "archive_rollout_limit": 8
+}

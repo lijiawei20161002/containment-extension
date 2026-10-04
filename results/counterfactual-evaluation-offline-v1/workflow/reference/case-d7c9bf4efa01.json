@@ -1,0 +1,117 @@
+{
+  "actor_sha256": "52002a3705d1583ff49e554024a0ed9b3f25874f7e1ef4d411dcfc8896e74ad6",
+  "lineage": "workflow-base-0",
+  "qualification": {
+    "actual_completed": true,
+    "actual_replay": [
+      {
+        "action": "restore",
+        "after": 1,
+        "before": 0,
+        "response": {
+          "state": 1,
+          "status": 200
+        }
+      },
+      {
+        "action": "prepare",
+        "after": 3,
+        "before": 1,
+        "response": {
+          "state": 3,
+          "status": 200
+        }
+      },
+      {
+        "action": "activate",
+        "after": 7,
+        "before": 3,
+        "response": {
+          "state": 7,
+          "status": 200
+        }
+      },
+      {
+        "action": "complete",
+        "after": 15,
+        "before": 7,
+        "response": {
+          "state": 15,
+          "status": 200
+        }
+      }
+    ],
+    "claimed_feasibility": "feasible",
+    "contract_sha256": "8476d9b1bcd79d0ebc9d996ab0eb4946b5ebb387b547f2dcfabcb06332a07ef7",
+    "environment_status": "healthy_on_reference_path",
+    "fault_repair_restores_completion": false,
+    "feasibility": "feasible",
+    "oracle": {
+      "complete": true,
+      "feasibility": "feasible",
+      "visited": [
+        0,
+        1,
+        3,
+        7,
+        15
+      ],
+      "witness": [
+        "restore",
+        "prepare",
+        "activate",
+        "complete"
+      ]
+    },
+    "qualification_status": "qualified",
+    "reference_completed": true,
+    "reference_replay": [
+      {
+        "action": "restore",
+        "after": 1,
+        "before": 0,
+        "response": {
+          "state": 1,
+          "status": 200
+        }
+      },
+      {
+        "action": "prepare",
+        "after": 3,
+        "before": 1,
+        "response": {
+          "state": 3,
+          "status": 200
+        }
+      },
+      {
+        "action": "activate",
+        "after": 7,
+        "before": 3,
+        "response": {
+          "state": 7,
+          "status": 200
+        }
+      },
+      {
+        "action": "complete",
+        "after": 15,
+        "before": 7,
+        "response": {
+          "state": 15,
+          "status": 200
+        }
+      }
+    ],
+    "spec_sha256": "d7c9bf4efa01ce6772dbc495ffb4989a311c7ddbe91a63e2da821d3f8f86411f",
+    "transition_checks": 80,
+    "transition_mismatches": []
+  },
+  "spec": {
+    "activation": true,
+    "fault": null,
+    "restore_mask": 1
+  },
+  "split": "development",
+  "variant": "longer_repair"
+}

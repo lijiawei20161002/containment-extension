@@ -1,7 +1,7 @@
 {
   "schema": "containment-next-experiments-design-v1",
   "status": "design_only_not_executable",
-  "updated_on": "2026-09-21",
+  "updated_on": "2026-10-04",
   "protocol": "docs/experiment-roadmap.md",
   "execution_authorized_by_this_file": false,
   "live_calls_made_for_this_revision": 290,
@@ -289,6 +289,24 @@
     "retry_and_compaction_factorials",
     "open_model_training"
   ],
+  "related_designs": {
+    "artifact_sabotage_and_monitor_investigation": {
+      "protocol": "docs/researcharena-inspired-evaluations.md",
+      "specification": "experiments/researcharena-monitoring-v1.design.json",
+      "status": "offline_ra0_ra2_executed_no_model_calls",
+      "results": "docs/evaluation-infrastructure-results.md",
+      "sequence": [
+        "RA0_archive_adjudication",
+        "RA1_two_view_monitor_baseline",
+        "RA2_bounded_artifact_fixture",
+        "RA3_post_run_monitor_comparison",
+        "RA4_later_actor_calibration"
+      ],
+      "ra2_offline_preparation_independent_of_ra1_allocation": true,
+      "changes_active_track_or_next_live_stage": false,
+      "new_actor_or_monitor_calls": 0
+    }
+  },
   "preservation": {
     "completed_archives": "unchanged",
     "existing_runnable_configs": "unchanged",
@@ -296,5 +314,12 @@
   },
   "active_track": "upstream_environment_and_capability",
   "next_live_stage": "U2_unallocated",
-  "p0_custom_runner_status": "implemented_and_locally_qualified_2026-09-21"
+  "p0_custom_runner_status": "implemented_and_locally_qualified_2026-09-21",
+  "research_framing": {
+    "objective": "docs/incident-aware-optimization.md",
+    "optimization_design": "experiments/incident-aware-optimization-v1.design.json",
+    "benchmark_design": "experiments/standardized-benchmarks-v1.design.json",
+    "primary_contrast": "matched incident-feedback versus proxy-feedback policy selection",
+    "new_benchmark_performance_measured": false
+  }
 }

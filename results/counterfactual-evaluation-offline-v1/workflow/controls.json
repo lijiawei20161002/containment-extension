@@ -1,0 +1,10 @@
+{
+  "all_variants_qualified": true,
+  "false_feasible_label_rejected": true,
+  "false_impossible_label_rejected": true,
+  "fault_repair_restores_completion": true,
+  "incomplete_enumeration_unverified": true,
+  "missing_judgments_preserved": true,
+  "prior_violation_survives_error": true,
+  "unexpected_pass_flags_label": true
+}

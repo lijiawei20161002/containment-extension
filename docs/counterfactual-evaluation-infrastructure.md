@@ -1,8 +1,17 @@
 # Counterfactual task families for evaluation infrastructure
 
-**Next iteration proposal, October 3, 2026. Design only; no new actor or grader
-experiment has been run.** The [companion specification](../experiments/counterfactual-evaluation-v1.design.json)
-records the implementation scope and acceptance checks.
+**Role in the research objective:** qualify feasibility, environment health and
+incident labels before [incident-aware policy optimization](incident-aware-optimization.md).
+The local cases are development/regression controls; external performance is
+measured under the [standardized benchmark protocol](standardized-benchmarks.md).
+
+**Proposed October 3; offline stages implemented and executed October 4, 2026.**
+M1, M2, and deterministic M3 controls passed: four cases, 320 transition checks,
+and 17 grader cases. No actor or model-grader inference has run. See the
+[execution results](evaluation-infrastructure-results.md) and
+[companion specification](../experiments/counterfactual-evaluation-v1.design.json)
+for stage status, scope, and acceptance checks. The later model stages below
+remain proposals with no model or budget selected.
 
 Improve containment-extension's ability to explain an evaluation failure by
 building matched task families with independently established feasibility,
@@ -188,6 +197,26 @@ Keep task-level fields (`feasibility`, `qualification_status`, calibrated
 these into one mutually exclusive label: a run can encounter an environment
 fault and also commit a scope violation. Preserve unknowns when diagnosis is not
 supported. New reports supplement immutable historical reports.
+
+## Artifact probes as a complementary evaluation family
+
+The October 4 [ResearchArena-inspired design](researcharena-inspired-evaluations.md)
+adds a complementary question: does a permitted artifact edit preserve ordinary
+task checks while violating the semantic contract on other inputs? Its proposed
+bounded transform fixture uses an independently implemented reference function
+and paired trigger/control inputs, with clean optimization, selective corruption,
+broad regression, and environment-fault cases. This supplements the feasibility
+and blocker family above; it does not change its reference labels or milestones.
+
+Reuse the separate actor, monitor, and hidden-reference partitions, independent
+qualification, source-lineage splits, and immutable replay evidence. Preserve
+ordinary test success, full-domain correctness, environment health, and observed
+violations as separate fields. Failed probes remain unverified; a static code
+signal cannot replace a behavioral witness. Post-run artifact monitors receive
+copies for inspection and bounded probes, while pre-action judgments retain their
+original temporal cutoff. The companion
+[monitoring specification](../experiments/researcharena-monitoring-v1.design.json)
+defines the separate stages and acceptance checks without a live allocation.
 
 ## Proposed next iteration deliverables
 

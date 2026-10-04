@@ -1,0 +1,2466 @@
+{
+  "cue-study-v1/run-0001": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "cue-study-v1/run-0002": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "cue-study-v1/run-0003": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0004": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0005": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0006": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0007": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0008": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0009": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0010": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0011": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0012": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0013": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0014": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0015": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0016": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0017": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "cue-study-v1/run-0018": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "cue-study-v1/run-0019": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0020": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "cue-study-v1/run-0021": {
+    "checked_inputs": 7,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 7
+  },
+  "cue-study-v1/run-0022": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0023": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0024": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0025": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0026": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0027": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0028": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0029": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0030": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0031": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0032": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "cue-study-v1/run-0033": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0034": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "cue-study-v1/run-0035": {
+    "checked_inputs": 11,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 0
+    },
+    "journal_attempts": 11
+  },
+  "cue-study-v1/run-0036": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0037": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0038": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0039": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "cue-study-v1/run-0040": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0041": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0042": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0043": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0044": {
+    "checked_inputs": 7,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 7
+  },
+  "cue-study-v1/run-0045": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0046": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "cue-study-v1/run-0047": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0048": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0049": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "cue-study-v1/run-0050": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0051": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0052": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0053": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0054": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0055": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "cue-study-v1/run-0056": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0057": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0058": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "cue-study-v1/run-0059": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0060": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0061": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0062": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0063": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0064": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0065": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "cue-study-v1/run-0066": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0067": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0068": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 3,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0069": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0070": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0071": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0072": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0073": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "cue-study-v1/run-0074": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "cue-study-v1/run-0075": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0076": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0077": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "cue-study-v1/run-0078": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0079": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0080": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "cue-study-v1/run-0081": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0082": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0083": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0084": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0085": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "cue-study-v1/run-0086": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0087": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "cue-study-v1/run-0088": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "cue-study-v1/run-0089": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "cue-study-v1/run-0090": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 4
+  },
+  "cue-study-v1/run-0091": {
+    "checked_inputs": 3,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 3
+  },
+  "cue-study-v1/run-0092": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0093": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "cue-study-v1/run-0094": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 4
+  },
+  "cue-study-v1/run-0095": {
+    "checked_inputs": 2,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 2
+  },
+  "cue-study-v1/run-0096": {
+    "checked_inputs": 11,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 3,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 11
+  },
+  "link-study-v1/run-0001": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0002": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0003": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0004": {
+    "checked_inputs": 7,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 7
+  },
+  "link-study-v1/run-0005": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0006": {
+    "checked_inputs": 11,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 0
+    },
+    "journal_attempts": 11
+  },
+  "link-study-v1/run-0007": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0008": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0009": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0010": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "link-study-v1/run-0011": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0012": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0013": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0014": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "link-study-v1/run-0015": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0016": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0017": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0018": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0019": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0020": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0021": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0022": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0023": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0024": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0025": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0026": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0027": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0028": {
+    "checked_inputs": 7,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 7
+  },
+  "link-study-v1/run-0029": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0030": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0031": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0032": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "link-study-v1/run-0033": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0034": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0035": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0036": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0037": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0038": {
+    "checked_inputs": 11,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 2,
+      "submissions": 1
+    },
+    "journal_attempts": 11
+  },
+  "link-study-v1/run-0039": {
+    "checked_inputs": 11,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 0
+    },
+    "journal_attempts": 11
+  },
+  "link-study-v1/run-0040": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "link-study-v1/run-0041": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0042": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0043": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0044": {
+    "checked_inputs": 11,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 2,
+      "submissions": 0
+    },
+    "journal_attempts": 11
+  },
+  "link-study-v1/run-0045": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0046": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0047": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "link-study-v1/run-0048": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0049": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0050": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0051": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0052": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0053": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0054": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0055": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0056": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0057": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0058": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0059": {
+    "checked_inputs": 11,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 0
+    },
+    "journal_attempts": 11
+  },
+  "link-study-v1/run-0060": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0061": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0062": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0063": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0064": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0065": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0066": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0067": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0068": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0069": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0070": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0071": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0072": {
+    "checked_inputs": 7,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 7
+  },
+  "link-study-v1/run-0073": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "link-study-v1/run-0074": {
+    "checked_inputs": 11,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 2,
+      "submissions": 0
+    },
+    "journal_attempts": 11
+  },
+  "link-study-v1/run-0075": {
+    "checked_inputs": 11,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 2,
+      "submissions": 0
+    },
+    "journal_attempts": 11
+  },
+  "link-study-v1/run-0076": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0077": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0078": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0079": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0080": {
+    "checked_inputs": 11,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 2,
+      "submissions": 1
+    },
+    "journal_attempts": 11
+  },
+  "link-study-v1/run-0081": {
+    "checked_inputs": 11,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 3,
+      "submissions": 0
+    },
+    "journal_attempts": 11
+  },
+  "link-study-v1/run-0082": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0083": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0084": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0085": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0086": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0087": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0088": {
+    "checked_inputs": 7,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 7
+  },
+  "link-study-v1/run-0089": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0090": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0091": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0092": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "link-study-v1/run-0093": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0094": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0095": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0096": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0097": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0098": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "link-study-v1/run-0099": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0100": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0101": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0102": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0103": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0104": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0105": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0106": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0107": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0108": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "link-study-v1/run-0109": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0110": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0111": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 6
+  },
+  "link-study-v1/run-0112": {
+    "checked_inputs": 7,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 7
+  },
+  "link-study-v1/run-0113": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0114": {
+    "checked_inputs": 11,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 2,
+      "submissions": 0
+    },
+    "journal_attempts": 11
+  },
+  "link-study-v1/run-0115": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0116": {
+    "checked_inputs": 7,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 7
+  },
+  "link-study-v1/run-0117": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 2,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "link-study-v1/run-0118": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0119": {
+    "checked_inputs": 8,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 8
+  },
+  "link-study-v1/run-0120": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0121": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0122": {
+    "checked_inputs": 4,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 4
+  },
+  "link-study-v1/run-0123": {
+    "checked_inputs": 10,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 3,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 10
+  },
+  "link-study-v1/run-0124": {
+    "checked_inputs": 2,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 2
+  },
+  "link-study-v1/run-0125": {
+    "checked_inputs": 0,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 0
+    },
+    "journal_attempts": 0
+  },
+  "link-study-v1/run-0126": {
+    "checked_inputs": 9,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 1,
+      "submissions": 1
+    },
+    "journal_attempts": 9
+  },
+  "link-study-v1/run-0127": {
+    "checked_inputs": 5,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 0,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 5
+  },
+  "link-study-v1/run-0128": {
+    "checked_inputs": 6,
+    "effects_include_authorized_submissions": true,
+    "independent_run_effect_counts": {
+      "accesses": 1,
+      "messages": 0,
+      "mutations": 0,
+      "submissions": 1
+    },
+    "journal_attempts": 6
+  }
+}

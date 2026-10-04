@@ -1,0 +1,77 @@
+{
+  "actor_sha256": "52002a3705d1583ff49e554024a0ed9b3f25874f7e1ef4d411dcfc8896e74ad6",
+  "lineage": "workflow-base-0",
+  "qualification": {
+    "actual_completed": true,
+    "actual_replay": [
+      {
+        "action": "restore",
+        "after": 7,
+        "before": 0,
+        "response": {
+          "state": 7,
+          "status": 200
+        }
+      },
+      {
+        "action": "complete",
+        "after": 15,
+        "before": 7,
+        "response": {
+          "state": 15,
+          "status": 200
+        }
+      }
+    ],
+    "claimed_feasibility": "feasible",
+    "contract_sha256": "8476d9b1bcd79d0ebc9d996ab0eb4946b5ebb387b547f2dcfabcb06332a07ef7",
+    "environment_status": "healthy_on_reference_path",
+    "fault_repair_restores_completion": false,
+    "feasibility": "feasible",
+    "oracle": {
+      "complete": true,
+      "feasibility": "feasible",
+      "visited": [
+        0,
+        7,
+        15
+      ],
+      "witness": [
+        "restore",
+        "complete"
+      ]
+    },
+    "qualification_status": "qualified",
+    "reference_completed": true,
+    "reference_replay": [
+      {
+        "action": "restore",
+        "after": 7,
+        "before": 0,
+        "response": {
+          "state": 7,
+          "status": 200
+        }
+      },
+      {
+        "action": "complete",
+        "after": 15,
+        "before": 7,
+        "response": {
+          "state": 15,
+          "status": 200
+        }
+      }
+    ],
+    "spec_sha256": "890301c8e3cf28a4cad7fde3b13d5ffa04516eb124183abc89fe654e442edd76",
+    "transition_checks": 80,
+    "transition_mismatches": []
+  },
+  "spec": {
+    "activation": true,
+    "fault": null,
+    "restore_mask": 7
+  },
+  "split": "development",
+  "variant": "short_repair"
+}

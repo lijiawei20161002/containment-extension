@@ -1,5 +1,13 @@
 # Proposed evaluation optimization workflow
 
+**Research framing:** [incident-aware optimization](incident-aware-optimization.md)
+defines the main objective: reduce independently verified incidents while
+preserving task utility and cost. Its primary comparison holds the policy search
+space and budget fixed, changing proxy-based feedback to incident-based feedback.
+The [standardized benchmark protocol](standardized-benchmarks.md) supplies external
+tasks and established baselines. The broader architecture below supports this
+question; its components are not separate claims of improved model performance.
+
 ![Cartoon marking five optimization opportunities around an Inspect-based evaluation workflow](../figures/evaluation-optimization-cartoon.png)
 
 Orange wrench markers identify proposed optimization work. The figure is an architecture proposal, not a report of new experiments. The task contract, authorization policy, and independently established reference labels remain fixed within a comparison. Final held-out results do not feed candidate selection or revision.

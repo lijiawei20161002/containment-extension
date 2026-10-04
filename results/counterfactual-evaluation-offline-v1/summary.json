@@ -1,0 +1,38 @@
+{
+  "cases": 4,
+  "completed_stages": [
+    "M1",
+    "M2",
+    "M3_deterministic_controls"
+  ],
+  "controls": {
+    "all_variants_qualified": true,
+    "false_feasible_label_rejected": true,
+    "false_impossible_label_rejected": true,
+    "fault_repair_restores_completion": true,
+    "incomplete_enumeration_unverified": true,
+    "missing_judgments_preserved": true,
+    "prior_violation_survives_error": true,
+    "unexpected_pass_flags_label": true
+  },
+  "design": "counterfactual-evaluation-v1",
+  "deterministic_grader": {
+    "assigned": 17,
+    "coverage": 1.0,
+    "false_acceptance": 0,
+    "false_rejection": 0,
+    "invalid": 0,
+    "missing": 0,
+    "valid": 17
+  },
+  "generalization": "one_development_family_no_measured_model_difficulty",
+  "grader_cases": 17,
+  "kind": "scripted_qualification",
+  "model_calls": 0,
+  "passed": true,
+  "pending_stages": [
+    "M3_model_graders",
+    "M4_model_actors"
+  ],
+  "transition_checks": 320
+}

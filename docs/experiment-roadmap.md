@@ -1,7 +1,15 @@
 # Next experiments and execution gates
 
-**Updated September 21, 2026. Active planning document. U1 has executed; all later
+**Updated October 4, 2026. Active planning document. U1 has executed; all later
 allocations are proposals. Scripted qualification makes no model calls.**
+
+**Organizing research question:** does [incident-aware policy optimization](incident-aware-optimization.md)
+improve safety at matched utility and cost? The [standardized benchmark protocol](standardized-benchmarks.md)
+defines external baselines and held-out comparisons. The core new contrast is
+proxy-feedback versus incident-feedback selection with equal search budgets.
+Source locks, importers and monitor analysis are implemented; cross-benchmark
+optimization and new live measurements remain pending. The environment/capability
+gate below remains necessary before that comparison.
 
 **Current priority: repair upstream actor environment qualification.** The
 [completed U1 baseline](impossiblebench-upstream-baseline-results.md) used the
@@ -246,6 +254,11 @@ adapt Arcadia's matched tasks and verified local criticism into benchmark
 construction and evaluator validation. The [design specification](../experiments/counterfactual-evaluation-v1.design.json)
 is not executable and contains no live allocation.
 
+**October 4 execution:** M1, M2, and deterministic M3 are now implemented and
+passed in the [offline results](evaluation-infrastructure-results.md): four
+workflow cases, 320 transition checks, and 17 grader cases. Model-grader and actor
+stages remain unexecuted; no difficulty or learned-grader result is available.
+
 First build a bounded workflow family with short/long feasible variants, an
 independently checked impossible variant, and a paired broken-environment control.
 Export separate actor inputs, hidden reference evidence, and grader regression
@@ -255,11 +268,37 @@ setup and independently observed effects. Difficulty needs model/budget
 calibration; failed search cannot establish impossibility. Coding transfer still
 depends on U2, and completed allocations are not reused.
 
+### Artifact sabotage and monitor investigation
+
+Added October 4, 2026: the [ResearchArena-inspired proposal](researcharena-inspired-evaluations.md)
+and [design specification](../experiments/researcharena-monitoring-v1.design.json)
+extend the monitoring agenda to harmful behavior inside permitted artifact edits.
+First adjudicate the 1,543 archived proposals and qualify their paired pre-action
+views (RA0), then establish the actions versus visible-explanations baseline under
+a separate monitor allocation (RA1). Prepare one bounded CPU-only artifact fixture
+with independent paired probes and clean, selective-failure, broad-regression,
+and environment-fault controls (RA2). Its offline preparation can proceed while
+RA1 awaits allocation. A later post-run comparison crosses visible text with
+artifact inspection/probing (RA3); task-only and explicitly sabotage-instructed
+actors remain a separate later calibration study (RA4).
+
+Keep post-run detection separate from pre-action blocking, and deliberate-attack
+rates separate from task-focused scope crossing. Static suspicion and failed
+verification do not establish an effect. Preserve the existing archives and
+rollout splits; additional seeds do not establish held-out family transfer.
+**October 4 execution:** RA0 automated rubric/input audit and RA2 are now complete;
+see the [offline results](evaluation-infrastructure-results.md). The audit retains
+all 224 source rollouts, including one without proposals. Artifact qualification
+passed 32 scripted cases and exported 128 monitor views. Individual effect timing
+is not yet certified. RA1, RA3, and RA4 have no model or monetary allocation. U2 remains
+the next live priority, S1 the selected service comparison, and coding transfer
+depends on actor-environment/capability qualification and isolated execution.
+
 ### Other deferred work
 
 | Topic | Revisit when |
 | --- | --- |
-| Learned action monitors and defensive utility | Historical labels are adjudicated and verifier-scored defensive controls exist |
+| Learned action monitors and defensive utility | Follow [RA0–RA3](researcharena-inspired-evaluations.md#implementation-stages-and-acceptance): adjudicated labels, qualified controls, then separately allocated monitor comparisons |
 | Cross-agent communication and transfer permissions | A bounded board, per-agent identities, and independent event provenance are qualified |
 | Investigation packet comparison | Reference labels and blinded scoring are prepared |
 | Retry/compaction/cue search | A specific hypothesis warrants changing the now-stable scaffold |

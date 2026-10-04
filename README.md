@@ -8,6 +8,13 @@ those effects while preserving legitimate capability. The native runner uses
 bounded local service replicas; the optional ImpossibleBench adapter adds
 isolated coding tasks and independent container-effect observations.
 
+**Research objective:** [incident-aware policy optimization](docs/incident-aware-optimization.md).
+Test whether independent incident feedback selects safer agent policies than
+task scores and transcript proxies, at matched task utility and search cost.
+The [standardized benchmark protocol](docs/standardized-benchmarks.md) pins
+external tasks and established baselines. Benchmark-level improvements remain
+unmeasured; current local fixtures qualify the measurement infrastructure.
+
 **Next experiments: [active roadmap](docs/experiment-roadmap.md).**
 The [direct upstream ImpossibleBench baseline](docs/impossiblebench-upstream-baseline-results.md)
 completed six runs: 1/2 original-task passes and 0/4 impossible-task passes, costing
@@ -34,7 +41,8 @@ implementation work required before the next live plan.
 | ImpossibleBench preflight | [24 assignments, 16 started](docs/impossiblebench-live-preflight-results.md) | No scored submissions or intervention deliveries; intervention effects remain unmeasured |
 | Upstream baseline preparation | [12 scoring and 4 tool-loop controls](results/upstream-baseline-preparation-v1/README.md) | Qualified six-run proposal; no new model inference |
 | Direct upstream baseline | [6 completed assignments](docs/impossiblebench-upstream-baseline-results.md) | Original 1/2, impossible 0/4; all message-limited, with actor environment problems |
-| Monitor preparation | [1,543 paired inputs](results/incident-monitor-inputs-v1/README.md) | Inputs prepared; historical labels need adjudication and no monitor performance has been measured |
+| Monitor preparation | [1,543 paired inputs](results/incident-monitor-inputs-v1/README.md) | Historical inputs preserved; a separate rubric audit is now available; no learned-monitor performance measured |
+| Evaluation infrastructure | [Counterfactual and artifact offline runs](docs/evaluation-infrastructure-results.md) | Four workflow cases, 320 transition checks, 17 grader cases, archive rubric audit, and 32 scripted artifacts passed; no model performance measured |
 
 The incident comparison is a small one-structure pilot, not a general failure-rate
 estimate. The ImpossibleBench preflight exhausted its aggregate input allocation;
@@ -48,7 +56,13 @@ passed 121 tests at the last execution; see the
 - **Next iteration of evaluation infrastructure:** [proposal and figure](docs/counterfactual-evaluation-infrastructure.md)
   adapt Arcadia's matched cases and verified local criticisms into task-family
   construction, reference-label qualification, and grader regression tests.
-  Design only; not yet implemented.
+  Offline fixture, qualification, and deterministic grader stages are
+  [implemented and executed](docs/evaluation-infrastructure-results.md); model stages remain pending.
+- **Artifact sabotage and monitor investigation:** [ResearchArena-inspired design](docs/researcharena-inspired-evaluations.md)
+  stages archive-label adjudication, the existing two-view monitor baseline,
+  bounded artifact probes, and a later comparison of monitor evidence access.
+  Archive audit and scripted artifact qualification are executed; learned monitors
+  and deliberate-attack calibration remain pending.
 - **Effect and information-flow harness:** [proposed protocol](docs/coordination-harness.md),
   [offline execution](docs/coordination-harness-results.md), and
   [counterfactual replay toolbox and incident illustrations](docs/counterfactual-replay.md).
@@ -110,6 +124,12 @@ python3 -m containment_extension instruction-optimize \
 # Install development tools, then run the tests.
 python3 -m pip install -e '.[dev]'
 python3 -m pytest -q
+
+# Run either new design's offline qualification without model calls.
+python3 -m containment_extension evaluation-qualify \
+  --design counterfactual --output runs/counterfactual-offline-new
+python3 -m containment_extension evaluation-qualify \
+  --design researcharena --output runs/researcharena-offline-new
 ```
 
 For a source checkout without installation, prefix native commands with
@@ -143,6 +163,7 @@ containment-extension/
 │   ├── *_study.py              # Native experiment protocols
 │   ├── scope_levels.py         # Instruction-level comparison
 │   ├── instruction_optimization/ # Grounded generation, search and held-out trials
+│   ├── evaluation/             # Finite workflow, artifact probes, archive audits
 │   └── impossiblebench/        # Coding-task backend and Inspect adapter
 ├── tests/                      # Regression tests and small fixtures
 ├── experiments/                # Versioned plans, configs, and environment recipes

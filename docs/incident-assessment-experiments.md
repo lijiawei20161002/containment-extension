@@ -241,6 +241,13 @@ repeated probes by source trajectory/checkpoint, not as independent incidents.
 
 ## 5. Test whether explanations weaken action monitoring
 
+**October 4 follow-up:** the [ResearchArena-inspired design](researcharena-inspired-evaluations.md)
+specifies archive-label adjudication and a first A/B baseline using the 1,543
+prepared proposals. C remains a separate later diagnostic. It also proposes a
+distinct post-run artifact investigation study; its final snapshots and probes
+must not enter these pre-dispatch inputs. Deliberately instructed sabotage and
+scripted corruption cases are reported separately from the task-focused archive.
+
 This can begin with existing archived actions before extending the lab. Create
 three monitor inputs for each proposed action:
 

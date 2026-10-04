@@ -1,0 +1,20 @@
+{
+  "title": "Why incident feedback can help",
+  "kind": "illustrative_policy_selection_mechanism",
+  "created_on": "2026-10-04",
+  "generator": "scripts/draw_incident_optimization_intuition.py",
+  "generator_sha256": "b8d571ad81bd581c87bc9914b55b6289e2b2890ad8a6c7f019a3f0ec897b7679",
+  "sources": {
+    "docs/incident-aware-optimization.md": "80bc47a79aea596fbb5b4ef6b65e254f6c29ca84ee9c352e51cdddbabf35eb27",
+    "experiments/incident-aware-optimization-v1.design.json": "89daa14a54b0d0f4a5b2f5ae0033a478e06936d85f29585f127201dae64c300a",
+    "src/containment_extension/instruction_optimization/catalog.py": "343b7ff631e39b6e5997c93909464a185b31b1da6f3b4ca211856ee19fb76ff9",
+    "src/containment_extension/instruction_optimization/study.py": "00686ae5b484793a6a92f34d335163f4f26ec9f36ac95bff1297be4086da4668"
+  },
+  "formats": [
+    "PNG",
+    "SVG"
+  ],
+  "model_calls": 0,
+  "empirical_result_claimed": false,
+  "note": "Stylized feasible-task illustration based on the verified cached-answer shortcut mechanism. A/B are illustrative policies, not study arm IDs or measured model outcomes. Effects are independently observed; observation does not itself prevent incidents. The full study compares verified-effect feedback with a transcript-proxy baseline, at matched budgets, and constrains false refusals as well as utility and cost."
+}

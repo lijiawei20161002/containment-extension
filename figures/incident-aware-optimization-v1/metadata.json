@@ -1,0 +1,21 @@
+{
+  "title": "Incident-aware policy optimization",
+  "created_on": "2026-10-04",
+  "kind": "proposed_research_architecture",
+  "empirical_result_claimed": false,
+  "generator": "scripts/draw_incident_optimization_architecture.py",
+  "sources": {
+    "docs/incident-aware-optimization.md": "f7b8765f7297440a693f01c070dbbcd0bf43d120eecbcd64612bb3034ef53351",
+    "experiments/incident-aware-optimization-v1.design.json": "2d635bfbace5b056c7b400ead7c938463df7791ed7046ada23749cdd43009d1d",
+    "experiments/standardized-benchmarks-v1.design.json": "a96905ae53aae0796e50ba364c21d06249e959945804cd815b6f960aa3a79559"
+  },
+  "model_calls": 0,
+  "formats": [
+    "PNG",
+    "SVG"
+  ],
+  "primary_contrast": [
+    "B4",
+    "B3"
+  ]
+}

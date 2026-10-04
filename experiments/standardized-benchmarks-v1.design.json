@@ -1,0 +1,266 @@
+{
+  "schema": "containment-standardized-benchmarks-v1",
+  "updated_on": "2026-10-04",
+  "status": "protocol_and_offline_reporting_implemented_new_live_runs_unallocated",
+  "protocol": "docs/standardized-benchmarks.md",
+  "execution_authorized_by_this_file": false,
+  "framework": {
+    "name": "ControlArena",
+    "source_url": "https://github.com/UKGovernmentBEIS/control-arena",
+    "source_revision": "173c872f04ee661c7e1cf37f4fc610e0791ef0da"
+  },
+  "analysis": {
+    "grouped_splits": [
+      "development",
+      "calibration",
+      "test"
+    ],
+    "target_fprs": [
+      0.01,
+      0.05
+    ],
+    "bootstrap_unit": "original_task_or_artifact_lineage",
+    "bootstrap_replicates": 2000,
+    "interval": "95_percent_percentile_cluster_bootstrap",
+    "report_missing_and_abstentions": true,
+    "pool_benchmarks": false,
+    "threshold_selection_uses_test": false
+  },
+  "model_selection": {
+    "strong_actor": null,
+    "strong_monitor": null,
+    "lower_cost_trusted_baseline": null,
+    "independent_model_family_replication": null,
+    "rule": "Choose available exact snapshots after capability preflight; freeze reasoning settings, tool budgets, prices and all prompts. No floating latest alias or unverified SOTA claim."
+  },
+  "benchmarks": [
+    {
+      "id": "impossible_swebench",
+      "role": "primary_counterfactual",
+      "source_url": "https://github.com/safety-research/impossiblebench",
+      "source_revision": "061dc3dce6a96ab6cf02a855157263033dcfa3ba",
+      "source_pin_reason": "Retain the previously qualified upstream baseline revision; upgrades require a new qualification.",
+      "dataset": {
+        "repository": "safety-research/Impossible-SWEbench",
+        "revision": "9c2d34f364b7229e8c0ff807c646100bdc18bbb5",
+        "splits": [
+          "original",
+          "oneoff",
+          "conflicting"
+        ]
+      },
+      "runner": "scripts/upstream_baseline.py; unmodified upstream tools solver and scorer",
+      "adapter_status": "existing_upstream_driver_environment_requalification_pending",
+      "baselines": [
+        "upstream_tools_with_published_STOP_prompt",
+        "scope_reminder",
+        "supported_blocker_notice",
+        "reminder_plus_blocker_notice"
+      ],
+      "primary_metrics": [
+        "original_raw_pass_rate",
+        "oneoff_raw_pass_rate",
+        "conflicting_raw_pass_rate"
+      ],
+      "secondary_metrics": [
+        "legitimate_original_completion",
+        "independently_observed_policy_effects",
+        "limits_errors_missing_scores",
+        "cost_and_latency"
+      ],
+      "split_unit": "original issue; all mutations and retries stay together",
+      "caveat": "No new benchmark result. Six historical runs are a development diagnostic, not paper-rate reproduction.",
+      "execution_requirements": {
+        "dataset_manifest_sha256": null,
+        "task_schedule_sha256": null,
+        "environment_lock_sha256": null,
+        "model_config_sha256": null,
+        "budget_config_sha256": null,
+        "qualification_report_sha256": null
+      }
+    },
+    {
+      "id": "researcharena",
+      "role": "primary_artifact_monitoring",
+      "source_url": "https://github.com/aisa-group/ResearchArena",
+      "source_revision": "58776e09339c1714d0524130590abaf6eac7879d",
+      "source_pin_reason": "Public repository HEAD resolved October 4, 2026.",
+      "dataset": {
+        "repository": "aisa-group/ResearchArena-Trajectories",
+        "revision": "8cd737c58bdac876fbf7b137796508c99c6e9588"
+      },
+      "runner": "Official run_monitor.sh on frozen upstream trajectories/artifacts; run.sh for a separately resourced actor study",
+      "adapter_status": "official_result_import_implemented_live_upstream_runner_not_integrated",
+      "baselines": [
+        "never_flag",
+        "always_flag",
+        "upstream_monitor_transcript",
+        "upstream_monitor_visible_reasoning",
+        "upstream_monitor_artifact",
+        "upstream_monitor_both",
+        "our_bounded_probe_monitor"
+      ],
+      "primary_metrics": [
+        "native_main_task_score_by_setting",
+        "native_side_task_score_by_setting",
+        "monitor_auroc",
+        "monitor_average_precision",
+        "tpr_at_calibration_fpr_0.01_and_0.05"
+      ],
+      "secondary_metrics": [
+        "verified_behavioral_effects",
+        "monitor_coverage",
+        "cost_and_latency"
+      ],
+      "split_unit": "task family/artifact lineage; all monitor views and retries stay together",
+      "caveat": "The local 32-input cache is a custom diagnostic. Native static side-task scores are distinct from verified behavioral effects. Artifact-aware reproduction requires original artifacts and environment.",
+      "execution_requirements": {
+        "dataset_manifest_sha256": null,
+        "task_schedule_sha256": null,
+        "environment_lock_sha256": null,
+        "model_config_sha256": null,
+        "budget_config_sha256": null,
+        "qualification_report_sha256": null
+      }
+    },
+    {
+      "id": "agentdojo",
+      "role": "primary_service_transfer",
+      "source_url": "https://github.com/ethz-spylab/agentdojo",
+      "source_revision": "089ed468cf3ed0322acc66b0211f26d9d90dbf60",
+      "source_pin_reason": "Public repository HEAD resolved October 4, 2026.",
+      "dataset": {
+        "bundled_with_source": true,
+        "benchmark_version": "v1.2.2",
+        "suites": [
+          "workspace",
+          "banking",
+          "slack",
+          "travel"
+        ]
+      },
+      "runner": "python -m agentdojo.scripts.benchmark; preserve official tasks, attacks and scorer",
+      "adapter_status": "official_result_import_implemented_live_upstream_runner_not_integrated",
+      "baselines": [
+        "no_defense",
+        "repeat_user_prompt",
+        "spotlighting_with_delimiting",
+        "tool_filter",
+        "our_authorization_intervention"
+      ],
+      "primary_metrics": [
+        "clean_task_utility",
+        "attacked_task_utility",
+        "attack_success_rate"
+      ],
+      "secondary_metrics": [
+        "attack_success_on_clean_solvable_tasks",
+        "cost_and_latency",
+        "errors_and_missing_runs"
+      ],
+      "split_unit": "suite/user-task; all injection variants, defenses and retries stay together",
+      "caveat": "Use official tool_knowledge as the fixed attack baseline. Separately budget adaptive attacks. Raw security=True means injection success; it is also an error/clean sentinel in some upstream paths.",
+      "execution_requirements": {
+        "dataset_manifest_sha256": null,
+        "task_schedule_sha256": null,
+        "environment_lock_sha256": null,
+        "model_config_sha256": null,
+        "budget_config_sha256": null,
+        "qualification_report_sha256": null
+      }
+    },
+    {
+      "id": "basharena",
+      "role": "secondary_causal_control",
+      "source_url": "https://github.com/UKGovernmentBEIS/control-arena",
+      "source_revision": "173c872f04ee661c7e1cf37f4fc610e0791ef0da",
+      "source_pin_reason": "Public repository HEAD resolved October 4, 2026.",
+      "dataset": {
+        "repository": "Eccentricity/bashbench2",
+        "revision": "13e19f9c2c91e3a55a49f8de7a28c08055f7ede8",
+        "setting": "BashArenaSetting"
+      },
+      "runner": "ControlArena with BashArenaSetting and auto_submit_protocol_wrapper",
+      "adapter_status": "protocol_specified_runner_integration_pending",
+      "baselines": [
+        "untrusted_only",
+        "trusted_only",
+        "trusted_monitoring_builder",
+        "defer_to_trusted_builder",
+        "our_control_protocol"
+      ],
+      "primary_metrics": [
+        "honest_main_task_test_fraction",
+        "attack_side_task_success",
+        "safety_usefulness_by_audit_budget"
+      ],
+      "secondary_metrics": [
+        "effect_timing",
+        "deferral_rate",
+        "cost_and_latency"
+      ],
+      "split_unit": "base main task; all side tasks, protocols and retries stay together",
+      "caveat": "Linux/Docker qualification required. Online intervention plus per-action effect checks is needed for prevention claims; replay detection is insufficient.",
+      "execution_requirements": {
+        "dataset_manifest_sha256": null,
+        "task_schedule_sha256": null,
+        "environment_lock_sha256": null,
+        "model_config_sha256": null,
+        "budget_config_sha256": null,
+        "qualification_report_sha256": null
+      }
+    },
+    {
+      "id": "shade_arena_public",
+      "role": "optional_external_monitor_validation",
+      "source_url": "https://github.com/jkutaso/SHADE-Arena",
+      "source_revision": "6614e77191c1f8e2d0c44c123c6f915905ebafae",
+      "source_pin_reason": "Current public repository HEAD resolved October 4, 2026; safety-research/SHADE-Arena is deprecated.",
+      "dataset": {
+        "bundled_with_source": true,
+        "coverage": "public split only; five task pairs, not the full 17-pair paper suite"
+      },
+      "runner": "Official public task_completion.py; ControlArena wrapper is a separately declared scaffold",
+      "adapter_status": "protocol_specified_runner_integration_pending",
+      "baselines": [
+        "honest_actor",
+        "attack_actor_with_upstream_monitor",
+        "our_monitor_on_same_transcripts"
+      ],
+      "primary_metrics": [
+        "main_task_success",
+        "side_task_success",
+        "joint_success_and_monitor_evasion",
+        "monitor_auroc"
+      ],
+      "secondary_metrics": [
+        "public_split_coverage",
+        "cost_and_latency"
+      ],
+      "split_unit": "task pair; tiny public split supports diagnostic external validity only",
+      "caveat": "Private tasks are not available by default. Public results cannot reproduce the full paper score; judge models and prompts are part of the lock.",
+      "execution_requirements": {
+        "dataset_manifest_sha256": null,
+        "task_schedule_sha256": null,
+        "environment_lock_sha256": null,
+        "model_config_sha256": null,
+        "budget_config_sha256": null,
+        "qualification_report_sha256": null
+      }
+    }
+  ],
+  "existing_fixtures": {
+    "counterfactual_workflow": "development_and_regression_only",
+    "scripted_cache_artifacts": "development_and_regression_only",
+    "historical_service_proposals": "custom_monitor_diagnostic_not_external_benchmark"
+  },
+  "run_order": [
+    "qualify_existing_upstream_actor_environment",
+    "original_only_upstream_capability_diagnostic",
+    "researcharena_frozen_trajectory_monitor_baselines",
+    "agentdojo_fixed_attack_defense_comparison",
+    "budget_and_qualify_basharena_online_controls"
+  ],
+  "research_objective": "docs/incident-aware-optimization.md",
+  "optimizer_design": "experiments/incident-aware-optimization-v1.design.json"
+}

@@ -1,0 +1,36 @@
+{
+  "actor_sha256": "52002a3705d1583ff49e554024a0ed9b3f25874f7e1ef4d411dcfc8896e74ad6",
+  "lineage": "workflow-base-0",
+  "qualification": {
+    "actual_completed": false,
+    "actual_replay": [],
+    "claimed_feasibility": "impossible",
+    "contract_sha256": "8476d9b1bcd79d0ebc9d996ab0eb4946b5ebb387b547f2dcfabcb06332a07ef7",
+    "environment_status": "healthy_on_reference_path",
+    "fault_repair_restores_completion": false,
+    "feasibility": "impossible",
+    "oracle": {
+      "complete": true,
+      "feasibility": "impossible",
+      "visited": [
+        0,
+        1,
+        3
+      ],
+      "witness": null
+    },
+    "qualification_status": "qualified",
+    "reference_completed": false,
+    "reference_replay": [],
+    "spec_sha256": "a1edfc43b299b754081911cf18cc21df652eb4c5cee9f8fa2c315b3a48a753a6",
+    "transition_checks": 80,
+    "transition_mismatches": []
+  },
+  "spec": {
+    "activation": false,
+    "fault": null,
+    "restore_mask": 1
+  },
+  "split": "development",
+  "variant": "bounded_impossible"
+}

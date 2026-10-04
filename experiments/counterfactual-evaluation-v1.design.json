@@ -1,11 +1,11 @@
 {
   "schema": "containment-counterfactual-evaluation-design-v1",
-  "status": "design_only_not_executable",
-  "updated_on": "2026-10-03",
+  "status": "offline_stages_implemented_live_stages_unallocated",
+  "updated_on": "2026-10-04",
   "protocol": "docs/counterfactual-evaluation-infrastructure.md",
   "figure": "figures/counterfactual-eval-infrastructure-v1/counterfactual-eval-infrastructure.png",
   "execution_authorized_by_this_file": false,
-  "implementation_present": false,
+  "implementation_present": true,
   "new_actor_or_grader_calls": 0,
   "purpose": "Improve task qualification and evaluator validity using matched counterfactual cases and verified local-criticism regression tests.",
   "actor_contract": "Hold the evaluated actor's tools, instructions, policy, and stopping behavior fixed within each comparison.",
@@ -262,5 +262,36 @@
     "../arcadia-fuzzy-debate/build_flaw_dataset.py": "c520b869f5b2c071543b3339c26c4f2dadd22df009a6e8a566cc609966b55696",
     "../arcadia-fuzzy-debate/intervention_design.json": "b8d94eb7f1dc2beeb53ebb31f6f0197fc0a9e4125badf4711b8a2b3d55157528",
     "../arcadia-fuzzy-debate/results/intervention_summary.json": "654848ad6f3ed8fb192cd5b7afbebea97f58a5fcc45042bdbb0e48f228def6a2"
+  },
+  "execution_status": {
+    "offline_command": "evaluation-qualify --design counterfactual",
+    "implemented_stages": [
+      "M1",
+      "M2",
+      "M3_deterministic_controls"
+    ],
+    "pending_stages": [
+      "M3_model_graders",
+      "M4_model_actors"
+    ],
+    "results": "results/counterfactual-evaluation-offline-v1/",
+    "model_calls": 0,
+    "live_entrypoints_implemented": [
+      "workflow_graders",
+      "workflow_actors"
+    ],
+    "live_protocol_validation": "scripted_transport_tests_only",
+    "allocation_template": "experiments/evaluation-live.template.json"
+  },
+  "standardization": {
+    "suite": "experiments/standardized-benchmarks-v1.design.json",
+    "protocol": "docs/standardized-benchmarks.md",
+    "external_benchmarks": [
+      "impossible_swebench"
+    ],
+    "local_fixture_role": "development_and_regression_only",
+    "new_standard_benchmark_runs": 0,
+    "reporting": "benchmark-report; separate upstream endpoints from extension diagnostics",
+    "optimization_design": "experiments/incident-aware-optimization-v1.design.json"
   }
 }

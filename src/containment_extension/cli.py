@@ -66,6 +66,31 @@ def main() -> None:
     optimize.add_argument("--dry-run", action="store_true", help="Qualify and preview without inference")
     optimize_report = sub.add_parser("instruction-report", help="Audit an instruction search offline")
     optimize_report.add_argument("directory", type=Path)
+    evaluation = sub.add_parser("evaluation-qualify", help="Run bounded design qualification without model calls")
+    evaluation.add_argument("--design", choices=("counterfactual", "researcharena"), required=True)
+    evaluation.add_argument("--output", type=Path, required=True)
+    evaluation_verify = sub.add_parser("evaluation-verify", help="Verify a frozen evaluation evidence export")
+    evaluation_verify.add_argument("directory", type=Path)
+    evaluation_prepare = sub.add_parser("evaluation-prepare", help="Freeze a bounded live stage without inference")
+    evaluation_prepare.add_argument("--stage", choices=("workflow_graders", "workflow_actors",
+                                                       "archive_monitors", "artifact_monitors"), required=True)
+    evaluation_prepare.add_argument("--evidence", type=Path, required=True)
+    evaluation_prepare.add_argument("--config", type=Path, required=True)
+    evaluation_prepare.add_argument("--baseline", type=Path)
+    evaluation_prepare.add_argument("--output", type=Path, required=True)
+    evaluation_run = sub.add_parser("evaluation-run", help="Execute a frozen, explicitly budgeted live stage")
+    evaluation_run.add_argument("directory", type=Path)
+    benchmark_check = sub.add_parser("benchmark-check", help="Audit pinned benchmark design readiness; no inference")
+    benchmark_check.add_argument("--config", type=Path, required=True)
+    benchmark_check.add_argument("--require-ready", action="store_true")
+    benchmark_import = sub.add_parser("benchmark-import", help="Preserve and normalize one official result; no inference")
+    benchmark_import.add_argument("--format", choices=("researcharena", "agentdojo"), required=True)
+    benchmark_import.add_argument("--input", type=Path, required=True)
+    benchmark_import.add_argument("--output", type=Path, required=True)
+    benchmark_report = sub.add_parser("benchmark-report", help="Paired, calibrated held-out monitor analysis; no inference")
+    benchmark_report.add_argument("--plan", type=Path, required=True)
+    benchmark_report.add_argument("--scores", type=Path, required=True)
+    benchmark_report.add_argument("--output", type=Path, required=True)
     ib_export = sub.add_parser("impossible-export", help="Export pinned Impossible-SWEbench triples")
     ib_export.add_argument("--selection", type=Path, required=True)
     ib_export.add_argument("--output", type=Path, required=True)
@@ -167,6 +192,40 @@ def main() -> None:
                              indent=2))
             if result["status"].startswith("stopped_") or result["status"] == "interrupted":
                 raise SystemExit(1)
+        elif args.command in {"benchmark-check", "benchmark-import", "benchmark-report"}:
+            from .evaluation.benchmarks import check_suite, import_result, write_monitor_report
+
+            if args.command == "benchmark-check":
+                result = check_suite(json.loads(args.config.read_text()))
+            elif args.command == "benchmark-import":
+                result = import_result(args.input, args.output, args.format)
+            else:
+                result = write_monitor_report(args.plan, args.scores, args.output)
+            print(json.dumps(result, indent=2))
+            if args.command == "benchmark-check" and args.require_ready and not result["ready_to_run"]:
+                raise SystemExit(1)
+        elif args.command in {"evaluation-prepare", "evaluation-run"}:
+            from .evaluation.live import prepare as prepare_evaluation, run as run_evaluation
+
+            result = (prepare_evaluation(args.output, args.evidence, args.stage,
+                                         json.loads(args.config.read_text()), baseline=args.baseline)
+                      if args.command == "evaluation-prepare" else run_evaluation(args.directory))
+            print(json.dumps({k: v for k, v in result.items() if k != "records"}, indent=2))
+            if result.get("status") == "incomplete":
+                raise SystemExit(1)
+        elif args.command == "evaluation-qualify":
+            from .evaluation.study import run_offline
+
+            result = run_offline(args.output, args.design)
+            print(json.dumps(result, indent=2))
+            if not result["passed"]:
+                raise SystemExit(1)
+        elif args.command == "evaluation-verify":
+            from .evaluation.common import verify_export
+
+            result = verify_export(args.directory)
+            print(json.dumps({"verified": True, "files": len(result["files"]),
+                              "kind": result["kind"]}, indent=2))
         elif args.command.startswith("impossible-"):
             import asyncio
 

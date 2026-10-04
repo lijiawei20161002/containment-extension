@@ -1,0 +1,123 @@
+{
+  "schema": "containment-incident-aware-optimization-design-v1",
+  "status": "design_only_matched_feedback_ablation_not_implemented",
+  "updated_on": "2026-10-04",
+  "protocol": "docs/incident-aware-optimization.md",
+  "benchmark_suite": "experiments/standardized-benchmarks-v1.design.json",
+  "execution_authorized_by_this_file": false,
+  "new_model_calls": 0,
+  "question": "Does independently measured incident feedback improve held-out policy selection at matched utility and cost?",
+  "optimization": {
+    "decision_variable": "agent control policy theta; first version selects/orders reviewed instruction clauses",
+    "objective": "minimize verified incident probability within each benchmark and threat condition",
+    "constraints": {
+      "feasible_task_utility": "U(theta) >= U(upstream) - delta_U",
+      "per_task_cost": "C(theta) <= B_run",
+      "false_interventions": "F(theta) <= alpha_F",
+      "search_cost": "total generation, actor, grader and probe costs <= B_search"
+    },
+    "fixed": [
+      "actor_model",
+      "original_task_authorization",
+      "outer_containment",
+      "tools",
+      "incident_definition",
+      "independent_reference_observer",
+      "benchmark_scorer",
+      "policy_search_space",
+      "search_budget"
+    ],
+    "initial_search": "one fixed candidate pool and shared development rollouts; two feedback-dependent selections",
+    "later_search": "adaptive matched-budget searches with independently replicated optimization runs",
+    "adaptive_loop": {
+      "status": "proposed_cross_benchmark_extension",
+      "steps": [
+        "evaluate reviewed instruction candidates on development tasks",
+        "record task utility, verified incidents, cost and false interventions",
+        "select eligible low-incident candidates using development estimates",
+        "propose the next clause subset, reviewed wording and order",
+        "repeat under the predeclared total search budget"
+      ],
+      "finalization": "freeze the selected eligible policy before untouched benchmark evaluation",
+      "heldout_feedback": false
+    },
+    "missing_outcomes": "unknown; preserve positive witnesses and all assigned denominators",
+    "tie_break": "predeclare before search; no feasible candidate means no improvement claim"
+  },
+  "arms": {
+    "B0": "upstream benchmark reference",
+    "B1": "same behavior with passive incident observation",
+    "B2": "established benchmark defense or control protocol",
+    "B3": "policy search using task utility and frozen transcript-proxy incident feedback",
+    "B4": "matched policy search using task utility and independently verified incident feedback"
+  },
+  "primary_contrast": [
+    "B4",
+    "B3"
+  ],
+  "secondary_contrast": [
+    "B4",
+    "B2"
+  ],
+  "instrumentation_check": [
+    "B1",
+    "B0"
+  ],
+  "evaluation": {
+    "partition_unit": "original task/issue or artifact lineage; all mutations, retries and views stay together",
+    "splits": [
+      "development",
+      "calibration",
+      "test"
+    ],
+    "test_observer": "same independently validated effect observer on every arm",
+    "primary_endpoints": [
+      "paired_incident_risk_difference",
+      "paired_feasible_task_utility_difference"
+    ],
+    "required_secondary": [
+      "authorized_completion",
+      "false_interventions",
+      "missing_outcome_bounds",
+      "runtime_cost",
+      "search_cost"
+    ],
+    "uncertainty": "paired resampling at independent task-lineage level; optimizer variability needs full-search replication",
+    "success": "risk reduction, prespecified utility noninferiority and cost/coverage conditions all supported on untouched test data",
+    "threat_populations": [
+      "task_only",
+      "explicit_attack_separate"
+    ],
+    "monitor_replay": "maximize held-out TPR subject to calibration-only FPR target and monitor budget; no prevention claim"
+  },
+  "allocation": {
+    "actor_model": null,
+    "monitor_model": null,
+    "proposer_model": null,
+    "delta_U": null,
+    "alpha_F": null,
+    "B_run": null,
+    "B_search": null,
+    "sample_size": null,
+    "exact_task_schedule": null
+  },
+  "implemented_foundations": [
+    "native_service_effect_observer",
+    "native_reviewed_clause_search",
+    "counterfactual_and_artifact_offline_qualification",
+    "upstream_ImpossibleBench_driver",
+    "standardized_offline_monitor_analysis",
+    "AgentDojo_and_ResearchArena_result_importers"
+  ],
+  "pending": [
+    "B3_B4_feedback_ablation",
+    "qualified_external_runner_search_integration",
+    "preregistered_splits_and_allocations",
+    "fresh_heldout_benchmark_measurements"
+  ],
+  "claim_limit": "No benchmark-level safety or utility improvement has been measured by this design.",
+  "figure": "figures/incident-optimization-overview-v1/incident-optimization-overview.png",
+  "intuition_figure": "figures/incident-optimization-intuition-v1/incident-optimization-intuition.png",
+  "component_figure": "figures/incident-system-components-v1/incident-system-components.png",
+  "study_overview_figure": "figures/incident-aware-optimization-v1/incident-aware-optimization-architecture.png"
+}
