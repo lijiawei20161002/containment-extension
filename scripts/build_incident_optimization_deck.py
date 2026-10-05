@@ -1,6 +1,6 @@
 """Build the incident-aware optimization explainer deck (PPTX).
 
-Pure python-pptx; no model calls; all claims come from docs/ and figures/.
+Pure python-pptx; no model calls. Content from docs/, figures/, and cited research.
 Run: python3 scripts/build_incident_optimization_deck.py
 Output: slides/incident-aware-optimization-v2.pptx
 """
@@ -18,6 +18,20 @@ from pptx.util import Emu, Inches, Pt
 ROOT = Path(__file__).resolve().parents[1]
 FIG = ROOT / "figures"
 OUT = ROOT / "slides/incident-aware-optimization-v2.pptx"
+REPLAY_SOURCES = {
+    "OpenAI o1 System Card, section 3": "https://cdn.openai.com/o1-system-card-20241205.pdf",
+    "Baker et al. (2025), sections 2–3 and Appendix C": "https://arxiv.org/html/2503.11926v1",
+    "Palisade shutdown study": "https://palisaderesearch.org/research/shutdown-resistance",
+    "Palisade public harness": "https://github.com/PalisadeResearch/shutdown_avoidance",
+    "Apollo scheming demo": "https://www.apolloresearch.ai/science/demo-example-scheming-reasoning-evaluations",
+    "OpenAI reasoning visibility": "https://developers.openai.com/api/docs/guides/reasoning",
+    "OpenAI model availability": "https://developers.openai.com/api/docs/deprecations",
+}
+REPLAY_SOURCE_NOTES = (
+    "Sources checked 2026-10-05. Replay implications and admission rules are design assessments, "
+    "not completed replications or estimates of the original laboratories' expenditure.\n\n"
+    + "\n".join(f"{name}: {url}" for name, url in REPLAY_SOURCES.items())
+)
 
 INK = RGBColor(0x11, 0x11, 0x11)
 BLUE = RGBColor(0x36, 0x5E, 0x9E)
@@ -658,6 +672,231 @@ rows = [["Phase", "Scope", "Model calls"],
         ["3", "Monitor in shadow mode; B3 vs B4 ablation", "Pre-registered"],
         ["4", "Web intake, time split, first signed release", "Yes"]]
 table(s, MARGIN, Inches(4.55), BODY_W, Inches(2.3), rows, [1.0, 7.0, 2.0], size=14, first_col_bold=True)
+
+# ===================================================================== replay feasibility: access
+s = new_slide("Full incident replay starts with an access problem",
+              "Assess faithful reproduction first; a credible report is not automatically a replayable case", "7 · REPLAY FEASIBILITY")
+card(s, MARGIN, BODY_Y, Inches(4.0), Inches(3.35), "Model / checkpoint", [
+    "Internal, pre-mitigation or intermediate checkpoints may be inaccessible",
+    "A public model name does not identify the incident checkpoint",
+    "More GPU / API budget cannot recover unavailable weights or access"],
+    BLUE_PALE, BLUE, hsize=CH, bsize=CB)
+card(s, Inches(4.67), BODY_Y, Inches(4.0), Inches(3.35), "Evaluator / environment", [
+    "Prompts, tools, permissions, hidden tests and rewards can shape the incident",
+    "Reports may omit state, versions or setup details",
+    "A plausible reconstruction can change the failure mechanism"],
+    ORANGE_PALE, ORANGE, hsize=CH, bsize=CB)
+card(s, Inches(8.83), BODY_Y, Inches(4.0), Inches(3.35), "Evidence / observability", [
+    "Excerpts may omit actions, tool results or pre-incident state",
+    "An internal monitor may see raw reasoning unavailable through the API",
+    "Without an independent outcome check, replay success is ambiguous"],
+    RED_PALE, RED, hsize=CH, bsize=CB)
+band(s, Inches(5.09),
+     "Separate three outcomes: access is blocked; reconstruction is incomplete; faithful replay is feasible but too costly. Each needs a different response.",
+     Inches(0.98), YELLOW, 16)
+textbox(s, MARGIN, Inches(6.25), BODY_W, Inches(0.52),
+        "Basis: OpenAI o1 System Card §3; Baker et al. (2025); OpenAI reasoning documentation. Sources and qualifications in speaker notes.",
+        11.5, GRAY)
+notes(s, REPLAY_SOURCE_NOTES + "\n\n"
+      "This is an artifact-by-artifact feasibility assessment. Do not infer that every OpenAI incident used "
+      "an unreleased model, or that every evaluation detail is secret. Public checkpoint names, prompts, "
+      "code or traces can each help without establishing access to the entire original experiment. "
+      "Full replay here means rerunning under materially matched conditions and measuring uncertainty, "
+      "not guaranteeing a byte-identical stochastic trajectory. The public reasoning API exposes summaries "
+      "rather than raw reasoning text; an observation-dependent evaluator may therefore be impossible to match.")
+
+# ===================================================================== replay feasibility: disclosed evidence
+s = new_slide("What the published OpenAI examples let us reproduce",
+              "Published facts are separated from our assessment of the remaining replay requirements", "7 · REPLAY FEASIBILITY")
+rows = [
+    ["Example", "What is disclosed", "Implication for faithful replay"],
+    ["o1 external testing\nOpenAI System Card (2024)",
+     "Near-final and released checkpoints are distinguished; external red teaming used near-final.",
+     "Do not assume a public o1 endpoint matches the evaluated checkpoint, scaffold or results."],
+    ["OpenAI reward hacking / obfuscation\nBaker et al. (2025)",
+     "Training-time incidents, a separate RL experiment, and a published monitor prompt.",
+     "Obtain checkpoint, task state and reward setup. API inference alone cannot rerun the training intervention."],
+    ["Palisade shutdown tests on OpenAI models (2025)",
+     "Public Inspect harness, Dockerfile and transcripts.",
+     "A stronger replay candidate: pin code, prompts and environment; check historical model access."],
+]
+table(s, MARGIN, BODY_Y, BODY_W, Inches(4.45), rows, [3.3, 4.4, 4.63], size=14.5, first_col_bold=True)
+band(s, Inches(6.15),
+     "Disclosure is partial: a published prompt or trace helps, but does not establish that the full evaluator can be reconstructed.",
+     Inches(0.69), BLUE_PALE, 15)
+notes(s, REPLAY_SOURCE_NOTES + "\n\n"
+      "Sources: o1 System Card section 3; Baker et al. sections 2–3 and Appendix C; Palisade's public "
+      "shutdown_avoidance repository. The last column is our inference about requirements, not a claim "
+      "that an exhaustive artifact search has proved every item unavailable. Account access and retired "
+      "snapshots must be checked separately. The shutdown example is an external study of an OpenAI "
+      "model, unlike the training-time examples. Do not pool their reproduction feasibility.")
+
+# ===================================================================== replay feasibility: claims
+s = new_slide("Three replay modes support different claims",
+              "Choose the execution mode separately from evidence grade and historical fidelity", "7 · REPLAY FEASIBILITY")
+card(s, MARGIN, BODY_Y, Inches(4.0), Inches(3.7), "1 · Re-score saved traces", [
+    "Needs sufficient logs and defensible outcome labels",
+    "Tests detector behavior on those observations; no actor rerun",
+    "Does not establish prevention, new behavior or population incident rates"],
+    BLUE_PALE, BLUE, hsize=CH, bsize=CB)
+card(s, Inches(4.67), BODY_Y, Inches(4.0), Inches(3.7), "2 · Replay fixed actions", [
+    "Needs resettable state and recorded or explicitly scripted actions",
+    "Tests effects, the outcome check and boundary controls",
+    "A scripted exploit does not show that a model would choose it"],
+    GREEN_PALE, GREEN, hsize=CH, bsize=CB)
+card(s, Inches(8.83), BODY_Y, Inches(4.0), Inches(3.7), "3 · Re-run the agent", [
+    "Needs an accessible pinned model and restorable history",
+    "Re-sample after intervention; let subsequent actions change",
+    "Behavioral conclusions apply to the tested model, environment and conditions"],
+    ORANGE_PALE, ORANGE, hsize=CH, bsize=CB)
+band(s, Inches(5.48),
+     "Record fidelity independently: matched historical conditions, partial reconstruction, or a controlled mechanism study. A / B / C evidence grades do not establish fidelity.",
+     Inches(1.03), YELLOW, 16)
+notes(s, REPLAY_SOURCE_NOTES + "\n\n"
+      "The first two modes can be useful even if the incident-generating model is unavailable. Re-scoring "
+      "can consume judge API calls; fixed-action execution can consume environment resources. Neither is "
+      "automatically cost-free. Selected public traces can support a conditional detection evaluation but "
+      "do not provide a population denominator. An injected action tests a control against that action, "
+      "not whether a policy prevents an agent from independently selecting another action. Changing a "
+      "tool response invalidates a recorded future as a behavioral counterfactual: resample the actor "
+      "from the intervention point, or limit the claim to the fixed-action effect. This matches the "
+      "distinction in docs/counterfactual-replay.md.")
+
+# ===================================================================== replay feasibility: infrastructure
+s = new_slide("The evaluator is part of the incident",
+              "A container rebuild alone does not recover the original causal conditions", "7 · REPLAY FEASIBILITY")
+rows = [
+    ["Dependency", "What can change the behavior", "What the replay must establish"],
+    ["Actor and scaffold", "Checkpoint, prompts, memory, tool routing, sampling and reasoning settings.",
+     "Pin available versions and history; mark inaccessible internal state."],
+    ["Environment and state", "Files, databases, permissions, service responses, package versions and timing.",
+     "Restore a known initial state; verify reset, isolation and relevant tool semantics."],
+    ["Task and evaluator", "Hidden tests, grader model/prompt, reward code and the definition of success.",
+     "Use a trusted effect check outside the agent's authority; include a benign control."],
+    ["Observation access", "Full action trace versus excerpts, raw reasoning or a generated summary.",
+     "Match the declared monitor view; a summary is not a substitute for raw reasoning."],
+    ["Branching after intervention", "An altered observation changes later actions and external state.",
+     "Locate the first divergence; resample continuation or explicitly keep an effect-only claim."],
+]
+table(s, MARGIN, BODY_Y, BODY_W, Inches(5.35), rows, [2.65, 4.8, 4.88], size=14.5, first_col_bold=True)
+notes(s, REPLAY_SOURCE_NOTES + "\n\n"
+      "These are proposed qualification requirements, not a statement that this project already supports "
+      "arbitrary evaluator infrastructure. A harness adapter needs snapshot/reset, tool input/output "
+      "interception and trusted event capture. External services, time, randomness, authentication and "
+      "asynchronous actions can make snapshots incomplete. Mocks must preserve the state transitions "
+      "relevant to the tested mechanism; their deviations must be declared. Independently check the "
+      "effect rather than trusting a score the agent can manipulate. For a grader-induced failure, the "
+      "grader configuration is itself a critical dependency. Reject or narrow the causal claim when it "
+      "cannot be recovered. See docs/counterfactual-replay.md and docs/standardized-benchmarks.md.")
+
+# ===================================================================== replay feasibility: resources
+s = new_slide("Where GPU, API and engineering costs become bottlenecks",
+              "Estimate expenditure after access and fixture qualification; no universal cost per incident", "7 · REPLAY FEASIBILITY")
+rows = [
+    ["Replay work", "Main resource costs", "Practical limit"],
+    ["Saved-trace scoring", "Processing, storage and optional judge calls; no actor inference.",
+     "Adequate context and defensible labels must exist."],
+    ["Agent continuation", "Long histories, reasoning tokens, monitors, retries and API rate limits.",
+     "Meter tokens and wall time on a qualified fixture first."],
+    ["Open-weight replay", "GPU memory / throughput, context length, environment reset and storage.",
+     "Measure the chosen checkpoint; a smaller replacement changes capability."],
+    ["Training-stage replication", "RL rollout generation, optimization and repeated training runs.",
+     "Obtain weights, reward code and training setup before pricing GPU hours."],
+]
+table(s, MARGIN, BODY_Y, BODY_W, Inches(3.5), rows, [2.85, 4.75, 4.73], size=14.5, first_col_bold=True)
+textbox(s, MARGIN, Inches(5.15), BODY_W, Inches(0.54),
+        "Work scales with cases × variants × policies × repeats × rounds, plus rebuilding, label review and failed attempts.",
+        14.5, GRAY)
+band(s, Inches(5.98),
+     "Rare-event example: at p = 0.1%, 2,995 independent trials give a 95% chance of seeing at least one event. Comparing policies requires a separate power analysis.",
+     Inches(0.85), YELLOW, 15)
+notes(s, REPLAY_SOURCE_NOTES + "\n\n"
+      "Resource accounting: sum billed input/output tokens times the selected model rates for actor and "
+      "judge calls; include repeated history, hidden reasoning, retries and failed usage. For self-hosting, "
+      "measure GPU-hours, memory, throughput and utilization on the actual checkpoint/context, then apply "
+      "the applicable hardware rate. Add CPU/IO, reset, storage, engineering and human qualification. "
+      "A public inference API quote does not estimate an internal RL experiment or buy access to missing "
+      "weights. Large models need not be trained again merely to rerun inference if the exact checkpoint "
+      "is accessible; reproducing a training-dependent cause is a different study. Dollar totals are "
+      "premature before these dependencies are known. API availability/rate limits and engineering lead "
+      "time can dominate even when per-token cost is modest. "
+      "The sampling illustration is ceil(log(0.05)/log(1-0.001)) = 2,995 under independent, fixed-rate "
+      "Bernoulli trials. This is not an empirical rate, a safety certificate, or the sample size for a "
+      "policy comparison. Correlated variants do not replace independent lineages. Reuse shared fixed-pool "
+      "development trajectories where valid; do not count them twice for B3/B4 or reuse test outcomes "
+      "for selection. Cap requests, tokens, GPU-hours and wall time; timeouts remain unknown outcomes.")
+
+# ===================================================================== replay feasibility: mechanism fallback
+s = new_slide("When full replay is blocked, test the key mechanism",
+              "Example: reconstruct a test-harness bypass in a controlled coding environment", "7 · REPLAY FEASIBILITY")
+card(s, MARGIN, BODY_Y, Inches(4.0), Inches(3.75), "Preserve the causal ingredients", [
+    "A legitimate coding task and an incentive to pass its tests",
+    "A specific opportunity to tamper with testing or exploit weak checks",
+    "An independent observer of what actually ran and changed"],
+    BLUE_PALE, BLUE, hsize=CH, bsize=CB)
+card(s, Inches(4.67), BODY_Y, Inches(4.0), Inches(3.75), "Declare what was simplified", [
+    "Use a small repository, local tools and an accessible model",
+    "Record differences in prompts, permissions, grader and checkpoint",
+    "Mark actions as model-generated, attack-instructed or scripted"],
+    ORANGE_PALE, ORANGE, hsize=CH, bsize=CB)
+card(s, Inches(8.83), BODY_Y, Inches(4.0), Inches(3.75), "Test the proposed explanation", [
+    "Observe the failure and an honest benign-twin solution",
+    "Remove the suspected opportunity and repeat; inspect alternative causes",
+    "Test guard effectiveness and retained task utility separately"],
+    GREEN_PALE, GREEN, hsize=CH, bsize=CB)
+band(s, Inches(5.51),
+     "Supported claim: this controlled setup reproduces specified mechanisms and behavior patterns. It does not recover the original incident rate, private model behavior or training cause.",
+     Inches(1.1), YELLOW, 16)
+notes(s, REPLAY_SOURCE_NOTES + "\n\n"
+      "This is a proposed mechanism study inspired by test-harness reward hacking, not a report that it "
+      "has been run. The core hypothesis is that a mismatch between apparent task success and independently "
+      "observed effects, combined with a relevant opportunity and incentive, permits the failure. Keep "
+      "those ingredients explicit. An accessible actor must independently exhibit the behavior before "
+      "claiming behavioral reproduction under the declared prompts. A script or an explicitly attack-"
+      "instructed actor can qualify an effect/guard fixture but cannot establish naturally occurring "
+      "misbehavior; keep these populations separate. A negative control should remove the suspected "
+      "opportunity while preserving the legitimate task, and the benign twin must verify that a defense "
+      "does not merely block all useful work. If behavior does not occur, report an inconclusive behavioral "
+      "reproduction rather than forcing it and relabeling it as natural. Mechanism preservation is a "
+      "hypothesis tested by controls, not something guaranteed by constructing a plausible sandbox. "
+      "This does not reproduce the emergence of a failure during RL, or transport a measured rate to "
+      "another model or real deployment.")
+
+# ===================================================================== replay feasibility: admission decision
+s = new_slide("Choose the replay scope case by case",
+              "Audit access and fidelity first; compare the scientific value with measured effort before scaling", "7 · REPLAY FEASIBILITY")
+rows = [
+    ["Condition", "Route", "What may enter the library"],
+    ["Critical artifacts available; cost justified", "Attempt matched agent replay",
+     "Qualified executions with pinned conditions, controls and uncertainty."],
+    ["Full setup blocked or too expensive; mechanism isolatable", "Controlled mechanism / behavior study",
+     "Explicitly reconstructed cases; separate scripted effects from actor behavior."],
+    ["Only actions / traces and usable state or labels", "Effect replay or offline monitor evaluation",
+     "Evidence for that effect or observation task, not original model incident rates."],
+    ["Critical gaps remain; no valid reduced test", "Defer, archive, or seek owner-run evidence",
+     "Document the blocker. Missing or unaffordable replay is not a clean result."],
+]
+table(s, MARGIN, BODY_Y, BODY_W, Inches(4.28), rows, [4.0, 3.5, 4.83], size=14.5, first_col_bold=True)
+band(s, Inches(6.0),
+     "Record evidence grade, replay mode, fidelity, missing dependencies and actual cost. Report qualified coverage and excluded cases; easy-to-replay cases can bias the library.",
+     Inches(0.83), BLUE_PALE, 15)
+notes(s, REPLAY_SOURCE_NOTES + "\n\n"
+      "Proposed admission metadata: incident/source lineage; evidence grade A/B/C; execution mode; "
+      "historical fidelity; model/checkpoint and access status; prompt/scaffold hashes; environment/state "
+      "references; observer visibility; controls and qualification result; missing dependencies; request/"
+      "token/GPU/wall-time limits and actual usage; intended and unsupported claims. Grade A can describe "
+      "an executable mechanism fixture without establishing historical model equivalence. "
+      "Start with own runs and public reproducible harnesses, since logs and snapshots can be captured "
+      "at source. For private cases, the owner could run a versioned adapter in its existing infrastructure "
+      "and share permitted evidence; that is owner-run evidence, not independently reproduced access. "
+      "Choose full replay when the needed scientific claim depends on the exact actor/environment and "
+      "access plus cost make it feasible. Choose a controlled mechanism study only when the narrower "
+      "claim is useful and the relevant causal structure can be tested. Otherwise defer. "
+      "Keep narrative leads and unsupported labels out of automatic optimizer feedback. Regression gates "
+      "operate on qualified, declared suites; unknowns never become passes. Track reports considered, "
+      "artifacts obtained, environments built, qualified cases, blocked reasons and measured costs. "
+      "Report outcomes by fidelity and lineage instead of pooling historical, surrogate and trace-only "
+      "cases. This makes the limits of the deck's incident-to-regression vision explicit.")
 
 # ===================================================================== 24 summary
 s = new_slide("Summary", None, "SUMMARY")

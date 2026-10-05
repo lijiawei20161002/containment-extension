@@ -1,0 +1,564 @@
+{
+  "source": "incident-aware-optimization-v2.pptx",
+  "output": "incident-aware-optimization-crayon-v3.pptx",
+  "original_pages": 35,
+  "new_pages": 42,
+  "all_content_preserved": true,
+  "text_or_figure_overlaps": [],
+  "minimum_body_font_pt": 13,
+  "checks": [
+    {
+      "source_slide": 1,
+      "words_and_symbols": 63,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 2,
+      "words_and_symbols": 76,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 3,
+      "words_and_symbols": 124,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 4,
+      "words_and_symbols": 112,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 5,
+      "words_and_symbols": 321,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 6,
+      "words_and_symbols": 131,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 7,
+      "words_and_symbols": 119,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 8,
+      "words_and_symbols": 56,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 9,
+      "words_and_symbols": 62,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 10,
+      "words_and_symbols": 104,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 11,
+      "words_and_symbols": 115,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 12,
+      "words_and_symbols": 0,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 13,
+      "words_and_symbols": 167,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 14,
+      "words_and_symbols": 125,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 15,
+      "words_and_symbols": 110,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 16,
+      "words_and_symbols": 84,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 17,
+      "words_and_symbols": 90,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 18,
+      "words_and_symbols": 62,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 19,
+      "words_and_symbols": 114,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 20,
+      "words_and_symbols": 121,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 21,
+      "words_and_symbols": 63,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 22,
+      "words_and_symbols": 109,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 23,
+      "words_and_symbols": 82,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 24,
+      "words_and_symbols": 183,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 25,
+      "words_and_symbols": 107,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 26,
+      "words_and_symbols": 159,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 27,
+      "words_and_symbols": 153,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 28,
+      "words_and_symbols": 135,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 29,
+      "words_and_symbols": 167,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 30,
+      "words_and_symbols": 173,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 31,
+      "words_and_symbols": 133,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 32,
+      "words_and_symbols": 146,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 33,
+      "words_and_symbols": 106,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 34,
+      "words_and_symbols": 353,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    },
+    {
+      "source_slide": 35,
+      "words_and_symbols": 313,
+      "original_matches_source": true,
+      "new_content_matches": true,
+      "images_identical": true
+    }
+  ],
+  "page_map": [
+    {
+      "page": 1,
+      "source_slide": 1,
+      "part": null
+    },
+    {
+      "page": 2,
+      "source_slide": 2,
+      "part": null
+    },
+    {
+      "page": 3,
+      "source_slide": 3,
+      "part": null
+    },
+    {
+      "page": 4,
+      "source_slide": 4,
+      "part": null
+    },
+    {
+      "page": 5,
+      "source_slide": 5,
+      "part": [
+        1,
+        3
+      ]
+    },
+    {
+      "page": 6,
+      "source_slide": 5,
+      "part": [
+        2,
+        3
+      ]
+    },
+    {
+      "page": 7,
+      "source_slide": 5,
+      "part": [
+        3,
+        3
+      ]
+    },
+    {
+      "page": 8,
+      "source_slide": 6,
+      "part": null
+    },
+    {
+      "page": 9,
+      "source_slide": 7,
+      "part": null
+    },
+    {
+      "page": 10,
+      "source_slide": 8,
+      "part": null
+    },
+    {
+      "page": 11,
+      "source_slide": 9,
+      "part": null
+    },
+    {
+      "page": 12,
+      "source_slide": 10,
+      "part": null
+    },
+    {
+      "page": 13,
+      "source_slide": 11,
+      "part": null
+    },
+    {
+      "page": 14,
+      "source_slide": 12,
+      "part": null
+    },
+    {
+      "page": 15,
+      "source_slide": 13,
+      "part": [
+        1,
+        2
+      ]
+    },
+    {
+      "page": 16,
+      "source_slide": 13,
+      "part": [
+        2,
+        2
+      ]
+    },
+    {
+      "page": 17,
+      "source_slide": 14,
+      "part": null
+    },
+    {
+      "page": 18,
+      "source_slide": 15,
+      "part": null
+    },
+    {
+      "page": 19,
+      "source_slide": 16,
+      "part": null
+    },
+    {
+      "page": 20,
+      "source_slide": 17,
+      "part": null
+    },
+    {
+      "page": 21,
+      "source_slide": 18,
+      "part": null
+    },
+    {
+      "page": 22,
+      "source_slide": 19,
+      "part": [
+        1,
+        2
+      ]
+    },
+    {
+      "page": 23,
+      "source_slide": 19,
+      "part": [
+        2,
+        2
+      ]
+    },
+    {
+      "page": 24,
+      "source_slide": 20,
+      "part": null
+    },
+    {
+      "page": 25,
+      "source_slide": 21,
+      "part": null
+    },
+    {
+      "page": 26,
+      "source_slide": 22,
+      "part": null
+    },
+    {
+      "page": 27,
+      "source_slide": 23,
+      "part": null
+    },
+    {
+      "page": 28,
+      "source_slide": 24,
+      "part": [
+        1,
+        2
+      ]
+    },
+    {
+      "page": 29,
+      "source_slide": 24,
+      "part": [
+        2,
+        2
+      ]
+    },
+    {
+      "page": 30,
+      "source_slide": 25,
+      "part": null
+    },
+    {
+      "page": 31,
+      "source_slide": 26,
+      "part": null
+    },
+    {
+      "page": 32,
+      "source_slide": 27,
+      "part": null
+    },
+    {
+      "page": 33,
+      "source_slide": 28,
+      "part": null
+    },
+    {
+      "page": 34,
+      "source_slide": 29,
+      "part": null
+    },
+    {
+      "page": 35,
+      "source_slide": 30,
+      "part": null
+    },
+    {
+      "page": 36,
+      "source_slide": 31,
+      "part": null
+    },
+    {
+      "page": 37,
+      "source_slide": 32,
+      "part": null
+    },
+    {
+      "page": 38,
+      "source_slide": 33,
+      "part": null
+    },
+    {
+      "page": 39,
+      "source_slide": 34,
+      "part": [
+        1,
+        2
+      ]
+    },
+    {
+      "page": 40,
+      "source_slide": 34,
+      "part": [
+        2,
+        2
+      ]
+    },
+    {
+      "page": 41,
+      "source_slide": 35,
+      "part": [
+        1,
+        2
+      ]
+    },
+    {
+      "page": 42,
+      "source_slide": 35,
+      "part": [
+        2,
+        2
+      ]
+    }
+  ],
+  "font_notes": "Chalkboard SE headings; Trebuchet MS body; Arial Unicode MS equation",
+  "render_review": "Completed: both versions exported with Microsoft PowerPoint; all seven new analysis pages per deck visually reviewed; every PDF page matches the corresponding PPTX text.",
+  "pdf_text_matches_pptx": true,
+  "style_revision": "Unframed cover and card titles retained; no title ellipses added.",
+  "artifact_sha256": {
+    "pptx": "6eadd34a4266d3b3c5236fea2af662e649e9faa119f0b0a300fc63f327fbca6c",
+    "pdf": "45cd803a79f0a8bb0464aa2b59f589b9b9f68058ac899a9099d7c9aa9e1b2e10"
+  },
+  "replay_feasibility_update": {
+    "date": "2026-10-05",
+    "scope": "Full incident reproduction barriers and resource costs, with controlled mechanism/behavior studies as a qualified fallback.",
+    "replaced_provisional_budget_slides": true,
+    "previous_content_preserved": true,
+    "measured_reproduction_results": false,
+    "standard": {
+      "pptx": "incident-aware-optimization-v2.pptx",
+      "pdf": "incident-aware-optimization-v2.pdf",
+      "pages": 35,
+      "analysis_pages": [
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "pdf_text_matches_pptx": true,
+      "all_previous_text_notes_and_figures_preserved": true,
+      "pdf_words_within_page": true,
+      "sha256": {
+        "pptx": "3bf035ef6138497d079bdc29a0699d93ec2f2b1d78689b2e99ffd9e5a20715a4",
+        "pdf": "8dcae167bfad9be5145d3e64a64436b851881d29834ec067b731b09491c4b705"
+      }
+    },
+    "crayon": {
+      "pptx": "incident-aware-optimization-crayon-v3.pptx",
+      "pdf": "incident-aware-optimization-crayon-v3.pdf",
+      "pages": 42,
+      "analysis_pages": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "pdf_text_matches_pptx": true,
+      "all_previous_text_notes_and_figures_preserved": true,
+      "pdf_words_within_page": true,
+      "sha256": {
+        "pptx": "6eadd34a4266d3b3c5236fea2af662e649e9faa119f0b0a300fc63f327fbca6c",
+        "pdf": "45cd803a79f0a8bb0464aa2b59f589b9b9f68058ac899a9099d7c9aa9e1b2e10"
+      }
+    }
+  }
+}
