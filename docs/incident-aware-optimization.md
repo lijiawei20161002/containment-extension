@@ -24,6 +24,21 @@ validated.*
 [component and call-flow view](../figures/incident-system-components-v1/incident-system-components.png), and
 [mathematical study overview](../figures/incident-aware-optimization-v1/incident-aware-optimization-architecture.png).
 
+**v2 extension (October 5, 2026, proposal only).** The
+[v2 overview](../figures/incident-optimization-overview-v2/incident-optimization-overview-v2.png)
+([generator](../scripts/draw_incident_optimization_overview_v2.py)) adds incident
+intake from own logs and public reports, an executable history library with
+lineage and date partitions, case synthesis, counterfactual replay with blame
+records, an action monitor as an Inspect approver, and a regression-gated
+versioned release. The explainer deck is
+[slides/incident-aware-optimization-v2.pptx](../slides/incident-aware-optimization-v2.pptx)
+([builder](../scripts/build_incident_optimization_deck.py)). The design reuses
+Inspect tool-call approvers and eval logs, Inspect Scout scanners for own-log
+intake, ControlArena monitors and micro-protocols (trusted monitoring,
+defer-to-trusted) for the action monitor, and Hawk-style execution at scale;
+benchmarks and baselines follow the [standardized protocol](standardized-benchmarks.md).
+Every added stage is unimplemented; no result changes.
+
 ## Contribution and hypothesis
 
 Inspect provides evaluation execution, recorded trajectories, and extensible

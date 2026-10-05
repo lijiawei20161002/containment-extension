@@ -1,0 +1,22 @@
+{
+  "title": "Incident-aware policy optimization v2: from incident history to safer agent policies",
+  "kind": "proposed_incident_history_optimization_overview",
+  "created_on": "2026-10-05",
+  "generator": "scripts/draw_incident_optimization_overview_v2.py",
+  "generator_sha256": "8199e0a45b786d66af8f044c1f7dd12aa6c400489a26c6683884508c9400d5eb",
+  "sources": {
+    "docs/incident-aware-optimization.md": "16b463a6b90e22b90fd0a4c65df914f256b7b92c71feb941e508bdc3080f5245",
+    "docs/counterfactual-replay.md": "f6ba6dd826580d846efe9ea3870a84dbdee385a5cb494561fda1ac5e27dfbaf6",
+    "docs/counterfactual-evaluation-infrastructure.md": "cddd9a96affaf2963c1b94415e052f1feede55d911df9f8e6e8d3ffa6233c70e",
+    "experiments/incident-aware-optimization-v1.design.json": "911d6138a79399a6a98233ad69c0a763efe0d7b0357a733983ee5ecb4976aa89",
+    "figures/incident-optimization-overview-v1/metadata.json": "8a533a05d50b3875ce00b1e54616eea45e2e148d0ecc692db9f2ae9f5ec8c4b5"
+  },
+  "extends": "figures/incident-optimization-overview-v1",
+  "formats": [
+    "PNG",
+    "SVG"
+  ],
+  "model_calls": 0,
+  "empirical_result_claimed": false,
+  "note": "Adds incident intake, history library, case synthesis, counterfactual replay, action monitor, regression gate and versioned release to the v1 development loop. All added stages are proposals. Held-out results and post-date-T incidents never feed search."
+}
