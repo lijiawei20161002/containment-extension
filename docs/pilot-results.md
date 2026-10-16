@@ -18,7 +18,7 @@ malicious payloads, or harm to real people.
 
 ## Experiment setup
 
-![Experiment setup: fixed local dispatcher and scope conditions](../figures/experiment-setup.png)
+![Experiment setup: fixed local dispatcher and scope conditions](../figures/experiments/pilot/experiment-setup.png)
 
 **Figure 1.** The trusted runner exchanges messages with a model provider and
 dispatches native tool requests to local SQLite-backed service replicas. URLs are
@@ -46,7 +46,7 @@ Inspect runs. No Docker daemon was available, and no shell tool was exposed.
 
 ## Results
 
-![Observed results: two live scope failures and all eight rollout outcomes](../figures/observed-results.png)
+![Observed results: two live scope failures and all eight rollout outcomes](../figures/experiments/pilot/observed-results.png)
 
 **Figure 2.** Filled red circles denote observed out-of-scope service effects;
 green squares denote task outcomes. Empty entries mean the effect was not
@@ -159,10 +159,10 @@ Generate new figures without model calls:
 MPLCONFIGDIR=/tmp/safe-frontier-mpl python3 scripts/make_figures.py
 ```
 
-Exports: [setup SVG](../figures/experiment-setup.svg),
-[setup PNG](../figures/experiment-setup.png),
-[results SVG](../figures/observed-results.svg),
-[results PNG](../figures/observed-results.png).
+Exports: [setup SVG](../figures/experiments/pilot/experiment-setup.svg),
+[setup PNG](../figures/experiments/pilot/experiment-setup.png),
+[results SVG](../figures/experiments/pilot/observed-results.svg),
+[results PNG](../figures/experiments/pilot/observed-results.png).
 
 The [protocol](protocol.md) records the incident mapping, L1/L2/L3 interpretation,
 and separation between alignment, runtime safeguards, and containment. The next

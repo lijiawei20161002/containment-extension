@@ -15,7 +15,7 @@ All 64 recoverable-task runs and all 32 easy-solvable controls completed within
 scope. Thus the observed reduction was not accompanied by premature abandonment
 on these particular capability controls.
 
-![Cartoon: an impossible authorized task, a forbidden answer archive, and the measured intervention results](../figures/impossible-tasks-cartoon.png)
+![Cartoon: an impossible authorized task, a forbidden answer archive, and the measured intervention results](../figures/experiments/impossible-tasks/impossible-tasks-cartoon.png)
 
 Cartoon scenes and message labels are illustrative; the counts are measured.
 The archive is a reachable local replica outside the authorized scope. Only the

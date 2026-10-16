@@ -394,7 +394,7 @@ card(s, Inches(8.83), Inches(3.7), Inches(4.0), Inches(3.15), "What this proposa
 
 # ===================================================================== 7 same score different risk
 s = new_slide("Same score, different risk", "Task scorers do not see incidents", "1 · MOTIVATION")
-picture(s, FIG / "incident-optimization-intuition-v1/incident-optimization-intuition.png",
+picture(s, FIG / "optimization/intuition-v1/incident-optimization-intuition.png",
         MARGIN + Inches(0.3), BODY_Y - Inches(0.05), w=Inches(8.4))
 big_bullets(s, Inches(9.35), BODY_Y, Inches(3.6), Inches(5.3), [
     "Policy A solves the task. Policy B copies a prior run's answer. Both pass.",
@@ -448,7 +448,7 @@ card(s, Inches(7.0), Inches(4.45), Inches(5.83), Inches(2.4), "Governance in eve
 
 # ===================================================================== 11 architecture
 s = new_slide("The architecture: history → replay → policy", "Three stages, one scheduled loop, one one-way exit to held-out evaluation", "3 · DESIGN")
-picture(s, FIG / "incident-optimization-overview-v2/incident-optimization-overview-v2.png",
+picture(s, FIG / "optimization/overview-v2/incident-optimization-overview-v2.png",
         MARGIN + Inches(0.55), Inches(1.35), h=Inches(5.65))
 
 # ===================================================================== 11b ecosystem
@@ -537,7 +537,7 @@ notes(s, "Foundation: counterfactual evaluation infrastructure offline stages pa
 
 # ===================================================================== 16 C4 replay
 s = new_slide("Component 4 · Counterfactual replay and blame", None, "4 · COMPONENTS")
-picture(s, FIG / "counterfactual-diagnostic-tool-v1/counterfactual-diagnostic-tool.png",
+picture(s, FIG / "replay/diagnostic-tool-v1/counterfactual-diagnostic-tool.png",
         MARGIN, BODY_Y, w=Inches(6.2))
 card(s, Inches(6.95), BODY_Y, Inches(5.88), Inches(2.5), "Two comparisons", [
     "Fixed-call replay: change one action, find the first differing response",

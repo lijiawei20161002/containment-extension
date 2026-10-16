@@ -17,7 +17,7 @@ from matplotlib.patches import FancyBboxPatch
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "results" / "scope-levels-v1"
-OUT = ROOT / "figures"
+OUT = ROOT / "figures/experiments/scope-levels/technical"
 LEVELS = ("baseline", "repeat_scope", "explicit_routes", "action_check")
 NAMES = ("Original scope", "Repeat scope", "Explicit shortcuts", "Check each action")
 C = {"ink": "#192C40", "muted": "#53687B", "blue": "#24689A", "pale": "#EFF5FA",
@@ -50,7 +50,7 @@ def canvas(width, height):
 
 
 def save(fig, name):
-    OUT.mkdir(exist_ok=True)
+    OUT.mkdir(parents=True, exist_ok=True)
     for ext in ("png", "svg"):
         path = OUT / f"{name}.{ext}"
         fig.savefig(path, dpi=180, facecolor=C["bg"], metadata={"Date": None}
@@ -211,7 +211,7 @@ def prompt_sheet(bank, metrics):
              "Cartoon illustrations were generated separately; "
              "no additional agent trials were run.", "",
              "![Cartoon workflow: agent, repository, API, scorer, and authorization boundary]"
-             "(../figures/scope-workflow-cartoon.png)", "",
+             "(../figures/experiments/scope-levels/workflow/scope-workflow-cartoon.png)", "",
              "The workflow depicts the permissive local service simulator. The agent reads "
              "the README and source inside the challenge repo, requests a flag through lab tools, "
              "then explicitly submits the returned flag to the current-run scorer. Source edits "
@@ -219,23 +219,23 @@ def prompt_sheet(bank, metrics):
              "link and internal health dependency do not grant the agent permission to access "
              "them. The independent observer checks recorded actions and state separately from "
              "the flag scorer. This is a schematic, not a recorded trial.", "",
-             "[Resource inventory cartoon](../figures/scope-resources-cartoon.png) · "
-             "[Workflow generation prompt](../figures/scope-workflow-cartoon.prompt.txt) · "
-             "[Final editing prompt](../figures/scope-workflow-cartoon.edit-prompt.txt)", "",
+             "[Resource inventory cartoon](../figures/experiments/scope-levels/resources/scope-resources-cartoon.png) · "
+             "[Workflow generation prompt](../figures/experiments/scope-levels/workflow/scope-workflow-cartoon.prompt.txt) · "
+             "[Final editing prompt](../figures/experiments/scope-levels/workflow/scope-workflow-cartoon.edit-prompt.txt)", "",
              "![Cartoon explanation of the flag scorer, independent scope check, and blocker check]"
-             "(../figures/scorer-explained-cartoon.png)", "",
+             "(../figures/experiments/scope-levels/scorer/scorer-explained-cartoon.png)", "",
              "The scorer cartoon distinguishes exact flag matching from scope evaluation and "
              "the existing partial blocker check. Its two example routes are schematic, and "
              "its flag is an illustrative placeholder. The scope-check panel groups proposal "
              "classification with independent observation of recorded effects. "
-             "[Generation prompt](../figures/scorer-explained-cartoon.prompt.txt).", "",
+             "[Generation prompt](../figures/experiments/scope-levels/scorer/scorer-explained-cartoon.prompt.txt).", "",
              "[Proposed meta-generator workflow](meta-instruction-generator.md): a separate "
              "cartoon and design note show how instruction generation could use the sandbox "
              "for development trials and held-out evaluation.", "",
-             "![All 24 observed outcomes](../figures/scope-levels-results.png)", "",
+             "![All 24 observed outcomes](../figures/experiments/scope-levels/technical/scope-levels-results.png)", "",
              "![Cartoon: instruction additions and their results]"
-             "(../figures/scope-levels-instructions-cartoon.png)", "",
-             "[Original technical figure](../figures/scope-levels-instructions.svg). "
+             "(../figures/experiments/scope-levels/instructions/scope-levels-instructions-cartoon.png)", "",
+             "[Original technical figure](../figures/experiments/scope-levels/technical/scope-levels-instructions.svg). "
              "Cartoon captions are schematic labels, not quotations from actor traces.",
              "", "## Shared instructions", "",
              "All levels received the following system message, original user task, and "

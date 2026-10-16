@@ -2,23 +2,23 @@
 
 Instructions and results come from the frozen `results/scope-levels-v1/prompt-bank.json` and experiment archive. Cartoon illustrations were generated separately; no additional agent trials were run.
 
-![Cartoon workflow: agent, repository, API, scorer, and authorization boundary](../figures/scope-workflow-cartoon.png)
+![Cartoon workflow: agent, repository, API, scorer, and authorization boundary](../figures/experiments/scope-levels/workflow/scope-workflow-cartoon.png)
 
 The workflow depicts the permissive local service simulator. The agent reads the README and source inside the challenge repo, requests a flag through lab tools, then explicitly submits the returned flag to the current-run scorer. Source edits do not deploy. Excluded services remain reachable inside the sandbox; the README link and internal health dependency do not grant the agent permission to access them. The independent observer checks recorded actions and state separately from the flag scorer. This is a schematic, not a recorded trial.
 
-[Resource inventory cartoon](../figures/scope-resources-cartoon.png) · [Workflow generation prompt](../figures/scope-workflow-cartoon.prompt.txt) · [Final editing prompt](../figures/scope-workflow-cartoon.edit-prompt.txt)
+[Resource inventory cartoon](../figures/experiments/scope-levels/resources/scope-resources-cartoon.png) · [Workflow generation prompt](../figures/experiments/scope-levels/workflow/scope-workflow-cartoon.prompt.txt) · [Final editing prompt](../figures/experiments/scope-levels/workflow/scope-workflow-cartoon.edit-prompt.txt)
 
-![Cartoon explanation of the flag scorer, independent scope check, and blocker check](../figures/scorer-explained-cartoon.png)
+![Cartoon explanation of the flag scorer, independent scope check, and blocker check](../figures/experiments/scope-levels/scorer/scorer-explained-cartoon.png)
 
-The scorer cartoon distinguishes exact flag matching from scope evaluation and the existing partial blocker check. Its two example routes are schematic, and its flag is an illustrative placeholder. The scope-check panel groups proposal classification with independent observation of recorded effects. [Generation prompt](../figures/scorer-explained-cartoon.prompt.txt).
+The scorer cartoon distinguishes exact flag matching from scope evaluation and the existing partial blocker check. Its two example routes are schematic, and its flag is an illustrative placeholder. The scope-check panel groups proposal classification with independent observation of recorded effects. [Generation prompt](../figures/experiments/scope-levels/scorer/scorer-explained-cartoon.prompt.txt).
 
 [Proposed meta-generator workflow](meta-instruction-generator.md): a separate cartoon and design note show how instruction generation could use the sandbox for development trials and held-out evaluation.
 
-![All 24 observed outcomes](../figures/scope-levels-results.png)
+![All 24 observed outcomes](../figures/experiments/scope-levels/technical/scope-levels-results.png)
 
-![Cartoon: instruction additions and their results](../figures/scope-levels-instructions-cartoon.png)
+![Cartoon: instruction additions and their results](../figures/experiments/scope-levels/instructions/scope-levels-instructions-cartoon.png)
 
-[Original technical figure](../figures/scope-levels-instructions.svg). Cartoon captions are schematic labels, not quotations from actor traces.
+[Original technical figure](../figures/experiments/scope-levels/technical/scope-levels-instructions.svg). Cartoon captions are schematic labels, not quotations from actor traces.
 
 ## Shared instructions
 

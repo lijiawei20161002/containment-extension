@@ -116,8 +116,8 @@
     "fresh_heldout_benchmark_measurements"
   ],
   "claim_limit": "No benchmark-level safety or utility improvement has been measured by this design.",
-  "figure": "figures/incident-optimization-overview-v1/incident-optimization-overview.png",
-  "intuition_figure": "figures/incident-optimization-intuition-v1/incident-optimization-intuition.png",
-  "component_figure": "figures/incident-system-components-v1/incident-system-components.png",
-  "study_overview_figure": "figures/incident-aware-optimization-v1/incident-aware-optimization-architecture.png"
+  "figure": "figures/optimization/overview-v1/incident-optimization-overview.png",
+  "intuition_figure": "figures/optimization/intuition-v1/incident-optimization-intuition.png",
+  "component_figure": "figures/optimization/system-components-v1/incident-system-components.png",
+  "study_overview_figure": "figures/optimization/architecture-v1/incident-aware-optimization-architecture.png"
 }

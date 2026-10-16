@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "figures/evaluation-implementation-v1"
+OUT = ROOT / "figures/evaluation/implementation-v1"
 C = {
     "bg": "#F5F7FA", "ink": "#182D40", "muted": "#587082", "line": "#D7E1E8",
     "white": "#FFFFFF", "green": "#187768", "gpale": "#E8F4EE",

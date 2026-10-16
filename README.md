@@ -170,11 +170,14 @@ containment-extension/
 ├── scripts/                    # Analysis, plotting, and upstream-baseline tools
 ├── requirements/               # Tested optional dependency versions
 ├── docs/                       # Methods, design notes, and interpretation
-├── figures/                    # Figures, prompts, and generation metadata
+├── figures/                    # Figures grouped by topic; see figures/README.md
 ├── results/                    # Archived evidence and historical source snapshots
 ├── runs/                       # Local run outputs (ignored by Git)
 └── pyproject.toml              # Packaging, dependencies, CLI entry point, tests
 ```
+
+The [figure library](figures/README.md) indexes images, editable SVGs, prompts,
+and metadata by experiment, benchmark, evaluation, optimization, replay, or incident.
 
 Archived `results/*/source/containment_extension/` trees retain the layout used
 for those experiments. New run snapshots use the same archive format. The

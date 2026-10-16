@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Arc, Circle, Ellipse, FancyArrowPatch, FancyBboxPatch, Polygon
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "figures/incident-optimization-intuition-v1"
+OUT = ROOT / "figures/optimization/intuition-v1"
 TITLE = "Why incident feedback can help"
 C = {
     "bg": "#FFFFFF", "ink": "#20374C", "muted": "#697E8D",

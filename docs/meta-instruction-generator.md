@@ -2,7 +2,7 @@
 
 For the broader experiment design, see the [cartoon marking five optimization opportunities](evaluation-optimization.md), including instruction generation, stress-case construction, environment qualification, scorer validation, and run planning.
 
-![Cartoon of instruction generation, sandbox trials, independent evaluation, and held-out testing](../figures/meta-generator-workflow-cartoon.png)
+![Cartoon of instruction generation, sandbox trials, independent evaluation, and held-out testing](../figures/optimization/meta-generator/meta-generator-workflow-cartoon.png)
 
 The cartoon describes the broader proposed architecture; its instruction and failure message are illustrative. A [first native implementation](instruction-optimization.md) now supports constrained clause generation, matched development trials, selection, diagnostic ablations and held-out testing. It has been qualified offline, without new live model results.
 
@@ -16,4 +16,4 @@ The first comparison would retain the original task and scope for all actors and
 
 The current checkpoint runner and observer provide reusable infrastructure. Two implementation gaps remain: restored recovery checkpoints currently force permissive mode, and the blocker evaluator checks evidence availability but does not verify the report's evidence wording against the actual observations. The supported-blocker metric in this design requires that additional verification.
 
-Generated using built-in imagegen. Prompts: [generation](../figures/meta-generator-workflow-cartoon.prompt.txt), [policy clarification](../figures/meta-generator-workflow-cartoon.edit-prompt.txt), and [API connection refinement](../figures/meta-generator-workflow-cartoon.routing-prompt.txt).
+Generated using built-in imagegen. Prompts: [generation](../figures/optimization/meta-generator/meta-generator-workflow-cartoon.prompt.txt), [policy clarification](../figures/optimization/meta-generator/meta-generator-workflow-cartoon.edit-prompt.txt), and [API connection refinement](../figures/optimization/meta-generator/meta-generator-workflow-cartoon.routing-prompt.txt).

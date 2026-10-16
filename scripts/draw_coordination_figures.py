@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch, Circle
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "figures" / "coordination-harness"
+OUT = ROOT / "figures/experiments/coordination-harness"
 BG = "#F7F6F2"
 INK = "#192E3E"
 MUTED = "#5D6D78"
@@ -326,7 +326,7 @@ live actor and monitor calls need a provider key and an API budget. No GPU is re
                      f'<figcaption><strong>{i+1}. {html.escape(e["title"])}</strong> {html.escape(e["caption"])}'
                      f'<div class="downloads"><a href="{e["stem"]}.png" download>PNG</a> · '
                      f'<a href="{e["stem"]}.svg" download>Editable SVG</a></div></figcaption></figure>')
-    parts.append('''<footer>Design details: <a href="../../docs/coordination-harness.md">experiment protocol</a>.
+    parts.append('''<footer>Design details: <a href="../../../docs/coordination-harness.md">experiment protocol</a>.
 Inspired by <a href="https://blog.mlc.ai/2026/09/29/tirx-harness-an-open-compiler-harness-for-agentic-gpu-programming">TIRx Harness</a>
 and <a href="https://www.lesswrong.com/posts/SCdR7W6L5GvKaEzaZ/encoded-coordination-on-the-open-web">Encoded Coordination on the Open Web</a>.
 <br>Figures are reproducible with <code>scripts/draw_coordination_figures.py</code>. No model calls were used to draw them.</footer></main></html>''')

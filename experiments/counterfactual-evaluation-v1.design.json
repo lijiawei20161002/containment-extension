@@ -3,7 +3,7 @@
   "status": "offline_stages_implemented_live_stages_unallocated",
   "updated_on": "2026-10-04",
   "protocol": "docs/counterfactual-evaluation-infrastructure.md",
-  "figure": "figures/counterfactual-eval-infrastructure-v1/counterfactual-eval-infrastructure.png",
+  "figure": "figures/evaluation/counterfactual-infrastructure-v1/counterfactual-eval-infrastructure.png",
   "execution_authorized_by_this_file": false,
   "implementation_present": true,
   "new_actor_or_grader_calls": 0,

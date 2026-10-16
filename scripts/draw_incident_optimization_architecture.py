@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyArrowPatch, FancyBboxPatch
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "figures/incident-aware-optimization-v1"
+OUT = ROOT / "figures/optimization/architecture-v1"
 COLORS = {
     "bg": "#F4F7FA", "ink": "#172E42", "muted": "#546D80",
     "line": "#D3E0E9", "white": "#FFFFFF", "teal": "#087F76",

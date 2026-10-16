@@ -9,7 +9,7 @@ This is the organizing research question for the
 **Does optimizing with independently measured incidents produce safer agent
 policies at the same task capability and resource budget?**
 
-![Closed development loop: evaluate instruction candidates with Inspect and an independent incident observer; use their evidence to select eligible low-incident policies and revise instruction clauses; rerun the updated instructions. The optimization objective is above the loop. A frozen policy exits to held-out benchmarks, with no test feedback.](../figures/incident-optimization-overview-v1/incident-optimization-overview.png)
+![Closed development loop: evaluate instruction candidates with Inspect and an independent incident observer; use their evidence to select eligible low-incident policies and revise instruction clauses; rerun the updated instructions. The optimization objective is above the loop. A frozen policy exits to held-out benchmarks, with no test feedback.](../figures/optimization/overview-v1/incident-optimization-overview.png)
 
 *Proposed adaptive loop, using the visual style of the supplied `overview.png`.
 An unauthorized shortcut can pass the task scorer; the incident observer makes
@@ -18,14 +18,14 @@ Only development evidence returns to the optimizer. Freeze the selected policy
 before held-out evaluation. The first matched B3/B4 experiment still uses a fixed
 candidate pool; the adaptive benchmark loop and performance gains remain to be
 validated.*
-[Vector SVG](../figures/incident-optimization-overview-v1/incident-optimization-overview.svg),
+[Vector SVG](../figures/optimization/overview-v1/incident-optimization-overview.svg),
 [figure generator](../scripts/draw_incident_optimization_overview.py),
-[two-policy intuition](../figures/incident-optimization-intuition-v1/incident-optimization-intuition.png),
-[component and call-flow view](../figures/incident-system-components-v1/incident-system-components.png), and
-[mathematical study overview](../figures/incident-aware-optimization-v1/incident-aware-optimization-architecture.png).
+[two-policy intuition](../figures/optimization/intuition-v1/incident-optimization-intuition.png),
+[component and call-flow view](../figures/optimization/system-components-v1/incident-system-components.png), and
+[mathematical study overview](../figures/optimization/architecture-v1/incident-aware-optimization-architecture.png).
 
 **v2 extension (October 5, 2026, proposal only).** The
-[v2 overview](../figures/incident-optimization-overview-v2/incident-optimization-overview-v2.png)
+[v2 overview](../figures/optimization/overview-v2/incident-optimization-overview-v2.png)
 ([generator](../scripts/draw_incident_optimization_overview_v2.py)) adds incident
 intake from own logs and public reports, an executable history library with
 lineage and date partitions, case synthesis, counterfactual replay with blame

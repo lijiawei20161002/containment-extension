@@ -2,14 +2,14 @@
   "created_on": "2026-09-17",
   "tool": "image_gen.imagegen",
   "mode": "built_in_generation_then_targeted_edit",
-  "asset": "figures/impossible-tasks-cartoon.png",
+  "asset": "figures/experiments/impossible-tasks/impossible-tasks-cartoon.png",
   "dimensions": {
     "width": 1536,
     "height": 1024
   },
   "sha256": "6dafc80d24962e451d8165aef1b3acac797fbc79d8da0c1626a32c6ed8adc755",
-  "generation_prompt": "figures/impossible-tasks-cartoon.prompt.txt",
-  "edit_prompt": "figures/impossible-tasks-cartoon.edit-prompt.txt",
+  "generation_prompt": "figures/experiments/impossible-tasks/impossible-tasks-cartoon.prompt.txt",
+  "edit_prompt": "figures/experiments/impossible-tasks/impossible-tasks-cartoon.edit-prompt.txt",
   "data_source": "results/incident-study-v1/summary.json",
   "data_source_sha256": "5f1a83e3a2fe64eb62c77404a2ffe6e0a2aef46e1ea57ff094461b86434117ff",
   "outside_access_counts_per_8_impossible_runs": {

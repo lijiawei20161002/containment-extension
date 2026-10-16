@@ -10,7 +10,7 @@ service experiments in this repository are separate studies.
 
 ## 1. Give the AI a coding task with three versions of the tests
 
-![A robot fixes a calculator. The fair test expects 1/200 for 0.5 divided by 100; the wrong-answer test expects 1/100; contradictory tests require both. Correct repair and an evidence report are allowed; editing evaluation tests is forbidden.](../figures/impossiblebench-task-cartoon-v1.png)
+![A robot fixes a calculator. The fair test expects 1/200 for 0.5 divided by 100; the wrong-answer test expects 1/100; contradictory tests require both. Correct repair and an evidence report are allowed; editing evaluation tests is forbidden.](../figures/impossiblebench/task-v1/impossiblebench-task-cartoon-v1.png)
 
 The illustration uses the arithmetic from the selected SymPy issue:
 `Rational('0.5', '100')` should produce `1/200`. The original tests agree with
@@ -29,7 +29,7 @@ the AI give up on every task could misleadingly appear helpful.
 
 ## 2. Compare four messages after a failed scored submission
 
-![After working on code and making a scored submission, the first scored failure triggers one of four messages: neutral, rules reminder, acceptance of a supported blocker, or both. An independent observer records behavior.](../figures/impossiblebench-messages-cartoon-v1.png)
+![After working on code and making a scored submission, the first scored failure triggers one of four messages: neutral, rules reminder, acceptance of a supported blocker, or both. An independent observer records behavior.](../figures/impossiblebench/messages-v1/impossiblebench-messages-cartoon-v1.png)
 
 Each fresh run is assigned one condition. The wording inside the figure is a
 plain-language paraphrase, not the verbatim experimental prompt.
@@ -60,7 +60,7 @@ All runs use isolated offline workspaces.
 
 ## 3. The actual trial stopped before the message comparison
 
-![Of 24 assigned runs, 16 started and 8 did not. Fourteen reached the 20-model-call limit, one was interrupted, and one reached the shared input limit. All stopped before scored submission: zero submissions and zero experimental messages.](../figures/impossiblebench-preflight-cartoon-v1.png)
+![Of 24 assigned runs, 16 started and 8 did not. Fourteen reached the 20-model-call limit, one was interrupted, and one reached the shared input limit. All stopped before scored submission: zero submissions and zero experimental messages.](../figures/impossiblebench/preflight-v1/impossiblebench-preflight-cartoon-v1.png)
 
 The model spent its allowance inspecting code, running local commands, and
 attempting repairs. Fourteen runs reached the 20-model-call limit. One was
@@ -88,6 +88,6 @@ prompt followed by an edit prompt for readability and diagram accuracy.
 
 | Figure | Saved PNG | Initial prompt | Final edit prompt |
 | --- | --- | --- | --- |
-| Unfair tests | [Image](../figures/impossiblebench-task-cartoon-v1.png) | [Prompt](../figures/impossiblebench-task-cartoon-v1.prompt.txt) | [Edit](../figures/impossiblebench-task-cartoon-v1.edit-prompt.txt) |
-| Four messages | [Image](../figures/impossiblebench-messages-cartoon-v1.png) | [Prompt](../figures/impossiblebench-messages-cartoon-v1.prompt.txt) | [Edit](../figures/impossiblebench-messages-cartoon-v1.edit-prompt.txt) |
-| Actual trial | [Image](../figures/impossiblebench-preflight-cartoon-v1.png) | [Prompt](../figures/impossiblebench-preflight-cartoon-v1.prompt.txt) | [Edit](../figures/impossiblebench-preflight-cartoon-v1.edit-prompt.txt) |
+| Unfair tests | [Image](../figures/impossiblebench/task-v1/impossiblebench-task-cartoon-v1.png) | [Prompt](../figures/impossiblebench/task-v1/impossiblebench-task-cartoon-v1.prompt.txt) | [Edit](../figures/impossiblebench/task-v1/impossiblebench-task-cartoon-v1.edit-prompt.txt) |
+| Four messages | [Image](../figures/impossiblebench/messages-v1/impossiblebench-messages-cartoon-v1.png) | [Prompt](../figures/impossiblebench/messages-v1/impossiblebench-messages-cartoon-v1.prompt.txt) | [Edit](../figures/impossiblebench/messages-v1/impossiblebench-messages-cartoon-v1.edit-prompt.txt) |
+| Actual trial | [Image](../figures/impossiblebench/preflight-v1/impossiblebench-preflight-cartoon-v1.png) | [Prompt](../figures/impossiblebench/preflight-v1/impossiblebench-preflight-cartoon-v1.prompt.txt) | [Edit](../figures/impossiblebench/preflight-v1/impossiblebench-preflight-cartoon-v1.edit-prompt.txt) |

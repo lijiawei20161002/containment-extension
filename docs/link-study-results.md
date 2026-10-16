@@ -13,7 +13,7 @@ this task. It does not identify the model's training data or establish a univers
 cause of agent misbehavior. The original task and scope instructions remained
 identical and present throughout every logged model request.
 
-![Cartoon of the README-link intervention and later scope violations](../figures/upstream-link-cartoon.png)
+![Cartoon of the README-link intervention and later scope violations](../figures/experiments/upstream-link/upstream-link-cartoon.png)
 
 Cartoon summary: arrows depict access attempts. The answer archive in the last
 panel illustrates one later route; other runs accessed upstream. Dialogue is

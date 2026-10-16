@@ -14,7 +14,7 @@
     "correction-prompt.txt",
     "final-routing-prompt.txt"
   ],
-  "protocol": "../../docs/counterfactual-evaluation-infrastructure.md",
+  "protocol": "../../../docs/counterfactual-evaluation-infrastructure.md",
   "visual_review": {
     "matched_case_variants_present": true,
     "difficulty_qualification_present": true,

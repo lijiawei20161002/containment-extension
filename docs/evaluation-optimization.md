@@ -8,14 +8,14 @@ The [standardized benchmark protocol](standardized-benchmarks.md) supplies exter
 tasks and established baselines. The broader architecture below supports this
 question; its components are not separate claims of improved model performance.
 
-![Cartoon marking five optimization opportunities around an Inspect-based evaluation workflow](../figures/evaluation-optimization-cartoon.png)
+![Cartoon marking five optimization opportunities around an Inspect-based evaluation workflow](../figures/evaluation/optimization/evaluation-optimization-cartoon.png)
 
 Orange wrench markers identify proposed optimization work. The figure is an architecture proposal, not a report of new experiments. The task contract, authorization policy, and independently established reference labels remain fixed within a comparison. Final held-out results do not feed candidate selection or revision.
 
 **Next iteration:** [counterfactual task families and grader regression tests](counterfactual-evaluation-infrastructure.md)
 make markers 2–4 concrete. Inspired by Arcadia's matched feasibility experiments,
 the proposal adds independently qualified task variants and controlled evidence
-views for testing graders, with a [new architecture figure](../figures/counterfactual-eval-infrastructure-v1/counterfactual-eval-infrastructure.png).
+views for testing graders, with a [new architecture figure](../figures/evaluation/counterfactual-infrastructure-v1/counterfactual-eval-infrastructure.png).
 
 | Marker | What can change | What establishes improvement |
 | --- | --- | --- |
@@ -35,4 +35,4 @@ Inspect supplies [task composition](https://inspect.aisi.org.uk/tasks.html), [cu
 
 Existing code provides the native simulator, action records, state observations, and a separate ImpossibleBench Inspect adapter. A [first instruction optimizer](instruction-optimization.md) now implements marker 1 using a constrained catalog, model or deterministic proposals, fixed native evaluation, diagnostic clause removal, and a frozen held-out phase. The broader optimization system remains proposed. Current blockers to the complete design include verification of blocker-report evidence text and explicit enforcement-mode support when restoring recovery checkpoints.
 
-Generated using built-in imagegen. Prompts: [generation](../figures/evaluation-optimization-cartoon.prompt.txt) and [final refinements](../figures/evaluation-optimization-cartoon.edit-prompt.txt). The [earlier generator/tester loop](meta-instruction-generator.md) provides additional context.
+Generated using built-in imagegen. Prompts: [generation](../figures/evaluation/optimization/evaluation-optimization-cartoon.prompt.txt) and [final refinements](../figures/evaluation/optimization/evaluation-optimization-cartoon.edit-prompt.txt). The [earlier generator/tester loop](meta-instruction-generator.md) provides additional context.

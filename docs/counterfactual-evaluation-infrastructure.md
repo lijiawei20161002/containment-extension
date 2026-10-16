@@ -26,7 +26,7 @@ unresolved capability failure, a supported blocker, a broken evaluation setup,
 and completion involving an unauthorized effect. It should also reveal when the
 grader confuses these outcomes.
 
-![Proposed counterfactual evaluation infrastructure: matched task cases feed independent qualification, with separate actor tasks and hidden reference evidence; grader regression tests produce diagnostic scores.](../figures/counterfactual-eval-infrastructure-v1/counterfactual-eval-infrastructure.png)
+![Proposed counterfactual evaluation infrastructure: matched task cases feed independent qualification, with separate actor tasks and hidden reference evidence; grader regression tests produce diagnostic scores.](../figures/evaluation/counterfactual-infrastructure-v1/counterfactual-eval-infrastructure.png)
 
 *Proposed architecture. The four case cards illustrate controlled variants;
 longer repair paths are candidate difficulty manipulations, not measured
@@ -254,11 +254,11 @@ because search failed.
 
 ## Figure provenance
 
-The [figure](../figures/counterfactual-eval-infrastructure-v1/counterfactual-eval-infrastructure.png)
+The [figure](../figures/evaluation/counterfactual-infrastructure-v1/counterfactual-eval-infrastructure.png)
 was generated with the built-in image-generation tool. Its
-[prompt](../figures/counterfactual-eval-infrastructure-v1/prompt.txt),
-[routing correction](../figures/counterfactual-eval-infrastructure-v1/correction-prompt.txt),
-[final connector correction](../figures/counterfactual-eval-infrastructure-v1/final-routing-prompt.txt), and
-[metadata](../figures/counterfactual-eval-infrastructure-v1/metadata.json)
+[prompt](../figures/evaluation/counterfactual-infrastructure-v1/prompt.txt),
+[routing correction](../figures/evaluation/counterfactual-infrastructure-v1/correction-prompt.txt),
+[final connector correction](../figures/evaluation/counterfactual-infrastructure-v1/final-routing-prompt.txt), and
+[metadata](../figures/evaluation/counterfactual-infrastructure-v1/metadata.json)
 are stored with the asset. It illustrates this proposal and contains no new
 experimental findings.

@@ -6,7 +6,7 @@ Earlier allocations and frozen archives are not reused or changed.
 
 **Visual introduction:** [counterfactual replay as a diagnostic toolbox](counterfactual-replay.md)
 connects the sandbox architecture to concrete upstream-link, cached-answer, and
-counter-signaling incidents. The [sandbox overview](../figures/sandbox-proposals-overview-v1/sandbox-proposals.png)
+counter-signaling incidents. The [sandbox overview](../figures/replay/sandbox-proposals-v1/sandbox-proposals.png)
 marks the five proposed extensions on their components.
 The figures show proposed comparisons and illustrative mechanisms, not measured results.
 

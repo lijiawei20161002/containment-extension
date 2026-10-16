@@ -8,11 +8,11 @@ and tested with scripted transports, but no live stage has run; their model and
 allocation are unspecified. These results establish fixture and evidence behavior, not model
 performance, prevention effectiveness, or generalization.
 
-![Implemented evaluation infrastructure, offline results, and pending live stages](../figures/evaluation-implementation-v1/evaluation-implementation.png)
+![Implemented evaluation infrastructure, offline results, and pending live stages](../figures/evaluation/implementation-v1/evaluation-implementation.png)
 
 Green marks executed offline checks, blue marks implemented live runners that have
 not run, and gray marks later protocol work. Counts come from the frozen run
-summaries. [Editable SVG](../figures/evaluation-implementation-v1/evaluation-implementation.svg)
+summaries. [Editable SVG](../figures/evaluation/implementation-v1/evaluation-implementation.svg)
 and [figure generator](../scripts/draw_evaluation_implementation.py).
 
 ## Counterfactual workflow qualification

@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Arc, Circle, Ellipse, FancyArrowPatch, FancyBboxPatch, Polygon
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "figures/incident-system-components-v1"
+OUT = ROOT / "figures/optimization/system-components-v1"
 C = {
     "bg": "#F7F9FC", "ink": "#19344B", "muted": "#597286", "line": "#CAD9E4",
     "blue": "#3570BB", "blue_light": "#E9F1FC", "blue_mid": "#BCD4F2",

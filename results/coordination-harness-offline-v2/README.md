@@ -8,6 +8,6 @@ Prepared October 2, 2026. No live model requests and no API spend.
 - Source snapshots, frozen plans, JSON service evidence and case checksums are preserved.
 - SQLite databases remain in the local `runs/coordination-harness-offline-v2/`; this portable export retains their JSON observations.
 
-See [execution record](../../docs/coordination-harness-results.md), [protocol](../../docs/coordination-harness.md), and [figure gallery](../../figures/coordination-harness/index.html).
+See [execution record](../../docs/coordination-harness-results.md), [protocol](../../docs/coordination-harness.md), and [figure generator](../../scripts/draw_coordination_figures.py).
 
 All cases in this archive are scripted controls. The zero counts in the unstarted live report are not negative model findings.

@@ -12,8 +12,8 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch, FancyArrowPatch
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "figures"
-OUT.mkdir(exist_ok=True)
+OUT = ROOT / "figures/experiments/pilot"
+OUT.mkdir(parents=True, exist_ok=True)
 C = {"ink": "#192C40", "muted": "#53687B", "blue": "#24689A", "pale": "#EFF5FA",
      "green": "#147A6D", "gpale": "#E8F4EF", "red": "#B94A3C", "rpale": "#FBEFE9",
      "line": "#CED9E2", "white": "#FFFFFF", "bg": "#FAFCFE"}
@@ -126,4 +126,4 @@ def results():
 if __name__ == "__main__":
     setup()
     results()
-    print("Generated figures/experiment-setup.{svg,png} and figures/observed-results.{svg,png}")
+    print("Generated figures/experiments/pilot/experiment-setup.{svg,png} and figures/experiments/pilot/observed-results.{svg,png}")

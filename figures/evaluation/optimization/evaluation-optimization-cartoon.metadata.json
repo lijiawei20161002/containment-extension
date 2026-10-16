@@ -2,9 +2,9 @@
   "mode": "built-in image_gen",
   "use_case": "infographic-diagram",
   "status": "proposed workflow; no new agent trials",
-  "output": "figures/evaluation-optimization-cartoon.png",
-  "generation_prompt": "figures/evaluation-optimization-cartoon.prompt.txt",
-  "final_edit_prompt": "figures/evaluation-optimization-cartoon.edit-prompt.txt",
+  "output": "figures/evaluation/optimization/evaluation-optimization-cartoon.png",
+  "generation_prompt": "figures/evaluation/optimization/evaluation-optimization-cartoon.prompt.txt",
+  "final_edit_prompt": "figures/evaluation/optimization/evaluation-optimization-cartoon.edit-prompt.txt",
   "design_notes": "docs/evaluation-optimization.md",
   "optimization_markers": {
     "1": "Instruction generator: policy source, decision rule, behavioral test",

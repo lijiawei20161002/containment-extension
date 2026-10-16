@@ -1,6 +1,6 @@
 """Draw the v2 incident-aware optimization overview: history -> replay -> policy.
 
-Extends figures/incident-optimization-overview-v1 with the incident intake,
+Extends figures/optimization/overview-v1 with the incident intake,
 history library, case synthesis, counterfactual replay, action monitor, and
 versioned release stages. Vector primitives in the same overview.png style.
 No model calls. Run: python3 scripts/draw_incident_optimization_overview_v2.py
@@ -23,7 +23,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse, FancyArrowPatch, FancyBboxPatch, Polygon, Rectangle
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "figures/incident-optimization-overview-v2"
+OUT = ROOT / "figures/optimization/overview-v2"
 TITLE = "Incident-aware policy optimization v2: from incident history to safer agent policies"
 C = {
     "ink": "#111111", "blue": "#365E9E", "arrow_blue": "#4679BC",
@@ -45,7 +45,7 @@ def main():
         "docs/counterfactual-replay.md",
         "docs/counterfactual-evaluation-infrastructure.md",
         "experiments/incident-aware-optimization-v1.design.json",
-        "figures/incident-optimization-overview-v1/metadata.json",
+        "figures/optimization/overview-v1/metadata.json",
     )]
     design = json.loads(sources[3].read_text())
     assert design["primary_contrast"] == ["B4", "B3"]
@@ -317,7 +317,7 @@ def main():
         "generator_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         "sources": {str(p.relative_to(ROOT)): hashlib.sha256(p.read_bytes()).hexdigest()
                     for p in sources},
-        "extends": "figures/incident-optimization-overview-v1",
+        "extends": "figures/optimization/overview-v1",
         "formats": ["PNG", "SVG"], "model_calls": 0, "empirical_result_claimed": False,
         "note": "Adds incident intake, history library, case synthesis, counterfactual "
                 "replay, action monitor, regression gate and versioned release to the "

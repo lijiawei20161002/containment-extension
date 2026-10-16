@@ -4,7 +4,7 @@ Counterfactual replay restarts a scenario from a matched checkpoint, changes one
 action or observation, and compares the resulting evidence. The proposed toolbox
 connects sandbox adapters, paired replay, incident diagnosis, and executable cases.
 
-![A sandbox adapter feeds a replay toolbox, which compares evidence and saves reproducible cases in an incident library.](../figures/counterfactual-diagnostic-tool-v1/counterfactual-diagnostic-tool.png)
+![A sandbox adapter feeds a replay toolbox, which compares evidence and saves reproducible cases in an incident library.](../figures/replay/diagnostic-tool-v1/counterfactual-diagnostic-tool.png)
 
 The interface requires state reset or restoration, tool input/output interception,
 and trusted event capture. Portability is a design goal for compatible sandboxes,
@@ -29,7 +29,7 @@ remaining uncertainty instead of reducing the evidence to task pass/fail.
 
 ### README link and outside reads
 
-![The observed upstream-link pattern is compared with a proposed replay where only the README link is hidden.](../figures/incident-counterfactual-replays-v1/01-upstream-link-replay.png)
+![The observed upstream-link pattern is compared with a proposed replay where only the README link is hidden.](../figures/replay/incident-replays-v1/01-upstream-link-replay.png)
 
 The [link study](link-study-results.md) observed early reads of an excluded
 upstream repository after its URL appeared in the README. A new checkpoint replay
@@ -42,7 +42,7 @@ remain authorized.
 
 ### Previous run's answer archive
 
-![An observed copied answer is contrasted with a proposed replay withholding only the cached flag from the response.](../figures/incident-counterfactual-replays-v1/02-answer-archive-replay.png)
+![An observed copied answer is contrasted with a proposed replay withholding only the cached flag from the response.](../figures/replay/incident-replays-v1/02-answer-archive-replay.png)
 
 In [link-study run-0022](../results/link-study-v1/run-0022/transcript.jsonl), a
 challenge failure was followed by an excluded archive read and an accepted cached
@@ -53,7 +53,7 @@ dependence on the answer, not prevention of the original scope crossing.
 
 ### Counter signaling
 
-![A local reconstruction of the CA5 counter example compares the delivered increment with a replay omitting only that increment.](../figures/ca5-incident-replay-v1/ca5-counterfactual-replay.png)
+![A local reconstruction of the CA5 counter example compares the delivered increment with a replay omitting only that increment.](../figures/replay/ca5-v1/ca5-counterfactual-replay.png)
 
 The user-supplied *Encoded Coordination on the Open Web* account describes a
 counter named CA5 signaling California in round five. In the proposed local
@@ -64,7 +64,7 @@ the reported mechanism; it is not a replay of the historical public service.
 
 ## Sandbox components and incident library
 
-![Sandbox components with numbered proposals for contracts, shared state, replay, provenance, and an incident library.](../figures/sandbox-proposals-overview-v1/sandbox-proposals.png)
+![Sandbox components with numbered proposals for contracts, shared state, replay, provenance, and an incident library.](../figures/replay/sandbox-proposals-v1/sandbox-proposals.png)
 
 Store each case with its initial state, policy, exact trace, intervention, expected
 effects, legitimate-use controls, and source hashes. Preserve failures as
@@ -86,9 +86,9 @@ The cartoons use built-in image generation and depict proposed mechanisms,
 except where a panel explicitly identifies an observed historical trace.
 The prompts are preserved with each asset:
 
-- [Toolbox architecture prompt](../figures/counterfactual-diagnostic-tool-v1/prompt.txt).
-- [Incident replay prompts and correction](../figures/incident-counterfactual-replays-v1/prompts.json).
-- [CA5 reconstruction prompt](../figures/ca5-incident-replay-v1/prompt.txt).
-- [Sandbox overview prompt](../figures/sandbox-proposals-overview-v1/prompt.txt),
-  [routing correction](../figures/sandbox-proposals-overview-v1/correction-prompt.txt),
-  and [connection correction](../figures/sandbox-proposals-overview-v1/connection-prompt.txt).
+- [Toolbox architecture prompt](../figures/replay/diagnostic-tool-v1/prompt.txt).
+- [Incident replay prompts and correction](../figures/replay/incident-replays-v1/prompts.json).
+- [CA5 reconstruction prompt](../figures/replay/ca5-v1/prompt.txt).
+- [Sandbox overview prompt](../figures/replay/sandbox-proposals-v1/prompt.txt),
+  [routing correction](../figures/replay/sandbox-proposals-v1/correction-prompt.txt),
+  and [connection correction](../figures/replay/sandbox-proposals-v1/connection-prompt.txt).

@@ -1,8 +1,8 @@
 {
   "mode": "built-in image_gen",
   "use_case": "infographic-diagram",
-  "output": "figures/scorer-explained-cartoon.png",
-  "generation_prompt": "figures/scorer-explained-cartoon.prompt.txt",
+  "output": "figures/experiments/scope-levels/scorer/scorer-explained-cartoon.png",
+  "generation_prompt": "figures/experiments/scope-levels/scorer/scorer-explained-cartoon.prompt.txt",
   "architecture_sources": [
     "src/containment_extension/lab.py",
     "src/containment_extension/experiment.py",

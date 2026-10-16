@@ -21,7 +21,7 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import Ellipse, FancyArrowPatch, FancyBboxPatch, Polygon, Rectangle
 
 ROOT = Path(__file__).resolve().parents[1]
-OUT = ROOT / "figures/incident-optimization-overview-v1"
+OUT = ROOT / "figures/optimization/overview-v1"
 TITLE = "Incident-aware policy optimization"
 C = {
     "ink": "#111111", "blue": "#365E9E", "arrow_blue": "#4679BC",

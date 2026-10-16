@@ -2,11 +2,11 @@
   "mode": "built-in image_gen",
   "use_case": "infographic-diagram",
   "status": "proposed architecture; no new agent trials",
-  "output": "figures/meta-generator-workflow-cartoon.png",
+  "output": "figures/optimization/meta-generator/meta-generator-workflow-cartoon.png",
   "prompts": [
-    "figures/meta-generator-workflow-cartoon.prompt.txt",
-    "figures/meta-generator-workflow-cartoon.edit-prompt.txt",
-    "figures/meta-generator-workflow-cartoon.routing-prompt.txt"
+    "figures/optimization/meta-generator/meta-generator-workflow-cartoon.prompt.txt",
+    "figures/optimization/meta-generator/meta-generator-workflow-cartoon.edit-prompt.txt",
+    "figures/optimization/meta-generator/meta-generator-workflow-cartoon.routing-prompt.txt"
   ],
   "design_notes": "docs/meta-instruction-generator.md",
   "existing_infrastructure": [
