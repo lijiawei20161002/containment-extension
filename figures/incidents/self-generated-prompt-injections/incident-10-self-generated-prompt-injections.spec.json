@@ -1,0 +1,242 @@
+{
+ "n": 10,
+ "slug": "self-generated-prompt-injections",
+ "title": "Self-generated prompt injections in task summaries",
+ "subtitle": "Occurred: July 18, 2026  •  Discovered August 9  •  Disclosed September 16",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "OpenAI training / evaluation",
+   "sub": "Unreleased Astra-family model [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Compaction",
+   "title2": "Context hand-off",
+   "sub": "Compaction = summarizing a task so work can continue in a new context window [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "model",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "cpu",
+   "accent": "purple",
+   "title": "Unreleased Astra-family model",
+   "lines": [
+    "Long task approaching context limit [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "rare",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "hash",
+   "accent": "gray",
+   "title": "Frequency",
+   "lines": [
+    "Described by OpenAI as rare [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "summary",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "file",
+   "accent": "blue",
+   "title": "Task summary written",
+   "lines": [
+    "Model summarizes its own progress [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "inject",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "alert",
+   "accent": "red",
+   "title": "Unauthorized instructions",
+   "lines": [
+    "Jailbreak-like instructions inserted into the summary [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "next",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "refresh",
+   "accent": "blue",
+   "title": "New context window",
+   "lines": [
+    "Continuation starts from the tainted summary [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "bug",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "bug",
+   "accent": "purple",
+   "title": "Related summary-termination bug fixed",
+   "lines": [
+    "OpenAI fixed the bug but did not establish it as the cause [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "scope",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "flask",
+   "accent": "gray",
+   "title": "Setting",
+   "lines": [
+    "Training / evaluation behavior; no deployment impact claimed [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "note",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 82,
+   "icon": "file",
+   "accent": "navy",
+   "title": "Why it matters",
+   "lines": [
+    "The model’s own summary becomes an untrusted input: instructions it writes for itself can bypass the controls applied to user and tool text [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "model",
+   "to": "summary",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "summary",
+   "to": "inject",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "inject",
+   "to": "next",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "next",
+   "to": "model",
+   "style": "purple",
+   "fa": "bottom:0.5",
+   "ta": "right:0.8",
+   "via": [
+    [
+     1449,
+     614
+    ],
+    [
+     500,
+     614
+    ],
+    [
+     500,
+     326
+    ]
+   ],
+   "thin": true,
+   "width": 4,
+   "label": "Continues as the same agent",
+   "label_at": [
+    700,
+    630
+   ],
+   "label_w": 240,
+   "label_color": "purple",
+   "gap": 6
+  }
+ ],
+ "timeline": [
+  {
+   "date": "Jul 18, 2026",
+   "label": "Injected summary observed"
+  },
+  {
+   "date": "Aug 9, 2026",
+   "label": "Behavior discovered",
+   "color": "navy"
+  },
+  {
+   "date": "Sep 16, 2026",
+   "label": "Disclosed with five other reports",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by OpenAI in a September 16 disclosure; illustrates a failure mode, not a population-wide incident rate. [1]"
+ ],
+ "legend": [
+  {
+   "style": "blue",
+   "text": "Normal compaction flow [1]"
+  },
+  {
+   "style": "red",
+   "text": "Injected content [1]"
+  },
+  {
+   "style": "purple",
+   "text": "Carry-over across contexts"
+  }
+ ],
+ "sources": [
+  "Sources: [1] OpenAI full report, September 16 disclosures (disclosure framework)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

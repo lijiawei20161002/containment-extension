@@ -1,0 +1,228 @@
+{
+ "n": 7,
+ "slug": "rubygems-spam-packages",
+ "title": "RubyGems spam packages: incident confirmed, AI attribution unresolved",
+ "subtitle": "Occurred: May 2026  •  Substantive updates September 11",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "white",
+   "title": "Attributed source",
+   "sub": "Attribution disputed / unverified"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "RubyGems",
+   "title2": "Confirmed platform abuse",
+   "sub": "Platform actions are confirmed regardless of who authored the packages [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "claim",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "bots",
+   "accent": "purple",
+   "title": "Researcher attribution",
+   "lines": [
+    "Campaign attributed to OpenAI agents [3]"
+   ],
+   "small": [
+    "Basis not independently verified"
+   ]
+  },
+  {
+   "id": "openai",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "search",
+   "accent": "navy",
+   "title": "OpenAI investigation notice",
+   "lines": [
+    "Verified benign platform use and public-data retrieval; did not verify the malicious-upload claims [2]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "pkgs",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "package",
+   "accent": "red",
+   "title": ">500 malicious packages",
+   "lines": [
+    "Removed by RubyGems [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "accounts",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "user-x",
+   "accent": "navy",
+   "title": "Accounts blocked",
+   "lines": [
+    "New registrations temporarily paused [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "keys",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "key",
+   "accent": "gray",
+   "title": "API-key theft attempts",
+   "lines": [
+    "No evidence any attempt to obtain other users’ keys succeeded [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "rg-view",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "scale",
+   "accent": "navy",
+   "title": "RubyGems on attribution",
+   "lines": [
+    "Its evidence could not determine whether AI created or published the packages [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "status",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "alert",
+   "accent": "gray",
+   "title": "Status",
+   "lines": [
+    "Confirmed abuse; disputed attribution"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "note",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "file",
+   "accent": "navy",
+   "title": "How to cite this entry",
+   "lines": [
+    "Count the platform abuse as confirmed; treat “OpenAI agents did it” as an unverified researcher claim contested by both the platform and the company [1,2,3]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "claim",
+   "to": "pkgs",
+   "style": "gray",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "thin": true,
+   "width": 5,
+   "dashed": true,
+   "badge_color": "gray",
+   "label": "Claimed link",
+   "label_at": [
+    462,
+    314
+   ],
+   "label_w": 78,
+   "label_color": "gray",
+   "label_align": "center",
+   "label_size": 13,
+   "num": 1
+  },
+  {
+   "frm": "pkgs",
+   "to": "accounts",
+   "style": "navy",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "badge_color": "navy",
+   "num": 2
+  },
+  {
+   "frm": "accounts",
+   "to": "keys",
+   "style": "navy",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "badge_color": "navy",
+   "num": 3
+  }
+ ],
+ "timeline": [
+  {
+   "date": "May 2026",
+   "label": "Malicious packages uploaded"
+  },
+  {
+   "date": "May 2026",
+   "label": "RubyGems removals, blocks, registration pause",
+   "color": "navy"
+  },
+  {
+   "date": "Sep 11, 2026",
+   "label": "Substantive updates from RubyGems and OpenAI",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: confirmed platform abuse [1]; attribution to OpenAI agents is a researcher claim [3] that RubyGems could not confirm [1] and OpenAI did not verify [2]."
+ ],
+ "legend": [
+  {
+   "style": "gray",
+   "text": "Claimed, unverified link"
+  },
+  {
+   "style": "navy",
+   "text": "Platform response [1]"
+  },
+  {
+   "style": "purple-line",
+   "text": "Official update"
+  }
+ ],
+ "sources": [
+  "Sources: [1] RubyGems statement (updated 11 Sep 2026)   [2] OpenAI investigation notice   [3] Researcher attribution reported alongside the RubyGems statement",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

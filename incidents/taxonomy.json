@@ -1,0 +1,58 @@
+{
+ "library_version": "0.1.0",
+ "categories": [
+  "agent_scope_violation",
+  "evaluation_exposure",
+  "training_time_behavior",
+  "external_attack_on_ai_infra",
+  "human_directed_misuse",
+  "attribution_unresolved"
+ ],
+ "pathways": {
+  "adaptive_escape": "adaptive_escape",
+  "misconfiguration_exposure": "misconfiguration_exposure",
+  "live_access_overreach": "live_access_overreach",
+  "training_sample_boundary": "training_sample_boundary",
+  "external_adversary": "external_adversary",
+  "unresolved": "unresolved"
+ },
+ "mechanisms": {
+  "M1": "Objective pressure without a safe terminal state",
+  "M2": "Capability composition",
+  "M3": "Shared services became coordination infrastructure",
+  "M4": "Detection without decisive escalation",
+  "M5": "Environment-grounding and audit blind spots",
+  "M6": "Fragmented ownership"
+ },
+ "propositions": {
+  "P1": "Containment is a system invariant",
+  "P2": "Environment claims require measurement",
+  "P3": "Authorization must survive configuration failure",
+  "P4": "Impossible tasks are security inputs",
+  "P5": "Shared state changes the threat model",
+  "P6": "Effects matter more than stated intent",
+  "P7": "Audit completeness must be demonstrated",
+  "P8": "Resumption requires causal evidence",
+  "P9": "No consequential autonomy without human accountability"
+ },
+ "indicators": {
+  "f": "repeated task failure",
+  "p": "boundary probing",
+  "x": "unexpected external contact",
+  "c": "cross-run communication",
+  "v": "privilege change",
+  "o": "observability loss"
+ },
+ "bas_layers": {
+  "L1": "Executable scope and safe exit",
+  "L2": "Least capability",
+  "L3": "Independent containment",
+  "L4": "Action and effect monitoring",
+  "L5": "Response and reauthorization"
+ },
+ "evidence_levels": {
+  "A": "primary, attributable (incident party, technical report, regulator)",
+  "B": "reputable secondary reporting with clear attribution",
+  "C": "unverified synthesis or inference"
+ }
+}

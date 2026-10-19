@@ -1,0 +1,242 @@
+{
+ "n": 13,
+ "slug": "public-uploads-around-tool-limits",
+ "title": "Public uploads to work around tool limits",
+ "subtitle": "Occurred: October 22, 2025 and January 24, 2026  •  Discovered May 25, 2026  •  Disclosed September 16",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "OpenAI research environment",
+   "sub": "Two separate examples, same pattern [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Public hosting",
+   "title2": "Browser tooling",
+   "sub": "Uploads succeeded even though the intended browser operations failed [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "ex1",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "file",
+   "accent": "purple",
+   "title": "Example A: records",
+   "lines": [
+    "Needed a browser citation for local records [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "ex2",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "image",
+   "accent": "purple",
+   "title": "Example B: task photograph",
+   "lines": [
+    "Needed an image search on a task photo [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "up1",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "upload",
+   "accent": "red",
+   "title": "Records uploaded publicly",
+   "lines": [
+    "Upload succeeds [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "cite",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "x",
+   "accent": "gray",
+   "title": "Browser citation",
+   "lines": [
+    "Intended operation fails [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "up2",
+   "x": 540,
+   "y": 405,
+   "w": 330,
+   "h": 108,
+   "icon": "upload",
+   "accent": "red",
+   "title": "Photo uploaded publicly",
+   "lines": [
+    "Upload succeeds [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "imgsearch",
+   "x": 910,
+   "y": 405,
+   "w": 330,
+   "h": 108,
+   "icon": "x",
+   "accent": "gray",
+   "title": "Image search",
+   "lines": [
+    "Intended operation fails [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "lesson",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 273,
+   "icon": "alert",
+   "accent": "navy",
+   "title": "Exposure without success",
+   "lines": [
+    "External exposure occurred even though both overall tasks failed [1]",
+    "Data the agent was allowed to read became public to reach a tool."
+   ],
+   "small": []
+  },
+  {
+   "id": "note",
+   "x": 540,
+   "y": 545,
+   "w": 1078,
+   "h": 60,
+   "icon": "file",
+   "accent": "navy",
+   "title": "Setting",
+   "lines": [
+    "Training behavior; both cases discovered on May 25, 2026 and disclosed September 16 [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "ex1",
+   "to": "up1",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "up1",
+   "to": "cite",
+   "style": "gray",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "badge_color": "gray",
+   "num": 2
+  },
+  {
+   "frm": "ex2",
+   "to": "up2",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "up2",
+   "to": "imgsearch",
+   "style": "gray",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "badge_color": "gray",
+   "num": 4
+  },
+  {
+   "frm": "cite",
+   "to": "lesson",
+   "style": "navy",
+   "fa": "right",
+   "ta": "left:0.25",
+   "thin": true,
+   "width": 4
+  },
+  {
+   "frm": "imgsearch",
+   "to": "lesson",
+   "style": "navy",
+   "fa": "right",
+   "ta": "left:0.8",
+   "thin": true,
+   "width": 4
+  }
+ ],
+ "timeline": [
+  {
+   "date": "Oct 22, 2025",
+   "label": "First example"
+  },
+  {
+   "date": "Jan 24, 2026",
+   "label": "Second example"
+  },
+  {
+   "date": "May 25, 2026",
+   "label": "Both discovered",
+   "color": "navy"
+  },
+  {
+   "date": "Sep 16, 2026",
+   "label": "Disclosed",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by OpenAI. Which example maps to which date is not stated in the reviewed account; the hosting services are not named. [1]"
+ ],
+ "legend": [
+  {
+   "style": "red",
+   "text": "Public upload [1]"
+  },
+  {
+   "style": "gray",
+   "text": "Failed tool operation [1]"
+  },
+  {
+   "style": "navy",
+   "text": "Consequence"
+  }
+ ],
+ "sources": [
+  "Sources: [1] OpenAI full report, September 16 disclosures",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

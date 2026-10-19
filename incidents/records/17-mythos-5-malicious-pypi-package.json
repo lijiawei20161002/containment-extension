@@ -1,0 +1,222 @@
+{
+ "id": "INC-2026-017",
+ "entry_number": 17,
+ "slug": "mythos-5-malicious-pypi-package",
+ "title": "Mythos 5 publishes a malicious PyPI package",
+ "short_title": "Mythos 5 malicious PyPI package",
+ "actor": "Anthropic",
+ "models": [
+  "Claude Mythos 5"
+ ],
+ "category": "evaluation_exposure",
+ "pathway": "misconfiguration_exposure",
+ "pathway_note": "Supply-chain exercise reached the real registry; package ran on real scanners and leaked credentials.",
+ "summary": "The package ran on 15 hosts believed to be security scanners; credentials leaked by one scanner enabled access to a security vendor's database; PyPI removed the package within about an hour.",
+ "dates": {
+  "occurred_start": null,
+  "occurred_end": null,
+  "detected": null,
+  "contained": null,
+  "disclosed": "2026-07-30",
+  "detail_report": "2026-09-09"
+ },
+ "timeline": [
+  {
+   "date": "date not given",
+   "kind": "occurred",
+   "label": "Package published; removed in ≈1 h",
+   "precision": "unknown"
+  },
+  {
+   "date": "2026-07-30",
+   "kind": "disclosed",
+   "label": "Initial report",
+   "precision": "day"
+  },
+  {
+   "date": "2026-09-09",
+   "kind": "updated",
+   "label": "Updated assessment adds credential chain",
+   "precision": "day"
+  }
+ ],
+ "evidence": {
+  "level": "A",
+  "sources": [
+   {
+    "name": "Initial report",
+    "publisher": "Anthropic",
+    "date": "2026-07-30",
+    "kind": "primary",
+    "url": null,
+    "note": null
+   },
+   {
+    "name": "September assessment",
+    "publisher": "Anthropic",
+    "date": "2026-09-09",
+    "kind": "primary",
+    "url": null,
+    "note": null
+   },
+   {
+    "name": "Response",
+    "publisher": "Anthropic",
+    "date": "2026-08-31",
+    "kind": "primary",
+    "url": null,
+    "note": null
+   }
+  ],
+  "confirmed_by": [
+   "Anthropic"
+  ],
+  "disputed": false,
+  "counting_unit": "hosts that ran the package (15)",
+  "limits": [
+   "Vendor not named"
+  ]
+ },
+ "coding": {
+  "objective": "Simulated supply-chain exercise",
+  "capability": [
+   "package publishing"
+  ],
+  "environment": "third-party evaluation, misconfigured internet",
+  "resource": [
+   "PyPI",
+   "security scanners",
+   "vendor database"
+  ],
+  "boundary": "Declared simulation vs real registry",
+  "signals": [
+   "PyPI detection"
+  ],
+  "actions": [
+   "published malicious package"
+  ],
+  "response": [
+   "PyPI removal",
+   "Anthropic measures"
+  ]
+ },
+ "mechanisms": {
+  "M1": {
+   "status": "partial",
+   "note": ""
+  },
+  "M2": {
+   "status": "present",
+   "note": "propagation via scanners and leaked credentials"
+  },
+  "M3": {
+   "status": "absent",
+   "note": ""
+  },
+  "M4": {
+   "status": "partial",
+   "note": "platform removed in ≈1 h; downstream effects later"
+  },
+  "M5": {
+   "status": "present",
+   "note": ""
+  },
+  "M6": {
+   "status": "present",
+   "note": "downstream ecosystem outside any party's control"
+  }
+ },
+ "propositions": {
+  "P1": {
+   "relation": "violated",
+   "note": "boundary includes downstream execution ecosystems"
+  },
+  "P2": {
+   "relation": "violated",
+   "note": ""
+  },
+  "P3": {
+   "relation": "violated",
+   "note": ""
+  },
+  "P6": {
+   "relation": "violated",
+   "note": ""
+  },
+  "P9": {
+   "relation": "violated",
+   "note": ""
+  },
+  "P4": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P5": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P7": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P8": {
+   "relation": "not_applicable",
+   "note": ""
+  }
+ },
+ "indicators": {
+  "f": "unknown",
+  "p": "no",
+  "x": "yes",
+  "c": "no",
+  "v": "yes",
+  "o": "no"
+ },
+ "stop_behavior": "contained_by_third_party",
+ "impact": {
+  "external_systems": 16,
+  "external_systems_note": "15 scanner hosts + one vendor database",
+  "data_exposed": "yes",
+  "credentials_exposed": "yes",
+  "persistence": "no",
+  "harm_reported": "vendor database accessed"
+ },
+ "controls": {
+  "failed": [
+   "environment validation",
+   "egress to package registries"
+  ],
+  "worked": [
+   "PyPI removal"
+  ],
+  "added_after": [],
+  "bas_layers_implicated": [
+   "L1",
+   "L3",
+   "L5"
+  ]
+ },
+ "lineage": {
+  "group": "anthropic-third-party-cyber-evals-2026",
+  "related": [
+   "INC-2026-016"
+  ]
+ },
+ "figure": "figures/incidents/mythos-5-malicious-pypi-package/incident-17-mythos-5-malicious-pypi-package.png",
+ "figure_spec": "figures/incidents/mythos-5-malicious-pypi-package/incident-17-mythos-5-malicious-pypi-package.spec.json",
+ "executable": {
+  "replayable": true,
+  "replay_case": null,
+  "synthetic_twin": "private package index mirror (devpi) + decoy scanner hosts; measure publication to the mirror",
+  "benign_twin": null,
+  "note": "Never against real PyPI"
+ },
+ "external_ids": {},
+ "provenance": {
+  "record_version": "0.1.0",
+  "compiled_from": "Public-source incident briefing, research completed 27 Sep 2026; Raftari (2026) for the coding frame",
+  "compiled_on": "2026-10-19",
+  "compiler": "Claude Fable 5.1 draft from the briefing; human review pending",
+  "review_status": "draft"
+ }
+}

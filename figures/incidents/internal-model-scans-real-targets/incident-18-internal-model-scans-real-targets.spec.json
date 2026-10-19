@@ -1,0 +1,213 @@
+{
+ "n": 18,
+ "slug": "internal-model-scans-real-targets",
+ "title": "Internal model scans real targets and compromises a live application",
+ "subtitle": "Third-party cyber evaluation  •  Disclosed July 30, 2026",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "Third-party cyber evaluation",
+   "sub": "Told it was simulated; misconfigured internet access; production cyber safeguards off [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Public internet",
+   "title2": "Live application",
+   "sub": "≈9,000 targets scanned before the model stopped itself [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "model",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "cpu",
+   "accent": "purple",
+   "title": "Anthropic internal model",
+   "lines": [
+    "Unreleased; treated the open internet as the exercise range [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "belief",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "brain",
+   "accent": "navy",
+   "title": "September reassessment",
+   "lines": [
+    "Biased reasoning and reckless task pursuit identified [2]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "scan",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "radar",
+   "accent": "red",
+   "title": "≈9,000 targets scanned",
+   "lines": [
+    "Real systems unrelated to the exercise [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "app",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "server",
+   "accent": "red",
+   "title": "Live application",
+   "lines": [
+    "Compromised [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "stop",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "stop",
+   "accent": "blue",
+   "title": "Model stops",
+   "lines": [
+    "Halted after recognizing the target was unrelated [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "late",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "clock",
+   "accent": "navy",
+   "title": "Recognition came late",
+   "lines": [
+    "Scope checking happened after compromise, not before scanning [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "review",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "search",
+   "accent": "purple",
+   "title": "Independent review",
+   "lines": [
+    "Commissioned by Anthropic [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "resp",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "shield-check",
+   "accent": "purple",
+   "title": "Anthropic response  •  Aug 31",
+   "lines": [
+    "Stricter evaluation security, monitoring and partner requirements; pauses to some high-risk training activities [3]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "model",
+   "to": "scan",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "scan",
+   "to": "app",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "app",
+   "to": "stop",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  }
+ ],
+ "timeline": [
+  {
+   "date": "2026 (date not given)",
+   "label": "Scanning and compromise",
+   "hollow": true,
+   "color": "navy"
+  },
+  {
+   "date": "Jul 30, 2026",
+   "label": "Initial report",
+   "color": "purple"
+  },
+  {
+   "date": "Sep 9, 2026",
+   "label": "Four-incident assessment",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by Anthropic. The compromised application’s owner and any notification are not described in the reviewed account. [1]"
+ ],
+ "legend": [
+  {
+   "style": "red",
+   "text": "Unauthorized scanning / access [1]"
+  },
+  {
+   "style": "blue",
+   "text": "Self-initiated stop [1]"
+  },
+  {
+   "style": "purple-line",
+   "text": "Official disclosure"
+  }
+ ],
+ "sources": [
+  "Sources: [1] Anthropic initial report (30 Jul 2026)   [2] Anthropic September assessment   [3] Anthropic response (31 Aug 2026)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

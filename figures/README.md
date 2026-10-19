@@ -50,7 +50,32 @@ figures/
 │   └── sandbox-proposals-v1/
 └── incidents/
     ├── medicare/
-    └── dsewiki/
+    ├── dsewiki/
+    ├── hugging-face-infrastructure-compromise/
+    ├── dns-route-external-chatbot/
+    ├── user-images-external-hosting/
+    ├── github-token-published-proof-task/
+    ├── rubygems-spam-packages/
+    ├── public-data-retrieval-vulnerability-probes/
+    ├── us-government-website-interactions/
+    ├── self-generated-prompt-injections/
+    ├── instructions-to-conceal-mistakes/
+    ├── exposed-api-key-fabricated-data/
+    ├── public-uploads-around-tool-limits/
+    ├── artifactory-unauthorized-communication/
+    ├── public-hosting-local-workbook/
+    ├── opus-4-7-targets-real-company/
+    ├── mythos-5-malicious-pypi-package/
+    ├── internal-model-scans-real-targets/
+    ├── early-opus-4-6-incident-missed/
+    ├── aisi-live-social-engineering/
+    ├── gemini-accesses-three-companies/
+    ├── meta-model-exploits-third-party-service/
+    ├── metr-exposed-dashboard-api-key-theft/
+    ├── metr-exposed-evaluation-data-endpoint/
+    ├── human-directed-misuse-of-claude/
+    ├── autonomous-attacks-online-retailers/
+    └── analysis/
 ```
 
 ## Browse the figures
@@ -87,6 +112,31 @@ The folder links include supporting prompts and metadata where available.
 | Replay | [Sandbox proposals](replay/sandbox-proposals-v1/sandbox-proposals.png) | [Sandbox folder](replay/sandbox-proposals-v1/) |
 | Incidents | [Medicare statistics portal](incidents/medicare/slide-3-medicare-statistics-portal-incident.png) | [Medicare folder](incidents/medicare/) |
 | Incidents | [DSEwiki message board](incidents/dsewiki/slide-6-dsewiki-unauthorized-message-board-icons-refined.png) | [DSEwiki folder](incidents/dsewiki/) |
+| Incidents | [1. Hugging Face and internal research infrastructure compromise](incidents/hugging-face-infrastructure-compromise/incident-01-hugging-face-infrastructure-compromise.png) | [Folder](incidents/hugging-face-infrastructure-compromise/) (HTML source + spec JSON) |
+| Incidents | [2. DNS route to an external chatbot after security hardening](incidents/dns-route-external-chatbot/incident-02-dns-route-external-chatbot.png) | [Folder](incidents/dns-route-external-chatbot/) (HTML source + spec JSON) |
+| Incidents | [3. User images posted to external hosting services](incidents/user-images-external-hosting/incident-03-user-images-external-hosting.png) | [Folder](incidents/user-images-external-hosting/) (HTML source + spec JSON) |
+| Incidents | [4. Researcher’s GitHub token published during a proof task](incidents/github-token-published-proof-task/incident-04-github-token-published-proof-task.png) | [Folder](incidents/github-token-published-proof-task/) (HTML source + spec JSON) |
+| Incidents | [7. RubyGems spam packages: incident confirmed, AI attribution unresolved](incidents/rubygems-spam-packages/incident-07-rubygems-spam-packages.png) | [Folder](incidents/rubygems-spam-packages/) (HTML source + spec JSON) |
+| Incidents | [8. Public-data retrieval escalated into vulnerability probes](incidents/public-data-retrieval-vulnerability-probes/incident-08-public-data-retrieval-vulnerability-probes.png) | [Folder](incidents/public-data-retrieval-vulnerability-probes/) (HTML source + spec JSON) |
+| Incidents | [9. U.S. government website interactions](incidents/us-government-website-interactions/incident-09-us-government-website-interactions.png) | [Folder](incidents/us-government-website-interactions/) (HTML source + spec JSON) |
+| Incidents | [10. Self-generated prompt injections in task summaries](incidents/self-generated-prompt-injections/incident-10-self-generated-prompt-injections.png) | [Folder](incidents/self-generated-prompt-injections/) (HTML source + spec JSON) |
+| Incidents | [11. Instructions to conceal mistakes across context changes](incidents/instructions-to-conceal-mistakes/incident-11-instructions-to-conceal-mistakes.png) | [Folder](incidents/instructions-to-conceal-mistakes/) (HTML source + spec JSON) |
+| Incidents | [12. Exposed API key use and fabricated data](incidents/exposed-api-key-fabricated-data/incident-12-exposed-api-key-fabricated-data.png) | [Folder](incidents/exposed-api-key-fabricated-data/) (HTML source + spec JSON) |
+| Incidents | [13. Public uploads to work around tool limits](incidents/public-uploads-around-tool-limits/incident-13-public-uploads-around-tool-limits.png) | [Folder](incidents/public-uploads-around-tool-limits/) (HTML source + spec JSON) |
+| Incidents | [14. Internal repository used for unauthorized communication](incidents/artifactory-unauthorized-communication/incident-14-artifactory-unauthorized-communication.png) | [Folder](incidents/artifactory-unauthorized-communication/) (HTML source + spec JSON) |
+| Incidents | [15. Public hosting used to share a local workbook](incidents/public-hosting-local-workbook/incident-15-public-hosting-local-workbook.png) | [Folder](incidents/public-hosting-local-workbook/) (HTML source + spec JSON) |
+| Incidents | [16. Opus 4.7 targets a real company during a cyber evaluation](incidents/opus-4-7-targets-real-company/incident-16-opus-4-7-targets-real-company.png) | [Folder](incidents/opus-4-7-targets-real-company/) (HTML source + spec JSON) |
+| Incidents | [17. Mythos 5 publishes a malicious PyPI package](incidents/mythos-5-malicious-pypi-package/incident-17-mythos-5-malicious-pypi-package.png) | [Folder](incidents/mythos-5-malicious-pypi-package/) (HTML source + spec JSON) |
+| Incidents | [18. Internal model scans real targets and compromises a live application](incidents/internal-model-scans-real-targets/incident-18-internal-model-scans-real-targets.png) | [Folder](incidents/internal-model-scans-real-targets/) (HTML source + spec JSON) |
+| Incidents | [19. Early Opus 4.6 incident missed in the first review](incidents/early-opus-4-6-incident-missed/incident-19-early-opus-4-6-incident-missed.png) | [Folder](incidents/early-opus-4-6-incident-missed/) (HTML source + spec JSON) |
+| Incidents | [20. AISI: live social engineering and attempted software compromise](incidents/aisi-live-social-engineering/incident-20-aisi-live-social-engineering.png) | [Folder](incidents/aisi-live-social-engineering/) (HTML source + spec JSON) |
+| Incidents | [21. Gemini accesses three real companies during testing](incidents/gemini-accesses-three-companies/incident-21-gemini-accesses-three-companies.png) | [Folder](incidents/gemini-accesses-three-companies/) (HTML source + spec JSON) |
+| Incidents | [22. Meta model exploits a third-party service](incidents/meta-model-exploits-third-party-service/incident-22-meta-model-exploits-third-party-service.png) | [Folder](incidents/meta-model-exploits-third-party-service/) (HTML source + spec JSON) |
+| Incidents | [23. METR: exposed agent dashboard leads to API-key theft](incidents/metr-exposed-dashboard-api-key-theft/incident-23-metr-exposed-dashboard-api-key-theft.png) | [Folder](incidents/metr-exposed-dashboard-api-key-theft/) (HTML source + spec JSON) |
+| Incidents | [24. METR: external probing and an exposed evaluation-data endpoint](incidents/metr-exposed-evaluation-data-endpoint/incident-24-metr-exposed-evaluation-data-endpoint.png) | [Folder](incidents/metr-exposed-evaluation-data-endpoint/) (HTML source + spec JSON) |
+| Incidents | [25. Human-directed misuse of Claude across multiple harm areas](incidents/human-directed-misuse-of-claude/incident-25-human-directed-misuse-of-claude.png) | [Folder](incidents/human-directed-misuse-of-claude/) (HTML source + spec JSON) |
+| Incidents | [26. Autonomous attacks on online retailers and payment data](incidents/autonomous-attacks-online-retailers/incident-26-autonomous-attacks-online-retailers.png) | [Folder](incidents/autonomous-attacks-online-retailers/) (HTML source + spec JSON) |
+| Incidents | [Cross-case analysis: pathways](incidents/analysis/pathways-bar.png), [mechanisms](incidents/analysis/mechanism-heatmap.png), [propositions](incidents/analysis/proposition-heatmap.png), [indicators](incidents/analysis/indicator-matrix.png), [latency](incidents/analysis/latency-dumbbell.png), [stop behaviour](incidents/analysis/stop-behavior-bar.png) | [Analysis folder](incidents/analysis/) (PNG + SVG + summary.json) |
 
 ## Regenerating figures
 
@@ -103,6 +153,8 @@ Run these scripts from the repository root. Their output paths follow this layou
 | [draw_incident_optimization_overview_v2.py](../scripts/draw_incident_optimization_overview_v2.py) | `optimization/overview-v2/` |
 | [draw_incident_optimization_intuition.py](../scripts/draw_incident_optimization_intuition.py) | `optimization/intuition-v1/` |
 | [draw_incident_system_components.py](../scripts/draw_incident_system_components.py) | `optimization/system-components-v1/` |
+| [draw_incident_figures.py](../scripts/draw_incident_figures.py) | `incidents/<slug>/` for entries 1–4 and 7–26 of the 27 Sep 2026 incident briefing (specs in `scripts/incident_figure_specs.py`; renders HTML via headless Chrome; pass entry numbers or slugs to rebuild a subset) |
+| [analyze_incident_library.py](../scripts/analyze_incident_library.py) | `incidents/analysis/` (reads `incidents/records/`; run `build_incident_library.py` first) |
 
 ## Adding and maintaining assets
 

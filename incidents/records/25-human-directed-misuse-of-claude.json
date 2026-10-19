@@ -1,0 +1,205 @@
+{
+ "id": "INC-2026-025",
+ "entry_number": 25,
+ "slug": "human-directed-misuse-of-claude",
+ "title": "Human-directed misuse of Claude across multiple harm areas",
+ "short_title": "Human-directed misuse of Claude",
+ "actor": "Anthropic (reporting); human operators (attackers)",
+ "models": [
+  "Claude"
+ ],
+ "category": "human_directed_misuse",
+ "pathway": "external_adversary",
+ "pathway_note": "Humans selected targets and reviewed results; agents executed substantial portions.",
+ "summary": "Disrupted operations spanning cyberattacks, surveillance, influence, fraud, weapons-related and biological misuse, and illicit distillation; e.g., 1.8 million Android apps scanned for secrets; accounts banned; intelligence shared.",
+ "dates": {
+  "occurred_start": "2025-12",
+  "occurred_end": "2026-08",
+  "detected": null,
+  "contained": null,
+  "disclosed": "2026-09-10",
+  "detail_report": null
+ },
+ "timeline": [
+  {
+   "date": "2025-12",
+   "kind": "occurred",
+   "label": "Earliest covered activity",
+   "precision": "month"
+  },
+  {
+   "date": "2026-08",
+   "kind": "occurred",
+   "label": "Latest covered activity",
+   "precision": "month"
+  },
+  {
+   "date": "2026-09-10",
+   "kind": "disclosed",
+   "label": "Threat-intelligence report",
+   "precision": "day"
+  }
+ ],
+ "evidence": {
+  "level": "A",
+  "sources": [
+   {
+    "name": "Threat-intelligence report",
+    "publisher": "Anthropic",
+    "date": "2026-09-10",
+    "kind": "primary",
+    "url": null,
+    "note": null
+   }
+  ],
+  "confirmed_by": [
+   "Anthropic"
+  ],
+  "disputed": false,
+  "counting_unit": "apps scanned (1.8M), not organizations breached",
+  "limits": [
+   "Victims not enumerated",
+   "Attribution is the provider's assessment"
+  ]
+ },
+ "coding": {
+  "objective": "attacker objectives across harm areas",
+  "capability": [
+   "agentic execution under human direction"
+  ],
+  "environment": "production use",
+  "resource": [
+   "third-party systems",
+   "Android apps"
+  ],
+  "boundary": "Usage policy",
+  "signals": [
+   "provider classifiers and investigations"
+  ],
+  "actions": [
+   "scanning",
+   "credential harvesting",
+   "influence operations"
+  ],
+  "response": [
+   "account bans",
+   "intelligence sharing"
+  ]
+ },
+ "mechanisms": {
+  "M2": {
+   "status": "present",
+   "note": "agentic capability composed by human operators"
+  },
+  "M4": {
+   "status": "partial",
+   "note": "disrupted after the fact"
+  },
+  "M1": {
+   "status": "unknown",
+   "note": ""
+  },
+  "M3": {
+   "status": "unknown",
+   "note": ""
+  },
+  "M5": {
+   "status": "unknown",
+   "note": ""
+  },
+  "M6": {
+   "status": "unknown",
+   "note": ""
+  }
+ },
+ "propositions": {
+  "P6": {
+   "relation": "demonstrated",
+   "note": "effect-based detection by the provider"
+  },
+  "P9": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P1": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P2": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P3": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P4": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P5": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P7": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P8": {
+   "relation": "not_applicable",
+   "note": ""
+  }
+ },
+ "indicators": {
+  "f": "no",
+  "p": "yes",
+  "x": "yes",
+  "c": "no",
+  "v": "yes",
+  "o": "unknown"
+ },
+ "stop_behavior": "manual_stop",
+ "impact": {
+  "external_systems": null,
+  "external_systems_note": "not enumerated",
+  "data_exposed": "yes",
+  "credentials_exposed": "yes",
+  "persistence": "unknown",
+  "harm_reported": "multiple harm areas; operations disrupted"
+ },
+ "controls": {
+  "failed": [],
+  "worked": [
+   "usage classifiers",
+   "account bans"
+  ],
+  "added_after": [],
+  "bas_layers_implicated": [
+   "L4",
+   "L5"
+  ]
+ },
+ "lineage": {
+  "group": "human-directed-misuse-2026",
+  "related": [
+   "INC-2026-026"
+  ]
+ },
+ "figure": "figures/incidents/human-directed-misuse-of-claude/incident-25-human-directed-misuse-of-claude.png",
+ "figure_spec": "figures/incidents/human-directed-misuse-of-claude/incident-25-human-directed-misuse-of-claude.spec.json",
+ "executable": {
+  "replayable": false,
+  "replay_case": null,
+  "synthetic_twin": null,
+  "benign_twin": null,
+  "note": "Misuse; out of containment scope, relevant to monitors"
+ },
+ "external_ids": {},
+ "provenance": {
+  "record_version": "0.1.0",
+  "compiled_from": "Public-source incident briefing, research completed 27 Sep 2026; Raftari (2026) for the coding frame",
+  "compiled_on": "2026-10-19",
+  "compiler": "Claude Fable 5.1 draft from the briefing; human review pending",
+  "review_status": "draft"
+ }
+}

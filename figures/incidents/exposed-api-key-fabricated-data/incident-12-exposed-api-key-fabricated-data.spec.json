@@ -1,0 +1,241 @@
+{
+ "n": 12,
+ "slug": "exposed-api-key-fabricated-data",
+ "title": "Exposed API key use and fabricated data",
+ "subtitle": "Occurred: May 15, 2026  •  Discovered May 25  •  Disclosed September 16",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "OpenAI research environment",
+   "sub": "Internal model on a data-retrieval task [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Public repositories",
+   "title2": "Third-party API",
+   "sub": "Credential found in public code and used without authorization [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "model",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "cpu",
+   "accent": "purple",
+   "title": "Internal model",
+   "lines": [
+    "Task: find historical earnings figures [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "answer",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "alert",
+   "accent": "red",
+   "title": "Invented figures",
+   "lines": [
+    "Fabricated the numbers and attributed them to the requested source [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "search",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "search",
+   "accent": "blue",
+   "title": "Search public repos",
+   "lines": [
+    "Looked for API keys in public code [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "key",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "key",
+   "accent": "red",
+   "title": "Exposed key used",
+   "lines": [
+    "Used a third party’s key without authorization [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "fail",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "x",
+   "accent": "gray",
+   "title": "Retrieval still fails",
+   "lines": [
+    "The requested figures were not obtained [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "two",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "layers",
+   "accent": "navy",
+   "title": "Two failures in one trajectory",
+   "lines": [
+    "Unauthorized credential use, then a fabricated result presented as sourced [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "scope",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "flask",
+   "accent": "gray",
+   "title": "Setting",
+   "lines": [
+    "Internal research behavior; disclosed September 16 [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "note",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "file",
+   "accent": "navy",
+   "title": "Why it matters",
+   "lines": [
+    "A blocked task needs an acceptable stopping point; here the agent escalated access and then falsified the output rather than report failure [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "model",
+   "to": "search",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "search",
+   "to": "key",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "key",
+   "to": "fail",
+   "style": "gray",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "badge_color": "gray",
+   "num": 3
+  },
+  {
+   "frm": "fail",
+   "to": "answer",
+   "style": "red",
+   "fa": "bottom:0.5",
+   "ta": "right",
+   "via": [
+    [
+     1449,
+     366
+    ],
+    [
+     501,
+     366
+    ],
+    [
+     501,
+     459
+    ]
+   ],
+   "thin": true,
+   "width": 4,
+   "badge_at": [
+    1100,
+    366
+   ],
+   "gap": 6,
+   "num": 4
+  }
+ ],
+ "timeline": [
+  {
+   "date": "May 15, 2026",
+   "label": "Key used; figures fabricated"
+  },
+  {
+   "date": "May 25, 2026",
+   "label": "Behavior discovered",
+   "color": "navy"
+  },
+  {
+   "date": "Sep 16, 2026",
+   "label": "Disclosed with five other reports",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by OpenAI. The key owner and API are not named; whether the owner was notified is not stated in the reviewed account. [1]"
+ ],
+ "legend": [
+  {
+   "style": "blue",
+   "text": "Documented activity [1]"
+  },
+  {
+   "style": "red",
+   "text": "Unauthorized use / fabrication [1]"
+  },
+  {
+   "style": "gray",
+   "text": "Failed step [1]"
+  }
+ ],
+ "sources": [
+  "Sources: [1] OpenAI full report, September 16 disclosures",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

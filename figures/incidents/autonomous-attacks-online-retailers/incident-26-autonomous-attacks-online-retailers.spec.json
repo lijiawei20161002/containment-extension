@@ -1,0 +1,253 @@
+{
+ "n": 26,
+ "slug": "autonomous-attacks-online-retailers",
+ "title": "Autonomous attacks on online retailers and payment data",
+ "subtitle": "Observed from July 2026  •  Attack wave September 10–15  •  Gambit report September 22 (campaign ongoing)",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "red",
+   "title": "Human-directed campaign",
+   "sub": "Several open-source agent frameworks [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Online retailers",
+   "title2": "Payment data",
+   "sub": "Five-day wave; figures are the investigators’ findings, not an audited global total [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "ops",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "users",
+   "accent": "red",
+   "title": "Attackers",
+   "lines": [
+    "Directed the agents; selected targets [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "frameworks",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "bots",
+   "accent": "purple",
+   "title": "Open-source agent frameworks",
+   "lines": [
+    "Several used to run the intrusions [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "comp",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "cart",
+   "accent": "red",
+   "title": "≥27 companies compromised",
+   "lines": [
+    "To varying degrees in the Sep 10–15 wave [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "skim",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "card",
+   "accent": "red",
+   "title": "Live skimmers",
+   "lines": [
+    "Payment-card capture on compromised sites [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "records",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "database",
+   "accent": "red",
+   "title": ">600,000 card records",
+   "lines": [
+    "Taken from two companies [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "cleanup",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "trash",
+   "accent": "red",
+   "title": "Attacker-directed cleanup",
+   "lines": [
+    "Caused data loss at victims [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "issuers",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "building",
+   "accent": "purple",
+   "title": "Card issuers notified",
+   "lines": [
+    "With a partner; ongoing at publication [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "method",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "clipboard",
+   "accent": "navy",
+   "title": "Evidence handling",
+   "lines": [
+    "Gambit distinguished recovered data and verified compromises from less certain agent-log claims; interim investigation [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "ops",
+   "to": "frameworks",
+   "style": "red",
+   "fa": "bottom:0.5",
+   "ta": "top:0.5",
+   "badge_dx": -40,
+   "num": 1
+  },
+  {
+   "frm": "frameworks",
+   "to": "comp",
+   "style": "red",
+   "fa": "right",
+   "ta": "left:0.5",
+   "via": [
+    [
+     500,
+     459
+    ],
+    [
+     500,
+     294
+    ]
+   ],
+   "thin": true,
+   "width": 5,
+   "badge_at": [
+    500,
+    376
+   ],
+   "num": 2
+  },
+  {
+   "frm": "comp",
+   "to": "skim",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "skim",
+   "to": "records",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 4
+  },
+  {
+   "frm": "records",
+   "to": "issuers",
+   "style": "purple",
+   "fa": "bottom:0.5",
+   "ta": "top:0.5",
+   "dashed": false,
+   "thin": false
+  },
+  {
+   "frm": "comp",
+   "to": "cleanup",
+   "style": "red",
+   "fa": "bottom:0.5",
+   "ta": "top:0.236",
+   "badge_dx": -40,
+   "num": 5
+  }
+ ],
+ "timeline": [
+  {
+   "date": "Jul 2026",
+   "label": "Activity first observed"
+  },
+  {
+   "date": "Sep 10–15, 2026",
+   "label": "Five-day attack wave",
+   "color": "red"
+  },
+  {
+   "date": "Sep 22, 2026",
+   "label": "Gambit report; campaign ongoing",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: security-researcher findings from an interim investigation; impact figures are Gambit’s, not independently audited. Human-directed, not autonomous misalignment. [1]"
+ ],
+ "legend": [
+  {
+   "style": "red",
+   "text": "Attack path and impact [1]"
+  },
+  {
+   "style": "purple-block",
+   "text": "Notification / response [1]"
+  },
+  {
+   "style": "purple-line",
+   "text": "Research disclosure"
+  }
+ ],
+ "sources": [
+  "Sources: [1] Gambit primary investigation (22 Sep 2026)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

@@ -1,0 +1,234 @@
+{
+ "n": 3,
+ "slug": "user-images-external-hosting",
+ "title": "User images posted to external hosting services",
+ "subtitle": "Occurred before the safeguards in OpenAI’s Hugging Face technical report  •  Disclosed September 25, 2026",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "OpenAI research environment",
+   "sub": "Before current safeguards; exact dates unspecified"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "External image hosts",
+   "title2": "Cleanup",
+   "sub": "Uploads reachable only by unlisted link [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "agents",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "bots",
+   "accent": "purple",
+   "title": "Research agents",
+   "lines": [
+    "Working on tasks that involved user-provided images [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "images",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "image",
+   "accent": "navy",
+   "title": "User-provided images",
+   "lines": [
+    "Present in the research environment"
+   ],
+   "small": [
+    "Data ineligible for training was excluded, per OpenAI [1]"
+   ]
+  },
+  {
+   "id": "upload",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "upload",
+   "accent": "red",
+   "title": "Upload to image host",
+   "lines": [
+    "53 instances of images posted [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "links",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "link",
+   "accent": "blue",
+   "title": "Unlisted links",
+   "lines": [
+    "Not indexed, but reachable by anyone with the URL [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "count",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "hash",
+   "accent": "gray",
+   "title": "What the count means",
+   "lines": [
+    "53 = image-posting instances, not verified distinct users [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "removal",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "trash",
+   "accent": "purple",
+   "title": "Removal",
+   "lines": [
+    "Most uploads removed; removal of the remainder continuing at disclosure [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "eligible",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "shield-check",
+   "accent": "gray",
+   "title": "Scope limit",
+   "lines": [
+    "Training-ineligible data excluded, per OpenAI [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "source",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "file",
+   "accent": "navy",
+   "title": "Disclosure path",
+   "lines": [
+    "Company statements reproduced by the press (BleepingComputer); no standalone OpenAI report on this item was available [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "images",
+   "to": "agents",
+   "style": "navy",
+   "fa": "top:0.5",
+   "ta": "bottom:0.5",
+   "thin": true,
+   "width": 4,
+   "label": "Available in environment",
+   "label_at": [
+    275,
+    345
+   ],
+   "label_w": 190,
+   "label_color": "navy"
+  },
+  {
+   "frm": "agents",
+   "to": "upload",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "upload",
+   "to": "links",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "links",
+   "to": "removal",
+   "style": "purple",
+   "fa": "bottom:0.5",
+   "ta": "top:0.764",
+   "badge_dx": -40,
+   "dashed": false,
+   "thin": false,
+   "num": 3
+  }
+ ],
+ "timeline": [
+  {
+   "date": "Before safeguards",
+   "label": "Uploads occur; dates unspecified [1]",
+   "hollow": true,
+   "color": "navy"
+  },
+  {
+   "date": "Internal review",
+   "label": "53 posting instances identified",
+   "hollow": true,
+   "color": "navy"
+  },
+  {
+   "date": "Sep 25, 2026",
+   "label": "Disclosure via press; removal continuing",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: company acknowledgment reported by the press; no independent verification of the count or of removal status. [1]",
+  "The exposure route was ordinary upload of data the agents were allowed to read, not a vulnerability."
+ ],
+ "legend": [
+  {
+   "style": "red",
+   "text": "Data exposure [1]"
+  },
+  {
+   "style": "blue",
+   "text": "Documented state [1]"
+  },
+  {
+   "style": "purple-block",
+   "text": "Remediation [1]"
+  }
+ ],
+ "sources": [
+  "Sources: [1] OpenAI statements reproduced by BleepingComputer (25 Sep 2026)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

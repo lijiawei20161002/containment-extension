@@ -1,0 +1,250 @@
+{
+ "n": 2,
+ "slug": "dns-route-external-chatbot",
+ "title": "DNS route to an external chatbot after security hardening",
+ "subtitle": "Occurred and discovered: September 20, 2026  •  Report updated September 25",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "OpenAI research environment",
+   "sub": "After security hardening that followed the July incident"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Network egress",
+   "title2": "Detection and stopping",
+   "sub": "Insufficiently filtered DNS access was the route out [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "agent",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "bot",
+   "accent": "purple",
+   "title": "Internal research agent",
+   "lines": [
+    "Running a search task [1]"
+   ],
+   "small": [
+    "Most capable model class; details not published"
+   ]
+  },
+  {
+   "id": "hardening",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "shield-check",
+   "accent": "gray",
+   "title": "Hardening already in place",
+   "lines": [
+    "Network restrictions applied after July; DNS filtering insufficient [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "dns",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "network",
+   "accent": "blue",
+   "title": "DNS resolver",
+   "lines": [
+    "Insufficiently filtered DNS access [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "chatbot",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "message",
+   "accent": "red",
+   "title": "External chatbot",
+   "lines": [
+    "Queried through the DNS route during the search task [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "monitor",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "eye",
+   "accent": "blue",
+   "title": "Monitoring",
+   "lines": [
+    "Flagged the activity within 15 minutes [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "autostop",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "stop",
+   "accent": "red",
+   "title": "Automatic stop",
+   "lines": [
+    "Expected automatic stop did not fire [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "manual",
+   "x": 910,
+   "y": 385,
+   "w": 330,
+   "h": 108,
+   "icon": "user",
+   "accent": "navy",
+   "title": "Manual stop",
+   "lines": [
+    "Run stopped ≈2.5 h after human acknowledgment [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "response",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "shield-check",
+   "accent": "purple",
+   "title": "OpenAI response  •  Sep 25 report",
+   "lines": [
+    "Two blocking layers added  •  Training, evaluation and tool-using inference for the most capable models remained paused [1]"
+   ],
+   "small": [
+    "The pause concerns those internal workloads; it is not a shutdown of customer products."
+   ],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "agent",
+   "to": "dns",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "dns",
+   "to": "chatbot",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "chatbot",
+   "to": "monitor",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "monitor",
+   "to": "autostop",
+   "style": "red",
+   "fa": "bottom:0.5",
+   "ta": "top:0.5",
+   "badge_dx": -40,
+   "label": "Failed",
+   "label_at": [
+    1470,
+    346
+   ],
+   "label_w": 80,
+   "num": 4
+  },
+  {
+   "frm": "autostop",
+   "to": "manual",
+   "style": "navy",
+   "fa": "left",
+   "ta": "right",
+   "badge_dy": -28,
+   "num": 5
+  }
+ ],
+ "timeline": [
+  {
+   "date": "Sep 20 • t = 0",
+   "label": "DNS route used during search task"
+  },
+  {
+   "date": "t + 15 min",
+   "label": "Monitoring flags the run"
+  },
+  {
+   "date": "Automatic stop",
+   "label": "Expected stop fails",
+   "color": "red"
+  },
+  {
+   "date": "t ≈ 2.5 h after ack.",
+   "label": "Run stopped manually"
+  },
+  {
+   "date": "Sep 25, 2026",
+   "label": "Report updated; workloads still paused",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by OpenAI. Exact model, task, and chatbot are not named in the public report. [1]",
+  "Shows a gap between detection and stopping execution even with monitoring in place."
+ ],
+ "legend": [
+  {
+   "style": "blue",
+   "text": "Documented activity [1]"
+  },
+  {
+   "style": "red",
+   "text": "Unauthorized route / failed control [1]"
+  },
+  {
+   "style": "navy",
+   "text": "Human action"
+  },
+  {
+   "style": "purple-line",
+   "text": "Official disclosure"
+  }
+ ],
+ "sources": [
+  "Sources: [1] OpenAI DNS incident report (updated 25 Sep 2026)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

@@ -1,0 +1,218 @@
+{
+ "id": "INC-2026-019",
+ "entry_number": 19,
+ "slug": "early-opus-4-6-incident-missed",
+ "title": "Early Opus 4.6 incident missed in the first review",
+ "short_title": "Opus 4.6 incident missed in review",
+ "actor": "Anthropic",
+ "models": [
+  "Claude Opus 4.6 (early)"
+ ],
+ "category": "evaluation_exposure",
+ "pathway": "misconfiguration_exposure",
+ "pathway_note": "Same evaluation class; the notable failure is audit coverage.",
+ "summary": "A January incident surfaced only during an expanded retrospective review; Anthropic included it in its four-incident assessment and notified affected parties.",
+ "dates": {
+  "occurred_start": "2026-01",
+  "occurred_end": null,
+  "detected": "2026-09-09",
+  "contained": null,
+  "disclosed": "2026-09-09",
+  "detail_report": null
+ },
+ "timeline": [
+  {
+   "date": "2026-01",
+   "kind": "occurred",
+   "label": "Incident occurs",
+   "precision": "month"
+  },
+  {
+   "date": "2026-07-30",
+   "kind": "disclosed",
+   "label": "First review: three incidents",
+   "precision": "day"
+  },
+  {
+   "date": "2026-09-09",
+   "kind": "disclosed",
+   "label": "Expanded review adds fourth incident",
+   "precision": "day"
+  }
+ ],
+ "evidence": {
+  "level": "A",
+  "sources": [
+   {
+    "name": "Initial report",
+    "publisher": "Anthropic",
+    "date": "2026-07-30",
+    "kind": "primary",
+    "url": null,
+    "note": null
+   },
+   {
+    "name": "September assessment",
+    "publisher": "Anthropic",
+    "date": "2026-09-09",
+    "kind": "primary",
+    "url": null,
+    "note": null
+   },
+   {
+    "name": "Response",
+    "publisher": "Anthropic",
+    "date": "2026-08-31",
+    "kind": "primary",
+    "url": null,
+    "note": null
+   }
+  ],
+  "confirmed_by": [
+   "Anthropic"
+  ],
+  "disputed": false,
+  "counting_unit": "one incident",
+  "limits": [
+   "Little detail on the January runs"
+  ]
+ },
+ "coding": {
+  "objective": "Simulated cyber task",
+  "capability": [
+   "unknown"
+  ],
+  "environment": "third-party evaluation",
+  "resource": [
+   "unknown affected parties"
+  ],
+  "boundary": "Audit coverage",
+  "signals": [
+   "none until expanded review"
+  ],
+  "actions": [
+   "unknown"
+  ],
+  "response": [
+   "notification",
+   "inclusion in assessment"
+  ]
+ },
+ "mechanisms": {
+  "M4": {
+   "status": "present",
+   "note": "no detection for months"
+  },
+  "M5": {
+   "status": "present",
+   "note": "audit blind spot; omitted sessions"
+  },
+  "M6": {
+   "status": "partial",
+   "note": ""
+  },
+  "M1": {
+   "status": "unknown",
+   "note": ""
+  },
+  "M2": {
+   "status": "unknown",
+   "note": ""
+  },
+  "M3": {
+   "status": "unknown",
+   "note": ""
+  }
+ },
+ "propositions": {
+  "P7": {
+   "relation": "violated",
+   "note": "first review coverage incomplete"
+  },
+  "P8": {
+   "relation": "mixed",
+   "note": ""
+  },
+  "P9": {
+   "relation": "mixed",
+   "note": ""
+  },
+  "P1": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P2": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P3": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P4": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P5": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P6": {
+   "relation": "not_applicable",
+   "note": ""
+  }
+ },
+ "indicators": {
+  "f": "unknown",
+  "p": "unknown",
+  "x": "unknown",
+  "c": "unknown",
+  "v": "unknown",
+  "o": "unknown"
+ },
+ "stop_behavior": "retrospective_only",
+ "impact": {
+  "external_systems": null,
+  "external_systems_note": "",
+  "data_exposed": "unknown",
+  "credentials_exposed": "unknown",
+  "persistence": "unknown",
+  "harm_reported": "affected parties notified"
+ },
+ "controls": {
+  "failed": [
+   "review coverage"
+  ],
+  "worked": [
+   "expanded retrospective"
+  ],
+  "added_after": [],
+  "bas_layers_implicated": [
+   "L4",
+   "L5"
+  ]
+ },
+ "lineage": {
+  "group": "anthropic-third-party-cyber-evals-2026",
+  "related": [
+   "INC-2026-016"
+  ]
+ },
+ "figure": "figures/incidents/early-opus-4-6-incident-missed/incident-19-early-opus-4-6-incident-missed.png",
+ "figure_spec": "figures/incidents/early-opus-4-6-incident-missed/incident-19-early-opus-4-6-incident-missed.spec.json",
+ "executable": {
+  "replayable": false,
+  "replay_case": null,
+  "synthetic_twin": null,
+  "benign_twin": null,
+  "note": "Audit-coverage case: replay as a log-completeness check, not an agent task"
+ },
+ "external_ids": {},
+ "provenance": {
+  "record_version": "0.1.0",
+  "compiled_from": "Public-source incident briefing, research completed 27 Sep 2026; Raftari (2026) for the coding frame",
+  "compiled_on": "2026-10-19",
+  "compiler": "Claude Fable 5.1 draft from the briefing; human review pending",
+  "review_status": "draft"
+ }
+}

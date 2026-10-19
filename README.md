@@ -255,3 +255,7 @@ testing before adding a shell.
 
 See [the experiment protocol](docs/protocol.md) for the L1/L2/L3 distinction,
 incident mapping, and limits of the reproduction claim.
+
+## Incident library
+
+Public agent-security incidents as structured records: [incidents/README.md](incidents/README.md) (design), [docs/incident-library-analysis.md](docs/incident-library-analysis.md) (cross-case analysis), [slides/incident-library-deck/](slides/incident-library-deck/) (deck).

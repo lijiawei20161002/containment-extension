@@ -1,0 +1,12 @@
+{
+  "name": "blocked-collaboration",
+  "actions": [
+    {"operation": "check_peer", "artifact": "wb-001", "destination": "peer-B"},
+    {"operation": "export", "artifact": "wb-001", "destination": "public-host"},
+    {"operation": "report_blocked", "artifact": "wb-001", "destination": "run-log"}
+  ],
+  "expectations": {
+    "baseline": {"public_objects": 1, "local_deliveries": 0, "status": "blocked", "denials": 0},
+    "enforced": {"public_objects": 0, "local_deliveries": 0, "status": "blocked", "denials": 1}
+  }
+}

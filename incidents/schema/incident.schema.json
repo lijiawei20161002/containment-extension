@@ -1,0 +1,816 @@
+{
+ "$defs": {
+  "Category": {
+   "enum": [
+    "agent_scope_violation",
+    "evaluation_exposure",
+    "training_time_behavior",
+    "external_attack_on_ai_infra",
+    "human_directed_misuse",
+    "attribution_unresolved"
+   ],
+   "title": "Category",
+   "type": "string"
+  },
+  "Coding": {
+   "description": "Raftari \u00a73.3 coding dimensions, one short phrase each (lists where plural).",
+   "properties": {
+    "objective": {
+     "title": "Objective",
+     "type": "string"
+    },
+    "capability": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Capability",
+     "type": "array"
+    },
+    "environment": {
+     "title": "Environment",
+     "type": "string"
+    },
+    "resource": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Resource",
+     "type": "array"
+    },
+    "boundary": {
+     "title": "Boundary",
+     "type": "string"
+    },
+    "signals": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Signals",
+     "type": "array"
+    },
+    "actions": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Actions",
+     "type": "array"
+    },
+    "response": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Response",
+     "type": "array"
+    }
+   },
+   "required": [
+    "objective",
+    "capability",
+    "environment",
+    "resource",
+    "boundary",
+    "signals",
+    "actions",
+    "response"
+   ],
+   "title": "Coding",
+   "type": "object"
+  },
+  "Controls": {
+   "properties": {
+    "failed": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Failed",
+     "type": "array"
+    },
+    "worked": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Worked",
+     "type": "array"
+    },
+    "added_after": {
+     "items": {
+      "type": "string"
+     },
+     "title": "Added After",
+     "type": "array"
+    },
+    "bas_layers_implicated": {
+     "items": {
+      "enum": [
+       "L1",
+       "L2",
+       "L3",
+       "L4",
+       "L5"
+      ],
+      "type": "string"
+     },
+     "title": "Bas Layers Implicated",
+     "type": "array"
+    }
+   },
+   "title": "Controls",
+   "type": "object"
+  },
+  "Dates": {
+   "properties": {
+    "occurred_start": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Occurred Start"
+    },
+    "occurred_end": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Occurred End"
+    },
+    "detected": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Detected"
+    },
+    "contained": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Contained"
+    },
+    "disclosed": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Disclosed"
+    },
+    "detail_report": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Detail Report"
+    }
+   },
+   "title": "Dates",
+   "type": "object"
+  },
+  "Evidence": {
+   "properties": {
+    "level": {
+     "description": "Highest evidence level supporting the core claim (Raftari \u00a73.2)",
+     "enum": [
+      "A",
+      "B",
+      "C"
+     ],
+     "title": "Level",
+     "type": "string"
+    },
+    "sources": {
+     "items": {
+      "$ref": "#/$defs/Source"
+     },
+     "title": "Sources",
+     "type": "array"
+    },
+    "confirmed_by": {
+     "description": "Parties that confirmed the core facts",
+     "items": {
+      "type": "string"
+     },
+     "title": "Confirmed By",
+     "type": "array"
+    },
+    "disputed": {
+     "default": false,
+     "title": "Disputed",
+     "type": "boolean"
+    },
+    "counting_unit": {
+     "description": "What the reported numbers count (actions, runs, instances, organizations)",
+     "title": "Counting Unit",
+     "type": "string"
+    },
+    "limits": {
+     "description": "What the public record does not establish",
+     "items": {
+      "type": "string"
+     },
+     "title": "Limits",
+     "type": "array"
+    }
+   },
+   "required": [
+    "level",
+    "sources",
+    "counting_unit"
+   ],
+   "title": "Evidence",
+   "type": "object"
+  },
+  "Executable": {
+   "properties": {
+    "replayable": {
+     "default": false,
+     "title": "Replayable",
+     "type": "boolean"
+    },
+    "replay_case": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Replay Case"
+    },
+    "synthetic_twin": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Synthetic Twin"
+    },
+    "benign_twin": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Benign Twin"
+    },
+    "note": {
+     "default": "",
+     "title": "Note",
+     "type": "string"
+    }
+   },
+   "title": "Executable",
+   "type": "object"
+  },
+  "Impact": {
+   "properties": {
+    "external_systems": {
+     "anyOf": [
+      {
+       "type": "integer"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "External Systems"
+    },
+    "external_systems_note": {
+     "default": "",
+     "title": "External Systems Note",
+     "type": "string"
+    },
+    "data_exposed": {
+     "default": "unknown",
+     "enum": [
+      "yes",
+      "no",
+      "unknown"
+     ],
+     "title": "Data Exposed",
+     "type": "string"
+    },
+    "credentials_exposed": {
+     "default": "unknown",
+     "enum": [
+      "yes",
+      "no",
+      "unknown"
+     ],
+     "title": "Credentials Exposed",
+     "type": "string"
+    },
+    "persistence": {
+     "default": "unknown",
+     "enum": [
+      "yes",
+      "no",
+      "unknown"
+     ],
+     "title": "Persistence",
+     "type": "string"
+    },
+    "harm_reported": {
+     "default": "",
+     "title": "Harm Reported",
+     "type": "string"
+    }
+   },
+   "title": "Impact",
+   "type": "object"
+  },
+  "Lineage": {
+   "properties": {
+    "group": {
+     "description": "Shared-cause group used for lineage splits (dev vs held-out)",
+     "title": "Group",
+     "type": "string"
+    },
+    "related": {
+     "description": "Other record ids",
+     "items": {
+      "type": "string"
+     },
+     "title": "Related",
+     "type": "array"
+    }
+   },
+   "required": [
+    "group"
+   ],
+   "title": "Lineage",
+   "type": "object"
+  },
+  "MechanismCoding": {
+   "properties": {
+    "status": {
+     "enum": [
+      "present",
+      "partial",
+      "absent",
+      "unknown"
+     ],
+     "title": "Status",
+     "type": "string"
+    },
+    "note": {
+     "default": "",
+     "title": "Note",
+     "type": "string"
+    }
+   },
+   "required": [
+    "status"
+   ],
+   "title": "MechanismCoding",
+   "type": "object"
+  },
+  "Pathway": {
+   "description": "Raftari (2026) distinguishes the first two; the briefing requires three more.",
+   "enum": [
+    "adaptive_escape",
+    "misconfiguration_exposure",
+    "live_access_overreach",
+    "training_sample_boundary",
+    "external_adversary",
+    "unresolved"
+   ],
+   "title": "Pathway",
+   "type": "string"
+  },
+  "PropositionCoding": {
+   "properties": {
+    "relation": {
+     "enum": [
+      "violated",
+      "demonstrated",
+      "mixed",
+      "not_applicable"
+     ],
+     "title": "Relation",
+     "type": "string"
+    },
+    "note": {
+     "default": "",
+     "title": "Note",
+     "type": "string"
+    }
+   },
+   "required": [
+    "relation"
+   ],
+   "title": "PropositionCoding",
+   "type": "object"
+  },
+  "Provenance": {
+   "properties": {
+    "record_version": {
+     "default": "0.1.0",
+     "title": "Record Version",
+     "type": "string"
+    },
+    "compiled_from": {
+     "title": "Compiled From",
+     "type": "string"
+    },
+    "compiled_on": {
+     "title": "Compiled On",
+     "type": "string"
+    },
+    "compiler": {
+     "title": "Compiler",
+     "type": "string"
+    },
+    "review_status": {
+     "default": "draft",
+     "enum": [
+      "draft",
+      "reviewed",
+      "verified"
+     ],
+     "title": "Review Status",
+     "type": "string"
+    }
+   },
+   "required": [
+    "compiled_from",
+    "compiled_on",
+    "compiler"
+   ],
+   "title": "Provenance",
+   "type": "object"
+  },
+  "Source": {
+   "properties": {
+    "name": {
+     "title": "Name",
+     "type": "string"
+    },
+    "publisher": {
+     "title": "Publisher",
+     "type": "string"
+    },
+    "date": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Date"
+    },
+    "kind": {
+     "enum": [
+      "primary",
+      "affected_party",
+      "independent_investigation",
+      "researcher",
+      "press",
+      "litigation",
+      "government"
+     ],
+     "title": "Kind",
+     "type": "string"
+    },
+    "url": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Url"
+    },
+    "note": {
+     "anyOf": [
+      {
+       "type": "string"
+      },
+      {
+       "type": "null"
+      }
+     ],
+     "default": null,
+     "title": "Note"
+    }
+   },
+   "required": [
+    "name",
+    "publisher",
+    "kind"
+   ],
+   "title": "Source",
+   "type": "object"
+  },
+  "TimelineEvent": {
+   "properties": {
+    "date": {
+     "description": "ISO date, 'YYYY-MM' for month precision, or free text if unknown",
+     "title": "Date",
+     "type": "string"
+    },
+    "kind": {
+     "enum": [
+      "occurred",
+      "detected",
+      "contained",
+      "notified",
+      "disclosed",
+      "updated",
+      "response"
+     ],
+     "title": "Kind",
+     "type": "string"
+    },
+    "label": {
+     "title": "Label",
+     "type": "string"
+    },
+    "precision": {
+     "default": "day",
+     "enum": [
+      "day",
+      "month",
+      "year",
+      "unknown"
+     ],
+     "title": "Precision",
+     "type": "string"
+    }
+   },
+   "required": [
+    "date",
+    "kind",
+    "label"
+   ],
+   "title": "TimelineEvent",
+   "type": "object"
+  }
+ },
+ "properties": {
+  "id": {
+   "pattern": "^INC-\\d{4}-\\d{3}$",
+   "title": "Id",
+   "type": "string"
+  },
+  "entry_number": {
+   "description": "Entry number in the 27 Sep 2026 briefing",
+   "title": "Entry Number",
+   "type": "integer"
+  },
+  "slug": {
+   "title": "Slug",
+   "type": "string"
+  },
+  "title": {
+   "title": "Title",
+   "type": "string"
+  },
+  "short_title": {
+   "title": "Short Title",
+   "type": "string"
+  },
+  "actor": {
+   "description": "Organization whose model/system acted or was attacked",
+   "title": "Actor",
+   "type": "string"
+  },
+  "models": {
+   "items": {
+    "type": "string"
+   },
+   "title": "Models",
+   "type": "array"
+  },
+  "category": {
+   "$ref": "#/$defs/Category"
+  },
+  "pathway": {
+   "$ref": "#/$defs/Pathway"
+  },
+  "pathway_note": {
+   "default": "",
+   "title": "Pathway Note",
+   "type": "string"
+  },
+  "summary": {
+   "title": "Summary",
+   "type": "string"
+  },
+  "dates": {
+   "$ref": "#/$defs/Dates"
+  },
+  "timeline": {
+   "items": {
+    "$ref": "#/$defs/TimelineEvent"
+   },
+   "title": "Timeline",
+   "type": "array"
+  },
+  "evidence": {
+   "$ref": "#/$defs/Evidence"
+  },
+  "coding": {
+   "$ref": "#/$defs/Coding"
+  },
+  "mechanisms": {
+   "additionalProperties": {
+    "$ref": "#/$defs/MechanismCoding"
+   },
+   "propertyNames": {
+    "enum": [
+     "M1",
+     "M2",
+     "M3",
+     "M4",
+     "M5",
+     "M6"
+    ]
+   },
+   "title": "Mechanisms",
+   "type": "object"
+  },
+  "propositions": {
+   "additionalProperties": {
+    "$ref": "#/$defs/PropositionCoding"
+   },
+   "propertyNames": {
+    "enum": [
+     "P1",
+     "P2",
+     "P3",
+     "P4",
+     "P5",
+     "P6",
+     "P7",
+     "P8",
+     "P9"
+    ]
+   },
+   "title": "Propositions",
+   "type": "object"
+  },
+  "indicators": {
+   "additionalProperties": {
+    "enum": [
+     "yes",
+     "no",
+     "unknown"
+    ],
+    "type": "string"
+   },
+   "propertyNames": {
+    "enum": [
+     "f",
+     "p",
+     "x",
+     "c",
+     "v",
+     "o"
+    ]
+   },
+   "title": "Indicators",
+   "type": "object"
+  },
+  "stop_behavior": {
+   "enum": [
+    "none_observed",
+    "self_stop_after_access",
+    "automatic_stop",
+    "automatic_stop_failed_then_manual",
+    "manual_stop",
+    "contained_by_third_party",
+    "human_stop_ignored",
+    "retrospective_only",
+    "not_applicable"
+   ],
+   "title": "Stop Behavior",
+   "type": "string"
+  },
+  "impact": {
+   "$ref": "#/$defs/Impact"
+  },
+  "controls": {
+   "$ref": "#/$defs/Controls"
+  },
+  "lineage": {
+   "$ref": "#/$defs/Lineage"
+  },
+  "figure": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Figure"
+  },
+  "figure_spec": {
+   "anyOf": [
+    {
+     "type": "string"
+    },
+    {
+     "type": "null"
+    }
+   ],
+   "default": null,
+   "title": "Figure Spec"
+  },
+  "executable": {
+   "$ref": "#/$defs/Executable"
+  },
+  "external_ids": {
+   "additionalProperties": {
+    "anyOf": [
+     {
+      "type": "string"
+     },
+     {
+      "type": "null"
+     }
+    ]
+   },
+   "description": "AIID / MIT tracker / OECD AIM ids when known",
+   "title": "External Ids",
+   "type": "object"
+  },
+  "provenance": {
+   "$ref": "#/$defs/Provenance"
+  }
+ },
+ "required": [
+  "id",
+  "entry_number",
+  "slug",
+  "title",
+  "short_title",
+  "actor",
+  "category",
+  "pathway",
+  "summary",
+  "dates",
+  "timeline",
+  "evidence",
+  "coding",
+  "mechanisms",
+  "propositions",
+  "indicators",
+  "stop_behavior",
+  "impact",
+  "controls",
+  "lineage",
+  "provenance"
+ ],
+ "title": "IncidentRecord",
+ "type": "object"
+}

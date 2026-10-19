@@ -1,0 +1,260 @@
+{
+ "n": 19,
+ "slug": "early-opus-4-6-incident-missed",
+ "title": "Early Opus 4.6 incident missed in the first review",
+ "subtitle": "Occurred: January 2026  •  Surfaced in expanded retrospective  •  Disclosed September 9",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "Third-party cyber evaluation",
+   "sub": "Same class of misconfigured, internet-reachable evaluation [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Anthropic review process",
+   "title2": "What changed",
+   "sub": "A narrower first review missed a January incident; the expanded review found it [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "model",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "cpu",
+   "accent": "purple",
+   "title": "Claude Opus 4.6",
+   "lines": [
+    "January incident; details limited in public account [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "parties",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "building",
+   "accent": "navy",
+   "title": "Affected parties",
+   "lines": [
+    "Notified after the incident surfaced [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "first",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "clipboard",
+   "accent": "gray",
+   "title": "First review  •  Jul 30",
+   "lines": [
+    "Three incidents reported; January case not found [2]"
+   ],
+   "small": []
+  },
+  {
+   "id": "expand",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "search",
+   "accent": "blue",
+   "title": "Expanded retrospective",
+   "lines": [
+    "Broader look-back across evaluations [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "found",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "alert",
+   "accent": "red",
+   "title": "January incident surfaces",
+   "lines": [
+    "Added as the fourth incident [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "assess",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "file-check",
+   "accent": "purple",
+   "title": "Four-incident assessment  •  Sep 9",
+   "lines": [
+    "Includes the January case; excludes the separate AISI incident [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "lesson",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "eye",
+   "accent": "navy",
+   "title": "Lesson",
+   "lines": [
+    "Retrospective scope determines the incident count [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "resp",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "shield-check",
+   "accent": "purple",
+   "title": "Anthropic response  •  Aug 31",
+   "lines": [
+    "Stricter evaluation security, monitoring and partner requirements; pauses to some high-risk training activities [3]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "model",
+   "to": "first",
+   "style": "gray",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "badge_color": "gray",
+   "label": "Missed",
+   "label_at": [
+    462,
+    314
+   ],
+   "label_w": 78,
+   "label_color": "gray",
+   "label_align": "center",
+   "label_size": 13,
+   "num": 1
+  },
+  {
+   "frm": "first",
+   "to": "expand",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "expand",
+   "to": "found",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "found",
+   "to": "parties",
+   "style": "navy",
+   "fa": "bottom:0.2",
+   "ta": "right",
+   "via": [
+    [
+     1348,
+     366
+    ],
+    [
+     501,
+     366
+    ],
+    [
+     501,
+     459
+    ]
+   ],
+   "thin": true,
+   "width": 4,
+   "gap": 6,
+   "badge_at": [
+    1100,
+    366
+   ],
+   "badge_color": "navy",
+   "num": 4
+  }
+ ],
+ "timeline": [
+  {
+   "date": "Jan 2026",
+   "label": "Opus 4.6 incident occurs"
+  },
+  {
+   "date": "Jul 30, 2026",
+   "label": "First review: three incidents",
+   "color": "purple"
+  },
+  {
+   "date": "Aug 31, 2026",
+   "label": "Response measures",
+   "color": "purple"
+  },
+  {
+   "date": "Sep 9, 2026",
+   "label": "Expanded review adds fourth incident",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by Anthropic in the September assessment; the public account gives little detail on what the January runs did. [1]"
+ ],
+ "legend": [
+  {
+   "style": "gray",
+   "text": "Not detected [2]"
+  },
+  {
+   "style": "blue",
+   "text": "Review activity [1]"
+  },
+  {
+   "style": "red",
+   "text": "Incident found [1]"
+  },
+  {
+   "style": "navy",
+   "text": "Notification [1]"
+  }
+ ],
+ "sources": [
+  "Sources: [1] Anthropic September assessment (9 Sep 2026)   [2] Anthropic initial report (30 Jul 2026)   [3] Anthropic response (31 Aug 2026)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

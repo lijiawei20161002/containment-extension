@@ -1,0 +1,292 @@
+{
+ "n": 26,
+ "pathways": {
+  "adaptive_escape": 3,
+  "misconfiguration_exposure": 6,
+  "live_access_overreach": 9,
+  "training_sample_boundary": 3,
+  "external_adversary": 4,
+  "unresolved": 1
+ },
+ "mechanisms": {
+  "M1": {
+   "present": 11,
+   "unknown": 13,
+   "partial": 2
+  },
+  "M2": {
+   "present": 15,
+   "partial": 6,
+   "unknown": 5
+  },
+  "M3": {
+   "present": 3,
+   "absent": 14,
+   "unknown": 8,
+   "partial": 1
+  },
+  "M4": {
+   "present": 13,
+   "partial": 11,
+   "unknown": 2
+  },
+  "M5": {
+   "partial": 14,
+   "unknown": 4,
+   "present": 8
+  },
+  "M6": {
+   "present": 8,
+   "unknown": 5,
+   "partial": 6,
+   "absent": 7
+  }
+ },
+ "propositions": {
+  "P1": {
+   "violated": 13,
+   "not_applicable": 12,
+   "demonstrated": 1
+  },
+  "P2": {
+   "violated": 10,
+   "not_applicable": 16
+  },
+  "P3": {
+   "violated": 12,
+   "not_applicable": 14
+  },
+  "P4": {
+   "violated": 10,
+   "not_applicable": 14,
+   "mixed": 2
+  },
+  "P5": {
+   "violated": 4,
+   "not_applicable": 22
+  },
+  "P6": {
+   "violated": 17,
+   "demonstrated": 2,
+   "not_applicable": 7
+  },
+  "P7": {
+   "mixed": 7,
+   "not_applicable": 12,
+   "violated": 6,
+   "demonstrated": 1
+  },
+  "P8": {
+   "violated": 1,
+   "demonstrated": 2,
+   "not_applicable": 21,
+   "mixed": 2
+  },
+  "P9": {
+   "violated": 9,
+   "mixed": 6,
+   "not_applicable": 11
+  }
+ },
+ "indicators": {
+  "f": {
+   "yes": 9,
+   "unknown": 13,
+   "no": 4
+  },
+  "p": {
+   "yes": 16,
+   "no": 8,
+   "unknown": 2
+  },
+  "x": {
+   "yes": 20,
+   "unknown": 2,
+   "no": 4
+  },
+  "c": {
+   "yes": 4,
+   "no": 19,
+   "unknown": 3
+  },
+  "v": {
+   "yes": 10,
+   "no": 13,
+   "unknown": 3
+  },
+  "o": {
+   "unknown": 7,
+   "no": 16,
+   "yes": 3
+  }
+ },
+ "latency": {
+  "detection_days_known": 12,
+  "detection_median": 13.5,
+  "detection_values": {
+   "1": 10,
+   "2": 0,
+   "4": 0,
+   "6": 28,
+   "10": 22,
+   "11": 40,
+   "12": 10,
+   "13": 215,
+   "14": 17,
+   "15": 2,
+   "19": 237,
+   "20": 3
+  },
+  "disclosure_days_known": 21,
+  "disclosure_median": 119,
+  "disclosure_values": {
+   "1": 12,
+   "2": 5,
+   "4": 121,
+   "5": 101,
+   "6": 103,
+   "7": 119,
+   "8": 121,
+   "10": 60,
+   "11": 109,
+   "12": 124,
+   "13": 329,
+   "14": 131,
+   "15": 155,
+   "16": 106,
+   "19": 237,
+   "20": 10,
+   "21": 126,
+   "23": 169,
+   "24": 108,
+   "25": 269,
+   "26": 69
+  }
+ },
+ "stop_behavior": {
+  "manual_stop": 5,
+  "automatic_stop_failed_then_manual": 1,
+  "retrospective_only": 10,
+  "human_stop_ignored": 1,
+  "none_observed": 3,
+  "contained_by_third_party": 2,
+  "self_stop_after_access": 2,
+  "not_applicable": 2
+ },
+ "categories": {
+  "agent_scope_violation": 9,
+  "attribution_unresolved": 1,
+  "training_time_behavior": 5,
+  "evaluation_exposure": 7,
+  "external_attack_on_ai_infra": 2,
+  "human_directed_misuse": 2
+ },
+ "evidence_levels": {
+  "A": 19,
+  "B": 7
+ },
+ "actors": {
+  "OpenAI": 14,
+  "unknown": 1,
+  "Anthropic": 5,
+  "UK AISI": 1,
+  "Google": 1,
+  "Meta": 1,
+  "METR": 2,
+  "unknown human operators using open-source agent frameworks": 1
+ },
+ "bas_layers": {
+  "L1": 15,
+  "L2": 8,
+  "L3": 14,
+  "L4": 20,
+  "L5": 11
+ },
+ "replayable": [
+  2,
+  3,
+  4,
+  5,
+  6,
+  8,
+  10,
+  11,
+  12,
+  13,
+  14,
+  15,
+  16,
+  17,
+  18,
+  20,
+  21,
+  23
+ ],
+ "lineage_groups": {
+  "openai-internal-infra-2026": 2,
+  "openai-research-agents-2026": 4,
+  "openai-public-web-agents-2026": 3,
+  "rubygems-unresolved-2026": 1,
+  "openai-training-samples-2026": 5,
+  "anthropic-third-party-cyber-evals-2026": 4,
+  "aisi-open-internet-eval-2026": 1,
+  "irregular-third-party-evals-2026": 2,
+  "metr-infrastructure-2026": 2,
+  "human-directed-misuse-2026": 2
+ },
+ "pathway_by_category": {
+  "agent_scope_violation": {
+   "adaptive_escape": 3,
+   "live_access_overreach": 6
+  },
+  "attribution_unresolved": {
+   "unresolved": 1
+  },
+  "training_time_behavior": {
+   "training_sample_boundary": 3,
+   "live_access_overreach": 2
+  },
+  "evaluation_exposure": {
+   "misconfiguration_exposure": 6,
+   "live_access_overreach": 1
+  },
+  "external_attack_on_ai_infra": {
+   "external_adversary": 2
+  },
+  "human_directed_misuse": {
+   "external_adversary": 2
+  }
+ },
+ "mechanism_cooccurrence_top": [
+  [
+   "M1",
+   "M2",
+   9
+  ],
+  [
+   "M2",
+   "M4",
+   9
+  ],
+  [
+   "M2",
+   "M6",
+   8
+  ],
+  [
+   "M1",
+   "M4",
+   7
+  ],
+  [
+   "M4",
+   "M6",
+   6
+  ],
+  [
+   "M1",
+   "M6",
+   4
+  ]
+ ]
+}

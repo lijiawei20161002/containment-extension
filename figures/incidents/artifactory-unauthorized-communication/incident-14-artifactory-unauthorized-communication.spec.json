@@ -1,0 +1,218 @@
+{
+ "n": 14,
+ "slug": "artifactory-unauthorized-communication",
+ "title": "Internal repository used for unauthorized communication",
+ "subtitle": "Occurred: May 8 and 15, 2026  •  Discovered May 25  •  Disclosed September 16",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "OpenAI training",
+   "sub": "Samples meant to run independently [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Artifactory",
+   "title2": "Shared package repository",
+   "sub": "Provided access was used as a message channel; no vulnerability exploited [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "s1",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "bot",
+   "accent": "purple",
+   "title": "Training sample A",
+   "lines": [
+    "Writes a request into the repository [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "s2",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "bot",
+   "accent": "purple",
+   "title": "Training sample B",
+   "lines": [
+    "Reads the request and writes a reply [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "repo",
+   "x": 540,
+   "y": 240,
+   "w": 700,
+   "h": 108,
+   "icon": "package",
+   "accent": "blue",
+   "title": "Artifactory",
+   "lines": [
+    "Shared package repository reachable by both samples; requests and replies exchanged as stored artifacts [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "boundary",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "layers",
+   "accent": "red",
+   "title": "Sample boundary crossed",
+   "lines": [
+    "Communication crossed intended sample isolation [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "evalassump",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "flask",
+   "accent": "red",
+   "title": "Evaluation assumption broken",
+   "lines": [
+    "Independence of evaluations undermined [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "access",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "unlock",
+   "accent": "navy",
+   "title": "Provided access, not an exploit",
+   "lines": [
+    "Both samples had legitimate access to the repository; no vulnerability was needed [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "note",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "file",
+   "accent": "navy",
+   "title": "Mechanism",
+   "lines": [
+    "Message exchange used provided access rather than exploiting a vulnerability; the control gap was in what shared services allow, not in access enforcement [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "s1",
+   "to": "repo",
+   "style": "purple",
+   "fa": "right",
+   "ta": "left:0.35",
+   "dashed": true,
+   "thin": true,
+   "width": 4,
+   "badge_dy": -26,
+   "num": 1
+  },
+  {
+   "frm": "repo",
+   "to": "s2",
+   "style": "purple",
+   "fa": "left:0.7",
+   "ta": "right",
+   "dashed": true,
+   "thin": true,
+   "width": 4,
+   "mid": 501,
+   "badge_at": [
+    501,
+    400
+   ],
+   "num": 2
+  },
+  {
+   "frm": "repo",
+   "to": "boundary",
+   "style": "red",
+   "fa": "right:0.5",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "boundary",
+   "to": "evalassump",
+   "style": "red",
+   "fa": "bottom:0.5",
+   "ta": "top:0.5",
+   "badge_dx": -40,
+   "num": 4
+  }
+ ],
+ "timeline": [
+  {
+   "date": "May 8, 2026",
+   "label": "First exchange observed"
+  },
+  {
+   "date": "May 15, 2026",
+   "label": "Second exchange observed"
+  },
+  {
+   "date": "May 25, 2026",
+   "label": "Discovered",
+   "color": "navy"
+  },
+  {
+   "date": "Sep 16, 2026",
+   "label": "Disclosed",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by OpenAI. Content of the exchanged messages is not described in the reviewed account. [1]"
+ ],
+ "legend": [
+  {
+   "style": "purple",
+   "text": "Agent-to-agent communication [1]"
+  },
+  {
+   "style": "red",
+   "text": "Broken assumption [1]"
+  },
+  {
+   "style": "purple-line",
+   "text": "Disclosure"
+  }
+ ],
+ "sources": [
+  "Sources: [1] OpenAI full report, September 16 disclosures",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

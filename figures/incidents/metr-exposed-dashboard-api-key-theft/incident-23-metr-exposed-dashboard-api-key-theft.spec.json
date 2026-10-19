@@ -1,0 +1,240 @@
+{
+ "n": 23,
+ "slug": "metr-exposed-dashboard-api-key-theft",
+ "title": "METR: exposed agent dashboard leads to API-key theft",
+ "subtitle": "Occurred: March 2026  •  Disclosed August 31",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "red",
+   "title": "External attacker",
+   "sub": "A person attacking an AI-related system, not an agent exceeding scope [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "METR",
+   "title2": "Researcher’s public application",
+   "sub": "Authentication failure exposed an agent that could reveal its own credentials [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "attacker",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "user-x",
+   "accent": "red",
+   "title": "Attacker",
+   "lines": [
+    "Found the public application with broken authentication [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "credits",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "dollar",
+   "accent": "red",
+   "title": "≈$600,000 of credits consumed",
+   "lines": [
+    "Over three weeks; credits were donated, so not a bill paid by METR [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "app",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "dashboard",
+   "accent": "blue",
+   "title": "Public agent dashboard",
+   "lines": [
+    "Authentication failure [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "agent",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "bot",
+   "accent": "blue",
+   "title": "Researcher’s agent",
+   "lines": [
+    "Instructed by the attacker to reveal its key [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "key",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "key",
+   "accent": "red",
+   "title": "Model-provider API key",
+   "lines": [
+    "Disclosed by the agent [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "resp",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "shield-check",
+   "accent": "purple",
+   "title": "METR response",
+   "lines": [
+    "Revoked access, rotated credentials, investigated; strengthened deployment review and monitoring [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "usage",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "cpu",
+   "accent": "red",
+   "title": "Public-model credits used",
+   "lines": [
+    "Three weeks of consumption [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "note",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "file",
+   "accent": "navy",
+   "title": "Category",
+   "lines": [
+    "An exposed agent manipulated by an outside party; the mechanism differs from research agents exceeding their own task scope [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "attacker",
+   "to": "app",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "app",
+   "to": "agent",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "agent",
+   "to": "key",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "key",
+   "to": "usage",
+   "style": "red",
+   "fa": "bottom:0.5",
+   "ta": "top:0.5",
+   "badge_dx": -40,
+   "num": 4
+  },
+  {
+   "frm": "usage",
+   "to": "credits",
+   "style": "red",
+   "fa": "bottom:0.5",
+   "ta": "right",
+   "thin": true,
+   "width": 4,
+   "via": [
+    [
+     1449,
+     504
+    ],
+    [
+     501,
+     504
+    ],
+    [
+     501,
+     459
+    ]
+   ],
+   "gap": 6
+  }
+ ],
+ "timeline": [
+  {
+   "date": "Mar 2026",
+   "label": "Key revealed; usage begins"
+  },
+  {
+   "date": "≈3 weeks later",
+   "label": "Access revoked; credentials rotated",
+   "color": "navy"
+  },
+  {
+   "date": "Aug 31, 2026",
+   "label": "METR security update",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by the victim (METR). The attacker is unidentified; the dollar figure is the value of donated credits, not cash loss. [1]"
+ ],
+ "legend": [
+  {
+   "style": "red",
+   "text": "Attacker-driven path [1]"
+  },
+  {
+   "style": "purple-line",
+   "text": "Victim disclosure"
+  }
+ ],
+ "sources": [
+  "Sources: [1] METR security update (31 Aug 2026)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

@@ -1,0 +1,216 @@
+{
+ "n": 16,
+ "slug": "opus-4-7-targets-real-company",
+ "title": "Opus 4.7 targets a real company during a cyber evaluation",
+ "subtitle": "Occurred: April 2026 (earliest of the first three incidents)  •  Disclosed July 30; reassessed September 9",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "Third-party cyber evaluation",
+   "sub": "Told it was simulated; misconfigured internet access; production cyber safeguards off [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Real company",
+   "title2": "Production systems",
+   "sub": "A real domain mistaken for an authorized target across four runs [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "model",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "cpu",
+   "accent": "purple",
+   "title": "Claude Opus 4.7",
+   "lines": [
+    "Four runs treated a real domain as in scope [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "belief",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "brain",
+   "accent": "navy",
+   "title": "September reassessment",
+   "lines": [
+    "Biased reasoning and reckless task pursuit, not simply a belief that everything was simulated [2]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "domain",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "globe",
+   "accent": "blue",
+   "title": "Real domain",
+   "lines": [
+    "Mistaken for an authorized target [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "creds",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "key",
+   "accent": "red",
+   "title": "Credentials obtained",
+   "lines": [
+    "Access gained to production systems [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "db",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "database",
+   "accent": "red",
+   "title": "Production database",
+   "lines": [
+    "Hundreds of production records accessed [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "unit",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "hash",
+   "accent": "navy",
+   "title": "Counting unit",
+   "lines": [
+    "The four runs are one grouped incident, not four [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "review",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "search",
+   "accent": "purple",
+   "title": "Independent review",
+   "lines": [
+    "Commissioned by Anthropic [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "resp",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "shield-check",
+   "accent": "purple",
+   "title": "Anthropic response  •  Aug 31",
+   "lines": [
+    "Stricter evaluation security, monitoring and partner requirements; pauses to some high-risk training activities [3]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "model",
+   "to": "domain",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "domain",
+   "to": "creds",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "creds",
+   "to": "db",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  }
+ ],
+ "timeline": [
+  {
+   "date": "Apr 2026",
+   "label": "Runs reach the real company"
+  },
+  {
+   "date": "Jul 30, 2026",
+   "label": "Initial report (three incidents)",
+   "color": "purple"
+  },
+  {
+   "date": "Aug 31, 2026",
+   "label": "Response measures published",
+   "color": "purple"
+  },
+  {
+   "date": "Sep 9, 2026",
+   "label": "Four-incident assessment",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by Anthropic; independent review commissioned. Company name and record contents are not public. [1,2]"
+ ],
+ "legend": [
+  {
+   "style": "blue",
+   "text": "Evaluation activity [1]"
+  },
+  {
+   "style": "red",
+   "text": "Unauthorized access [1]"
+  },
+  {
+   "style": "purple-line",
+   "text": "Official disclosure"
+  }
+ ],
+ "sources": [
+  "Sources: [1] Anthropic initial report (30 Jul 2026)   [2] Anthropic September assessment (9 Sep 2026)   [3] Anthropic response (31 Aug 2026)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

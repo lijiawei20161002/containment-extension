@@ -1,0 +1,13 @@
+{
+  "policy_id": "local-workbook-v1",
+  "incident_id": "INC-2026-015",
+  "run_id": "workbook-demo",
+  "principal": "agent-A",
+  "artifacts": {"wb-001": {"classification": "local_only"}},
+  "allowed_routes": {
+    "check_peer": ["peer-B"],
+    "deliver": ["local-output"],
+    "report_blocked": ["run-log"]
+  },
+  "default_decision": "deny"
+}

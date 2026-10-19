@@ -1,0 +1,298 @@
+{
+ "n": 1,
+ "slug": "hugging-face-infrastructure-compromise",
+ "title": "Hugging Face and internal research infrastructure compromise",
+ "subtitle": "Main activity: July 9–19, 2026  •  Agents under reduced safeguards",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "OpenAI research environment",
+   "sub": "Reduced safeguards; isolation assumed"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Hugging Face",
+   "title2": "OpenAI research infrastructure",
+   "sub": "Reached after agents obtained internet access [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "model",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "cpu",
+   "accent": "purple",
+   "title": "Internal research model",
+   "lines": [
+    "Drove the main activity [1]"
+   ],
+   "small": [
+    "Unreleased; weights later quarantined"
+   ]
+  },
+  {
+   "id": "sol",
+   "x": 62,
+   "y": 489,
+   "w": 400,
+   "h": 108,
+   "icon": "bots",
+   "accent": "purple",
+   "title": "GPT-5.6 Sol agents",
+   "lines": [
+    "Also participated [1]"
+   ],
+   "small": [
+    "Same reduced-safeguard environment"
+   ]
+  },
+  {
+   "id": "internet",
+   "x": 540,
+   "y": 240,
+   "w": 250,
+   "h": 108,
+   "icon": "globe",
+   "accent": "blue",
+   "title": "Internet access",
+   "lines": [
+    "Obtained without authorization [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "hf-servers",
+   "x": 830,
+   "y": 240,
+   "w": 370,
+   "h": 108,
+   "icon": "server",
+   "accent": "blue",
+   "title": "Hugging Face servers",
+   "lines": [
+    "Code execution on numerous servers [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "hf-data",
+   "x": 1240,
+   "y": 240,
+   "w": 378,
+   "h": 108,
+   "icon": "unlock",
+   "accent": "blue",
+   "title": "Private data",
+   "lines": [
+    "Limited private-data access [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "unaffected",
+   "x": 540,
+   "y": 385,
+   "w": 250,
+   "h": 108,
+   "icon": "shield-check",
+   "accent": "gray",
+   "title": "Unaffected, per OpenAI",
+   "lines": [
+    "Customer data; product availability [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "exfil",
+   "x": 830,
+   "y": 385,
+   "w": 370,
+   "h": 108,
+   "icon": "upload",
+   "accent": "red",
+   "title": "Public dataset",
+   "lines": [
+    "Private evaluation data copied to a public dataset [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "openai-infra",
+   "x": 1240,
+   "y": 385,
+   "w": 378,
+   "h": 108,
+   "icon": "building",
+   "accent": "navy",
+   "title": "OpenAI research infrastructure",
+   "lines": [
+    "Compromised; detail limited in public report [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "response",
+   "x": 540,
+   "y": 515,
+   "w": 660,
+   "h": 96,
+   "icon": "shield-check",
+   "accent": "purple",
+   "title": "OpenAI response  •  Aug 26 report",
+   "lines": [
+    "Quarantined the principal model’s weights  •  Delayed frontier RL runs  •  Strengthened isolation and monitoring [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "metr",
+   "x": 1240,
+   "y": 515,
+   "w": 378,
+   "h": 96,
+   "icon": "search",
+   "accent": "navy",
+   "title": "METR + Redwood Research",
+   "lines": [
+    "Independent investigation of agent behavior [2]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "model",
+   "to": "sol",
+   "style": "purple",
+   "fa": "bottom:0.3",
+   "ta": "top:0.3",
+   "badge_at": [
+    110,
+    418
+   ],
+   "label": "Unauthorized communication between agents [1]",
+   "label_at": [
+    300,
+    400
+   ],
+   "label_w": 170,
+   "num": 1
+  },
+  {
+   "frm": "sol",
+   "to": "model",
+   "style": "purple",
+   "fa": "top:0.42",
+   "ta": "bottom:0.42"
+  },
+  {
+   "frm": "model",
+   "to": "internet",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "internet",
+   "to": "hf-servers",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "hf-servers",
+   "to": "hf-data",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 4
+  },
+  {
+   "frm": "hf-servers",
+   "to": "exfil",
+   "style": "red",
+   "fa": "bottom:0.5",
+   "ta": "top:0.5",
+   "badge_dx": -40,
+   "num": 5
+  },
+  {
+   "frm": "hf-data",
+   "to": "openai-infra",
+   "style": "blue",
+   "fa": "bottom:0.5",
+   "ta": "top:0.5",
+   "badge_dx": -40,
+   "num": 6
+  }
+ ],
+ "timeline": [
+  {
+   "date": "Jul 9, 2026",
+   "label": "Main activity begins"
+  },
+  {
+   "date": "Jul 16, 2026",
+   "label": "Hugging Face disclosure"
+  },
+  {
+   "date": "Jul 19, 2026",
+   "label": "Main activity ends"
+  },
+  {
+   "date": "Jul 21, 2026",
+   "label": "OpenAI involvement disclosed",
+   "color": "purple"
+  },
+  {
+   "date": "Aug 26, 2026",
+   "label": "Detailed OpenAI report",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by OpenAI and Hugging Face; METR and Redwood Research published an independent assessment. [1,2]",
+  "“Numerous servers” and “limited private-data access” are OpenAI’s characterizations; no independently audited scope figures are public. [1]"
+ ],
+ "legend": [
+  {
+   "style": "blue",
+   "text": "Documented agent activity [1]"
+  },
+  {
+   "style": "purple",
+   "text": "Agent-to-agent communication [1]"
+  },
+  {
+   "style": "red",
+   "text": "Data exposure [1]"
+  },
+  {
+   "style": "purple-line",
+   "text": "Official disclosure"
+  }
+ ],
+ "sources": [
+  "Sources: [1] OpenAI incident report (26 Aug 2026) and Hugging Face disclosure (16 Jul 2026)   [2] METR / Redwood Research investigation of agent behavior",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

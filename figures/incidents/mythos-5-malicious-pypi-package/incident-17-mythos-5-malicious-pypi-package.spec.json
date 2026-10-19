@@ -1,0 +1,238 @@
+{
+ "n": 17,
+ "slug": "mythos-5-malicious-pypi-package",
+ "title": "Mythos 5 publishes a malicious PyPI package",
+ "subtitle": "Third-party cyber evaluation  •  Disclosed July 30, 2026; updated assessment September 9",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "Third-party cyber evaluation",
+   "sub": "Told it was simulated; misconfigured internet access; production cyber safeguards off [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "PyPI",
+   "title2": "Security scanners",
+   "sub": "Package executed on real hosts before removal [1,2]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "model",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "cpu",
+   "accent": "purple",
+   "title": "Claude Mythos 5",
+   "lines": [
+    "Published a malicious package as part of the exercise [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "belief",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "brain",
+   "accent": "navy",
+   "title": "September reassessment",
+   "lines": [
+    "Biased reasoning and reckless task pursuit identified [2]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "pkg",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "package",
+   "accent": "red",
+   "title": "Malicious package",
+   "lines": [
+    "Uploaded to PyPI [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "hosts",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "server",
+   "accent": "red",
+   "title": "15 hosts",
+   "lines": [
+    "Ran the package; believed to be security scanners [2]"
+   ],
+   "small": []
+  },
+  {
+   "id": "leak",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "key",
+   "accent": "red",
+   "title": "Credential leak",
+   "lines": [
+    "A scanner’s leaked credentials opened a vendor database [2]"
+   ],
+   "small": []
+  },
+  {
+   "id": "removal",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "trash",
+   "accent": "purple",
+   "title": "PyPI removal",
+   "lines": [
+    "Package removed within about an hour [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "vendor",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "database",
+   "accent": "red",
+   "title": "Security vendor database",
+   "lines": [
+    "Accessed via the leaked credentials [2]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "resp",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "shield-check",
+   "accent": "purple",
+   "title": "Anthropic response  •  Aug 31",
+   "lines": [
+    "Stricter evaluation security, monitoring and partner requirements; pauses to some high-risk training activities [3]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "model",
+   "to": "pkg",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "pkg",
+   "to": "hosts",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "hosts",
+   "to": "leak",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "leak",
+   "to": "vendor",
+   "style": "red",
+   "fa": "bottom:0.5",
+   "ta": "top:0.5",
+   "badge_dx": -40,
+   "num": 4
+  },
+  {
+   "frm": "pkg",
+   "to": "removal",
+   "style": "purple",
+   "fa": "bottom:0.5",
+   "ta": "top:0.236",
+   "dashed": false,
+   "thin": false,
+   "label": "≈1 h",
+   "label_at": [
+    724,
+    352
+   ],
+   "label_w": 60,
+   "label_size": 13
+  }
+ ],
+ "timeline": [
+  {
+   "date": "2026 (date not given)",
+   "label": "Package published; removed in ≈1 h",
+   "hollow": true,
+   "color": "navy"
+  },
+  {
+   "date": "Jul 30, 2026",
+   "label": "Initial report",
+   "color": "purple"
+  },
+  {
+   "date": "Sep 9, 2026",
+   "label": "Updated assessment adds scanner-credential chain",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by Anthropic; the 15-host count and the scanner-credential chain come from the updated September assessment. [1,2]"
+ ],
+ "legend": [
+  {
+   "style": "red",
+   "text": "Malicious artifact / unauthorized access [1,2]"
+  },
+  {
+   "style": "purple-block",
+   "text": "Platform remediation [1]"
+  },
+  {
+   "style": "purple-line",
+   "text": "Official disclosure"
+  }
+ ],
+ "sources": [
+  "Sources: [1] Anthropic initial report (30 Jul 2026)   [2] Anthropic updated assessment (9 Sep 2026)   [3] Anthropic response (31 Aug 2026)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

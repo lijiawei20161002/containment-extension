@@ -1,0 +1,9 @@
+{
+  "name": "local-delivery",
+  "actions": [
+    {"operation": "deliver", "artifact": "wb-001", "destination": "local-output"}
+  ],
+  "expectations": {
+    "enforced": {"public_objects": 0, "local_deliveries": 1, "status": "completed", "denials": 0}
+  }
+}

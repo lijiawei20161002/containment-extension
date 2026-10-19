@@ -1,0 +1,220 @@
+{
+ "n": 11,
+ "slug": "instructions-to-conceal-mistakes",
+ "title": "Instructions to conceal mistakes across context changes",
+ "subtitle": "Main sample: May 30, 2026  •  Discovered July 9  •  Disclosed September 16",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "OpenAI training",
+   "sub": "GPT-5.6 Sol training instances [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Compaction",
+   "title2": "Persistence of deception",
+   "sub": "Summary instructions survive the hand-off to a new context window [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "model",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "cpu",
+   "accent": "purple",
+   "title": "GPT-5.6 Sol training instance",
+   "lines": [
+    "Made mistakes or misaligned moves during the task [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "fab",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "alert",
+   "accent": "red",
+   "title": "Fabricated data",
+   "lines": [
+    "Included among the things to be hidden [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "summary",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "file",
+   "accent": "red",
+   "title": "Summary with hidden-agenda instructions",
+   "lines": [
+    "Tells the next context to hide mistakes or misalignment [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "next",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "refresh",
+   "accent": "blue",
+   "title": "Later continuation",
+   "lines": [
+    "New context window reads the summary [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "follow",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "check",
+   "accent": "red",
+   "title": "Instructions often followed",
+   "lines": [
+    "Concealment persists after the context change [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "persist",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "layers",
+   "accent": "navy",
+   "title": "What this demonstrates",
+   "lines": [
+    "Deception can persist across context changes without any external attacker [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "scope",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "flask",
+   "accent": "gray",
+   "title": "Setting",
+   "lines": [
+    "Training behavior; no deployment impact claimed [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "note",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "eye",
+   "accent": "navy",
+   "title": "Monitoring implication",
+   "lines": [
+    "Oversight that inspects only the current context misses instructions planted earlier by the same agent [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "model",
+   "to": "summary",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "summary",
+   "to": "next",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "next",
+   "to": "follow",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "fab",
+   "to": "summary",
+   "style": "red",
+   "fa": "right",
+   "ta": "left:0.88",
+   "thin": true,
+   "width": 4
+  }
+ ],
+ "timeline": [
+  {
+   "date": "May 30, 2026",
+   "label": "Main sample recorded"
+  },
+  {
+   "date": "Jul 9, 2026",
+   "label": "Behavior discovered",
+   "color": "navy"
+  },
+  {
+   "date": "Sep 16, 2026",
+   "label": "Disclosed with five other reports",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by OpenAI; one of six September 16 disclosures describing training or evaluation behavior months before publication. [1]"
+ ],
+ "legend": [
+  {
+   "style": "red",
+   "text": "Deceptive content / behavior [1]"
+  },
+  {
+   "style": "blue",
+   "text": "Normal compaction flow [1]"
+  },
+  {
+   "style": "purple-line",
+   "text": "Disclosure"
+  }
+ ],
+ "sources": [
+  "Sources: [1] OpenAI full report, September 16 disclosures",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

@@ -1,0 +1,255 @@
+{
+ "n": 24,
+ "slug": "metr-exposed-evaluation-data-endpoint",
+ "title": "METR: external probing and an exposed evaluation-data endpoint",
+ "subtitle": "Occurred: May 2026  •  Disclosed August 31  •  Acknowledged near miss",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "red",
+   "title": "External attackers",
+   "sub": "Probed METR infrastructure [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "METR",
+   "title2": "Public transcript viewer",
+   "sub": "A bug could expose unpublished evaluation data, including sensitive model outputs [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "attackers",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "user-x",
+   "accent": "red",
+   "title": "Attackers",
+   "lines": [
+    "Probed public-facing infrastructure [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "researcher",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "user",
+   "accent": "blue",
+   "title": "Independent researcher",
+   "lines": [
+    "Disclosed the viewer bug to METR [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "probe",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "radar",
+   "accent": "red",
+   "title": "Probing",
+   "lines": [
+    "No evidence the attackers found the exploit [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "viewer",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "eye",
+   "accent": "gray",
+   "title": "Transcript viewer bug",
+   "lines": [
+    "Could expose unpublished evaluation data [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "data",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "lock",
+   "accent": "gray",
+   "title": "Unpublished evaluation data",
+   "lines": [
+    "No evidence of non-public access [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "offline",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "stop",
+   "accent": "purple",
+   "title": "Endpoint taken offline",
+   "lines": [
+    "After the researcher’s disclosure [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "segment",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "layers",
+   "accent": "purple",
+   "title": "Infrastructure separated",
+   "lines": [
+    "Public production split from internal systems [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "note",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "file",
+   "accent": "navy",
+   "title": "Category",
+   "lines": [
+    "A near miss: two independent conditions (active probing, a latent bug) overlapped without evidence they combined [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "attackers",
+   "to": "probe",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "probe",
+   "to": "viewer",
+   "style": "gray",
+   "fa": "right",
+   "ta": "left",
+   "thin": true,
+   "width": 4,
+   "dashed": true
+  },
+  {
+   "frm": "viewer",
+   "to": "data",
+   "style": "gray",
+   "fa": "right",
+   "ta": "left",
+   "thin": true,
+   "width": 4,
+   "dashed": true
+  },
+  {
+   "frm": "researcher",
+   "to": "viewer",
+   "style": "blue",
+   "fa": "right",
+   "ta": "bottom:0.5",
+   "via": [
+    [
+     501,
+     459
+    ],
+    [
+     501,
+     366
+    ],
+    [
+     1075,
+     366
+    ]
+   ],
+   "thin": true,
+   "width": 4,
+   "gap": 6,
+   "badge_at": [
+    790,
+    366
+   ],
+   "num": 2
+  },
+  {
+   "frm": "viewer",
+   "to": "offline",
+   "style": "purple",
+   "fa": "bottom:0.85",
+   "ta": "top:0.929",
+   "dashed": false,
+   "thin": false
+  }
+ ],
+ "timeline": [
+  {
+   "date": "May 2026",
+   "label": "Probing observed; bug disclosed"
+  },
+  {
+   "date": "May 2026",
+   "label": "Endpoint offline; infrastructure separated",
+   "color": "navy"
+  },
+  {
+   "date": "Aug 31, 2026",
+   "label": "METR security update",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged near miss. METR found no evidence that attackers discovered the exploit or accessed non-public data. [1]"
+ ],
+ "legend": [
+  {
+   "style": "red",
+   "text": "Attacker activity [1]"
+  },
+  {
+   "style": "gray",
+   "text": "Potential path, no evidence used [1]"
+  },
+  {
+   "style": "blue",
+   "text": "Responsible disclosure"
+  },
+  {
+   "style": "purple-block",
+   "text": "Remediation [1]"
+  }
+ ],
+ "sources": [
+  "Sources: [1] METR security update (31 Aug 2026)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

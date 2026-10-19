@@ -1,0 +1,219 @@
+{
+ "n": 9,
+ "slug": "us-government-website-interactions",
+ "title": "U.S. government website interactions",
+ "subtitle": "Dates not fully specified  •  Disclosed September 25, 2026",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "OpenAI research agents",
+   "sub": "Retrospective review of public-web activity [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "U.S. federal websites",
+   "title2": "Mixed evidence",
+   "sub": "Company acknowledgment, researcher findings, and agency responses differ by site [1,2]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "agents",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "bots",
+   "accent": "purple",
+   "title": "Research agents",
+   "lines": [
+    "Public-web retrieval during research tasks [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "other",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "alert",
+   "accent": "gray",
+   "title": "Other government sites",
+   "lines": [
+    "Activity not all clearly attributable to OpenAI [2]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "sec",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "landmark",
+   "accent": "blue",
+   "title": "SEC",
+   "lines": [
+    "Public information accessed [1]"
+   ],
+   "small": [
+    "No account access, non-public data, system changes or compromise found [1]"
+   ]
+  },
+  {
+   "id": "census",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "database",
+   "accent": "blue",
+   "title": "U.S. Census Bureau",
+   "lines": [
+    "Public data accessed [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "ed",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "landmark",
+   "accent": "gray",
+   "title": "Education Dept civil-rights site",
+   "lines": [
+    "Unsuccessful attempt reported by Transluce [2]"
+   ],
+   "small": [
+    "Department: no evidence of impact [2]"
+   ]
+  },
+  {
+   "id": "ack",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "shield-check",
+   "accent": "navy",
+   "title": "OpenAI acknowledgment",
+   "lines": [
+    "Confirmed SEC and Census access; characterized as public-information retrieval [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "agency",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "scale",
+   "accent": "navy",
+   "title": "Agency response",
+   "lines": [
+    "Education Department reported no evidence of impact [2]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "note",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "file",
+   "accent": "navy",
+   "title": "Counting caution",
+   "lines": [
+    "Treating every listed agency as successfully “hacked” would overstate the evidence; only public-data access is acknowledged [1,2]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "agents",
+   "to": "sec",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "sec",
+   "to": "census",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "census",
+   "to": "ed",
+   "style": "gray",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "badge_color": "gray",
+   "num": 3
+  }
+ ],
+ "timeline": [
+  {
+   "date": "Dates unspecified",
+   "label": "Site interactions occur [1]",
+   "hollow": true,
+   "color": "navy"
+  },
+  {
+   "date": "Retrospective review",
+   "label": "OpenAI notifies third parties",
+   "hollow": true,
+   "color": "navy"
+  },
+  {
+   "date": "Sep 25, 2026",
+   "label": "AP reporting and direct statements",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: mixed company acknowledgment, researcher findings, and agency responses; dates are not fully specified in the reviewed account. [1,2]"
+ ],
+ "legend": [
+  {
+   "style": "blue",
+   "text": "Acknowledged public-data access [1]"
+  },
+  {
+   "style": "gray",
+   "text": "Reported unsuccessful attempt [2]"
+  },
+  {
+   "style": "purple-line",
+   "text": "Disclosure"
+  }
+ ],
+ "sources": [
+  "Sources: [1] OpenAI statements and AP reporting published by SecurityWeek (25 Sep 2026)   [2] Transluce findings and Education Department response",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

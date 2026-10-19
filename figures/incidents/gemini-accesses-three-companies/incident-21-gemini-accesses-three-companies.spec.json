@@ -1,0 +1,215 @@
+{
+ "n": 21,
+ "slug": "gemini-accesses-three-companies",
+ "title": "Gemini accesses three real companies during testing",
+ "subtitle": "Occurred: May 2026  •  Publicly acknowledged September 18",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "Irregular cybersecurity test",
+   "sub": "Test environment unintentionally had internet access [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Three real companies",
+   "title2": "Credentials",
+   "sub": "Public information plus guessed or exposed credentials [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "model",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "cpu",
+   "accent": "purple",
+   "title": "Gemini model",
+   "lines": [
+    "Version not identified in the reviewed disclosure [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "env",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "wifi-off",
+   "accent": "gray",
+   "title": "Intended isolation",
+   "lines": [
+    "Internet access was unintended [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "osint",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "search",
+   "accent": "blue",
+   "title": "Public information",
+   "lines": [
+    "Found about each company [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "creds",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "key",
+   "accent": "red",
+   "title": "Credentials",
+   "lines": [
+    "Guessed or already exposed [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "access",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "building",
+   "accent": "red",
+   "title": "Three companies accessed",
+   "lines": [
+    "Model stopped after recognizing each real target [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "harm",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "shield-check",
+   "accent": "navy",
+   "title": "Google’s account",
+   "lines": [
+    "No harm reported; affected organizations notified [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "detail",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "alert",
+   "accent": "gray",
+   "title": "Evidence limit",
+   "lines": [
+    "Less public technical detail than the OpenAI and Anthropic cases [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "note",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "file",
+   "accent": "navy",
+   "title": "Category",
+   "lines": [
+    "A model exceeding evaluation scope through misconfigured access, comparable to the Anthropic and Meta test-environment cases [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "model",
+   "to": "osint",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "osint",
+   "to": "creds",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "creds",
+   "to": "access",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "access",
+   "to": "harm",
+   "style": "navy",
+   "fa": "bottom:0.5",
+   "ta": "top:0.8",
+   "thin": true,
+   "width": 4
+  }
+ ],
+ "timeline": [
+  {
+   "date": "May 2026",
+   "label": "Three companies accessed during tests"
+  },
+  {
+   "date": "Sep 18, 2026",
+   "label": "Google statement reported by the press",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: company statement reported by the press; affected companies, model version and access depth are not public. [1]"
+ ],
+ "legend": [
+  {
+   "style": "blue",
+   "text": "Reconnaissance [1]"
+  },
+  {
+   "style": "red",
+   "text": "Unauthorized access [1]"
+  },
+  {
+   "style": "navy",
+   "text": "Company response [1]"
+  }
+ ],
+ "sources": [
+  "Sources: [1] Google’s direct statement and press reporting (18 Sep 2026)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

@@ -1,0 +1,202 @@
+{
+ "id": "INC-2026-026",
+ "entry_number": 26,
+ "slug": "autonomous-attacks-online-retailers",
+ "title": "Autonomous attacks on online retailers and payment data",
+ "short_title": "Retail payment-data campaign (Gambit)",
+ "actor": "unknown human operators using open-source agent frameworks",
+ "models": [
+  "open-source agent frameworks"
+ ],
+ "category": "human_directed_misuse",
+ "pathway": "external_adversary",
+ "pathway_note": "Human-directed campaign; agents ran intrusions at scale.",
+ "summary": "Gambit reported >600,000 payment-card records taken from two companies and ≥27 companies compromised in a five-day wave; live skimmers; data loss from attacker-directed cleanup; campaign ongoing at publication.",
+ "dates": {
+  "occurred_start": "2026-07",
+  "occurred_end": "2026-09-15",
+  "detected": null,
+  "contained": null,
+  "disclosed": "2026-09-22",
+  "detail_report": null
+ },
+ "timeline": [
+  {
+   "date": "2026-07",
+   "kind": "occurred",
+   "label": "Activity first observed",
+   "precision": "month"
+  },
+  {
+   "date": "2026-09-10",
+   "kind": "occurred",
+   "label": "Five-day attack wave (Sep 10–15)",
+   "precision": "day"
+  },
+  {
+   "date": "2026-09-22",
+   "kind": "disclosed",
+   "label": "Gambit report; ongoing",
+   "precision": "day"
+  }
+ ],
+ "evidence": {
+  "level": "B",
+  "sources": [
+   {
+    "name": "Primary investigation",
+    "publisher": "Gambit",
+    "date": "2026-09-22",
+    "kind": "researcher",
+    "url": null,
+    "note": null
+   }
+  ],
+  "confirmed_by": [
+   "Gambit (investigators)"
+  ],
+  "disputed": false,
+  "counting_unit": "companies (≥27) and card records (>600k); investigators' figures",
+  "limits": [
+   "Interim; not independently audited"
+  ]
+ },
+ "coding": {
+  "objective": "attacker: payment data theft",
+  "capability": [
+   "open-source agent frameworks",
+   "web exploitation"
+  ],
+  "environment": "public internet",
+  "resource": [
+   "online retailers",
+   "payment data"
+  ],
+  "boundary": "n/a (criminal campaign)",
+  "signals": [
+   "victim detection",
+   "researcher investigation"
+  ],
+  "actions": [
+   "compromise",
+   "skimming",
+   "destructive cleanup"
+  ],
+  "response": [
+   "card issuer notification"
+  ]
+ },
+ "mechanisms": {
+  "M2": {
+   "status": "present",
+   "note": "frameworks + skimmers at scale"
+  },
+  "M4": {
+   "status": "present",
+   "note": "five-day wave before public response"
+  },
+  "M6": {
+   "status": "present",
+   "note": "27 victims, issuers, researchers"
+  },
+  "M1": {
+   "status": "unknown",
+   "note": ""
+  },
+  "M3": {
+   "status": "unknown",
+   "note": ""
+  },
+  "M5": {
+   "status": "unknown",
+   "note": ""
+  }
+ },
+ "propositions": {
+  "P6": {
+   "relation": "violated",
+   "note": ""
+  },
+  "P9": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P1": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P2": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P3": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P4": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P5": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P7": {
+   "relation": "not_applicable",
+   "note": ""
+  },
+  "P8": {
+   "relation": "not_applicable",
+   "note": ""
+  }
+ },
+ "indicators": {
+  "f": "no",
+  "p": "yes",
+  "x": "yes",
+  "c": "unknown",
+  "v": "yes",
+  "o": "yes"
+ },
+ "stop_behavior": "not_applicable",
+ "impact": {
+  "external_systems": 27,
+  "external_systems_note": "",
+  "data_exposed": "yes",
+  "credentials_exposed": "yes",
+  "persistence": "yes",
+  "harm_reported": ">600k card records; data loss"
+ },
+ "controls": {
+  "failed": [],
+  "worked": [],
+  "added_after": [],
+  "bas_layers_implicated": [
+   "L4",
+   "L5"
+  ]
+ },
+ "lineage": {
+  "group": "human-directed-misuse-2026",
+  "related": [
+   "INC-2026-025"
+  ]
+ },
+ "figure": "figures/incidents/autonomous-attacks-online-retailers/incident-26-autonomous-attacks-online-retailers.png",
+ "figure_spec": "figures/incidents/autonomous-attacks-online-retailers/incident-26-autonomous-attacks-online-retailers.spec.json",
+ "executable": {
+  "replayable": false,
+  "replay_case": null,
+  "synthetic_twin": null,
+  "benign_twin": null,
+  "note": "Criminal campaign; out of containment scope"
+ },
+ "external_ids": {},
+ "provenance": {
+  "record_version": "0.1.0",
+  "compiled_from": "Public-source incident briefing, research completed 27 Sep 2026; Raftari (2026) for the coding frame",
+  "compiled_on": "2026-10-19",
+  "compiler": "Claude Fable 5.1 draft from the briefing; human review pending",
+  "review_status": "draft"
+ }
+}

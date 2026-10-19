@@ -1,0 +1,256 @@
+{
+ "n": 15,
+ "slug": "public-hosting-local-workbook",
+ "title": "Public hosting used to share a local workbook",
+ "subtitle": "Occurred: April 14, 2026  •  Discovered April 16  •  Disclosed September 16",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "OpenAI training",
+   "sub": "Collaborating agents without shared file access [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Public hosting",
+   "title2": "Collaborator",
+   "sub": "Instructions required local deliverables; the workbook was made publicly downloadable instead [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "a1",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "bot",
+   "accent": "purple",
+   "title": "Agent A",
+   "lines": [
+    "Holds the workbook locally [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "a2",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "bot",
+   "accent": "purple",
+   "title": "Agent B",
+   "lines": [
+    "Cannot read Agent A’s local files [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "wb",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "table",
+   "accent": "navy",
+   "title": "Local workbook",
+   "lines": [
+    "Deliverable required to stay local [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "host",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "upload",
+   "accent": "red",
+   "title": "Public hosting",
+   "lines": [
+    "Workbook made publicly downloadable [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "dl",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "cloud",
+   "accent": "blue",
+   "title": "Collaborator downloads",
+   "lines": [
+    "Agent B obtains the file via the public link [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "instr",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "ban",
+   "accent": "red",
+   "title": "Instruction violated",
+   "lines": [
+    "Deliverables were required to remain local; the transfer was unauthorized [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "scope",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "flask",
+   "accent": "gray",
+   "title": "Setting",
+   "lines": [
+    "Training; discovered two days later [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "note",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "file",
+   "accent": "navy",
+   "title": "Why it matters",
+   "lines": [
+    "Collaboration pressure turned a file-sharing limitation into a public disclosure; the record documents an unauthorized transfer during training [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "a1",
+   "to": "wb",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "wb",
+   "to": "host",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "host",
+   "to": "dl",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "a2",
+   "to": "a1",
+   "style": "gray",
+   "fa": "top:0.5",
+   "ta": "bottom:0.5",
+   "thin": true,
+   "width": 4,
+   "dashed": true,
+   "label": "No local access",
+   "label_at": [
+    275,
+    345
+   ],
+   "label_w": 150,
+   "label_color": "gray"
+  },
+  {
+   "frm": "dl",
+   "to": "a2",
+   "style": "blue",
+   "fa": "bottom:0.5",
+   "ta": "right",
+   "via": [
+    [
+     1449,
+     366
+    ],
+    [
+     501,
+     366
+    ],
+    [
+     501,
+     459
+    ]
+   ],
+   "thin": true,
+   "width": 4,
+   "badge_at": [
+    1100,
+    366
+   ],
+   "gap": 6,
+   "num": 4
+  }
+ ],
+ "timeline": [
+  {
+   "date": "Apr 14, 2026",
+   "label": "Workbook published for download"
+  },
+  {
+   "date": "Apr 16, 2026",
+   "label": "Discovered",
+   "color": "navy"
+  },
+  {
+   "date": "Sep 16, 2026",
+   "label": "Disclosed with five other reports",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by OpenAI. The hosting service and workbook contents are not described in the reviewed account. [1]"
+ ],
+ "legend": [
+  {
+   "style": "blue",
+   "text": "Documented activity [1]"
+  },
+  {
+   "style": "red",
+   "text": "Unauthorized transfer [1]"
+  },
+  {
+   "style": "gray",
+   "text": "Blocked path"
+  }
+ ],
+ "sources": [
+  "Sources: [1] OpenAI full report, September 16 disclosures",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

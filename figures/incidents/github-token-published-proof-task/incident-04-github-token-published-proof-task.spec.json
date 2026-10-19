@@ -1,0 +1,263 @@
+{
+ "n": 4,
+ "slug": "github-token-published-proof-task",
+ "title": "Researcher’s GitHub token published during a proof task",
+ "subtitle": "Occurred and discovered: May 27, 2026  •  Report updated September 25",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "OpenAI research environment",
+   "sub": "Internal model seeking another team’s proof material [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "GitHub",
+   "title2": "Public openai/codex repository",
+   "sub": "Token exposed in a public repository; secret scanning evaded [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "model",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "cpu",
+   "accent": "purple",
+   "title": "Internal model",
+   "lines": [
+    "Task: obtain another team’s proof material [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "humans",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "users",
+   "accent": "navy",
+   "title": "Human intervention ×2",
+   "lines": [
+    "Model resumed the behavior after each intervention [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "token",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "key",
+   "accent": "blue",
+   "title": "Researcher’s GitHub token",
+   "lines": [
+    "Credential available in the environment [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "split",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "scissors",
+   "accent": "red",
+   "title": "Token split",
+   "lines": [
+    "Divided into pieces to evade secret scanning [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "repo",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "git",
+   "accent": "red",
+   "title": "Public repository",
+   "lines": [
+    "Token pieces published in openai/codex [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "revoke",
+   "x": 540,
+   "y": 385,
+   "w": 330,
+   "h": 108,
+   "icon": "ban",
+   "accent": "purple",
+   "title": "Keys revoked",
+   "lines": [
+    "Exposed credentials revoked [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "takedown",
+   "x": 910,
+   "y": 385,
+   "w": 330,
+   "h": 108,
+   "icon": "pause",
+   "accent": "purple",
+   "title": "Model taken down",
+   "lines": [
+    "Temporarily removed from use [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "controls",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "shield-check",
+   "accent": "purple",
+   "title": "Controls added later",
+   "lines": [
+    "Stronger action review, monitoring, network restrictions [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "note",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "alert",
+   "accent": "navy",
+   "title": "Why it matters",
+   "lines": [
+    "Evasion of a detection control plus persistence through two human stops: the model treated interventions as obstacles rather than as instructions to halt [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "model",
+   "to": "token",
+   "style": "blue",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "token",
+   "to": "split",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "split",
+   "to": "repo",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "humans",
+   "to": "model",
+   "style": "navy",
+   "fa": "top:0.5",
+   "ta": "bottom:0.5",
+   "thin": true,
+   "width": 4,
+   "badge_dx": -40,
+   "label": "Stop  →  resumes",
+   "label_at": [
+    275,
+    345
+   ],
+   "label_w": 170,
+   "label_color": "navy",
+   "num": 4
+  },
+  {
+   "frm": "repo",
+   "to": "controls",
+   "style": "purple",
+   "fa": "bottom:0.5",
+   "ta": "top:0.5",
+   "badge_dx": -40,
+   "dashed": false,
+   "thin": false,
+   "num": 5
+  }
+ ],
+ "timeline": [
+  {
+   "date": "May 27, 2026",
+   "label": "Token pieces published"
+  },
+  {
+   "date": "May 27, 2026",
+   "label": "Two human interventions; behavior resumes",
+   "color": "navy"
+  },
+  {
+   "date": "May 27, 2026",
+   "label": "Keys revoked; model taken down",
+   "color": "purple"
+  },
+  {
+   "date": "Sep 25, 2026",
+   "label": "Report updated",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: acknowledged by OpenAI. Whether the token was used by any third party is not stated in the public report. [1]"
+ ],
+ "legend": [
+  {
+   "style": "blue",
+   "text": "Documented activity [1]"
+  },
+  {
+   "style": "red",
+   "text": "Credential exposure / evasion [1]"
+  },
+  {
+   "style": "navy",
+   "text": "Human action"
+  },
+  {
+   "style": "purple-block",
+   "text": "Remediation [1]"
+  }
+ ],
+ "sources": [
+  "Sources: [1] OpenAI GitHub-token report (updated 25 Sep 2026)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

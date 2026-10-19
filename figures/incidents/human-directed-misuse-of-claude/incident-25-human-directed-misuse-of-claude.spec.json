@@ -1,0 +1,251 @@
+{
+ "n": 25,
+ "slug": "human-directed-misuse-of-claude",
+ "title": "Human-directed misuse of Claude across multiple harm areas",
+ "subtitle": "Activity covered: December 2025 – August 2026  •  Threat-intelligence report September 10",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "red",
+   "title": "Human operators",
+   "sub": "Selected targets and reviewed results even where agents did most of the work [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Disrupted operations",
+   "title2": "Harm areas",
+   "sub": "Provider threat-intelligence findings; examples, not an exhaustive census [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "ops",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "users",
+   "accent": "red",
+   "title": "Operators",
+   "lines": [
+    "Suspected Russian-linked espionage; financially motivated credential harvesting [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "agents",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "bot",
+   "accent": "purple",
+   "title": "Claude agents",
+   "lines": [
+    "Executed substantial portions of the work under human direction [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "cyber",
+   "x": 540,
+   "y": 240,
+   "w": 250,
+   "h": 108,
+   "icon": "terminal",
+   "accent": "red",
+   "title": "Cyberattacks",
+   "lines": [
+    "Incl. credential harvesting [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "surv",
+   "x": 810,
+   "y": 240,
+   "w": 250,
+   "h": 108,
+   "icon": "eye",
+   "accent": "red",
+   "title": "Surveillance",
+   "lines": [
+    "Espionage-linked activity [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "infl",
+   "x": 1080,
+   "y": 240,
+   "w": 250,
+   "h": 108,
+   "icon": "megaphone",
+   "accent": "red",
+   "title": "Influence activity",
+   "lines": [
+    "Operations disrupted [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "fraud",
+   "x": 1350,
+   "y": 240,
+   "w": 268,
+   "h": 108,
+   "icon": "card",
+   "accent": "red",
+   "title": "Fraud",
+   "lines": [
+    "Operations disrupted [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "weap",
+   "x": 540,
+   "y": 385,
+   "w": 250,
+   "h": 108,
+   "icon": "alert",
+   "accent": "red",
+   "title": "Weapons / biological",
+   "lines": [
+    "Misuse attempts [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "distill",
+   "x": 810,
+   "y": 385,
+   "w": 250,
+   "h": 108,
+   "icon": "layers",
+   "accent": "red",
+   "title": "Illicit distillation",
+   "lines": [
+    "Model-output harvesting [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "android",
+   "x": 1080,
+   "y": 385,
+   "w": 538,
+   "h": 108,
+   "icon": "smartphone",
+   "accent": "navy",
+   "title": "Example: 1.8 M Android apps scanned",
+   "lines": [
+    "Downloaded and scanned for embedded secrets; the number is apps scanned, not organizations breached [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "resp",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "ban",
+   "accent": "purple",
+   "title": "Anthropic response",
+   "lines": [
+    "Associated accounts banned; intelligence shared where appropriate. These are malicious uses of AI, distinct from a research agent exceeding its task [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "ops",
+   "to": "agents",
+   "style": "red",
+   "fa": "bottom:0.5",
+   "ta": "top:0.5",
+   "badge_dx": -40,
+   "label": "Direct and review",
+   "label_at": [
+    290,
+    358
+   ],
+   "label_w": 150,
+   "num": 1
+  },
+  {
+   "frm": "agents",
+   "to": "cyber",
+   "style": "red",
+   "fa": "right",
+   "ta": "left:0.5",
+   "via": [
+    [
+     500,
+     459
+    ],
+    [
+     500,
+     294
+    ]
+   ],
+   "thin": true,
+   "width": 5,
+   "badge_at": [
+    500,
+    376
+   ],
+   "num": 2
+  }
+ ],
+ "timeline": [
+  {
+   "date": "Dec 2025",
+   "label": "Earliest covered activity"
+  },
+  {
+   "date": "Aug 2026",
+   "label": "Latest covered activity"
+  },
+  {
+   "date": "Sep 10, 2026",
+   "label": "Threat-intelligence report",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: provider threat-intelligence findings; attribution (e.g., Russian-linked) is the provider’s assessment and victims are not enumerated. [1]"
+ ],
+ "legend": [
+  {
+   "style": "red",
+   "text": "Human-directed misuse [1]"
+  },
+  {
+   "style": "purple-line",
+   "text": "Provider disclosure"
+  }
+ ],
+ "sources": [
+  "Sources: [1] Anthropic threat-intelligence report (10 Sep 2026)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}
