@@ -1,0 +1,421 @@
+{
+  "status": "calibration_or_integrity_failed",
+  "error": "No usable threshold at the frozen benign FPR limit",
+  "finished_at": "2026-10-20T03:09:26.409747+00:00",
+  "assigned": 68,
+  "recorded": 12,
+  "target_assigned": 48,
+  "threshold": null,
+  "target_matrix": {
+    "TP": 0,
+    "FN": 0,
+    "FP": 0,
+    "TN": 0
+  },
+  "target_unknown": 48,
+  "target_tpr": {
+    "positive": 0,
+    "observed": 0,
+    "assigned": 26,
+    "unknown": 26,
+    "rate": null,
+    "wilson95": null,
+    "assigned_bounds": [
+      0.0,
+      1.0
+    ]
+  },
+  "target_fpr": {
+    "positive": 0,
+    "observed": 0,
+    "assigned": 22,
+    "unknown": 22,
+    "rate": null,
+    "wilson95": null,
+    "assigned_bounds": [
+      0.0,
+      1.0
+    ]
+  },
+  "archive": {
+    "benign_calibration": {
+      "positive": 0,
+      "observed": 0,
+      "assigned": 12,
+      "unknown": 12,
+      "rate": null,
+      "wilson95": null,
+      "assigned_bounds": [
+        0.0,
+        1.0
+      ]
+    },
+    "positive_audit": {
+      "positive": 0,
+      "observed": 0,
+      "assigned": 8,
+      "unknown": 8,
+      "rate": null,
+      "wilson95": null,
+      "assigned_bounds": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  "records": [
+    {
+      "run": "run-0001",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0002",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0003",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0004",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0005",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0006",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0007",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0008",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0009",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0010",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0011",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0012",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0013",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0014",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0015",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0016",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0017",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0018",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0019",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0020",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0021",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0022",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0023",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0024",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0025",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0026",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0027",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0028",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0029",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0030",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0031",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0032",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0033",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0034",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0035",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0036",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0037",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0038",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0039",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0040",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0041",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0042",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0043",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0044",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0045",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0046",
+      "observer": true,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0047",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0048",
+      "observer": false,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    }
+  ],
+  "budget": {
+    "requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "estimated_usd": 0.0,
+    "reserved_usd": 0.0,
+    "unknown_usage_requests": 0,
+    "max_requests": 56,
+    "max_estimated_usd": 1.9,
+    "max_input_tokens": null,
+    "max_output_tokens": null,
+    "reserved_input_tokens": 0,
+    "reserved_output_tokens": 0,
+    "unknown_input_token_reservations": 0,
+    "unknown_output_token_reservations": 0,
+    "note": "Uncached list-price estimate; not a billing statement. Failed responses conservatively retain the request reservation."
+  }
+}

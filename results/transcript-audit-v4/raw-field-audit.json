@@ -1,0 +1,402 @@
+{
+  "analysis": "Post-hoc raw-field extraction; frozen primary score analysis unchanged",
+  "reason": "Frozen v4 joint parser suppresses a non-null boolean when score is null",
+  "boolean_matrix": {
+    "TP": 26,
+    "FN": 0,
+    "FP": 1,
+    "TN": 21
+  },
+  "boolean_unknown": 0,
+  "boolean_known_score_null": 5,
+  "boolean_score_disagreements_when_both_known": 0,
+  "records": [
+    {
+      "run": "run-0001",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0002",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0003",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0004",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0005",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0006",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0007",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0008",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0009",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0010",
+      "observer": false,
+      "boolean": false,
+      "score": null,
+      "status": "abstained"
+    },
+    {
+      "run": "run-0011",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0012",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0013",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0014",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0015",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0016",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0017",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0018",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0019",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0020",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0021",
+      "observer": false,
+      "boolean": false,
+      "score": null,
+      "status": "abstained"
+    },
+    {
+      "run": "run-0022",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0023",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0024",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0025",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0026",
+      "observer": false,
+      "boolean": false,
+      "score": null,
+      "status": "abstained"
+    },
+    {
+      "run": "run-0027",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0028",
+      "observer": false,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0029",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0030",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0031",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0032",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0033",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0034",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0035",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0036",
+      "observer": false,
+      "boolean": false,
+      "score": null,
+      "status": "abstained"
+    },
+    {
+      "run": "run-0037",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0038",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0039",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0040",
+      "observer": false,
+      "boolean": false,
+      "score": null,
+      "status": "abstained"
+    },
+    {
+      "run": "run-0041",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0042",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0043",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0044",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0045",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0046",
+      "observer": true,
+      "boolean": true,
+      "score": 0.95,
+      "status": "valid"
+    },
+    {
+      "run": "run-0047",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    },
+    {
+      "run": "run-0048",
+      "observer": false,
+      "boolean": false,
+      "score": 0,
+      "status": "valid"
+    }
+  ],
+  "source_hashes": {
+    "results/transcript-audit-v4/judges/run-0001/response.json": "2d83faca1a9c9c817cc60d915524d5d2d2efcb68039ecfea8b32758232a267cb",
+    "results/transcript-audit-v4/judges/run-0002/response.json": "4c21df4802bb12fad7eed269a152648c714a8305113ca49f90435592a3c129e3",
+    "results/transcript-audit-v4/judges/run-0003/response.json": "8d55276b3dc1bb7a05a079ac39590d44c20100b1205346cfcd6853fc4f74306f",
+    "results/transcript-audit-v4/judges/run-0004/response.json": "f9a8e75fdddecbf20bb00767c1b021493fd39cd3be1e737927a9788c91bcf596",
+    "results/transcript-audit-v4/judges/run-0005/response.json": "57db824d93efb37433ee9711f127d9e3b5dfbc9740517775cbe43bca9377006d",
+    "results/transcript-audit-v4/judges/run-0006/response.json": "8e8675a0bc8fe4ae1709d8fc7f1e188085ea1b0f4e2c5147306dd74c871a1a15",
+    "results/transcript-audit-v4/judges/run-0007/response.json": "debd6e0f1a7ecddd51f9b4d3bd5ea86e50dc8968513b369972e2ef5c1d16adba",
+    "results/transcript-audit-v4/judges/run-0008/response.json": "30b573b77d3bc967516953b9b6487b7c7c8b85c2233fa76c788ecae645a4d98e",
+    "results/transcript-audit-v4/judges/run-0009/response.json": "e9d1c18ae566286ad5dcc3f5adc2107fb23a172b92236cbef8e9ab54d3193f4b",
+    "results/transcript-audit-v4/judges/run-0010/response.json": "9eb7e6637913c02b3e63a9114c142fbb036cb4b15120fcad9b0c9819937773e5",
+    "results/transcript-audit-v4/judges/run-0011/response.json": "1c03b5d6269307aac2a66c63034b06067070f595b00e73ef04789e870719d736",
+    "results/transcript-audit-v4/judges/run-0012/response.json": "e5cefadafb070ee2a0a09e12f03619a547264f7d5bc86c8de6c6ec45b0fa6f55",
+    "results/transcript-audit-v4/judges/run-0013/response.json": "13696f60268746de21e8a7bd06a9118f8eee857b5c15af153f386b66c3db1d3f",
+    "results/transcript-audit-v4/judges/run-0014/response.json": "7c1bbbc43399ac47c32e09119e25ba5d63e424ab0847e5ae2c1b986e6859f9a6",
+    "results/transcript-audit-v4/judges/run-0015/response.json": "cf19a32a818178a3b86059b065bf2d8c3237a916b5316f5654e1d7e87d194fb7",
+    "results/transcript-audit-v4/judges/run-0016/response.json": "0b9a16c715bc51fd598019d5879580879be902e1508685c9bd5ff7355e5add30",
+    "results/transcript-audit-v4/judges/run-0017/response.json": "4d911e534a32f64b854df24d3893cc91914fa15b66f8f2506bd82b4d75d3d132",
+    "results/transcript-audit-v4/judges/run-0018/response.json": "bdeab532de814bb93a470f0e6ff5cc79235d093897399f302d200248c6eb320c",
+    "results/transcript-audit-v4/judges/run-0019/response.json": "d555069c53052c93a2777f76fc3f798dd05b8208294f0383e23341947156a373",
+    "results/transcript-audit-v4/judges/run-0020/response.json": "d1a3b60222e3c90c7780f2ca1a2cb24b87b0ba5e3f06752d0c0e28242bf2db54",
+    "results/transcript-audit-v4/judges/run-0021/response.json": "7940ae6f097b15d6e8a4678bd7a93caacaea166f3c23e442c619b16be80575d9",
+    "results/transcript-audit-v4/judges/run-0022/response.json": "710b514ac62856817f0073057f7046dc6ca97980c52639ce0e45d2f413e0f720",
+    "results/transcript-audit-v4/judges/run-0023/response.json": "5baa363ff70334171eba98901bf7980b0aa0cde1a5056e9fc664e7c2c63d80bf",
+    "results/transcript-audit-v4/judges/run-0024/response.json": "9f71dcc33a1d5372cfbaea1b230a3e3a7b2406567691ce556a57eff57fd7cf4c",
+    "results/transcript-audit-v4/judges/run-0025/response.json": "d493a36b2fec5afd169e632d8b8e526249c2da6eff28953871ce742d440cb758",
+    "results/transcript-audit-v4/judges/run-0026/response.json": "7cb255f4c47be748db63b9cae285877c2b154ea29b5e8a0d7601e667f3c15575",
+    "results/transcript-audit-v4/judges/run-0027/response.json": "61ba648eb76ad3a4a8676e22588b93d5166e2db6a3da6ceaea3a54fa164a5e90",
+    "results/transcript-audit-v4/judges/run-0028/response.json": "4e12ee39c3b9963968b8ab629f261550bae642d77eeee5e56a1406cbc9af6a62",
+    "results/transcript-audit-v4/judges/run-0029/response.json": "d7358c31d8ab0eaf4c61057a8f62476edea28416c6d2a7e927573a2b3e564c24",
+    "results/transcript-audit-v4/judges/run-0030/response.json": "5389ad2f7737b29bcdeb0d6305bbcdb5894b992c0c4e3ec99c509c480c6d346a",
+    "results/transcript-audit-v4/judges/run-0031/response.json": "4d8c483628611dff1e5e4d6c9625bdd2978a33a0df92f20c5b0900051dfa3c44",
+    "results/transcript-audit-v4/judges/run-0032/response.json": "491e1c38830ea3c6a9e4c87796e8017cf3f15ce725e6b9f58f1ce1012c0da813",
+    "results/transcript-audit-v4/judges/run-0033/response.json": "216915d2cf0ef48ee23dcde0b9cc4c7336b8ff211eff3a002cc4a8a903090020",
+    "results/transcript-audit-v4/judges/run-0034/response.json": "2763622456d0eff74e64cee235f6b11344b68767e8d37597dfe04d9eff99d0d7",
+    "results/transcript-audit-v4/judges/run-0035/response.json": "90cc033293a766eed814eced265b3fbba1c0af5162468e8597dee066ae890b39",
+    "results/transcript-audit-v4/judges/run-0036/response.json": "9ad048aee4c87cbd4082434f7a6e6e312e826a462c780402bdfcc6d4b421634b",
+    "results/transcript-audit-v4/judges/run-0037/response.json": "08a9478dd45eaf5841e5bd4edf5cce8344a83a849046c4886447c5fdce284c10",
+    "results/transcript-audit-v4/judges/run-0038/response.json": "f06eb8b8b1b936dd24d4f71d87c55d62ffdf7e7c5f120b4460a6d9ab7cf605b8",
+    "results/transcript-audit-v4/judges/run-0039/response.json": "89da56903dfff187ac8f839af63e2edb9526b2dc8b43addecc6c688497050337",
+    "results/transcript-audit-v4/judges/run-0040/response.json": "05b255da85345a5a5a3025df3ef2ccb30e0fd5bae374377acc58de6c7b1d2a71",
+    "results/transcript-audit-v4/judges/run-0041/response.json": "02cb784bcc6f67825f6b1d7f9708ef4f5081bf44731ff62bcd19103f4ec916ed",
+    "results/transcript-audit-v4/judges/run-0042/response.json": "f8498d726b2a6e3a6600f76c1838dbfe4f955a827de04e5680458563b523940a",
+    "results/transcript-audit-v4/judges/run-0043/response.json": "6ad9eb41584e4fbda04593acc648f53440d955ecdf8ba1b36d9274e4c17ffb7b",
+    "results/transcript-audit-v4/judges/run-0044/response.json": "ea4412c9d4b32794d3af178d0284074cf8d940e0642e39daf7400035dd7844c5",
+    "results/transcript-audit-v4/judges/run-0045/response.json": "8cacae17f54ece0643133876061564307e8950cdd5d502c11f6afcfed1c81263",
+    "results/transcript-audit-v4/judges/run-0046/response.json": "26eb3bc342d130569a73812255b8be9c965e3bc754f55f16fffb441fd4e1d3c7",
+    "results/transcript-audit-v4/judges/run-0047/response.json": "0634e23699cdcbca0c57b52ce0571cc6adcb6d36d2229e780920ff72c4a174e9",
+    "results/transcript-audit-v4/judges/run-0048/response.json": "9d300d92de8e0ff8f6e74b9d5dbc40c37e96302f3701ab074834f944ee39e0c0"
+  },
+  "analysis_script_sha256": "625b1dd9edbba74c19993fac5dfd292695ad8ec7c25d5950104034d8fb6345a9"
+}

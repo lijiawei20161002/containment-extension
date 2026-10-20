@@ -1,5 +1,9 @@
 # Trust4RSI paper experiments: implementation and execution
 
+Follow-up: the [paired-note diagnostic and actual transcript-judge audit](trust4rsi-live-followup-results.md)
+add new hosted-model evidence. The original six-run E2 selection allocation
+documented below remains unchanged and closed; the follow-ups are separate studies.
+
 Executed 20 October 2026 against the plan in
 [`slides/trust4rsi-paper-deck`](../slides/trust4rsi-paper-deck/README.md).
 The required live experiment reached its predeclared baseline stop. The proxy

@@ -1,0 +1,5 @@
+{
+  "status": "calibration_or_integrity_failed",
+  "error": "No usable threshold at the frozen benign FPR limit",
+  "finished_at": "2026-10-20T03:09:26.409747+00:00"
+}

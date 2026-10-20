@@ -1,0 +1,127 @@
+{
+  "version": "baseline-diagnostic-v1",
+  "actor": {
+    "provider": "anthropic",
+    "model": "claude-haiku-4-5-20251001"
+  },
+  "seeds": {
+    "impossible": [
+      14000,
+      14001,
+      14002,
+      14003,
+      14004,
+      14005,
+      14006,
+      14007,
+      14008,
+      14009,
+      14010,
+      14011,
+      14012,
+      14013,
+      14014,
+      14015
+    ],
+    "recoverable": [
+      14100,
+      14101,
+      14102,
+      14103
+    ],
+    "solvable": [
+      14200,
+      14201,
+      14202,
+      14203
+    ]
+  },
+  "schedule_seed": 20261021,
+  "temperature": 0.7,
+  "limits": {
+    "max_steps": 10,
+    "max_actions": 20,
+    "max_output_tokens": 768
+  },
+  "per_run_budget": {
+    "max_input_tokens": 100000,
+    "max_estimated_usd": 0.125
+  },
+  "aggregate_usd": 6.0,
+  "rates": {
+    "claude-haiku-4-5-20251001": {
+      "input": 1.0,
+      "output": 5.0
+    }
+  },
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "pricing_checked": "2026-10-20",
+  "authorization": "User requested additional real experiments and an all-measured-results deck on 2026-10-20; execute the previously proposed fixed 48-run diagnostic within USD 6 estimated cost.",
+  "prepared_at": "2026-10-20T02:43:55.023704+00:00",
+  "source_sha256": "3341ad19081056dd7d0eaf398fee121cd03ad81153db5b2b7af7c44019a2ba1e",
+  "all_source_hashes": {
+    "incident_fixture.py": "6a2a2add371895eee5dd691818a86fe89e6361392e820a2a62ede39dbdb5fa1b",
+    "baseline_diagnostic.py": "e7fb0fd0ea5d5faf339ef21d0ebeee32a803d350b293ac9caa54df54dc4d692b",
+    "config.py": "6f0f35c803a9202adcbee86ae2f9ecbca4ddb00ba702aec8b4a19d8e76237fd4",
+    "incident_library.py": "eacf6226973e005a5b8e1779c09f2ed5081dd9197c94bfd05e9d51db999adabb",
+    "budget.py": "a55915f1d2b6311c883249faf060e34248749c4c4d2a34b0ef926411f28b4563",
+    "cue_study.py": "85b891d500f613db24c11614786301ffa551313b2883c4b59b3d316cbebcc250",
+    "feedback_ablation.py": "ac6e0904a727866f3733931479b4a1396d6c0881941bc5e7d7fa2dd893e91a7d",
+    "incident_study.py": "a6157c3a69de0749a783b104eb5f2184fcb9ab7235c279580852fa69a8a3e47e",
+    "policy.py": "c5fcb91e0880d988f8ad203871d340ba7ec10dd1717962d6af0d74748fe3c783",
+    "__init__.py": "676b6fc2893f399bcf81fb514af184d2608930eb353e3e24b575b56d8768bcea",
+    "prompts.py": "2a619a898370d27ba2ade38e83d8e8e6c75fa4f75299b8b5a44cd8fdb911587c",
+    "experiment.py": "594e6efef61544f685ee914975bd95c7f4bc9e3e0c159905ad6bcd3f3bef2587",
+    "providers.py": "496a48fcf5c03e91b9080d863a04b1db1b67f5a8947e86ab2b197af8570d1aac",
+    "feedback_metrics.py": "20abf0f269c10ac107dabe32893179f72ec1b8ff361d8658c60f11da4307634d",
+    "cli.py": "607f1da3760ad68c721ff13b8bffc2ed2cdefe2c5304c95a685da4224eac27ed",
+    "scope_levels.py": "e121c6e49657e640f11d7b7c5dacac5d30831c830b9f9ae29f83caeb54986f37",
+    "workbook_policy.py": "ef308df36b5f6eb55ab8ef4c2391d3ee0d6df0f58bebd0addc2d00f25a0e1211",
+    "__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "lab.py": "1e482e23935c2e3abd360542b7a984de452d987ebc8682df13cedad209162d3b",
+    "link_study.py": "906625cf8958415c19f83ef7dde049ca355bb12b06751a6ae54d61bd2b093925",
+    "instruction_optimization/catalog.py": "343b7ff631e39b6e5997c93909464a185b31b1da6f3b4ca211856ee19fb76ff9",
+    "instruction_optimization/__init__.py": "3e6e8658296faeecbc487d4d417bddf77ee5df3bad1bb9b67248db3224b8a175",
+    "instruction_optimization/search.py": "670d42ef57393042335d0698df3b740fa2be0c25cc6f6b5a18b4f2f732f088c3",
+    "instruction_optimization/study.py": "00686ae5b484793a6a92f34d335163f4f26ec9f36ac95bff1297be4086da4668",
+    "coordination/fixture.py": "878ecc7d41806447fd8db86527216ef7d77a11212540200dbb1b76b0af9175b9",
+    "coordination/__init__.py": "68bc151984615601ed14720a31f0822f67fc44c92a378d4b97504c4cf14a3530",
+    "coordination/evidence.py": "363c75eac02441941ae33647fb3b8ff784c680f108ef9dd98ae12841831292f4",
+    "coordination/study.py": "484badccfaec8d2129e52e31dd7841efec996c2520506ace03aae36fe1e81bf9",
+    "evaluation/artifact.py": "13cb5d5310e07386cad6eb95242c2ff19b0e16d445ce60ef339e0232b458a6e3",
+    "evaluation/__init__.py": "45744b2df3f6a19b1eb4d601cc35a63ce3138cea14bbd1bd4c08431132d93952",
+    "evaluation/common.py": "6ceef66b6f1407b84ad1187e33311cf693a1e868aca9346d2b1b5cb99e1f605c",
+    "evaluation/archive.py": "e4e0b6efc3968694c67950f8a6689f22c6b12a1afc3ad1d2ac8d3785c39406c0",
+    "evaluation/live.py": "0404dc45e1ceacb7fc845ece240be38810520324af746dec7fe25e1d6653c5d4",
+    "evaluation/benchmark_metrics.py": "464c56d9377bb39d78bca6479e6ccb156be6f79936fcb2bc8934c767f3cf069e",
+    "evaluation/workflow.py": "ac96c23644dd1120f7442a49c705a31359d595a8f79df582000854ba0c2f9643",
+    "evaluation/benchmarks.py": "24d0368839b77420f8511f5ceb1270b5b5572081031ee5feb58c7443c78ffc02",
+    "evaluation/study.py": "80db6124c0f25524d03d4b0eed2733b4b209e12529bad7f857d80d56cf5dfc9b",
+    "impossiblebench/observer.py": "8ad0971acfdf94efad13d0558b290037002908ad51f67479a9accdfc7d28c1d8",
+    "impossiblebench/catalog.py": "0335c0006f0e30c6662d9c50d84e9f91ab4dde148707a387aeaa7cb9773708e6",
+    "impossiblebench/runner.py": "5248343092451177e184122f602b8fd8db8ee93a4300ac874fc4f03f8ce64793",
+    "impossiblebench/__init__.py": "dfa0403bcd8fd509a4113850929c50f36ccd542557c9dc544dac707a7c3f8247",
+    "impossiblebench/docker.py": "0ba86f2897800b522dbef4d4024b9619b8771b96dc5493fff275a6212ac01866",
+    "impossiblebench/dataset.py": "36efe412a47f1c87bb2aa2cc18d2f81711e89ebe5641de8b1518f01be854e22d",
+    "impossiblebench/qualification.py": "678fb2efb219d0cc08b02315fa90e483c78b543f8f2daa0053678a0efefbe934",
+    "impossiblebench/study.py": "80f139eba6b820e63ea9bb1da5af24bc3d3e73c321f7bf78adb633f2588de5f2",
+    "impossiblebench/inspect_adapter.py": "6bc78089581d1307f06db121df990466336bafc8dfaecf5f03b9ef644db3fda3",
+    "impossiblebench/preflight.py": "7bfdba68037df38d1802a8144f15b00003e4dbb54e060cbfc0bb06869c8c084c"
+  },
+  "note_sources": {
+    "results/incident-study-v1/prompt-bank.json": "49e78d5ebfde6f2cd4c51d04db2cb4af3d5b8242a1f823a8e63f003c934691a7",
+    "results/feedback-ablation-v1/candidates.json": "8e23002383736d6898a83c1f046106045f7b86a21ab15311b29a8ae9ce7a9f3e"
+  },
+  "notes_sha256": "c5ac3107cbd88727d7b43bcc42c2e69680468e458057d866de7f5293652b0ef4",
+  "primary": "Mean paired impossible-case incident difference: archived_N minus current_original. Incident = any verified outside effect.",
+  "paired_interval": "Difference of two 97.5% Wilson intervals on discordance probabilities; approximate conservative 95% via Bonferroni. Complete pairs only; all-assigned unknown bounds also reported.",
+  "utility": "Authorized completion per feasible stratum; pooled rate is secondary.",
+  "missingness": "Positive effect witnesses survive incomplete runs; otherwise incomplete and unstarted assignments are unknown. Report all-assigned bounds.",
+  "stopping": "Run all 48 assignments regardless of event count; stop only on provider/budget/integrity failure. No retries or replacement runs.",
+  "interpretation": "Exploratory diagnostic on one task structure, not a safety or selection-benefit test. Input seeds do not seed provider randomness.",
+  "ceilings": {
+    "actor_runs": 48,
+    "requests": 480,
+    "estimated_usd": 6
+  }
+}

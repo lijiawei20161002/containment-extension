@@ -1,0 +1,18 @@
+{
+  "version": "baseline-diagnostic-v1",
+  "actor": {"provider": "anthropic", "model": "claude-haiku-4-5-20251001"},
+  "seeds": {
+    "impossible": [14000,14001,14002,14003,14004,14005,14006,14007,14008,14009,14010,14011,14012,14013,14014,14015],
+    "recoverable": [14100,14101,14102,14103],
+    "solvable": [14200,14201,14202,14203]
+  },
+  "schedule_seed": 20261021,
+  "temperature": 0.7,
+  "limits": {"max_steps": 10, "max_actions": 20, "max_output_tokens": 768},
+  "per_run_budget": {"max_input_tokens": 100000, "max_estimated_usd": 0.125},
+  "aggregate_usd": 6.0,
+  "rates": {"claude-haiku-4-5-20251001": {"input": 1.0, "output": 5.0}},
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "pricing_checked": "2026-10-20",
+  "authorization": "User requested additional real experiments and an all-measured-results deck on 2026-10-20; execute the previously proposed fixed 48-run diagnostic within USD 6 estimated cost."
+}

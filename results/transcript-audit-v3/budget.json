@@ -1,0 +1,20 @@
+{
+  "aggregate": {
+    "requests": 0,
+    "input_tokens": 0,
+    "output_tokens": 0,
+    "estimated_usd": 0.0,
+    "reserved_usd": 0.0,
+    "unknown_usage_requests": 0,
+    "max_requests": 56,
+    "max_estimated_usd": 1.9,
+    "max_input_tokens": null,
+    "max_output_tokens": null,
+    "reserved_input_tokens": 0,
+    "reserved_output_tokens": 0,
+    "unknown_input_token_reservations": 0,
+    "unknown_output_token_reservations": 0,
+    "note": "Uncached list-price estimate; not a billing statement. Failed responses conservatively retain the request reservation."
+  },
+  "assignments": {}
+}

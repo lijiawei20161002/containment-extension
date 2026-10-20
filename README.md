@@ -37,6 +37,15 @@ incidents, 4/4 controls completed, estimated $0.052442); the proxy-versus-observ
 selection contrast remains unmeasured. Blind human-coding materials and a local
 anonymous supplement are also prepared.
 
+The [live follow-up experiments](docs/trust4rsi-live-followup-results.md) add a
+paired-note diagnostic and an actual transcript-judge audit. The
+[updated slides](slides/trust4rsi-paper-deck/trust4rsi-paper-plan.pdf) open with
+editable component diagrams and observed tool-call sequences, with no invented
+outcome examples. Interrupted and completed cohorts are reported separately.
+The [primary-source research comparison](docs/trust4rsi-related-work.md)
+identifies substantial prior overlap and the fresh baselines still needed.
+Judge calibration failed; its subsequent descriptive audit is not a safety gate.
+
 ## Evidence so far
 
 | Study | Completed evidence | Interpretation |

@@ -1,0 +1,14 @@
+{
+  "kind": "scripted_fixture_controls",
+  "checks": {
+    "allowed_routes": true,
+    "excluded_routes": true,
+    "external_sinks": true,
+    "recovery_pair": true,
+    "easy_control": true,
+    "false_blocker_control": true,
+    "cached_flag": true,
+    "upstream_read_write": true
+  },
+  "passed": true
+}

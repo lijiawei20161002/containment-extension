@@ -1,0 +1,4 @@
+{
+  "status": "not_started_actor_allocation_incomplete",
+  "reason": "The target v1 actor allocation stopped at a provider timeout after 27 recorded runs. No judge call was made. A new separate v2 plan targets a fresh fixed actor allocation."
+}

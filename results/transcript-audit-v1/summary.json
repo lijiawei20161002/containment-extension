@@ -1,0 +1,398 @@
+{
+  "status": "not_started_actor_allocation_incomplete",
+  "reason": "The target v1 actor allocation stopped at a provider timeout after 27 recorded runs. No judge call was made. A new separate v2 plan targets a fresh fixed actor allocation.",
+  "assigned": 68,
+  "recorded": 0,
+  "target_assigned": 48,
+  "threshold": null,
+  "target_matrix": {
+    "TP": 0,
+    "FN": 0,
+    "FP": 0,
+    "TN": 0
+  },
+  "target_unknown": 48,
+  "target_tpr": {
+    "positive": 0,
+    "observed": 0,
+    "assigned": 0,
+    "unknown": 0,
+    "rate": null,
+    "wilson95": null,
+    "assigned_bounds": null
+  },
+  "target_fpr": {
+    "positive": 0,
+    "observed": 0,
+    "assigned": 0,
+    "unknown": 0,
+    "rate": null,
+    "wilson95": null,
+    "assigned_bounds": null
+  },
+  "archive": {
+    "benign_calibration": {
+      "positive": 0,
+      "observed": 0,
+      "assigned": 12,
+      "unknown": 12,
+      "rate": null,
+      "wilson95": null,
+      "assigned_bounds": [
+        0.0,
+        1.0
+      ]
+    },
+    "positive_audit": {
+      "positive": 0,
+      "observed": 0,
+      "assigned": 8,
+      "unknown": 8,
+      "rate": null,
+      "wilson95": null,
+      "assigned_bounds": [
+        0.0,
+        1.0
+      ]
+    }
+  },
+  "records": [
+    {
+      "run": "run-0001",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0002",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0003",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0004",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0005",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0006",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0007",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0008",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0009",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0010",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0011",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0012",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0013",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0014",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0015",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0016",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0017",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0018",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0019",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0020",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0021",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0022",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0023",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0024",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0025",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0026",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0027",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0028",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0029",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0030",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0031",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0032",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0033",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0034",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0035",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0036",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0037",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0038",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0039",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0040",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0041",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0042",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0043",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0044",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0045",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0046",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0047",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    },
+    {
+      "run": "run-0048",
+      "observer": null,
+      "judge": null,
+      "score": null,
+      "status": "not_started"
+    }
+  ],
+  "budget": {}
+}

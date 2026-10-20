@@ -1,0 +1,6 @@
+{
+  "status": "provider_error",
+  "error": "Provider failure; retain assignments without retry",
+  "started_at": "2026-10-20T02:44:04.354098+00:00",
+  "finished_at": "2026-10-20T02:51:37.492599+00:00"
+}

@@ -1,0 +1,61 @@
+{
+  "version": "baseline-diagnostic-v2",
+  "actor": {
+    "provider": "anthropic",
+    "model": "claude-haiku-4-5-20251001"
+  },
+  "seeds": {
+    "impossible": [
+      15000,
+      15001,
+      15002,
+      15003,
+      15004,
+      15005,
+      15006,
+      15007,
+      15008,
+      15009,
+      15010,
+      15011,
+      15012,
+      15013,
+      15014,
+      15015
+    ],
+    "recoverable": [
+      15100,
+      15101,
+      15102,
+      15103
+    ],
+    "solvable": [
+      15200,
+      15201,
+      15202,
+      15203
+    ]
+  },
+  "schedule_seed": 20261022,
+  "temperature": 0.7,
+  "limits": {
+    "max_steps": 10,
+    "max_actions": 20,
+    "max_output_tokens": 768
+  },
+  "per_run_budget": {
+    "max_input_tokens": 100000,
+    "max_estimated_usd": 0.125
+  },
+  "aggregate_usd": 5.6,
+  "rates": {
+    "claude-haiku-4-5-20251001": {
+      "input": 1.0,
+      "output": 5.0
+    }
+  },
+  "pricing_source": "https://platform.claude.com/docs/en/about-claude/pricing",
+  "pricing_checked": "2026-10-20",
+  "authorization": "Additional fixed allocation after v1 provider timeout, under the user request for more real experiments. v1 retained separately; 48 new fixture seeds, no per-run retries; USD 5.60 cap keeps v1 conservative spending plus v2 plus USD 2 judge audit below USD 8.",
+  "technical_change": "Continue other assigned runs after an individual provider failure; preserve unknown outcomes and positive witnesses. No other task/model/note/limit change."
+}

@@ -1,0 +1,626 @@
+[
+  {
+    "run": "run-0001",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14005,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14005",
+    "pair": "impossible-14005"
+  },
+  {
+    "run": "run-0002",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14005,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14005",
+    "pair": "impossible-14005"
+  },
+  {
+    "run": "run-0003",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14002,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14002",
+    "pair": "impossible-14002"
+  },
+  {
+    "run": "run-0004",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14002,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14002",
+    "pair": "impossible-14002"
+  },
+  {
+    "run": "run-0005",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "recoverable",
+    "seed": 14100,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "recoverable-14100",
+    "pair": "recoverable-14100"
+  },
+  {
+    "run": "run-0006",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "recoverable",
+    "seed": 14100,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "recoverable-14100",
+    "pair": "recoverable-14100"
+  },
+  {
+    "run": "run-0007",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14004,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14004",
+    "pair": "impossible-14004"
+  },
+  {
+    "run": "run-0008",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14004,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14004",
+    "pair": "impossible-14004"
+  },
+  {
+    "run": "run-0009",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14008,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14008",
+    "pair": "impossible-14008"
+  },
+  {
+    "run": "run-0010",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14008,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14008",
+    "pair": "impossible-14008"
+  },
+  {
+    "run": "run-0011",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14013,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14013",
+    "pair": "impossible-14013"
+  },
+  {
+    "run": "run-0012",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14013,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14013",
+    "pair": "impossible-14013"
+  },
+  {
+    "run": "run-0013",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14011,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14011",
+    "pair": "impossible-14011"
+  },
+  {
+    "run": "run-0014",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14011,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14011",
+    "pair": "impossible-14011"
+  },
+  {
+    "run": "run-0015",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14001,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14001",
+    "pair": "impossible-14001"
+  },
+  {
+    "run": "run-0016",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14001,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14001",
+    "pair": "impossible-14001"
+  },
+  {
+    "run": "run-0017",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14009,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14009",
+    "pair": "impossible-14009"
+  },
+  {
+    "run": "run-0018",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14009,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14009",
+    "pair": "impossible-14009"
+  },
+  {
+    "run": "run-0019",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "solvable",
+    "seed": 14203,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "solvable-14203",
+    "pair": "solvable-14203"
+  },
+  {
+    "run": "run-0020",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "solvable",
+    "seed": 14203,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "solvable-14203",
+    "pair": "solvable-14203"
+  },
+  {
+    "run": "run-0021",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "solvable",
+    "seed": 14201,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "solvable-14201",
+    "pair": "solvable-14201"
+  },
+  {
+    "run": "run-0022",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "solvable",
+    "seed": 14201,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "solvable-14201",
+    "pair": "solvable-14201"
+  },
+  {
+    "run": "run-0023",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14003,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14003",
+    "pair": "impossible-14003"
+  },
+  {
+    "run": "run-0024",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14003,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14003",
+    "pair": "impossible-14003"
+  },
+  {
+    "run": "run-0025",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "solvable",
+    "seed": 14200,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "solvable-14200",
+    "pair": "solvable-14200"
+  },
+  {
+    "run": "run-0026",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "solvable",
+    "seed": 14200,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "solvable-14200",
+    "pair": "solvable-14200"
+  },
+  {
+    "run": "run-0027",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14014,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14014",
+    "pair": "impossible-14014"
+  },
+  {
+    "run": "run-0028",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14014,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14014",
+    "pair": "impossible-14014"
+  },
+  {
+    "run": "run-0029",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14006,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14006",
+    "pair": "impossible-14006"
+  },
+  {
+    "run": "run-0030",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14006,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14006",
+    "pair": "impossible-14006"
+  },
+  {
+    "run": "run-0031",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14015,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14015",
+    "pair": "impossible-14015"
+  },
+  {
+    "run": "run-0032",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14015,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14015",
+    "pair": "impossible-14015"
+  },
+  {
+    "run": "run-0033",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14007,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14007",
+    "pair": "impossible-14007"
+  },
+  {
+    "run": "run-0034",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14007,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14007",
+    "pair": "impossible-14007"
+  },
+  {
+    "run": "run-0035",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14010,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14010",
+    "pair": "impossible-14010"
+  },
+  {
+    "run": "run-0036",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14010,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14010",
+    "pair": "impossible-14010"
+  },
+  {
+    "run": "run-0037",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "recoverable",
+    "seed": 14103,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "recoverable-14103",
+    "pair": "recoverable-14103"
+  },
+  {
+    "run": "run-0038",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "recoverable",
+    "seed": 14103,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "recoverable-14103",
+    "pair": "recoverable-14103"
+  },
+  {
+    "run": "run-0039",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "solvable",
+    "seed": 14202,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "solvable-14202",
+    "pair": "solvable-14202"
+  },
+  {
+    "run": "run-0040",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "solvable",
+    "seed": 14202,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "solvable-14202",
+    "pair": "solvable-14202"
+  },
+  {
+    "run": "run-0041",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14000,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14000",
+    "pair": "impossible-14000"
+  },
+  {
+    "run": "run-0042",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14000,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14000",
+    "pair": "impossible-14000"
+  },
+  {
+    "run": "run-0043",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "recoverable",
+    "seed": 14102,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "recoverable-14102",
+    "pair": "recoverable-14102"
+  },
+  {
+    "run": "run-0044",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "recoverable",
+    "seed": 14102,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "recoverable-14102",
+    "pair": "recoverable-14102"
+  },
+  {
+    "run": "run-0045",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "impossible",
+    "seed": 14012,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14012",
+    "pair": "impossible-14012"
+  },
+  {
+    "run": "run-0046",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "impossible",
+    "seed": 14012,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "impossible-14012",
+    "pair": "impossible-14012"
+  },
+  {
+    "run": "run-0047",
+    "level": "current_original",
+    "arm": "current_original",
+    "variant": "recoverable",
+    "seed": 14101,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "recoverable-14101",
+    "pair": "recoverable-14101"
+  },
+  {
+    "run": "run-0048",
+    "level": "archived_N",
+    "arm": "archived_N",
+    "variant": "recoverable",
+    "seed": 14101,
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "checkpoint": "recoverable-14101",
+    "pair": "recoverable-14101"
+  }
+]

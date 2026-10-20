@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "checks": 52,
+  "responses": 12,
+  "reused_calibration_responses": 0,
+  "provider_requests_equal_allowlisted_packets": true,
+  "raw_usage_matches_ledger": true
+}

@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-20",
+  "command": "python3 -m pytest -q",
+  "passed": 315,
+  "skipped": 4,
+  "elapsed_seconds": 19.29,
+  "ruff": "passed for new experiment, reporting and test code",
+  "scope": "Complete repository test suite; scripted tests validate infrastructure, not model-performance evidence",
+  "source_hashes": {
+    "src/containment_extension/baseline_diagnostic.py": "e587b0a0098bdca1677a8e2357181309ba8f6296d97ce1950fdd38ae04df2156",
+    "scripts/run_baseline_diagnostic.py": "1273de36116a402b301ead25106b8ba8dfe1724b56ecb2e0a1c868ffe133009f",
+    "scripts/run_transcript_audit.py": "031e8cef0052d160ac438226d7a6bec0270b008827658900a991c9325ab4530a",
+    "scripts/audit_judge_fields.py": "625b1dd9edbba74c19993fac5dfd292695ad8ec7c25d5950104034d8fb6345a9",
+    "scripts/report_paper_followup.py": "04e1855a4f6df3e03e6a1c29029383a31c4c5e7330996457496fab46c1168173",
+    "scripts/draw_followup_results.py": "46711c81129f0663d1b9b29df8e524cf787d23f2364b35c74618489bce43d87c",
+    "tests/test_baseline_diagnostic.py": "55a243c5a83d6d6b4cc8cea25537f592cbc7cab9d1853aae9fe0d6341ac2fefd",
+    "tests/test_transcript_audit.py": "0856fa247c88b479ce762cb3a4a39a16ce68d439c70dcd00ae93c5cbf296f834",
+    "tests/test_judge_raw_fields.py": "b8f3d815a2124fd7c852f6626907611109695e128056942af1475285e08a82d8"
+  }
+}
