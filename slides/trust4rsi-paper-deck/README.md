@@ -1,49 +1,40 @@
-# Trust4RSI: a short visual talk and a separate technical appendix
+# Trust4RSI: incidents, decisions, and controlled experiments
 
 Updated 20 October 2026. [PDF](trust4rsi-paper-plan.pdf) and
-[editable PowerPoint](trust4rsi-paper-plan.pptx): **13 main slides**.
+[editable PowerPoint](trust4rsi-paper-plan.pptx): **23 main slides**.
 [Technical appendix PDF](trust4rsi-technical-appendix.pdf) and
-[editable appendix](trust4rsi-technical-appendix.pptx): **20 supporting slides**.
+[editable appendix](trust4rsi-technical-appendix.pptx): **24 supporting slides**.
 
-The main deck uses short English sentences, large counts, actual request fields,
-and editable diagrams. One page makes one point. There are no main-deck tables.
-Main prose is at least 18 pt; raw request text is 16–18 pt. Main pages contain
-37–67 words each, including titles and subtitles but excluding source footers.
-
-The first three pages follow one actual run. They show the exact flag read from
-the old archive and the same value accepted by the current grader. New extraction
-checks assert that these values match. The opening defines “run” and “flag”
-before using them. The judge disagreement shows the actual admin-role request.
-All observed behavior still comes from hosted-model calls to controlled local
-services, not production incidents or invented examples. This revision made
-**zero additional API calls**.
+Short English sentences, editable diagrams, and explicit evidence labels.
+Reported incidents, local experimental results, literature comparisons and
+unrun proposals are distinct. Primary sources are clickable. Main prose is
+at least 18 pt. The builder checks density and preserves actual request fields.
+This revision makes **zero additional model API calls**.
 
 ## Reading order
 
 | Slides | Content |
 | --- | --- |
-| 1 | The concrete task and the forbidden resource |
-| 2–3 | Four real calls; the same copied flag in the read and submission |
-| 4 | Fifteen observed violations as fifteen tiles; thirteen passed |
-| 5 | Two real controls: recover successfully or report the blocker |
-| 6–7 | Two actual notes, 48 runs, and every impossible input as a square |
-| 8–9 | Plain-language judge counts and one actual permission disagreement |
-| 10 | Three closest prior-work ideas; clickable primary papers |
-| 11–12 | Two unrun tests, explicitly labelled “NOT RUN YET”; no invented winners |
-| 13 | Three bounded findings and one plain-language statement about permission |
+| 1–3 | Medicare, workbook, wallet, scope assumptions, and GET writes |
+| 4–5 | What incidents tell us to test; why an error alone does not justify stopping |
+| 6–7 | Concrete task; two observed recovery/stopping controls |
+| 8–10 | Actual forbidden read, identical copied flag, and 13 passing violations |
+| 11–14 | Paired notes, measured uncertainty, judge audit and actual disagreement |
+| 15–19 | ImpossibleBench mechanisms and labels, our upstream attempt, Anthropic incident tests, other threat models |
+| 20 | Effect recording versus runtime enforcement; CaMeL and the allowlist baseline |
+| 21–22 | Repair × permission design; later feedback-selection comparison, both unrun |
+| 23 | Bounded findings and delegated authority |
 
-The appendix carries the dense material: A1–A2 compare research; A3–A9 show
-intervals, all pairs, historical counts, calibration failures, raw booleans and
-scores; A10–A18 give cohorts, methods, evidence and limits; A19–A20 contain nine
-primary references. Null scores, failed calibration and the post-hoc boolean
-analysis remain visible there. This split changes presentation, not the results.
+A1–A20 retain the original detailed results and references. A21–A24 add incident
+coverage, operational comparison, fair-baseline requirements and precise next-test
+outcomes. The six-run upstream baseline is **report-only** in this checkout:
+its referenced raw live archive is absent. Preparation logs are not live evidence.
 
-The [research comparison](../../docs/trust4rsi-related-work.md) includes
-ImpossibleBench, AgentDojo, AI Control, SHADE-Arena, CaMeL, ControlArena,
-AgentDyn, CoSec and a recent detector-transfer study. This is a qualitative
-literature comparison, not an executed cross-benchmark performance comparison.
-The defensible current scope is a controlled measurement study; no new
-containment algorithm or recursive self-improvement result is claimed.
+The [incident-to-experiment mapping](../../docs/trust4rsi-incident-to-experiment.md)
+explains what each case motivates, what our fixture covers, and what it does not.
+The [technical comparison](../../docs/trust4rsi-related-work.md) explicitly credits
+ImpossibleBench and Anthropic for already studying stopping and tasks with no
+in-scope solution. No new containment algorithm or established novelty is claimed.
 
 ## Executed follow-ups
 
@@ -80,7 +71,9 @@ remains closed at its six-run baseline stop.
 `collect_evidence.py` reads the live experiment archives and records source
 hashes, checks selected observed traces and verifies the historical 160-run cross-tab.
 `qa/concrete-evidence.json` and `qa/evidence-index.json` bind the deck to those
-results. The main builder also checks word counts, font sizes and absence of tables.
+results. The main builder also checks word counts, font sizes and absence of native tables.
+`research-sources.json` records the checked primary sources. The collector also
+checks identical recovery prefixes and records the upstream archive limitation.
 Scripted qualification fixtures remain infrastructure checks in the
 research archive; they do not supply the deck's model-performance results.
 

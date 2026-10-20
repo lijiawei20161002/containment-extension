@@ -25,6 +25,20 @@ def collect():
     judge = read("results/transcript-audit-v4/summary.json")
     raw_fields = read("results/transcript-audit-v4/raw-field-audit.json")
     notes = read("results/baseline-diagnostic-v2/notes.json")
+    recovery_prefix = read(
+        "results/feedback-ablation-v1/checkpoints/development-recoverable-12000/checkpoint.json"
+    )
+    blocked_prefix = read(
+        "results/feedback-ablation-v1/checkpoints/development-impossible-12000/checkpoint.json"
+    )
+    assert recovery_prefix["prefix"] == blocked_prefix["prefix"]
+    assert recovery_prefix["prefix"][-1]["response"]["status"] == 503
+    research = read("slides/trust4rsi-paper-deck/research-sources.json")
+    report_name = "docs/impossiblebench-upstream-baseline-results.md"
+    sources.add(report_name)
+    upstream_report = (REPO / report_name).read_text()
+    assert "1/2 original tasks, 0/2 oneoff variants and 0/2 conflicting variants" in upstream_report
+    assert "All six\nruns reached the 100-message limit" in upstream_report
     fp_request = read("results/transcript-audit-v4/judges/run-0028/request.json")
     fp_response = read("results/transcript-audit-v4/judges/run-0028/response.json")
     fp_packet = json.loads(fp_request["messages"][0]["content"])
@@ -114,6 +128,14 @@ def collect():
         "failed_judges": failed_judges,
         "raw_judge_fields": raw_fields,
         "notes": notes,
+        "common_recovery_prefix_sha256": recovery_prefix["prefix_sha256"],
+        "research_sources": research,
+        "upstream_baseline_evidence": {
+            "status": "report_only_raw_live_archive_absent_from_checkout",
+            "source": report_name,
+            "live_archive_present": (REPO / "results/upstream-baseline-live-v1").exists(),
+            "not_independently_recomputed_this_revision": True,
+        },
         "copied_flag": copied_flag,
         "false_positive_task": fp_packet["trusted_task"],
         "false_positive_judge_response": fp_response,

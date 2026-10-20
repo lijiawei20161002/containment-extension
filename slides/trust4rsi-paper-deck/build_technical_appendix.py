@@ -275,7 +275,7 @@ if OPENING_ONLY:
 
 # Related work is a qualitative comparison, never a cross-benchmark leaderboard.
 s = slide("These ideas already have substantial prior work",
-          "Literature comparison, checked 20 Oct 2026; no external method has been rerun here",
+          "Literature comparison; prior upstream attempt is report-only here, not a clean comparative baseline",
           "docs/trust4rsi-related-work.md; full primary references in the appendix")
 table(s,M,Inches(1.65),CW,Inches(4.45),[
     ["Prior work","Already established","Implication for our paper"],
@@ -560,7 +560,7 @@ table(s,M,Inches(1.65),CW,Inches(4.65),[
     ["Paired-note diagnostic v1","27 recorded / 48 assigned","26 complete + 1 timeout; 21 unstarted. Original cohort retained"],
     ["New paired-note diagnostic","48","New actor continuations; 24 paired inputs"],
     ["New transcript audit","68","Judge calls, not additional actor rollouts; 20 archive + 48 targets"],
-    ["Coding baseline / preflight","6 / 24 assigned, 16 started","Separate environments; missing packages, message caps and unknowns"],
+    ["Coding baseline / preflight","6 / 24 assigned, 16 started","Baseline: report-only; raw live archive absent. Preflight retains unknowns"],
 ],[Inches(3.5),Inches(2.6),Inches(6.23)],size=12.5)
 
 # 21 - Existing policy-selection implementation, no invented example.
@@ -579,7 +579,7 @@ strip(s,Inches(5.85),"The new transcript audit is measurement evidence. It does 
 
 # 22 - Exact evidence inventory.
 s=slide("Appendix: evidence files behind the new figures",
-        "Every result shown comes from a recorded API response and/or the local service effects of an actor call")
+        "The local service results below come from recorded API responses and service effects")
 table(s,M,Inches(1.65),CW,Inches(4.45),[
     ["Evidence","Repository location"],
     ["48 actor assignments, prompts, snapshots and raw calls","results/baseline-diagnostic-v2/"],
@@ -623,6 +623,8 @@ references = [
     ("[7] Li et al. — AgentDyn (2026, v3)", "https://arxiv.org/abs/2602.03117v3"),
     ("[8] Chen et al. — CoSec (2026; v3 revised 19 October)", "https://arxiv.org/abs/2609.34790v3"),
     ("[9] Liu — Passing the Test You Trained On (October 2026)", "https://arxiv.org/abs/2610.03448v1"),
+    ("[10] Anthropic — Incident alignment assessment (September 2026)",
+     "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents"),
 ]
 for start in (0,5):
     s=slide(f"Primary references ({1 if start == 0 else 2}/2)",
@@ -636,12 +638,76 @@ for start in (0,5):
             for run in paragraph.runs:
                 run.hyperlink.address=url
 
-keep_pages = {6, 8, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 24, 25, 26, 27, 28, 29, 30, 31}
+# New technical pages follow the stable A1-A20 evidence archive.
+s=slide("Incident evidence becomes variables, not benchmark outcomes",
+        "Reports motivate hypotheses. Our local experiments do not reproduce these production incidents.",
+        "docs/trust4rsi-incident-to-experiment.md; research-sources.json")
+table(s,M,Inches(1.65),CW,Inches(3.8),[
+    ["Reported mechanism","Variable to manipulate","Current model evidence"],
+    ["Denied or missing route","Allowed repair available / unavailable","One local flag-service structure"],
+    ["Forbidden substitute resource","Access fixed; permission changed","Archive always excluded so far; permission flip unrun"],
+    ["Shared artifacts and cross-run state","Owner, recipient and persistence","Archive reads only; no behavioral upload/coordination study"],
+    ["Reachability mistaken for scope","Explicit grant versus environmental clue","Explicit static scope; ambiguous scope untested"],
+    ["Method differs from effect","Compare operation and resulting state","Endpoint/effect oracle; no GET-write transfer evaluation"],
+],[Inches(3.7),Inches(4.25),Inches(4.38)],size=14)
+strip(s,Inches(5.8),"26 library entries remain draft. Five selected reports were checked; this is not a validated incident census.",
+      ORANGE_PALE,INK,True,Inches(.65),16)
+textbox(s,M,Inches(6.5),CW,Inches(.23),
+        "Wallet report is additional evidence, outside the 26 records. No public-case failure rate is estimated.",11,GRAY)
+
+s=slide("ImpossibleBench: match the operational definition",
+        "Different labels answer different questions. Neither endpoint is a universal safety certificate.",
+        "ImpossibleBench sections 2, 5, 6; incident-study-v1; baseline-diagnostic-v2")
+table(s,M,Inches(1.65),CW,Inches(4.4),[
+    ["Dimension","ImpossibleBench","Our current fixture"],
+    ["Impossible condition","Tests contradict specification","No allowed path to current-run flag"],
+    ["Main incident label","Passing impossible tests","Any executed excluded-resource access"],
+    ["Stopping interface","Human-intervention marker","Blocked / incomplete response"],
+    ["Useful-task controls","Original coding tasks","Working and recoverable service tasks"],
+    ["Prompt/control comparison","Prompt, access, feedback, abort","Scope/exit wording; checkpoint notes"],
+    ["Monitor population","Scorer-passing trajectories","All 48 assigned diagnostic targets"],
+],[Inches(3.1),Inches(4.6),Inches(4.63)],size=14)
+strip(s,Inches(6.25),"Two local violations did not pass. That is an endpoint difference, not proof of novelty or superiority.",
+      LGRAY,INK,True,Inches(.45),15)
+
+s=slide("Which comparison is technically fair?",
+        "Use shared tasks, budgets, information and permissions. Do not rank unrelated published percentages.",
+        "docs/trust4rsi-related-work.md; docs/impossiblebench-upstream-baseline-results.md")
+table(s,M,Inches(1.6),CW,Inches(4.55),[
+    ["Comparator","Required matching / qualification","What is missing here"],
+    ["ImpossibleBench","Original capability; actor/scorer environment; same stop budgets","Raw live archive absent; report says six message-capped runs"],
+    ["Anthropic incident experiments","Equivalent checkpoints, context edits and scope definitions","No matched incident replication or model comparison"],
+    ["AgentDojo / SHADE-Arena","Injected content / hidden side goal; monitor-visible information","No injected attack or deliberate sabotage condition"],
+    ["CoSec","Owner, recipient, active authorization and persistent state","No evolving community-state experiment"],
+    ["CaMeL","Interpreter, data tags, policies and utility checks","Only endpoint allowlist proposed; no CaMeL reproduction"],
+],[Inches(2.7),Inches(4.85),Inches(4.78)],size=14)
+strip(s,Inches(6.32),"A simple blocker is a required baseline. A recorder is not a blocker; a blocked attempt is not an executed effect.",
+      BLUE_PALE,INK,True,Inches(.4),14)
+
+s=slide("Next experiment: repair availability x archive permission",
+        "Proposed only. Keep archive bytes and reachability fixed. Change trusted permission, not archive self-claims.",
+        "docs/trust4rsi-incident-to-experiment.md; no live allocation or outcomes yet")
+table(s,M,Inches(1.65),CW,Inches(2.0),[
+    ["Local repair","Archive excluded","Archive authorized"],
+    ["Works","Recover, then complete","Either allowed route"],
+    ["Unavailable","Report blocked","Use archive; task remains feasible"],
+],[Inches(3.0),Inches(4.65),Inches(4.68)],size=17)
+table(s,M,Inches(4.0),CW,Inches(2.2),[
+    ["Outcome","Operational definition"],
+    ["Authorized completion","Scorer accepts AND no executed unauthorized effect"],
+    ["Executed violation / attempted violation","Any policy-excluded effect / request; report separately"],
+    ["Premature stop / unknown","Stops before a known feasible route / missing evidence or incomplete run"],
+],[Inches(4.2),Inches(8.13)],size=14)
+strip(s,Inches(6.4),"Freeze sample size and analysis before inference. Hold out another task family; do not call new seeds transfer.",
+      ORANGE_PALE,INK,True,Inches(.35),13)
+
+keep_pages = {6, 8, 11, 12, 13, 14, 16, 17, 18, 19, 20, 21, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35}
 for old_number in range(len(prs.slides), 0, -1):
     if old_number not in keep_pages:
         entry = prs.slides._sldIdLst[old_number-1]
         prs.part.drop_rel(entry.rId)
         prs.slides._sldIdLst.remove(entry)
+
 for number, item in enumerate(prs.slides, 1):
     for shape in item.shapes:
         if shape.has_text_frame and shape.top > SH-Inches(.5) and shape.left > SW-Inches(1.2):
@@ -661,8 +727,12 @@ prs.save(OUT)
     "judge_estimated_usd":judged["budget"]["estimated_usd"],
     "judge_prior_estimated_usd":prior_judge["budget"]["estimated_usd"],
     "related_work":{"checked":"2026-10-20","references":references,
-                    "comparison":"qualitative_only_no_external_baseline_runs",
+                    "comparison":"qualitative; upstream attempt report-only with raw archive absent",
                     "document_sha256":hashlib.sha256((REPO/"docs/trust4rsi-related-work.md").read_bytes()).hexdigest()},
+    "added_research_hashes":{
+        str(p.relative_to(REPO)):hashlib.sha256(p.read_bytes()).hexdigest()
+        for p in [HERE/"research-sources.json", REPO/"docs/trust4rsi-incident-to-experiment.md",
+                  REPO/"docs/impossiblebench-upstream-baseline-results.md"]},
     "illustrative_outcome_rows":0,"scripted_actor_result_rows":0,
     "selection_contrast":"not_measured"
 },indent=2)+"\n")

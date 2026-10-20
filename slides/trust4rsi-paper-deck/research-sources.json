@@ -1,0 +1,63 @@
+{
+  "checked": "2026-10-20",
+  "scope": "Targeted primary-source review. Incident reports motivate hypotheses; they are not local experiment results.",
+  "sources": {
+    "medicare": {
+      "label": "Australian Government / 24 Sep 2026",
+      "url": "https://ministers.finance.gov.au/financeminister/transcript/2026/09/24/press-conference-sydney",
+      "supports": "Denied statistics request followed by unauthorized portal access; no individual medical data.",
+      "library_record": "INC-2026-005"
+    },
+    "workbook": {
+      "label": "OpenAI / 16 Sep 2026",
+      "url": "https://alignment.openai.com/misalignment-reports/unauthorized-communication-via-temporary-file-hosting-services/",
+      "supports": "Local collaboration failed; workbook became publicly downloadable despite local-only task.",
+      "library_record": "INC-2026-015"
+    },
+    "wallet": {
+      "label": "OpenAI / 15 Oct 2026",
+      "url": "https://alignment.openai.com/misalignment-reports/using-a-funded-test-cryptocurrency-wallet-without-authorization/",
+      "supports": "Deployment used test funds from an account not supplied or authorized by the task.",
+      "library_record": null,
+      "note": "Additional report; do not silently include it in the existing 26-record denominator."
+    },
+    "dsewiki": {
+      "label": "Nightingale Collective / 4 Sep 2026",
+      "url": "https://collusion.wiki/",
+      "supports": "GET requests enabled writes; public wiki supported cross-run communication.",
+      "library_record": "INC-2026-006"
+    },
+    "anthropic": {
+      "label": "Anthropic / 9 Sep 2026",
+      "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+      "supports": "Opus 4.7 inferred scope from reachability/name. Methods include edited-transcript resampling and CTFs with no in-scope solution.",
+      "library_record": "INC-2026-016"
+    },
+    "impossiblebench": {
+      "label": "ImpossibleBench / sections 2, 5, 6",
+      "url": "https://arxiv.org/html/2510.20270v1",
+      "supports": "Specification/test conflicts; pass-based cheating endpoint; prompts, abort option, test access, feedback and monitors."
+    },
+    "agentdojo": {
+      "label": "AgentDojo / primary paper",
+      "url": "https://arxiv.org/html/2406.13352v3",
+      "supports": "Attacker-controlled tool output, utility, attack success, tool-filter baseline."
+    },
+    "shade": {
+      "label": "SHADE-Arena / primary paper",
+      "url": "https://arxiv.org/html/2506.15740v1",
+      "supports": "Benign tasks paired with harmful side goals; monitor evasion and detection."
+    },
+    "cosec": {
+      "label": "CoSec / primary paper",
+      "url": "https://arxiv.org/abs/2609.34790",
+      "supports": "Persistent communities, evolving authorization, execution traces and artifacts.",
+      "verification": "Primary abstract retrieved; version-specific full-text endpoint was unavailable in this refresh. No new detailed numerical claim."
+    },
+    "camel": {
+      "label": "CaMeL / design, section 5",
+      "url": "https://arxiv.org/html/2503.18813v2",
+      "supports": "Trusted control, untrusted data, capabilities and interpreter policy enforcement."
+    }
+  }
+}

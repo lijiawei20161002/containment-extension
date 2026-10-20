@@ -1,9 +1,9 @@
 {
   "updated": "2026-10-20",
-  "slides": 20,
+  "slides": 24,
   "narrative": "physical_components_and_observed_traces",
   "artifact_type": "technical_appendix",
-  "builder_sha256": "942b1f375deed69ce0bf0370c2c4759fd3d241deba294b9ac02602b871b29aae",
+  "builder_sha256": "eaa5832818c8ef431835a3398222646e64e7ca76aea7df0c3fe17f546afc4ee1",
   "source_hashes": {
     "results/feedback-ablation-v1/summary.json": "e27fe01c551a112a9f47521aafb9cf0acdeb8aae06a9e9781c690d8f0f9c749a",
     "results/feedback-ablation-v1/independent-audit.json": "772425e7b7addbc4fb8400e07c09c6aa773ed4932536b00612f96602edf58dba",
@@ -15,6 +15,7 @@
     "figures/experiments/tradeoff-v1/cells.json": "268e2a6c64db306aae8b6d8bdf3c66c48e46e382a3f8d5323145ec96a41333cd"
   },
   "concrete_evidence_hashes": {
+    "docs/impossiblebench-upstream-baseline-results.md": "97b562a476fabb2db0b635be128907fc2a1eb9a74e625cbef285c982fc4e6dfa",
     "results/baseline-diagnostic-v1/independent-audit.json": "57cf156b81060cfdda92c9782605318eca4bc08ce7e81d66dfcd6f9c3aac493c",
     "results/baseline-diagnostic-v1/summary.json": "b8acd955c3729e518a5bf5e246908abfe0ce0ad13baca3913f4095ae3bc32677",
     "results/baseline-diagnostic-v2/independent-audit.json": "99aafce44718f52778ae88bc81ede045d748dda69faba6502090afd7e6f2f79b",
@@ -27,6 +28,8 @@
     "results/baseline-diagnostic-v2/run-0028/result.json": "56575db42937c08c4dd37bce095ca7e65f84f8cd659a71af819c68b5cb54210c",
     "results/baseline-diagnostic-v2/run-0028/transcript.jsonl": "7aebe4dea5ee72447acf605584aeb3c2a0a76c9d385e99648419781e68dc0db3",
     "results/baseline-diagnostic-v2/summary.json": "0aaa83884a9ced5fb36a10e1095c89d1dfe9c4537744f31c309a26180919c1e5",
+    "results/feedback-ablation-v1/checkpoints/development-impossible-12000/checkpoint.json": "7bca8d9235d909523201045ea9ebe469cb48e11028dbe4f734bac81d31b826f6",
+    "results/feedback-ablation-v1/checkpoints/development-recoverable-12000/checkpoint.json": "ccc8d550ec3c7ac3133c0ca835ab35e7229428f4f844bf8de2c23022fe6ed66c",
     "results/feedback-ablation-v1/run-0001/result.json": "839c0e678efb87bc6e20a13ec107ee2bd3e16f559c1f9987a2ec198a6954cde3",
     "results/feedback-ablation-v1/run-0001/transcript.jsonl": "8bfb75344a93ecc7d9a2adffb6d4a0b0dfb48d996bedaabf3a5dc2e47b162c7b",
     "results/feedback-ablation-v1/run-0002/result.json": "2dea3dda7d95e9fa476dcfb21078691c3e2d36d499f3c1740045780f710c2d50",
@@ -47,7 +50,8 @@
     "results/transcript-audit-v4/judges/run-0028/response.json": "4e12ee39c3b9963968b8ab629f261550bae642d77eeee5e56a1406cbc9af6a62",
     "results/transcript-audit-v4/plan.json": "ebf5662fc43d91aab8ec8ca221d96d80f545293c7c26e5558cf5454d3c630303",
     "results/transcript-audit-v4/raw-field-audit.json": "130220f6ecff0ff8985c9ea602ea71109125ae618092c44495a7bb5e2ae356cc",
-    "results/transcript-audit-v4/summary.json": "01d85cb5e5f0fa19ab399f79c2e8e755b89e4c2c662df90463e6e9f24f5168dd"
+    "results/transcript-audit-v4/summary.json": "01d85cb5e5f0fa19ab399f79c2e8e755b89e4c2c662df90463e6e9f24f5168dd",
+    "slides/trust4rsi-paper-deck/research-sources.json": "02f8ec452d511396bcd55969c038927d4ec34001942201d27541f2ebdb7c8d29"
   },
   "actor_status": "finished",
   "actor_runs": 48,
@@ -100,10 +104,19 @@
       [
         "[9] Liu \u2014 Passing the Test You Trained On (October 2026)",
         "https://arxiv.org/abs/2610.03448v1"
+      ],
+      [
+        "[10] Anthropic \u2014 Incident alignment assessment (September 2026)",
+        "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents"
       ]
     ],
-    "comparison": "qualitative_only_no_external_baseline_runs",
-    "document_sha256": "f110727d3c9711f3655be7a7af698c7768adb298ecdf6774aa0f621cb4a589ff"
+    "comparison": "qualitative; upstream attempt report-only with raw archive absent",
+    "document_sha256": "2acd3346d3a831c0d1b2923bb25b04a80a0c800b2e44348aaeafc9fb3a1ce46a"
+  },
+  "added_research_hashes": {
+    "slides/trust4rsi-paper-deck/research-sources.json": "02f8ec452d511396bcd55969c038927d4ec34001942201d27541f2ebdb7c8d29",
+    "docs/trust4rsi-incident-to-experiment.md": "873fc0b73d7c6ad61ad87248d0df32bd18a977731f189a32174661fc936e9606",
+    "docs/impossiblebench-upstream-baseline-results.md": "97b562a476fabb2db0b635be128907fc2a1eb9a74e625cbef285c982fc4e6dfa"
   },
   "illustrative_outcome_rows": 0,
   "scripted_actor_result_rows": 0,

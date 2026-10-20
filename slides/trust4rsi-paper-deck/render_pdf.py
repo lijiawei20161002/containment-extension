@@ -61,7 +61,7 @@ def main():
     parser.add_argument("--source", type=Path, default=HERE / "trust4rsi-paper-plan.pptx")
     parser.add_argument("--target", type=Path, default=HERE / "trust4rsi-paper-plan.pdf")
     parser.add_argument("--qa", type=Path, default=HERE / "qa/layout-validation.json")
-    parser.add_argument("--title", default="Task success and forbidden reads | Trust4RSI")
+    parser.add_argument("--title", default="When a task fails: recovery, permission, and incident evidence | Trust4RSI")
     args = parser.parse_args()
     source, target = args.source, args.target
     prs = Presentation(source)

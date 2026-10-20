@@ -40,8 +40,9 @@ anonymous supplement are also prepared.
 The [live follow-up experiments](docs/trust4rsi-live-followup-results.md) add a
 paired-note diagnostic and an actual transcript-judge audit. The
 [updated slides](slides/trust4rsi-paper-deck/trust4rsi-paper-plan.pdf) open with
-editable component diagrams and observed tool-call sequences, with no invented
-outcome examples. The main talk is now 13 short English slides; detailed methods,
+reported incidents, then explains recovery decisions through diagrams and observed
+tool-call sequences. There are 23 short English slides, with substantive comparisons
+to ImpossibleBench and incident-driven CTF studies; detailed methods,
 uncertainty and research comparisons are in the
 [technical appendix](slides/trust4rsi-paper-deck/trust4rsi-technical-appendix.pdf).
 Interrupted and completed cohorts are reported separately.

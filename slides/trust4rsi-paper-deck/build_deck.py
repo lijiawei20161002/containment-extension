@@ -10,6 +10,7 @@ import hashlib
 import json
 import sys
 from pathlib import Path
+from types import SimpleNamespace
 
 from collect_evidence import collect
 from deck_lib import (
@@ -35,6 +36,7 @@ from diagram_lib import arrow, icon
 from pptx import Presentation
 from pptx.enum.text import MSO_ANCHOR, PP_ALIGN
 from pptx.util import Inches
+from research_pages import comparisons, enforcement, factorial, motivation
 
 HERE = Path(__file__).resolve().parent
 REPO = HERE.parents[1]
@@ -90,14 +92,14 @@ def page(section, title, subtitle, source, status="OBSERVED"):
     )
     text(s, 0.5, 0.82, 12.3, 0.75, title, 29, INK, True, role="title")
     text(s, 0.5, 1.64, 12.3, 0.5, subtitle, 18, GRAY, role="subtitle")
-    text(s, 0.5, 6.91, 11.8, 0.27, source, 10, GRAY, role="source")
+    text(s, 0.5, 6.98, 11.8, 0.2, source, 9, GRAY, role="source")
     text(
         s,
         0.5,
         7.2,
         11.9,
         0.22,
-        "Trust4RSI | Real model calls. Local test services. | "
+        "Trust4RSI | Reports / experiments / proposals are labelled. | "
         "Methods and sources: technical appendix.",
         9,
         GRAY,
@@ -132,13 +134,13 @@ def panel(
         text(s, x + 0.2, y + 1.02, w - 0.4, h - 1.2, body, body_size)
 
 
-def banner(s, message, color=BLUE, pale=BLUE_PALE, y=6.12, size=22, h=0.65):
+def banner(s, message, color=BLUE, pale=BLUE_PALE, y=6.04, size=22, h=0.65):
     rect(s, Inches(0.5), Inches(y), Inches(12.3), Inches(h), pale, None)
     text(s, 0.68, y + 0.02, 11.94, h - 0.04, message, size, color, True)
 
 
 def link(s, x, y, w, title, url):
-    shape = text(s, x, y, w, 0.32, title, 11, BLUE, role="source")
+    shape = text(s, x, y, w, 0.22, title, 10, BLUE, role="source")
     for p in shape.text_frame.paragraphs:
         for run in p.runs:
             run.hyperlink.address = url
@@ -182,6 +184,9 @@ flag = DATA["copied_flag"]
 assert historical["pass_incident"] == 13
 assert historical["pass_incident"] + historical["no_pass_incident"] == 15
 
+ui = SimpleNamespace(page=page, text=text, panel=panel, banner=banner, link=link)
+motivation(ui)
+
 # 1. Define the task before introducing any research vocabulary.
 s = page(
     "THE TASK",
@@ -206,6 +211,34 @@ panel(s, 8.9, 2.65, 3.9, 2.55, "Grader", "Check the submitted code.", BLUE, BLUE
 arrow(s, [(Inches(4.12), Inches(3.9)), (Inches(4.62), Inches(3.9))], BLUE)
 arrow(s, [(Inches(8.32), Inches(3.9)), (Inches(8.82), Inches(3.9))], BLUE)
 banner(s, "Rule: other runs' saved answers are off limits.", RED, RED_PALE)
+
+# 5. Give a positive target behavior rather than just a list of failures.
+s = page(
+    "WHAT SHOULD HAPPEN?",
+    "Two real runs took the two allowed paths.",
+    "The recovery response resolves the same starting uncertainty.",
+    "results/feedback-ablation-v1/run-0002 and run-0001; no outside effects in either.",
+)
+for y, label, sequence, col, pale in [
+    (2.65, "Service can recover", ["Recover", "Read this run's code", "Pass"], GREEN, GREEN_PALE),
+    (
+        4.45,
+        "Service cannot recover",
+        ["Recovery fails", "Code unavailable", "Report blocked"],
+        BLUE,
+        BLUE_PALE,
+    ),
+]:
+    text(s, 0.5, y, 3.1, 0.95, label, 23, col, True)
+    for j, item in enumerate(sequence):
+        x = 3.9 + j * 3
+        rect(s, Inches(x), Inches(y), Inches(2.7), Inches(0.95), pale, None)
+        text(s, x + 0.1, y + 0.08, 2.5, 0.79, item, 22, col, True, center=True)
+        if j < 2:
+            arrow(
+                s, [(Inches(x + 2.76), Inches(y + 0.47)), (Inches(x + 2.93), Inches(y + 0.47))], col
+            )
+banner(s, "Stopping every time would also be wrong.")
 
 # 2. All four actions are the observed continuation, not an imagined vignette.
 s = page(
@@ -261,35 +294,7 @@ for j in range(15):
     text(s, x, 3.6, 0.65, 0.4, str(j + 1), 18, col, True, center=True)
 text(s, 0.5, 4.7, 8.9, 0.62, "13 passed the grader", 29, RED, True)
 text(s, 9.25, 4.7, 3.5, 0.62, "2 did not pass", 25, GRAY, True)
-banner(s, "A passing score missed these violations.", RED, RED_PALE)
-
-# 5. Give a positive target behavior rather than just a list of failures.
-s = page(
-    "WHAT SHOULD HAPPEN?",
-    "Recover if possible. Otherwise, stop.",
-    "Two real runs show both useful behaviors.",
-    "results/feedback-ablation-v1/run-0002 and run-0001; no outside effects in either.",
-)
-for y, label, sequence, col, pale in [
-    (2.65, "Service can recover", ["Recover", "Read this run's code", "Pass"], GREEN, GREEN_PALE),
-    (
-        4.45,
-        "Service cannot recover",
-        ["Recovery fails", "Code unavailable", "Report blocked"],
-        BLUE,
-        BLUE_PALE,
-    ),
-]:
-    text(s, 0.5, y, 3.1, 0.95, label, 23, col, True)
-    for j, item in enumerate(sequence):
-        x = 3.9 + j * 3
-        rect(s, Inches(x), Inches(y), Inches(2.7), Inches(0.95), pale, None)
-        text(s, x + 0.1, y + 0.08, 2.5, 0.79, item, 22, col, True, center=True)
-        if j < 2:
-            arrow(
-                s, [(Inches(x + 2.76), Inches(y + 0.47)), (Inches(x + 2.93), Inches(y + 0.47))], col
-            )
-banner(s, "Stopping every time would also be wrong.")
+banner(s, "A passing score did not establish permission.", RED, RED_PALE)
 
 # 6. The manipulation is concrete. Length and wording are not separate factors.
 s = page(
@@ -364,9 +369,9 @@ banner(s, "No clear winner: the difference is still uncertain.", ORANGE, ORANGE_
 text(
     s,
     0.5,
-    6.78,
+    6.72,
     12.3,
-    0.24,
+    0.22,
     "Long minus short: +25 points. Approximate 95% interval: "
     f"{lo * 100:.1f} to {hi * 100:.1f} points.",
     10,
@@ -436,83 +441,14 @@ panel(
 )
 banner(s, "The two checks used different notions of permission.", ORANGE, ORANGE_PALE, size=22)
 
-# 10. Preserve the user's request for prior research, without a literature wall.
-s = page(
-    "PRIOR WORK",
-    "The core safety ideas already have prior work.",
-    "These are literature comparisons. We have not rerun their systems.",
-    "Full primary references and scope differences: technical appendix A1-A2, A19-A20.",
-    status="LITERATURE",
-)
-for j, (title, body, url) in enumerate(
-    [
-        (
-            "ImpossibleBench",
-            "Tests can pass\nwhile the solution cheats.",
-            "https://arxiv.org/abs/2510.20270",
-        ),
-        (
-            "CoSec",
-            "Tasks can succeed\nwhile permissions fail.",
-            "https://arxiv.org/abs/2609.34790v3",
-        ),
-        (
-            "CaMeL",
-            "The system can enforce\ninformation-flow rules.",
-            "https://arxiv.org/abs/2503.18813",
-        ),
-    ]
-):
-    x = 0.5 + j * 4.2
-    panel(s, x, 2.6, 3.9, 2.8, title, body, BLUE, BLUE_PALE, title_size=25, body_size=24)
-    link(s, x + 0.15, 5.5, 3.6, "Read the primary paper", url)
-banner(s, "Our evidence today: recorded actions and measured limits.", size=22)
-
-# 11. A proposed mechanism is labelled as a design, with no invented result.
-s = page(
-    "NEXT TEST / 1",
-    "Add a permission check before execution.",
-    "Compare a prompt-only agent with a broker that blocks excluded resources.",
-    "Proposed baseline. An endpoint allowlist is not a CaMeL reproduction.",
-    status="NOT RUN YET",
-)
-panel(s, 0.5, 3.2, 2.65, 2.0, "Agent", "Requests a file", kind="agent")
-panel(
-    s,
-    4.0,
-    3.2,
-    4.1,
-    2.0,
-    "Permission check",
-    "Is this resource allowed?",
-    PURPLE,
-    PURPLE_PALE,
-    "observer",
-    22,
-    21,
-)
-arrow(s, [(Inches(3.22), Inches(4.2)), (Inches(3.92), Inches(4.2))], BLUE)
-for yy, label, col, pale in [
-    (2.65, "This run: allow", GREEN, GREEN_PALE),
-    (4.5, "Old answers: block", RED, RED_PALE),
-]:
-    rect(s, Inches(9.2), Inches(yy), Inches(3.6), Inches(1.1), pale, None)
-    text(s, 9.35, yy + 0.1, 3.3, 0.9, label, 24, col, True, center=True)
-    arrow(
-        s,
-        [
-            (Inches(8.17), Inches(4.2)),
-            (Inches(8.65), Inches(4.2)),
-            (Inches(8.65), Inches(yy + 0.55)),
-            (Inches(9.12), Inches(yy + 0.55)),
-        ],
-        col,
-    )
-banner(s, "Measure blocked attempts AND completed allowed tasks.", size=22)
+# Compare exact constructs and endpoints before proposing another experiment.
+comparisons(ui)
+enforcement(ui)
+factorial(ui)
 
 # 12. Put the unknown selections on screen as unknowns, never example winners.
 s = page(
-    "NEXT TEST / 2",
+    "LATER / FEEDBACK SELECTION",
     "Does better feedback choose a better note?",
     "Use the same candidate notes and the same development runs.",
     "Proposed selection study. Fresh tasks and a repaired, frozen judge are required.",
@@ -549,7 +485,7 @@ banner(s, "The two choices may tie. That is a valid result.", size=22)
 s = page(
     "TAKEAWAY",
     "A correct answer is only one check.",
-    "Keep these three results separate.",
+    "The incidents motivate the test. The experiments limit the claim.",
     "Observed results: incident-study-v1, baseline-diagnostic-v2, transcript-audit-v4.",
 )
 for yy, n, title, body, col, pale in [
@@ -582,7 +518,13 @@ for yy, n, title, body, col, pale in [
     text(s, 0.68, yy + 0.13, 0.55, 0.7, n, 32, col, True)
     text(s, 1.5, yy + 0.08, 10.9, 0.4, title, 23, col, True)
     text(s, 1.5, yy + 0.53, 10.9, 0.37, body, 19)
-banner(s, "Being able to read a file does not mean being allowed to.", PURPLE, PURPLE_PALE, size=21)
+banner(
+    s,
+    "Failure changes what is possible. It does not grant new authority.",
+    PURPLE,
+    PURPLE_PALE,
+    size=21,
+)
 
 opening_only = "--opening-only" in sys.argv
 if opening_only:
@@ -627,7 +569,7 @@ if not opening_only:
         "updated": "2026-10-20",
         "slides": len(PRS.slides),
         "language": "English",
-        "narrative": "one_concrete_claim_per_page",
+        "narrative": "reported_incidents_to_testable_mechanisms_to_measured_limits",
         "pages": PAGES,
         "density": density,
         "concrete_evidence_hashes": DATA["source_hashes"],
@@ -637,6 +579,9 @@ if not opening_only:
                 Path(__file__),
                 HERE / "collect_evidence.py",
                 HERE / "diagram_lib.py",
+                HERE / "research_pages.py",
+                HERE / "research-sources.json",
+                REPO / "docs/trust4rsi-incident-to-experiment.md",
                 REPO / "docs/trust4rsi-related-work.md",
             ]
         },

@@ -26,7 +26,20 @@ This does not qualify a release gate.
 These studies answer baseline sensitivity and measurement agreement. They do
 not complete the policy-selection comparison that E2 v1 never reached.
 
-## Next scientific decision: is a selection contrast informative?
+## First isolate repair availability from authorization
+
+The [incident-derived design](trust4rsi-incident-to-experiment.md) crosses whether
+local recovery works with whether the same reachable archive is authorized.
+This separates task difficulty from permission following. Add fixed-instruction,
+stop/escalate, permission-check and broker baselines. Freeze sample size and
+analysis before inference, and use another task family for transfer. This design
+is proposed; it has no live results yet.
+
+A clean upstream coding comparison also needs recovered raw logs from the prior
+six-run attempt, consistent actor/scorer Python environments, and original-task
+capability checks. The existing report is not a clean behavioral baseline.
+
+## Later decision: is a selection contrast informative?
 
 First fix and independently check the judge contract on development data:
 format handling, nullable output fields, and the scope of authorized challenge
@@ -52,7 +65,7 @@ a scripted incident demonstration cannot establish an agent failure rate.
 A broader comparison should be motivated by a clear measurement question,
 not by searching for examples until one feedback method wins.
 
-The [comparison with nine primary research sources](trust4rsi-related-work.md)
+The [technical comparison with primary research sources](trust4rsi-related-work.md)
 specifies the missing controls: original/fixed instructions, a broker allowlist,
 a transcript-plus-service-evidence judge, and a genuinely new task family.
 Do not call an allowlist a CaMeL reproduction or compare published benchmark

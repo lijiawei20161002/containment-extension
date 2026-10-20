@@ -1,23 +1,32 @@
 {
   "date": "2026-10-20",
-  "revision": "short_plain_English_main_talk",
-  "main_slides": 13,
-  "appendix_slides": 20,
-  "main_words_min": 37,
-  "main_words_max": 67,
+  "revision": "incidents_recovery_logic_and_technical_comparisons",
+  "main_slides": 23,
+  "appendix_slides": 24,
+  "main_words_min": 40,
+  "main_words_max": 71,
   "main_tables": 0,
   "main_prose_min_pt": 18,
   "main_code_min_pt": 16,
   "new_inference_calls": 0,
-  "result_source_hashes": "verified",
+  "result_source_hashes": "verified: 37 source files",
+  "identical_recovery_prefixes": "verified against archived checkpoint JSON",
   "copied_flag_pdf_occurrences_on_evidence_page": 2,
   "clickable_primary_links": {
-    "main": 3,
-    "appendix": 9
+    "main": 12,
+    "appendix": 10
   },
   "shape_bounds": "passed",
+  "unique_pptx_zip_parts": "passed",
   "text_overflow": 0,
-  "visual_review": "All 13 main pages and 20 appendix pages inspected in rendered contact sheets",
-  "ruff": "main builder and evidence collector passed",
-  "experiment_test_record": "experiment-validation.json; experiment code and tests unchanged in this presentation revision"
+  "visual_review": "All 23 main and 24 appendix pages inspected in rendered contact sheets; changed pages checked again.",
+  "ruff": "main builder, research pages and evidence collector passed",
+  "upstream_baseline": "report-only; raw live archive absent from current checkout; no recomputed rates",
+  "experiment_test_record": "experiment-validation.json; stored experiment source hashes verified unchanged",
+  "artifact_sha256": {
+    "trust4rsi-paper-plan.pdf": "ee4c555d136e22aa2a136e5556117174763b2c9d723b4ead9b83e0b5e1b47405",
+    "trust4rsi-paper-plan.pptx": "022967e5e377527edc3c5cf526610cc67a85dbce05908e4908651beaa60d7778",
+    "trust4rsi-technical-appendix.pdf": "20da6bc2511f3061e1fc7bd48296d2924fd7c9b1592971e9898ea75123dbaaca",
+    "trust4rsi-technical-appendix.pptx": "bfde9981d2490d775f78088f455068db2f85933a38568c22c9864718a0e56b22"
+  }
 }

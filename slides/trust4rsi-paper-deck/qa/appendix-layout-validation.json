@@ -1,5 +1,5 @@
 {
-  "slides": 20,
+  "slides": 24,
   "renderer": "reportlab; native vector shapes and text",
   "overflow_issues": []
 }
