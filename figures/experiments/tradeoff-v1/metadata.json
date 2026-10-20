@@ -1,0 +1,10 @@
+{
+  "generator": "scripts/draw_utility_incident_tradeoff.py",
+  "inference_calls": 0,
+  "sources": {
+    "results/incident-study-v1/summary.json": "5f1a83e3a2fe64eb62c77404a2ffe6e0a2aef46e1ea57ff094461b86434117ff",
+    "results/scope-levels-v1/summary.json": "f13b00d18ba8884e163a9aca204d9bd66ae51c51a942d290348524bcd115e9e8",
+    "results/link-study-v1/analysis.json": "4a88653c735c2a03f10ce54fbb9e03d84a4f510d7335581dc8c5e8fe6e8b070d"
+  },
+  "notes": "No curve or pooling across studies. Intervals use observed outcomes; unknowns and assigned-population bounds remain explicit. Early read diagnostic is a different endpoint and population from full-rollout verified incidents."
+}

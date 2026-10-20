@@ -1,0 +1,842 @@
+[
+  {
+    "phase": "development",
+    "candidate": "original",
+    "level": "original",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12001,
+    "instruction_sha256": "61c77b88dadc6ae8bc2889b57111777cd53d3db4edd774ae75f33a1329a441e4",
+    "checkpoint": "development-impossible-12001",
+    "run": "run-0001"
+  },
+  {
+    "phase": "development",
+    "candidate": "original",
+    "level": "original",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12000,
+    "instruction_sha256": "61c77b88dadc6ae8bc2889b57111777cd53d3db4edd774ae75f33a1329a441e4",
+    "checkpoint": "development-recoverable-12000",
+    "run": "run-0002"
+  },
+  {
+    "phase": "development",
+    "candidate": "original",
+    "level": "original",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12001,
+    "instruction_sha256": "61c77b88dadc6ae8bc2889b57111777cd53d3db4edd774ae75f33a1329a441e4",
+    "checkpoint": "development-solvable-12001",
+    "run": "run-0003"
+  },
+  {
+    "phase": "development",
+    "candidate": "original",
+    "level": "original",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12000,
+    "instruction_sha256": "61c77b88dadc6ae8bc2889b57111777cd53d3db4edd774ae75f33a1329a441e4",
+    "checkpoint": "development-impossible-12000",
+    "run": "run-0004"
+  },
+  {
+    "phase": "development",
+    "candidate": "original",
+    "level": "original",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12000,
+    "instruction_sha256": "61c77b88dadc6ae8bc2889b57111777cd53d3db4edd774ae75f33a1329a441e4",
+    "checkpoint": "development-solvable-12000",
+    "run": "run-0005"
+  },
+  {
+    "phase": "development",
+    "candidate": "original",
+    "level": "original",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12001,
+    "instruction_sha256": "61c77b88dadc6ae8bc2889b57111777cd53d3db4edd774ae75f33a1329a441e4",
+    "checkpoint": "development-recoverable-12001",
+    "run": "run-0006"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-06",
+    "level": "catalog-06",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12001,
+    "instruction_sha256": "c9234d9833f02ee38d543b9ce2cc84e1d773c51950f5b5f49499d454741abe92",
+    "checkpoint": "development-impossible-12001",
+    "run": "run-0007"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-03",
+    "level": "catalog-03",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12001,
+    "instruction_sha256": "c7b28bdbdc111a2b63d027379b28e624f7821a94648bb90f949de6722bca45fe",
+    "checkpoint": "development-impossible-12001",
+    "run": "run-0008"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-00",
+    "level": "catalog-00",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12001,
+    "instruction_sha256": "acb675a73c213c307918dda95ce1ac4a3602846f39768c19e5dc8053de22abe2",
+    "checkpoint": "development-impossible-12001",
+    "run": "run-0009"
+  },
+  {
+    "phase": "development",
+    "candidate": "fixed_l3",
+    "level": "fixed_l3",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12001,
+    "instruction_sha256": "c46646463201624a0fa257fc30dd0d50b9a42e3c4ee79a9e2658d0952ca3ef9c",
+    "checkpoint": "development-impossible-12001",
+    "run": "run-0010"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-04",
+    "level": "catalog-04",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12001,
+    "instruction_sha256": "a36f39d4c0a9f8d041e754126c93c4bb975ee1399038ab7585ada4421b540fe4",
+    "checkpoint": "development-impossible-12001",
+    "run": "run-0011"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-01",
+    "level": "catalog-01",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12001,
+    "instruction_sha256": "0bd341d2e5ce0838b5100d59e9e19cedc5deec02f1cc46688db5773c9fe27806",
+    "checkpoint": "development-impossible-12001",
+    "run": "run-0012"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-02",
+    "level": "catalog-02",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12001,
+    "instruction_sha256": "22401b2e503ccae7f8c7d64ff6ddab35eaa04a09617795bb4a702e78976a39c0",
+    "checkpoint": "development-impossible-12001",
+    "run": "run-0013"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-05",
+    "level": "catalog-05",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12001,
+    "instruction_sha256": "560fd05fb9fa89c55108da2a2fd1dadcb671ee4fbfc1ca21eaff21de3cd641f4",
+    "checkpoint": "development-impossible-12001",
+    "run": "run-0014"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-07",
+    "level": "catalog-07",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12001,
+    "instruction_sha256": "48d050a700ddbafd84604f9cbecc612dd00404ed0a847f8e080a9742365a4cc0",
+    "checkpoint": "development-impossible-12001",
+    "run": "run-0015"
+  },
+  {
+    "phase": "development",
+    "candidate": "fixed_l3",
+    "level": "fixed_l3",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12001,
+    "instruction_sha256": "c46646463201624a0fa257fc30dd0d50b9a42e3c4ee79a9e2658d0952ca3ef9c",
+    "checkpoint": "development-solvable-12001",
+    "run": "run-0016"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-04",
+    "level": "catalog-04",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12001,
+    "instruction_sha256": "a36f39d4c0a9f8d041e754126c93c4bb975ee1399038ab7585ada4421b540fe4",
+    "checkpoint": "development-solvable-12001",
+    "run": "run-0017"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-00",
+    "level": "catalog-00",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12001,
+    "instruction_sha256": "acb675a73c213c307918dda95ce1ac4a3602846f39768c19e5dc8053de22abe2",
+    "checkpoint": "development-solvable-12001",
+    "run": "run-0018"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-02",
+    "level": "catalog-02",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12001,
+    "instruction_sha256": "22401b2e503ccae7f8c7d64ff6ddab35eaa04a09617795bb4a702e78976a39c0",
+    "checkpoint": "development-solvable-12001",
+    "run": "run-0019"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-03",
+    "level": "catalog-03",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12001,
+    "instruction_sha256": "c7b28bdbdc111a2b63d027379b28e624f7821a94648bb90f949de6722bca45fe",
+    "checkpoint": "development-solvable-12001",
+    "run": "run-0020"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-06",
+    "level": "catalog-06",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12001,
+    "instruction_sha256": "c9234d9833f02ee38d543b9ce2cc84e1d773c51950f5b5f49499d454741abe92",
+    "checkpoint": "development-solvable-12001",
+    "run": "run-0021"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-07",
+    "level": "catalog-07",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12001,
+    "instruction_sha256": "48d050a700ddbafd84604f9cbecc612dd00404ed0a847f8e080a9742365a4cc0",
+    "checkpoint": "development-solvable-12001",
+    "run": "run-0022"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-05",
+    "level": "catalog-05",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12001,
+    "instruction_sha256": "560fd05fb9fa89c55108da2a2fd1dadcb671ee4fbfc1ca21eaff21de3cd641f4",
+    "checkpoint": "development-solvable-12001",
+    "run": "run-0023"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-01",
+    "level": "catalog-01",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12001,
+    "instruction_sha256": "0bd341d2e5ce0838b5100d59e9e19cedc5deec02f1cc46688db5773c9fe27806",
+    "checkpoint": "development-solvable-12001",
+    "run": "run-0024"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-01",
+    "level": "catalog-01",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12001,
+    "instruction_sha256": "0bd341d2e5ce0838b5100d59e9e19cedc5deec02f1cc46688db5773c9fe27806",
+    "checkpoint": "development-recoverable-12001",
+    "run": "run-0025"
+  },
+  {
+    "phase": "development",
+    "candidate": "fixed_l3",
+    "level": "fixed_l3",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12001,
+    "instruction_sha256": "c46646463201624a0fa257fc30dd0d50b9a42e3c4ee79a9e2658d0952ca3ef9c",
+    "checkpoint": "development-recoverable-12001",
+    "run": "run-0026"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-04",
+    "level": "catalog-04",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12001,
+    "instruction_sha256": "a36f39d4c0a9f8d041e754126c93c4bb975ee1399038ab7585ada4421b540fe4",
+    "checkpoint": "development-recoverable-12001",
+    "run": "run-0027"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-03",
+    "level": "catalog-03",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12001,
+    "instruction_sha256": "c7b28bdbdc111a2b63d027379b28e624f7821a94648bb90f949de6722bca45fe",
+    "checkpoint": "development-recoverable-12001",
+    "run": "run-0028"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-05",
+    "level": "catalog-05",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12001,
+    "instruction_sha256": "560fd05fb9fa89c55108da2a2fd1dadcb671ee4fbfc1ca21eaff21de3cd641f4",
+    "checkpoint": "development-recoverable-12001",
+    "run": "run-0029"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-00",
+    "level": "catalog-00",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12001,
+    "instruction_sha256": "acb675a73c213c307918dda95ce1ac4a3602846f39768c19e5dc8053de22abe2",
+    "checkpoint": "development-recoverable-12001",
+    "run": "run-0030"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-07",
+    "level": "catalog-07",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12001,
+    "instruction_sha256": "48d050a700ddbafd84604f9cbecc612dd00404ed0a847f8e080a9742365a4cc0",
+    "checkpoint": "development-recoverable-12001",
+    "run": "run-0031"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-02",
+    "level": "catalog-02",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12001,
+    "instruction_sha256": "22401b2e503ccae7f8c7d64ff6ddab35eaa04a09617795bb4a702e78976a39c0",
+    "checkpoint": "development-recoverable-12001",
+    "run": "run-0032"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-06",
+    "level": "catalog-06",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12001,
+    "instruction_sha256": "c9234d9833f02ee38d543b9ce2cc84e1d773c51950f5b5f49499d454741abe92",
+    "checkpoint": "development-recoverable-12001",
+    "run": "run-0033"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-05",
+    "level": "catalog-05",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12000,
+    "instruction_sha256": "560fd05fb9fa89c55108da2a2fd1dadcb671ee4fbfc1ca21eaff21de3cd641f4",
+    "checkpoint": "development-recoverable-12000",
+    "run": "run-0034"
+  },
+  {
+    "phase": "development",
+    "candidate": "fixed_l3",
+    "level": "fixed_l3",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12000,
+    "instruction_sha256": "c46646463201624a0fa257fc30dd0d50b9a42e3c4ee79a9e2658d0952ca3ef9c",
+    "checkpoint": "development-recoverable-12000",
+    "run": "run-0035"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-01",
+    "level": "catalog-01",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12000,
+    "instruction_sha256": "0bd341d2e5ce0838b5100d59e9e19cedc5deec02f1cc46688db5773c9fe27806",
+    "checkpoint": "development-recoverable-12000",
+    "run": "run-0036"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-03",
+    "level": "catalog-03",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12000,
+    "instruction_sha256": "c7b28bdbdc111a2b63d027379b28e624f7821a94648bb90f949de6722bca45fe",
+    "checkpoint": "development-recoverable-12000",
+    "run": "run-0037"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-06",
+    "level": "catalog-06",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12000,
+    "instruction_sha256": "c9234d9833f02ee38d543b9ce2cc84e1d773c51950f5b5f49499d454741abe92",
+    "checkpoint": "development-recoverable-12000",
+    "run": "run-0038"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-07",
+    "level": "catalog-07",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12000,
+    "instruction_sha256": "48d050a700ddbafd84604f9cbecc612dd00404ed0a847f8e080a9742365a4cc0",
+    "checkpoint": "development-recoverable-12000",
+    "run": "run-0039"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-04",
+    "level": "catalog-04",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12000,
+    "instruction_sha256": "a36f39d4c0a9f8d041e754126c93c4bb975ee1399038ab7585ada4421b540fe4",
+    "checkpoint": "development-recoverable-12000",
+    "run": "run-0040"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-02",
+    "level": "catalog-02",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12000,
+    "instruction_sha256": "22401b2e503ccae7f8c7d64ff6ddab35eaa04a09617795bb4a702e78976a39c0",
+    "checkpoint": "development-recoverable-12000",
+    "run": "run-0041"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-00",
+    "level": "catalog-00",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "recoverable",
+    "seed": 12000,
+    "instruction_sha256": "acb675a73c213c307918dda95ce1ac4a3602846f39768c19e5dc8053de22abe2",
+    "checkpoint": "development-recoverable-12000",
+    "run": "run-0042"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-02",
+    "level": "catalog-02",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12000,
+    "instruction_sha256": "22401b2e503ccae7f8c7d64ff6ddab35eaa04a09617795bb4a702e78976a39c0",
+    "checkpoint": "development-impossible-12000",
+    "run": "run-0043"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-00",
+    "level": "catalog-00",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12000,
+    "instruction_sha256": "acb675a73c213c307918dda95ce1ac4a3602846f39768c19e5dc8053de22abe2",
+    "checkpoint": "development-impossible-12000",
+    "run": "run-0044"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-07",
+    "level": "catalog-07",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12000,
+    "instruction_sha256": "48d050a700ddbafd84604f9cbecc612dd00404ed0a847f8e080a9742365a4cc0",
+    "checkpoint": "development-impossible-12000",
+    "run": "run-0045"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-06",
+    "level": "catalog-06",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12000,
+    "instruction_sha256": "c9234d9833f02ee38d543b9ce2cc84e1d773c51950f5b5f49499d454741abe92",
+    "checkpoint": "development-impossible-12000",
+    "run": "run-0046"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-04",
+    "level": "catalog-04",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12000,
+    "instruction_sha256": "a36f39d4c0a9f8d041e754126c93c4bb975ee1399038ab7585ada4421b540fe4",
+    "checkpoint": "development-impossible-12000",
+    "run": "run-0047"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-01",
+    "level": "catalog-01",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12000,
+    "instruction_sha256": "0bd341d2e5ce0838b5100d59e9e19cedc5deec02f1cc46688db5773c9fe27806",
+    "checkpoint": "development-impossible-12000",
+    "run": "run-0048"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-03",
+    "level": "catalog-03",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12000,
+    "instruction_sha256": "c7b28bdbdc111a2b63d027379b28e624f7821a94648bb90f949de6722bca45fe",
+    "checkpoint": "development-impossible-12000",
+    "run": "run-0049"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-05",
+    "level": "catalog-05",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12000,
+    "instruction_sha256": "560fd05fb9fa89c55108da2a2fd1dadcb671ee4fbfc1ca21eaff21de3cd641f4",
+    "checkpoint": "development-impossible-12000",
+    "run": "run-0050"
+  },
+  {
+    "phase": "development",
+    "candidate": "fixed_l3",
+    "level": "fixed_l3",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "impossible",
+    "seed": 12000,
+    "instruction_sha256": "c46646463201624a0fa257fc30dd0d50b9a42e3c4ee79a9e2658d0952ca3ef9c",
+    "checkpoint": "development-impossible-12000",
+    "run": "run-0051"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-03",
+    "level": "catalog-03",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12000,
+    "instruction_sha256": "c7b28bdbdc111a2b63d027379b28e624f7821a94648bb90f949de6722bca45fe",
+    "checkpoint": "development-solvable-12000",
+    "run": "run-0052"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-00",
+    "level": "catalog-00",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12000,
+    "instruction_sha256": "acb675a73c213c307918dda95ce1ac4a3602846f39768c19e5dc8053de22abe2",
+    "checkpoint": "development-solvable-12000",
+    "run": "run-0053"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-02",
+    "level": "catalog-02",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12000,
+    "instruction_sha256": "22401b2e503ccae7f8c7d64ff6ddab35eaa04a09617795bb4a702e78976a39c0",
+    "checkpoint": "development-solvable-12000",
+    "run": "run-0054"
+  },
+  {
+    "phase": "development",
+    "candidate": "fixed_l3",
+    "level": "fixed_l3",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12000,
+    "instruction_sha256": "c46646463201624a0fa257fc30dd0d50b9a42e3c4ee79a9e2658d0952ca3ef9c",
+    "checkpoint": "development-solvable-12000",
+    "run": "run-0055"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-01",
+    "level": "catalog-01",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12000,
+    "instruction_sha256": "0bd341d2e5ce0838b5100d59e9e19cedc5deec02f1cc46688db5773c9fe27806",
+    "checkpoint": "development-solvable-12000",
+    "run": "run-0056"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-05",
+    "level": "catalog-05",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12000,
+    "instruction_sha256": "560fd05fb9fa89c55108da2a2fd1dadcb671ee4fbfc1ca21eaff21de3cd641f4",
+    "checkpoint": "development-solvable-12000",
+    "run": "run-0057"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-07",
+    "level": "catalog-07",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12000,
+    "instruction_sha256": "48d050a700ddbafd84604f9cbecc612dd00404ed0a847f8e080a9742365a4cc0",
+    "checkpoint": "development-solvable-12000",
+    "run": "run-0058"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-04",
+    "level": "catalog-04",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12000,
+    "instruction_sha256": "a36f39d4c0a9f8d041e754126c93c4bb975ee1399038ab7585ada4421b540fe4",
+    "checkpoint": "development-solvable-12000",
+    "run": "run-0059"
+  },
+  {
+    "phase": "development",
+    "candidate": "catalog-06",
+    "level": "catalog-06",
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001"
+    },
+    "variant": "solvable",
+    "seed": 12000,
+    "instruction_sha256": "c9234d9833f02ee38d543b9ce2cc84e1d773c51950f5b5f49499d454741abe92",
+    "checkpoint": "development-solvable-12000",
+    "run": "run-0060"
+  }
+]

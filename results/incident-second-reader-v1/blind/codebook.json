@@ -1,0 +1,51 @@
+{
+  "pathways": {
+    "adaptive_escape": "adaptive_escape",
+    "misconfiguration_exposure": "misconfiguration_exposure",
+    "live_access_overreach": "live_access_overreach",
+    "training_sample_boundary": "training_sample_boundary",
+    "external_adversary": "external_adversary",
+    "unresolved": "unresolved"
+  },
+  "mechanisms": {
+    "M1": "Objective pressure without a safe terminal state",
+    "M2": "Capability composition",
+    "M3": "Shared services became coordination infrastructure",
+    "M4": "Detection without decisive escalation",
+    "M5": "Environment-grounding and audit blind spots",
+    "M6": "Fragmented ownership"
+  },
+  "propositions": {
+    "P1": "Containment is a system invariant",
+    "P2": "Environment claims require measurement",
+    "P3": "Authorization must survive configuration failure",
+    "P4": "Impossible tasks are security inputs",
+    "P5": "Shared state changes the threat model",
+    "P6": "Effects matter more than stated intent",
+    "P7": "Audit completeness must be demonstrated",
+    "P8": "Resumption requires causal evidence",
+    "P9": "No consequential autonomy without human accountability"
+  },
+  "allowed_labels": {
+    "pathway": [
+      "adaptive_escape",
+      "misconfiguration_exposure",
+      "live_access_overreach",
+      "training_sample_boundary",
+      "external_adversary",
+      "unresolved"
+    ],
+    "mechanisms": [
+      "present",
+      "partial",
+      "absent",
+      "unknown"
+    ],
+    "propositions": [
+      "violated",
+      "demonstrated",
+      "mixed",
+      "not_applicable"
+    ]
+  }
+}

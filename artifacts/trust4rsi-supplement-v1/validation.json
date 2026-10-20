@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-20",
+  "archive": "anonymous-experiments.zip",
+  "archive_sha256": "6aa8e7b1105115d36e6146bcf63fe964f90699174d076f1a735390d5a25ee815",
+  "repository_tests": {"passed": 297, "skipped": 4, "failed": 0},
+  "ruff_new_code": "passed",
+  "diff_whitespace_check": "passed",
+  "extracted_archive_tests": {"passed": 8, "failed": 0},
+  "extracted_archive_report_regeneration": "passed",
+  "extracted_archive_figure_regeneration": "passed",
+  "exported_file_hashes_verified": 3683,
+  "identity_and_credential_scan": "passed",
+  "live_evidence_audit": "results/feedback-ablation-v1/independent-audit.json",
+  "live_status": "baseline_no_events",
+  "live_actor_runs": 6,
+  "live_provider_requests": 17,
+  "live_estimated_usd": 0.052442,
+  "human_second_reader_status": "pending",
+  "uploaded": false
+}

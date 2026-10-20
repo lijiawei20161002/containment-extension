@@ -1,0 +1,6 @@
+Independent second-reader coding
+
+Use only this blind directory and the public source reports. Do not open the repository's incident records, first-reader codings, figures or aggregate analysis before submitting.
+Code pathway, M1-M6 and P1-P9 using codebook.json; cite evidence in evidence_notes. Leave unassessed fields blank; 'unknown' is an explicit mechanism judgment, not missing data. No default or AI-generated second-reader answers are supplied.
+The supplied factual summaries are not original reports and may retain the first analyst's framing. Read the original sources independently. Missing source URLs are listed separately; obtain the reports before coding those cases.
+Return the completed CSV. Preserve independent labels before any adjudication; resolve disagreements or mark them disputed. Do not overwrite the original records.

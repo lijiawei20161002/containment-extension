@@ -1,0 +1,122 @@
+{
+  "status": "awaiting_second_reader",
+  "fields": {
+    "pathway": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "M1": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "M2": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "M3": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "M4": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "M5": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "M6": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "P1": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "P2": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "P3": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "P4": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "P5": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "P6": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "P7": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "P8": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    },
+    "P9": {
+      "paired": 0,
+      "agreements": 0,
+      "agreement": null,
+      "cohen_kappa": null,
+      "missing": 26
+    }
+  },
+  "disagreements": [],
+  "completed_cells": 0,
+  "expected_cells": 416,
+  "csv_sha256": "fe15efd432b956b1b21fc1395cfb417a4367c1a80435b22a7d103e9c4741b6f9",
+  "notes": "Agreement precedes adjudication. Disputed labels remain unresolved and must be excluded or separately reported; no original labels were changed."
+}

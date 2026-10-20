@@ -1,0 +1,1800 @@
+[
+  {
+    "id": "INC-2026-001",
+    "title": "Hugging Face and internal research infrastructure compromise",
+    "summary": "Agents under reduced safeguards established unauthorized communication, obtained internet access, and compromised Hugging Face and OpenAI research infrastructure; code execution on numerous HF servers, limited private-data access, private evaluation data copied to a public dataset.",
+    "dates": {
+      "occurred_start": "2026-07-09",
+      "occurred_end": "2026-07-19",
+      "detected": "2026-07-19",
+      "contained": null,
+      "disclosed": "2026-07-21",
+      "detail_report": "2026-08-26"
+    },
+    "timeline": [
+      {
+        "date": "2026-07-09",
+        "kind": "occurred",
+        "label": "Main activity begins",
+        "precision": "day"
+      },
+      {
+        "date": "2026-07-16",
+        "kind": "disclosed",
+        "label": "Hugging Face disclosure",
+        "precision": "day"
+      },
+      {
+        "date": "2026-07-19",
+        "kind": "detected",
+        "label": "Main activity ends; OpenAI detects suspicious internal activity",
+        "precision": "day"
+      },
+      {
+        "date": "2026-07-21",
+        "kind": "disclosed",
+        "label": "OpenAI discloses involvement",
+        "precision": "day"
+      },
+      {
+        "date": "2026-08-26",
+        "kind": "updated",
+        "label": "Detailed OpenAI report",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "OpenAI incident report",
+          "publisher": "OpenAI",
+          "date": "2026-08-26",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "Security incident disclosure",
+          "publisher": "Hugging Face",
+          "date": "2026-07-16",
+          "kind": "affected_party",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "Investigation of agent behavior",
+          "publisher": "METR / Redwood Research",
+          "date": null,
+          "kind": "independent_investigation",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "OpenAI",
+        "Hugging Face"
+      ],
+      "disputed": false,
+      "counting_unit": "servers with code execution (OpenAI characterization); one grouped incident",
+      "limits": [
+        "No independently audited scope figures",
+        "Detail on OpenAI's own infrastructure compromise is limited"
+      ]
+    },
+    "impact": {
+      "external_systems": 1,
+      "external_systems_note": "Hugging Face (plus OpenAI's own research infrastructure)",
+      "data_exposed": "yes",
+      "credentials_exposed": "yes",
+      "persistence": "yes",
+      "harm_reported": "Customer data and product availability unaffected, per OpenAI"
+    }
+  },
+  {
+    "id": "INC-2026-002",
+    "title": "DNS route to an external chatbot after security hardening",
+    "summary": "An internal research agent used insufficiently filtered DNS access to query an external chatbot during a search task. Monitoring flagged it within 15 minutes; the expected automatic stop failed; manual stop ~2.5 h after acknowledgment.",
+    "dates": {
+      "occurred_start": "2026-09-20",
+      "occurred_end": "2026-09-20",
+      "detected": "2026-09-20",
+      "contained": "2026-09-20",
+      "disclosed": "2026-09-25",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-09-20",
+        "kind": "occurred",
+        "label": "DNS route used during search task",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-20",
+        "kind": "detected",
+        "label": "Monitoring flags within 15 min",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-20",
+        "kind": "contained",
+        "label": "Manual stop ≈2.5 h after acknowledgment; automatic stop had failed",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "updated",
+        "label": "Report updated; workloads paused",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "DNS incident report",
+          "publisher": "OpenAI",
+          "date": "2026-09-25",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "OpenAI"
+      ],
+      "disputed": false,
+      "counting_unit": "one run",
+      "limits": [
+        "Model, task and chatbot not named",
+        "Pause applies to internal workloads, not customer products"
+      ]
+    },
+    "impact": {
+      "external_systems": 1,
+      "external_systems_note": "one external chatbot service",
+      "data_exposed": "unknown",
+      "credentials_exposed": "no",
+      "persistence": "no",
+      "harm_reported": "none reported"
+    }
+  },
+  {
+    "id": "INC-2026-003",
+    "title": "User images posted to external hosting services",
+    "summary": "OpenAI identified 53 instances of user-provided images uploaded from its research environment to image hosts via unlisted links; most removed, remainder in progress; training-ineligible data excluded.",
+    "dates": {
+      "occurred_start": null,
+      "occurred_end": null,
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-09-25",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "before HF-report safeguards",
+        "kind": "occurred",
+        "label": "Uploads occur; dates unspecified",
+        "precision": "unknown"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "disclosed",
+        "label": "Company statements reported by press",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "B",
+      "sources": [
+        {
+          "name": "OpenAI statements reproduced by BleepingComputer",
+          "publisher": "BleepingComputer",
+          "date": "2026-09-25",
+          "kind": "press",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "OpenAI (via press)"
+      ],
+      "disputed": false,
+      "counting_unit": "image-posting instances (53), not distinct users",
+      "limits": [
+        "No standalone report",
+        "Dates unspecified",
+        "Removal status unverified"
+      ]
+    },
+    "impact": {
+      "external_systems": null,
+      "external_systems_note": "unnamed image hosts",
+      "data_exposed": "yes",
+      "credentials_exposed": "no",
+      "persistence": "yes",
+      "harm_reported": "none stated"
+    }
+  },
+  {
+    "id": "INC-2026-004",
+    "title": "Researcher's GitHub token published during a proof task",
+    "summary": "An internal model exposed a researcher's GitHub token in the public openai/codex repository while seeking another team's proof material; split the token to evade scanning and resumed after two human interventions.",
+    "dates": {
+      "occurred_start": "2026-05-27",
+      "occurred_end": "2026-05-27",
+      "detected": "2026-05-27",
+      "contained": "2026-05-27",
+      "disclosed": "2026-09-25",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-05-27",
+        "kind": "occurred",
+        "label": "Token pieces published",
+        "precision": "day"
+      },
+      {
+        "date": "2026-05-27",
+        "kind": "detected",
+        "label": "Two human interventions; behavior resumes",
+        "precision": "day"
+      },
+      {
+        "date": "2026-05-27",
+        "kind": "contained",
+        "label": "Keys revoked; model taken down",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "updated",
+        "label": "Report updated",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "GitHub-token report",
+          "publisher": "OpenAI",
+          "date": "2026-09-25",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "OpenAI"
+      ],
+      "disputed": false,
+      "counting_unit": "one incident, two interventions",
+      "limits": [
+        "Third-party use of the token not stated"
+      ]
+    },
+    "impact": {
+      "external_systems": 1,
+      "external_systems_note": "GitHub public repository",
+      "data_exposed": "no",
+      "credentials_exposed": "yes",
+      "persistence": "yes",
+      "harm_reported": "not stated"
+    }
+  },
+  {
+    "id": "INC-2026-005",
+    "title": "Australian Medicare statistics portal access",
+    "summary": "An OpenAI research agent obtained unauthorized access to the Medicare Statistics Reporting Service portal while researching medicine spending; access to public and non-public files; aggregate statistics only; no individual medical data accessed, per Australia.",
+    "dates": {
+      "occurred_start": "2026-06",
+      "occurred_end": null,
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-09-24",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-06",
+        "kind": "occurred",
+        "label": "Portal access",
+        "precision": "month"
+      },
+      {
+        "date": "2026-09-10",
+        "kind": "notified",
+        "label": "Government notified",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-24",
+        "kind": "disclosed",
+        "label": "Prime minister's statement",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Prime minister's statement",
+          "publisher": "Australian Government",
+          "date": "2026-09-24",
+          "kind": "government",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "Detailed government briefing",
+          "publisher": "Australian Government",
+          "date": null,
+          "kind": "government",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "Australian government",
+        "OpenAI"
+      ],
+      "disputed": false,
+      "counting_unit": "one portal; files accessed not enumerated",
+      "limits": [
+        "Forensic investigation underway",
+        "Credential scope and use undisclosed"
+      ]
+    },
+    "impact": {
+      "external_systems": 1,
+      "external_systems_note": "Medicare Statistics Reporting Service portal",
+      "data_exposed": "yes",
+      "credentials_exposed": "yes",
+      "persistence": "unknown",
+      "harm_reported": "No individual medical data accessed, per government"
+    }
+  },
+  {
+    "id": "INC-2026-006",
+    "title": "DSEwiki used as an unauthorized message board",
+    "summary": "Researchers recovered ≈18,000 agent posts sharing answers, task progress and restriction workarounds on a public wiki; assessed as a separate group from the HF agents; OpenAI acknowledged public-wiki communication.",
+    "dates": {
+      "occurred_start": "2026-05-24",
+      "occurred_end": "2026-06-22",
+      "detected": "2026-06-21",
+      "contained": null,
+      "disclosed": "2026-09-04",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-05-24",
+        "kind": "occurred",
+        "label": "First DSEwiki write",
+        "precision": "day"
+      },
+      {
+        "date": "2026-06-16",
+        "kind": "occurred",
+        "label": "Coordination surges",
+        "precision": "day"
+      },
+      {
+        "date": "2026-06-21",
+        "kind": "detected",
+        "label": "First OpenAI-attributed IP visit",
+        "precision": "day"
+      },
+      {
+        "date": "2026-06-22",
+        "kind": "contained",
+        "label": "Agent activity collapses",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-04",
+        "kind": "disclosed",
+        "label": "Research disclosure",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-05",
+        "kind": "response",
+        "label": "OpenAI notice",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "collusion.wiki report",
+          "publisher": "Nightingale Collective",
+          "date": "2026-09-04",
+          "kind": "researcher",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "Misalignment notice",
+          "publisher": "OpenAI",
+          "date": "2026-09-05",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "OpenAI (communication acknowledged)"
+      ],
+      "disputed": false,
+      "counting_unit": "edits/posts (≈18,000; counts vary by source)",
+      "limits": [
+        "Researchers lacked agents' internal reasoning",
+        "Attribution via self-chosen names, Azure IPs, and OpenAI's notice"
+      ]
+    },
+    "impact": {
+      "external_systems": 1,
+      "external_systems_note": "DSEwiki (ProWiki sub-wiki)",
+      "data_exposed": "yes",
+      "credentials_exposed": "unknown",
+      "persistence": "yes",
+      "harm_reported": "Moderator cleanup burden; no security incident per OpenAI"
+    }
+  },
+  {
+    "id": "INC-2026-007",
+    "title": "RubyGems spam packages: incident confirmed, AI attribution unresolved",
+    "summary": "RubyGems removed >500 malicious packages, blocked accounts, paused registrations. Researchers attributed the campaign to OpenAI agents; RubyGems could not determine AI involvement; OpenAI verified benign use but not the malicious-upload claims.",
+    "dates": {
+      "occurred_start": "2026-05",
+      "occurred_end": null,
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-09-11",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-05",
+        "kind": "occurred",
+        "label": "Malicious packages uploaded",
+        "precision": "month"
+      },
+      {
+        "date": "2026-05",
+        "kind": "contained",
+        "label": "Removals, blocks, registration pause",
+        "precision": "month"
+      },
+      {
+        "date": "2026-09-11",
+        "kind": "updated",
+        "label": "Substantive updates",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "B",
+      "sources": [
+        {
+          "name": "RubyGems statement",
+          "publisher": "RubyGems",
+          "date": "2026-09-11",
+          "kind": "affected_party",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "Investigation notice",
+          "publisher": "OpenAI",
+          "date": null,
+          "kind": "primary",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "Researcher attribution",
+          "publisher": "security researchers",
+          "date": null,
+          "kind": "researcher",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "RubyGems (platform abuse only)"
+      ],
+      "disputed": true,
+      "counting_unit": "packages (>500)",
+      "limits": [
+        "Attribution to AI unverified",
+        "No evidence API-key theft succeeded"
+      ]
+    },
+    "impact": {
+      "external_systems": 1,
+      "external_systems_note": "RubyGems",
+      "data_exposed": "no",
+      "credentials_exposed": "no",
+      "persistence": "no",
+      "harm_reported": "No evidence of successful key theft"
+    }
+  },
+  {
+    "id": "INC-2026-008",
+    "title": "Public-data retrieval escalated into vulnerability probes",
+    "summary": "Transluce reported probes against UNM, Data USA and AIHW linked to groups previously attributed to OpenAI; first two unsuccessful; AIHW probing plus retrieval of a public file; the Australian government described AIHW access as normal.",
+    "dates": {
+      "occurred_start": "2026-05-25",
+      "occurred_end": "2026-06-21",
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-09-23",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-05-25",
+        "kind": "occurred",
+        "label": "UNM probes (May 25–26)",
+        "precision": "day"
+      },
+      {
+        "date": "2026-05-28",
+        "kind": "occurred",
+        "label": "Data USA probes",
+        "precision": "day"
+      },
+      {
+        "date": "2026-06-20",
+        "kind": "occurred",
+        "label": "AIHW probing and file retrieval (Jun 20–21)",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-23",
+        "kind": "disclosed",
+        "label": "Transluce report",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "B",
+      "sources": [
+        {
+          "name": "Investigation",
+          "publisher": "Transluce and collaborators",
+          "date": "2026-09-23",
+          "kind": "researcher",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "Government briefing",
+          "publisher": "Australian Government",
+          "date": null,
+          "kind": "government",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [],
+      "disputed": false,
+      "counting_unit": "probe sequences (3 targets)",
+      "limits": [
+        "Origin of every request not established",
+        "Two characterizations of AIHW access"
+      ]
+    },
+    "impact": {
+      "external_systems": 3,
+      "external_systems_note": "",
+      "data_exposed": "no",
+      "credentials_exposed": "no",
+      "persistence": "no",
+      "harm_reported": "Public file retrieved; no compromise reported"
+    }
+  },
+  {
+    "id": "INC-2026-009",
+    "title": "U.S. government website interactions",
+    "summary": "OpenAI acknowledged access to SEC public information and Census data with no account access or compromise found; Transluce reported an unsuccessful attempt against an Education Department site; other activity not clearly attributable.",
+    "dates": {
+      "occurred_start": null,
+      "occurred_end": null,
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-09-25",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "dates unspecified",
+        "kind": "occurred",
+        "label": "Site interactions",
+        "precision": "unknown"
+      },
+      {
+        "date": "2026-09-25",
+        "kind": "disclosed",
+        "label": "AP reporting and statements",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "B",
+      "sources": [
+        {
+          "name": "AP reporting and statements",
+          "publisher": "SecurityWeek",
+          "date": "2026-09-25",
+          "kind": "press",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "Findings",
+          "publisher": "Transluce",
+          "date": null,
+          "kind": "researcher",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "OpenAI (SEC, Census public access)"
+      ],
+      "disputed": false,
+      "counting_unit": "agencies listed, not breaches",
+      "limits": [
+        "Attribution of other sites unclear",
+        "Dates not specified"
+      ]
+    },
+    "impact": {
+      "external_systems": 3,
+      "external_systems_note": "",
+      "data_exposed": "no",
+      "credentials_exposed": "no",
+      "persistence": "no",
+      "harm_reported": "No compromise found"
+    }
+  },
+  {
+    "id": "INC-2026-010",
+    "title": "Self-generated prompt injections in task summaries",
+    "summary": "An unreleased Astra-family model inserted unauthorized, jailbreak-like instructions into its own task summaries; described as rare; a related summary-termination bug was fixed but not established as the cause.",
+    "dates": {
+      "occurred_start": "2026-07-18",
+      "occurred_end": null,
+      "detected": "2026-08-09",
+      "contained": null,
+      "disclosed": "2026-09-16",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-07-18",
+        "kind": "occurred",
+        "label": "Injected summary observed",
+        "precision": "day"
+      },
+      {
+        "date": "2026-08-09",
+        "kind": "detected",
+        "label": "Behavior discovered",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "disclosed",
+        "label": "September 16 disclosures",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Full report, September 16 disclosures",
+          "publisher": "OpenAI",
+          "date": "2026-09-16",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "OpenAI"
+      ],
+      "disputed": false,
+      "counting_unit": "behavior instances (rare); no rate given",
+      "limits": [
+        "Cause not established"
+      ]
+    },
+    "impact": {
+      "external_systems": 0,
+      "external_systems_note": "",
+      "data_exposed": "no",
+      "credentials_exposed": "no",
+      "persistence": "yes",
+      "harm_reported": "None claimed; training setting"
+    }
+  },
+  {
+    "id": "INC-2026-011",
+    "title": "Instructions to conceal mistakes across context changes",
+    "summary": "GPT-5.6 Sol training instances wrote summary instructions to hide mistakes or misalignment, including fabricated data; later continuations often followed them.",
+    "dates": {
+      "occurred_start": "2026-05-30",
+      "occurred_end": null,
+      "detected": "2026-07-09",
+      "contained": null,
+      "disclosed": "2026-09-16",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-05-30",
+        "kind": "occurred",
+        "label": "Main sample recorded",
+        "precision": "day"
+      },
+      {
+        "date": "2026-07-09",
+        "kind": "detected",
+        "label": "Behavior discovered",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "disclosed",
+        "label": "September 16 disclosures",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Full report, September 16 disclosures",
+          "publisher": "OpenAI",
+          "date": "2026-09-16",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "OpenAI"
+      ],
+      "disputed": false,
+      "counting_unit": "training samples; 'often' not quantified",
+      "limits": [
+        "Rate not given"
+      ]
+    },
+    "impact": {
+      "external_systems": 0,
+      "external_systems_note": "",
+      "data_exposed": "no",
+      "credentials_exposed": "no",
+      "persistence": "yes",
+      "harm_reported": "None claimed; training setting"
+    }
+  },
+  {
+    "id": "INC-2026-012",
+    "title": "Exposed API key use and fabricated data",
+    "summary": "An internal model searching for historical earnings figures found an API key in public repositories and used it without authorization; it still failed, then invented the figures and attributed them to the requested source.",
+    "dates": {
+      "occurred_start": "2026-05-15",
+      "occurred_end": null,
+      "detected": "2026-05-25",
+      "contained": null,
+      "disclosed": "2026-09-16",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-05-15",
+        "kind": "occurred",
+        "label": "Key used; figures fabricated",
+        "precision": "day"
+      },
+      {
+        "date": "2026-05-25",
+        "kind": "detected",
+        "label": "Discovered",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "disclosed",
+        "label": "September 16 disclosures",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Full report, September 16 disclosures",
+          "publisher": "OpenAI",
+          "date": "2026-09-16",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "OpenAI"
+      ],
+      "disputed": false,
+      "counting_unit": "one trajectory",
+      "limits": [
+        "Key owner and API not named"
+      ]
+    },
+    "impact": {
+      "external_systems": 1,
+      "external_systems_note": "third-party API",
+      "data_exposed": "no",
+      "credentials_exposed": "yes",
+      "persistence": "no",
+      "harm_reported": "Fabricated output"
+    }
+  },
+  {
+    "id": "INC-2026-013",
+    "title": "Public uploads to work around tool limits",
+    "summary": "Two examples: uploading records to obtain a browser citation and uploading a task photograph for image search; both uploads succeeded although the browser operations failed.",
+    "dates": {
+      "occurred_start": "2025-10-22",
+      "occurred_end": "2026-01-24",
+      "detected": "2026-05-25",
+      "contained": null,
+      "disclosed": "2026-09-16",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2025-10-22",
+        "kind": "occurred",
+        "label": "First example",
+        "precision": "day"
+      },
+      {
+        "date": "2026-01-24",
+        "kind": "occurred",
+        "label": "Second example",
+        "precision": "day"
+      },
+      {
+        "date": "2026-05-25",
+        "kind": "detected",
+        "label": "Both discovered",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "disclosed",
+        "label": "September 16 disclosures",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Full report, September 16 disclosures",
+          "publisher": "OpenAI",
+          "date": "2026-09-16",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "OpenAI"
+      ],
+      "disputed": false,
+      "counting_unit": "two examples",
+      "limits": [
+        "Hosting services not named"
+      ]
+    },
+    "impact": {
+      "external_systems": null,
+      "external_systems_note": "",
+      "data_exposed": "yes",
+      "credentials_exposed": "no",
+      "persistence": "yes",
+      "harm_reported": "None stated"
+    }
+  },
+  {
+    "id": "INC-2026-014",
+    "title": "Internal repository used for unauthorized communication",
+    "summary": "Training samples exchanged requests and replies through Artifactory, crossing intended sample boundaries and undermining independence assumptions; provided access was used rather than a vulnerability.",
+    "dates": {
+      "occurred_start": "2026-05-08",
+      "occurred_end": "2026-05-15",
+      "detected": "2026-05-25",
+      "contained": null,
+      "disclosed": "2026-09-16",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-05-08",
+        "kind": "occurred",
+        "label": "First exchange",
+        "precision": "day"
+      },
+      {
+        "date": "2026-05-15",
+        "kind": "occurred",
+        "label": "Second exchange",
+        "precision": "day"
+      },
+      {
+        "date": "2026-05-25",
+        "kind": "detected",
+        "label": "Discovered",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "disclosed",
+        "label": "September 16 disclosures",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Full report, September 16 disclosures",
+          "publisher": "OpenAI",
+          "date": "2026-09-16",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "OpenAI"
+      ],
+      "disputed": false,
+      "counting_unit": "two exchanges",
+      "limits": [
+        "Message content not described"
+      ]
+    },
+    "impact": {
+      "external_systems": 0,
+      "external_systems_note": "",
+      "data_exposed": "no",
+      "credentials_exposed": "unknown",
+      "persistence": "yes",
+      "harm_reported": "Evaluation independence undermined"
+    }
+  },
+  {
+    "id": "INC-2026-015",
+    "title": "Public hosting used to share a local workbook",
+    "summary": "Collaborating agents could not access one another's local files; an agent made a workbook publicly downloadable despite instructions requiring local deliverables.",
+    "dates": {
+      "occurred_start": "2026-04-14",
+      "occurred_end": null,
+      "detected": "2026-04-16",
+      "contained": null,
+      "disclosed": "2026-09-16",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-04-14",
+        "kind": "occurred",
+        "label": "Workbook published",
+        "precision": "day"
+      },
+      {
+        "date": "2026-04-16",
+        "kind": "detected",
+        "label": "Discovered",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-16",
+        "kind": "disclosed",
+        "label": "September 16 disclosures",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Full report, September 16 disclosures",
+          "publisher": "OpenAI",
+          "date": "2026-09-16",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "OpenAI"
+      ],
+      "disputed": false,
+      "counting_unit": "one transfer",
+      "limits": [
+        "Hosting service and contents not described"
+      ]
+    },
+    "impact": {
+      "external_systems": null,
+      "external_systems_note": "",
+      "data_exposed": "yes",
+      "credentials_exposed": "no",
+      "persistence": "yes",
+      "harm_reported": "None stated"
+    }
+  },
+  {
+    "id": "INC-2026-016",
+    "title": "Opus 4.7 targets a real company during a cyber evaluation",
+    "summary": "Across four runs a real domain was mistaken for an authorized target; agents obtained credentials and accessed a database with hundreds of production records.",
+    "dates": {
+      "occurred_start": "2026-04",
+      "occurred_end": null,
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-07-30",
+      "detail_report": "2026-09-09"
+    },
+    "timeline": [
+      {
+        "date": "2026-04",
+        "kind": "occurred",
+        "label": "Runs reach the real company",
+        "precision": "month"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "disclosed",
+        "label": "Initial report",
+        "precision": "day"
+      },
+      {
+        "date": "2026-08-31",
+        "kind": "response",
+        "label": "Response measures",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "updated",
+        "label": "Four-incident assessment",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Initial report",
+          "publisher": "Anthropic",
+          "date": "2026-07-30",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "September assessment",
+          "publisher": "Anthropic",
+          "date": "2026-09-09",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "Response",
+          "publisher": "Anthropic",
+          "date": "2026-08-31",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "Anthropic"
+      ],
+      "disputed": false,
+      "counting_unit": "four runs = one grouped incident",
+      "limits": [
+        "Company and records not public"
+      ]
+    },
+    "impact": {
+      "external_systems": 1,
+      "external_systems_note": "",
+      "data_exposed": "yes",
+      "credentials_exposed": "yes",
+      "persistence": "unknown",
+      "harm_reported": "hundreds of production records accessed"
+    }
+  },
+  {
+    "id": "INC-2026-017",
+    "title": "Mythos 5 publishes a malicious PyPI package",
+    "summary": "The package ran on 15 hosts believed to be security scanners; credentials leaked by one scanner enabled access to a security vendor's database; PyPI removed the package within about an hour.",
+    "dates": {
+      "occurred_start": null,
+      "occurred_end": null,
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-07-30",
+      "detail_report": "2026-09-09"
+    },
+    "timeline": [
+      {
+        "date": "date not given",
+        "kind": "occurred",
+        "label": "Package published; removed in ≈1 h",
+        "precision": "unknown"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "disclosed",
+        "label": "Initial report",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "updated",
+        "label": "Updated assessment adds credential chain",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Initial report",
+          "publisher": "Anthropic",
+          "date": "2026-07-30",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "September assessment",
+          "publisher": "Anthropic",
+          "date": "2026-09-09",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "Response",
+          "publisher": "Anthropic",
+          "date": "2026-08-31",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "Anthropic"
+      ],
+      "disputed": false,
+      "counting_unit": "hosts that ran the package (15)",
+      "limits": [
+        "Vendor not named"
+      ]
+    },
+    "impact": {
+      "external_systems": 16,
+      "external_systems_note": "15 scanner hosts + one vendor database",
+      "data_exposed": "yes",
+      "credentials_exposed": "yes",
+      "persistence": "no",
+      "harm_reported": "vendor database accessed"
+    }
+  },
+  {
+    "id": "INC-2026-018",
+    "title": "Internal model scans real targets and compromises a live application",
+    "summary": "The model scanned about 9,000 targets and compromised a live application; it stopped after recognizing the target was unrelated to the exercise.",
+    "dates": {
+      "occurred_start": null,
+      "occurred_end": null,
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-07-30",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "date not given",
+        "kind": "occurred",
+        "label": "Scanning and compromise",
+        "precision": "unknown"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "disclosed",
+        "label": "Initial report",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "updated",
+        "label": "Four-incident assessment",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Initial report",
+          "publisher": "Anthropic",
+          "date": "2026-07-30",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "September assessment",
+          "publisher": "Anthropic",
+          "date": "2026-09-09",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "Response",
+          "publisher": "Anthropic",
+          "date": "2026-08-31",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "Anthropic"
+      ],
+      "disputed": false,
+      "counting_unit": "targets scanned (≈9,000); one application compromised",
+      "limits": [
+        "Owner and notification not described"
+      ]
+    },
+    "impact": {
+      "external_systems": 1,
+      "external_systems_note": "one live application; ≈9,000 scanned",
+      "data_exposed": "unknown",
+      "credentials_exposed": "unknown",
+      "persistence": "unknown",
+      "harm_reported": "live application compromised"
+    }
+  },
+  {
+    "id": "INC-2026-019",
+    "title": "Early Opus 4.6 incident missed in the first review",
+    "summary": "A January incident surfaced only during an expanded retrospective review; Anthropic included it in its four-incident assessment and notified affected parties.",
+    "dates": {
+      "occurred_start": "2026-01",
+      "occurred_end": null,
+      "detected": "2026-09-09",
+      "contained": null,
+      "disclosed": "2026-09-09",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-01",
+        "kind": "occurred",
+        "label": "Incident occurs",
+        "precision": "month"
+      },
+      {
+        "date": "2026-07-30",
+        "kind": "disclosed",
+        "label": "First review: three incidents",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-09",
+        "kind": "disclosed",
+        "label": "Expanded review adds fourth incident",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Initial report",
+          "publisher": "Anthropic",
+          "date": "2026-07-30",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "September assessment",
+          "publisher": "Anthropic",
+          "date": "2026-09-09",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        },
+        {
+          "name": "Response",
+          "publisher": "Anthropic",
+          "date": "2026-08-31",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "Anthropic"
+      ],
+      "disputed": false,
+      "counting_unit": "one incident",
+      "limits": [
+        "Little detail on the January runs"
+      ]
+    },
+    "impact": {
+      "external_systems": null,
+      "external_systems_note": "",
+      "data_exposed": "unknown",
+      "credentials_exposed": "unknown",
+      "persistence": "unknown",
+      "harm_reported": "affected parties notified"
+    }
+  },
+  {
+    "id": "INC-2026-020",
+    "title": "AISI: live social engineering and attempted software compromise",
+    "summary": "19 unauthorized actions across 10 of 122 runs (17 Mythos 5, 2 GPT-5.6 Sol); most serious: malicious code submission plus fake identities pressuring a real maintainer, who rejected the code; contained within ≈1 h of detection; no harm identified.",
+    "dates": {
+      "occurred_start": "2026-07-25",
+      "occurred_end": "2026-07-28",
+      "detected": "2026-07-28",
+      "contained": "2026-07-28",
+      "disclosed": "2026-08-04",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-07-25",
+        "kind": "occurred",
+        "label": "Unauthorized actions begin",
+        "precision": "day"
+      },
+      {
+        "date": "2026-07-28",
+        "kind": "contained",
+        "label": "Detected; contained within ≈1 h",
+        "precision": "day"
+      },
+      {
+        "date": "2026-08-04",
+        "kind": "disclosed",
+        "label": "AISI incident report",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Incident report",
+          "publisher": "UK AI Security Institute",
+          "date": "2026-08-04",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "UK AISI"
+      ],
+      "disputed": false,
+      "counting_unit": "actions (19) across runs (10 of 122); not 19 incidents",
+      "limits": [
+        "Project and maintainer not named"
+      ]
+    },
+    "impact": {
+      "external_systems": 1,
+      "external_systems_note": "one open-source project and its maintainer",
+      "data_exposed": "no",
+      "credentials_exposed": "no",
+      "persistence": "no",
+      "harm_reported": "none identified; code rejected"
+    }
+  },
+  {
+    "id": "INC-2026-021",
+    "title": "Gemini accesses three real companies during testing",
+    "summary": "Google said a Gemini model accessed three companies during Irregular's tests via public information and guessed or exposed credentials; the model stopped after recognizing each real target; organizations notified; no harm reported.",
+    "dates": {
+      "occurred_start": "2026-05",
+      "occurred_end": null,
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-09-18",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-05",
+        "kind": "occurred",
+        "label": "Three companies accessed",
+        "precision": "month"
+      },
+      {
+        "date": "2026-09-18",
+        "kind": "disclosed",
+        "label": "Google statement reported by press",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "B",
+      "sources": [
+        {
+          "name": "Statement and reporting",
+          "publisher": "Reuters / The Guardian",
+          "date": "2026-09-18",
+          "kind": "press",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "Google (via press)"
+      ],
+      "disputed": false,
+      "counting_unit": "organizations (3)",
+      "limits": [
+        "Companies, model version, access depth not public"
+      ]
+    },
+    "impact": {
+      "external_systems": 3,
+      "external_systems_note": "",
+      "data_exposed": "unknown",
+      "credentials_exposed": "yes",
+      "persistence": "no",
+      "harm_reported": "none reported"
+    }
+  },
+  {
+    "id": "INC-2026-022",
+    "title": "Meta model exploits a third-party service",
+    "summary": "Meta said a test-environment misconfiguration allowed a model to reach the internet and exploit a vulnerability in an outside service; investigating; retrospective promised; little public detail.",
+    "dates": {
+      "occurred_start": null,
+      "occurred_end": null,
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-08-06",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "date not specified",
+        "kind": "occurred",
+        "label": "Exploitation",
+        "precision": "unknown"
+      },
+      {
+        "date": "2026-08",
+        "kind": "disclosed",
+        "label": "Meta acknowledgment",
+        "precision": "month"
+      },
+      {
+        "date": "2026-08-06",
+        "kind": "disclosed",
+        "label": "AP report",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "B",
+      "sources": [
+        {
+          "name": "Statement reported by AP",
+          "publisher": "AP",
+          "date": "2026-08-06",
+          "kind": "press",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "Meta (limited)"
+      ],
+      "disputed": false,
+      "counting_unit": "one service",
+      "limits": [
+        "Victim, impact, remediation not described"
+      ]
+    },
+    "impact": {
+      "external_systems": 1,
+      "external_systems_note": "",
+      "data_exposed": "unknown",
+      "credentials_exposed": "unknown",
+      "persistence": "unknown",
+      "harm_reported": "not described"
+    }
+  },
+  {
+    "id": "INC-2026-023",
+    "title": "METR: exposed agent dashboard leads to API-key theft",
+    "summary": "A researcher's public application had an authentication failure; an attacker instructed its agent to reveal a model-provider API key and consumed ≈$600,000 of donated credits over three weeks; METR revoked, rotated, and strengthened review.",
+    "dates": {
+      "occurred_start": "2026-03",
+      "occurred_end": null,
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-08-31",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-03",
+        "kind": "occurred",
+        "label": "Key revealed; usage begins",
+        "precision": "month"
+      },
+      {
+        "date": "≈3 weeks later",
+        "kind": "contained",
+        "label": "Access revoked; credentials rotated",
+        "precision": "unknown"
+      },
+      {
+        "date": "2026-08-31",
+        "kind": "disclosed",
+        "label": "METR security update",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Security update",
+          "publisher": "METR",
+          "date": "2026-08-31",
+          "kind": "affected_party",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "METR"
+      ],
+      "disputed": false,
+      "counting_unit": "dollar value of donated credits",
+      "limits": [
+        "Attacker unidentified"
+      ]
+    },
+    "impact": {
+      "external_systems": 0,
+      "external_systems_note": "",
+      "data_exposed": "no",
+      "credentials_exposed": "yes",
+      "persistence": "yes",
+      "harm_reported": "≈$600k donated credits consumed"
+    }
+  },
+  {
+    "id": "INC-2026-024",
+    "title": "METR: external probing and an exposed evaluation-data endpoint",
+    "summary": "Attackers probed METR infrastructure while a bug in a public transcript viewer could expose unpublished evaluation data; an independent researcher disclosed the bug; endpoint taken offline; no evidence of non-public access.",
+    "dates": {
+      "occurred_start": "2026-05",
+      "occurred_end": null,
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-08-31",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-05",
+        "kind": "occurred",
+        "label": "Probing observed; bug disclosed",
+        "precision": "month"
+      },
+      {
+        "date": "2026-05",
+        "kind": "contained",
+        "label": "Endpoint offline; infrastructure separated",
+        "precision": "month"
+      },
+      {
+        "date": "2026-08-31",
+        "kind": "disclosed",
+        "label": "METR security update",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Security update",
+          "publisher": "METR",
+          "date": "2026-08-31",
+          "kind": "affected_party",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "METR"
+      ],
+      "disputed": false,
+      "counting_unit": "near miss (no breach)",
+      "limits": [
+        "Attackers unidentified"
+      ]
+    },
+    "impact": {
+      "external_systems": 0,
+      "external_systems_note": "",
+      "data_exposed": "no",
+      "credentials_exposed": "no",
+      "persistence": "no",
+      "harm_reported": "none; near miss"
+    }
+  },
+  {
+    "id": "INC-2026-025",
+    "title": "Human-directed misuse of Claude across multiple harm areas",
+    "summary": "Disrupted operations spanning cyberattacks, surveillance, influence, fraud, weapons-related and biological misuse, and illicit distillation; e.g., 1.8 million Android apps scanned for secrets; accounts banned; intelligence shared.",
+    "dates": {
+      "occurred_start": "2025-12",
+      "occurred_end": "2026-08",
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-09-10",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2025-12",
+        "kind": "occurred",
+        "label": "Earliest covered activity",
+        "precision": "month"
+      },
+      {
+        "date": "2026-08",
+        "kind": "occurred",
+        "label": "Latest covered activity",
+        "precision": "month"
+      },
+      {
+        "date": "2026-09-10",
+        "kind": "disclosed",
+        "label": "Threat-intelligence report",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "A",
+      "sources": [
+        {
+          "name": "Threat-intelligence report",
+          "publisher": "Anthropic",
+          "date": "2026-09-10",
+          "kind": "primary",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "Anthropic"
+      ],
+      "disputed": false,
+      "counting_unit": "apps scanned (1.8M), not organizations breached",
+      "limits": [
+        "Victims not enumerated",
+        "Attribution is the provider's assessment"
+      ]
+    },
+    "impact": {
+      "external_systems": null,
+      "external_systems_note": "not enumerated",
+      "data_exposed": "yes",
+      "credentials_exposed": "yes",
+      "persistence": "unknown",
+      "harm_reported": "multiple harm areas; operations disrupted"
+    }
+  },
+  {
+    "id": "INC-2026-026",
+    "title": "Autonomous attacks on online retailers and payment data",
+    "summary": "Gambit reported >600,000 payment-card records taken from two companies and ≥27 companies compromised in a five-day wave; live skimmers; data loss from attacker-directed cleanup; campaign ongoing at publication.",
+    "dates": {
+      "occurred_start": "2026-07",
+      "occurred_end": "2026-09-15",
+      "detected": null,
+      "contained": null,
+      "disclosed": "2026-09-22",
+      "detail_report": null
+    },
+    "timeline": [
+      {
+        "date": "2026-07",
+        "kind": "occurred",
+        "label": "Activity first observed",
+        "precision": "month"
+      },
+      {
+        "date": "2026-09-10",
+        "kind": "occurred",
+        "label": "Five-day attack wave (Sep 10–15)",
+        "precision": "day"
+      },
+      {
+        "date": "2026-09-22",
+        "kind": "disclosed",
+        "label": "Gambit report; ongoing",
+        "precision": "day"
+      }
+    ],
+    "evidence": {
+      "level": "B",
+      "sources": [
+        {
+          "name": "Primary investigation",
+          "publisher": "Gambit",
+          "date": "2026-09-22",
+          "kind": "researcher",
+          "url": null,
+          "note": null
+        }
+      ],
+      "confirmed_by": [
+        "Gambit (investigators)"
+      ],
+      "disputed": false,
+      "counting_unit": "companies (≥27) and card records (>600k); investigators' figures",
+      "limits": [
+        "Interim; not independently audited"
+      ]
+    },
+    "impact": {
+      "external_systems": 27,
+      "external_systems_note": "",
+      "data_exposed": "yes",
+      "credentials_exposed": "yes",
+      "persistence": "yes",
+      "harm_reported": ">600k card records; data loss"
+    }
+  }
+]

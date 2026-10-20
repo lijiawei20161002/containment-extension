@@ -29,6 +29,14 @@ allocations remain proposals.
 It records the current environment, evidence paths, completed allocation, and
 implementation work required before the next live plan.
 
+**Trust4RSI paper experiments (October 20):**
+[implementation and execution record](docs/trust4rsi-experiments.md).
+The archived trade-off figure is generated. The new matched-feedback runner's
+live baseline stopped at its predeclared zero-event gate (0/2 impossible-case
+incidents, 4/4 controls completed, estimated $0.052442); the proxy-versus-observer
+selection contrast remains unmeasured. Blind human-coding materials and a local
+anonymous supplement are also prepared.
+
 ## Evidence so far
 
 | Study | Completed evidence | Interpretation |

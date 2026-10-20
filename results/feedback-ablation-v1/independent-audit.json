@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "checks": {
+    "run-0001-sqlite": true,
+    "run-0002-sqlite": true,
+    "run-0003-sqlite": true,
+    "run-0004-sqlite": true,
+    "run-0005-sqlite": true,
+    "run-0006-sqlite": true,
+    "raw_usage_matches_ledger": true,
+    "no_unknown_usage": true,
+    "no_pending_reservation": true,
+    "ceiling_respected": true,
+    "no_judge_or_holdout_after_failed_gate": true
+  },
+  "requests": 17,
+  "input_tokens": 35497,
+  "output_tokens": 3389,
+  "estimated_usd": 0.052442
+}
