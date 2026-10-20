@@ -1,0 +1,144 @@
+{
+  "pages": [
+    {
+      "slide": 1,
+      "title": "Decision theory, ready to use.",
+      "kicker": "Decision theory × containment-extension",
+      "source": ""
+    },
+    {
+      "slide": 2,
+      "title": "More informative evidence cannot lower optimal value.",
+      "kicker": "Result 1 / Blackwell's comparison of experiments",
+      "source": " "
+    },
+    {
+      "slide": 3,
+      "title": "Perfect information bounds diagnostic spending.",
+      "kicker": "Result 2 / Hay et al. (2012), Theorem 5",
+      "source": " "
+    },
+    {
+      "slide": 4,
+      "title": "Two bounds give reliable stopping rules.",
+      "kicker": "Result 3 / One-step gain is a lower bound",
+      "source": " "
+    },
+    {
+      "slide": 5,
+      "title": "Two useful probes can each look worthless.",
+      "kicker": "Worked counterexample / Complementary information",
+      "source": " "
+    },
+    {
+      "slide": 6,
+      "title": "Review when it beats both automatic decisions.",
+      "kicker": "Result 4 / Bayes-optimal rejection",
+      "source": " "
+    },
+    {
+      "slide": 7,
+      "title": "Informed oversight has a calculable value.",
+      "kicker": "Result 5 / The Off-Switch Game, Theorem 1",
+      "source": " "
+    },
+    {
+      "slide": 8,
+      "title": "A finite penalty works only relative to a payoff bound.",
+      "kicker": "Derived bound / Exact enforcement in a finite choice",
+      "source": " "
+    },
+    {
+      "slide": 9,
+      "title": "Turn the results into a controller baseline.",
+      "kicker": "Application / A reference controller for containment-extension",
+      "source": " "
+    },
+    {
+      "slide": 10,
+      "title": "Keep the theorem and its assumptions together.",
+      "kicker": "Reference card / Results you can reuse",
+      "source": " "
+    }
+  ],
+  "sources": {
+    "fixture": [
+      "containment-extension: From reported incidents to testable questions",
+      "../../docs/trust4rsi-incident-to-experiment.md"
+    ],
+    "x1b": [
+      "containment-extension: Next experiments, X1 / X1b",
+      "../../docs/trust4rsi-next-experiments.md"
+    ],
+    "pilot": [
+      "containment-extension: 160-run incident study (September 17, 2026)",
+      "../../docs/incident-study-results.md"
+    ],
+    "meta": [
+      "Hay, Russell, Tolpin & Shimony (2012), Selecting Computations: Theory and Applications, Theorems 5 and 7.",
+      "https://arxiv.org/html/1207.5879"
+    ],
+    "cirl": [
+      "Hadfield-Menell et al. (2016), Cooperative Inverse Reinforcement Learning",
+      "https://arxiv.org/abs/1606.03137"
+    ],
+    "switch": [
+      "Hadfield-Menell, Dragan, Abbeel & Russell (2017), The Off-Switch Game, Theorem 1 and Eq. (1).",
+      "https://arxiv.org/html/1611.08219v3"
+    ],
+    "blackwell": [
+      "Blackwell (1953), Equivalent Comparisons of Experiments. Formulation checked in Brooks, Frankel & Kamenica (2024), Comparisons of Signals, §3.1.",
+      "https://benjaminbrooks.net/downloads/bfk_comparisons.pdf"
+    ],
+    "reject": [
+      "Franc, Prusa & Voracek (2023), Optimal Strategies for Reject Option Classifiers, §2.1, Eqs. (3)-(4); cost-based rejection originates in Chow (1970).",
+      "https://www.jmlr.org/papers/volume24/21-0048/21-0048.pdf"
+    ]
+  },
+  "slides": 10,
+  "chinese_speaker_notes": 10,
+  "bounds_issues": [],
+  "word_counts": [
+    {
+      "slide": 1,
+      "words": 103
+    },
+    {
+      "slide": 2,
+      "words": 145
+    },
+    {
+      "slide": 3,
+      "words": 162
+    },
+    {
+      "slide": 4,
+      "words": 150
+    },
+    {
+      "slide": 5,
+      "words": 175
+    },
+    {
+      "slide": 6,
+      "words": 157
+    },
+    {
+      "slide": 7,
+      "words": 188
+    },
+    {
+      "slide": 8,
+      "words": 186
+    },
+    {
+      "slide": 9,
+      "words": 160
+    },
+    {
+      "slide": 10,
+      "words": 173
+    }
+  ],
+  "model_calls": 0
+}

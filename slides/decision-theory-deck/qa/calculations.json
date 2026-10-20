@@ -1,0 +1,44 @@
+{
+  "payoffs": {
+    "good": 6.0,
+    "bad": -4.0,
+    "prior_good": 0.5,
+    "stop": 0
+  },
+  "information": {
+    "V0": 1.0,
+    "Vperfect": 3.0,
+    "EVPI": 2.0,
+    "probe_cost": 0.5,
+    "expected_probe_bound": 4.0
+  },
+  "xor": {
+    "no_probe": 0.5,
+    "one_probe_net": 0.4,
+    "two_probe_net": 0.8
+  },
+  "review": {
+    "false_negative_cost": 10,
+    "false_positive_cost": 1,
+    "perfect_review_cost": 0.2,
+    "allow_below": 0.02,
+    "block_above": 0.8
+  },
+  "oversight": {
+    "direct_best": 1.0,
+    "rational_review": 3.0,
+    "max_strictly_preferred_review_cost": 2.0
+  },
+  "penalty": {
+    "utility_lower": 0,
+    "utility_upper": 10,
+    "sufficient_lambda": 11,
+    "feasible_payoffs": [
+      3,
+      7,
+      10
+    ],
+    "violation_raw": 10,
+    "violation_net": -1
+  }
+}

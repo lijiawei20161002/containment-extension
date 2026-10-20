@@ -1,0 +1,120 @@
+{
+  "slides": 10,
+  "editable_text_and_shapes": true,
+  "word_counts": [
+    {
+      "slide": 1,
+      "words": 108
+    },
+    {
+      "slide": 2,
+      "words": 204
+    },
+    {
+      "slide": 3,
+      "words": 222
+    },
+    {
+      "slide": 4,
+      "words": 228
+    },
+    {
+      "slide": 5,
+      "words": 219
+    },
+    {
+      "slide": 6,
+      "words": 236
+    },
+    {
+      "slide": 7,
+      "words": 243
+    },
+    {
+      "slide": 8,
+      "words": 217
+    },
+    {
+      "slide": 9,
+      "words": 218
+    },
+    {
+      "slide": 10,
+      "words": 232
+    }
+  ],
+  "bounds_issues": [],
+  "pages": [
+    {
+      "slide": 1,
+      "title": "Decision theory for incident-aware agents",
+      "kicker": "containment-extension × decision theory",
+      "source": ""
+    },
+    {
+      "slide": 2,
+      "title": "The agent's situation is a constrained POMDP.",
+      "kicker": "00 / Formulation",
+      "source": "containment-extension  /  Decision theory primer  /  20 Oct 2026  /  Kaelbling, Littman & Cassandra 1998; Altman 1999; project docs/trust4rsi-next-experiments.md"
+    },
+    {
+      "slide": 3,
+      "title": "When should the agent stop retrying?",
+      "kicker": "01 / Optimal stopping",
+      "source": "containment-extension  /  Decision theory primer  /  20 Oct 2026  /  Toy quantities: R = 10, B = 2, c = 1.6 give q* = 0.20. Gittins 1979; Snell-envelope backward induction."
+    },
+    {
+      "slide": 4,
+      "title": "Diagnose or ask before acting?",
+      "kicker": "02 / Value of information",
+      "source": "containment-extension  /  Decision theory primer  /  20 Oct 2026  /  Howard 1966; Hay, Russell, Tolpin & Shimony 2012 (arXiv:1207.5879); X1b in docs/trust4rsi-next-experiments.md"
+    },
+    {
+      "slide": 5,
+      "title": "Minimize incidents, subject to utility, cost and false intervention.",
+      "kicker": "03 / Constrained optimization",
+      "source": "containment-extension  /  Decision theory primer  /  20 Oct 2026  /  Objective from docs/incident-aware-optimization.md; Altman 1999; Achiam et al. 2017 (CPO, arXiv:1705.10528)"
+    },
+    {
+      "slide": 6,
+      "title": "Who holds the grant, and what happens when it is silent?",
+      "kicker": "04 / Principal–agent and incomplete contracts",
+      "source": "containment-extension  /  Decision theory primer  /  20 Oct 2026  /  Hadfield-Menell & Hadfield 2019 (arXiv:1804.04268); Hadfield-Menell et al. 2016 (CIRL), 2017 (Off-Switch Game)"
+    },
+    {
+      "slide": 7,
+      "title": "What should a careful agent do when A(c) is unknown?",
+      "kicker": "05 / Decision under ambiguity",
+      "source": "containment-extension  /  Decision theory primer  /  20 Oct 2026  /  Gilboa & Schmeidler 1989; Savage 1951; Iyengar 2005; Turner, Hadfield-Menell & Tadepalli 2020 (arXiv:1902.09725). Toy payoffs."
+    },
+    {
+      "slide": 8,
+      "title": "An approver decides stop or continue, one action at a time.",
+      "kicker": "06 / Sequential monitoring",
+      "source": "containment-extension  /  Decision theory primer  /  20 Oct 2026  /  Wald 1945; Page 1954; monitor objective and latency figures from docs/incident-aware-optimization.md and incident-library-analysis.md"
+    },
+    {
+      "slide": 9,
+      "title": "Release the new policy, or hold it?",
+      "kicker": "07 / Release gating as a statistical decision",
+      "source": "containment-extension  /  Decision theory primer  /  20 Oct 2026  /  Bayes decision rule; McNemar exact test on paired twins; Smith & Winkler 2006 (The Optimizer's Curse)"
+    },
+    {
+      "slide": 10,
+      "title": "Where each problem lives in containment-extension.",
+      "kicker": "Summary",
+      "source": "containment-extension  /  Decision theory primer  /  20 Oct 2026  /  Reading path linked below; the companion discussion deck (decision-theory.pptx) asks the open questions."
+    }
+  ],
+  "model_calls": 0,
+  "project_numbers": {
+    "latency": {
+      "detection_days_known": 12,
+      "detection_median": 13.5,
+      "disclosure_days_known": 21,
+      "disclosure_median": 119
+    },
+    "retrospective_only": 10,
+    "n": 26
+  }
+}
