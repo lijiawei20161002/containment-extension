@@ -1,10 +1,23 @@
 {
   "date": "2026-10-20",
-  "files_checked": 1555,
-  "configured_secret_matches": 0,
-  "private_key_matches": 0,
-  "secret_values_logged": false,
-  "visual_review": "31 rendered pages reviewed in four contact sheets; standalone live-result figure reviewed",
-  "external_baseline_runs": 0,
-  "literature_comparison": "qualitative; nine primary sources"
+  "revision": "short_plain_English_main_talk",
+  "main_slides": 13,
+  "appendix_slides": 20,
+  "main_words_min": 37,
+  "main_words_max": 67,
+  "main_tables": 0,
+  "main_prose_min_pt": 18,
+  "main_code_min_pt": 16,
+  "new_inference_calls": 0,
+  "result_source_hashes": "verified",
+  "copied_flag_pdf_occurrences_on_evidence_page": 2,
+  "clickable_primary_links": {
+    "main": 3,
+    "appendix": 9
+  },
+  "shape_bounds": "passed",
+  "text_overflow": 0,
+  "visual_review": "All 13 main pages and 20 appendix pages inspected in rendered contact sheets",
+  "ruff": "main builder and evidence collector passed",
+  "experiment_test_record": "experiment-validation.json; experiment code and tests unchanged in this presentation revision"
 }

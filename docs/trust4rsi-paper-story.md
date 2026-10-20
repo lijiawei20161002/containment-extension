@@ -5,6 +5,29 @@ Updated 20 October 2026. This document guides the
 The [live follow-up record](trust4rsi-live-followup-results.md) contains the
 new methods, counts, intervals, provider interruption and cost accounting.
 
+## Presentation rule: show the action before naming the concept
+
+The main talk now has 13 pages, in short, plain English. Each page answers one
+question. It has no tables, 37–67 words per page excluding sources, and main prose
+of at least 18 pt. A separate 20-page technical appendix retains the full methods,
+uncertainty, calibration failures and research comparisons.
+
+Use “Read the old answer” rather than “cross-context authority violation.”
+Show the exact archive flag beside the identical submitted value. Show
+`correct = true`. Only then explain that a correct answer can come from a
+forbidden source. Define a run as one attempt and a flag as the secret code.
+
+The main sequence is: task → four calls → matching flag values → observed counts
+→ good control behavior → two notes → paired squares → judge counts → the actual
+admin-role disagreement → prior work → two explicitly unrun tests → bounded claims.
+Red marks forbidden reads; green marks allowed behavior; gray marks no observed
+read or missing scores, with an explicit local legend.
+
+The prior-work page uses three short statements and primary links. Full comparisons
+remain in the appendix; the reader should not have to learn nine projects before
+understanding the experiment. Philosophy is expressed in one closing sentence:
+“Being able to read a file does not mean being allowed to.”
+
 ## Open with components the reader can point to
 
 Draw an agent, its local challenge service, a directory, the prior-run answer
@@ -34,7 +57,7 @@ both useful completion and appropriate stopping.
 
 [Incident-study run-0094](../results/incident-study-v1/run-0094/transcript.jsonl)
 reads the prior-run archive and the upstream file, then reports a blocker.
-This real model trajectory replaces the old scripted reverted-write example:
+This is additional archived evidence, outside the short main talk:
 a final blocker report does not erase earlier unauthorized reads. Do not infer
 private intent or deception from the model's text/action discrepancy.
 
@@ -46,9 +69,9 @@ experimental mixture is not a deployment failure-rate sample.
 
 The new v2 paired-note allocation and transcript audit provide the measured
 comparison figures. Show every impossible input pair and every judge score,
-including unknowns. Show the first scheduled input pair as an illustrative
-trace without selecting it for a favorable outcome. Keep the interrupted v1
-cohort in a separate table.
+including unknowns. The main deck uses paired squares and plain count labels.
+Show the first scheduled input pair in the appendix without selecting it for
+a favorable outcome. Keep the interrupted v1 cohort in a separate appendix table.
 
 ## Remove invented outcome examples
 

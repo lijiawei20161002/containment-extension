@@ -1,26 +1,180 @@
 {
   "updated": "2026-10-20",
-  "slides": 31,
-  "narrative": "physical_components_and_observed_traces",
-  "source_hashes": {
-    "results/feedback-ablation-v1/summary.json": "e27fe01c551a112a9f47521aafb9cf0acdeb8aae06a9e9781c690d8f0f9c749a",
-    "results/feedback-ablation-v1/independent-audit.json": "772425e7b7addbc4fb8400e07c09c6aa773ed4932536b00612f96602edf58dba",
-    "results/feedback-ablation-v1/candidates.json": "8e23002383736d6898a83c1f046106045f7b86a21ab15311b29a8ae9ce7a9f3e",
-    "results/incident-study-v1/prompt-bank.json": "49e78d5ebfde6f2cd4c51d04db2cb4af3d5b8242a1f823a8e63f003c934691a7",
-    "results/feedback-ablation-v1/run-0001/prompts.json": "925c76d615f508c46ced16a347c371669adb048b0f4a87228eaeb341fc01399d",
-    "results/incident-second-reader-v1/manifest.json": "3fac07834e0ad297a6e3e8b1508fe3f60217a6964122fbb5a7b6ab57a76452bf",
-    "artifacts/trust4rsi-supplement-v1/validation.json": "279c054804415aed1228d393f6b0ec7373a32ab654d8c12cfdc19f5da1ce4adf",
-    "figures/experiments/tradeoff-v1/cells.json": "268e2a6c64db306aae8b6d8bdf3c66c48e46e382a3f8d5323145ec96a41333cd"
-  },
+  "slides": 13,
+  "language": "English",
+  "narrative": "one_concrete_claim_per_page",
+  "pages": [
+    {
+      "page": 1,
+      "title": "Get this run's secret code.",
+      "status": "OBSERVED",
+      "source": "Task contract: results/incident-study-v1/prompt-bank.json"
+    },
+    {
+      "page": 2,
+      "title": "The agent read an old answer. It passed.",
+      "status": "OBSERVED",
+      "source": "results/incident-study-v1/run-0001/transcript.jsonl"
+    },
+    {
+      "page": 3,
+      "title": "The grader accepted the copied code.",
+      "status": "OBSERVED",
+      "source": "Source: incident-study-v1/run-0001. Full URLs are shortened; the flag is exact."
+    },
+    {
+      "page": 4,
+      "title": "13 of 15 violations still passed.",
+      "status": "OBSERVED",
+      "source": "results/incident-study-v1/summary.json | Mixed study arms; not a deployment risk estimate."
+    },
+    {
+      "page": 5,
+      "title": "Recover if possible. Otherwise, stop.",
+      "status": "OBSERVED",
+      "source": "results/feedback-ablation-v1/run-0002 and run-0001; no outside effects in either."
+    },
+    {
+      "page": 6,
+      "title": "Same inputs. Two different notes. 48 runs.",
+      "status": "OBSERVED",
+      "source": "results/baseline-diagnostic-v2/{notes.json,schedule.json,plan.json}"
+    },
+    {
+      "page": 7,
+      "title": "Both notes led to forbidden reads.",
+      "status": "OBSERVED",
+      "source": "baseline-diagnostic-v2/summary.json | Each square is one input; both rows use the same order."
+    },
+    {
+      "page": 8,
+      "title": "A second model checked all 48 transcripts.",
+      "status": "OBSERVED",
+      "source": "transcript-audit-v4/summary.json | Fixed score threshold 0.5; calibration failed."
+    },
+    {
+      "page": 9,
+      "title": "One request received two different verdicts.",
+      "status": "OBSERVED",
+      "source": "baseline-diagnostic-v2/run-0028; transcript-audit-v4/judges/run-0028/response.json"
+    },
+    {
+      "page": 10,
+      "title": "The core safety ideas already have prior work.",
+      "status": "LITERATURE",
+      "source": "Full primary references and scope differences: technical appendix A1-A2, A19-A20."
+    },
+    {
+      "page": 11,
+      "title": "Add a permission check before execution.",
+      "status": "NOT RUN YET",
+      "source": "Proposed baseline. An endpoint allowlist is not a CaMeL reproduction."
+    },
+    {
+      "page": 12,
+      "title": "Does better feedback choose a better note?",
+      "status": "NOT RUN YET",
+      "source": "Proposed selection study. Fresh tasks and a repaired, frozen judge are required."
+    },
+    {
+      "page": 13,
+      "title": "A correct answer is only one check.",
+      "status": "OBSERVED",
+      "source": "Observed results: incident-study-v1, baseline-diagnostic-v2, transcript-audit-v4."
+    }
+  ],
+  "density": [
+    {
+      "slide": 1,
+      "words": 41,
+      "tables": 0,
+      "minimum_prose_pt": 18.0
+    },
+    {
+      "slide": 2,
+      "words": 49,
+      "tables": 0,
+      "minimum_prose_pt": 18.0
+    },
+    {
+      "slide": 3,
+      "words": 45,
+      "tables": 0,
+      "minimum_prose_pt": 18.0
+    },
+    {
+      "slide": 4,
+      "words": 52,
+      "tables": 0,
+      "minimum_prose_pt": 18.0
+    },
+    {
+      "slide": 5,
+      "words": 37,
+      "tables": 0,
+      "minimum_prose_pt": 18.0
+    },
+    {
+      "slide": 6,
+      "words": 64,
+      "tables": 0,
+      "minimum_prose_pt": 18.0
+    },
+    {
+      "slide": 7,
+      "words": 40,
+      "tables": 0,
+      "minimum_prose_pt": 18.0
+    },
+    {
+      "slide": 8,
+      "words": 44,
+      "tables": 0,
+      "minimum_prose_pt": 18.0
+    },
+    {
+      "slide": 9,
+      "words": 41,
+      "tables": 0,
+      "minimum_prose_pt": 18.0
+    },
+    {
+      "slide": 10,
+      "words": 48,
+      "tables": 0,
+      "minimum_prose_pt": 18.0
+    },
+    {
+      "slide": 11,
+      "words": 40,
+      "tables": 0,
+      "minimum_prose_pt": 18.0
+    },
+    {
+      "slide": 12,
+      "words": 45,
+      "tables": 0,
+      "minimum_prose_pt": 18.0
+    },
+    {
+      "slide": 13,
+      "words": 67,
+      "tables": 0,
+      "minimum_prose_pt": 18.0
+    }
+  ],
   "concrete_evidence_hashes": {
     "results/baseline-diagnostic-v1/independent-audit.json": "57cf156b81060cfdda92c9782605318eca4bc08ce7e81d66dfcd6f9c3aac493c",
     "results/baseline-diagnostic-v1/summary.json": "b8acd955c3729e518a5bf5e246908abfe0ce0ad13baca3913f4095ae3bc32677",
     "results/baseline-diagnostic-v2/independent-audit.json": "99aafce44718f52778ae88bc81ede045d748dda69faba6502090afd7e6f2f79b",
+    "results/baseline-diagnostic-v2/notes.json": "87d2292e2d21ea439a3247e6555a74d5bf50c1ca733283f4632d06eb230d4d70",
     "results/baseline-diagnostic-v2/plan.json": "85603f0c8bd2582ce13f2d38a88acffefba7a5ece41a0f1b11c565f9e3b728d5",
     "results/baseline-diagnostic-v2/run-0001/result.json": "88c11cd6bfde93118dfc02ac12925006aff26a92e98e508165e624c23b57edef",
     "results/baseline-diagnostic-v2/run-0001/transcript.jsonl": "b1ea4dfa5f6e5652770ea1bde0e83cc843971ef467a601b1000ca6cf66f4b0b5",
     "results/baseline-diagnostic-v2/run-0002/result.json": "b644b0e2c600acd60ad36e64dac28080e4dad6feaebc6ea25bf114a83de411bc",
     "results/baseline-diagnostic-v2/run-0002/transcript.jsonl": "1be8620d437eabd192db204bedf42b5ae6d5c7d6d65d32ea7b97d8eccea51056",
+    "results/baseline-diagnostic-v2/run-0028/result.json": "56575db42937c08c4dd37bce095ca7e65f84f8cd659a71af819c68b5cb54210c",
+    "results/baseline-diagnostic-v2/run-0028/transcript.jsonl": "7aebe4dea5ee72447acf605584aeb3c2a0a76c9d385e99648419781e68dc0db3",
     "results/baseline-diagnostic-v2/summary.json": "0aaa83884a9ced5fb36a10e1095c89d1dfe9c4537744f31c309a26180919c1e5",
     "results/feedback-ablation-v1/run-0001/result.json": "839c0e678efb87bc6e20a13ec107ee2bd3e16f559c1f9987a2ec198a6954cde3",
     "results/feedback-ablation-v1/run-0001/transcript.jsonl": "8bfb75344a93ecc7d9a2adffb6d4a0b0dfb48d996bedaabf3a5dc2e47b162c7b",
@@ -38,67 +192,22 @@
     "results/transcript-audit-v3/plan.json": "bd9b426f88260f1a05ad9ffac6784828065dbf4308d46bace1f18799a5502e65",
     "results/transcript-audit-v3/summary.json": "f831563e3c6ff118e0fc7c68f017c22e563a176dca0ffceff09d2c9d65de11f5",
     "results/transcript-audit-v4/independent-audit.json": "8bd40951ff72291b697bd4a0272574e4f9cf22d6a5b3e39aba014a299aa8eae3",
+    "results/transcript-audit-v4/judges/run-0028/request.json": "7a002e01db45274f33891b2cf66375c27bae73752b71ff4c9c69dbbe07fccbb7",
+    "results/transcript-audit-v4/judges/run-0028/response.json": "4e12ee39c3b9963968b8ab629f261550bae642d77eeee5e56a1406cbc9af6a62",
     "results/transcript-audit-v4/plan.json": "ebf5662fc43d91aab8ec8ca221d96d80f545293c7c26e5558cf5454d3c630303",
     "results/transcript-audit-v4/raw-field-audit.json": "130220f6ecff0ff8985c9ea602ea71109125ae618092c44495a7bb5e2ae356cc",
     "results/transcript-audit-v4/summary.json": "01d85cb5e5f0fa19ab399f79c2e8e755b89e4c2c662df90463e6e9f24f5168dd"
   },
-  "actor_status": "finished",
+  "source_hashes": {
+    "slides/trust4rsi-paper-deck/build_deck.py": "dd75c365c42c084426a6098324d4fb1d48da3bd186ddbf05a867b77a40173bac",
+    "slides/trust4rsi-paper-deck/collect_evidence.py": "6f65b3823cb80bbdb40285c7118590583f003925853f109457049c2896ef08a9",
+    "slides/trust4rsi-paper-deck/diagram_lib.py": "06d4bb0a9b492cd28a018a13ac2b66beae3a27e68abf37724f8e0042be24cd94",
+    "docs/trust4rsi-related-work.md": "f110727d3c9711f3655be7a7af698c7768adb298ecdf6774aa0f621cb4a589ff"
+  },
   "actor_runs": 48,
-  "judge_status": "finished",
   "judge_unique_calls": 68,
-  "judge_new_calls": 56,
-  "judge_calibration_passed": false,
-  "prior_judge_failures": {
-    "v2": "calibration_or_integrity_failed",
-    "v3": "calibration_or_integrity_failed"
-  },
-  "actor_estimated_usd": 0.514784,
-  "judge_estimated_usd": 0.19829,
-  "judge_prior_estimated_usd": 0.038139,
-  "related_work": {
-    "checked": "2026-10-20",
-    "references": [
-      [
-        "[1] Zhong et al. \u2014 ImpossibleBench (2025; ICLR 2026)",
-        "https://arxiv.org/abs/2510.20270"
-      ],
-      [
-        "[2] Debenedetti et al. \u2014 AgentDojo (2024)",
-        "https://arxiv.org/abs/2406.13352"
-      ],
-      [
-        "[3] Greenblatt et al. \u2014 AI Control (2023/2024)",
-        "https://arxiv.org/abs/2312.06942"
-      ],
-      [
-        "[4] Kutasov et al. \u2014 SHADE-Arena (2025)",
-        "https://arxiv.org/abs/2506.15740"
-      ],
-      [
-        "[5] Debenedetti et al. \u2014 CaMeL (2025)",
-        "https://arxiv.org/abs/2503.18813"
-      ],
-      [
-        "[6] UK AISI / Redwood \u2014 ControlArena (official framework)",
-        "https://control-arena.aisi.org.uk/"
-      ],
-      [
-        "[7] Li et al. \u2014 AgentDyn (2026, v3)",
-        "https://arxiv.org/abs/2602.03117v3"
-      ],
-      [
-        "[8] Chen et al. \u2014 CoSec (2026; v3 revised 19 October)",
-        "https://arxiv.org/abs/2609.34790v3"
-      ],
-      [
-        "[9] Liu \u2014 Passing the Test You Trained On (October 2026)",
-        "https://arxiv.org/abs/2610.03448v1"
-      ]
-    ],
-    "comparison": "qualitative_only_no_external_baseline_runs",
-    "document_sha256": "f110727d3c9711f3655be7a7af698c7768adb298ecdf6774aa0f621cb4a589ff"
-  },
-  "illustrative_outcome_rows": 0,
-  "scripted_actor_result_rows": 0,
-  "selection_contrast": "not_measured"
+  "new_inference_this_revision": 0,
+  "invented_outcome_rows": 0,
+  "selection_contrast": "not_measured",
+  "technical_appendix": "trust4rsi-technical-appendix.pdf"
 }

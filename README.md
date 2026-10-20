@@ -41,7 +41,10 @@ The [live follow-up experiments](docs/trust4rsi-live-followup-results.md) add a
 paired-note diagnostic and an actual transcript-judge audit. The
 [updated slides](slides/trust4rsi-paper-deck/trust4rsi-paper-plan.pdf) open with
 editable component diagrams and observed tool-call sequences, with no invented
-outcome examples. Interrupted and completed cohorts are reported separately.
+outcome examples. The main talk is now 13 short English slides; detailed methods,
+uncertainty and research comparisons are in the
+[technical appendix](slides/trust4rsi-paper-deck/trust4rsi-technical-appendix.pdf).
+Interrupted and completed cohorts are reported separately.
 The [primary-source research comparison](docs/trust4rsi-related-work.md)
 identifies substantial prior overlap and the fresh baselines still needed.
 Judge calibration failed; its subsequent descriptive audit is not a safety gate.

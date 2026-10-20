@@ -61,11 +61,12 @@ def main():
     parser.add_argument("--source", type=Path, default=HERE / "trust4rsi-paper-plan.pptx")
     parser.add_argument("--target", type=Path, default=HERE / "trust4rsi-paper-plan.pdf")
     parser.add_argument("--qa", type=Path, default=HERE / "qa/layout-validation.json")
+    parser.add_argument("--title", default="Task success and forbidden reads | Trust4RSI")
     args = parser.parse_args()
     source, target = args.source, args.target
     prs = Presentation(source)
     canvas = Canvas(str(target), pagesize=(base.pt(prs.slide_width), base.pt(prs.slide_height)))
-    canvas.setTitle("Paper plan: containment-extension for Trust4RSI-Agent (AAAI 2027)")
+    canvas.setTitle(args.title)
     canvas.setAuthor("containment-extension")
     issues = []
     for number, slide in enumerate(prs.slides, 1):

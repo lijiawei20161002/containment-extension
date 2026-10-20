@@ -1,0 +1,111 @@
+{
+  "updated": "2026-10-20",
+  "slides": 20,
+  "narrative": "physical_components_and_observed_traces",
+  "artifact_type": "technical_appendix",
+  "builder_sha256": "942b1f375deed69ce0bf0370c2c4759fd3d241deba294b9ac02602b871b29aae",
+  "source_hashes": {
+    "results/feedback-ablation-v1/summary.json": "e27fe01c551a112a9f47521aafb9cf0acdeb8aae06a9e9781c690d8f0f9c749a",
+    "results/feedback-ablation-v1/independent-audit.json": "772425e7b7addbc4fb8400e07c09c6aa773ed4932536b00612f96602edf58dba",
+    "results/feedback-ablation-v1/candidates.json": "8e23002383736d6898a83c1f046106045f7b86a21ab15311b29a8ae9ce7a9f3e",
+    "results/incident-study-v1/prompt-bank.json": "49e78d5ebfde6f2cd4c51d04db2cb4af3d5b8242a1f823a8e63f003c934691a7",
+    "results/feedback-ablation-v1/run-0001/prompts.json": "925c76d615f508c46ced16a347c371669adb048b0f4a87228eaeb341fc01399d",
+    "results/incident-second-reader-v1/manifest.json": "3fac07834e0ad297a6e3e8b1508fe3f60217a6964122fbb5a7b6ab57a76452bf",
+    "artifacts/trust4rsi-supplement-v1/validation.json": "279c054804415aed1228d393f6b0ec7373a32ab654d8c12cfdc19f5da1ce4adf",
+    "figures/experiments/tradeoff-v1/cells.json": "268e2a6c64db306aae8b6d8bdf3c66c48e46e382a3f8d5323145ec96a41333cd"
+  },
+  "concrete_evidence_hashes": {
+    "results/baseline-diagnostic-v1/independent-audit.json": "57cf156b81060cfdda92c9782605318eca4bc08ce7e81d66dfcd6f9c3aac493c",
+    "results/baseline-diagnostic-v1/summary.json": "b8acd955c3729e518a5bf5e246908abfe0ce0ad13baca3913f4095ae3bc32677",
+    "results/baseline-diagnostic-v2/independent-audit.json": "99aafce44718f52778ae88bc81ede045d748dda69faba6502090afd7e6f2f79b",
+    "results/baseline-diagnostic-v2/notes.json": "87d2292e2d21ea439a3247e6555a74d5bf50c1ca733283f4632d06eb230d4d70",
+    "results/baseline-diagnostic-v2/plan.json": "85603f0c8bd2582ce13f2d38a88acffefba7a5ece41a0f1b11c565f9e3b728d5",
+    "results/baseline-diagnostic-v2/run-0001/result.json": "88c11cd6bfde93118dfc02ac12925006aff26a92e98e508165e624c23b57edef",
+    "results/baseline-diagnostic-v2/run-0001/transcript.jsonl": "b1ea4dfa5f6e5652770ea1bde0e83cc843971ef467a601b1000ca6cf66f4b0b5",
+    "results/baseline-diagnostic-v2/run-0002/result.json": "b644b0e2c600acd60ad36e64dac28080e4dad6feaebc6ea25bf114a83de411bc",
+    "results/baseline-diagnostic-v2/run-0002/transcript.jsonl": "1be8620d437eabd192db204bedf42b5ae6d5c7d6d65d32ea7b97d8eccea51056",
+    "results/baseline-diagnostic-v2/run-0028/result.json": "56575db42937c08c4dd37bce095ca7e65f84f8cd659a71af819c68b5cb54210c",
+    "results/baseline-diagnostic-v2/run-0028/transcript.jsonl": "7aebe4dea5ee72447acf605584aeb3c2a0a76c9d385e99648419781e68dc0db3",
+    "results/baseline-diagnostic-v2/summary.json": "0aaa83884a9ced5fb36a10e1095c89d1dfe9c4537744f31c309a26180919c1e5",
+    "results/feedback-ablation-v1/run-0001/result.json": "839c0e678efb87bc6e20a13ec107ee2bd3e16f559c1f9987a2ec198a6954cde3",
+    "results/feedback-ablation-v1/run-0001/transcript.jsonl": "8bfb75344a93ecc7d9a2adffb6d4a0b0dfb48d996bedaabf3a5dc2e47b162c7b",
+    "results/feedback-ablation-v1/run-0002/result.json": "2dea3dda7d95e9fa476dcfb21078691c3e2d36d499f3c1740045780f710c2d50",
+    "results/feedback-ablation-v1/run-0002/transcript.jsonl": "3a0f9ffcd6c114c1e07d95772393612ec43e69377f6c23ea8b067855bb18ac04",
+    "results/incident-study-v1/run-0001/result.json": "1b0e1ccb6b6e05016ae679316f3ff5952b30b7d7137ddd3b3840255d27b4f8e0",
+    "results/incident-study-v1/run-0001/transcript.jsonl": "55537f93ea8e13e250fdcab390004aaf4f1f793ecfa9940417980e3dd5c9c7cb",
+    "results/incident-study-v1/run-0094/result.json": "54f705dc88208bd1f572c22820783572f791fe1f93d4aed1fbd66b5c7e2f895f",
+    "results/incident-study-v1/run-0094/transcript.jsonl": "470323d1fde2a5362a540916f79cab4a5face173ea1b379534a70ecf4d609b25",
+    "results/incident-study-v1/summary.json": "5f1a83e3a2fe64eb62c77404a2ffe6e0a2aef46e1ea57ff094461b86434117ff",
+    "results/transcript-audit-v2/independent-audit.json": "d5f8cc1470618fe11c8464db728ae01fbecb686cf9d1f1e9f23d0811ebf1301c",
+    "results/transcript-audit-v2/plan.json": "45d8ff0d9bb0f920c5f1a2b710cd4ddac71d43c110613e44ef15ccbbf01a6de6",
+    "results/transcript-audit-v2/summary.json": "77406afe0cfcab0a6c6c769e5a308d44cef6a14133f70d9aee55b164e5d9eec6",
+    "results/transcript-audit-v3/independent-audit.json": "ba42dedb1b2f6ec86e7ac4c4714ba183fb2f957e572b99294cb557938c05a425",
+    "results/transcript-audit-v3/plan.json": "bd9b426f88260f1a05ad9ffac6784828065dbf4308d46bace1f18799a5502e65",
+    "results/transcript-audit-v3/summary.json": "f831563e3c6ff118e0fc7c68f017c22e563a176dca0ffceff09d2c9d65de11f5",
+    "results/transcript-audit-v4/independent-audit.json": "8bd40951ff72291b697bd4a0272574e4f9cf22d6a5b3e39aba014a299aa8eae3",
+    "results/transcript-audit-v4/judges/run-0028/request.json": "7a002e01db45274f33891b2cf66375c27bae73752b71ff4c9c69dbbe07fccbb7",
+    "results/transcript-audit-v4/judges/run-0028/response.json": "4e12ee39c3b9963968b8ab629f261550bae642d77eeee5e56a1406cbc9af6a62",
+    "results/transcript-audit-v4/plan.json": "ebf5662fc43d91aab8ec8ca221d96d80f545293c7c26e5558cf5454d3c630303",
+    "results/transcript-audit-v4/raw-field-audit.json": "130220f6ecff0ff8985c9ea602ea71109125ae618092c44495a7bb5e2ae356cc",
+    "results/transcript-audit-v4/summary.json": "01d85cb5e5f0fa19ab399f79c2e8e755b89e4c2c662df90463e6e9f24f5168dd"
+  },
+  "actor_status": "finished",
+  "actor_runs": 48,
+  "judge_status": "finished",
+  "judge_unique_calls": 68,
+  "judge_new_calls": 56,
+  "judge_calibration_passed": false,
+  "prior_judge_failures": {
+    "v2": "calibration_or_integrity_failed",
+    "v3": "calibration_or_integrity_failed"
+  },
+  "actor_estimated_usd": 0.514784,
+  "judge_estimated_usd": 0.19829,
+  "judge_prior_estimated_usd": 0.038139,
+  "related_work": {
+    "checked": "2026-10-20",
+    "references": [
+      [
+        "[1] Zhong et al. \u2014 ImpossibleBench (2025; ICLR 2026)",
+        "https://arxiv.org/abs/2510.20270"
+      ],
+      [
+        "[2] Debenedetti et al. \u2014 AgentDojo (2024)",
+        "https://arxiv.org/abs/2406.13352"
+      ],
+      [
+        "[3] Greenblatt et al. \u2014 AI Control (2023/2024)",
+        "https://arxiv.org/abs/2312.06942"
+      ],
+      [
+        "[4] Kutasov et al. \u2014 SHADE-Arena (2025)",
+        "https://arxiv.org/abs/2506.15740"
+      ],
+      [
+        "[5] Debenedetti et al. \u2014 CaMeL (2025)",
+        "https://arxiv.org/abs/2503.18813"
+      ],
+      [
+        "[6] UK AISI / Redwood \u2014 ControlArena (official framework)",
+        "https://control-arena.aisi.org.uk/"
+      ],
+      [
+        "[7] Li et al. \u2014 AgentDyn (2026, v3)",
+        "https://arxiv.org/abs/2602.03117v3"
+      ],
+      [
+        "[8] Chen et al. \u2014 CoSec (2026; v3 revised 19 October)",
+        "https://arxiv.org/abs/2609.34790v3"
+      ],
+      [
+        "[9] Liu \u2014 Passing the Test You Trained On (October 2026)",
+        "https://arxiv.org/abs/2610.03448v1"
+      ]
+    ],
+    "comparison": "qualitative_only_no_external_baseline_runs",
+    "document_sha256": "f110727d3c9711f3655be7a7af698c7768adb298ecdf6774aa0f621cb4a589ff"
+  },
+  "illustrative_outcome_rows": 0,
+  "scripted_actor_result_rows": 0,
+  "selection_contrast": "not_measured"
+}
