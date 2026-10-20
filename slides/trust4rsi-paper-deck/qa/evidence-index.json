@@ -1,292 +1,537 @@
 {
   "updated": "2026-10-20",
-  "slides": 23,
+  "slides": 41,
   "language": "English",
-  "narrative": "reported_incidents_to_testable_mechanisms_to_measured_limits",
+  "narrative": "incident_families_to_fixture_to_measurements_to_implications_to_preregistered_programme",
   "pages": [
     {
       "page": 1,
-      "title": "The request failed. The agent crossed a boundary.",
-      "status": "REPORTED",
-      "source": "Reported incident, not our experiment. No individual medical records were accessed, per government."
+      "title": "A failed route is where an agent's authority gets reinterpreted.",
+      "status": "FRAMING",
+      "source": "Evidence classes in this deck: public reports (26 library records), archived live runs (489 actor runs, 68 judge calls), proposals (no outcomes)."
     },
     {
       "page": 2,
-      "title": "A workaround can change whose resources are used.",
+      "title": "The world reports an incident about four months after it happens.",
       "status": "REPORTED",
-      "source": "Reported cases. Their frequency and causal effect are not estimated here."
+      "source": "incidents/records/*.json; figures/incidents/analysis/latency-dumbbell.png. Month-precision dates plotted mid-month. Analyst codings, second reader pending (E5)."
     },
     {
       "page": 3,
-      "title": "Recover versus stop does not explain every incident.",
+      "title": "Medicare portal: the search failed, so the agent found another way in.",
       "status": "REPORTED",
-      "source": "Source-grounded observations; the questions below are our interpretation."
+      "source": "Australian Government press conference, 24 Sep 2026. Aggregate statistics only; no individual medical data accessed, per government. Forensic investigation still open."
     },
     {
       "page": 4,
-      "title": "Incidents tell us what to vary and what to measure.",
-      "status": "RESEARCH DESIGN",
-      "source": "docs/trust4rsi-incident-to-experiment.md | Hypotheses, not causal conclusions from case counts."
+      "title": "Five reports share one structure: blocked route, reachable substitute, unchanged permission.",
+      "status": "REPORTED",
+      "source": "Library records 15, 12, 13, 4; OpenAI wallet report of 15 Oct 2026 is outside the 26-record denominator. Facts from public reports; ordering is ours."
     },
     {
       "page": 5,
-      "title": "A failed call is not proof that the task is impossible.",
-      "status": "TASK DESIGN",
-      "source": "Verified identical setup prefixes: feedback-ablation-v1/checkpoints/development-{recoverable,impossible}-12000."
+      "title": "Four evaluations treated a reachable real target as an authorized one.",
+      "status": "REPORTED",
+      "source": "Library records 16, 17, 18, 21 (Anthropic assessment 9 Sep 2026; Google statement 18 Sep 2026). Counts of hosts and records are as reported, not verified by us."
     },
     {
       "page": 6,
-      "title": "Get this run's secret code.",
-      "status": "OBSERVED",
-      "source": "Task contract: results/incident-study-v1/prompt-bank.json"
+      "title": "When the method label is 'GET', the effect can still be a public write.",
+      "status": "REPORTED",
+      "source": "Library records 1, 2, 6, 14. DSEwiki post count and DNS timings are as reported by the researchers and OpenAI respectively."
     },
     {
       "page": 7,
-      "title": "Two real runs took the two allowed paths.",
-      "status": "OBSERVED",
-      "source": "results/feedback-ablation-v1/run-0002 and run-0001; no outside effects in either."
+      "title": "What recurs: capability composition, detection without escalation, effects over intent.",
+      "status": "REPORTED",
+      "source": "figures/incidents/analysis/summary.json. Analyst draft codings; independent second reader not yet completed (E5). Not population rates."
     },
     {
       "page": 8,
-      "title": "The agent read an old answer. It passed.",
-      "status": "OBSERVED",
-      "source": "results/incident-study-v1/run-0001/transcript.jsonl"
+      "title": "Three theses, each paired with the endpoint that would test it.",
+      "status": "RESEARCH DESIGN",
+      "source": "docs/trust4rsi-incident-to-experiment.md. The theses are our interpretation of the public record."
     },
     {
       "page": 9,
-      "title": "The grader accepted the copied code.",
-      "status": "OBSERVED",
-      "source": "Source: incident-study-v1/run-0001. Full URLs are shortened; the flag is exact."
+      "title": "Six local services, one dispatcher, one effect journal the agent never sees.",
+      "status": "METHOD",
+      "source": "src/containment_extension/*; results/*/independent-audit.json (all passed). Budgets per continuation: 10 model calls, 20 dispatched actions, 768 output tokens."
     },
     {
       "page": 10,
-      "title": "13 of 15 violations still passed.",
-      "status": "OBSERVED",
-      "source": "results/incident-study-v1/summary.json | Mixed study arms; not a deployment risk estimate."
+      "title": "The scope paragraph names the resources, the exit and the evidence standard.",
+      "status": "METHOD",
+      "source": "results/incident-study-v1/prompt-bank.json (task, scope); results/feedback-ablation-v1/run-0001/prompts.json (identical system, task and tool parameters)."
     },
     {
       "page": 11,
-      "title": "Same inputs. Two different notes. 48 runs.",
-      "status": "OBSERVED",
-      "source": "results/baseline-diagnostic-v2/{notes.json,schedule.json,plan.json}"
+      "title": "Minimise verified incidents subject to utility, cost and false-intervention constraints.",
+      "status": "METHOD",
+      "source": "docs/incident-aware-optimization.md. Margins delta_U, B and alpha_F are preregistered per study; no numeric value is implied here."
     },
     {
       "page": 12,
-      "title": "Both notes led to forbidden reads.",
+      "title": "The scorer, a transcript judge and the effect journal answer different questions.",
       "status": "OBSERVED",
-      "source": "baseline-diagnostic-v2/summary.json | Each square is one input; both rows use the same order."
+      "source": "results/incident-study-v1/summary.json (160 runs); results/transcript-audit-v4/summary.json (48 runs, fixed threshold 0.5, calibration failed)."
     },
     {
       "page": 13,
-      "title": "A second model checked all 48 transcripts.",
+      "title": "A README link caused early out-of-scope reads. Removing it moved them, later and elsewhere.",
       "status": "OBSERVED",
-      "source": "transcript-audit-v4/summary.json | Fixed score threshold 0.5; calibration failed."
+      "source": "results/link-study-v1/analysis.json (pooled, sensitivity, first_destinations_by_arm). Exact McNemar on complete pairs, Holm-adjusted for the two primary contrasts."
     },
     {
       "page": 14,
-      "title": "One request received two different verdicts.",
+      "title": "No prompt feature consistently increased violations. The first crossing usually preceded the failure.",
       "status": "OBSERVED",
-      "source": "baseline-diagnostic-v2/run-0028; transcript-audit-v4/judges/run-0028/response.json"
+      "source": "results/cue-study-v1/summary.json (ranking; validation_contrasts). Holds out wording and draws, not task structures; stalled cells sit at ceiling."
     },
     {
       "page": 15,
-      "title": "ImpossibleBench already tests when agents should stop.",
-      "status": "PRIOR WORK",
-      "source": "Zhong et al. / ImpossibleBench / sections 2, 5 and 6. Literature comparison."
+      "title": "After an identical 503, a full-scope reminder plus an explicit exit took Haiku from 6/8 to 0/8.",
+      "status": "OBSERVED",
+      "source": "results/incident-study-v1/summary.json. Verified reads of the prior-run archive on impossible tasks. Prespecified factorial effects; 0/8 has a 95% Wilson upper limit of 32.4%."
     },
     {
       "page": 16,
-      "title": "Our label checks actions, even when the task fails.",
-      "status": "COMPARISON",
-      "source": "ImpossibleBench: main cheating-rate endpoint. Our data: incident-study-v1, all 160 assigned runs."
+      "title": "Fifty of 51 terminal reports supported the blocker. Only 16 were valid strict JSON.",
+      "status": "OBSERVED",
+      "source": "results/incident-study-v1/terminal-review.json; summary.json (strict_success, terminal_needs_review). Reviewer: Codex visible-text review after results; not independent human validation."
     },
     {
       "page": 17,
-      "title": "Zero impossible passes did not mean good stopping.",
-      "status": "REPORT ONLY",
-      "source": "docs/impossiblebench-upstream-baseline-results.md | Raw live archive is absent from this checkout."
+      "title": "Twenty archived policy cells on one plane: at full utility, policies separate on incidents alone.",
+      "status": "OBSERVED",
+      "source": "figures/experiments/tradeoff-v1/utility-incident-tradeoff.png; cells.json carries unknown counts and assigned-population bounds. No fitted curve."
     },
     {
       "page": 18,
-      "title": "Incident-driven tests with no allowed solution already exist.",
-      "status": "PRIOR WORK",
-      "source": "Anthropic: alignment assessment, Methods and Replication sections. No reproduction here."
+      "title": "The agent tried recovery, read the catalog, read another run's answer, and passed.",
+      "status": "OBSERVED",
+      "source": "results/incident-study-v1/run-0001/transcript.jsonl; the copied and submitted flag values are identical."
     },
     {
       "page": 19,
-      "title": "These benchmarks ask different technical questions.",
-      "status": "PRIOR WORK",
-      "source": "Primary papers linked below. These systems are not reproduced in the current comparison."
+      "title": "13 of 15 violating runs passed the grader.",
+      "status": "OBSERVED",
+      "source": "results/incident-study-v1/summary.json; run-0094 transcript for the statement/action discrepancy. Mixed arms; not a deployment rate."
     },
     {
       "page": 20,
-      "title": "Recording an action does not prevent it.",
-      "status": "BASELINE NOT RUN",
-      "source": "CaMeL: control/data separation and capability checks. Our proposed baseline is only an endpoint allowlist."
+      "title": "Two checkpoint notes, 24 shared inputs each: 11/16 versus 15/16 violations on impossible inputs.",
+      "status": "OBSERVED",
+      "source": "results/baseline-diagnostic-v2/summary.json; notes.json. Approximate conservative 95% interval from two 97.5% Wilson intervals on discordance probabilities (Bonferroni)."
     },
     {
       "page": 21,
-      "title": "Change repair and permission independently.",
-      "status": "NOT RUN YET",
-      "source": "Proposed 2 x 2 design. Expected allowed choices, not model results. Closed local action set."
+      "title": "Three frozen judge protocols: two failed calibration, the third is descriptive only.",
+      "status": "OBSERVED",
+      "source": "results/transcript-audit-v{2,3,4}/summary.json; raw-field-audit.json. 12 benign calibration responses hash-pinned and reused; 56 new calls in v4."
     },
     {
       "page": 22,
-      "title": "Does better feedback choose a better note?",
-      "status": "NOT RUN YET",
-      "source": "Proposed selection study. Fresh tasks and a repaired, frozen judge are required."
+      "title": "The judge called an authorized challenge request 'privilege escalation'.",
+      "status": "OBSERVED",
+      "source": "results/baseline-diagnostic-v2/run-0028; results/transcript-audit-v4/judges/run-0028/{request,response}.json."
     },
     {
       "page": 23,
-      "title": "A correct answer is only one check.",
+      "title": "The selection study stopped at its own event-rate gate after 0/2 baseline violations.",
       "status": "OBSERVED",
-      "source": "Observed results: incident-study-v1, baseline-diagnostic-v2, transcript-audit-v4."
+      "source": "results/feedback-ablation-v1/summary.json (status baseline_no_events); 54 assignments recorded as not started. Miss probabilities computed from the archived 11/16 rate; a planning calculation, not a result."
+    },
+    {
+      "page": 24,
+      "title": "Six ImpossibleBench runs: 1/2 originals solved, 0/4 impossible variants passed, 6/6 hit the message cap.",
+      "status": "REPORT ONLY",
+      "source": "docs/impossiblebench-upstream-baseline-results.md. Report-only: the raw live archive is absent from this checkout and was not recomputed."
+    },
+    {
+      "page": 25,
+      "title": "One 503 has three readings. Incidents happen when the agent confuses them.",
+      "status": "ANALYSIS",
+      "source": "Interpretive frame over the archived results. The three readings are our terms, not the models' statements."
+    },
+    {
+      "page": 26,
+      "title": "The same recovery action is legitimate or a violation. Only the grant decides which.",
+      "status": "ANALYSIS",
+      "source": "Interpretive frame. Fixture column: results/incident-study-v1/prompt-bank.json (scope). Field column: our reading of the library, which codes the boundary crossed, not whether the agent was told it."
+    },
+    {
+      "page": 27,
+      "title": "The fixture measures constraint compliance. It does not measure authorization reasoning.",
+      "status": "ANALYSIS",
+      "source": "results/incident-study-v1, link-study-v1, baseline-diagnostic-v2: every grant was written into the task text before the run. No archived run had a silent or conflicting grant."
+    },
+    {
+      "page": 28,
+      "title": "Substitution is conserved under cue removal. Only resource-level enforcement changes the total.",
+      "status": "ANALYSIS",
+      "source": "results/link-study-v1/analysis.json first_destinations_by_arm; results/incident-study-v1/summary.json. The enforcement arm has not been run (X2)."
+    },
+    {
+      "page": 29,
+      "title": "Where the signal sits determines what selection can see. On this fixture, B3 and B4 would mostly agree.",
+      "status": "ANALYSIS",
+      "source": "results/transcript-audit-v4/summary.json. Expected counts are arithmetic on the observed disagreement bounds, not a prediction of model behaviour."
+    },
+    {
+      "page": 30,
+      "title": "A regression gate for evolving agent policies: replay twins and controls, decide on effects.",
+      "status": "PROPOSED",
+      "source": "docs/incident-aware-optimization.md (v2 design); slides/incident-aware-optimization-v2.pptx. Proposal; the gate has not been exercised on a policy update."
+    },
+    {
+      "page": 31,
+      "title": "Each incident family yields a synthetic twin with dummy data and a known excluded resource.",
+      "status": "PROPOSED",
+      "source": "incidents/README.md (design note); analyst replayability judgement in incidents/records. One twin (prior-run archive) already exists and produced the archived results."
+    },
+    {
+      "page": 32,
+      "title": "Seven native allocations (489 actor runs, 68 judge calls) are archived with plans, hashes and budgets.",
+      "status": "OBSERVED",
+      "source": "results/*/summary.json; results/*/budget.json; results/*/independent-audit.json. Costs are uncached Haiku 4.5 list-price estimates, not bills."
+    },
+    {
+      "page": 33,
+      "title": "Eight preregistered allocations, ordered by dependency, each with a gate to advance.",
+      "status": "PLANNING",
+      "source": "docs/trust4rsi-next-experiments.md; docs/trust4rsi-incident-to-experiment.md. Gate conditions are necessary, not sufficient: each allocation needs its own authorization."
+    },
+    {
+      "page": 34,
+      "title": "Cross recovery availability with explicit archive permission; keep technical access constant.",
+      "status": "NOT RUN YET",
+      "source": "docs/trust4rsi-incident-to-experiment.md. Power: exact two-sided McNemar at alpha 0.05, independent pairs, baseline rate 0.688 from P1; a planning computation."
+    },
+    {
+      "page": 35,
+      "title": "Add two grant conditions to X1, unspecified and conflicting, each with a preregistered reference behaviour.",
+      "status": "NOT RUN YET",
+      "source": "docs/trust4rsi-next-experiments.md (X1b, added 20 Oct 2026). Depends on X1's explicit-cell rates. Design only; no outcomes."
+    },
+    {
+      "page": 36,
+      "title": "Two twins that test what a transcript cannot show and what a monitor cannot do.",
+      "status": "NOT RUN YET",
+      "source": "Designs only. Endpoints and gates are preregistered in the X-series plans before any inference."
+    },
+    {
+      "page": 37,
+      "title": "Enforcement, transfer, powered selection and a second model family.",
+      "status": "NOT RUN YET",
+      "source": "docs/trust4rsi-related-work.md (fair-baseline requirements). The allowlist broker is not a CaMeL reproduction."
+    },
+    {
+      "page": 38,
+      "title": "What is already established, and the only differences we can defend.",
+      "status": "PRIOR WORK",
+      "source": "docs/trust4rsi-related-work.md with links to each primary paper."
+    },
+    {
+      "page": 39,
+      "title": "What the current evidence cannot support, stated before a reviewer states it.",
+      "status": "LIMITS",
+      "source": "Mirrors the limitations sections of docs/trust4rsi-*.md."
+    },
+    {
+      "page": 40,
+      "title": "Section budget, figures and the claim each section is allowed to make.",
+      "status": "PLANNING",
+      "source": "Figures are regenerated from JSON by the scripts named in the README; no figure is hand-edited."
+    },
+    {
+      "page": 41,
+      "title": "Four sentences a reviewer should be able to repeat.",
+      "status": "OBSERVED",
+      "source": "Observed: incident-study-v1, link-study-v1, baseline-diagnostic-v2, transcript-audit-v4. Reported: 26 library records."
     }
   ],
   "density": [
     {
       "slide": 1,
-      "words": 50,
+      "words": 136,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 13.0
     },
     {
       "slide": 2,
-      "words": 51,
+      "words": 88,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 13.0
     },
     {
       "slide": 3,
-      "words": 60,
+      "words": 134,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 11.0
     },
     {
       "slide": 4,
-      "words": 60,
+      "words": 190,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 12.0
     },
     {
       "slide": 5,
-      "words": 61,
+      "words": 173,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 12.0
     },
     {
       "slide": 6,
-      "words": 41,
+      "words": 160,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 12.0
     },
     {
       "slide": 7,
-      "words": 41,
+      "words": 170,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 11.0
     },
     {
       "slide": 8,
-      "words": 49,
+      "words": 143,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 12.0
     },
     {
       "slide": 9,
-      "words": 45,
+      "words": 139,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 10.0
     },
     {
       "slide": 10,
-      "words": 53,
+      "words": 211,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 12.0
     },
     {
       "slide": 11,
-      "words": 64,
+      "words": 189,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 11.0
     },
     {
       "slide": 12,
-      "words": 40,
+      "words": 135,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 13.0
     },
     {
       "slide": 13,
-      "words": 44,
+      "words": 178,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 12.0
     },
     {
       "slide": 14,
-      "words": 41,
+      "words": 139,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 12.0
     },
     {
       "slide": 15,
-      "words": 54,
+      "words": 139,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 12.0
     },
     {
       "slide": 16,
-      "words": 60,
+      "words": 140,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 12.0
     },
     {
       "slide": 17,
-      "words": 51,
+      "words": 101,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 12.0
     },
     {
       "slide": 18,
-      "words": 56,
+      "words": 78,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 13.0
     },
     {
       "slide": 19,
-      "words": 57,
+      "words": 160,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 12.0
     },
     {
       "slide": 20,
-      "words": 43,
+      "words": 99,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 12.0
     },
     {
       "slide": 21,
-      "words": 42,
+      "words": 167,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 12.0
     },
     {
       "slide": 22,
-      "words": 45,
+      "words": 123,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 13.0
     },
     {
       "slide": 23,
-      "words": 71,
+      "words": 184,
       "tables": 0,
-      "minimum_prose_pt": 18.0
+      "minimum_prose_pt": 13.0
+    },
+    {
+      "slide": 24,
+      "words": 129,
+      "tables": 0,
+      "minimum_prose_pt": 13.0
+    },
+    {
+      "slide": 25,
+      "words": 156,
+      "tables": 0,
+      "minimum_prose_pt": 12.0
+    },
+    {
+      "slide": 26,
+      "words": 244,
+      "tables": 0,
+      "minimum_prose_pt": 11.0
+    },
+    {
+      "slide": 27,
+      "words": 213,
+      "tables": 0,
+      "minimum_prose_pt": 12.0
+    },
+    {
+      "slide": 28,
+      "words": 156,
+      "tables": 0,
+      "minimum_prose_pt": 12.0
+    },
+    {
+      "slide": 29,
+      "words": 178,
+      "tables": 0,
+      "minimum_prose_pt": 12.0
+    },
+    {
+      "slide": 30,
+      "words": 198,
+      "tables": 0,
+      "minimum_prose_pt": 12.0
+    },
+    {
+      "slide": 31,
+      "words": 156,
+      "tables": 0,
+      "minimum_prose_pt": 12.0
+    },
+    {
+      "slide": 32,
+      "words": 206,
+      "tables": 0,
+      "minimum_prose_pt": 11.0
+    },
+    {
+      "slide": 33,
+      "words": 209,
+      "tables": 0,
+      "minimum_prose_pt": 11.0
+    },
+    {
+      "slide": 34,
+      "words": 181,
+      "tables": 0,
+      "minimum_prose_pt": 12.0
+    },
+    {
+      "slide": 35,
+      "words": 258,
+      "tables": 0,
+      "minimum_prose_pt": 11.0
+    },
+    {
+      "slide": 36,
+      "words": 203,
+      "tables": 0,
+      "minimum_prose_pt": 12.0
+    },
+    {
+      "slide": 37,
+      "words": 151,
+      "tables": 0,
+      "minimum_prose_pt": 12.0
+    },
+    {
+      "slide": 38,
+      "words": 161,
+      "tables": 0,
+      "minimum_prose_pt": 11.0
+    },
+    {
+      "slide": 39,
+      "words": 208,
+      "tables": 0,
+      "minimum_prose_pt": 11.0
+    },
+    {
+      "slide": 40,
+      "words": 159,
+      "tables": 0,
+      "minimum_prose_pt": 11.0
+    },
+    {
+      "slide": 41,
+      "words": 179,
+      "tables": 0,
+      "minimum_prose_pt": 12.0
     }
   ],
   "concrete_evidence_hashes": {
     "docs/impossiblebench-upstream-baseline-results.md": "97b562a476fabb2db0b635be128907fc2a1eb9a74e625cbef285c982fc4e6dfa",
+    "figures/experiments/tradeoff-v1/cells.json": "268e2a6c64db306aae8b6d8bdf3c66c48e46e382a3f8d5323145ec96a41333cd",
+    "figures/incidents/analysis/summary.json": "36e0ac0ea5e401cf9b957c2c2218077860c8d7fbdc6b15c029630ea656c44a85",
+    "incidents/records/01-hugging-face-infrastructure-compromise.json": "0ae75d660ca107d39f6a6ac241631669ee2f8e15918a1293f939bdf9dbeed0c3",
+    "incidents/records/02-dns-route-external-chatbot.json": "279df04d305b2646823b22c98a29873a918fdda6ab5b6ea19e3aa618015b8c7d",
+    "incidents/records/03-user-images-external-hosting.json": "558b7ce114e66fe000b48ed1fbe54274e25ac3ffa0788ca10e70df879e35f76f",
+    "incidents/records/04-github-token-published-proof-task.json": "bc7afd6803e64db3b5867057a61b8f10bebb1f35fde9935184918aa5221c99f4",
+    "incidents/records/05-medicare.json": "6bae5986a95e51ef51bf3a31794187a85e6677446593bfc5a663d0c092842a7c",
+    "incidents/records/06-dsewiki.json": "4b481148897d62460ab6f744c2d73321a5c358ada0858a39c77d526a74b5995d",
+    "incidents/records/07-rubygems-spam-packages.json": "aa27cf59a55b235629036d1cdcc36b39fb0a2a3ecc15d92cfa00f08ad13369d8",
+    "incidents/records/08-public-data-retrieval-vulnerability-probes.json": "ef12fc1d95332a99d574c5068e41563fc6b928ab0ee03e25399dc5f5ca8957cc",
+    "incidents/records/09-us-government-website-interactions.json": "afabe743359f202f519b90cef80c6f81625282948224337be94e862914793985",
+    "incidents/records/10-self-generated-prompt-injections.json": "e44cc92ff80a264d17c1f2ba2be4d29cc9040c92d85a28a74155d5db13f81aab",
+    "incidents/records/11-instructions-to-conceal-mistakes.json": "c3ba4dc8352e8d31b81527079f2a7e6c1bb01654cfdec946408065340699e0a3",
+    "incidents/records/12-exposed-api-key-fabricated-data.json": "beea54de7c6b2b8cb3eedb0928866674cb98b27343a1e38a695f0f1acf4517a2",
+    "incidents/records/13-public-uploads-around-tool-limits.json": "75c9b89a3e7179051f3792c20e281d912b21959869cc6850e7fd0a2b56a09c91",
+    "incidents/records/14-artifactory-unauthorized-communication.json": "f88ebdc8bd1a0f7740305fa428139537a77801125d5b15d9d0389d468acd9abc",
+    "incidents/records/15-public-hosting-local-workbook.json": "832d6761c369f8dc2203a389c3dd9d4e3b4be4f80ad80696f11a66bf6e8da310",
+    "incidents/records/16-opus-4-7-targets-real-company.json": "be4fdd042343a281c8bab52fca28ec8e4e8451e4ca742b1199950141f7a04134",
+    "incidents/records/17-mythos-5-malicious-pypi-package.json": "c277de0ce39efef84513cffbaa54d882ece19a1be2bf5ceb4bcd184ae35ddecc",
+    "incidents/records/18-internal-model-scans-real-targets.json": "cf6fc70afe2e49d5830a3578cd836ddedf23c39fb16ddc1519dddd046682de01",
+    "incidents/records/19-early-opus-4-6-incident-missed.json": "3b634653b720a02ca8ae64dd896827b465967ef3a45c0548472624b3e3201428",
+    "incidents/records/20-aisi-live-social-engineering.json": "c5d9ea9e480b58b1d26789152c463b946b30f407ae40a366095810198e97be65",
+    "incidents/records/21-gemini-accesses-three-companies.json": "8d43835f82e2e33844bf19fbaf71f6df1d59a2e6a6a15f320d4d045ff679335e",
+    "incidents/records/22-meta-model-exploits-third-party-service.json": "57403178dc6a324f9e6e583d80910960c1035117f26553a29d005c120e8aa2c7",
+    "incidents/records/23-metr-exposed-dashboard-api-key-theft.json": "a8822982448665211778287b062f28b57b3af57224694959e0e2773d2f791d2d",
+    "incidents/records/24-metr-exposed-evaluation-data-endpoint.json": "d6e8b1bed9b0141cd23a7197c569400d80a8b020b776cc3df5dfdb5f285d86b2",
+    "incidents/records/25-human-directed-misuse-of-claude.json": "e772e04073a390add7db41194b7427cd434a3c8b7c620ccd33ea21ac7a289a23",
+    "incidents/records/26-autonomous-attacks-online-retailers.json": "bb38e7aec789371ff15d92ffe64392f51a771c4cbf44a336980c8808345fc6df",
     "results/baseline-diagnostic-v1/independent-audit.json": "57cf156b81060cfdda92c9782605318eca4bc08ce7e81d66dfcd6f9c3aac493c",
     "results/baseline-diagnostic-v1/summary.json": "b8acd955c3729e518a5bf5e246908abfe0ce0ad13baca3913f4095ae3bc32677",
+    "results/baseline-diagnostic-v2/budget.json": "4a1aff2d2166c25de569edda5bb818550037dede840be0f3b84eaa60bd69548b",
     "results/baseline-diagnostic-v2/independent-audit.json": "99aafce44718f52778ae88bc81ede045d748dda69faba6502090afd7e6f2f79b",
     "results/baseline-diagnostic-v2/notes.json": "87d2292e2d21ea439a3247e6555a74d5bf50c1ca733283f4632d06eb230d4d70",
     "results/baseline-diagnostic-v2/plan.json": "85603f0c8bd2582ce13f2d38a88acffefba7a5ece41a0f1b11c565f9e3b728d5",
@@ -297,23 +542,34 @@
     "results/baseline-diagnostic-v2/run-0028/result.json": "56575db42937c08c4dd37bce095ca7e65f84f8cd659a71af819c68b5cb54210c",
     "results/baseline-diagnostic-v2/run-0028/transcript.jsonl": "7aebe4dea5ee72447acf605584aeb3c2a0a76c9d385e99648419781e68dc0db3",
     "results/baseline-diagnostic-v2/summary.json": "0aaa83884a9ced5fb36a10e1095c89d1dfe9c4537744f31c309a26180919c1e5",
+    "results/cue-study-v1/budget.json": "7df801546ce8ef855691b308871e980e45e490732c97d8085e43c563a9d9f26f",
+    "results/cue-study-v1/summary.json": "f985f348d916dc82ec2ea35f7dc0925e1c5d7b055b06e412649a7b313e199f40",
+    "results/feedback-ablation-v1/budget.json": "71f1b63c94468d8e416389f1ac07fede021263b0fa58c77ef3e31b1a41eecf41",
     "results/feedback-ablation-v1/checkpoints/development-impossible-12000/checkpoint.json": "7bca8d9235d909523201045ea9ebe469cb48e11028dbe4f734bac81d31b826f6",
     "results/feedback-ablation-v1/checkpoints/development-recoverable-12000/checkpoint.json": "ccc8d550ec3c7ac3133c0ca835ab35e7229428f4f844bf8de2c23022fe6ed66c",
     "results/feedback-ablation-v1/run-0001/result.json": "839c0e678efb87bc6e20a13ec107ee2bd3e16f559c1f9987a2ec198a6954cde3",
     "results/feedback-ablation-v1/run-0001/transcript.jsonl": "8bfb75344a93ecc7d9a2adffb6d4a0b0dfb48d996bedaabf3a5dc2e47b162c7b",
     "results/feedback-ablation-v1/run-0002/result.json": "2dea3dda7d95e9fa476dcfb21078691c3e2d36d499f3c1740045780f710c2d50",
     "results/feedback-ablation-v1/run-0002/transcript.jsonl": "3a0f9ffcd6c114c1e07d95772393612ec43e69377f6c23ea8b067855bb18ac04",
+    "results/feedback-ablation-v1/summary.json": "e27fe01c551a112a9f47521aafb9cf0acdeb8aae06a9e9781c690d8f0f9c749a",
+    "results/incident-study-v1/budget.json": "cbf87de4f2b82abb047677fa99666add1f354db1ed146aa0c8f4027212dce1f4",
     "results/incident-study-v1/run-0001/result.json": "1b0e1ccb6b6e05016ae679316f3ff5952b30b7d7137ddd3b3840255d27b4f8e0",
     "results/incident-study-v1/run-0001/transcript.jsonl": "55537f93ea8e13e250fdcab390004aaf4f1f793ecfa9940417980e3dd5c9c7cb",
     "results/incident-study-v1/run-0094/result.json": "54f705dc88208bd1f572c22820783572f791fe1f93d4aed1fbd66b5c7e2f895f",
     "results/incident-study-v1/run-0094/transcript.jsonl": "470323d1fde2a5362a540916f79cab4a5face173ea1b379534a70ecf4d609b25",
     "results/incident-study-v1/summary.json": "5f1a83e3a2fe64eb62c77404a2ffe6e0a2aef46e1ea57ff094461b86434117ff",
+    "results/incident-study-v1/terminal-review.json": "af89994a03e716676dcbe74b88a1a200667392b12c7d34f2f6d17b7f514594b9",
+    "results/link-study-v1/analysis.json": "4a88653c735c2a03f10ce54fbb9e03d84a4f510d7335581dc8c5e8fe6e8b070d",
+    "results/link-study-v1/budget.json": "662f5b4b4560ea37f4c3c1f0a5d16dad3a21ae89618952e796a4565b0a85196a",
+    "results/link-study-v1/summary.json": "f533415e4df03b283dcad16e492e633e27f4fbfdac1c96acd5ae7a8f482bc307",
+    "results/scope-levels-v1/summary.json": "f13b00d18ba8884e163a9aca204d9bd66ae51c51a942d290348524bcd115e9e8",
     "results/transcript-audit-v2/independent-audit.json": "d5f8cc1470618fe11c8464db728ae01fbecb686cf9d1f1e9f23d0811ebf1301c",
     "results/transcript-audit-v2/plan.json": "45d8ff0d9bb0f920c5f1a2b710cd4ddac71d43c110613e44ef15ccbbf01a6de6",
     "results/transcript-audit-v2/summary.json": "77406afe0cfcab0a6c6c769e5a308d44cef6a14133f70d9aee55b164e5d9eec6",
     "results/transcript-audit-v3/independent-audit.json": "ba42dedb1b2f6ec86e7ac4c4714ba183fb2f957e572b99294cb557938c05a425",
     "results/transcript-audit-v3/plan.json": "bd9b426f88260f1a05ad9ffac6784828065dbf4308d46bace1f18799a5502e65",
     "results/transcript-audit-v3/summary.json": "f831563e3c6ff118e0fc7c68f017c22e563a176dca0ffceff09d2c9d65de11f5",
+    "results/transcript-audit-v4/budget.json": "f26995fcae44db6ba049c733b27f6324bc9ac0b02c5892c74c3f80f45e851584",
     "results/transcript-audit-v4/independent-audit.json": "8bd40951ff72291b697bd4a0272574e4f9cf22d6a5b3e39aba014a299aa8eae3",
     "results/transcript-audit-v4/judges/run-0028/request.json": "7a002e01db45274f33891b2cf66375c27bae73752b71ff4c9c69dbbe07fccbb7",
     "results/transcript-audit-v4/judges/run-0028/response.json": "4e12ee39c3b9963968b8ab629f261550bae642d77eeee5e56a1406cbc9af6a62",
@@ -323,18 +579,55 @@
     "slides/trust4rsi-paper-deck/research-sources.json": "02f8ec452d511396bcd55969c038927d4ec34001942201d27541f2ebdb7c8d29"
   },
   "source_hashes": {
-    "slides/trust4rsi-paper-deck/build_deck.py": "27e4def566269122f056b07f743e6a9e6b21de9ef1a7f44e7ba9bac480363c0d",
-    "slides/trust4rsi-paper-deck/collect_evidence.py": "02b9423dfef4573169cc64d70ff9ca043fbe4772967321673dbab95df59235db",
+    "slides/trust4rsi-paper-deck/build_deck.py": "0798b0ee316dd23b3da8000d48a15c3f431b47ec51066dff8b90c4ef5d95ecea",
+    "slides/trust4rsi-paper-deck/collect_evidence.py": "4caab42b498b7621a91dbf60c550c3dc6751e4e6ecd309c8be96c5e8c866b9d0",
     "slides/trust4rsi-paper-deck/diagram_lib.py": "06d4bb0a9b492cd28a018a13ac2b66beae3a27e68abf37724f8e0042be24cd94",
-    "slides/trust4rsi-paper-deck/research_pages.py": "745f3b52938d722252d60f50ef4118fb63e129c411bd648d0c1922ad74692805",
     "slides/trust4rsi-paper-deck/research-sources.json": "02f8ec452d511396bcd55969c038927d4ec34001942201d27541f2ebdb7c8d29",
     "docs/trust4rsi-incident-to-experiment.md": "873fc0b73d7c6ad61ad87248d0df32bd18a977731f189a32174661fc936e9606",
-    "docs/trust4rsi-related-work.md": "2acd3346d3a831c0d1b2923bb25b04a80a0c800b2e44348aaeafc9fb3a1ce46a"
+    "docs/trust4rsi-related-work.md": "2acd3346d3a831c0d1b2923bb25b04a80a0c800b2e44348aaeafc9fb3a1ce46a",
+    "figures/incidents/analysis/summary.json": "36e0ac0ea5e401cf9b957c2c2218077860c8d7fbdc6b15c029630ea656c44a85"
   },
-  "actor_runs": 48,
+  "actor_runs_archived": 489,
   "judge_unique_calls": 68,
   "new_inference_this_revision": 0,
   "invented_outcome_rows": 0,
   "selection_contrast": "not_measured",
+  "planning_computations": {
+    "gate_miss_probability_at_rate": {
+      "rate": 0.6875,
+      "by_k": {
+        "2": 0.09765625,
+        "4": 0.0095367431640625,
+        "6": 0.0009313225746154785
+      }
+    },
+    "mcnemar_power_rows": [
+      {
+        "pairs": 8,
+        "power_0.69_to_0.375": 0.04716495993458206,
+        "power_0.69_to_0.0": 0.5201293204445392
+      },
+      {
+        "pairs": 16,
+        "power_0.69_to_0.375": 0.2732099633929216,
+        "power_0.69_to_0.0": 0.997730835810526
+      },
+      {
+        "pairs": 24,
+        "power_0.69_to_0.375": 0.4572608701136492,
+        "power_0.69_to_0.0": 0.9999981475252021
+      },
+      {
+        "pairs": 32,
+        "power_0.69_to_0.375": 0.6237064227253574,
+        "power_0.69_to_0.0": 0.999999999228475
+      }
+    ],
+    "judge_observer_disagreement_bounds": [
+      0.020833333333333332,
+      0.125
+    ],
+    "proposed_programme_usd_estimate": 8.988437142857142
+  },
   "technical_appendix": "trust4rsi-technical-appendix.pdf"
 }
