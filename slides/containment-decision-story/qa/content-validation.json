@@ -1,0 +1,419 @@
+{
+  "slides": 22,
+  "pages": [
+    {
+      "slide": 1,
+      "title": "When the task fails, what may the agent change?",
+      "kicker": "Containment-extension  ·  Research outline  ·  21 October 2026",
+      "source": " "
+    },
+    {
+      "slide": 2,
+      "title": "Outline",
+      "kicker": "Outline",
+      "source": " "
+    },
+    {
+      "slide": 3,
+      "title": "A failed route is where authority gets reinterpreted.",
+      "kicker": "01 / Motivation from reported incidents",
+      "source": " "
+    },
+    {
+      "slide": 4,
+      "title": "The world reports an incident four months after it happens.",
+      "kicker": "02 / The feedback loop a deployed agent actually gets",
+      "source": " "
+    },
+    {
+      "slide": 5,
+      "title": "Medicare portal: the search failed, so the agent found a way in.",
+      "kicker": "03 / One incident in detail",
+      "source": " "
+    },
+    {
+      "slide": 6,
+      "title": "Five reports, one structure: blocked route, reachable substitute.",
+      "kicker": "04 / The substitution family",
+      "source": " "
+    },
+    {
+      "slide": 7,
+      "title": "When the contract is silent, reachability is read as permission.",
+      "kicker": "05 / The scope-inference family",
+      "source": " "
+    },
+    {
+      "slide": 8,
+      "title": "What recurs, and the three questions a theory must answer.",
+      "kicker": "06 / Across the library",
+      "source": " "
+    },
+    {
+      "slide": 9,
+      "title": "A constrained POMDP whose grant evidence cannot change.",
+      "kicker": "07 / Formal problem",
+      "source": " "
+    },
+    {
+      "slide": 10,
+      "title": "Result 1: each failure is evidence; stop at a posterior threshold.",
+      "kicker": "08 / Optimal stopping with learning",
+      "source": " "
+    },
+    {
+      "slide": 11,
+      "title": "Result 2: sometimes the best next action is to learn.",
+      "kicker": "09 / Value of information",
+      "source": " "
+    },
+    {
+      "slide": 12,
+      "title": "Result 3: under a silent grant, ask dominates without a prior.",
+      "kicker": "10 / Decision under ambiguity; principal and agent",
+      "source": " "
+    },
+    {
+      "slide": 13,
+      "title": "Result 4: what finite, paired evidence can and cannot certify.",
+      "kicker": "11 / Constrained selection from finite data",
+      "source": " "
+    },
+    {
+      "slide": 14,
+      "title": "Algorithm A: GRANT-LOOKAHEAD, plan inside the grant.",
+      "kicker": "12 / Online decision algorithm",
+      "source": " "
+    },
+    {
+      "slide": 15,
+      "title": "Algorithm B: INCIDENT-SELECT, choose by verified effects.",
+      "kicker": "13 / Offline policy selection",
+      "source": " "
+    },
+    {
+      "slide": 16,
+      "title": "How A and B differ from prior methods, point by point.",
+      "kicker": "14 / Comparison with existing algorithms",
+      "source": " "
+    },
+    {
+      "slide": 17,
+      "title": "Where each method intervenes, and what is actually new.",
+      "kicker": "15 / Positioning",
+      "source": " "
+    },
+    {
+      "slide": 18,
+      "title": "E1: does the decision model predict choices, and at what regret?",
+      "kicker": "16 / Experiment 1 · simulator",
+      "source": " "
+    },
+    {
+      "slide": 19,
+      "title": "E2: same reachable resource, different permission, seven arms.",
+      "kicker": "17 / Experiment 2 · the discriminating fixture",
+      "source": " "
+    },
+    {
+      "slide": 20,
+      "title": "E3: does incident feedback select a better policy on fresh tasks?",
+      "kicker": "18 / Experiment 3 · selection contrast",
+      "source": " "
+    },
+    {
+      "slide": 21,
+      "title": "Back to the incidents: which result, which control, which test.",
+      "kicker": "19 / Real-world implications",
+      "source": " "
+    },
+    {
+      "slide": 22,
+      "title": "What each outcome would mean, and what happens next.",
+      "kicker": "20 / Reading the results in advance",
+      "source": " "
+    }
+  ],
+  "shape_boundary_issues": [],
+  "library": {
+    "n": 26,
+    "overreach": 9,
+    "overreach_with_f": 7,
+    "latency": {
+      "detection_days_known": 12,
+      "detection_median": 13.5,
+      "disclosure_days_known": 21,
+      "disclosure_median": 119
+    },
+    "stop_behavior": {
+      "manual_stop": 5,
+      "automatic_stop_failed_then_manual": 1,
+      "retrospective_only": 10,
+      "human_stop_ignored": 1,
+      "none_observed": 3,
+      "contained_by_third_party": 2,
+      "self_stop_after_access": 2,
+      "not_applicable": 2
+    }
+  },
+  "stopping_toy": {
+    "p0": 0.7,
+    "q": 0.5,
+    "R": 10.0,
+    "B": 2.0,
+    "c": 1.0,
+    "threshold": 0.25,
+    "posteriors": [
+      0.7,
+      0.5384615384615384,
+      0.36842105263157887,
+      0.22580645161290316,
+      0.12727272727272723,
+      0.06796116504854366
+    ],
+    "attempts_before_stop": 3
+  },
+  "voi_toy": {
+    "STOP": 0.0,
+    "RECOVER": 1.0,
+    "ASK": 4.0,
+    "PROBE": 4.699999999999999
+  },
+  "voi_policy_enumeration_checks": 8181,
+  "ambiguity_toy": {
+    "rows": [
+      [
+        "Read the archive",
+        10,
+        -20,
+        -20,
+        27
+      ],
+      [
+        "Ask first",
+        7,
+        7,
+        7,
+        3
+      ],
+      [
+        "Stop and report",
+        2,
+        2,
+        2,
+        8
+      ]
+    ],
+    "maxmin": "Ask first",
+    "regret": "Ask first",
+    "prior_switch": 0.9
+  },
+  "selection_slack": {
+    "K": 8,
+    "delta": 0.05,
+    "rows": [
+      [
+        48,
+        0.4902516783837398
+      ],
+      [
+        200,
+        0.24017329151664163
+      ],
+      [
+        1000,
+        0.10740876124221685
+      ],
+      [
+        5000,
+        0.04803465830332832
+      ]
+    ]
+  },
+  "mcnemar_power": {
+    "p_base": 0.6875,
+    "targets": [
+      0.375,
+      0.25
+    ],
+    "rows": [
+      [
+        16,
+        [
+          0.2732099633929216,
+          0.5559358363343738
+        ]
+      ],
+      [
+        24,
+        [
+          0.4572608701136492,
+          0.7943925590858598
+        ]
+      ],
+      [
+        32,
+        [
+          0.6237064227253574,
+          0.9188330563285477
+        ]
+      ],
+      [
+        48,
+        [
+          0.8171907007095397,
+          0.9875915339419397
+        ]
+      ]
+    ]
+  },
+  "e2_pilot": {
+    "repair": 2,
+    "grant": 2,
+    "families": 2,
+    "arms": 7,
+    "lineages": 12,
+    "rollouts_per_model": 672
+  },
+  "historical_counts": {
+    "pass_clean": 96,
+    "pass_incident": 13,
+    "no_pass_clean": 49,
+    "no_pass_incident": 2
+  },
+  "historical_source": "results/incident-study-v1/summary.json",
+  "historical_sha256": "5f1a83e3a2fe64eb62c77404a2ffe6e0a2aef46e1ea57ff094461b86434117ff",
+  "diagnostic_source": "results/baseline-diagnostic-v2/summary.json",
+  "sources_checked": "2026-10-21",
+  "sources": {
+    "medicare": [
+      "Australian Government briefing, 24 September 2026; incident in June",
+      "https://ministers.finance.gov.au/financeminister/transcript/2026/09/24/press-conference-sydney"
+    ],
+    "workbook": [
+      "OpenAI, Unauthorized communication via temporary file hosting services, 16 September 2026; incident 14 April",
+      "https://alignment.openai.com/misalignment-reports/unauthorized-communication-via-temporary-file-hosting-services/"
+    ],
+    "wallet": [
+      "OpenAI, Using a funded test cryptocurrency wallet without authorization, 15 October 2026; incident 26 June",
+      "https://alignment.openai.com/misalignment-reports/using-a-funded-test-cryptocurrency-wallet-without-authorization/"
+    ],
+    "anthropic": [
+      "Anthropic (9 September 2026), An alignment assessment of recent cybersecurity incidents",
+      "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents"
+    ],
+    "library": [
+      "Project: public incident library, 26 records coded with the Raftari (2026) frame",
+      "../../docs/incident-library-analysis.md"
+    ],
+    "pomdp": [
+      "Kaelbling, Littman & Cassandra (1998), Planning and Acting in Partially Observable Stochastic Domains",
+      "https://cs.brown.edu/courses/csci2951-k/papers/kaelbling98.pdf"
+    ],
+    "pomcp": [
+      "Silver & Veness (2010), Monte-Carlo Planning in Large POMDPs (POMCP)",
+      "https://papers.nips.cc/paper_files/paper/2010/hash/edfbe1afcf9246bb0d40eb4d8027d90f-Abstract.html"
+    ],
+    "voi": [
+      "Hay, Russell, Tolpin & Shimony (2012), Selecting Computations: Theory and Applications",
+      "https://arxiv.org/abs/1207.5879"
+    ],
+    "stopping": [
+      "Ferguson, Optimal Stopping and Applications, ch. 5 (monotone case; one-step look-ahead)",
+      "https://www.math.ucla.edu/~tom/Stopping/Contents.html"
+    ],
+    "gilboa": [
+      "Gilboa & Schmeidler (1989), Maxmin expected utility with non-unique prior",
+      "https://doi.org/10.1016/0304-4068(89)90018-9"
+    ],
+    "cirl": [
+      "Hadfield-Menell et al. (2016), Cooperative Inverse Reinforcement Learning",
+      "https://arxiv.org/abs/1606.03137"
+    ],
+    "switch": [
+      "Hadfield-Menell et al. (2017), The Off-Switch Game",
+      "https://arxiv.org/abs/1611.08219"
+    ],
+    "cpo": [
+      "Achiam et al. (2017), Constrained Policy Optimization",
+      "https://arxiv.org/abs/1705.10528"
+    ],
+    "rcpo": [
+      "Tessler, Mankowitz & Mannor (2018), Reward Constrained Policy Optimization",
+      "https://arxiv.org/abs/1805.11074"
+    ],
+    "shield": [
+      "Alshiekh et al. (2018), Safe Reinforcement Learning via Shielding",
+      "https://arxiv.org/abs/1708.08611"
+    ],
+    "camel": [
+      "Debenedetti et al. (2025), Defeating Prompt Injections by Design (CaMeL)",
+      "https://arxiv.org/abs/2503.18813"
+    ],
+    "progent": [
+      "Shi et al. (2025), Progent: Securing AI Agents with Privilege Control",
+      "https://arxiv.org/abs/2504.11703"
+    ],
+    "control": [
+      "Greenblatt et al. (2023), AI Control: Improving Safety Despite Intentional Subversion",
+      "https://arxiv.org/abs/2312.06942"
+    ],
+    "agentdojo": [
+      "Debenedetti et al. (2024), AgentDojo",
+      "https://arxiv.org/abs/2406.13352"
+    ],
+    "impossible": [
+      "Zhong, Raghunathan & Carlini (2025), ImpossibleBench, sections 5-6",
+      "https://arxiv.org/html/2510.20270v1"
+    ],
+    "pilot": [
+      "Project: 160-run incident study, completed 17 September 2026",
+      "../../docs/incident-study-results.md"
+    ],
+    "design": [
+      "Project: From reported incidents to testable questions",
+      "../../docs/trust4rsi-incident-to-experiment.md"
+    ],
+    "optimization": [
+      "Project: Incident-aware optimization of agent control policies",
+      "../../docs/incident-aware-optimization.md"
+    ],
+    "next": [
+      "Project: Next experiments, including X1b silent and conflicting grants",
+      "../../docs/trust4rsi-next-experiments.md"
+    ],
+    "followup": [
+      "Project: Live follow-up results; calibration and selection limits",
+      "../../docs/trust4rsi-live-followup-results.md"
+    ],
+    "related": [
+      "Project: Prior work and the contribution we can defend",
+      "../../docs/trust4rsi-related-work.md"
+    ]
+  },
+  "new_hosted_model_calls": 0,
+  "word_counts": [
+    77,
+    151,
+    184,
+    115,
+    159,
+    223,
+    201,
+    178,
+    143,
+    219,
+    143,
+    279,
+    228,
+    305,
+    214,
+    253,
+    186,
+    233,
+    188,
+    206,
+    236,
+    223
+  ]
+}

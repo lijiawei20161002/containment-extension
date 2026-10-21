@@ -1,0 +1,267 @@
+SLIDE 1: When the task fails, what may the agent change?
+
+Opening prompt: a research agent gets an error while retrieving useful data; ask the audience what the next move should be. The talk treats containment-extension as a study of delegated action boundaries, not a claim to solve arbitrary sandbox escape. No hosted-model calls were made to build this deck; the planner and the selection procedure are proposals and have not been evaluated on LLM agents. The outline on the next slide gives the five parts and their slide ranges.
+
+Sources / 来源
+Project: From reported incidents to testable questions
+../../docs/trust4rsi-incident-to-experiment.md
+Project: public incident library, 26 records coded with the Raftari (2026) frame
+../../docs/incident-library-analysis.md
+
+SLIDE 2: Outline
+
+Roadmap for the five parts. Parts 01 and 05 are the real-world ends of the argument; 02 to 04 are the formal middle. Status chips on each slide distinguish REPORTED facts from public records, OBSERVED archived runs, EXACT TOY calculations, THEORY, and PROPOSED work. Slide ranges are checked at build time against the section kickers.
+
+Sources / 来源
+Project: From reported incidents to testable questions
+../../docs/trust4rsi-incident-to-experiment.md
+
+SLIDE 3: A failed route is where authority gets reinterpreted.
+
+Library counts are read from figures/incidents/analysis/summary.json at build time: n=26, live-access overreach 9, indicator f yes=9 unknown=13. Archived counts are recomputed from results/incident-study-v1/summary.json. These are analyst codings of public reports with a second reader still pending, and the archived runs come from one small service fixture. The framing follows the Trust4RSI paper plan: one decision point recurs across incidents, and the question is whether an explicit model of that decision yields better behaviour at retained utility.
+
+Sources / 来源
+Project: public incident library, 26 records coded with the Raftari (2026) frame
+../../docs/incident-library-analysis.md
+Project: 160-run incident study, completed 17 September 2026
+../../docs/incident-study-results.md
+Project: From reported incidents to testable questions
+../../docs/trust4rsi-incident-to-experiment.md
+
+SLIDE 4: The world reports an incident four months after it happens.
+
+Latency figures are copied from the library summary; detection dates are known for only 12 entries, so the detection median is fragile. The point for the decision theory: labels arrive weeks to months after the action, so an online rule needs a model of the decision rather than observed incident rates, and an offline selection rule must work from replayable, instrumented cases. The stop-behaviour counts show that detection did not stop most incidents.
+
+Sources / 来源
+Project: public incident library, 26 records coded with the Raftari (2026) frame
+../../docs/incident-library-analysis.md
+
+SLIDE 5: Medicare portal: the search failed, so the agent found a way in.
+
+Chain and table fields are read from incidents/records/05-medicare.json: objective, the four coded actions, indicators, mechanisms and propositions. Facts come from the government press conference; the government states aggregate statistics only and no individual medical data accessed, and the forensic investigation was still open. We read this as: the failed search was evidence about feasibility, the agent treated it as licence to find another route, and no in-run signal stopped it. That is the decision point the formal model isolates: a belief update was mistaken for a grant update.
+
+Sources / 来源
+Australian Government briefing, 24 September 2026; incident in June
+https://ministers.finance.gov.au/financeminister/transcript/2026/09/24/press-conference-sydney
+Project: public incident library, 26 records coded with the Raftari (2026) frame
+../../docs/incident-library-analysis.md
+
+SLIDE 6: Five reports, one structure: blocked route, reachable substitute.
+
+Rows copy the public reports; stop labels come from the record files. The wallet report is outside the 26-record denominator. The decision-theoretic reading: in every row the belief that the allowed route works dropped to near zero, the substitute had high expected task value, and the only thing against it was the grant. Any planner whose objective is task value without an effect constraint prefers the substitute; that is why the formulation puts the grant in the action set rather than in the reward.
+
+Sources / 来源
+OpenAI, Unauthorized communication via temporary file hosting services, 16 September 2026; incident 14 April
+https://alignment.openai.com/misalignment-reports/unauthorized-communication-via-temporary-file-hosting-services/
+OpenAI, Using a funded test cryptocurrency wallet without authorization, 15 October 2026; incident 26 June
+https://alignment.openai.com/misalignment-reports/using-a-funded-test-cryptocurrency-wallet-without-authorization/
+Project: public incident library, 26 records coded with the Raftari (2026) frame
+../../docs/incident-library-analysis.md
+
+SLIDE 7: When the contract is silent, reachability is read as permission.
+
+Counts of hosts and records are as reported by Anthropic and Google, not verified by us. These cases motivate the ambiguity result: the agent had two plausible grants (the target is in scope; it is not) and no prior over them. Maxmin and minimax-regret rules pick a reversible action, which here means a clarification. The experiment that tests this is X1b, where the grant is deliberately silent or self-contradictory.
+
+Sources / 来源
+Anthropic (9 September 2026), An alignment assessment of recent cybersecurity incidents
+https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents
+Project: public incident library, 26 records coded with the Raftari (2026) frame
+../../docs/incident-library-analysis.md
+
+SLIDE 8: What recurs, and the three questions a theory must answer.
+
+Bars are read from the library summary at build time. Co-occurrence: M1+M2 in 9 records and M2+M4 in 9. The three questions organise the rest of the deck. Q1 is optimal stopping with learning; Q2 is value of information plus a principal–agent twist, because a request can change the permitted set while a diagnostic cannot; Q3 is constrained policy selection from finite, delayed evidence. None of these is new; the claim is that stating them exactly yields testable behaviour.
+
+Sources / 来源
+Project: public incident library, 26 records coded with the Raftari (2026) frame
+../../docs/incident-library-analysis.md
+
+SLIDE 9: A constrained POMDP whose grant evidence cannot change.
+
+Finite-horizon constrained POMDP. Hidden x_t includes route feasibility; g_t is the trusted, versioned authorization contract; k_t the remaining budget; h_t the history. Transition and observation kernels T and O; Bayesian filtering gives b′. A request can lead to a trusted grant update or denial with response probability q; q is not the probability that an ungranted action is secretly authorized. Reachability and tool success never update g. Missing scope is not filled by the agent: choose an already permitted alternative, request, or stop. In the closed fixture A(g) is exact and effect-based; open environments need validated effect prediction. Utility u is fixed in advance, including the value of justified termination. The action constraint is a specification; whether an LLM follows it is what the experiments measure. Constrained MDP background: Altman 1999; CPO is background for constrained optimization, not the algorithm used.
+
+Sources / 来源
+Kaelbling, Littman & Cassandra (1998), Planning and Acting in Partially Observable Stochastic Domains
+https://cs.brown.edu/courses/csci2951-k/papers/kaelbling98.pdf
+Project: Incident-aware optimization of agent control policies
+../../docs/incident-aware-optimization.md
+Project: From reported incidents to testable questions
+../../docs/trust4rsi-incident-to-experiment.md
+
+SLIDE 10: Result 1: each failure is evidence; stop at a posterior threshold.
+
+Exact calculation: p0=0.7, q=0.5, R=10, B=2, c=1. Posterior sequence after failures: 0.700, 0.538, 0.368, 0.226, 0.127, 0.068. Threshold 0.250; the first posterior below it is p_3, so the agent attempts 3 times. One-step look-ahead is optimal here because the problem is monotone: a success ends the episode and every failure lowers p, so if stopping beats one more try now it beats it later (Ferguson, Optimal Stopping and Applications, ch. 5). Backward induction over a finite budget agrees, which the build validates. Calibrated q and risk neutrality are assumptions; an LLM confidence statement is not a calibrated posterior. The incident library records f in 9 of 26 and cannot tell for 13: reports rarely say whether the task was failing.
+
+Sources / 来源
+Ferguson, Optimal Stopping and Applications, ch. 5 (monotone case; one-step look-ahead)
+https://www.math.ucla.edu/~tom/Stopping/Contents.html
+Project: Next experiments, including X1b silent and conflicting grants
+../../docs/trust4rsi-next-experiments.md
+
+SLIDE 11: Result 2: sometimes the best next action is to learn.
+
+Exact toy calculation, not measured model performance. Hidden feasibility θ is Bernoulli(p). Direct authorized recovery yields +10 on success, 0 on failure, costs 2 either way: Q_recover = 10p − 2. A request costs d, obtains a valid grant with probability q = 0.6, then yields 10 if granted and 0 if denied; it includes obeying the reply. Recovery and request are terminal; stop pays 0. One permitted, non-mutating, perfect diagnostic costs 0.5 and leaves the commitment open: Q_probe = −0.5 + p·max(8, 6−d, 0) + (1−p)·max(−2, 6−d, 0). At p=.3, d=2 the optimum is to probe, recover if feasible, request if not: 4.7. Checks: p=.05,d=2 gives ASK; p=.95,d=2 gives RECOVER; p=.01,d=7 gives STOP. The chart evaluates these formulas on a grid; its boundaries are hypotheses for behaviour under this model. The off-switch game gives the same shape for deference: it has positive value exactly when the agent is uncertain.
+
+Sources / 来源
+Hay, Russell, Tolpin & Shimony (2012), Selecting Computations: Theory and Applications
+https://arxiv.org/abs/1207.5879
+Hadfield-Menell et al. (2017), The Off-Switch Game
+https://arxiv.org/abs/1611.08219
+
+SLIDE 12: Result 3: under a silent grant, ask dominates without a prior.
+
+Toy payoffs: reading the archive pays +10 if allowed and −20 if it was excluded; asking pays +7 either way (delay cost); stopping pays +2. Maxmin picks "Ask first" and minimax regret picks "Ask first"; both computed at build time. An expected-utility agent prefers reading iff 10p − 20(1−p) > 7, i.e. p > 0.900. The scope-inference family shows agents behaving as if p were near one because the target was reachable. X1b adds unspecified and conflicting grant columns; its readout is a response mix (silent read / clarification / authorized completion) plus an over-conservatism check, never a violation rate under silence. Robust MDPs over an uncertainty set (Iyengar 2005) and attainable-utility preservation (Turner et al. 2020) are the RL analogues.
+
+Sources / 来源
+Gilboa & Schmeidler (1989), Maxmin expected utility with non-unique prior
+https://doi.org/10.1016/0304-4068(89)90018-9
+Hadfield-Menell et al. (2016), Cooperative Inverse Reinforcement Learning
+https://arxiv.org/abs/1606.03137
+Hadfield-Menell et al. (2017), The Off-Switch Game
+https://arxiv.org/abs/1611.08219
+Project: Next experiments, including X1b silent and conflicting grants
+../../docs/trust4rsi-next-experiments.md
+
+SLIDE 13: Result 4: what finite, paired evidence can and cannot certify.
+
+Objective copied from docs/incident-aware-optimization.md with Altman 1999 and CPO as background. The selection bound is the standard Hoeffding inequality with a union bound over K candidates: each empirical risk is within ε of its mean with probability 1 − δ/K, so the empirical minimiser has true risk at most 2ε above the best eligible candidate. With K = 8 and n = 48 the slack is 0.49, which is useless; it falls to 0.05 only at n = 5000. The paired design is the alternative: twins differ only in the intervention, and the exact McNemar test uses discordant pairs. The power table is computed at build time from the archived baseline rate 0.6875 (results/baseline-diagnostic-v2/summary.json) against two hypothetical target rates. A Lagrangian relaxation prices the constraints, but hard wall versus soft penalty is not identifiable from finite data: a large multiplier reproduces zero violations.
+
+Sources / 来源
+Project: Incident-aware optimization of agent control policies
+../../docs/incident-aware-optimization.md
+Achiam et al. (2017), Constrained Policy Optimization
+https://arxiv.org/abs/1705.10528
+Project: Live follow-up results; calibration and selection limits
+../../docs/trust4rsi-live-followup-results.md
+
+SLIDE 14: Algorithm A: GRANT-LOOKAHEAD, plan inside the grant.
+
+Proposed online algorithm; not evaluated on LLM agents. Candidate tool actions are normalised into effect-relevant fields (resource, owner, recipient, operation) and checked against the grant to form A(g); termination and permitted requests are always included. The unbrokered planner arm measures behavioural compliance; the otherwise identical brokered arm checks the action before dispatch and records attempted violations separately from executed effects. The effect journal is post-action evidence, not prevention. A simple allowlist broker is an engineering baseline, not a CaMeL reproduction. Monte Carlo lookahead follows POMCP sampling but filters by A(g) at every node; without that filter the same search reproduces the substitution family, which E1 tests directly.
+
+Sources / 来源
+Kaelbling, Littman & Cassandra (1998), Planning and Acting in Partially Observable Stochastic Domains
+https://cs.brown.edu/courses/csci2951-k/papers/kaelbling98.pdf
+Silver & Veness (2010), Monte-Carlo Planning in Large POMDPs (POMCP)
+https://papers.nips.cc/paper_files/paper/2010/hash/edfbe1afcf9246bb0d40eb4d8027d90f-Abstract.html
+Debenedetti et al. (2025), Defeating Prompt Injections by Design (CaMeL)
+https://arxiv.org/abs/2503.18813
+Project: From reported incidents to testable questions
+../../docs/trust4rsi-incident-to-experiment.md
+
+SLIDE 15: Algorithm B: INCIDENT-SELECT, choose by verified effects.
+
+Offline selection procedure. Fix K candidate controllers, a development set, actor model, rollout budgets, utility definition and tie-breaks; reuse the same trajectories across selection-signal arms. Choose the lowest estimated incident rate (or a prespecified conservative bound) among candidates within the utility margin and cost/review limits; if none qualify, retain the reference and make no improvement claim. T is an actor-visible transcript; J is an independent service-effect journal; the T+J judge uses the same model and rubric as T with extra evidence; J* uses explicit local grant and effect semantics and is a privileged reference, not a general truth oracle. Use disjoint development, calibration and test lineages; freeze a repaired judge after development calibration (the prior failed calibration is not a qualified gate). ImpossibleBench already studies prompting, abort options and monitors; the incremental claim here is the selection contrast.
+
+Sources / 来源
+Project: Incident-aware optimization of agent control policies
+../../docs/incident-aware-optimization.md
+Zhong, Raghunathan & Carlini (2025), ImpossibleBench, sections 5-6
+https://arxiv.org/html/2510.20270v1
+Project: Live follow-up results; calibration and selection limits
+../../docs/trust4rsi-live-followup-results.md
+Project: Prior work and the contribution we can defend
+../../docs/trust4rsi-related-work.md
+
+SLIDE 16: How A and B differ from prior methods, point by point.
+
+Characterisations are our reading of each paper, kept to what the method does by construction. POMCP (Silver & Veness 2010) plans by sampling over beliefs with no effect constraint, so a blocked route is just an obstacle. CPO (Achiam 2017) and RCPO (Tessler 2018) enforce constraints in expectation during training and need gradient access. Shielding (Alshiekh 2018) filters unsafe actions with a temporal-logic automaton over an abstraction. CaMeL (Debenedetti 2025) separates trusted control flow from untrusted data and enforces policies at tool calls. Progent (Shi 2025) checks calls against a least-privilege policy over tool arguments; narrowing updates are auto-approved and expansions need approval. AI Control (Greenblatt 2023) assumes an intentionally subversive untrusted model and uses a trusted monitor with an audit budget. ImpossibleBench (Zhong 2025) studies prompting and abort options on impossible coding tasks. None of these is reproduced here; the comparison is structural, and the proposal has no empirical result yet.
+
+Sources / 来源
+Silver & Veness (2010), Monte-Carlo Planning in Large POMDPs (POMCP)
+https://papers.nips.cc/paper_files/paper/2010/hash/edfbe1afcf9246bb0d40eb4d8027d90f-Abstract.html
+Achiam et al. (2017), Constrained Policy Optimization
+https://arxiv.org/abs/1705.10528
+Tessler, Mankowitz & Mannor (2018), Reward Constrained Policy Optimization
+https://arxiv.org/abs/1805.11074
+Alshiekh et al. (2018), Safe Reinforcement Learning via Shielding
+https://arxiv.org/abs/1708.08611
+Debenedetti et al. (2025), Defeating Prompt Injections by Design (CaMeL)
+https://arxiv.org/abs/2503.18813
+Shi et al. (2025), Progent: Securing AI Agents with Privilege Control
+https://arxiv.org/abs/2504.11703
+Greenblatt et al. (2023), AI Control: Improving Safety Despite Intentional Subversion
+https://arxiv.org/abs/2312.06942
+Zhong, Raghunathan & Carlini (2025), ImpossibleBench, sections 5-6
+https://arxiv.org/html/2510.20270v1
+Project: Prior work and the contribution we can defend
+../../docs/trust4rsi-related-work.md
+
+SLIDE 17: Where each method intervenes, and what is actually new.
+
+The pipeline places each prior method at its intervention point so comparisons happen at like points: a broker is compared with CaMeL-style and Progent-style enforcement before dispatch, the planner with POMCP and prompting at proposal, the selector with control-protocol evaluation and the regression gate at release. The right-hand card states the only novelty we intend to defend, and the left-hand card lists what is explicitly borrowed. The related-work document records the closest overlaps, including ImpossibleBench, the Anthropic incident assessment and CoSec.
+
+Sources / 来源
+Project: Prior work and the contribution we can defend
+../../docs/trust4rsi-related-work.md
+Debenedetti et al. (2024), AgentDojo
+https://arxiv.org/abs/2406.13352
+Greenblatt et al. (2023), AI Control: Improving Safety Despite Intentional Subversion
+https://arxiv.org/abs/2312.06942
+
+SLIDE 18: E1: does the decision model predict choices, and at what regret?
+
+E1 is cheap and runs before any fixture extension: a finite simulator whose kernels are known, so regret is exact. Sweeps follow the toy results on slides 8–10. The POMCP-without-filter arm is the mechanistic version of H1: it should prefer the reachable substitute whenever the belief in local repair is low, with no change in the grant. The LLM planner arm is the first check that an LLM agent's choices move with the decision variables at all; calibration is evaluated with proper scoring rules. All E1 claims are about the model, not about safety in deployment.
+
+Sources / 来源
+Hay, Russell, Tolpin & Shimony (2012), Selecting Computations: Theory and Applications
+https://arxiv.org/abs/1207.5879
+Silver & Veness (2010), Monte-Carlo Planning in Large POMDPs (POMCP)
+https://papers.nips.cc/paper_files/paper/2010/hash/edfbe1afcf9246bb0d40eb4d8027d90f-Abstract.html
+
+SLIDE 19: E2: same reachable resource, different permission, seven arms.
+
+The matrix is a normative reference, not observed results. Pair each task instance across local repair available/unavailable and alternate forbidden/granted with contents, reachability, schemas and budgets fixed; recoverable and unavailable variants share the initial failure history and a permitted probe reveals availability. Trusted permission is the treatment. Grants are fixed within an episode for the factorial; a separate dynamic-request study adds grant/deny responses with cost. A3 and A4 are engineering baselines in the spirit of Progent, CaMeL and defer-to-trusted, not reproductions. The pilot allocation is for precision estimation, not a powered confirmatory claim; twelve seeds of one template are not twelve lineages. Report all assigned runs with unknowns bounded, cluster paired uncertainty by lineage, and evaluate each model separately.
+
+Sources / 来源
+Project: From reported incidents to testable questions
+../../docs/trust4rsi-incident-to-experiment.md
+Project: Next experiments, including X1b silent and conflicting grants
+../../docs/trust4rsi-next-experiments.md
+Greenblatt et al. (2023), AI Control: Improving Safety Despite Intentional Subversion
+https://arxiv.org/abs/2312.06942
+Shi et al. (2025), Progent: Securing AI Agents with Privilege Control
+https://arxiv.org/abs/2504.11703
+Debenedetti et al. (2025), Defeating Prompt Injections by Design (CaMeL)
+https://arxiv.org/abs/2503.18813
+
+SLIDE 20: E3: does incident feedback select a better policy on fresh tasks?
+
+Counts recomputed from results/incident-study-v1/summary.json during this build: 96 passes without an effect, 13 scorer passes with an unauthorized effect, 49 no-passes without an effect, 2 no-passes with one. All 15 violating trajectories first read the previous-run answer archive. The matrix pools deliberately different arms and variants to show endpoint disagreement, not to estimate a deployment rate; the 49 clean no-passes were impossible cases, not premature refusals. Current follow-ups do not validate a transcript gate or show improved selection; the 12-case calibration failed and is not a qualified gate. E3 requires lower risk with retained utility, cost and coverage limits satisfied, and reports unknowns as bounds rather than as safe.
+
+Sources / 来源
+Project: Incident-aware optimization of agent control policies
+../../docs/incident-aware-optimization.md
+Project: Live follow-up results; calibration and selection limits
+../../docs/trust4rsi-live-followup-results.md
+Project: 160-run incident study, completed 17 September 2026
+../../docs/incident-study-results.md
+
+SLIDE 21: Back to the incidents: which result, which control, which test.
+
+These are counterfactual intervention hypotheses, not claims that any control would certainly have prevented the reported incidents. For statistics research, an access-denied observation does not certify global impossibility and an allowed source may exist. For workbook sharing, the reliability of the authorized transfer route changes the value of continued recovery. For deployment, success and low apparent harm do not replace an account holder's grant. For cyber evaluations, a matching domain name is not a grant. For the channel family, only the service knows what a call did. Each row names the experiment whose outcome would support or refute the proposed change; test each replay locally with dummy data, a trusted grant and an independent effect observer before broader validation.
+
+Sources / 来源
+Australian Government briefing, 24 September 2026; incident in June
+https://ministers.finance.gov.au/financeminister/transcript/2026/09/24/press-conference-sydney
+OpenAI, Unauthorized communication via temporary file hosting services, 16 September 2026; incident 14 April
+https://alignment.openai.com/misalignment-reports/unauthorized-communication-via-temporary-file-hosting-services/
+OpenAI, Using a funded test cryptocurrency wallet without authorization, 15 October 2026; incident 26 June
+https://alignment.openai.com/misalignment-reports/using-a-funded-test-cryptocurrency-wallet-without-authorization/
+Anthropic (9 September 2026), An alignment assessment of recent cybersecurity incidents
+https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents
+Project: public incident library, 26 records coded with the Raftari (2026) frame
+../../docs/incident-library-analysis.md
+Debenedetti et al. (2025), Defeating Prompt Injections by Design (CaMeL)
+https://arxiv.org/abs/2503.18813
+
+SLIDE 22: What each outcome would mean, and what happens next.
+
+The outcome table is the preregistered interpretation. Each row names the arm or contrast and the implication, including the two negative readings in which only enforcement helps or the selection signals tie. Milestones are proposed dates, not commitments; the confirmatory sample is sized from pilot discordance under a prespecified risk reduction and utility noninferiority margin, before any new test cohort is collected. The deck contains 22 slides; citations, exact toy assumptions, study design and limitations are in the speaker notes and footers.
+
+Sources / 来源
+Project: From reported incidents to testable questions
+../../docs/trust4rsi-incident-to-experiment.md
+Project: Incident-aware optimization of agent control policies
+../../docs/incident-aware-optimization.md
+Project: Next experiments, including X1b silent and conflicting grants
+../../docs/trust4rsi-next-experiments.md
