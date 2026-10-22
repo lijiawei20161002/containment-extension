@@ -3,6 +3,7 @@ from __future__ import annotations
 import importlib.util
 import sys
 from pathlib import Path
+from shutil import copyfile
 
 HERE=Path(__file__).resolve().parent
 ROOT=HERE.parents[1]
@@ -67,3 +68,4 @@ if __name__=='__main__':
               '--target',str(target),'--qa',str(HERE/'qa/layout-validation.json'),
               '--title','When the task fails: a decision theory of agent boundaries']
     module.tr.main()
+    copyfile(target, HERE/'containment-decision-story.pdf')

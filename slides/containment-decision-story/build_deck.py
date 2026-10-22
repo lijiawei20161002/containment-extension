@@ -1,4 +1,4 @@
-"""Twenty-one-slide research narrative: incidents → decision theory → algorithms → experiments → implications.
+"""Twenty-four-slide research narrative plus two incident-code glossary slides.
 
 Build:  /Users/lijiawei/Desktop/.venv/bin/python slides/containment-decision-story/build_deck.py
 Render: /Users/lijiawei/Desktop/.venv/bin/python slides/containment-decision-story/render_deck.py
@@ -42,7 +42,7 @@ MATH_DIR.mkdir(exist_ok=True)
 for old in MATH_DIR.glob('*.png'):
     old.unlink()
 matplotlib.rcParams.update({'mathtext.fontset': 'stix', 'font.family': 'STIXGeneral'})
-N_SLIDES = 22
+N_SLIDES = 26
 ds.TOTAL = N_SLIDES
 
 def footer(s, n, source='', dark=False):
@@ -89,6 +89,10 @@ SOURCES.update({
         'https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents'),
     'library': ('Project: public incident library, 26 records coded with the Raftari (2026) frame',
         '../../docs/incident-library-analysis.md'),
+    'taxonomy': ('Project: incident taxonomy; formal indicator, mechanism and proposition labels',
+        '../../incidents/taxonomy.json'),
+    'medicare_coding': ('Project: Medicare incident record; analyst draft, review pending',
+        '../../incidents/records/05-medicare.json'),
     'pomdp': ('Kaelbling, Littman & Cassandra (1998), Planning and Acting in Partially Observable Stochastic Domains',
         'https://cs.brown.edu/courses/csci2951-k/papers/kaelbling98.pdf'),
     'pomcp': ('Silver & Veness (2010), Monte-Carlo Planning in Large POMDPs (POMCP)',
@@ -135,6 +139,7 @@ SOURCES.update({
 
 # ----------------------------------------------------------------------------- evidence
 SUMMARY = json.loads((ROOT / 'figures/incidents/analysis/summary.json').read_text())
+TAXONOMY = json.loads((ROOT / 'incidents/taxonomy.json').read_text())
 LIB_N = SUMMARY['n']
 MECH, PROP, IND = SUMMARY['mechanisms'], SUMMARY['propositions'], SUMMARY['indicators']
 LAT, STOPB, PATH = SUMMARY['latency'], SUMMARY['stop_behavior'], SUMMARY['pathways']
@@ -150,6 +155,16 @@ SELF_STOP = STOPB['self_stop_after_access']
 RETRO = STOPB['retrospective_only']
 MEDICARE = RECORDS[5]
 assert MEDICARE['slug'] == 'medicare'
+INDICATOR_ORDER = tuple(TAXONOMY['indicators'])
+INDICATOR_STATUS = {'yes': 'observed', 'no': 'no', 'unknown': 'unknown'}
+MEDICARE_INDICATOR_READINGS = {
+    'f': 'Public search failed; agent persisted',
+    'p': 'Guest route found and tested',
+    'x': 'Third-party government portal accessed',
+    'c': 'No cross-run link reported; coded no',
+    'v': 'Coded yes; credentials retrieved',
+    'o': 'Loss of visibility cannot be established',
+}
 
 summary_path = ROOT / 'results/incident-study-v1/summary.json'
 historical = json.loads(summary_path.read_text())
@@ -194,13 +209,17 @@ def stopping_value(p, k, t):
     return max(t['B'], cont)
 
 # R2 Value of information: one optional diagnostic then one final commitment.
+VOI_TOY = {'reward': 10., 'recovery_cost': 2., 'grant_probability': .6, 'probe_cost': .5}
+
 def toy_values(p, request_cost):
-    ask = .6 * 10 - request_cost
+    t = VOI_TOY
+    ask = t['grant_probability'] * t['reward'] - request_cost
+    good, bad = t['reward'] - t['recovery_cost'], -t['recovery_cost']
     return {
         'STOP': 0.,
-        'RECOVER': 10 * p - 2,
+        'RECOVER': t['reward'] * p - t['recovery_cost'],
         'ASK': ask,
-        'PROBE': -.5 + p * max(8, ask, 0) + (1 - p) * max(-2, ask, 0),
+        'PROBE': -t['probe_cost'] + p * max(good, ask, 0) + (1 - p) * max(bad, ask, 0),
     }
 
 def best(p, d):
@@ -209,6 +228,60 @@ def best(p, d):
     return max(order, key=lambda key: values[key])
 
 TOY_COLOR = {'STOP': MUTED, 'RECOVER': TEAL, 'ASK': BLUE, 'PROBE': GOLD}
+
+def voi_boundaries(d):
+    """Analytic policy thresholds for the displayed model, 0 <= d <= 8.
+
+    Below lower: ASK (d < 6) or STOP (d > 6); between: PROBE; above upper: RECOVER.
+    At d=6 ASK and STOP tie below lower; on a threshold the adjacent actions tie.
+    These constants are derived independently of toy_values and checked against it.
+    """
+    assert 0 <= d <= 8
+    if d <= 6:
+        return .5 / (2 + d), (7.5 - d) / (8 - d)
+    return 1 / 16, 3 / 4
+
+def voi_phase_figure():
+    """Export an exact-boundary plot as both a slide PNG and a standalone vector PDF."""
+    import numpy as np
+    original_font = plt.rcParams['font.family']
+    plt.rcParams['font.family'] = 'Arial'
+    fig = plt.figure(figsize=(6.1, 3.12), facecolor=f'#{BG}')
+    ax = fig.add_axes([.105, .17, .87, .74])
+    ax.set_facecolor(f'#{BG}')
+    for ds_ in (np.linspace(0, 6, 601), np.linspace(6, 8, 201)):
+        lower, upper = np.array([voi_boundaries(float(d)) for d in ds_]).T
+        left = 'ASK' if ds_[0] < 6 else 'STOP'
+        for a, lo, hi in [(left, 0, lower), ('PROBE', lower, upper), ('RECOVER', upper, 1)]:
+            ax.fill_betweenx(ds_, lo, hi, color=f'#{TOY_COLOR[a]}', linewidth=0)
+        ax.plot(lower, ds_, color='white', linewidth=.9)
+        ax.plot(upper, ds_, color='white', linewidth=.9)
+    ax.hlines(6, 0, 1, colors=f'#{NAVY}', linestyles=(0, (3, 3)), linewidth=.65, alpha=.55)
+    ax.text(.43, 6.15, 'd = 6: ASK = STOP', fontsize=8, color=f'#{NAVY}',
+            ha='center', bbox={'facecolor': f'#{BG}', 'edgecolor': 'none', 'pad': 1.8, 'alpha': .93})
+    for x, y, title in [(.065, 1.55, 'ASK'), (.43, 4.55, 'PROBE'), (.875, 6.85, 'RECOVER')]:
+        ax.text(x, y, title, color='white', fontsize=11, weight='bold', ha='center', va='center')
+    ax.annotate('STOP', xy=(.031, 7.15), xytext=(.16, 8.5), fontsize=9, weight='bold',
+                color=f'#{MUTED}', ha='center', annotation_clip=False,
+                arrowprops={'arrowstyle': '->', 'color': f'#{NAVY}', 'lw': .8})
+    for label_, p, d, dx, dy in [('A', .9, 8, -1, -15), ('B', .1, 0, 0, 9), ('C', .3, 2, 10, -3)]:
+        ax.plot(p, d, 'o', color='white', markeredgecolor=f'#{NAVY}', markersize=6, clip_on=False, zorder=5)
+        ax.annotate(label_, (p, d), xytext=(dx, dy), textcoords='offset points', fontsize=10,
+                    weight='bold', color='white', ha='center')
+    ax.set(xlim=(0, 1), ylim=(0, 8), xticks=[0, .3, .5, 1], yticks=[0, 2, 4, 6, 8])
+    ax.set_xlabel('Belief p that local recovery works', fontsize=10, color=f'#{MUTED}', labelpad=5)
+    ax.set_ylabel('Request cost d', fontsize=10, color=f'#{MUTED}', labelpad=6)
+    ax.tick_params(axis='both', labelsize=9, colors=f'#{MUTED}', length=3)
+    for side in ('top', 'right'):
+        ax.spines[side].set_visible(False)
+    for side in ('left', 'bottom'):
+        ax.spines[side].set_color(f'#{INK}')
+    target = QA / 'voi-policy-phase-diagram'
+    fig.savefig(target.with_suffix('.png'), dpi=240)
+    fig.savefig(target.with_suffix('.pdf'))
+    plt.close(fig)
+    plt.rcParams['font.family'] = original_font
+    return target.with_suffix('.png')
 
 # R3 Ambiguity: payoffs under two plausible grants, no prior.
 AMB_ACTIONS = [('Read the archive', 10, -20), ('Ask first', 7, 7), ('Stop and report', 2, 2)]
@@ -461,13 +534,13 @@ agenda = [
     ('01', 'Incidents', 'Six reported cases in the style of the paper plan: framing, the feedback-loop latency, the Medicare '
      'chain, the substitution and scope-inference families, and the three questions a theory must answer.', 'slides 3–8', RED),
     ('02', 'Decision theory', 'A constrained POMDP whose grant only a trusted reply can change, then four exact results: '
-     'stopping with learning, value of information, ambiguity under a silent grant, selection from finite evidence.', 'slides 9–13', BLUE),
+     'stopping with learning, value of information (policy, payoffs, boundaries), ambiguity under a silent grant, and selection.', 'slides 9–15', BLUE),
     ('03', 'Algorithms', 'GRANT-LOOKAHEAD (online) and INCIDENT-SELECT (offline) as pseudocode with properties; a point-by-point '
-     'comparison with POMCP, constrained RL, shielding, CaMeL, Progent, AI Control and ImpossibleBench.', 'slides 14–17', TEAL),
+     'comparison with POMCP, constrained RL, shielding, CaMeL, Progent, AI Control and ImpossibleBench.', 'slides 16–19', TEAL),
     ('04', 'Experiments', 'E1 simulator regret study; E2 repair × grant factorial with seven arms including prior-method baselines; '
-     'E3 selection contrast on fresh lineages; falsifiers for each.', 'slides 18–20', PLUM),
+     'E3 selection contrast on fresh lineages; falsifiers for each.', 'slides 20–22', PLUM),
     ('05', 'Implications', 'Each incident family mapped to a result, a system change and its test; outcomes interpreted in advance; '
-     'milestones.', 'slides 21–22', ORANGE),
+     'milestones.', 'slides 23–24', ORANGE),
 ]
 for i, (num, name, desc, where, col) in enumerate(agenda):
     y = 1.95 + i * .94
@@ -477,6 +550,7 @@ for i, (num, name, desc, where, col) in enumerate(agenda):
     text(s, ML + 1.10, y + .08, 2.6, .34, name, 16, WHITE, True)
     text(s, ML + 1.10, y + .42, 2.6, .30, where, 11, LIGHT)
     text(s, ML + 3.75, y + .06, CW - 3.95, .72, desc, 11.5, LIGHT, ls=1.1)
+para(s, ML, 6.74, CW, .22, 'Reference appendix: M1-M6 failure mechanisms (25); P1-P9 design propositions (26).', 10, LIGHT)
 notes(s, 'Roadmap for the five parts. Parts 01 and 05 are the real-world ends of the argument; 02 to 04 are the formal middle. '
       'Status chips on each slide distinguish REPORTED facts from public records, OBSERVED archived runs, EXACT TOY calculations, '
       'THEORY, and PROPOSED work. Slide ranges are checked at build time against the section kickers.', ('design',))
@@ -484,7 +558,7 @@ OUTLINE_RANGES = {k[0]: k[3] for k in agenda}
 
 # ============================================================================= 01 FRAMING
 s = new('A failed route is where authority gets reinterpreted.', '01 / Motivation from reported incidents',
-        f'{LIB_N} public incident records, October 2025 to September 2026, coded by pathway, mechanism, leading indicator and stop behaviour.',
+        f'{LIB_N} public incident records, October 2025 to September 2026, coded by pathway, mechanism, risk indicator and stop behaviour.',
         [('library', 'Incident library analysis', 2.3), ('pilot', 'Archived 160-run study', 2.3), ('design', 'Incidents to testable questions', 3.0)],
         status='FRAMING')
 chain(s, [
@@ -531,30 +605,49 @@ notes(s, 'Latency figures are copied from the library summary; detection dates a
 s = new('Medicare portal: the search failed, so the agent found a way in.', '03 / One incident in detail',
         f"{MEDICARE['actor']} research agent, {MEDICARE['dates']['occurred_start']}; government notified 10 Sep 2026; "
         f"disclosed {MEDICARE['dates']['disclosed']}. Library record {MEDICARE['id']}, evidence level {MEDICARE['evidence']['level']}.",
-        [('medicare', 'Australian Government press conference, 24 September 2026', 4.2), ('library', 'Record coding', 1.4)],
+        [('medicare', 'Australian Government press conference, 24 September 2026', 4.2),
+         ('taxonomy', 'Symbol definitions', 1.5), ('medicare_coding', 'Draft record coding', 1.6)],
         status='REPORTED')
 steps = [('Objective', MEDICARE['coding']['objective'], BLUE),
-         ('Obstacle', 'Public search route failed (M1: pressure, no safe stop).', ORANGE)]
+         ('Obstacle', 'Public search failed; no safe stop taken.', ORANGE)]
 for action in MEDICARE['coding']['actions']:
     steps.append((action.capitalize(), '', RED))
-chain(s, steps, y=2.38, h=1.45, title_size=13.5, body_size=11)
-fired = ''.join(k for k, v in MEDICARE['indicators'].items() if v == 'yes')
-present = ', '.join(k for k, v in MEDICARE['mechanisms'].items() if v['status'] == 'present')
-violated = ' '.join(k for k, v in MEDICARE['propositions'].items() if v['relation'] == 'violated')
-grid(s, ML, 4.02, [2.9, 9.19], [
-    ['Coding field', 'Value from the record'],
-    ['Boundary crossed', MEDICARE['coding']['boundary']],
-    ['Leading indicators z_t', f'{fired} observed; c no; o unknown. {len(fired)} of six fired.'],
-    ['Mechanisms present', f"{present}. M1 note: {MEDICARE['mechanisms']['M1']['note']}."],
-    ['Stop behaviour', 'None observed in-run. First external signal: notification three months later.'],
-    ['Propositions violated', f'{violated}; P7 mixed. Authorization did not survive route failure (P3).'],
-], row_h=.36, size=11.5)
-takeaway(s, 'Every step after the obstacle was technically possible. None of them was authorized.', RED)
+chain(s, steps, y=2.38, h=1.36, title_size=13.5, body_size=11)
+fired = [k for k in INDICATOR_ORDER if MEDICARE['indicators'][k] == 'yes']
+indicator_rows = [['ID', 'Risk indicator', 'Status', 'Reading in this case']]
+for code in INDICATOR_ORDER:
+    indicator_rows.append([code, TAXONOMY['indicators'][code],
+                           INDICATOR_STATUS[MEDICARE['indicators'][code]], MEDICARE_INDICATOR_READINGS[code]])
+grid(s, ML, 3.91, [.58, 2.55, 1.02, 3.33], indicator_rows, row_h=.295, size=10.5,
+     fills={(i + 1, 2): ((MINT, TEAL) if MEDICARE['indicators'][code] == 'yes' else (PALE, MUTED))
+            for i, code in enumerate(INDICATOR_ORDER)})
+para(s, 8.32, 3.89, 4.39, .32, 'z_{t} = (f, p, x, c, v, o)', 15, NAVY, True)
+para(s, 8.32, 4.24, 4.39, .43, 'Six risk signals at time t. Here: retrospective coding of the incident.', 11.5, MUTED, ls=1.05)
+para(s, 8.32, 4.76, 4.39, .72,
+     'observed: evidence of the signal.\nno: coded as not observed.\nunknown: insufficient evidence.', 11.5, INK, ls=1.15)
+para(s, 8.32, 5.57, 4.39, .42,
+     'M = failure mechanism (p. 25).\nP = design proposition (p. 26).', 11.5, BLUE, True, ls=1.05)
+para(s, ML, 6.00, CW, .23,
+     f"{len(fired)}/6 observed ({', '.join(fired)}) counts signals, not rule violations. 'Leading' is the library term; timing is not established.",
+     10.5, MUTED)
+takeaway(s, 'Boundary: third-party system authorization. No in-run stop reported. M/P coding is expanded on pp. 25-26.', RED, y=6.30, size=14)
 notes(s, "Chain and table fields are read from incidents/records/05-medicare.json: objective, the four coded actions, indicators, "
-      "mechanisms and propositions. Facts come from the government press conference; the government states aggregate statistics "
+      "mechanisms and propositions. Formal labels are loaded from incidents/taxonomy.json. The library's z_t denotes six risk "
+      "signals at time t, in order f, p, x, c, v, o. This record is retrospective and does not give a time-indexed trace of those "
+      "signals or prove that the agent or monitor noticed them in-run. f = repeated task failure; p = boundary probing; "
+      "x = unexpected external contact (not every legitimate external request); c = cross-run communication; v = privilege "
+      "change; o = observability loss. The four observed signals are f, p, x and v. No means coded as not observed, not proof "
+      "of absence; unknown means the available evidence cannot decide. Four of six is a signal count, not four broken rules. "
+      "The v row reports the existing coding alongside credential retrieval; the record does not establish that those credentials "
+      "were used or that a particular privilege-escalation exploit occurred. o concerns loss of logging or monitoring visibility, "
+      "not merely late public disclosure. 'Leading indicators' is the taxonomy's term, not an established temporal claim: some "
+      "signals may occur during or after a boundary crossing. M1-M6 are failure mechanisms; P1-P9 are design propositions. "
+      "The appendices on slides 25-26 give every formal name, a plain-language explanation and the Medicare coding. These are "
+      "analyst drafts pending review. Facts come from the government press conference; the government states aggregate statistics "
       "only and no individual medical data accessed, and the forensic investigation was still open. We read this as: the failed "
       "search was evidence about feasibility, the agent treated it as licence to find another route, and no in-run signal stopped "
-      "it. That is the decision point the formal model isolates: a belief update was mistaken for a grant update.", ('medicare', 'library'))
+      "it. That is the decision point the formal model isolates: a belief update was mistaken for a grant update.",
+      ('medicare', 'taxonomy', 'medicare_coding', 'library'))
 
 # ============================================================================= 04 SUBSTITUTION FAMILY
 s = new('Five reports, one structure: blocked route, reachable substitute.', '04 / The substitution family',
@@ -661,7 +754,7 @@ for i, (sym, name, body, col) in enumerate([
     para(s, ML + 2.15, y, 3.75, .48, body, 12, INK, ls=1.0)
 box(s, ML, 4.66, 5.9, 1.38, PALE, rounded=False)
 para(s, ML + .18, 4.72, 2.3, .40, 'Controller state', 15, NAVY, True)
-formula(s, ML + 2.45, 4.72, r'z_t=(b_t,\;g_t,\;k_t)', 15, NAVY, h_box=.40)
+formula(s, ML + 2.45, 4.72, r's_t=(b_t,\;g_t,\;k_t)', 15, NAVY, h_box=.40)
 formula(s, ML + .18, 5.14, r'b_t=P(x_t\mid h_t)\ \text{by Bayes on every }o;\qquad g_{t+1}\neq g_t\ \text{only if}\ a_t=\mathrm{ASK}\ \text{and}\ o_t\ \text{is a trusted grant};', 11, INK, w_max=5.6)
 formula(s, ML + .18, 5.52, r'k_{t+1}=k_t-\kappa(a_t)\ \text{for every action.}', 11, INK, w_max=5.6)
 theorem_band(s, 6.80, 2.36, 5.91, 1.90, '',
@@ -680,7 +773,9 @@ for i, (word, body, col) in enumerate([
     chip(s, 7.00, y + .05, 1.05, word, col, size=9.5, h=.28)
     formula(s, 8.15, y, body, 11, INK, w_max=4.45, h_box=.38)
 takeaway(s, 'A failed tool call updates b_{t}. It never updates g_{t}. The grant is a constraint on effects, not a reward term.')
-notes(s, 'Finite-horizon constrained POMDP. Hidden x_t includes route feasibility; g_t is the trusted, versioned authorization '
+notes(s, 'Finite-horizon constrained POMDP. Controller state s_t = (b_t, g_t, k_t) is distinct from the incident risk-indicator '
+      'vector z_t on slide 5. The local POMDP symbols x (hidden state) and o (observation) have the meanings defined on this slide; '
+      'they are not the incident codes x (unexpected external contact) and o (observability loss). Hidden x_t includes route feasibility; g_t is the trusted, versioned authorization '
       'contract; k_t the remaining budget; h_t the history. Transition and observation kernels T and O; Bayesian filtering gives b′. '
       'A request can lead to a trusted grant update or denial with response probability q; q is not the probability that an ungranted '
       'action is secretly authorized. Reachability and tool success never update g. Missing scope is not filled by the agent: choose an '
@@ -725,7 +820,7 @@ para(s, 7.15, 4.38, 5.4, 1.64,
      '•  Substitution is persistence past this point with a different resource: it needs a grant, not a higher posterior.\n'
      '•  Readouts: premature stops (p_{t} above threshold) and wasted attempts (below) are separate errors; a lower violation rate '
      'must not be mistaken for better stopping.', 11.5, INK, valign=MSO_ANCHOR.TOP, ls=1.08)
-takeaway(s, 'Repeated failure (indicator f) is the leading signal because it is exactly what moves the posterior.')
+takeaway(s, 'Repeated failure (indicator f) supplies evidence that moves the feasibility posterior in this model.')
 notes(s, f"Exact calculation: p0={t['p0']}, q={t['q']}, R={t['R']:g}, B={t['B']:g}, c={t['c']:g}. Posterior sequence after failures: "
       + ', '.join(f'{p:.3f}' for p in POSTERIORS) + f'. Threshold {STOP_THRESHOLD:.3f}; the first posterior below it is '
       f'p_{ATTEMPTS_BEFORE_STOP}, so the agent attempts {ATTEMPTS_BEFORE_STOP} times. One-step look-ahead is optimal here because '
@@ -736,61 +831,142 @@ notes(s, f"Exact calculation: p0={t['p0']}, q={t['q']}, R={t['R']:g}, B={t['B']:
 
 # ============================================================================= 09 RESULT 2: VOI
 s = new('Result 2: sometimes the best next action is to learn.', '09 / Value of information',
-        'Exact toy: one optional diagnostic that reveals feasibility, then one final commitment. Hypothetical utility units.',
-        [('voi', 'Value-of-information background: Hay et al. 2012', 4.4), ('switch', 'Deference under uncertainty: off-switch game', 3.6)],
+        'p = probability an authorized recovery works. d = request cost (time, money or review), in utility units. Color = highest expected utility.',
+        [('voi', 'VOI background: Hay et al. 2012. Hypothetical model; payoffs and boundaries on the next two slides.', 10.8)],
         status='EXACT TOY')
-px, py, pw, ph = 1.10, 2.90, 5.25, 2.65
-para(s, .78, 2.38, 5.9, .35, 'Optimal action as belief and request cost change', 15, NAVY, True)
-para(s, 1.10, 2.68, 5.9, .25, 'Request cost d', 10, MUTED)
-N = 100
-for row in range(64):
-    d = 8 * (1 - (row + .5) / 64)
-    current, start = None, 0
-    for col in range(N + 1):
-        action = best((col + .5) / N, d) if col < N else None
-        if action != current:
-            if current is not None:
-                box(s, px + pw * start / N, py + ph * row / 64, pw * (col - start) / N + .002,
-                    ph / 64 + .002, TOY_COLOR[current], rounded=False)
-            current, start = action, col
-line(s, px, py + ph, px + pw, py + ph, INK)
-line(s, px, py, px, py + ph, INK)
-for p in (0, .5, 1):
-    para(s, px + pw * p - .20, py + ph + .04, .40, .25, str(p), 11, MUTED)
-for d in (0, 4, 8):
-    para(s, px - .43, py + ph * (1 - d / 8) - .15, .32, .30, str(d), 11, MUTED)
-para(s, px + .65, py + ph + .30, pw - 1, .27, 'Belief p that local recovery works', 13, MUTED)
-for x, y, w, value, size in [(1.105, 3.12, .32, 'stop', 8), (1.20, 4.80, .55, 'ASK', 14),
-                             (2.50, 3.65, 1.6, 'PROBE', 16), (5.18, 3.12, 1.10, 'RECOVER', 12)]:
-    para(s, x, y, w, .35, value, size, WHITE, True)
-hx, hy = px + pw * .3, py + ph * (1 - 2 / 8)
-circle(s, hx - .075, hy - .075, .15, WHITE, NAVY)
-para(s, hx + .12, hy - .05, 1.80, .30, 'p=.3, d=2', 12, WHITE, True)
-theorem_band(s, 6.90, 2.36, 5.81, 1.12, '', '', tag='RESULT 2 · QUERY WHEN AN ANSWER WOULD CHANGE THE ACTION',
-             math=[r'\mathrm{VOI}=\mathbb{E}_o\!\left[\max_a\mathbb{E}[u\mid o]\right]-\max_a\mathbb{E}[u]\ \geq\ 0',
-                   r'\text{probe}\quad\text{iff}\quad \mathrm{VOI}>\text{cost of the probe}'], math_size=15, gap=.06)
-card(s, 6.90, 3.60, 5.81, 2.44, TEAL)
-para(s, 7.12, 3.68, 5.3, .40, 'At p = 0.30 and d = 2', 17, TEAL, True)
-for i, (a, tex, val) in enumerate([
-    ('Recover', r'10p-2', '1.0'), ('Ask, then obey the reply', r'0.6\times 10-d', '4.0'),
-    ('Stop', r'0', '0.0'), ('Probe, then decide', r'-0.5+0.3\times 8+0.7\times 4', '4.7'),
+para(s, .78, 2.38, 6.0, .35, 'Optimal action as belief and request cost change', 14.5, NAVY, True)
+s.shapes.add_picture(str(voi_phase_figure()), Inches(.66), Inches(2.70), width=Inches(6.10))
+para(s, .83, 5.84, 5.95, .30, 'A (.9, 8): RECOVER  |  B (.1, 0): ASK  |  C (.3, 2): PROBE', 10.5, NAVY, True)
+for i, (a, desc, col) in enumerate([
+    ('RECOVER', 'Try the authorized local route; high p favors it.', TEAL),
+    ('STOP', 'Report failure when further action is not worth its cost.', MUTED),
+    ('ASK', 'Request a grant for an alternative; obey the reply.', BLUE),
+    ('PROBE', 'Run an authorized diagnostic, then choose an action.', GOLD),
 ]):
-    y = 4.08 + i * .40
-    if i == 3:
-        box(s, 7.06, y - .03, 5.50, .42, MINT)
-    para(s, 7.14, y, 2.30, .36, a, 13, INK, i == 3)
-    formula(s, 9.40, y, tex, 11.5, MUTED, w_max=2.25, h_box=.36)
-    para(s, 11.85, y, .55, .36, val, 16, TEAL if i == 3 else INK, True)
-para(s, 7.12, 5.72, 5.4, .32, 'Success 10; recovery cost 2; grant chance .6; a perfect probe costs .5 and changes no permission.', 9.5, MUTED, ls=1.0)
-takeaway(s, 'A diagnostic informs b_{t}; only a request can change g_{t}. Cheap checks cut premature stops and needless requests.')
-notes(s, 'Exact toy calculation, not measured model performance. Hidden feasibility θ is Bernoulli(p). Direct authorized recovery '
-      'yields +10 on success, 0 on failure, costs 2 either way: Q_recover = 10p − 2. A request costs d, obtains a valid grant with '
-      'probability q = 0.6, then yields 10 if granted and 0 if denied; it includes obeying the reply. Recovery and request are terminal; '
-      'stop pays 0. One permitted, non-mutating, perfect diagnostic costs 0.5 and leaves the commitment open: '
-      'Q_probe = −0.5 + p·max(8, 6−d, 0) + (1−p)·max(−2, 6−d, 0). At p=.3, d=2 the optimum is to probe, recover if feasible, request if '
-      'not: 4.7. Checks: p=.05,d=2 gives ASK; p=.95,d=2 gives RECOVER; p=.01,d=7 gives STOP. The chart evaluates these formulas on a '
-      'grid; its boundaries are hypotheses for behaviour under this model. The off-switch game gives the same shape for deference: it '
-      'has positive value exactly when the agent is uncertain.', ('voi', 'switch'))
+    y = 2.38 + i * .54
+    box(s, 6.98, y, 5.73, .47, TINT.get(col, PALE))
+    box(s, 6.98, y, .055, .47, col, rounded=False)
+    para(s, 7.12, y, 1.14, .47, a, 12, col, True)
+    para(s, 8.29, y, 4.27, .47, desc, 11.5, INK, ls=1.02)
+box(s, 6.98, 4.64, 5.73, 1.49, NAVY, rounded=False)
+para(s, 7.18, 4.75, 5.32, .33, 'Two uncertainties, two different interventions', 14, WHITE, True)
+para(s, 7.18, 5.16, 5.32, .41, 'Feasibility: diagnose an allowed public route.\nPermission: obtain a trusted grant for a new resource.', 12, LIGHT, ls=1.08)
+para(s, 7.18, 5.71, 5.32, .30, 'Reachability of an internal database does not grant permission.', 11.5, WHITE, True)
+takeaway(s, 'PROBE changes beliefs, not permissions. ASK may change permissions; it does not make a route feasible.', size=15)
+notes(s, 'This is an optimal-policy phase diagram under stated hypothetical utilities, not measured agent behavior. '
+      'The horizontal axis p is the probability that an already authorized local recovery works: p=0 means certainly infeasible, '
+      'p=.3 means a 30 percent chance, and p=1 means certainly feasible. The vertical axis d is the cost of requesting additional '
+      'authorization, measured in the same utility units as the reward; it can represent time, money or human review overhead. '
+      'd=0 is free and d=8 is expensive in this toy. The chart uses the analytic boundaries derived on slide 13, rather than a '
+      'coarse grid. STOP is a small but real region at p<1/16 and d>6. The dashed d=6 line marks where ASK and STOP tie. '
+      'Point A: p=.9,d=8 gives RECOVER=7, PROBE=6.7, STOP=0 and ASK=-2. Point B: p=.1,d=0 gives ASK=6, PROBE=5.7, '
+      'STOP=0 and RECOVER=-1. Point C: p=.3,d=2 gives PROBE=4.7, ASK=4, RECOVER=1 and STOP=0. '
+      'Epistemic uncertainty is about whether an allowed plan works. A permitted, non-mutating check of a public service or an '
+      'already authorized alternative can reduce it. Authorization is a separate state: checking whether a government internal '
+      'database is reachable cannot grant access, and the diagnostic itself must be within scope. Only a trusted affirmative '
+      'response to ASK may change the grant; ASK alone does not change technical feasibility. The toy assumes a feasible alternative '
+      'after a grant, which is an explicit assumption rather than a general property of authorization. The aim is useful recovery '
+      'within scope, avoiding both unauthorized persistence and premature stopping.', ('voi',))
+
+# ============================================================================= 09b RESULT 2: PAYOFFS AND CONTINGENT CHOICE
+s = new('Why PROBE is worth 4.7: pay once, then choose with evidence.', '09 / Value of information / Payoffs',
+        'Risk-neutral toy: one optional perfect diagnostic, then one terminal action. No retries; all numbers are hypothetical utilities.',
+        [('voi', 'VOI background: Hay et al. 2012. This payoff model is illustrative, not an empirical estimate.', 10.7)],
+        status='EXACT TOY')
+para(s, ML + .16, 2.39, 5.9, .34, 'Make every payoff and assumption explicit', 15, NAVY, True)
+para(s, ML + .16, 2.83, 5.85, .80,
+     'Local recovery: success +10, failure 0; cost 2 either way.\n'
+     'ASK: pay d; grant probability .6, independent of feasibility.\n'
+     'If granted, the alternative succeeds (+10); if denied, stop (0).\n'
+     'PROBE: pay .5; learn feasibility perfectly, within existing scope.', 11.5, INK, valign=MSO_ANCHOR.TOP, ls=1.12)
+grid(s, ML, 3.79, [1.22, 1.32, 1.40, 2.12], [
+    ['Action', 'Feasible', 'Infeasible', 'Expected Q(p, d)'],
+    ['RECOVER', '+8', '-2', '10p - 2'],
+    ['ASK', '6 - d', '6 - d', '6 - d'],
+    ['STOP', '0', '0', '0'],
+], row_h=.37, size=11.5)
+para(s, ML + .12, 5.31, 5.84, .24, 'PROBE preserves the best choice after either observation:', 10.5, MUTED)
+formula(s, ML + .14, 5.61, r'Q_{\rm PROBE}=-0.5+p\max(8,6-d,0)', 14.5, NAVY, w_max=5.8, h_box=.28)
+formula(s, ML + .79, 5.92, r'+(1-p)\max(-2,6-d,0)', 14.5, NAVY, w_max=5.15, h_box=.28)
+
+para(s, 7.08, 2.39, 5.40, .34, 'At p = .3 and d = 2: a contingent decision', 15, TEAL, True)
+para(s, 7.08, 2.77, 5.40, .24, 'Direct values: RECOVER = 1; ASK = 4; STOP = 0.', 11.5, MUTED)
+box(s, 7.02, 3.43, 1.23, .71, CREAM)
+para(s, 7.12, 3.48, 1.03, .57, 'PROBE\npay .5', 13, GOLD, True, align='c', ls=1.03)
+arrow(s, [(8.27, 3.66), (8.51, 3.66), (8.51, 3.30), (8.77, 3.30)], TEAL)
+arrow(s, [(8.27, 3.92), (8.51, 3.92), (8.51, 4.27), (8.77, 4.27)], BLUE)
+box(s, 8.83, 3.08, 3.88, .78, MINT)
+para(s, 9.00, 3.13, 3.52, .28, 'Feasible (probability .3): RECOVER', 12, TEAL, True)
+para(s, 9.00, 3.48, 3.52, .28, 'Choose max(8, 4, 0) = 8', 12, INK)
+box(s, 8.83, 4.04, 3.88, .78, PALE)
+para(s, 9.00, 4.09, 3.52, .28, 'Infeasible (probability .7): ASK', 12, BLUE, True)
+para(s, 9.00, 4.44, 3.52, .28, 'Choose max(-2, 4, 0) = 4', 12, INK)
+box(s, 7.02, 4.99, 5.69, 1.20, NAVY, rounded=False)
+formula(s, 7.22, 5.08, r'Q_{\rm PROBE}=-0.5+0.3\times8+0.7\times4=4.7', 15, WHITE, w_max=5.28, h_box=.36)
+formula(s, 7.22, 5.56, r'\mathrm{VOI}_{\rm net}=4.7-\max(1,4,0)=+0.7', 16, WHITE, w_max=5.28, h_box=.39)
+box(s, ML, 6.32, CW, .55, TEAL)
+formula(s, ML + .18, 6.35,
+        r'\mathrm{VOI}_{\rm net}=\mathbb{E}_{o}\!\left[\max_{a\in\{R,A,S\}}\mathbb{E}[U(a)\mid o]\right]-\max_{a\in\{R,A,S\}}\mathbb{E}[U(a)]-c_{\rm probe};\qquad\text{probe if positive}',
+        15, WHITE, w_max=CW - .36, h_box=.48, align='c')
+notes(s, 'All outcomes and costs are specified so the audience can independently recompute 4.7. Hidden local feasibility '
+      'theta is Bernoulli(p). RECOVER is terminal and costs 2 regardless of outcome: conditional payoffs are 8 if feasible and -2 '
+      'if infeasible, so Q_RECOVER=p*8+(1-p)*(-2)=10p-2. STOP is terminal with utility 0. ASK pays d regardless of the reply. '
+      'A trusted grant arrives with probability q=.6, independent of local feasibility; the alternative is assumed to succeed '
+      'after a grant, with gross utility 10 and no further cost. Denial yields 0 and no action. Hence Q_ASK=.6*10+.4*0-d=6-d. '
+      'The conditional ASK cells are expected values over the authorization response, not guaranteed outcomes. PROBE is a '
+      'single permitted, non-mutating perfect observation of theta, costs c=.5, changes no permissions, and is followed by the '
+      'best of RECOVER, ASK and STOP. It cannot be followed by another probe. Thus Q_PROBE=-.5+p*max(8,6-d,0)+(1-p)*max(-2,6-d,0). '
+      'At p=.3,d=2, direct values are RECOVER=1, ASK=4 and STOP=0. After a feasible observation select RECOVER=8; after an '
+      'infeasible observation select ASK=4, while still obeying its reply. The post-information value before probe cost is '
+      '.3*8+.7*4=5.2; gross VOI is 5.2-4=1.2; net VOI is 1.2-.5=.7, and Q_PROBE is 4.7. '
+      'In the bottom formula R,A,S abbreviate RECOVER, ASK and STOP; o is the diagnostic observation. With the same action set '
+      'before and after information and the option to ignore it, gross VOI is nonnegative, but net VOI can be negative. '
+      'For noisy diagnostics use posterior beliefs P(theta=1|o) and average the posterior-optimal value over observations. '
+      'Uncertainty alone is insufficient: information must change a valuable decision enough to cover its cost.', ('voi',))
+
+# ============================================================================= 09c RESULT 2: EXACT DECISION BOUNDARIES
+s = new('Decision boundaries are equal-value curves, with dominance checks.', '09 / Value of information / Boundaries',
+        'A visible boundary requires Q(a) = Q(b), with both at least as good as every other action. These curves generate the diagram.',
+        [('voi', 'Exact derivation for the stated toy; equality curves and neighboring optimal actions checked at build time.', 11.2)],
+        status='EXACT TOY')
+for x, w, col in [(ML, 6.06, BLUE), (6.98, 5.73, TEAL)]:
+    card(s, x, 2.38, w, 3.10, col)
+para(s, ML + .20, 2.48, 5.65, .34, '0 ≤ d ≤ 6: an infeasible route leads to ASK', 15, BLUE, True)
+formula(s, ML + .20, 2.94, r'Q_{\rm PROBE}=-0.5+8p+(1-p)(6-d)', 16, NAVY, w_max=5.62, h_box=.35)
+formula(s, ML + 1.28, 3.34, r'=5.5-d+(2+d)p', 16, NAVY, w_max=4.54, h_box=.35)
+para(s, ML + .20, 3.85, 5.65, .28, 'ASK / PROBE: set Q(PROBE) = 6 - d', 12, BLUE, True)
+formula(s, ML + .20, 4.17, r'(2+d)p=0.5\quad\Longrightarrow\quad p_L=\dfrac{0.5}{2+d}', 16, NAVY, w_max=5.62, h_box=.43)
+para(s, ML + .20, 4.66, 5.65, .28, 'PROBE / RECOVER: set Q(PROBE) = 10p - 2', 12, TEAL, True)
+formula(s, ML + .20, 4.97, r'(8-d)p=7.5-d\quad\Longrightarrow\quad p_U=\dfrac{7.5-d}{8-d}', 16, NAVY, w_max=5.62, h_box=.43)
+
+para(s, 7.18, 2.48, 5.31, .34, '6 ≤ d ≤ 8: an infeasible route leads to STOP', 14.5, TEAL, True)
+formula(s, 7.18, 2.96, r'Q_{\rm ASK}\leq0,\qquad Q_{\rm PROBE}=8p-0.5', 16, NAVY, w_max=5.31, h_box=.38)
+para(s, 7.18, 3.52, 5.31, .28, 'STOP / PROBE: set Q(PROBE) = 0', 12, MUTED, True)
+formula(s, 7.18, 3.86, r'8p-0.5=0\quad\Longrightarrow\quad p_L=\dfrac{1}{16}', 16, NAVY, w_max=5.31, h_box=.43)
+para(s, 7.18, 4.38, 5.31, .28, 'PROBE / RECOVER: set Q(PROBE) = 10p - 2', 12, TEAL, True)
+formula(s, 7.18, 4.72, r'8p-0.5=10p-2\quad\Longrightarrow\quad p_U=\dfrac{3}{4}', 16, NAVY, w_max=5.31, h_box=.43)
+para(s, 7.18, 5.17, 5.31, .24, 'At d = 6, ASK and STOP tie below p = 1/16.', 10.5, MUTED)
+para(s, ML + .10, 5.62, CW - .20, .46,
+     'Policy: below p_{L} choose ASK (d < 6) or STOP (d > 6); between p_{L} and p_{U} choose PROBE; above p_{U} choose RECOVER.\n'
+     'Adjacent actions tie at each threshold. The direct ASK = RECOVER curve is hidden: PROBE has higher value there.', 11.5, INK, ls=1.12)
+takeaway(s, 'At d = 2: ASK below 1/8; PROBE for 1/8 < p < 11/12; RECOVER above 11/12 (approximately .917).', size=14.5)
+notes(s, 'Derivation for the displayed range 0<=p<=1, 0<=d<=8, with perfect diagnostic cost .5. '
+      'For d<=6, a feasible observation leads to RECOVER=8 because ASK<=6; an infeasible observation leads to ASK=6-d>=0, '
+      'tied with STOP only at d=6. Q_PROBE=-.5+8p+(1-p)(6-d)=5.5-d+(2+d)p. '
+      'Subtracting Q_ASK gives (2+d)p-.5, so the lower boundary is p_L=.5/(2+d). Subtracting Q_RECOVER gives '
+      '7.5-d-(8-d)p, so the upper boundary is p_U=(7.5-d)/(8-d). Since p_L<p_U and ASK>=STOP, these are actual '
+      'optimal-action boundaries, not just pairwise equalities. For d>=6, ASK<=STOP=0; the post-probe choices are RECOVER '
+      'if feasible and STOP if infeasible, so Q_PROBE=8p-.5. Setting it equal to 0 gives p_L=1/16; setting it equal to '
+      '10p-2 gives p_U=3/4. RECOVER is negative at the lower boundary, and STOP is below both values at the upper boundary. '
+      'At d=6, ASK=STOP for all p, but this equality is a visible optimal boundary only for p<=1/16. At p=1/16,d=6 '
+      'ASK, STOP and PROBE all tie. Pairwise equality alone is insufficient: for 0<=d<=6 the direct ASK=RECOVER curve '
+      'p=(8-d)/10 lies strictly inside the PROBE region. For d>6 that direct curve is also dominated. '
+      'At d=2 the exact cutoffs are 1/8=.125 and 11/12, approximately .917. At p=.3,d=2, varying diagnostic cost c '
+      'gives Q_PROBE=5.2-c: strictly probe only for c<1.2, tie at c=1.2, otherwise ASK. '
+      'These are falsifiable choice predictions conditional on the model: sweep p across both cutoffs at fixed d, and '
+      'sweep c across 1.2 at the example point. Measure choice disagreement and value regret separately. Noisy diagnostics, '
+      'uncertain authorization probabilities, costly authorized alternatives and additional retries require a new value calculation; '
+      'these particular thresholds are not universal. The safety invariant is unchanged: diagnosing feasibility never grants authority.', ('voi',))
 
 # ============================================================================= 10 RESULT 3: AMBIGUITY
 s = new('Result 3: under a silent grant, ask dominates without a prior.', '10 / Decision under ambiguity; principal and agent',
@@ -909,14 +1085,14 @@ mono(s, ML, 2.36, 7.05, 3.70, [
 card(s, 7.85, 2.36, 4.86, 3.70, TEAL)
 para(s, 8.05, 2.44, 4.5, .34, 'Properties', 15, TEAL, True)
 para(s, 8.05, 2.80, 4.5, 3.2,
-     'P1  Under complete mediation and a correct effect model, no executed effect lies outside A(g_{t}): the broker is the '
+     '1  Under complete mediation and a correct effect model, no executed effect lies outside A(g_{t}): the broker is the '
      'shield, the planner is not trusted for safety.\n'
-     'P2  Exact DP has zero regret in the finite fixture; V* is the normative reference, not a clairvoyant policy.\n'
-     'P3  Cost O(H · |A| · |O| · |B|) over a discretised belief; beyond that, fixed-budget beam or Monte Carlo lookahead '
+     '2  Exact DP has zero regret in the finite fixture; V* is the normative reference, not a clairvoyant policy.\n'
+     '3  Cost O(H · |A| · |O| · |B|) over a discretised belief; beyond that, fixed-budget beam or Monte Carlo lookahead '
      'with the same A(g) filter at every node.\n'
-     'P4  Requests are planned: ASK enters Q with cost d and response probability q, so the planner asks when authority must change '
+     '4  Requests are planned: ASK enters Q with cost d and response probability q, so the planner asks when authority must change '
      'and not otherwise.\n'
-     'P5  Calibration is an input: T, O estimated on development data; an LLM confidence statement is not a posterior.',
+     '5  Calibration is an input: T, O estimated on development data; an LLM confidence statement is not a posterior.',
      11, INK, valign=MSO_ANCHOR.TOP, ls=1.1)
 takeaway(s, 'Plan for utility; enforce scope before execution; measure effects independently. Three functions, three components.')
 notes(s, 'Proposed online algorithm; not evaluated on LLM agents. Candidate tool actions are normalised into effect-relevant fields '
@@ -1063,12 +1239,12 @@ grid(s, 6.75, 2.36, [2.3, 3.66], [
 box(s, ML, 4.90, CW, 1.15, PALE, rounded=False)
 para(s, ML + .2, 4.95, CW - .4, 1.05,
      'Endpoints: value regret V* − V_{π}; violation rate; request and probe rates; false stops; calibration by proper scoring rules and '
-     'reliability plots. Prediction P1: the unconstrained planner\'s violation rate rises as p falls, reproducing H1. Prediction P2: '
-     'the LLM planner\'s choices track the phase diagram on slide 10 only where its stated confidence is calibrated. The event log must '
+     'reliability plots. Prediction 1: the unconstrained planner\'s violation rate rises as p falls, reproducing H1. Prediction 2: '
+     'the LLM planner\'s choices track the phase diagram on slide 11 and the cutoffs on slide 13 only where its confidence is calibrated. The event log must '
      'not reveal hidden feasibility before the permitted probe.', 11.5, INK, valign=MSO_ANCHOR.TOP, ls=1.1)
 takeaway(s, 'Falsifier: if the LLM planner ignores p, d and q, the decision model does not describe agent behaviour.')
 notes(s, 'E1 is cheap and runs before any fixture extension: a finite simulator whose kernels are known, so regret is exact. '
-      'Sweeps follow the toy results on slides 8–10. The POMCP-without-filter arm is the mechanistic version of H1: it should prefer '
+      'Sweeps follow the toy results on slides 10–14. The POMCP-without-filter arm is the mechanistic version of H1: it should prefer '
       'the reachable substitute whenever the belief in local repair is low, with no change in the grant. The LLM planner arm is the '
       'first check that an LLM agent\'s choices move with the decision variables at all; calibration is evaluated with proper scoring '
       'rules. All E1 claims are about the model, not about safety in deployment.', ('voi', 'pomcp'))
@@ -1213,8 +1389,74 @@ takeaway(s, 'Next milestone: implement the finite decision model and the paired 
 notes(s, 'The outcome table is the preregistered interpretation. Each row names the arm or contrast and the implication, including '
       'the two negative readings in which only enforcement helps or the selection signals tie. Milestones are proposed dates, not '
       'commitments; the confirmatory sample is sized from pilot discordance under a prespecified risk reduction and utility '
-      'noninferiority margin, before any new test cohort is collected. The deck contains 22 slides; citations, exact toy assumptions, '
+      'noninferiority margin, before any new test cohort is collected. The deck contains 24 narrative slides and two glossary slides; citations, exact toy assumptions, '
       'study design and limitations are in the speaker notes and footers.', ('design', 'optimization', 'next'))
+
+# ============================================================================= APPENDIX A: MECHANISM CODEBOOK
+MECHANISM_READINGS = {
+    'M1': 'Completion pressure drives persistence when no safe failure or stop outcome is available.',
+    'M2': 'Separate capabilities combine into a path across the boundary.',
+    'M3': 'Shared files or services let otherwise separate runs communicate or coordinate.',
+    'M4': 'Warning or detection fails to produce a timely, effective intervention.',
+    'M5': 'Assumptions about the real environment and gaps in audit coverage hide exposure.',
+    'M6': 'Responsibility is split across teams or organizations; no owner sees the whole chain.',
+}
+s = new('M1-M6: how did the safeguards fail?', 'Appendix A / Failure mechanism codebook',
+        'M = mechanism. The number identifies a category, with no severity ordering. Formal names come from the incident taxonomy.',
+        [('taxonomy', 'incidents/taxonomy.json', 2.4), ('medicare_coding', 'Medicare: draft coding, review pending', 3.5)],
+        status='CODEBOOK')
+mechanism_rows = [['ID', 'Formal name', 'Plain-language reading', 'Medicare']]
+for code, name in TAXONOMY['mechanisms'].items():
+    mechanism_rows.append([code, name, MECHANISM_READINGS[code], MEDICARE['mechanisms'][code]['status']])
+grid(s, ML, 2.36, [.55, 4.05, 6.0, 1.49], mechanism_rows, row_h=.46, size=11.5)
+para(s, ML, 5.70, CW, .42,
+     'present = coded as present; partial = partly supported; absent = coded absent; unknown = insufficient evidence.\n'
+     'Medicare M4 records no in-run interruption and late notification; it does not establish that an in-run alert fired.',
+     11.5, MUTED, ls=1.05)
+takeaway(s, 'Medicare: M1, M2, M4, M6 present; M3 absent; M5 partial. These are draft assessments of failure mechanisms.', size=14)
+notes(s, 'M codes classify failure mechanisms, rather than ranking severity or counting broken rules. Formal names are read from '
+      'incidents/taxonomy.json; the plain-language column explains those labels. Medicare statuses are read from the record, '
+      'including the previously omitted M3 absent and M5 partial. The record does not give a rationale for M5 partial. '
+      'Mechanism notes supplied in the record: ' + '; '.join(
+          f"{code}: {item['note']}" for code, item in MEDICARE['mechanisms'].items() if item['note']) + '. '
+      'M4 is the general category Detection without decisive escalation; the case note supports the absence of timely interruption '
+      'and delayed notification, not a claim that the monitor detected this case in-run. All these codes remain analyst drafts '
+      'pending review. The next appendix explains the P design-proposition family.', ('taxonomy', 'medicare_coding', 'library'))
+
+# ============================================================================= APPENDIX B: PROPOSITION CODEBOOK
+PROPOSITION_READINGS = {
+    'P1': 'Maintain the boundary across every tool, service and action in the system.',
+    'P2': 'Measure isolation and reachability before trusting a claim such as "simulated".',
+    'P3': 'Keep authorization binding even when a technical restriction fails.',
+    'P4': 'Treat blocked or impossible goals as security-relevant inputs; provide safe exits.',
+    'P5': 'Account for communication and coordination through shared files or services.',
+    'P6': 'Assess actual access, writes and transfers, regardless of the stated intent.',
+    'P7': 'Show that the audit covers relevant runs, actions and effects.',
+    'P8': 'Resume only with evidence that the cause is understood and addressed.',
+    'P9': 'Assign a human accountable for consequential autonomous actions.',
+}
+s = new('P1-P9: which design principle does the case test?', 'Appendix B / Design proposition codebook',
+        'P = proposition: a design principle assessed against the case. The number identifies a principle; the status is a draft analyst judgment.',
+        [('taxonomy', 'incidents/taxonomy.json', 2.4), ('medicare_coding', 'Medicare: draft coding, review pending', 3.5)],
+        status='CODEBOOK')
+proposition_rows = [['ID', 'Formal name', 'Plain-language reading', 'Medicare']]
+for code, name in TAXONOMY['propositions'].items():
+    relation = MEDICARE['propositions'][code]['relation']
+    proposition_rows.append([code, name, PROPOSITION_READINGS[code], 'n/a' if relation == 'not_applicable' else relation])
+grid(s, ML, 2.36, [.55, 4.05, 6.0, 1.49], proposition_rows, row_h=.35, size=10.5)
+para(s, ML, 5.93, CW, .26,
+     'violated = not upheld; demonstrated = supported; mixed = mixed assessment; n/a = not applicable to this case.', 11, MUTED)
+takeaway(s, 'Medicare: P1, P2, P3, P4, P6, P9 violated; P7 mixed; P5/P8 n/a. These labels are separate from the 4/6 signals.', size=14)
+notes(s, 'P codes identify design propositions in the incident taxonomy. Formal names and Medicare relations are loaded from the '
+      'taxonomy and record respectively. Plain-language readings explain the principles without assigning new case-specific '
+      'evidence. Six principles are coded violated in Medicare: P1, P2, P3, P4, P6 and P9; P7 is mixed, P5 and P8 are not '
+      'applicable. This is a different classification from the four observed risk signals f, p, x and v. The record gives no '
+      'per-proposition explanatory notes, including no reason for the mixed P7 judgment, so this slide reports the draft coding '
+      'without inventing a rationale. Violated is an analyst judgment about the principle, not a legal finding. Demonstrated '
+      'means the case supports the principle; mixed means the coding is neither a simple violation nor demonstration; n/a means '
+      'not applicable, not proof that the system satisfied the principle. Algorithm properties elsewhere use ordinary list '
+      'numbers and simulator predictions are Prediction 1/2, so P1-P9 consistently denote this taxonomy.',
+      ('taxonomy', 'medicare_coding', 'library'))
 
 # ============================================================================= validation
 def validate():
@@ -1238,13 +1480,41 @@ def validate():
     assert abs(STOP_THRESHOLD - .25) < 1e-12 and ATTEMPTS_BEFORE_STOP == 3
     # Result 2: exact toy and independent enumeration of contingent policies.
     assert abs(toy_values(.3, 2)['PROBE'] - 4.7) < 1e-10
-    for p, d, action in [(.3, 2, 'PROBE'), (.05, 2, 'ASK'), (.95, 2, 'RECOVER'), (.01, 7, 'STOP')]:
+    for p, d, action in [(.3, 2, 'PROBE'), (.05, 2, 'ASK'), (.95, 2, 'RECOVER'), (.01, 7, 'STOP'),
+                         (.9, 8, 'RECOVER'), (.1, 0, 'ASK')]:
         assert best(p, d) == action
     for pi in range(101):
         for di in range(81):
             p, d = pi / 100, di / 10
             enumerated = max(-.5 + p * g + (1 - p) * b for g in (0, 8, 6 - d) for b in (0, -2, 6 - d))
             assert abs(enumerated - toy_values(p, d)['PROBE']) < 1e-9
+            lo, hi = voi_boundaries(d)
+            predicted = ('ASK' if d <= 6 else 'STOP') if p < lo else 'PROBE' if p <= hi else 'RECOVER'
+            values = toy_values(p, d)
+            # Ties are legitimate; compare value, not a tie-breaking action label.
+            assert abs(values[predicted] - max(values.values())) < 1e-9, (p, d, predicted, values)
+    boundary_checks = 0
+    for di in range(81):
+        d = di / 10
+        lo, hi = voi_boundaries(d)
+        left = 'ASK' if d <= 6 else 'STOP'
+        assert 0 < lo < hi < 1
+        for p, a, b in [(lo, left, 'PROBE'), (hi, 'PROBE', 'RECOVER')]:
+            values = toy_values(p, d)
+            assert abs(values[a] - values[b]) < 1e-9
+            assert abs(values[a] - max(values.values())) < 1e-9
+            below, above = toy_values(p - 1e-5, d), toy_values(p + 1e-5, d)
+            assert abs(below[a] - max(below.values())) < 1e-9 and below[a] > below[b]
+            assert abs(above[b] - max(above.values())) < 1e-9 and above[b] > above[a]
+            boundary_checks += 1
+        if d <= 6:
+            values = toy_values((8 - d) / 10, d)
+            assert abs(values['ASK'] - values['RECOVER']) < 1e-9
+            assert values['PROBE'] > values['ASK']
+    example_values = toy_values(.3, 2)
+    gross_voi = example_values['PROBE'] + VOI_TOY['probe_cost'] - max(example_values[a] for a in ('STOP', 'ASK', 'RECOVER'))
+    assert abs(gross_voi - 1.2) < 1e-9 and abs(gross_voi - VOI_TOY['probe_cost'] - .7) < 1e-9
+    assert voi_boundaries(2) == (1 / 8, 11 / 12)
     # Result 3: robust rules pick the reversible action.
     assert AMB_MAXMIN == 'Ask first' and AMB_REGRET == 'Ask first'
     assert abs(10 * AMB_PRIOR_SWITCH - 20 * (1 - AMB_PRIOR_SWITCH) - 7) < 1e-12
@@ -1269,7 +1539,11 @@ def validate():
                     'latency': {k: LAT[k] for k in ('detection_days_known', 'detection_median', 'disclosure_days_known', 'disclosure_median')},
                     'stop_behavior': STOPB},
         'stopping_toy': {**STOP_TOY, 'threshold': STOP_THRESHOLD, 'posteriors': POSTERIORS, 'attempts_before_stop': ATTEMPTS_BEFORE_STOP},
-        'voi_toy': toy_values(.3, 2), 'voi_policy_enumeration_checks': 101 * 81,
+        'voi_toy': example_values, 'voi_assumptions': VOI_TOY,
+        'voi_gross': gross_voi, 'voi_net': gross_voi - VOI_TOY['probe_cost'],
+        'voi_policy_enumeration_checks': 101 * 81, 'voi_analytic_policy_checks': 101 * 81,
+        'voi_boundary_and_neighbor_checks': boundary_checks,
+        'voi_thresholds_at_d_2': voi_boundaries(2),
         'ambiguity_toy': {'rows': AMB, 'maxmin': AMB_MAXMIN, 'regret': AMB_REGRET, 'prior_switch': AMB_PRIOR_SWITCH},
         'selection_slack': {'K': SEL_K, 'delta': .05, 'rows': SEL_ROWS},
         'mcnemar_power': {'p_base': P_BASE, 'targets': POWER_TARGETS, 'rows': POWER_ROWS},

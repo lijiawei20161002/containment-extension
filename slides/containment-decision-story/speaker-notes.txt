@@ -38,11 +38,15 @@ Project: public incident library, 26 records coded with the Raftari (2026) frame
 
 SLIDE 5: Medicare portal: the search failed, so the agent found a way in.
 
-Chain and table fields are read from incidents/records/05-medicare.json: objective, the four coded actions, indicators, mechanisms and propositions. Facts come from the government press conference; the government states aggregate statistics only and no individual medical data accessed, and the forensic investigation was still open. We read this as: the failed search was evidence about feasibility, the agent treated it as licence to find another route, and no in-run signal stopped it. That is the decision point the formal model isolates: a belief update was mistaken for a grant update.
+Chain and table fields are read from incidents/records/05-medicare.json: objective, the four coded actions, indicators, mechanisms and propositions. Formal labels are loaded from incidents/taxonomy.json. The library's z_t denotes six risk signals at time t, in order f, p, x, c, v, o. This record is retrospective and does not give a time-indexed trace of those signals or prove that the agent or monitor noticed them in-run. f = repeated task failure; p = boundary probing; x = unexpected external contact (not every legitimate external request); c = cross-run communication; v = privilege change; o = observability loss. The four observed signals are f, p, x and v. No means coded as not observed, not proof of absence; unknown means the available evidence cannot decide. Four of six is a signal count, not four broken rules. The v row reports the existing coding alongside credential retrieval; the record does not establish that those credentials were used or that a particular privilege-escalation exploit occurred. o concerns loss of logging or monitoring visibility, not merely late public disclosure. 'Leading indicators' is the taxonomy's term, not an established temporal claim: some signals may occur during or after a boundary crossing. M1-M6 are failure mechanisms; P1-P9 are design propositions. The appendices on slides 25-26 give every formal name, a plain-language explanation and the Medicare coding. These are analyst drafts pending review. Facts come from the government press conference; the government states aggregate statistics only and no individual medical data accessed, and the forensic investigation was still open. We read this as: the failed search was evidence about feasibility, the agent treated it as licence to find another route, and no in-run signal stopped it. That is the decision point the formal model isolates: a belief update was mistaken for a grant update.
 
 Sources / 来源
 Australian Government briefing, 24 September 2026; incident in June
 https://ministers.finance.gov.au/financeminister/transcript/2026/09/24/press-conference-sydney
+Project: incident taxonomy; formal indicator, mechanism and proposition labels
+../../incidents/taxonomy.json
+Project: Medicare incident record; analyst draft, review pending
+../../incidents/records/05-medicare.json
 Project: public incident library, 26 records coded with the Raftari (2026) frame
 ../../docs/incident-library-analysis.md
 
@@ -78,7 +82,7 @@ Project: public incident library, 26 records coded with the Raftari (2026) frame
 
 SLIDE 9: A constrained POMDP whose grant evidence cannot change.
 
-Finite-horizon constrained POMDP. Hidden x_t includes route feasibility; g_t is the trusted, versioned authorization contract; k_t the remaining budget; h_t the history. Transition and observation kernels T and O; Bayesian filtering gives b′. A request can lead to a trusted grant update or denial with response probability q; q is not the probability that an ungranted action is secretly authorized. Reachability and tool success never update g. Missing scope is not filled by the agent: choose an already permitted alternative, request, or stop. In the closed fixture A(g) is exact and effect-based; open environments need validated effect prediction. Utility u is fixed in advance, including the value of justified termination. The action constraint is a specification; whether an LLM follows it is what the experiments measure. Constrained MDP background: Altman 1999; CPO is background for constrained optimization, not the algorithm used.
+Finite-horizon constrained POMDP. Controller state s_t = (b_t, g_t, k_t) is distinct from the incident risk-indicator vector z_t on slide 5. The local POMDP symbols x (hidden state) and o (observation) have the meanings defined on this slide; they are not the incident codes x (unexpected external contact) and o (observability loss). Hidden x_t includes route feasibility; g_t is the trusted, versioned authorization contract; k_t the remaining budget; h_t the history. Transition and observation kernels T and O; Bayesian filtering gives b′. A request can lead to a trusted grant update or denial with response probability q; q is not the probability that an ungranted action is secretly authorized. Reachability and tool success never update g. Missing scope is not filled by the agent: choose an already permitted alternative, request, or stop. In the closed fixture A(g) is exact and effect-based; open environments need validated effect prediction. Utility u is fixed in advance, including the value of justified termination. The action constraint is a specification; whether an LLM follows it is what the experiments measure. Constrained MDP background: Altman 1999; CPO is background for constrained optimization, not the algorithm used.
 
 Sources / 来源
 Kaelbling, Littman & Cassandra (1998), Planning and Acting in Partially Observable Stochastic Domains
@@ -100,15 +104,29 @@ Project: Next experiments, including X1b silent and conflicting grants
 
 SLIDE 11: Result 2: sometimes the best next action is to learn.
 
-Exact toy calculation, not measured model performance. Hidden feasibility θ is Bernoulli(p). Direct authorized recovery yields +10 on success, 0 on failure, costs 2 either way: Q_recover = 10p − 2. A request costs d, obtains a valid grant with probability q = 0.6, then yields 10 if granted and 0 if denied; it includes obeying the reply. Recovery and request are terminal; stop pays 0. One permitted, non-mutating, perfect diagnostic costs 0.5 and leaves the commitment open: Q_probe = −0.5 + p·max(8, 6−d, 0) + (1−p)·max(−2, 6−d, 0). At p=.3, d=2 the optimum is to probe, recover if feasible, request if not: 4.7. Checks: p=.05,d=2 gives ASK; p=.95,d=2 gives RECOVER; p=.01,d=7 gives STOP. The chart evaluates these formulas on a grid; its boundaries are hypotheses for behaviour under this model. The off-switch game gives the same shape for deference: it has positive value exactly when the agent is uncertain.
+This is an optimal-policy phase diagram under stated hypothetical utilities, not measured agent behavior. The horizontal axis p is the probability that an already authorized local recovery works: p=0 means certainly infeasible, p=.3 means a 30 percent chance, and p=1 means certainly feasible. The vertical axis d is the cost of requesting additional authorization, measured in the same utility units as the reward; it can represent time, money or human review overhead. d=0 is free and d=8 is expensive in this toy. The chart uses the analytic boundaries derived on slide 13, rather than a coarse grid. STOP is a small but real region at p<1/16 and d>6. The dashed d=6 line marks where ASK and STOP tie. Point A: p=.9,d=8 gives RECOVER=7, PROBE=6.7, STOP=0 and ASK=-2. Point B: p=.1,d=0 gives ASK=6, PROBE=5.7, STOP=0 and RECOVER=-1. Point C: p=.3,d=2 gives PROBE=4.7, ASK=4, RECOVER=1 and STOP=0. Epistemic uncertainty is about whether an allowed plan works. A permitted, non-mutating check of a public service or an already authorized alternative can reduce it. Authorization is a separate state: checking whether a government internal database is reachable cannot grant access, and the diagnostic itself must be within scope. Only a trusted affirmative response to ASK may change the grant; ASK alone does not change technical feasibility. The toy assumes a feasible alternative after a grant, which is an explicit assumption rather than a general property of authorization. The aim is useful recovery within scope, avoiding both unauthorized persistence and premature stopping.
 
 Sources / 来源
 Hay, Russell, Tolpin & Shimony (2012), Selecting Computations: Theory and Applications
 https://arxiv.org/abs/1207.5879
-Hadfield-Menell et al. (2017), The Off-Switch Game
-https://arxiv.org/abs/1611.08219
 
-SLIDE 12: Result 3: under a silent grant, ask dominates without a prior.
+SLIDE 12: Why PROBE is worth 4.7: pay once, then choose with evidence.
+
+All outcomes and costs are specified so the audience can independently recompute 4.7. Hidden local feasibility theta is Bernoulli(p). RECOVER is terminal and costs 2 regardless of outcome: conditional payoffs are 8 if feasible and -2 if infeasible, so Q_RECOVER=p*8+(1-p)*(-2)=10p-2. STOP is terminal with utility 0. ASK pays d regardless of the reply. A trusted grant arrives with probability q=.6, independent of local feasibility; the alternative is assumed to succeed after a grant, with gross utility 10 and no further cost. Denial yields 0 and no action. Hence Q_ASK=.6*10+.4*0-d=6-d. The conditional ASK cells are expected values over the authorization response, not guaranteed outcomes. PROBE is a single permitted, non-mutating perfect observation of theta, costs c=.5, changes no permissions, and is followed by the best of RECOVER, ASK and STOP. It cannot be followed by another probe. Thus Q_PROBE=-.5+p*max(8,6-d,0)+(1-p)*max(-2,6-d,0). At p=.3,d=2, direct values are RECOVER=1, ASK=4 and STOP=0. After a feasible observation select RECOVER=8; after an infeasible observation select ASK=4, while still obeying its reply. The post-information value before probe cost is .3*8+.7*4=5.2; gross VOI is 5.2-4=1.2; net VOI is 1.2-.5=.7, and Q_PROBE is 4.7. In the bottom formula R,A,S abbreviate RECOVER, ASK and STOP; o is the diagnostic observation. With the same action set before and after information and the option to ignore it, gross VOI is nonnegative, but net VOI can be negative. For noisy diagnostics use posterior beliefs P(theta=1|o) and average the posterior-optimal value over observations. Uncertainty alone is insufficient: information must change a valuable decision enough to cover its cost.
+
+Sources / 来源
+Hay, Russell, Tolpin & Shimony (2012), Selecting Computations: Theory and Applications
+https://arxiv.org/abs/1207.5879
+
+SLIDE 13: Decision boundaries are equal-value curves, with dominance checks.
+
+Derivation for the displayed range 0<=p<=1, 0<=d<=8, with perfect diagnostic cost .5. For d<=6, a feasible observation leads to RECOVER=8 because ASK<=6; an infeasible observation leads to ASK=6-d>=0, tied with STOP only at d=6. Q_PROBE=-.5+8p+(1-p)(6-d)=5.5-d+(2+d)p. Subtracting Q_ASK gives (2+d)p-.5, so the lower boundary is p_L=.5/(2+d). Subtracting Q_RECOVER gives 7.5-d-(8-d)p, so the upper boundary is p_U=(7.5-d)/(8-d). Since p_L<p_U and ASK>=STOP, these are actual optimal-action boundaries, not just pairwise equalities. For d>=6, ASK<=STOP=0; the post-probe choices are RECOVER if feasible and STOP if infeasible, so Q_PROBE=8p-.5. Setting it equal to 0 gives p_L=1/16; setting it equal to 10p-2 gives p_U=3/4. RECOVER is negative at the lower boundary, and STOP is below both values at the upper boundary. At d=6, ASK=STOP for all p, but this equality is a visible optimal boundary only for p<=1/16. At p=1/16,d=6 ASK, STOP and PROBE all tie. Pairwise equality alone is insufficient: for 0<=d<=6 the direct ASK=RECOVER curve p=(8-d)/10 lies strictly inside the PROBE region. For d>6 that direct curve is also dominated. At d=2 the exact cutoffs are 1/8=.125 and 11/12, approximately .917. At p=.3,d=2, varying diagnostic cost c gives Q_PROBE=5.2-c: strictly probe only for c<1.2, tie at c=1.2, otherwise ASK. These are falsifiable choice predictions conditional on the model: sweep p across both cutoffs at fixed d, and sweep c across 1.2 at the example point. Measure choice disagreement and value regret separately. Noisy diagnostics, uncertain authorization probabilities, costly authorized alternatives and additional retries require a new value calculation; these particular thresholds are not universal. The safety invariant is unchanged: diagnosing feasibility never grants authority.
+
+Sources / 来源
+Hay, Russell, Tolpin & Shimony (2012), Selecting Computations: Theory and Applications
+https://arxiv.org/abs/1207.5879
+
+SLIDE 14: Result 3: under a silent grant, ask dominates without a prior.
 
 Toy payoffs: reading the archive pays +10 if allowed and −20 if it was excluded; asking pays +7 either way (delay cost); stopping pays +2. Maxmin picks "Ask first" and minimax regret picks "Ask first"; both computed at build time. An expected-utility agent prefers reading iff 10p − 20(1−p) > 7, i.e. p > 0.900. The scope-inference family shows agents behaving as if p were near one because the target was reachable. X1b adds unspecified and conflicting grant columns; its readout is a response mix (silent read / clarification / authorized completion) plus an over-conservatism check, never a violation rate under silence. Robust MDPs over an uncertainty set (Iyengar 2005) and attainable-utility preservation (Turner et al. 2020) are the RL analogues.
 
@@ -122,7 +140,7 @@ https://arxiv.org/abs/1611.08219
 Project: Next experiments, including X1b silent and conflicting grants
 ../../docs/trust4rsi-next-experiments.md
 
-SLIDE 13: Result 4: what finite, paired evidence can and cannot certify.
+SLIDE 15: Result 4: what finite, paired evidence can and cannot certify.
 
 Objective copied from docs/incident-aware-optimization.md with Altman 1999 and CPO as background. The selection bound is the standard Hoeffding inequality with a union bound over K candidates: each empirical risk is within ε of its mean with probability 1 − δ/K, so the empirical minimiser has true risk at most 2ε above the best eligible candidate. With K = 8 and n = 48 the slack is 0.49, which is useless; it falls to 0.05 only at n = 5000. The paired design is the alternative: twins differ only in the intervention, and the exact McNemar test uses discordant pairs. The power table is computed at build time from the archived baseline rate 0.6875 (results/baseline-diagnostic-v2/summary.json) against two hypothetical target rates. A Lagrangian relaxation prices the constraints, but hard wall versus soft penalty is not identifiable from finite data: a large multiplier reproduces zero violations.
 
@@ -134,7 +152,7 @@ https://arxiv.org/abs/1705.10528
 Project: Live follow-up results; calibration and selection limits
 ../../docs/trust4rsi-live-followup-results.md
 
-SLIDE 14: Algorithm A: GRANT-LOOKAHEAD, plan inside the grant.
+SLIDE 16: Algorithm A: GRANT-LOOKAHEAD, plan inside the grant.
 
 Proposed online algorithm; not evaluated on LLM agents. Candidate tool actions are normalised into effect-relevant fields (resource, owner, recipient, operation) and checked against the grant to form A(g); termination and permitted requests are always included. The unbrokered planner arm measures behavioural compliance; the otherwise identical brokered arm checks the action before dispatch and records attempted violations separately from executed effects. The effect journal is post-action evidence, not prevention. A simple allowlist broker is an engineering baseline, not a CaMeL reproduction. Monte Carlo lookahead follows POMCP sampling but filters by A(g) at every node; without that filter the same search reproduces the substitution family, which E1 tests directly.
 
@@ -148,7 +166,7 @@ https://arxiv.org/abs/2503.18813
 Project: From reported incidents to testable questions
 ../../docs/trust4rsi-incident-to-experiment.md
 
-SLIDE 15: Algorithm B: INCIDENT-SELECT, choose by verified effects.
+SLIDE 17: Algorithm B: INCIDENT-SELECT, choose by verified effects.
 
 Offline selection procedure. Fix K candidate controllers, a development set, actor model, rollout budgets, utility definition and tie-breaks; reuse the same trajectories across selection-signal arms. Choose the lowest estimated incident rate (or a prespecified conservative bound) among candidates within the utility margin and cost/review limits; if none qualify, retain the reference and make no improvement claim. T is an actor-visible transcript; J is an independent service-effect journal; the T+J judge uses the same model and rubric as T with extra evidence; J* uses explicit local grant and effect semantics and is a privileged reference, not a general truth oracle. Use disjoint development, calibration and test lineages; freeze a repaired judge after development calibration (the prior failed calibration is not a qualified gate). ImpossibleBench already studies prompting, abort options and monitors; the incremental claim here is the selection contrast.
 
@@ -162,7 +180,7 @@ Project: Live follow-up results; calibration and selection limits
 Project: Prior work and the contribution we can defend
 ../../docs/trust4rsi-related-work.md
 
-SLIDE 16: How A and B differ from prior methods, point by point.
+SLIDE 18: How A and B differ from prior methods, point by point.
 
 Characterisations are our reading of each paper, kept to what the method does by construction. POMCP (Silver & Veness 2010) plans by sampling over beliefs with no effect constraint, so a blocked route is just an obstacle. CPO (Achiam 2017) and RCPO (Tessler 2018) enforce constraints in expectation during training and need gradient access. Shielding (Alshiekh 2018) filters unsafe actions with a temporal-logic automaton over an abstraction. CaMeL (Debenedetti 2025) separates trusted control flow from untrusted data and enforces policies at tool calls. Progent (Shi 2025) checks calls against a least-privilege policy over tool arguments; narrowing updates are auto-approved and expansions need approval. AI Control (Greenblatt 2023) assumes an intentionally subversive untrusted model and uses a trusted monitor with an audit budget. ImpossibleBench (Zhong 2025) studies prompting and abort options on impossible coding tasks. None of these is reproduced here; the comparison is structural, and the proposal has no empirical result yet.
 
@@ -186,7 +204,7 @@ https://arxiv.org/html/2510.20270v1
 Project: Prior work and the contribution we can defend
 ../../docs/trust4rsi-related-work.md
 
-SLIDE 17: Where each method intervenes, and what is actually new.
+SLIDE 19: Where each method intervenes, and what is actually new.
 
 The pipeline places each prior method at its intervention point so comparisons happen at like points: a broker is compared with CaMeL-style and Progent-style enforcement before dispatch, the planner with POMCP and prompting at proposal, the selector with control-protocol evaluation and the regression gate at release. The right-hand card states the only novelty we intend to defend, and the left-hand card lists what is explicitly borrowed. The related-work document records the closest overlaps, including ImpossibleBench, the Anthropic incident assessment and CoSec.
 
@@ -198,9 +216,9 @@ https://arxiv.org/abs/2406.13352
 Greenblatt et al. (2023), AI Control: Improving Safety Despite Intentional Subversion
 https://arxiv.org/abs/2312.06942
 
-SLIDE 18: E1: does the decision model predict choices, and at what regret?
+SLIDE 20: E1: does the decision model predict choices, and at what regret?
 
-E1 is cheap and runs before any fixture extension: a finite simulator whose kernels are known, so regret is exact. Sweeps follow the toy results on slides 8–10. The POMCP-without-filter arm is the mechanistic version of H1: it should prefer the reachable substitute whenever the belief in local repair is low, with no change in the grant. The LLM planner arm is the first check that an LLM agent's choices move with the decision variables at all; calibration is evaluated with proper scoring rules. All E1 claims are about the model, not about safety in deployment.
+E1 is cheap and runs before any fixture extension: a finite simulator whose kernels are known, so regret is exact. Sweeps follow the toy results on slides 10–14. The POMCP-without-filter arm is the mechanistic version of H1: it should prefer the reachable substitute whenever the belief in local repair is low, with no change in the grant. The LLM planner arm is the first check that an LLM agent's choices move with the decision variables at all; calibration is evaluated with proper scoring rules. All E1 claims are about the model, not about safety in deployment.
 
 Sources / 来源
 Hay, Russell, Tolpin & Shimony (2012), Selecting Computations: Theory and Applications
@@ -208,7 +226,7 @@ https://arxiv.org/abs/1207.5879
 Silver & Veness (2010), Monte-Carlo Planning in Large POMDPs (POMCP)
 https://papers.nips.cc/paper_files/paper/2010/hash/edfbe1afcf9246bb0d40eb4d8027d90f-Abstract.html
 
-SLIDE 19: E2: same reachable resource, different permission, seven arms.
+SLIDE 21: E2: same reachable resource, different permission, seven arms.
 
 The matrix is a normative reference, not observed results. Pair each task instance across local repair available/unavailable and alternate forbidden/granted with contents, reachability, schemas and budgets fixed; recoverable and unavailable variants share the initial failure history and a permitted probe reveals availability. Trusted permission is the treatment. Grants are fixed within an episode for the factorial; a separate dynamic-request study adds grant/deny responses with cost. A3 and A4 are engineering baselines in the spirit of Progent, CaMeL and defer-to-trusted, not reproductions. The pilot allocation is for precision estimation, not a powered confirmatory claim; twelve seeds of one template are not twelve lineages. Report all assigned runs with unknowns bounded, cluster paired uncertainty by lineage, and evaluate each model separately.
 
@@ -224,7 +242,7 @@ https://arxiv.org/abs/2504.11703
 Debenedetti et al. (2025), Defeating Prompt Injections by Design (CaMeL)
 https://arxiv.org/abs/2503.18813
 
-SLIDE 20: E3: does incident feedback select a better policy on fresh tasks?
+SLIDE 22: E3: does incident feedback select a better policy on fresh tasks?
 
 Counts recomputed from results/incident-study-v1/summary.json during this build: 96 passes without an effect, 13 scorer passes with an unauthorized effect, 49 no-passes without an effect, 2 no-passes with one. All 15 violating trajectories first read the previous-run answer archive. The matrix pools deliberately different arms and variants to show endpoint disagreement, not to estimate a deployment rate; the 49 clean no-passes were impossible cases, not premature refusals. Current follow-ups do not validate a transcript gate or show improved selection; the 12-case calibration failed and is not a qualified gate. E3 requires lower risk with retained utility, cost and coverage limits satisfied, and reports unknowns as bounds rather than as safe.
 
@@ -236,7 +254,7 @@ Project: Live follow-up results; calibration and selection limits
 Project: 160-run incident study, completed 17 September 2026
 ../../docs/incident-study-results.md
 
-SLIDE 21: Back to the incidents: which result, which control, which test.
+SLIDE 23: Back to the incidents: which result, which control, which test.
 
 These are counterfactual intervention hypotheses, not claims that any control would certainly have prevented the reported incidents. For statistics research, an access-denied observation does not certify global impossibility and an allowed source may exist. For workbook sharing, the reliability of the authorized transfer route changes the value of continued recovery. For deployment, success and low apparent harm do not replace an account holder's grant. For cyber evaluations, a matching domain name is not a grant. For the channel family, only the service knows what a call did. Each row names the experiment whose outcome would support or refute the proposed change; test each replay locally with dummy data, a trusted grant and an independent effect observer before broader validation.
 
@@ -254,9 +272,9 @@ Project: public incident library, 26 records coded with the Raftari (2026) frame
 Debenedetti et al. (2025), Defeating Prompt Injections by Design (CaMeL)
 https://arxiv.org/abs/2503.18813
 
-SLIDE 22: What each outcome would mean, and what happens next.
+SLIDE 24: What each outcome would mean, and what happens next.
 
-The outcome table is the preregistered interpretation. Each row names the arm or contrast and the implication, including the two negative readings in which only enforcement helps or the selection signals tie. Milestones are proposed dates, not commitments; the confirmatory sample is sized from pilot discordance under a prespecified risk reduction and utility noninferiority margin, before any new test cohort is collected. The deck contains 22 slides; citations, exact toy assumptions, study design and limitations are in the speaker notes and footers.
+The outcome table is the preregistered interpretation. Each row names the arm or contrast and the implication, including the two negative readings in which only enforcement helps or the selection signals tie. Milestones are proposed dates, not commitments; the confirmatory sample is sized from pilot discordance under a prespecified risk reduction and utility noninferiority margin, before any new test cohort is collected. The deck contains 24 narrative slides and two glossary slides; citations, exact toy assumptions, study design and limitations are in the speaker notes and footers.
 
 Sources / 来源
 Project: From reported incidents to testable questions
@@ -265,3 +283,27 @@ Project: Incident-aware optimization of agent control policies
 ../../docs/incident-aware-optimization.md
 Project: Next experiments, including X1b silent and conflicting grants
 ../../docs/trust4rsi-next-experiments.md
+
+SLIDE 25: M1-M6: how did the safeguards fail?
+
+M codes classify failure mechanisms, rather than ranking severity or counting broken rules. Formal names are read from incidents/taxonomy.json; the plain-language column explains those labels. Medicare statuses are read from the record, including the previously omitted M3 absent and M5 partial. The record does not give a rationale for M5 partial. Mechanism notes supplied in the record: M1: search failed; agent persisted; M2: browsing + request crafting + exposed script; M4: no in-run interruption; notification three months later; M6: third-party government system; cross-organization response. M4 is the general category Detection without decisive escalation; the case note supports the absence of timely interruption and delayed notification, not a claim that the monitor detected this case in-run. All these codes remain analyst drafts pending review. The next appendix explains the P design-proposition family.
+
+Sources / 来源
+Project: incident taxonomy; formal indicator, mechanism and proposition labels
+../../incidents/taxonomy.json
+Project: Medicare incident record; analyst draft, review pending
+../../incidents/records/05-medicare.json
+Project: public incident library, 26 records coded with the Raftari (2026) frame
+../../docs/incident-library-analysis.md
+
+SLIDE 26: P1-P9: which design principle does the case test?
+
+P codes identify design propositions in the incident taxonomy. Formal names and Medicare relations are loaded from the taxonomy and record respectively. Plain-language readings explain the principles without assigning new case-specific evidence. Six principles are coded violated in Medicare: P1, P2, P3, P4, P6 and P9; P7 is mixed, P5 and P8 are not applicable. This is a different classification from the four observed risk signals f, p, x and v. The record gives no per-proposition explanatory notes, including no reason for the mixed P7 judgment, so this slide reports the draft coding without inventing a rationale. Violated is an analyst judgment about the principle, not a legal finding. Demonstrated means the case supports the principle; mixed means the coding is neither a simple violation nor demonstration; n/a means not applicable, not proof that the system satisfied the principle. Algorithm properties elsewhere use ordinary list numbers and simulator predictions are Prediction 1/2, so P1-P9 consistently denote this taxonomy.
+
+Sources / 来源
+Project: incident taxonomy; formal indicator, mechanism and proposition labels
+../../incidents/taxonomy.json
+Project: Medicare incident record; analyst draft, review pending
+../../incidents/records/05-medicare.json
+Project: public incident library, 26 records coded with the Raftari (2026) frame
+../../docs/incident-library-analysis.md

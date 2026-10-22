@@ -1,5 +1,5 @@
 {
-  "slides": 22,
+  "slides": 26,
   "pages": [
     {
       "slide": 1,
@@ -69,68 +69,92 @@
     },
     {
       "slide": 12,
+      "title": "Why PROBE is worth 4.7: pay once, then choose with evidence.",
+      "kicker": "09 / Value of information / Payoffs",
+      "source": " "
+    },
+    {
+      "slide": 13,
+      "title": "Decision boundaries are equal-value curves, with dominance checks.",
+      "kicker": "09 / Value of information / Boundaries",
+      "source": " "
+    },
+    {
+      "slide": 14,
       "title": "Result 3: under a silent grant, ask dominates without a prior.",
       "kicker": "10 / Decision under ambiguity; principal and agent",
       "source": " "
     },
     {
-      "slide": 13,
+      "slide": 15,
       "title": "Result 4: what finite, paired evidence can and cannot certify.",
       "kicker": "11 / Constrained selection from finite data",
       "source": " "
     },
     {
-      "slide": 14,
+      "slide": 16,
       "title": "Algorithm A: GRANT-LOOKAHEAD, plan inside the grant.",
       "kicker": "12 / Online decision algorithm",
       "source": " "
     },
     {
-      "slide": 15,
+      "slide": 17,
       "title": "Algorithm B: INCIDENT-SELECT, choose by verified effects.",
       "kicker": "13 / Offline policy selection",
       "source": " "
     },
     {
-      "slide": 16,
+      "slide": 18,
       "title": "How A and B differ from prior methods, point by point.",
       "kicker": "14 / Comparison with existing algorithms",
       "source": " "
     },
     {
-      "slide": 17,
+      "slide": 19,
       "title": "Where each method intervenes, and what is actually new.",
       "kicker": "15 / Positioning",
       "source": " "
     },
     {
-      "slide": 18,
+      "slide": 20,
       "title": "E1: does the decision model predict choices, and at what regret?",
       "kicker": "16 / Experiment 1 · simulator",
       "source": " "
     },
     {
-      "slide": 19,
+      "slide": 21,
       "title": "E2: same reachable resource, different permission, seven arms.",
       "kicker": "17 / Experiment 2 · the discriminating fixture",
       "source": " "
     },
     {
-      "slide": 20,
+      "slide": 22,
       "title": "E3: does incident feedback select a better policy on fresh tasks?",
       "kicker": "18 / Experiment 3 · selection contrast",
       "source": " "
     },
     {
-      "slide": 21,
+      "slide": 23,
       "title": "Back to the incidents: which result, which control, which test.",
       "kicker": "19 / Real-world implications",
       "source": " "
     },
     {
-      "slide": 22,
+      "slide": 24,
       "title": "What each outcome would mean, and what happens next.",
       "kicker": "20 / Reading the results in advance",
+      "source": " "
+    },
+    {
+      "slide": 25,
+      "title": "M1-M6: how did the safeguards fail?",
+      "kicker": "Appendix A / Failure mechanism codebook",
+      "source": " "
+    },
+    {
+      "slide": 26,
+      "title": "P1-P9: which design principle does the case test?",
+      "kicker": "Appendix B / Design proposition codebook",
       "source": " "
     }
   ],
@@ -179,7 +203,21 @@
     "ASK": 4.0,
     "PROBE": 4.699999999999999
   },
+  "voi_assumptions": {
+    "reward": 10.0,
+    "recovery_cost": 2.0,
+    "grant_probability": 0.6,
+    "probe_cost": 0.5
+  },
+  "voi_gross": 1.1999999999999993,
+  "voi_net": 0.6999999999999993,
   "voi_policy_enumeration_checks": 8181,
+  "voi_analytic_policy_checks": 8181,
+  "voi_boundary_and_neighbor_checks": 162,
+  "voi_thresholds_at_d_2": [
+    0.125,
+    0.9166666666666666
+  ],
   "ambiguity_toy": {
     "rows": [
       [
@@ -306,6 +344,14 @@
       "Project: public incident library, 26 records coded with the Raftari (2026) frame",
       "../../docs/incident-library-analysis.md"
     ],
+    "taxonomy": [
+      "Project: incident taxonomy; formal indicator, mechanism and proposition labels",
+      "../../incidents/taxonomy.json"
+    ],
+    "medicare_coding": [
+      "Project: Medicare incident record; analyst draft, review pending",
+      "../../incidents/records/05-medicare.json"
+    ],
     "pomdp": [
       "Kaelbling, Littman & Cassandra (1998), Planning and Acting in Partially Observable Stochastic Domains",
       "https://cs.brown.edu/courses/csci2951-k/papers/kaelbling98.pdf"
@@ -394,26 +440,30 @@
   "new_hosted_model_calls": 0,
   "word_counts": [
     77,
-    151,
+    162,
     184,
     115,
-    159,
+    223,
     223,
     201,
     178,
     143,
-    219,
-    143,
+    217,
+    166,
+    178,
+    187,
     279,
     228,
     305,
     214,
     253,
     186,
-    233,
+    238,
     188,
     206,
     236,
-    223
+    223,
+    204,
+    247
   ]
 }
