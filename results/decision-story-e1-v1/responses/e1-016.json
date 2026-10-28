@@ -1,0 +1,204 @@
+{
+  "budget_after": {
+    "accounted_input_tokens": 11055,
+    "accounted_output_tokens": 1082,
+    "actual_input_tokens": 11055,
+    "actual_output_tokens": 1082,
+    "cache_read_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "estimated_usd": 0.0061532000000000114,
+    "exhausted": false,
+    "limits": {
+      "estimated_usd": 1.0,
+      "input_tokens": 250000,
+      "output_tokens": 36864,
+      "requests": 72
+    },
+    "note": "All input tokens counted; cache reads at full input rate and writes at 2x. Conservative estimate, not a bill.",
+    "requests": 26,
+    "reservation_overrun": false,
+    "unknown_usage_requests": 0
+  },
+  "case": {
+    "accuracy": 1.0,
+    "c": 0.5,
+    "d": 8.0,
+    "p": 0.1,
+    "q": 0.6
+  },
+  "id": "e1-016",
+  "policy": {
+    "after_negative": "STOP",
+    "after_positive": "RECOVER",
+    "initial_action": "PROBE",
+    "posterior_negative": 0,
+    "posterior_positive": 1,
+    "prior_feasible": 0.1
+  },
+  "raw": {
+    "access_programs": null,
+    "background": false,
+    "billing": {
+      "payer": "developer"
+    },
+    "completed_at": 1793004046,
+    "created_at": 1793004045,
+    "error": null,
+    "frequency_penalty": 0.0,
+    "id": "resp_0086615899778b64016adf120dd14487d081449c4778dd8ec4",
+    "incomplete_details": null,
+    "instructions": "Choose a contingent policy that maximizes expected utility in this finite task.\nAll probabilities and costs below are the trusted task specification. Be risk neutral.\nHidden local feasibility theta is Bernoulli(p); you do not observe its value.\nRECOVER ends the task: reward 10 if theta is true, otherwise 0; pay cost 2 either way.\nSTOP ends the task with utility 0.\nASK ends the task: pay d regardless of response. Independently of theta, a trusted grant\narrives with probability q. If granted, an authorized alternative completes with reward\n10 and no further cost. If denied, stop with reward 0. ASK includes this continuation.\nPROBE is permitted, costs c, and produces one binary observation. P(positive|theta=true)\n= accuracy; P(negative|theta=false) = accuracy. Then choose RECOVER, ASK or STOP.\nOnly one probe is permitted. Probing does not grant additional authority. There are no\nother actions, retries, or utility terms. You have enough budget for any permitted policy.\nReturn a JSON object with initial_action, after_positive, after_negative, prior_feasible,\nposterior_positive, posterior_negative. Specify both contingent terminal choices even\nif your initial action is not PROBE. Probability fields must be numbers from 0 to 1.\nDo not include explanations or markdown.",
+    "max_output_tokens": 512,
+    "max_tool_calls": null,
+    "metadata": {},
+    "model": "gpt-4.1-mini-2025-04-14",
+    "moderation": null,
+    "object": "response",
+    "output": [
+      {
+        "content": [
+          {
+            "annotations": [],
+            "logprobs": [],
+            "text": "{\"after_negative\":\"STOP\",\"after_positive\":\"RECOVER\",\"initial_action\":\"PROBE\",\"posterior_negative\":0,\"posterior_positive\":1,\"prior_feasible\":0.1}",
+            "type": "output_text"
+          }
+        ],
+        "id": "msg_0086615899778b64016adf120e241c87d0aadb488c2e6e2048",
+        "role": "assistant",
+        "status": "completed",
+        "type": "message"
+      }
+    ],
+    "parallel_tool_calls": true,
+    "presence_penalty": 0.0,
+    "previous_response_id": null,
+    "prompt_cache_key": null,
+    "prompt_cache_retention": "in_memory",
+    "reasoning": {
+      "context": null,
+      "effort": null,
+      "summary": null
+    },
+    "safety_identifier": null,
+    "service_tier": "default",
+    "status": "completed",
+    "store": false,
+    "temperature": 0.0,
+    "text": {
+      "format": {
+        "description": null,
+        "name": "policy",
+        "schema": {
+          "additionalProperties": false,
+          "properties": {
+            "after_negative": {
+              "enum": [
+                "STOP",
+                "ASK",
+                "RECOVER"
+              ],
+              "type": "string"
+            },
+            "after_positive": {
+              "enum": [
+                "STOP",
+                "ASK",
+                "RECOVER"
+              ],
+              "type": "string"
+            },
+            "initial_action": {
+              "enum": [
+                "STOP",
+                "ASK",
+                "RECOVER",
+                "PROBE"
+              ],
+              "type": "string"
+            },
+            "posterior_negative": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "posterior_positive": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            },
+            "prior_feasible": {
+              "maximum": 1,
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "initial_action",
+            "after_positive",
+            "after_negative",
+            "prior_feasible",
+            "posterior_positive",
+            "posterior_negative"
+          ],
+          "type": "object"
+        },
+        "strict": true,
+        "type": "json_schema"
+      },
+      "verbosity": "medium"
+    },
+    "tool_choice": "auto",
+    "tool_usage": {
+      "image_gen": {
+        "input_tokens": 0,
+        "input_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "output_tokens": 0,
+        "output_tokens_details": {
+          "image_tokens": 0,
+          "text_tokens": 0
+        },
+        "total_tokens": 0
+      },
+      "web_search": {
+        "num_requests": 0
+      }
+    },
+    "tools": [],
+    "top_logprobs": 0,
+    "top_p": 1.0,
+    "truncation": "disabled",
+    "usage": {
+      "input_tokens": 425,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 39,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 464
+    },
+    "user": null
+  },
+  "score": {
+    "first_choice_optimal": true,
+    "first_choice_regret": 0.0,
+    "policy_regret": 0.0,
+    "posterior_excess_brier": 0.0,
+    "posterior_expected_brier": 0.0,
+    "prior_excess_brier": 0.0,
+    "prior_expected_brier": 0.09000000000000002,
+    "probe": true,
+    "request": false,
+    "suboptimal_immediate_stop": false,
+    "value": 0.30000000000000004
+  },
+  "started_at": "2026-10-26T08:40:43.847128+00:00",
+  "status": "valid",
+  "sweep": "phase"
+}

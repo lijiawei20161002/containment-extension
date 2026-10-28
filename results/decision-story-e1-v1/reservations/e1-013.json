@@ -1,0 +1,20 @@
+{
+  "accounted_input_tokens": 35907,
+  "accounted_output_tokens": 2972,
+  "actual_input_tokens": 25508,
+  "actual_output_tokens": 2460,
+  "cache_read_input_tokens": 0,
+  "cache_write_input_tokens": 0,
+  "estimated_usd": 0.02327760000000003,
+  "exhausted": false,
+  "limits": {
+    "estimated_usd": 1.0,
+    "input_tokens": 250000,
+    "output_tokens": 36864,
+    "requests": 72
+  },
+  "note": "All input tokens counted; cache reads at full input rate and writes at 2x. Conservative estimate, not a bill.",
+  "requests": 61,
+  "reservation_overrun": false,
+  "unknown_usage_requests": 1
+}

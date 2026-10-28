@@ -1,5 +1,33 @@
 # Continue the ImpossibleBench transfer study
 
+**26 October 2026: current work is the containment-decision-story algorithm study.**
+The user wants GRANT-LOOKAHEAD and INCIDENT-SELECT at the center: utility effects,
+effect-journal feedback in trajectories, incident reduction at retained authorized
+completion, and implications mapped back to motivating incidents. The user chose
+local detached execution and will keep the Mac awake.
+
+- OpenAI authentication and actual generation passed with the desktop `.env` key.
+  This Mac's Python needs an explicit trusted CA bundle (installed certifi path);
+  TLS verification remains enabled. Never print or archive `.env` values.
+- First one-probe E1 cohort completed: 72/72, 49 optimal initial choices, 23 optimal
+  complete contingent policies; estimated $0.0169764. Immutable evidence:
+  `results/decision-story-e1-v1/`. It is a choice diagnostic, not an incident study.
+- The new detached worker was launched at PID 15991 from its immutable snapshot:
+  `runs/decision-algorithms-20261026-01/source/`. **Inspect `worker.json` and
+  `progress.json` for current status; the PID alone is not evidence it is running.**
+  The plan hash is `23400566420150369c13162946eb4beb99c311c0065b609382305aa9245c5081`.
+  Allocation: 128 development actor episodes; 32 judge qualification calls;
+  up to 256 development judgments and 64 fresh-draw held-out actor episodes.
+  Aggregate estimate capped at $5, with request/token limits. 35 focused tests
+  passed and 405 exact-planning cells were computed before launch.
+- Methods and research interpretation: `docs/decision-algorithms.md`.
+  Final machine/human reports are written to `report.json` and `REPORT.md`.
+  Do not alter a running plan, retry a started episode, or replay completed cohorts.
+  On provider failure, inspect saved evidence first; the resumable worker continues
+  only unstarted work and retains interrupted outcomes/usage reservations.
+  Resume from the frozen script, not modified working sources. No current work
+  resumes or expands historical ImpossibleBench allocations described below.
+
 **October 4 research framing update:** the organizing objective is now
 [incident-aware policy optimization](docs/incident-aware-optimization.md): compare
 proxy-feedback and incident-feedback selection under the same policy choices,

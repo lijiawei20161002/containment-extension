@@ -1,0 +1,17 @@
+{
+  "version": "decision-story-e1-one-probe-v1",
+  "scope": "First E1 stage: elicited contingent policies for the slide 11-13 one-probe decision model, including noisy observations. Not an interactive containment evaluation or the complete E1/E2/E3 study.",
+  "provider": "openai",
+  "model": "gpt-4.1-mini-2025-04-14",
+  "temperature": 0,
+  "max_output_tokens": 512,
+  "seed": 20261026,
+  "live_assignments": 72,
+  "rates": {"input": 0.4, "output": 1.6},
+  "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+  "pricing_checked": "2026-10-26",
+  "budget": {"requests": 72, "input_tokens": 250000, "output_tokens": 36864, "estimated_usd": 1.0},
+  "stopping": "No retries or substitutions. Stop on a provider error, missing usage, incomplete response or budget limit; preserve all assignments and unknowns. Invalid complete JSON is retained and the next assignment proceeds.",
+  "analysis": "Exact policy-value regret and first-choice agreement with all optimal ties; prior and posterior expected Brier scores and excess scores. Report each sweep separately; no deployment, safety, powered effect, or independent-lineage claim.",
+  "authorization": "User requested starting the containment-decision-story experiments on 2026-10-26 and retrying the provided OpenAI key. Begin with this bounded first E1 stage."
+}

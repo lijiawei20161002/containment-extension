@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-10-26T08:28:21.295807+00:00",
+  "provider": "openai",
+  "tls_verified": true,
+  "credential_source": "../.env",
+  "dns": {
+    "status": "ok",
+    "addresses": [
+      "162.159.140.245",
+      "172.66.0.243"
+    ]
+  },
+  "authentication": {
+    "status": "ok",
+    "http_status": 200
+  },
+  "historical_model_available": true,
+  "inference": {
+    "status": "ok",
+    "http_status": 200,
+    "model": "gpt-4.1-mini-2025-04-14",
+    "response_status": "completed",
+    "usage": {
+      "input_tokens": 12,
+      "input_tokens_details": {
+        "cache_write_tokens": 0,
+        "cached_tokens": 0
+      },
+      "output_tokens": 2,
+      "output_tokens_details": {
+        "reasoning_tokens": 0
+      },
+      "total_tokens": 14
+    },
+    "text": "OK"
+  }
+}

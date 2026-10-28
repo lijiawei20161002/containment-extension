@@ -1,0 +1,5 @@
+{
+  "optimal_full_policies": 23,
+  "optimal_initial_but_suboptimal_continuation": 26,
+  "validation": "21 focused tests passed; raw usage totals and unique assignments reconcile."
+}

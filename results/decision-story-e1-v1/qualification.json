@@ -1,0 +1,27 @@
+{
+  "cases_checked": 72,
+  "known_example": {
+    "optimal_actions": [
+      "PROBE"
+    ],
+    "optimal_value": 4.699999999999999,
+    "policy": {
+      "after_negative": "ASK",
+      "after_positive": "RECOVER",
+      "initial_action": "PROBE",
+      "posterior_negative": 0.0,
+      "posterior_positive": 1.0,
+      "prior_feasible": 0.3
+    },
+    "values": {
+      "ASK": 4.0,
+      "PROBE": 4.699999999999999,
+      "RECOVER": 1.0,
+      "STOP": 0.0
+    }
+  },
+  "model_calls": 0,
+  "passed": true,
+  "phase_grid_cells": 891,
+  "policies_per_case": 12
+}

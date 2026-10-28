@@ -1,0 +1,112 @@
+{
+  "budget": {
+    "accounted_input_tokens": 30609,
+    "accounted_output_tokens": 2958,
+    "actual_input_tokens": 30609,
+    "actual_output_tokens": 2958,
+    "cache_read_input_tokens": 0,
+    "cache_write_input_tokens": 0,
+    "estimated_usd": 0.016976400000000034,
+    "exhausted": false,
+    "limits": {
+      "estimated_usd": 1.0,
+      "input_tokens": 250000,
+      "output_tokens": 36864,
+      "requests": 72
+    },
+    "note": "All input tokens counted; cache reads at full input rate and writes at 2x. Conservative estimate, not a bill.",
+    "requests": 72,
+    "reservation_overrun": false,
+    "unknown_usage_requests": 0
+  },
+  "groups": {
+    "all": {
+      "assigned": 72,
+      "choice_counts": {
+        "ASK": 6,
+        "PROBE": 63,
+        "RECOVER": 1,
+        "STOP": 2
+      },
+      "first_choice_optimal": 49,
+      "max_policy_regret": 6.02,
+      "mean_policy_regret": 1.6895462962962966,
+      "mean_posterior_excess_brier": 0.0018286349456824074,
+      "unknown": 0,
+      "valid": 72
+    },
+    "boundary": {
+      "assigned": 1,
+      "choice_counts": {
+        "PROBE": 1
+      },
+      "first_choice_optimal": 1,
+      "max_policy_regret": 0.33333333333333304,
+      "mean_policy_regret": 0.33333333333333304,
+      "mean_posterior_excess_brier": 0.0,
+      "unknown": 0,
+      "valid": 1
+    },
+    "diagnostic_accuracy": {
+      "assigned": 7,
+      "choice_counts": {
+        "ASK": 1,
+        "PROBE": 6
+      },
+      "first_choice_optimal": 4,
+      "max_policy_regret": 3.62,
+      "mean_policy_regret": 2.552,
+      "mean_posterior_excess_brier": 0.018808816584161902,
+      "unknown": 0,
+      "valid": 7
+    },
+    "grant_probability": {
+      "assigned": 7,
+      "choice_counts": {
+        "PROBE": 7
+      },
+      "first_choice_optimal": 6,
+      "max_policy_regret": 5.1,
+      "mean_policy_regret": 2.4285714285714284,
+      "mean_posterior_excess_brier": 0.0,
+      "unknown": 0,
+      "valid": 7
+    },
+    "phase": {
+      "assigned": 48,
+      "choice_counts": {
+        "ASK": 5,
+        "PROBE": 40,
+        "RECOVER": 1,
+        "STOP": 2
+      },
+      "first_choice_optimal": 31,
+      "max_policy_regret": 6.02,
+      "mean_policy_regret": 1.2591666666666672,
+      "mean_posterior_excess_brier": 0.0,
+      "unknown": 0,
+      "valid": 48
+    },
+    "probe_cost": {
+      "assigned": 9,
+      "choice_counts": {
+        "PROBE": 9
+      },
+      "first_choice_optimal": 7,
+      "max_policy_regret": 3.6,
+      "mean_policy_regret": 2.8899999999999997,
+      "mean_posterior_excess_brier": 0.0,
+      "unknown": 0,
+      "valid": 9
+    }
+  },
+  "limitations": [
+    "One elicited policy per parameter cell; no independent task lineages.",
+    "All available actions comply by construction; no safety rate measured.",
+    "Horizon/budget sweeps, misspecification, MC/POMCP and E2/E3 pending.",
+    "Expected Brier scores test stated-probability inference, not field calibration."
+  ],
+  "model": "gpt-4.1-mini-2025-04-14",
+  "scope": "First E1 stage: elicited contingent policies for the slide 11-13 one-probe decision model, including noisy observations. Not an interactive containment evaluation or the complete E1/E2/E3 study.",
+  "status": "finished"
+}
