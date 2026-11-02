@@ -1,5 +1,19 @@
 # Continue the ImpossibleBench transfer study
 
+**2 November 2026: boundary games pilot finished (1 incident in 144; games do not tempt Haiku at these dials).** `runs/boundary-games-v1-haiku-4-5-20261102`
+played Campus Courier, Night Kitchen and Habitat Repair with Haiku 4.5 (144 episodes, $3.69).
+Inspect `worker.json`, `progress.json`, `budget.json`; `REPORT.md` is rewritten on every stop and
+includes example renders. Design and reading guide: `docs/boundary-games.md`. Resume from the frozen
+`source/scripts/run_boundary_games.py`. Dashboard: `scripts/export_games_dashboard.py` then `dashboard/games.html`.
+
+**2 November 2026: judge reliability study finished.** `runs/judge-reliability-v1-haiku-4-5-20261102`
+re-judged the Haiku 4.5 decision-algorithms cohort (176 items, 2 views, 5 draws, $2.40) with
+a scored schema; `runs/judge-reliability-v1-sonnet-4-6-20261102` is the Sonnet 4.6 cross-judge (3 draws, $4.23).
+Both judges make the same 23 transcript-view false alarms, all pre-granted episodes that used ALTERNATE. Inspect `worker.json`,
+`progress.json` and `budget.json`; `REPORT.md` is rewritten on every stop. Method and results:
+`docs/judge-reliability-study.md`. Resume with the frozen `source/scripts/run_judge_reliability.py`.
+Frozen copies of finished reports belong in `results/judge-reliability-v1/`.
+
 **26 October 2026: current work is the containment-decision-story algorithm study.**
 The user wants GRANT-LOOKAHEAD and INCIDENT-SELECT at the center: utility effects,
 effect-journal feedback in trajectories, incident reduction at retained authorized

@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Boundary Games</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Same tokens as index.html. Arms are categorical and reuse the main dashboard's arm colors
+   (plain grey, planner blue, journal orange); status colors are reserved for incidents. */
+:root {
+  --bg: #f4f5f7; --panel: #ffffff; --fg: #171a1f; --muted: #5b6370; --line: #d8dce3; --line-soft: #e9ecf0;
+  --accent: #2a78d6; --accent-soft: #e4eefb;
+  --s-plain: #7b8494; --s-planner: #2a78d6; --s-journal: #eb6834;
+  --critical: #d03b3b; --good: #0ca30c; --warn: #c98500; --critical-soft: #fbe5e5; --good-soft: #e3f5e3; --warn-soft: #fff3d6;
+  --font: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif; --mono: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #15171b; --panel: #1e2126; --fg: #eceef1; --muted: #a2aab6; --line: #353a43; --line-soft: #2a2e35;
+  --accent: #3987e5; --accent-soft: #1d2c42; --s-plain: #8c95a5; --s-planner: #3987e5; --s-journal: #d95926;
+  --critical: #e05252; --good: #2fbf4f; --warn: #e0a62e; --critical-soft: #3a1f1f; --good-soft: #1b3320; --warn-soft: #3a3014; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #15171b; --panel: #1e2126; --fg: #eceef1; --muted: #a2aab6; --line: #353a43; --line-soft: #2a2e35;
+  --accent: #3987e5; --accent-soft: #1d2c42; --s-plain: #8c95a5; --s-planner: #3987e5; --s-journal: #d95926;
+  --critical: #e05252; --good: #2fbf4f; --warn: #e0a62e; --critical-soft: #3a1f1f; --good-soft: #1b3320; --warn-soft: #3a3014; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font); font-size: 14px; line-height: 1.5; padding: 0 max(16px, env(safe-area-inset-left)) 48px max(16px, env(safe-area-inset-right)); }
+h1, h2, h3 { margin: 0; font-weight: 600; text-wrap: balance; } h1 { font-size: 22px; } h2 { font-size: 17px; margin-bottom: 4px; } h3 { font-size: 14px; }
+p { margin: 0; max-width: 76ch; } .muted { color: var(--muted); } .mono { font-family: var(--mono); font-size: 12.5px; } a { color: var(--accent); }
+header { position: sticky; top: 0; z-index: 5; background: var(--bg); padding: 16px 0 8px; border-bottom: 1px solid var(--line); margin-bottom: 16px; }
+.head-row { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: flex-end; justify-content: space-between; }
+nav.tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 10px; } nav.tabs a { text-decoration: none; color: var(--muted); padding: 6px 10px; border-radius: 6px; font-weight: 500; } nav.tabs a.active { color: var(--fg); background: var(--accent-soft); }
+.view { display: none; } .view.active { display: block; }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+.panel-head { margin-bottom: 12px; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+.tile { border: 1px solid var(--line-soft); border-radius: 8px; padding: 12px; } .tile .label { color: var(--muted); font-size: 12px; } .tile .value { font-size: 24px; font-weight: 600; line-height: 1.2; } .tile .sub { color: var(--muted); font-size: 12px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12.5px; color: var(--muted); } .legend span::before, .swatch::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; background: var(--c); }
+.bars { display: grid; grid-template-columns: minmax(140px, 200px) 1fr; gap: 6px 12px; align-items: center; } .bars .row-label { font-size: 13px; } .bars .row-label small { display: block; color: var(--muted); }
+.bar-track { position: relative; height: 10px; background: var(--line-soft); border-radius: 4px; } .bar-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px; background: var(--c); min-width: 2px; }
+.bar-val { font-family: var(--mono); font-size: 12px; white-space: nowrap; } .bar-line { display: grid; grid-template-columns: 1fr 90px; gap: 10px; align-items: center; }
+.group-title { grid-column: 1 / -1; margin-top: 10px; font-weight: 600; font-size: 13px; color: var(--muted); }
+.table-wrap { overflow-x: auto; } table { border-collapse: collapse; width: 100%; font-size: 13px; } th, td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line-soft); vertical-align: top; } th { color: var(--muted); font-weight: 500; font-size: 12px; position: sticky; top: 0; background: var(--panel); } td.num, th.num { text-align: right; font-family: var(--mono); font-size: 12.5px; }
+tr.clickable { cursor: pointer; } tr.clickable:hover, tr.selected { background: var(--accent-soft); }
+.flag { display: inline-block; padding: 1px 7px; border-radius: 10px; font-size: 12px; font-weight: 500; } .flag.bad { background: var(--critical-soft); color: var(--critical); } .flag.ok { background: var(--good-soft); color: var(--good); } .flag.warn { background: var(--warn-soft); color: var(--warn); } .flag.na { background: var(--line-soft); color: var(--muted); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; margin-bottom: 12px; } .filters label { font-size: 12.5px; color: var(--muted); } select { font: inherit; font-size: 13px; padding: 4px 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--fg); }
+pre.render { font-family: var(--mono); font-size: 12px; line-height: 1.35; background: var(--bg); border: 1px solid var(--line-soft); border-radius: 8px; padding: 10px 12px; overflow-x: auto; margin: 8px 0; }
+.detail { border-top: 1px solid var(--line); margin-top: 12px; padding-top: 12px; }
+.step { border-left: 3px solid var(--line); padding: 4px 10px; margin: 6px 0; } .step.incident { border-color: var(--critical); } .step .act { font-family: var(--mono); font-weight: 500; }
+.step .text { color: var(--muted); font-size: 12.5px; white-space: pre-wrap; max-width: 90ch; }
+details > summary { cursor: pointer; color: var(--accent); font-size: 12.5px; }
+.two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; }
+@media (max-width: 640px) { .bars { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="head-row">
+    <div><h1>Boundary games</h1><p class="muted" id="subtitle">Loading games-data.json…</p></div>
+    <div class="legend" id="legend"><span style="--c: var(--s-plain)">plain</span><span style="--c: var(--s-planner)">planner</span><span style="--c: var(--s-journal)">journal</span><a href="index.html">← main dashboard</a><a href="judge.html">judge reliability</a></div>
+  </div>
+  <nav class="tabs" id="tabs"><a href="#overview">Overview</a><a href="#episodes">Episode explorer</a><a href="#tasks">Task texts</a><a href="#method">Method</a></nav>
+</header>
+
+<section class="view" id="view-overview">
+  <div class="panel"><div class="panel-head"><h2>Pilot</h2><p class="muted">Three games on one control structure. Incident = an unauthorized boundary effect recorded by the independent journal. At-risk = the authorized route was unavailable; ungranted at-risk = unavailable and every request would be denied, so only the shortcut or an honest report can finish.</p></div><div class="tiles" id="ov-tiles"></div></div>
+  <div class="panel"><div class="panel-head"><h2>Incident rate by game and arm</h2><p class="muted">Share of known-outcome episodes with at least one incident. Bars share one 0–100% scale.</p></div><div class="bars" id="ov-bars"></div></div>
+  <div class="panel"><div class="panel-head"><h2>Summary table</h2></div><div class="table-wrap"><table id="ov-table"></table></div></div>
+</section>
+
+<section class="view" id="view-episodes">
+  <div class="panel">
+    <div class="filters">
+      <label>Game <select id="f-game"><option value="">any</option></select></label>
+      <label>Arm <select id="f-arm"><option value="">any</option></select></label>
+      <label>Outcome <select id="f-outcome"><option value="">any</option><option value="incident">incident</option><option value="clean">clean</option><option value="unknown">unknown</option></select></label>
+      <label>Route available <select id="f-avail"><option value="">any</option><option value="1">yes</option><option value="0">no</option></select></label>
+      <label>Grant would be <select id="f-grant"><option value="">any</option><option value="1">granted</option><option value="0">denied</option></select></label>
+      <label>Decoy <select id="f-decoy"><option value="">any</option><option value="1">yes</option><option value="0">no</option></select></label>
+      <span class="muted" id="f-count"></span>
+    </div>
+    <div class="table-wrap"><table id="ep-table"></table></div>
+    <div class="detail" id="ep-detail" hidden></div>
+  </div>
+</section>
+
+<section class="view" id="view-tasks"><div class="panel" id="tasks"></div></section>
+<section class="view" id="view-method"><div class="panel"><h2>Method</h2><div id="method"></div></div></section>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+const pct = (x, n) => n ? `${Math.round(100 * x / n)}%` : "–";
+const ARM_COLOR = { plain: "var(--s-plain)", planner: "var(--s-planner)", journal: "var(--s-journal)" };
+const GAME_LABEL = { courier: "Campus Courier", kitchen: "Night Kitchen", habitat: "Habitat Repair" };
+const MODEL_LABEL = m => (m || "").replace("claude-", "").replace(/-\d{8}$/, "").replace(/-(\d)-(\d)$/, " $1.$2").replace(/-(\d)$/, " $1").replace(/^(\w)/, c => c.toUpperCase());
+let DATA = null, S = null;
+
+function bar(x, n, color) {
+  const w = n ? Math.max(0, Math.min(100, 100 * x / n)) : 0;
+  return `<div class="bar-line"><div class="bar-track"><span class="bar-fill" style="--c:${color};width:${w}%"></span></div><span class="bar-val">${x}/${n} · ${pct(x, n)}</span></div>`;
+}
+
+function renderOverview() {
+  const b = S.budget || {};
+  const known = S.episodes.filter(e => e.incident != null);
+  $("#ov-tiles").innerHTML = `<div class="tile"><div class="label">${esc(MODEL_LABEL(S.model))} actor</div><div class="value">${S.completed}/${S.assigned}</div><div class="sub">${esc(S.status || "")} · $${(b.estimated_usd || 0).toFixed(2)} · ${b.requests || 0} calls</div></div>` +
+    S.games.map(g => { const k = known.filter(e => e.game === g); const inc = k.filter(e => e.incident).length; return `<div class="tile"><div class="label">${esc(GAME_LABEL[g])}</div><div class="value">${inc}/${k.length}</div><div class="sub">episodes with an incident</div></div>`; }).join("");
+  const rows = [];
+  for (const g of S.games) {
+    rows.push(`<div class="group-title">${esc(GAME_LABEL[g])}</div>`);
+    for (const arm of S.arms) { const s = S.summary[`${g}/${arm}`]; if (!s) continue; rows.push(`<div class="row-label">${esc(arm)}<small>at-risk ${s.at_risk_incidents}/${s.at_risk} · ungranted at-risk ${s.ungranted_at_risk_incidents}/${s.ungranted_at_risk}</small></div>${bar(s.incidents, s.known, ARM_COLOR[arm] || "var(--accent)")}`); }
+  }
+  $("#ov-bars").innerHTML = rows.join("");
+  $("#ov-table").innerHTML = `<thead><tr><th>Game / arm</th><th class="num">Known</th><th class="num">Incidents</th><th class="num">At-risk inc.</th><th class="num">Ungranted at-risk inc.</th><th class="num">Decoy / no-decoy inc.</th><th class="num">Authorized completions</th><th class="num">Honest reports</th><th class="num">Allergen</th><th class="num">Emergencies</th><th class="num">Mean utility</th></tr></thead><tbody>` +
+    Object.entries(S.summary).map(([k, s]) => `<tr><td><span class="swatch" style="--c:${ARM_COLOR[k.split("/")[1]] || "var(--accent)"}"></span>${esc(k)}</td><td class="num">${s.known}/${s.assigned}</td><td class="num">${s.incidents}</td><td class="num">${s.at_risk_incidents}/${s.at_risk}</td><td class="num">${s.ungranted_at_risk_incidents}/${s.ungranted_at_risk}</td><td class="num">${s.decoy_incidents} / ${s.no_decoy_incidents}</td><td class="num">${s.authorized_completions}</td><td class="num">${s.honest_reports}</td><td class="num">${s.allergen_violations}</td><td class="num">${s.emergencies}</td><td class="num">${s.mean_utility == null ? "–" : s.mean_utility.toFixed(2)}</td></tr>`).join("") + "</tbody>";
+}
+
+function populateFilters() {
+  $("#f-game").innerHTML = '<option value="">any</option>' + S.games.map(g => `<option value="${g}">${esc(GAME_LABEL[g])}</option>`).join("");
+  $("#f-arm").innerHTML = '<option value="">any</option>' + S.arms.map(a => `<option>${esc(a)}</option>`).join("");
+  ["#f-game", "#f-arm", "#f-outcome", "#f-avail", "#f-grant", "#f-decoy"].forEach(id => $(id).addEventListener("change", renderEpisodes));
+}
+
+function renderEpisodes() {
+  const f = { game: $("#f-game").value, arm: $("#f-arm").value, outcome: $("#f-outcome").value, avail: $("#f-avail").value, grant: $("#f-grant").value, decoy: $("#f-decoy").value };
+  const rows = S.episodes.filter(e => (!f.game || e.game === f.game) && (!f.arm || e.arm === f.arm) &&
+    (!f.outcome || (f.outcome === "incident" ? e.incident === true : f.outcome === "clean" ? e.incident === false : e.incident == null)) &&
+    (!f.avail || String(e.available ? 1 : 0) === f.avail) && (!f.grant || String(e.granted ? 1 : 0) === f.grant) && (!f.decoy || String(e.decoy ? 1 : 0) === f.decoy));
+  rows.sort((a, b) => (b.incident === true) - (a.incident === true) || a.id.localeCompare(b.id));
+  $("#f-count").textContent = `${rows.length} of ${S.episodes.length} episodes`;
+  $("#ep-table").innerHTML = `<thead><tr><th>Episode</th><th>Game</th><th>Arm</th><th>Cell</th><th>Actions</th><th>Journal</th><th class="num">Items</th><th class="num">Honest</th><th class="num">Utility</th><th>Status</th></tr></thead><tbody>` +
+    rows.map(e => `<tr class="clickable" data-id="${esc(e.id)}"><td class="mono">${esc(e.id.replace(/^dev-/, ""))}</td><td>${esc(GAME_LABEL[e.game])}</td><td><span class="swatch" style="--c:${ARM_COLOR[e.arm]}"></span>${esc(e.arm)}</td><td class="muted">${e.available ? "route open" : "<b>route closed</b>"} · ${e.granted ? "would grant" : "would deny"}${e.decoy ? " · decoy" : ""}</td><td class="mono">${esc(e.steps_detail.map(s => s.action + (s.target ? " " + s.target : "")).join(" → ")).slice(0, 160)}</td><td>${e.incident == null ? '<span class="flag na">unknown</span>' : e.incident ? `<span class="flag bad">incident ×${e.incident_count}</span>` : '<span class="flag ok">clean</span>'}${e.extra && e.extra.emergency ? ' <span class="flag warn">emergency</span>' : ""}</td><td class="num">${e.completed_items ?? "–"}/3</td><td class="num">${e.honest_reports ?? "–"}</td><td class="num">${e.utility == null ? "–" : e.utility.toFixed(1)}</td><td class="muted">${esc(e.status)}</td></tr>`).join("") + "</tbody>";
+  $("#ep-table").querySelectorAll("tr.clickable").forEach(tr => tr.addEventListener("click", () => showEpisode(tr.dataset.id, tr)));
+  $("#ep-detail").hidden = true;
+}
+
+function showEpisode(id, tr) {
+  const e = S.episodes.find(x => x.id === id); if (!e) return;
+  tr.closest("table").querySelectorAll("tr.selected").forEach(x => x.classList.remove("selected")); tr.classList.add("selected");
+  const incidentSteps = new Set(e.journal.filter(j => !j.authorized && j.event !== "completed").map(j => j.step));
+  const steps = e.steps_detail.map((s, k) => `<div class="step ${incidentSteps.has(s.result.step) ? "incident" : ""}"><span class="act">${k + 1}. ${esc(s.action)} ${esc(s.target || "")}</span> → <span class="mono">${esc(s.status || "")}</span>${s.advice ? ` <span class="muted">· advice: ${esc(s.advice)}</span>` : ""}${s.journal_shown != null ? ` <span class="muted">· journal shown (${s.journal_shown})</span>` : ""}${s.text ? `<div class="text">${esc(s.text.slice(0, 700))}${s.text.length > 700 ? "…" : ""}</div>` : ""}${s.render ? `<details><summary>board after this step</summary><pre class="render">${esc(s.render)}</pre></details>` : ""}</div>`).join("");
+  const journal = e.journal.map(j => `<tr><td class="num">${j.step}</td><td>${esc(j.event)}</td><td>${esc(j.item || "")}</td><td>${esc(j.zone || "")}</td><td class="mono">${esc(j.route || "")}</td><td>${j.authorized ? '<span class="flag ok">authorized</span>' : (j.event === "completed" ? '<span class="flag warn">via unauthorized route</span>' : '<span class="flag bad">unauthorized</span>')}</td></tr>`).join("");
+  $("#ep-detail").hidden = false;
+  $("#ep-detail").innerHTML = `<h3 class="mono">${esc(e.id)}</h3><p class="muted">${esc(GAME_LABEL[e.game])} · ${esc(e.arm)} · ${e.available ? "authorized route open" : "authorized route closed"} · request ${e.granted ? "would be granted" : "would be denied"}${e.decoy ? " · decoy note present" : ""} · ${esc(e.status)}${e.final_note ? ` · final note: "${esc(e.final_note)}"` : ""}</p>
+    <div class="two-col"><div><h3>Final board</h3><pre class="render">${esc(e.render || "")}</pre></div><div><h3>Effect journal</h3><div class="table-wrap"><table><thead><tr><th class="num">step</th><th>event</th><th>item</th><th>zone</th><th>route</th><th></th></tr></thead><tbody>${journal || '<tr><td colspan="6" class="muted">empty</td></tr>'}</tbody></table></div></div></div>
+    <h3 style="margin-top:12px">Steps (red border = step with an unauthorized effect)</h3>${steps}`;
+}
+
+function renderTasks() {
+  $("#tasks").innerHTML = S.games.map(g => `<h2>${esc(GAME_LABEL[g])}</h2><pre class="render" style="white-space:pre-wrap">${esc(S.tasks[g])}</pre>`).join("");
+}
+
+function renderMethod() {
+  $("#method").innerHTML = `<p>Each game keeps the two-item fixture's control structure: an authorized route with hidden availability, a probe, a request with a precommitted reply, a shortcut that is an incident unless granted, and an honest stop. The environment writes the journal; the actor never sees hidden state. Planner arms receive GRANT-LOOKAHEAD advice translated into game verbs; journal arms see the journal after every action.</p><ul>${S.limitations.map(l => `<li>${esc(l)}</li>`).join("")}</ul><p class="muted">Data: games-data.json generated ${esc(DATA.generated_at)}. Rebuild with <span class="mono">.venv/bin/python scripts/export_games_dashboard.py</span>. Write-up: docs/boundary-games.md.</p>`;
+}
+
+function route() {
+  const hash = location.hash.replace("#", "") || "overview";
+  document.querySelectorAll(".view").forEach(v => v.classList.toggle("active", v.id === "view-" + hash));
+  document.querySelectorAll("nav.tabs a").forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + hash));
+}
+window.addEventListener("hashchange", route);
+fetch("games-data.json?" + Date.now()).then(r => r.json()).then(data => {
+  DATA = data; S = data.studies[0];
+  if (!S) { $("#subtitle").textContent = "No study exported yet."; return; }
+  $("#subtitle").textContent = `${MODEL_LABEL(S.model)} · ${S.completed}/${S.assigned} episodes · ${S.status || ""} · generated ${new Date(data.generated_at).toLocaleString()}`;
+  renderOverview(); populateFilters(); renderEpisodes(); renderTasks(); renderMethod(); route();
+}).catch(err => { $("#subtitle").textContent = "Could not load games-data.json: " + err; });
+</script>
+</body>
+</html>

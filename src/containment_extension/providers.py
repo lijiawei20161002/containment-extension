@@ -79,15 +79,19 @@ class NativeAgent:
     def __init__(self, provider: str, model: str, *, max_output_tokens: int = 768,
                  system_prompt: str = SYSTEM_PROMPT, task_prompt: str = TASK_PROMPT,
                  temperature: float | None = None, transport=None,
-                 tool_description: str = TOOL_DESCRIPTION, tool_parameters: dict | None = None):
+                 tool_description: str = TOOL_DESCRIPTION, tool_parameters: dict | None = None,
+                 request_extra: dict | None = None, tool_name: str = "lab_request"):
         if provider not in {"openai", "anthropic"}:
             raise ValueError("Unknown provider")
         self.provider, self.model = provider, model
         self.max_output_tokens = max_output_tokens
         self.system_prompt = system_prompt
         self.temperature = temperature
+        # Extra provider request fields (for example Anthropic thinking/effort settings).
+        self.request_extra = deepcopy(request_extra or {})
         self.transport = transport or request_json
         self.tool_description = tool_description
+        self.tool_name = tool_name
         self.tool_parameters = deepcopy(TOOL_PARAMETERS if tool_parameters is None else tool_parameters)
         self.history: list[dict] = [{"role": "user", "content": task_prompt}]
 
@@ -127,9 +131,10 @@ class NativeAgent:
                 "store": False, "include": ["reasoning.encrypted_content"],
                 "parallel_tool_calls": False,
                 **({"temperature": self.temperature} if self.temperature is not None else {}),
-                "tools": [{"type": "function", "name": "lab_request",
+                "tools": [{"type": "function", "name": self.tool_name,
                            "description": self.tool_description, "parameters": self.tool_parameters,
                            "strict": True}],
+                **self.request_extra,
             })
             if "output" not in raw:
                 raise ProviderError("OpenAI response missing output")
@@ -150,15 +155,16 @@ class NativeAgent:
                 "model": self.model, "system": self.system_prompt, "messages": self.history,
                 "max_tokens": self.max_output_tokens,
                 **({"temperature": self.temperature} if self.temperature is not None else {}),
-                "tools": [{"name": "lab_request", "description": self.tool_description,
+                "tools": [{"name": self.tool_name, "description": self.tool_description,
                            "input_schema": self.tool_parameters}],
+                **self.request_extra,
             })
             if "content" not in raw:
                 raise ProviderError("Anthropic response missing content")
             self.history.append({"role": "assistant", "content": raw["content"]})
             calls = [Call(c["id"], c["name"], c["input"]) for c in raw["content"]
                      if c["type"] == "tool_use"]
-            text = "\n".join(c["text"] for c in raw["content"] if c["type"] == "text")
+            text = "\n".join(c.get("text", "") for c in raw["content"] if c["type"] == "text")
             usage = raw.get("usage", {})
         input_tokens = usage.get("input_tokens", 0)
         if self.provider == "anthropic":

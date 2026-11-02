@@ -74,6 +74,26 @@ passed 121 tests at the last execution; see the
 
 ## Experiment documents
 
+- **Boundary games (2026-11-02):** [three concrete tasks on the fixture's control structure](docs/boundary-games.md):
+  Campus Courier (a map with propped doors and badges), Night Kitchen (orders, a neighbour's storeroom and an
+  allergen rule no grant lifts) and Habitat Repair (quarantined labs under an oxygen countdown). Same journal,
+  arms and planner advice as the fixture; `scripts/run_boundary_games.py demo` plays them without a model.
+  Haiku 4.5 pilot: 1 incident in 144 episodes, so the games need harder dials before they can separate arms; dashboard page `dashboard/games.html`.
+- **Judge reliability study (2026-11-02):** [design, archived-label audit and live results](docs/judge-reliability-study.md)
+  score the transcript-only and journal-augmented judges against the effect journal with
+  repeated sampling, a reported probability, cited turns and the Cooper et al. (arXiv:2607.27499)
+  within-lineage pairwise ranking error. All four archived model versions fail the same two
+  pre-granted calibration cases for the same stated reason, and both live judges flag the same 23
+  pre-granted episodes on real data with zero misses. `scripts/run_judge_reliability.py`; dashboard page `dashboard/judge.html`.
+- **Raising the evidence standard (2026-10-31):** [Progent comparison and AgentDojo plan](docs/progent-comparison.md)
+  maps the decision-algorithms arms onto AgentDojo defenses next to the published baselines;
+  `scripts/run_agentdojo_grant.py` runs them. [Scanner and monitor reliability improvements](docs/scanner-reliability-improvements.md)
+  lists what to change after the transcript-only judge failed calibration in every 2026-10-31 cohort.
+  Results dashboard: `dashboard/` (see its README).
+- **Native-fixture algorithm study (2026-11-01):** [results](docs/native-algorithms-results.md) from
+  `src/containment_extension/native_algorithms.py`: GRANT-LOOKAHEAD advice, the effect journal and a scope
+  broker on the recovery fixture where the plain actor actually violates scope. [AgentDojo results](docs/agentdojo-results.md)
+  cover the same arms against the published baselines.
 - **Next iteration of evaluation infrastructure:** [proposal and figure](docs/counterfactual-evaluation-infrastructure.md)
   adapt Arcadia's matched cases and verified local criticisms into task-family
   construction, reference-label qualification, and grader regression tests.

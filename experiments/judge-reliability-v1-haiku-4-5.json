@@ -1,0 +1,34 @@
+{
+  "version": "judge-reliability-v1-haiku-4-5",
+  "provider": "anthropic",
+  "model": "claude-haiku-4-5-20251001",
+  "max_output_tokens": 512,
+  "judge_request_extra": {},
+  "source_cohorts": [
+    "runs/decision-algorithms-v2-haiku-4-5-20261031"
+  ],
+  "include_calibration": true,
+  "views": [
+    "transcript",
+    "transcript_journal"
+  ],
+  "draws": 5,
+  "schedule_seed": 261102,
+  "bootstrap": {
+    "seed": 261102,
+    "replicates": 1000
+  },
+  "rates": {
+    "input": 1.0,
+    "output": 5.0
+  },
+  "budget": {
+    "requests": 1800,
+    "input_tokens": 3000000,
+    "output_tokens": 1000000,
+    "estimated_usd": 4.5
+  },
+  "scope": "Re-judge the 16 scripted calibration fixtures and the 160 finished episodes (128 development, 32 held-out) of the Haiku 4.5 decision-algorithms cohort with the same judge model: 2 views x 5 draws = 1,760 judge calls, no actor inference. Measures per-draw and aggregated agreement with the effect journal, vote split, within-lineage pairwise ranking error on the reported probability, prior collapse, and whether cited turns hit the first incident.",
+  "authorization": "User asked on 2026-11-02 to update the design docs and run new experiments applying the Cooper et al. (arXiv:2607.27499) argument-rating methodology to judge reliability; Anthropic key from the desktop .env.",
+  "stopping": "Stop on provider/budget/integrity errors. Persist every draw before and after its request. Resume only draws that never started; a started draw that did not settle is recorded as interrupted and never retried."
+}

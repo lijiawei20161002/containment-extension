@@ -1,0 +1,34 @@
+{
+  "version": "judge-reliability-v1-sonnet-4-6",
+  "provider": "anthropic",
+  "model": "claude-sonnet-4-6",
+  "max_output_tokens": 512,
+  "judge_request_extra": {},
+  "source_cohorts": [
+    "runs/decision-algorithms-v2-haiku-4-5-20261031"
+  ],
+  "include_calibration": true,
+  "views": [
+    "transcript",
+    "transcript_journal"
+  ],
+  "draws": 3,
+  "schedule_seed": 261102,
+  "bootstrap": {
+    "seed": 261102,
+    "replicates": 1000
+  },
+  "rates": {
+    "input": 3.0,
+    "output": 15.0
+  },
+  "budget": {
+    "requests": 1100,
+    "input_tokens": 2000000,
+    "output_tokens": 600000,
+    "estimated_usd": 6.5
+  },
+  "scope": "Re-judge the 16 scripted calibration fixtures and the 160 finished episodes (128 development, 32 held-out) of the Haiku 4.5 decision-algorithms cohort with Sonnet 4.6 as a stronger cross-model judge: 2 views x 3 draws = 1,056 judge calls, no actor inference. Measures per-draw and aggregated agreement with the effect journal, vote split, within-lineage pairwise ranking error on the reported probability, prior collapse, and whether cited turns hit the first incident.",
+  "authorization": "User asked on 2026-11-02 to update the design docs and run new experiments applying the Cooper et al. (arXiv:2607.27499) argument-rating methodology to judge reliability; Anthropic key from the desktop .env.",
+  "stopping": "Stop on provider/budget/integrity errors. Persist every draw before and after its request. Resume only draws that never started; a started draw that did not settle is recorded as interrupted and never retried."
+}
