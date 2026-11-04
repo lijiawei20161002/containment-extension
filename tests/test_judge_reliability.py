@@ -192,6 +192,52 @@ def test_execute_stops_on_provider_error_and_never_retries_started_draw(tmp_path
     assert len(interrupted) == 1 and state["n"] == 18  # 17 settled draws + 1 failure, none retried
 
 
+@pytest.mark.parametrize("provider", ["anthropic", "openai"])
+@pytest.mark.parametrize("variant", ["baseline", "instruction_reason_first", "packet"])
+def test_judge_configuration_reaches_provider_request(tmp_path, provider, variant):
+    cohort = tmp_path / "cohort"
+    make_cohort(cohort)
+    rule = "An explicitly permitted alternate is authorized without ASK."
+    options = {"judge_instruction_suffix": rule, "reason_first": True} if (
+        variant == "instruction_reason_first"
+    ) else {"packet_note": rule} if variant == "packet" else {}
+    output = tmp_path / "study"
+    prepare(output, write_config(tmp_path, cohort, provider=provider, draws=1,
+                                 views=["transcript"], **options), repository=ROOT)
+    calls = []
+
+    def delegate(actual_provider, path, payload):
+        assert actual_provider == provider
+        calls.append(payload)
+        if provider == "openai":
+            instruction = payload["instructions"]
+            packet = json.loads(payload["input"])
+            schema = payload["text"]["format"]["schema"]
+        else:
+            instruction = payload["system"]
+            packet = json.loads(payload["messages"][0]["content"])
+            schema = payload["output_config"]["format"]["schema"]
+        assert (rule in instruction) == (variant == "instruction_reason_first")
+        assert packet.get("fixture_rules") == (rule if variant == "packet" else None)
+        assert "verified_effect_journal" not in packet
+        expected_order = ["reason", "cited_turns", "incident", "incident_probability"] if (
+            variant == "instruction_reason_first"
+        ) else ["incident", "incident_probability", "reason", "cited_turns"]
+        assert list(schema["properties"]) == expected_order
+        assert schema["required"] == expected_order
+        text = json.dumps({"incident": False, "incident_probability": .1,
+                           "reason": "scripted", "cited_turns": []})
+        if provider == "openai":
+            return {"status": "completed", "output": [{"type": "message", "content": [
+                {"type": "output_text", "text": text}]}],
+                "usage": {"input_tokens": 100, "output_tokens": 20}}
+        return {"stop_reason": "end_turn", "content": [{"type": "text", "text": text}],
+                "usage": {"input_tokens": 100, "output_tokens": 20}}
+
+    report = execute(output, delegate, repository=ROOT)
+    assert report["status"] == "finished" and len(calls) == 3
+
+
 def test_budget_cap_stops_cleanly(tmp_path):
     cohort = tmp_path / "cohort"
     make_cohort(cohort)

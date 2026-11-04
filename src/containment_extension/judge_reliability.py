@@ -37,6 +37,31 @@ VIEWS = ("transcript", "transcript_journal")
 AGGREGATIONS = ("majority", "unanimous", "any")
 
 
+def judge_instruction(config):
+    """System prompt for a study: JUDGE_V2 plus an optional fixed clarification sentence.
+
+    `judge_instruction_suffix` is the same for every item, so it can state fixture
+    semantics (what a pre-grant means) but can never leak an item's label."""
+    suffix = str(config.get("judge_instruction_suffix", "") or "").strip()
+    return JUDGE_V2 + (" " + suffix if suffix else "")
+
+
+def judge_schema(config):
+    """Output schema; `reason_first` moves the free-text reason ahead of the label fields so the
+    model writes its argument before committing to `incident` (the v2 schema puts the label first)."""
+    if not config.get("reason_first"):
+        return JUDGE_SCHEMA_V2
+    props = JUDGE_SCHEMA_V2["properties"]
+    order = ("reason", "cited_turns", "incident", "incident_probability")
+    return {**JUDGE_SCHEMA_V2, "properties": {k: props[k] for k in order}, "required": list(order)}
+
+
+def apply_packet_note(packet, config):
+    """Optional fixed `fixture_rules` sentence placed inside the packet instead of the prompt."""
+    note = str(config.get("packet_note", "") or "").strip()
+    return {**packet, "fixture_rules": note} if note else packet
+
+
 # ----------------------------------------------------------------------------
 # Items: archived calibration fixtures and development episodes
 # ----------------------------------------------------------------------------
@@ -116,8 +141,9 @@ def prepare(output, config_path, repository=None):
     random.Random(config["schedule_seed"]).shuffle(items)
     draws = int(config["draws"])
     calls = len(items) * len(config["views"]) * draws
-    plan = {"prepared_at": now(), "config": config, "items": items, "judge": JUDGE_V2,
-            "judge_schema": JUDGE_SCHEMA_V2, "source_hashes": hashes,
+    plan = {"prepared_at": now(), "config": config, "items": items, "judge": judge_instruction(config),
+            "packet_note": str(config.get("packet_note", "") or "").strip() or None,
+            "judge_schema": judge_schema(config), "source_hashes": hashes,
             "planned_calls": calls,
             "method": {
                 "reference": "Independent effect journal written by the fixture; never derived from the transcript.",
@@ -180,16 +206,16 @@ def draw(output, identity, packet, config, transport):
     atomic(path, {"status": "started", "incident": None})
     if config["provider"] == "openai":
         raw = transport.call("openai", "/responses", {
-            "model": config["model"], "instructions": JUDGE_V2, "input": json.dumps(packet),
+            "model": config["model"], "instructions": judge_instruction(config), "input": json.dumps(packet),
             "max_output_tokens": config["max_output_tokens"], "store": False,
             "text": {"format": {"type": "json_schema", "name": "incident_audit_scored",
-                                "strict": True, "schema": JUDGE_SCHEMA_V2}}})
+                                "strict": True, "schema": judge_schema(config)}}})
     else:
         raw = transport.call("anthropic", "/messages", {
-            "model": config["model"], "system": JUDGE_V2,
+            "model": config["model"], "system": judge_instruction(config),
             "messages": [{"role": "user", "content": json.dumps(packet)}],
             "max_tokens": config["max_output_tokens"],
-            "output_config": {"format": {"type": "json_schema", "schema": JUDGE_SCHEMA_V2}},
+            "output_config": {"format": {"type": "json_schema", "schema": judge_schema(config)}},
             **config.get("judge_request_extra", {})})
     record = {**parse_draw(config, raw), "raw": raw}
     atomic(path, record)
@@ -211,7 +237,7 @@ def execute(output, delegate=request_json, repository=None):
         try:
             for item in plan["items"]:
                 for view in config["views"]:
-                    packet = item_packet(item, view)
+                    packet = apply_packet_note(item_packet(item, view), config)
                     for k in range(int(config["draws"])):
                         draw(output, f"{item['id'].replace('/', '--')}-{view}-d{k:02d}",
                              packet, config, transport)

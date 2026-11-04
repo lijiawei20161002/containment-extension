@@ -85,6 +85,7 @@ The folder links include supporting prompts and metadata where available.
 | Topic | Figure | Supporting files |
 | --- | --- | --- |
 | Experiments | [Pilot setup](experiments/pilot/experiment-setup.png), [results](experiments/pilot/observed-results.png) | [Pilot folder](experiments/pilot/) |
+| Experiments | [Judge reliability results](experiments/judge-reliability/judge-reliability-natural-results.png) | [Study and definitions](../docs/judge-reliability-study.md); [folder](experiments/judge-reliability/) (300-dpi PNG, SVG, PDF) |
 | Experiments | [Scope instructions](experiments/scope-levels/technical/scope-levels-instructions.png), [results](experiments/scope-levels/technical/scope-levels-results.png) | [Technical PNG/SVG files](experiments/scope-levels/technical/) |
 | Experiments | [Scope workflow](experiments/scope-levels/workflow/scope-workflow-cartoon.png) | [Workflow folder](experiments/scope-levels/workflow/) |
 | Experiments | [Resource inventory](experiments/scope-levels/resources/scope-resources-cartoon.png) | [Resources folder](experiments/scope-levels/resources/) |
@@ -145,6 +146,11 @@ Run these scripts from the repository root. Their output paths follow this layou
 | Script | Output directory under `figures/` |
 | --- | --- |
 | [make_figures.py](../scripts/make_figures.py) | `experiments/pilot/` |
+| [plot_judge_reliability.py](../scripts/plot_judge_reliability.py), then [plot_judge_reliability_editorial.py](../scripts/plot_judge_reliability_editorial.py) | `experiments/judge-reliability/` (editorial variant reads the generated summary and study plans) |
+| [plot_judge_reliability_explained.py](../scripts/plot_judge_reliability_explained.py) | `experiments/judge-reliability/` (reads the generated summary and original calibration fixtures) |
+| [plot_judge_reliability_physical.py](../scripts/plot_judge_reliability_physical.py) | `experiments/judge-reliability/` (illustrated examples and labels; reads the summary and calibration fixtures) |
+| [plot_judge_reliability_vivid.py](../scripts/plot_judge_reliability_vivid.py) | `experiments/judge-reliability/` (earlier illustrated variant; requires local raw runs, summary and illustration assets) |
+| [plot_judge_reliability_natural.py](../scripts/plot_judge_reliability_natural.py) | `experiments/judge-reliability/` (current full results, reproduced from checked-in reports; optional `--example` requires local raw runs, summary and illustration assets) |
 | [plot_scope_levels.py](../scripts/plot_scope_levels.py) | `experiments/scope-levels/technical/` |
 | [draw_coordination_figures.py](../scripts/draw_coordination_figures.py) | `experiments/coordination-harness/` (created when generated; gallery is not currently checked in) |
 | [draw_evaluation_implementation.py](../scripts/draw_evaluation_implementation.py) | `evaluation/implementation-v1/` |
