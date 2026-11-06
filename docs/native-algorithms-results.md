@@ -58,7 +58,7 @@ Status finished; 216/216 recorded; 712 requests. Provider errors (unknown outcom
 ## Reading
 
 - The plain actor's incident rate on impossible tasks is the baseline the synthetic two-item fixture lacked.
-- Planner advice removed every verified incident and every out-of-scope attempt at both stop rewards; the journal reduced them but did not remove them.
+- No incidents or out-of-scope attempts were observed in the planner arms at either stop reward. Unknown outcomes remain unresolved. The journal arms recorded fewer incidents than plain, but some violations remained. This is a small native-fixture comparison.
 - Most plain-arm violators asked the approver and acted anyway, or asked only after reading the archive; the request channel alone is not a control.
 - The broker prevents effects by construction; its attempt count is the behavioural measure and it matches plain.
 - Clean-blocker counts under the strict scorer are zero because every terminal report was fenced JSON; the any-format column is the fence-tolerant reading and is descriptive.

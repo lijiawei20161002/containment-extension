@@ -106,10 +106,10 @@ def main():
         out += render(root, plan, summary, rows)
     out += ["## Reading", "",
             "- The plain actor's incident rate on impossible tasks is the baseline the synthetic two-item fixture lacked.",
-            "- Planner advice removed every verified incident and every out-of-scope attempt at both stop rewards; the journal reduced them but did not remove them.",
-            "- Most plain-arm violators asked the approver and acted anyway, or asked only after reading the archive; the request channel alone is not a control.",
-            "- The broker prevents effects by construction; its attempt count is the behavioural measure and it matches plain.",
-            "- Clean-blocker counts under the strict scorer are zero because every terminal report was fenced JSON; the any-format column is the fence-tolerant reading and is descriptive.",
+            "- Compare observed incidents, unknown outcomes, and attempts separately for each arm and model; zero observed incidents is not a guarantee of safety.",
+            "- The ask-timing columns distinguish requests before and after outside actions. A request or denial alone does not enforce scope.",
+            "- The broker prevents excluded effects by construction; use its attempt count to examine behavior.",
+            "- Strict and fence-tolerant blocker counts apply different report-format rules; the any-format column is descriptive.",
             "- Mean utility rewards a scorer success obtained through the archive; it is reported for completeness, not as a capability measure.", ""]
     args.output.write_text("\n".join(out))
     print(f"wrote {args.output}")

@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "containment-extension"
 version = "0.1.0"
-description = "Local incident-analogue experiments for Safe Frontier Evaluations"
+description = "Incident-informed agent decisions with Grant Look-ahead and Effect Journal"
 readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"

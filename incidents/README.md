@@ -1,9 +1,12 @@
 # Incident library
 
-A structured, reviewable record of public agent-security incidents, built so that
-each case can feed (a) cross-case analysis, (b) monitor signatures, and (c) the
-executable history library proposed in the
-[v2 incident-aware optimization design](../docs/incident-aware-optimization.md).
+A structured, reviewable record of publicly reported agent-security incidents.
+The library motivates the [current project](../README.md): improve decisions
+about when to continue, stop, request permissions or resources, and probe for
+information, then test Grant Look-ahead and Effect Journal against observed
+behavior. The [cross-case analysis](../docs/incident-library-analysis.md) connects
+the records to recurring decision failures. Codings remain analyst drafts;
+heterogeneous reports are not a population incident-rate estimate.
 
 Current contents: entries 1–26 of the public-source briefing completed on
 27 September 2026 (entries 27–30, litigation and service outages, are excluded

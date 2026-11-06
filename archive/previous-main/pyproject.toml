@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "containment-extension"
+version = "0.1.0"
+description = "Local incident-analogue experiments for Safe Frontier Evaluations"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+authors = [{name = "Jiawei Li"}]
+dependencies = []
+
+[project.optional-dependencies]
+inspect = ["inspect-ai>=0.3.200"]
+impossiblebench = [
+    "inspect-ai==0.3.200",
+    "datasets==4.4.1",
+    "swebench==4.1.0",
+    "huggingface-hub==0.36.0",
+    "openai==2.26.0",
+    "anthropic==0.80.0",
+]
+dev = ["pytest>=8", "ruff>=0.11"]
+
+[project.scripts]
+safe-frontier = "containment_extension.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["containment_extension*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

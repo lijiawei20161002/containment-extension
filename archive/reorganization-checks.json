@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-06",
+  "model_calls": 0,
+  "relocations": 204,
+  "originals_preserved": 13,
+  "archive_files_sha256_verified": 38261,
+  "removed_git_paths_accounted_for": 7324,
+  "main_links_verified": 71,
+  "active_pytest": {
+    "passed": 68
+  },
+  "offline_workflow_planner_cells": 405,
+  "native_scripted_run": {
+    "assigned": 216,
+    "recorded": 216,
+    "status": "finished"
+  },
+  "dashboard": {
+    "cohorts": 10,
+    "episodes": 1496,
+    "previously_unstarted_placeholders_refreshed_from_existing_results": 82,
+    "checks": "JavaScript syntax and DOM smoke: five views, both fixtures, awareness filter, episode detail",
+    "browser_render_tested": false
+  },
+  "source_files_unchanged": true
+}

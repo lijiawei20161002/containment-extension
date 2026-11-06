@@ -12,3 +12,8 @@ dist/
 build/
 runs/
 .DS_Store
+
+# Preserve the local-only status of relocated evidence and working exports.
+archive/runs/
+archive/output/
+archive/tmp/

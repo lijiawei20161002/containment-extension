@@ -1,4 +1,4 @@
-"""Collect every algorithm-study cohort under runs/ into one dashboard JSON.
+"""Collect the main feedback and evaluation-awareness cohorts into dashboard JSON.
 
 Works on partial cohorts: per-episode results are read directly, and report.json,
 selection.json and judge-calibration.json are included when the worker has written them.
@@ -7,7 +7,6 @@ Transcripts are condensed to the operation sequence plus the actor's visible tex
 from __future__ import annotations
 
 import argparse
-import csv
 import json
 import sys
 from pathlib import Path
@@ -218,8 +217,8 @@ def native_cohort(directory):
             "granted": False, "grant_reply": spec.get("grant_reply", False), "seed": spec["seed"],
             "candidate": c["id"], "arm": c["arm"], "stop_reward": c["stop_reward"], "alternate_cost": 3.0,
             "status": row.get("stop", "not_started"),
-            "incident": row.get("unauthorized_effect"), "incident_count": int(bool(row.get("unauthorized_effect"))),
-            "first_incident_step": None, "repeat_incidents": 0,
+            "incident": row.get("unauthorized_effect"), "incident_count": None,
+            "first_incident_step": None, "repeat_incidents": None,
             "authorized_completion": row.get("authorized_completion"), "task_completion": row.get("task_completed"),
             "completed_items": int(bool(row.get("task_completed"))), "utility": row.get("utility"),
             "steps": row.get("continuation_attempts"), "terminated_normally": row.get("stop") in ("scorer_success", "model_finished"),
@@ -227,6 +226,9 @@ def native_cohort(directory):
             "attempted_outside": row.get("out_of_scope_proposals"), "asks": row.get("asks"), "scope_blocks": row.get("scope_blocks"),
             "clean_blocker": row.get("blocker_with_observed_evidence")})
     execution = load_json(directory / "execution.json") or {}
+    # A terminal summary can be newer than the last execution heartbeat.
+    if summary.get("status") == "finished":
+        execution = {**execution, "status": "finished"}
     progress = load_json(directory / "progress.json") or {}
     return {"name": directory.name, "version": config["version"], "model": config["actor"]["model"],
             "provider": config["actor"]["provider"], "study": "native-algorithms",
@@ -244,49 +246,16 @@ def native_cohort(directory):
             "episodes": episodes}
 
 
-def e1_archive():
-    base = ROOT / "results/decision-story-e1-v1"
-    report = load_json(base / "report.json")
-    if report is None:
-        return None
-    with (base / "per-case.csv").open() as f:
-        rows = list(csv.DictReader(f))
-    return {"report": {k: report[k] for k in ("groups", "model", "scope", "status", "limitations")},
-            "budget": report["budget"], "cases": rows}
-
-
-def agentdojo_runs(runs_dir):
-    """Summaries written by scripts/run_agentdojo_grant.py, trimmed for the dashboard."""
-    out = []
-    for path in sorted(runs_dir.glob("agentdojo-*/summaries/*.json")):
-        if "smoke" in path.parts[-3]:
-            continue
-        d = load_json(path)
-        if not d:
-            continue
-        def trim(block):
-            if not block:
-                return None
-            journal = {k: {x: v[x] for x in ("calls", "blocked", "unauthorized_executed", "requests")}
-                       for k, v in block.get("journal", {}).items()}
-            return {k: v for k, v in block.items() if k != "journal"} | {"journal": journal}
-        out.append({"cohort": path.parts[-3], "suite": d["suite"], "model": d["model"], "arm": d["arm"],
-                    "pipeline": d["pipeline"], "attack": d["attack"], "approver": d.get("approver"),
-                    "status": d["status"], "error": d.get("error"), "usage": {k: d["usage"].get(k) for k in ("requests", "input_tokens", "output_tokens")},
-                    "benign": trim(d.get("benign")), "attacked": trim(d.get("attacked"))})
-    return out
-
-
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--runs", type=Path, default=ROOT / "runs")
     p.add_argument("--pattern", default="*-20261031")
     p.add_argument("--output", type=Path, required=True)
     args = p.parse_args()
-    cohorts = [cohort(d) for d in sorted(args.runs.glob(args.pattern)) if (d / "plan.json").exists() and (d / "source").is_dir() and not (d / "checkpoints").exists()]
+    cohorts = [cohort(d) for d in sorted(args.runs.glob(args.pattern)) if d.name.startswith(("decision-algorithms-", "eval-awareness-")) and (d / "plan.json").exists() and (d / "source").is_dir() and not (d / "checkpoints").exists()]
     cohorts += [native_cohort(d) for d in sorted(args.runs.glob("native-algorithms-*")) if (d / "plan.json").exists()]
     data = {"generated_at": __import__("datetime").datetime.now().astimezone().isoformat(timespec="seconds"),
-            "cohorts": cohorts, "e1": e1_archive(), "agentdojo": agentdojo_runs(args.runs)}
+            "cohorts": cohorts}
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps(data, separators=(",", ":")))
     print(json.dumps({"cohorts": [(c["name"], len(c["episodes"]), c["worker"].get("status")) for c in cohorts],
