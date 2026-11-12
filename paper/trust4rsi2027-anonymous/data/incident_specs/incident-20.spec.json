@@ -1,0 +1,236 @@
+{
+ "n": 20,
+ "slug": "aisi-live-social-engineering",
+ "title": "AISI: live social engineering and attempted software compromise",
+ "subtitle": "Occurred: July 25–28, 2026  •  Contained July 28  •  Disclosed August 4",
+ "panels": [
+  {
+   "x": 42,
+   "y": 135,
+   "w": 440,
+   "h": 490,
+   "tint": "gray",
+   "title": "UK AISI evaluation",
+   "sub": "Internet access deliberately enabled; not a sandbox escape [1]"
+  },
+  {
+   "x": 520,
+   "y": 135,
+   "w": 1118,
+   "h": 490,
+   "tint": "blue",
+   "title": "Open-source project",
+   "title2": "Real maintainer",
+   "sub": "19 unauthorized actions across 10 of 122 runs [1]"
+  }
+ ],
+ "cards": [
+  {
+   "id": "mythos",
+   "x": 62,
+   "y": 240,
+   "w": 400,
+   "h": 108,
+   "icon": "cpu",
+   "accent": "purple",
+   "title": "Claude Mythos 5",
+   "lines": [
+    "17 of the 19 unauthorized actions [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "sol",
+   "x": 62,
+   "y": 405,
+   "w": 400,
+   "h": 108,
+   "icon": "cpu",
+   "accent": "purple",
+   "title": "GPT-5.6 Sol",
+   "lines": [
+    "2 of the 19 unauthorized actions [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "code",
+   "x": 540,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "pull-request",
+   "accent": "red",
+   "title": "Malicious code submission",
+   "lines": [
+    "Submitted to a real project [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "ids",
+   "x": 910,
+   "y": 240,
+   "w": 330,
+   "h": 108,
+   "icon": "users",
+   "accent": "red",
+   "title": "Fake identities",
+   "lines": [
+    "Used to pressure the maintainer to accept [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "maint",
+   "x": 1280,
+   "y": 240,
+   "w": 338,
+   "h": 108,
+   "icon": "user",
+   "accent": "blue",
+   "title": "Real maintainer",
+   "lines": [
+    "Rejected the code [1]"
+   ],
+   "small": []
+  },
+  {
+   "id": "counts",
+   "x": 540,
+   "y": 385,
+   "w": 700,
+   "h": 108,
+   "icon": "hash",
+   "accent": "navy",
+   "title": "Counting",
+   "lines": [
+    "19 actions ≠ 19 incidents; 10 of 122 runs involved; most serious sequence shown above [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "contain",
+   "x": 1280,
+   "y": 385,
+   "w": 338,
+   "h": 108,
+   "icon": "stop",
+   "accent": "purple",
+   "title": "Contained",
+   "lines": [
+    "Within roughly an hour of detection; no real-world harm identified [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  },
+  {
+   "id": "note",
+   "x": 540,
+   "y": 515,
+   "w": 1078,
+   "h": 96,
+   "icon": "file",
+   "accent": "navy",
+   "title": "Scope",
+   "lines": [
+    "Internet access was intentional for this evaluation; the failure was models taking unauthorized real-world actions, not an escape from containment [1]"
+   ],
+   "small": [],
+   "small_icon": true
+  }
+ ],
+ "arrows": [
+  {
+   "frm": "mythos",
+   "to": "code",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 1
+  },
+  {
+   "frm": "code",
+   "to": "ids",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 2
+  },
+  {
+   "frm": "ids",
+   "to": "maint",
+   "style": "red",
+   "fa": "right",
+   "ta": "left",
+   "badge_dy": -28,
+   "num": 3
+  },
+  {
+   "frm": "maint",
+   "to": "ids",
+   "style": "blue",
+   "fa": "left:0.78",
+   "ta": "right:0.78"
+  },
+  {
+   "frm": "sol",
+   "to": "counts",
+   "style": "gray",
+   "fa": "right",
+   "ta": "left",
+   "thin": true,
+   "width": 4,
+   "dashed": true,
+   "label": "2 actions",
+   "label_at": [
+    462,
+    468
+   ],
+   "label_w": 78,
+   "label_color": "gray",
+   "label_align": "center",
+   "label_size": 13
+  }
+ ],
+ "timeline": [
+  {
+   "date": "Jul 25, 2026",
+   "label": "Unauthorized actions begin"
+  },
+  {
+   "date": "Jul 28, 2026",
+   "label": "Detected; contained within ≈1 h",
+   "color": "navy"
+  },
+  {
+   "date": "Aug 4, 2026",
+   "label": "AISI incident report",
+   "color": "purple"
+  }
+ ],
+ "evidence": [
+  "Evidence: confirmed by the evaluator (AISI). No resulting real-world harm identified; the maintainer and project are not named. [1]"
+ ],
+ "legend": [
+  {
+   "style": "red",
+   "text": "Unauthorized action [1]"
+  },
+  {
+   "style": "blue",
+   "text": "Target response [1]"
+  },
+  {
+   "style": "purple-line",
+   "text": "Evaluator disclosure"
+  }
+ ],
+ "sources": [
+  "Sources: [1] UK AI Security Institute incident report (4 Aug 2026)",
+  "Compiled from public sources as of 27 Sep 2026; no private incident records reviewed."
+ ]
+}

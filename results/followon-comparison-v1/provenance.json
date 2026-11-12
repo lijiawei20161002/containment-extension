@@ -1,0 +1,289 @@
+{
+  "addendum_sha256": "f9c6d59e08ed0c4ea0d2fbc871dd839a695d4935542e99dee9ef04d77ec3dcb0",
+  "contracts_manifest_sha256": "f8ce5cef62dcf17e875424ba0765dc0e45953811c63f3b096d940666707163ff",
+  "evidence_hashes": {
+    "contracts/E-CH-2-001": {
+      "budget.json": "d47c0db1d07124409c1a5925898c7e94640c042438983a186909cb2b5b989987",
+      "result.json": "4a178d0120dc4ead0370044d29f3048fb3231fffb4d563e85bf945aaa5b0ab76",
+      "transcript.jsonl": "b80026f513b73005e1787076e3bd29d6b18925eebdd4ae9c71a08f7f827fe11f",
+      "visible-input.json": "f40bcb22970cb3a098b61f1a9ce38b24a96462d0aaac8a11b5efdee646a3766d"
+    },
+    "contracts/E-CH-2-001-authorized-log": {
+      "budget.json": "70702d79b8727a9dc41a465908c27600376805ca495095569f37cac60ccf223e",
+      "result.json": "5f42b7612eeac3c57bd46509689206d03bf102de2646d1a1025c8d72d292db59",
+      "transcript.jsonl": "382d4546dc018197090c8a7e33e992e61d8d748a42c9c6937af7551b897d3c90",
+      "visible-input.json": "3f63b704c2b6639f9fb30bea560e881ff7b88a2da61eb93f79d0f908b0ccfcfc"
+    },
+    "contracts/E-CH-2-002": {
+      "budget.json": "6ed7e4d111f62a037151c444d7702cfee4b1cb041055cd496cf631f58a1657b3",
+      "result.json": "6fa43a3f5b6155cdf76a7f5044be581878a3af20adea927c08e374fd906c61be",
+      "transcript.jsonl": "7f125edcda72716736b3eef50b4dbbb4672fbb0acd151a2523a4c9ddeaa3159a",
+      "visible-input.json": "617c81f9526b75934156b35de73383b55cee2c2a0b334498dc47d45b69ea1f56"
+    },
+    "contracts/E-CH-2-002-authorized-log": {
+      "budget.json": "309ef222eb515dceda5abcad72ebc0565b5ecc104bd9371d7247acca572bab5f",
+      "result.json": "115a00c72728eb865c0c4094a5385ae599cada03c2dce067305e13ba6e55eae1",
+      "transcript.jsonl": "44f7d590d255f8acdaca126a6146f3321b4ea7f75d0fd07edb60210b95e11383",
+      "visible-input.json": "f5ea80b50b3adb4dda2528e67dc67529acc1f9ff19a3d6eb923be7632422c198"
+    },
+    "contracts/E-CH-2-003": {
+      "budget.json": "4979b7ba2000f84e21179b3b692fa178be9597145ca1ee93d0cf8dcd333f7fe1",
+      "result.json": "745b18afa72d140e70aa4174eb737632d19077999cb25fa714dbe4d7a8b99f40",
+      "transcript.jsonl": "efb4ed69f9da9aa4a60acfaa45cd86cf108c45d9af00d0bb700acf00b35ab58a",
+      "visible-input.json": "0be9737f5dcaed01acc128cd0f9774e96782d7dc81e1f6e440305b8334fe2842"
+    },
+    "contracts/E-CH-2-003-authorized-log": {
+      "budget.json": "81e77dab3598875c291e14100b49d596e8b9cab927f5a51fc20d76831c4ce0ad",
+      "result.json": "5454de17920adc9ebfd754f04b32c1d1dc1afdd011a3b73136d71ed26f706570",
+      "transcript.jsonl": "ec8ffb279e6004015600c2eed93cd5919b20ba12f4dac39f7c0f54c3df3ab149",
+      "visible-input.json": "f2e1f78a2ffe7244f8024f103fc87c9340f6314e701e1f81f96fc41c0e6fe8c1"
+    },
+    "contracts/E-CH-2-004": {
+      "budget.json": "1f5ec685f039794f9486283d71bbe31048a6e9221026d8c2b231be7a4109282b",
+      "result.json": "2eb6f8a05541e3fa42467476889fdd4c612560437f1e4137e4499f66a731fa0e",
+      "transcript.jsonl": "950cf38aee3d35d20af9a55e97e3e7555a2c6875d21a66261889716232dcbf86",
+      "visible-input.json": "3a26ef12cd5ac0ae483692930078926c00332e64653b36026240fe4f823dcac1"
+    },
+    "contracts/E-CH-2-004-authorized-log": {
+      "budget.json": "4230970b7931dff6e6a0c1cd10e00fcdeb8e065aba824cba7bd790f6ceb2d59b",
+      "result.json": "fac6c3866769d8f842d1e70e89b34d5ca41b44cefbc3eadaf7eb2bb637e32291",
+      "transcript.jsonl": "b2210b637bfac7861cf89d99b38a8fdc9927b26eb62f3e3eb4411187259db242",
+      "visible-input.json": "cfc171d18904cc7f2f2c63e45725579e612e8dea8e62343831b6d9e1d140e5f1"
+    },
+    "episodes/run-00001": {
+      "assignment.json": "9049a3e15e0fd647a0e3e7ab6aaa2a15eb33b427fe7d963e190302a48cefda02",
+      "budget.json": "f3754d96d41eccdd43a2e6a5702e6d332b7394912f7000ceeefa9b930145ffb4",
+      "effects.sqlite3": "4ac417f9e6e1223dad332f08a89344eed9c946a39ab06086d8e0643c06e1a0cc",
+      "events.jsonl": "affb98ffcce2e45da3df0f571e54d3e705a63aa14b7935e7cf9d3657b9d0e154",
+      "result.json": "61e27f42c33a09bb8d3310c0b66c93f87dc82d5d5acd859c8cf493ac0a7dbd06",
+      "state.json": "27b7364b022b3a0a72e442b24f31c8b4273237bdd9726507be8a65995d5420e6",
+      "transcript.jsonl": "a0977a7f176fdbb94f9885dee79102de1b9b0938a46c63392fd9476377ee0ec1"
+    },
+    "episodes/run-00002": {
+      "assignment.json": "3119402077d56ec45d707e1a136d07d01cb120df7ec16a067c7c2cdbe3115733",
+      "budget.json": "d90ed78c12c369a68ccefb8d0a783ad4086c3aa66d183e9b2e7d75591b144828",
+      "effects.sqlite3": "a077f463adba97a544d06aa7f9839c5d23da4aff9f7937829da4b80f76bc753f",
+      "events.jsonl": "ab5f733adc9aa18d7cc2e65a564f901b5d3b36844824486a3086e75fb8b16363",
+      "result.json": "40cb87a64090066c789318eecc00248f3e601bff929464048174fc620db4fcf0",
+      "state.json": "3293333091b7497c0518147da3fd0aebb17c671ac19faeba4287ee6f764a23d0",
+      "transcript.jsonl": "e3c96d77c6633dd514264d3435eebd32b1f2ba3de319cec2064e4e1466b6a2d1"
+    },
+    "episodes/run-00003": {
+      "assignment.json": "907509ac18242208bf19bfc8b4306f629d011772b93a1918489b083c5de4288d",
+      "budget.json": "20f13e975104e3bb5b449ca41d7893cd037ed189e12fb92322ef24e5c88bcdd7",
+      "effects.sqlite3": "46b4ed8ec2315f9eeec08c02ebd5b3b4bb511c51adfcecb6b08d7b9b7bb59bfb",
+      "events.jsonl": "317e16c9d26e0d56f40694b3b299f17b818d45f3aeb30e3ebf1197c23a97f109",
+      "result.json": "87b1146875f3050f4bd1e8c493963fde873047d4c52d181726c1344257dd5f76",
+      "state.json": "92db66587d60b6db26c6513000d71c65a09f981832c151581b5664ba4a844da7",
+      "transcript.jsonl": "1797a38dea76ed5a473de6628584801e8f05345c4b0ff96cf15510f724609e13"
+    },
+    "episodes/run-00004": {
+      "assignment.json": "a102a5e3e31c635704e56c4097e01001437e021e9fffc3133945673584098e39",
+      "budget.json": "7c3f783e99258893e81083d4dd76dda9f52dfcab3ba3902f159dbfe60d33f861",
+      "effects.sqlite3": "d9df4bff09581286985bd7b0e288ae7a44a420847d2c6e1355a2326a669a85eb",
+      "events.jsonl": "aae9b6d442162d4e900f2a0c02421cebddfebeea50a42cbcde1f4ca0e4885bcf",
+      "result.json": "45136bf3da12e80d091592640dbc6f744622cb430108cc9d2ebd326844c9da54",
+      "state.json": "2820e048cdec626cde28621abe7c37b105e4a73f474a6faddda24ce1741986d9",
+      "transcript.jsonl": "3807d0aad1637eb3cbcb2f2017eaecefb4b06d0387bf5680f8f402f7315c62a5"
+    },
+    "episodes/run-00005": {
+      "assignment.json": "2a00e5ed37f478dc108b5005d5dbc45e6873027b6142c11c42e408042ee23c25",
+      "budget.json": "e0a1bb944cb7ae261a17174b102d942a29c1b225ae6fc9d3d049309a133a93fb",
+      "effects.sqlite3": "d88b87819ac25be162f10fcff64e8d85e848a15ee0932ee3fc3d3697a07ab4e6",
+      "events.jsonl": "fb9623e270476cfea001bc6bd82c8d8c482b1a29917db588855d60257e639ee1",
+      "result.json": "1d09041f88d0501f8ee0af826220d5ea53f30e02a592a0107af5d0c60267b213",
+      "state.json": "a848d96c0918a4873530105c49ffdcc1f9744cca30a02b9b5cbe267d0e8a6cd8",
+      "transcript.jsonl": "3c25239c5550cbafed35249ad17a596da6e98c9181004aa014dcba19e3358745"
+    },
+    "episodes/run-00006": {
+      "assignment.json": "73ae96fbdb57a60338e6eb2d1b37072f502069e6cc716ce9dc197dab3d60c17d",
+      "budget.json": "5baac7914b72e60509086297abae8a02684f8b3b60f8949ed081988fef8aeea5",
+      "effects.sqlite3": "f4940558ddd0546a697e27e222e7c3ed79ae008c21e586886dbee8361832d25d",
+      "events.jsonl": "8ec471b955dd9c9a1604ecf90993a746802944456d2e5f0ae8116426ee7960fa",
+      "result.json": "97a637318a0294fa0a64a0fa97e6873e21c85c71a1c2303d317fa5938f882307",
+      "state.json": "27b7364b022b3a0a72e442b24f31c8b4273237bdd9726507be8a65995d5420e6",
+      "transcript.jsonl": "44fd0ec6118bcf76236d2e940c19881b0273844d9cccb8656dd8bff6377c953d"
+    },
+    "episodes/run-00007": {
+      "assignment.json": "28d9d32cabaa9064adb26f8777bfeb7acb4fd39c0e37541d715059a97822c7ce",
+      "budget.json": "466b27a7eb6277aa23ad1a300ac13bb099607a540080491694ffd7af3fd730f1",
+      "effects.sqlite3": "7317ac216c41db97b37a29b2cebe9a42457512649d342f8ef8cc6f313e2cc49f",
+      "events.jsonl": "3d7bdde49701e55528f5c268dfdb839d924aadb84d907815ad5bb31c5ac7bda5",
+      "result.json": "434e9ef729cccc25541aa1b7093c8e836a4c76677981c80443fac60e4f11474c",
+      "state.json": "de309fead23f86362d7121bc52770a254bf2c03e4d2686bf950e19f95249dfc7",
+      "transcript.jsonl": "d4392030a2f0a7a699e1260c3bae5c7a565d4cdea741e1c005bb08f567ab6796"
+    },
+    "episodes/run-00008": {
+      "assignment.json": "eff0bb428850249d2cf3e7859556bda7494c1ca5dd77b9e2d5b456e95a022101",
+      "budget.json": "ba38eaa5f239c333eac436feb60ff5a5b422d320a27c0fe200133bda2132dd5e",
+      "effects.sqlite3": "145d602824c867ee3bab5e641f79026bcf33202297f2660759ce1ce6154507fb",
+      "events.jsonl": "939d392eff95860c5e1fc82aa107dceb53368991da004805d207d918fea87408",
+      "result.json": "0ca56eee4fec1b144728112a0adbfebe1fda5c5cd57dd4569e57e1ead182259f",
+      "state.json": "49329e7bb4a8d861a7629545820e63a3c06664ccecf0749b42b007585f3f8c70",
+      "transcript.jsonl": "b18f808fca03a1fe02c00af6e086efe285b5e57476e8548460520220cb641c3a"
+    },
+    "episodes/run-00009": {
+      "assignment.json": "2bca7db7948c8fdc97eb5dbb9a2e87d94ab75c367e830d98c1794852d4c6869b",
+      "budget.json": "9431436d22fa127941ca18f48b7ce5f5167ee160723e18d7b6201c3f839a5153",
+      "effects.sqlite3": "ae34e6a2c8bccf4f7c103c8fe7930c688860d21e97fa550c671cf336f75383dd",
+      "events.jsonl": "4a3f989bd3cfa922e3c17d902e7c6c721ca04df72c75556d3e68aa86110978c7",
+      "result.json": "1fa90672eb58e9592c58aad20e96cba0c3e4ed7f3f3d0716246f6512dcad41da",
+      "state.json": "9f2c78de03782fa991cb775c723af8c80e708ff436b7dbf9fa9dae5ef05cb9dc",
+      "transcript.jsonl": "abfc5267e3ca5f35d2a2bbb19208d0f64a4e199149d8918e7f8ead37108c27dc"
+    },
+    "episodes/run-00010": {
+      "assignment.json": "a7390719fcad9f707ee8c15af6ae6733198b812b2b096a70529d9b61ca94ced5",
+      "budget.json": "8f2f910f7689c3fdf6a38a6be9beeb2eb9a582ad23a5c089b5df75fcfe247fc0",
+      "effects.sqlite3": "09130f19318bcb806bd3140e68247fcadfeac7cb41b34a885c08402368f281d2",
+      "events.jsonl": "03629c8ca6a32b08218ed991655f3992b698077bcd59295ff578c535f37bf16b",
+      "result.json": "bd5e71bfb104c125b8b19d5eed8796313055b1e772b580a0c839441ea21aff5b",
+      "state.json": "92db66587d60b6db26c6513000d71c65a09f981832c151581b5664ba4a844da7",
+      "transcript.jsonl": "9be08ff4d0fe068cfe400ef4d418c76b0f5cfd3a4c34327802a53b78435321d5"
+    },
+    "episodes/run-00011": {
+      "assignment.json": "6803c509f144785ce7831ff8c9f56d381e0e1219f721290e41e8a3c56d07e87e",
+      "budget.json": "70ddf70737db15acb401d2af5d681b66da433161e6441e3a6a0ea5eae567f8a0",
+      "effects.sqlite3": "0478176e09bd7d0b16d277cab7d3882de721dc447eb3ba77a19ec340a894934a",
+      "events.jsonl": "4cb40aeddc128b83b8e0c90e7ab1c3671acf3aba410fd82a68d0c7c48094c81e",
+      "result.json": "67dcd97ad7ba57d23924e8a69cea6083fc37203d4d61a5efdbff6924c98a7c01",
+      "state.json": "2b0cd3b74072bea0894dc39f74e38bce8f7921a4c84f4990ffbc3ef93acc8b6e",
+      "transcript.jsonl": "3977d701a0965e2fafed2220bd1f262db0890850455e38d31a01ce46e71068e6"
+    },
+    "episodes/run-00012": {
+      "assignment.json": "3edea35f14a31261588422d9afad6c98a1715b4cd7845e551a794380a6b26d58",
+      "budget.json": "90c4d630fedbcca2a8cd7461331c9752cd8b3ce3d49142dea038c066a899346d",
+      "effects.sqlite3": "8ec61f5d2364e67c30d00a0aeb33e26c5e31519f07c0d6df5e1ea9748e253f70",
+      "events.jsonl": "d0f0003c329b07e297a16e0115e698c1be938f42cf29b5084575ef3dc356edea",
+      "result.json": "ac75b7ec051e9eadfd542e60b27ff87a87ac1203ca6df7c8bd76bd5fb0fe2055",
+      "state.json": "49329e7bb4a8d861a7629545820e63a3c06664ccecf0749b42b007585f3f8c70",
+      "transcript.jsonl": "e60d819ec9fa9c6d1796c03d62143d6ca098cae2cdb537d6cd8069ef172bb49f"
+    },
+    "episodes/run-00013": {
+      "assignment.json": "eea0f1980490e2c01316eb2574981cb1fbfa3059eeb51075c40d89360aee7404",
+      "budget.json": "83377861c48e090d98f4350cdafb298e9d757420c0326893206a9d2e68e0fafb",
+      "effects.sqlite3": "f37031878cb992ead6d4cb2d956fae45903a77cfe9ad303d807ccdd66d55f79e",
+      "events.jsonl": "e26dc29cc9844cb2d4f3f17157f870c2f29f7f70f4930b4f61455d1a89f7c2c3",
+      "result.json": "c68f1c5ebe52e127726462df60763ad5a64f0c8d13d35cb9ec5042df2b36c30b",
+      "state.json": "27b7364b022b3a0a72e442b24f31c8b4273237bdd9726507be8a65995d5420e6",
+      "transcript.jsonl": "8e2cd9229f548ae93ad74b5c27e21caa391b04b194193b4d923147a2de89b903"
+    },
+    "episodes/run-00014": {
+      "assignment.json": "bf2b36905c48526b4e08f0ad340f2eb9da70ed283540922ce8c149a51a4531ed",
+      "budget.json": "072550858af19e1b4dc6169abbda4476fb63eacfb05aa2aca6b5010031677b67",
+      "effects.sqlite3": "887bc58cb35fa3c8c491b2c6b8949cd35853b0a23bd0901b970bc6f11591c1b0",
+      "events.jsonl": "3bb457b233983dc63dd9cff798424445c4d7263390480213daf699c75a5070c1",
+      "result.json": "f1fa8e78e473f6c53f5c6ad06c9e1b2ca9bd9da5c39dbc487063dc2acebfb2cf",
+      "state.json": "516826763e8d1398f7553cbb4b6e108437f4cebddb01e6ce5cca64846b02e94b",
+      "transcript.jsonl": "31f5c13d27ed458902ae9c4212b4ca9e2e24edaac5f4cee9e5429afcb3e2a319"
+    },
+    "episodes/run-00015": {
+      "assignment.json": "fed7e26684311158518fc3335673b4bb145bf8913bb0a0645ee9ad694be99029",
+      "budget.json": "932881493a860ed51edd663427dd9746c586a81baee10a4f9e2aa127d8a3adf0",
+      "effects.sqlite3": "7b4e7e6f9a66b996dda759118a58f7d1817f945d642bc983d919839c78f1ca06",
+      "events.jsonl": "b8dcda32f0f3b5dcf8789b8b790973e1c38f9f484cca9ad7fb1fe0fc55c2aec6",
+      "result.json": "a9f3e98034fdb19db9ebd15cd4e1b0ae9655347a3368330fc505610f97e88268",
+      "state.json": "b6866e7d9d371d34d562becd86c8ff407e133755eb38e24a44e3e7e37d52f6b5",
+      "transcript.jsonl": "2004c159d307ab0137b62009b96bc6f6d9edab6cbc2216a0bf0312d7b4cf003d"
+    },
+    "episodes/run-00016": {
+      "assignment.json": "d5125b36a9b4141988cdc4f32e929c7db9f12bfd7c2f18d3198a9adbbdd7ec6b",
+      "budget.json": "8619fcd0ed56547c92879cb461c190801c2e5270a195c1f131f2debef51a70a2",
+      "effects.sqlite3": "c867f231cb140cd6eecffd3b640cbc005c9f21e67a8acfce9754070f2f59312a",
+      "events.jsonl": "abb1b9c1e5dd428ec971d071f1d36fae64e88e4059e5f401759b238618c45bb3",
+      "result.json": "c754bfd9481d4feed335466b33e8cad5a8e47ab407d1813802811ad83fb46997",
+      "state.json": "49329e7bb4a8d861a7629545820e63a3c06664ccecf0749b42b007585f3f8c70",
+      "transcript.jsonl": "ba9553f3e0e7611119a34a168b9299a5ba20fd81c71c5fcddfc146e72567cf8f"
+    },
+    "episodes/run-00017": {
+      "assignment.json": "b46e19cb5622a5c2a2c3fa60072c8036e5914f4ba4d8793c0c0b0f76d144d8cb",
+      "budget.json": "beb3b2c2b30ae974ba93d22bb2f5f1cfd3266110a70afb734cfb5480e54d21c4",
+      "effects.sqlite3": "dbf6c1e5edc5ff46a4e0e0ddfd3ce7c29f0105d0d22070e7e8bb528d47f92add",
+      "events.jsonl": "663df5bce7f3d08c0446f407c4badd787a988309da398026a3a42566760f782b",
+      "result.json": "0c2fae4c3a050e247015935d8eefe25a96210a831f4117798bc38971ffc85a1a",
+      "state.json": "b6866e7d9d371d34d562becd86c8ff407e133755eb38e24a44e3e7e37d52f6b5",
+      "transcript.jsonl": "c234f5dd6be9e6b9eeab219fefbb4e269d45d9a9a7491398b15ec3cacf6883ab"
+    },
+    "episodes/run-00018": {
+      "assignment.json": "02608b96736543074b352d9ff9ce55944c39723a606ff6f011741f3c43bfa709",
+      "budget.json": "5910f07e739660838026d23c2b33d73ae0113b4be1fb24d04b59db6ed0d63ac9",
+      "effects.sqlite3": "901a0d4dee58ba00e2fbe6faf8565ca83b8bcfe3b6f05b258f99254f49bbe569",
+      "events.jsonl": "634b2c5f2eb73bc20be1429dfba1f84169c32cba2cc23e95bcb7f07c2f82d2e4",
+      "result.json": "9965e170d7a54c097c281b0f031366395d3fad0d094dbfb97084a79be5dca9e6",
+      "state.json": "3293333091b7497c0518147da3fd0aebb17c671ac19faeba4287ee6f764a23d0",
+      "transcript.jsonl": "e4759e62f8b75d05eacfb68d70126d7dfaa3b507039c79c703456b139ea4adf3"
+    },
+    "episodes/run-00019": {
+      "assignment.json": "a943c66c8f5a7d9eac23fa87954d5459105df196f0a2446a76978c335f93962b",
+      "budget.json": "03d302443818f32cb479ec28db1c65b54f222c82627e6efbe630105b3975543a",
+      "effects.sqlite3": "dd19254a368a3b9a9643f2e90cbd08970c635034e89ec338d878b54c1b2d2d93",
+      "events.jsonl": "c48588e5399849875d6d66f35c6e7fd97c701a5c064b39e113345b9bfab68ed0",
+      "result.json": "d590aa59115001ac0ed1c5217c7c60d41387b13af87472242aaec4490429e103",
+      "state.json": "92db66587d60b6db26c6513000d71c65a09f981832c151581b5664ba4a844da7",
+      "transcript.jsonl": "f19bf3af1fc3d6357120b7846a628d2f6f8448511c2e38b7cc80730795f3aaf9"
+    },
+    "episodes/run-00020": {
+      "assignment.json": "f94453dbdd8ad14538593878981731d84211e9ae691fce74be82fcb594fd189e",
+      "budget.json": "2b606956f9174abe8867eab4dd116b2d95ce6a542b5a3ee48b8db6e097c114eb",
+      "effects.sqlite3": "4d6f87a56230441073a67d78ff75e09ba61d42ce77d1d53c989c9c51f63e600a",
+      "events.jsonl": "0569ffd75cbb08ed01857d343b42081d8115ea931d59329ff00cafce2e03493c",
+      "result.json": "f350dd41d489e89ee6a12a9e8b0c3b67896a447a24f16f80d0211a8feefcca2a",
+      "state.json": "3293333091b7497c0518147da3fd0aebb17c671ac19faeba4287ee6f764a23d0",
+      "transcript.jsonl": "e6d3b895b6d8b8d9b7f1f1adc70b642fbdf0ed5ee3ce94f17ceb1296b9d929fb"
+    },
+    "episodes/run-00021": {
+      "assignment.json": "b3e80dc6e6ef9d37536e23897fbd00860547c41e68e695f306e23033dda0a340",
+      "budget.json": "277b923a3a1cdc0b5e588c6f1e0a23ffce06b219fd1ea93fcd459da0239d645e",
+      "effects.sqlite3": "9cdae48be71f80012e32acbda74335fc6506df2bfc6b3994a744c4186ea30d5a",
+      "events.jsonl": "2a1c132dbe183f0995e23f39b69c359344408078aa4d9a95f08ea4eeb43a4e01",
+      "result.json": "31286fef9417704a93d7840d6e05f318c3801923029d65f1edd24ade396640a1",
+      "state.json": "a848d96c0918a4873530105c49ffdcc1f9744cca30a02b9b5cbe267d0e8a6cd8",
+      "transcript.jsonl": "96542a061f5f7deea2f7a903accb35749a98aca5e1f91dddb6fa661eca8e9caa"
+    },
+    "episodes/run-00022": {
+      "assignment.json": "3dfec47bfe97ac3045ce6294f996eeb1c26ab46df3d81f1c7060edd3f098135b",
+      "budget.json": "bca5f4748b1afc1ccb5b5cc92d23f19c69e28f851816bf90ae33b09eb517657e",
+      "effects.sqlite3": "2e621348f47fef8f81b60d3f46b0ef82bc05aed194b36d7364c31820ad023a6b",
+      "events.jsonl": "c4c3d9e1681acdc3768f1211a084fb24e12aa7b06d2f311f1eae19b43538145a",
+      "result.json": "5f31870a50987b0dc4d8a650be72c03155d466c6704dc93b37106b25439d7416",
+      "state.json": "de309fead23f86362d7121bc52770a254bf2c03e4d2686bf950e19f95249dfc7",
+      "transcript.jsonl": "19dcf865eedcf0eb3095902fac9bcc5858caf8c7b1946e3aaf5a6bec997664ca"
+    },
+    "episodes/run-00023": {
+      "assignment.json": "e426beb95e7ace3187f7a479e286d778a3359371520301b4b1b7f30b022d3c78",
+      "budget.json": "58ec810a2a44a054da9182539a631ee40888b302ab7b17cfb449ee8cd834927a",
+      "effects.sqlite3": "8dfd41c69da44466332467b1faefe7cdf669e42b266978f6b4139c4e1887409c",
+      "events.jsonl": "4c26d884f0257c4c4f3dee506ab71f1ae31a15d7414c6cdb75cc91b19b2f8931",
+      "result.json": "5c94efb60bda791b5a74884f2673da159235a60d8feefd370d173bdbee29cd08",
+      "state.json": "2820e048cdec626cde28621abe7c37b105e4a73f474a6faddda24ce1741986d9",
+      "transcript.jsonl": "47afee6c8e88d7112ae3e7f295f63d0946eb44430b412182835fb30ad1fdb412"
+    },
+    "episodes/run-00024": {
+      "assignment.json": "5f523711903a978647a271d4b28116a4352e6ecda0afb76e5125a2ac08e9b30b",
+      "budget.json": "6961c7a46b44abdd311c22b06856d9f32943594af92b659ea18e891437ae8693",
+      "effects.sqlite3": "c881a101ae988c3a40d92f71aa7c4efb70ee5a870d06fe0a66ed21cf22ca4b30",
+      "events.jsonl": "fbc4e5bfdca4fba72fc1786343602d7748352f4889d34c2a9a096192cab43459",
+      "result.json": "dc84b51f40aa34500741ba70bb16d880f506439a2e35ef85c45e33a0c782f975",
+      "state.json": "0066ed2f7dcbf4c75f43c6af07259ce7c4a2f61054062d59dc0aa6402b1c9be0",
+      "transcript.jsonl": "4997aa110a441972a0f0a7aeed61c6e5a16d6dd657de82df767f0b1ce9aa07ca"
+    }
+  },
+  "export_hashes": {
+    "contracts.json": "14b6438a055a6728a782c14a9cdf8db547a8c31f78ba04b738f7c45d5b4749f7",
+    "episodes.json": "90661294a3e9926cf49eebb7c9c0fab0c1cc1262a2a6db954ba2f3a4002afb33",
+    "summary.json": "9a8943bfde7bc5eeeabcfcf986673c03419062baa8e1f9effeaa31ae5106ed7e"
+  },
+  "plan_sha256": "e77c8e6237f449373956cd4c5ee11aaf5f6254184546b376853c5dc62bc137ce",
+  "previous_comparison": {
+    "contracts_manifest_sha256": "6d60dc90ccf7aae33551a3b80a92f0c15fc4e3cc25e8a558572272632cd28907",
+    "path": "/Users/lijiawei/Desktop/containment-extension/runs/ambiguity-planner-comparison-20261111-v1",
+    "plan_sha256": "61abccc96e5817f9a8d1267d9fad12de05fd311ce4c980ee6cd8724e08e62f07",
+    "summary_sha256": "8cbe729b53e967252b850828bd0d7612cf1c1835a41d84aa34823a70e610619c"
+  },
+  "tasks_sha256": "4a86bb864caab2f7e92ef16636acf086c0e7b6219d30ff75fc74f141ff033513",
+  "unchanged_algorithm_files": [
+    "source/containment_extension/sabench_study.py",
+    "source/containment_extension/verified_planner.py",
+    "source/containment_extension/office_arguments.py",
+    "source/containment_extension/providers.py"
+  ]
+}

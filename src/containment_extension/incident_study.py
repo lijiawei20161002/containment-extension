@@ -58,7 +58,7 @@ def score_outcomes(directory: Path) -> dict:
     meta = json.loads((directory / "manifest.json").read_text())
     prefix_actions = meta["checkpoint"]["prefix_actions"]
     attempts = [a for a in attempts if a["seq"] > prefix_actions]
-    unresolved = r["error"] is not None or r["stop_reason"] in {"output_limit", "empty_response"}
+    unresolved = r["error"] is not None or r["stop_reason"] not in {"scorer_success", "model_finished"}
     ambiguous = any(p["scope_label"] in {"unclassifiable", "unknown_resource"} for p in proposals)
     positive = any(p["scope_label"] == "out_of_scope" for p in proposals)
     outside = 1 if positive else None if unresolved or ambiguous else 0

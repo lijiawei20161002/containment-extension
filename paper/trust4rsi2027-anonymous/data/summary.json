@@ -1,0 +1,271 @@
+{
+  "cohorts": {
+    "C01": {
+      "incidents": 2,
+      "unknown": 0,
+      "recorded": 128,
+      "not_recorded": 0,
+      "repeat_effects": 2,
+      "statuses": {
+        "finished": 128
+      }
+    },
+    "C02": {
+      "incidents": 0,
+      "unknown": 1,
+      "recorded": 128,
+      "not_recorded": 0,
+      "repeat_effects": 0,
+      "statuses": {
+        "finished": 127,
+        "invalid_multiple_calls": 1
+      }
+    },
+    "C03": {
+      "incidents": 0,
+      "unknown": 0,
+      "recorded": 128,
+      "not_recorded": 0,
+      "repeat_effects": 0,
+      "statuses": {
+        "finished": 128
+      }
+    },
+    "C04": {
+      "incidents": 11,
+      "unknown": 5,
+      "recorded": 128,
+      "not_recorded": 0,
+      "repeat_effects": 10,
+      "statuses": {
+        "finished": 123,
+        "invalid_multiple_calls": 5
+      }
+    },
+    "C05": {
+      "incidents": 0,
+      "unknown": 24,
+      "recorded": 44,
+      "not_recorded": 84,
+      "repeat_effects": 0,
+      "statuses": {
+        "finished": 20,
+        "incomplete_actor_response": 23,
+        "step_budget": 1
+      }
+    },
+    "C06": {
+      "incidents": 1,
+      "unknown": 0,
+      "recorded": 160,
+      "not_recorded": 0,
+      "repeat_effects": 1,
+      "statuses": {
+        "finished": 160
+      }
+    },
+    "C07": {
+      "incidents": 11,
+      "unknown": 19,
+      "recorded": 160,
+      "not_recorded": 0,
+      "repeat_effects": 10,
+      "statuses": {
+        "invalid_multiple_calls": 19,
+        "finished": 141
+      }
+    },
+    "C08": {
+      "incidents": 0,
+      "unknown": 31,
+      "recorded": 44,
+      "not_recorded": 116,
+      "repeat_effects": 0,
+      "statuses": {
+        "incomplete_actor_response": 30,
+        "finished": 13,
+        "step_budget": 1
+      }
+    },
+    "C09": {
+      "incidents": 26,
+      "unknown": 27,
+      "recorded": 216,
+      "not_recorded": 0,
+      "repeat_effects": null,
+      "statuses": {
+        "scorer_success": 84,
+        "model_finished": 104,
+        "provider_error": 28
+      }
+    },
+    "C10": {
+      "incidents": 39,
+      "unknown": 26,
+      "recorded": 216,
+      "not_recorded": 0,
+      "repeat_effects": null,
+      "statuses": {
+        "scorer_success": 75,
+        "model_finished": 112,
+        "provider_error": 29
+      }
+    }
+  },
+  "contrasts": [
+    {
+      "cohort": "C09",
+      "candidate": "b0-journal",
+      "complete_pairs": 11,
+      "better": 9,
+      "worse": 0,
+      "difference": -0.8181818181818182,
+      "p": 0.00390625,
+      "lower": -0.8125,
+      "upper": -0.375
+    },
+    {
+      "cohort": "C09",
+      "candidate": "b0-planner",
+      "complete_pairs": 14,
+      "better": 12,
+      "worse": 0,
+      "difference": -0.8571428571428571,
+      "p": 0.00048828125,
+      "lower": -0.875,
+      "upper": -0.625
+    },
+    {
+      "cohort": "C09",
+      "candidate": "b0-planner_journal",
+      "complete_pairs": 14,
+      "better": 12,
+      "worse": 0,
+      "difference": -0.8571428571428571,
+      "p": 0.00048828125,
+      "lower": -0.875,
+      "upper": -0.625
+    },
+    {
+      "cohort": "C09",
+      "candidate": "b0-broker",
+      "complete_pairs": 14,
+      "better": 12,
+      "worse": 0,
+      "difference": -0.8571428571428571,
+      "p": 0.00048828125,
+      "lower": -0.875,
+      "upper": -0.6875
+    },
+    {
+      "cohort": "C09",
+      "candidate": "b8-journal",
+      "complete_pairs": 12,
+      "better": 6,
+      "worse": 0,
+      "difference": -0.5,
+      "p": 0.03125,
+      "lower": -0.5625,
+      "upper": -0.25
+    },
+    {
+      "cohort": "C09",
+      "candidate": "b8-planner",
+      "complete_pairs": 13,
+      "better": 9,
+      "worse": 0,
+      "difference": -0.6923076923076923,
+      "p": 0.00390625,
+      "lower": -0.75,
+      "upper": -0.5
+    },
+    {
+      "cohort": "C09",
+      "candidate": "b8-planner_journal",
+      "complete_pairs": 14,
+      "better": 10,
+      "worse": 0,
+      "difference": -0.7142857142857143,
+      "p": 0.001953125,
+      "lower": -0.75,
+      "upper": -0.5625
+    },
+    {
+      "cohort": "C10",
+      "candidate": "b0-journal",
+      "complete_pairs": 13,
+      "better": 3,
+      "worse": 3,
+      "difference": 0.0,
+      "p": 1.0,
+      "lower": -0.0625,
+      "upper": 0.1875
+    },
+    {
+      "cohort": "C10",
+      "candidate": "b0-planner",
+      "complete_pairs": 13,
+      "better": 9,
+      "worse": 0,
+      "difference": -0.6923076923076923,
+      "p": 0.00390625,
+      "lower": -0.75,
+      "upper": -0.4375
+    },
+    {
+      "cohort": "C10",
+      "candidate": "b0-planner_journal",
+      "complete_pairs": 13,
+      "better": 9,
+      "worse": 0,
+      "difference": -0.6923076923076923,
+      "p": 0.00390625,
+      "lower": -0.75,
+      "upper": -0.375
+    },
+    {
+      "cohort": "C10",
+      "candidate": "b0-broker",
+      "complete_pairs": 12,
+      "better": 8,
+      "worse": 0,
+      "difference": -0.6666666666666666,
+      "p": 0.0078125,
+      "lower": -0.75,
+      "upper": -0.375
+    },
+    {
+      "cohort": "C10",
+      "candidate": "b8-journal",
+      "complete_pairs": 14,
+      "better": 9,
+      "worse": 1,
+      "difference": -0.5714285714285714,
+      "p": 0.021484375,
+      "lower": -0.625,
+      "upper": -0.4375
+    },
+    {
+      "cohort": "C10",
+      "candidate": "b8-planner",
+      "complete_pairs": 14,
+      "better": 11,
+      "worse": 0,
+      "difference": -0.7857142857142857,
+      "p": 0.0009765625,
+      "lower": -0.8125,
+      "upper": -0.6875
+    },
+    {
+      "cohort": "C10",
+      "candidate": "b8-planner_journal",
+      "complete_pairs": 14,
+      "better": 11,
+      "worse": 0,
+      "difference": -0.7857142857142857,
+      "p": 0.0009765625,
+      "lower": -0.8125,
+      "upper": -0.625
+    }
+  ]
+}

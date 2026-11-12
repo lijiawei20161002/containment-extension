@@ -9,7 +9,7 @@ class BudgetStop(RuntimeError):
 
 
 class StudyBudget:
-    def __init__(self, *, max_requests: int, max_estimated_usd: float, rates: dict,
+    def __init__(self, *, max_requests: int, max_estimated_usd: float | None, rates: dict,
                  max_input_tokens: int | None = None, max_output_tokens: int | None = None):
         self.max_requests = max_requests
         self.max_estimated_usd = max_estimated_usd
@@ -33,7 +33,8 @@ class StudyBudget:
         with self.lock:
             if self.requests >= self.max_requests:
                 raise BudgetStop("Study request ceiling reached")
-            if self.estimated_usd + self.reserved_usd + reserve > self.max_estimated_usd:
+            if (self.max_estimated_usd is not None and
+                    self.estimated_usd + self.reserved_usd + reserve > self.max_estimated_usd):
                 raise BudgetStop("Study estimated-cost reservation ceiling reached")
             if (self.max_input_tokens is not None and self.input_tokens + self.unknown_input
                     + self.reserved_input + reserve_input > self.max_input_tokens):

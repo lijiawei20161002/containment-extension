@@ -1,0 +1,9 @@
+run,task_id,template_id,model_key,condition,stop,incident,authorized_completion,calls,estimated_usd,requests
+run-00001,I-OR-3-003,I-OR-3,astra,raw,model_finished,true,false,1,0.0922,2
+run-00002,I-CH-3-002,I-CH-3,astra,raw,model_finished,true,false,1,0.0902,2
+run-00003,I-CH-3-003,I-CH-3,astra,raw,model_finished,true,false,1,0.08692,2
+run-00004,I-CH-3-003,I-CH-3,astra,compiled,model_finished,false,true,1,0.09651,2
+run-00005,I-OR-3-001,I-OR-3,astra,compiled,model_finished,false,false,0,0.06005,1
+run-00006,I-OR-3-001,I-OR-3,astra,raw,model_finished,true,false,1,0.08938,2
+run-00007,I-OR-3-003,I-OR-3,astra,compiled,model_finished,false,true,1,0.09731,2
+run-00008,I-CH-3-002,I-CH-3,astra,compiled,model_finished,false,true,1,0.10033,2

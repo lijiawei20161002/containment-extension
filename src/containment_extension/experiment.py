@@ -70,9 +70,10 @@ def run_live(directory: Path, *, provider: str, model: str, variant: str, mode: 
              temperature: float | None = None, tags: dict | None = None,
              budget=None, readme_text: str | None = None, prepared_lab: Lab | None = None,
              initial_history: list[dict] | None = None, action_classifier=classify_action,
-             checkpoint_metadata: dict | None = None) -> dict:
-    if not 1 <= max_steps <= 64 or not 128 <= max_output_tokens <= 4096:
-        raise ValueError("Steps must be in [1,64] and output tokens in [128,4096]")
+             checkpoint_metadata: dict | None = None, request_extra: dict | None = None,
+             max_total_tokens: int = 40_000, max_history_bytes: int = 80_000) -> dict:
+    if not 1 <= max_steps <= 64 or not 128 <= max_output_tokens <= 65_536:
+        raise ValueError("Steps must be in [1,64] and output tokens in [128,65536]")
     lab = prepared_lab or Lab(directory, variant=variant, mode=mode, seed=seed,
                               max_actions=max_actions, readme_text=readme_text)
     if lab.directory != directory or lab.variant != variant or lab.mode != mode:
@@ -81,6 +82,8 @@ def run_live(directory: Path, *, provider: str, model: str, variant: str, mode: 
                         max_steps=max_steps, max_actions=max_actions,
                         max_output_tokens=max_output_tokens, kind="live")
     metadata.update({"prompt_version": prompt_version, "temperature": temperature,
+                     "request_extra": request_extra or {}, "max_total_tokens": max_total_tokens,
+                     "max_history_bytes": max_history_bytes,
                      "prompt_sha256": hashlib.sha256(
                          (system_prompt + task_prompt).encode()).hexdigest(),
                      "initial_state_sha256": hashlib.sha256(
@@ -111,7 +114,8 @@ def run_live(directory: Path, *, provider: str, model: str, variant: str, mode: 
 
         agent = NativeAgent(provider, model, max_output_tokens=max_output_tokens,
                             system_prompt=system_prompt, task_prompt=task_prompt,
-                            temperature=temperature, transport=transport)
+                            temperature=temperature, transport=transport,
+                            request_extra=request_extra, max_history_bytes=max_history_bytes)
         if initial_history is not None:
             agent.restore_history(initial_history)
             write_json(directory / "initial-history.json", agent.history)
@@ -129,11 +133,18 @@ def run_live(directory: Path, *, provider: str, model: str, variant: str, mode: 
                 final_text = turn.text
                 transcript.write(canonical({"step": step, "provider_response": turn.raw}) + "\n")
                 transcript.flush()
+                refused = (turn.raw.get("stop_reason") == "refusal" or any(
+                    part.get("type") == "refusal"
+                    for item in turn.raw.get("output", []) if item.get("type") == "message"
+                    for part in item.get("content", [])))
+                truncated = (turn.raw.get("stop_reason") == "max_tokens"
+                             or turn.raw.get("status") == "incomplete")
+                if refused or truncated or turn.raw.get("status") in {"failed", "cancelled"}:
+                    stop_reason = ("provider_refusal" if refused else "output_limit" if truncated
+                                   else "incomplete_response")
+                    break
                 if not turn.calls:
-                    truncated = (turn.raw.get("stop_reason") == "max_tokens"
-                                 or turn.raw.get("status") == "incomplete")
-                    stop_reason = ("output_limit" if truncated else
-                                   "model_finished" if turn.text.strip() else "empty_response")
+                    stop_reason = "model_finished" if turn.text.strip() else "empty_response"
                     break
                 turn_proposals = []
                 for call in turn.calls:

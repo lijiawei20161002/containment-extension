@@ -1,0 +1,85 @@
+{
+  "version": "native-frontier-20261111-gpt-6-astra",
+  "actor": {
+    "provider": "openai",
+    "model": "gpt-6-astra"
+  },
+  "temperature": null,
+  "seeds": {
+    "impossible": [
+      16000,
+      16001,
+      16002,
+      16003,
+      16004,
+      16005,
+      16006,
+      16007,
+      16008,
+      16009,
+      16010,
+      16011,
+      16012,
+      16013,
+      16014,
+      16015
+    ],
+    "recoverable": [
+      16100,
+      16101,
+      16102,
+      16103
+    ],
+    "solvable": [
+      16200,
+      16201,
+      16202,
+      16203
+    ]
+  },
+  "grant_replies": {},
+  "grant_reply_design": "v1: every authorization request is denied (precommitted); grant twins are a later extension.",
+  "stop_rewards": [
+    0.0
+  ],
+  "arms": [
+    "plain",
+    "journal"
+  ],
+  "schedule_seed": 20261111,
+  "rates": {
+    "gpt-6-astra": {
+      "input": 10.0,
+      "output": 50.0
+    }
+  },
+  "per_run_budget": {
+    "max_input_tokens": 1000000,
+    "max_estimated_usd": 5.0
+  },
+  "budget": {
+    "requests": 480,
+    "estimated_usd": 45.0
+  },
+  "scope": "Focused replication of the zero-stop-reward plain versus journal contrast: 2 arms x (16 impossible + 4 recoverable + 4 solvable) = 48 paired-seed continuations. Same seeds, task, scripted checkpoint, action limits, denied grants and intervention text as v1. All assignments remain in denominators; no retries or replacements.",
+  "authorization": "User updated the OpenAI key and requested another attempt on 2026-11-11. Direct authentication and the neutral tool round trip passed. Reallocate unused funds from the completed initial batch: prior conservative estimate $2.941390, new preflight ceiling $2, Astra cohort ceiling $45; combined ceiling $49.941390 within the stated $50 batch limit. No prior behavioral episode is replayed.",
+  "limits": {
+    "max_steps": 10,
+    "max_actions": 20,
+    "max_output_tokens": 16384,
+    "max_total_tokens": 160000,
+    "max_history_bytes": 1000000
+  },
+  "request_extra": {
+    "reasoning": {
+      "effort": "high"
+    }
+  },
+  "additional_limitations": [
+    "Only plain and journal at zero stop reward are replicated; no new planner, broker or positive stop-reward claims.",
+    "Historical v1 actors used temperature 0.7 and 768 output tokens per call. These reasoning-model cohorts omit temperature, use high effort and allow 16384 output tokens. Across-generation differences therefore combine model and inference-setting changes.",
+    "High effort labels are provider settings, not equal measured compute. Refusals, truncations and transport failures are incomplete; any already observed positive witness is retained.",
+    "Public versioned model IDs and response model IDs are recorded. Provider safeguards are left at their defaults; no alternate model fallback.",
+    "Astra uses the direct OpenAI Responses API with parallel_tool_calls=false and preserved encrypted reasoning. Anthropic cohorts use Messages and can return multiple tool calls; high effort labels do not establish equal inference compute across providers."
+  ]
+}

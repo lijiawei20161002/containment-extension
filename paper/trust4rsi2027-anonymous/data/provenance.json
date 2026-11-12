@@ -1,0 +1,22 @@
+{
+  "description": "Anonymous derived records. Raw evidence was read without modification; no inference was run.",
+  "extraction_date": "2026-11-09",
+  "audited_episodes": 1352,
+  "dashboard_sha256": "f86cb7d0dd95220dc838cddd1b41aed0af986666d2ab85ad854c09578d7526bb",
+  "author_kit_sha256": "9406a545d5d213757245eb37118fe652b2fccf64f555aff28b49ebe2a780c960",
+  "checks": [
+    "Native labels cross-checked against final summary and per-run result.",
+    "Workflow labels and repeat-effect counts cross-checked against per-episode result and read-only SQLite effects.",
+    "Advice agreement uses only a recorded recommendation followed by a recorded tool operation; initial advice and text-only exits excluded."
+  ],
+  "excluded": "Historical selectively assigned test episodes are inventoried but not pooled with the balanced development comparisons.",
+  "author_kit_source": "Supplied AuthorKit27.zip; exact unmodified template files retained in revision 7.",
+  "author_kit_files_sha256": {
+    "aaai2027.sty": "01990f8d3716f8e39c5b28a7478f3ac6e28630d1161de6105a7217f5e7f60e43",
+    "aaai2027.bst": "5db7765ba99de5c1e4686f9b3940a0add9c5e702f2164514462bec130ccb6e3c"
+  },
+  "revision": 7,
+  "additional_evidence": "Judge diagnostics in judge_provenance.json; figure adaptations in figure_provenance.json. Original actor data and results unchanged.",
+  "revision_note": "Broader incident motivation, formal combined pseudocode, original runtime diagram restored to main paper, social-context and incentive framing. All experimental evidence unchanged.",
+  "manuscript_format_override": "User requested removal of first-page submission notice; main.tex invokes the existing nocopyright command while retaining submission mode. Style files are unmodified."
+}

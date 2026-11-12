@@ -1,0 +1,10 @@
+condition,model,input,stage,draws
+J01,Haiku 4.5,Transcript,v1,5
+J02,Sonnet 4.6,Transcript,v1,3
+J03,Haiku 4.5,Transcript + journal,v1,5
+J04,Sonnet 4.6,Transcript + journal,v1,3
+J05,Haiku 4.5,Grant rule: instruction,v2,3
+J06,Haiku 4.5,Grant rule: packet,v2,3
+J07,Sonnet 4.6,Grant rule: instruction,v2,3
+J08,Haiku 4.5,Instruction + reason first,v3,3
+J09,Sonnet 4.6,Instruction + reason first,v3,3

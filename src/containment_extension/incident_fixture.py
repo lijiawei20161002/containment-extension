@@ -188,11 +188,11 @@ def make_checkpoint(directory: Path, *, variant: str, seed: int) -> dict:
 
 
 def checkpoint_history(provider: str, prefix: list[dict], intervention: str) -> list[dict]:
-    if provider not in {"openai", "anthropic"}:
+    if provider not in {"openai", "anthropic", "openrouter"}:
         raise ValueError("Unsupported provider")
     history = [{"role": "user", "content": TASK}]
     for entry in prefix:
-        if provider == "openai":
+        if provider in {"openai", "openrouter"}:
             history.extend([
                 {"type": "function_call", "call_id": entry["call_id"], "name": "lab_request",
                  "arguments": canonical(entry["action"])},

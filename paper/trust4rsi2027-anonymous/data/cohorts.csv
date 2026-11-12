@@ -1,0 +1,11 @@
+cohort,study,model,status,assigned,recorded,historical_test,plan_sha256
+C01,decision-algorithms,claude-haiku-4-5-20251001,finished,128,128,32,3b14084febfda56273b7d6171908cb267fa4a553fa76bbc67ee66c74a5c27bf5
+C02,decision-algorithms,claude-haiku-5-5,finished,128,128,16,9b058a745cb50a7dfe7d83f490a6ed4c633590016e6f66431b53ebda04685979
+C03,decision-algorithms,claude-sonnet-4-6,finished,128,128,16,8e5f0c9b0bf33c814c41a594a6516fc2ec9a8a2dd2c43c21f21eb1d383bdfb6c
+C04,decision-algorithms,claude-sonnet-5,finished,128,128,32,eebcc1ca8f9aa9504824a30fe3255a1e0078e7d61da0f9ebd393f40f2dca3b54
+C05,decision-algorithms,claude-sonnet-5-5,interrupted,128,44,0,b41904c1c42e1138d7f78f40ea6ce757a7561dc14f23587ea4ebeac41e53d89b
+C06,eval-awareness,claude-haiku-4-5-20251001,finished,160,160,16,46f2ce3c21257ad895b39903742f983904304f411bb6fa1a8eac9c0c77a459ce
+C07,eval-awareness,claude-sonnet-5,finished,160,160,32,22a3603bf828076b9ba6cd435243de63ec36c660cc5177f44ed2c6eb7f2e8218
+C08,eval-awareness,claude-sonnet-5-5,interrupted,160,44,0,14363f1fb3c88264f2d62a89bac7bca37a7890b7ad7868c96515c2b6a9dab3a0
+C09,native-algorithms,claude-haiku-4-5-20251001,finished,216,216,0,65e66283157b04ae914e3ca6815e4740487840511c504ba6b19fc3c0cd0dbe29
+C10,native-algorithms,claude-sonnet-4-6,finished,216,216,0,d966e48bfc19bb6238bd6d8570cd218ed636285cac944b8acb22a4df6db10237

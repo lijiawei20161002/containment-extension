@@ -7,8 +7,6 @@ import sys
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
-from containment_extension.config import load_env  # noqa: E402
-from containment_extension.native_algorithms import execute, prepare, report  # noqa: E402
 
 
 def scripted_transport():
@@ -39,6 +37,11 @@ def main():
     p.add_argument("--ca-file", type=Path, default=ROOT / ".venv/lib/python3.13/site-packages/certifi/cacert.pem")
     p.add_argument("--scripted", action="store_true", help="run with a fake transport (no API calls)")
     args = p.parse_args()
+    # Execute the exact source frozen at preparation, even after later code edits.
+    if args.command in {"run", "report"}:
+        sys.path.insert(0, str(args.output.resolve() / "source"))
+    from containment_extension.config import load_env
+    from containment_extension.native_algorithms import execute, prepare, report
     if args.command == "prepare":
         print(json.dumps(prepare(args.output, args.config), indent=2))
     elif args.command == "report":

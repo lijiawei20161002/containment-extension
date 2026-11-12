@@ -23,6 +23,23 @@ for viewing. Rebuild it from the retained local evidence without model calls:
 python3 scripts/export_dashboard_data.py --output dashboard/data.json
 ```
 
+The Story view opens local `incident-library.html` and `cross-case-analysis.html`
+pages. The library includes all 26 records, their recorded sources and evidence
+limits, and the library documentation. The analysis includes its six figures.
+These pages work when only `dashboard/` is served at `http://localhost:8765/`
+and when the repository is served at `http://localhost:8765/dashboard/`.
+They need no GitHub access or network connection; analysis figures are embedded.
+
+After changing the source records or analysis, rebuild the local pages with the
+`dashboard` optional dependency installed (`python3 -m pip install -e '.[dashboard]'`):
+
+```sh
+python3 scripts/export_dashboard_docs.py
+```
+
+Viewing the generated HTML requires only the static server, without Python
+Markdown dependencies.
+
 The exporter includes workflow, native recovery, and evaluation-awareness
 cohorts. It preserves interrupted cohorts for inspection. Historical selection,
 judge, E1, AgentDojo, and boundary-game views are preserved in the

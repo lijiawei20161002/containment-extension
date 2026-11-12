@@ -1,0 +1,725 @@
+{
+  "plan_sha256": "06a7d8b4da297bf53d114de88c4a71771e0ea413a192c23f1b8bfa2fca64f5a6",
+  "analysis_code_sha256": "46bd9c67e3aed4eb118ba8f591e2f38dfd6b861050d772e4ad855ce036df36ab",
+  "source_hashes": {
+    "source/containment_extension/__init__.py": "676b6fc2893f399bcf81fb514af184d2608930eb353e3e24b575b56d8768bcea",
+    "source/containment_extension/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "source/containment_extension/agentdojo_grant.py": "b49cf9e55e87f5920e909594c13c0b36164053d922b79e4d2aba20b1443995d9",
+    "source/containment_extension/algorithm_study.py": "28ac306d1248c39c7bfe1c9c275e1917fd9fc633eb73e3c79218701617a757e0",
+    "source/containment_extension/baseline_diagnostic.py": "e587b0a0098bdca1677a8e2357181309ba8f6296d97ce1950fdd38ae04df2156",
+    "source/containment_extension/boundary_games.py": "1b37a163067c5b445de50256e4595ecb8850936fac233ef9415db70030d31e7e",
+    "source/containment_extension/budget.py": "990024cb4283d8091ac0d49cbc9c14fa1718b6f718032008e201b8d6e72ddba3",
+    "source/containment_extension/cli.py": "607f1da3760ad68c721ff13b8bffc2ed2cdefe2c5304c95a685da4224eac27ed",
+    "source/containment_extension/config.py": "6f0f35c803a9202adcbee86ae2f9ecbca4ddb00ba702aec8b4a19d8e76237fd4",
+    "source/containment_extension/coordination/__init__.py": "68bc151984615601ed14720a31f0822f67fc44c92a378d4b97504c4cf14a3530",
+    "source/containment_extension/coordination/evidence.py": "363c75eac02441941ae33647fb3b8ff784c680f108ef9dd98ae12841831292f4",
+    "source/containment_extension/coordination/fixture.py": "878ecc7d41806447fd8db86527216ef7d77a11212540200dbb1b76b0af9175b9",
+    "source/containment_extension/coordination/study.py": "484badccfaec8d2129e52e31dd7841efec996c2520506ace03aae36fe1e81bf9",
+    "source/containment_extension/cue_study.py": "85b891d500f613db24c11614786301ffa551313b2883c4b59b3d316cbebcc250",
+    "source/containment_extension/decision_story.py": "98786303cdf5646d97017877be5ddcf786dfb2ba922e546f9dad3fa116aeaf6f",
+    "source/containment_extension/evaluation/__init__.py": "45744b2df3f6a19b1eb4d601cc35a63ce3138cea14bbd1bd4c08431132d93952",
+    "source/containment_extension/evaluation/archive.py": "e4e0b6efc3968694c67950f8a6689f22c6b12a1afc3ad1d2ac8d3785c39406c0",
+    "source/containment_extension/evaluation/artifact.py": "13cb5d5310e07386cad6eb95242c2ff19b0e16d445ce60ef339e0232b458a6e3",
+    "source/containment_extension/evaluation/benchmark_metrics.py": "464c56d9377bb39d78bca6479e6ccb156be6f79936fcb2bc8934c767f3cf069e",
+    "source/containment_extension/evaluation/benchmarks.py": "24d0368839b77420f8511f5ceb1270b5b5572081031ee5feb58c7443c78ffc02",
+    "source/containment_extension/evaluation/common.py": "6ceef66b6f1407b84ad1187e33311cf693a1e868aca9346d2b1b5cb99e1f605c",
+    "source/containment_extension/evaluation/live.py": "0404dc45e1ceacb7fc845ece240be38810520324af746dec7fe25e1d6653c5d4",
+    "source/containment_extension/evaluation/study.py": "80db6124c0f25524d03d4b0eed2733b4b209e12529bad7f857d80d56cf5dfc9b",
+    "source/containment_extension/evaluation/workflow.py": "ac96c23644dd1120f7442a49c705a31359d595a8f79df582000854ba0c2f9643",
+    "source/containment_extension/experiment.py": "bf812a9d2e6e462619117c02d76b2753597f2dd441162627a2e8fb2080c8b8b0",
+    "source/containment_extension/feedback_ablation.py": "ac6e0904a727866f3733931479b4a1396d6c0881941bc5e7d7fa2dd893e91a7d",
+    "source/containment_extension/feedback_metrics.py": "20abf0f269c10ac107dabe32893179f72ec1b8ff361d8658c60f11da4307634d",
+    "source/containment_extension/grant_model.py": "59a3ffab7ba3cce6a14c6764bda7548ae1251df1ee3256d52a208d3ed93981b0",
+    "source/containment_extension/impossiblebench/__init__.py": "dfa0403bcd8fd509a4113850929c50f36ccd542557c9dc544dac707a7c3f8247",
+    "source/containment_extension/impossiblebench/catalog.py": "0335c0006f0e30c6662d9c50d84e9f91ab4dde148707a387aeaa7cb9773708e6",
+    "source/containment_extension/impossiblebench/dataset.py": "36efe412a47f1c87bb2aa2cc18d2f81711e89ebe5641de8b1518f01be854e22d",
+    "source/containment_extension/impossiblebench/docker.py": "0ba86f2897800b522dbef4d4024b9619b8771b96dc5493fff275a6212ac01866",
+    "source/containment_extension/impossiblebench/inspect_adapter.py": "6bc78089581d1307f06db121df990466336bafc8dfaecf5f03b9ef644db3fda3",
+    "source/containment_extension/impossiblebench/observer.py": "8ad0971acfdf94efad13d0558b290037002908ad51f67479a9accdfc7d28c1d8",
+    "source/containment_extension/impossiblebench/preflight.py": "7bfdba68037df38d1802a8144f15b00003e4dbb54e060cbfc0bb06869c8c084c",
+    "source/containment_extension/impossiblebench/qualification.py": "678fb2efb219d0cc08b02315fa90e483c78b543f8f2daa0053678a0efefbe934",
+    "source/containment_extension/impossiblebench/runner.py": "5248343092451177e184122f602b8fd8db8ee93a4300ac874fc4f03f8ce64793",
+    "source/containment_extension/impossiblebench/study.py": "80f139eba6b820e63ea9bb1da5af24bc3d3e73c321f7bf78adb633f2588de5f2",
+    "source/containment_extension/incident_fixture.py": "08872dd80acc81853e1f9d8ccb0c12585fbc8aad27b66002152524cf5dc1f376",
+    "source/containment_extension/incident_library.py": "eacf6226973e005a5b8e1779c09f2ed5081dd9197c94bfd05e9d51db999adabb",
+    "source/containment_extension/incident_study.py": "0d0d77f199b47ae8a092f0bcd2d7cb2c43ef01350adc35a9c20c8a74941a1419",
+    "source/containment_extension/instruction_optimization/__init__.py": "3e6e8658296faeecbc487d4d417bddf77ee5df3bad1bb9b67248db3224b8a175",
+    "source/containment_extension/instruction_optimization/catalog.py": "343b7ff631e39b6e5997c93909464a185b31b1da6f3b4ca211856ee19fb76ff9",
+    "source/containment_extension/instruction_optimization/search.py": "670d42ef57393042335d0698df3b740fa2be0c25cc6f6b5a18b4f2f732f088c3",
+    "source/containment_extension/instruction_optimization/study.py": "00686ae5b484793a6a92f34d335163f4f26ec9f36ac95bff1297be4086da4668",
+    "source/containment_extension/judge_reliability.py": "62408c71f029a29a705290dec311bc87bd34bed82205e718962c7cc9e373834a",
+    "source/containment_extension/lab.py": "1e482e23935c2e3abd360542b7a984de452d987ebc8682df13cedad209162d3b",
+    "source/containment_extension/link_study.py": "906625cf8958415c19f83ef7dde049ca355bb12b06751a6ae54d61bd2b093925",
+    "source/containment_extension/native_algorithms.py": "00e9341beea1c4cb4f8797577c7230c8ab1f282fcd426511fd85b1f6063e9752",
+    "source/containment_extension/policy.py": "c5fcb91e0880d988f8ad203871d340ba7ec10dd1717962d6af0d74748fe3c783",
+    "source/containment_extension/prompts.py": "2a619a898370d27ba2ade38e83d8e8e6c75fa4f75299b8b5a44cd8fdb911587c",
+    "source/containment_extension/providers.py": "f2532941dc2169b12e2516bac75563c0b5f6802337bc6b7e722ece13e4f42147",
+    "source/containment_extension/sabench_study.py": "c8464e358718d180a58de5fca0aa7810a9075bd0b2b4b746bdbf0e042d0cc836",
+    "source/containment_extension/scope_levels.py": "e121c6e49657e640f11d7b7c5dacac5d30831c830b9f9ae29f83caeb54986f37",
+    "source/containment_extension/workbook_policy.py": "ef308df36b5f6eb55ab8ef4c2391d3ee0d6df0f58bebd0addc2d00f25a0e1211",
+    "third_party/sabench/LICENSE": "afe6307050815d8fd8bf662b8b8b10aa8abe6c0cf6565068d5d8503e0ae4d6b9",
+    "third_party/sabench/README.md": "0cfc2ab9fe33661355ae04ad814a61f822bf1f93fa1260e0672aac5327508b43",
+    "third_party/sabench/UPSTREAM.json": "21d3e249070f336f9f5c73be31c45906c89a5bed8b7c5182cfe606fb766b5b94",
+    "third_party/sabench/sabench_re/__init__.py": "8394a89019707f45771530dd43ed085d4208c2d3658674752c6fc32161450894",
+    "third_party/sabench/sabench_re/io.py": "7a458032aa76525e2140ed52fbddebf3e6fa66bdb847427f4c326464c699bb9b",
+    "third_party/sabench/sabench_re/models.py": "b707ba769b81f5cd801ba8056a2208840080528062d7cb0e051a4f728f272f98",
+    "third_party/sabench/sabench_re/oracle.py": "39d82b88442fd5980b03c9139d50cb80a94f7d6a833b35aabc0134ae16317279",
+    "third_party/sabench/sabench_re/registry.py": "fdec3cce529b851872ef2efdfaabdfb13ea6a6a8cacfe5209c91e331778b29f6",
+    "third_party/sabench/sabench_re/state.py": "fbe1c17a2adcc9896f4a259c6017625a51982b6d93bf2c95f51344fe461ad57c",
+    "third_party/sabench/scripts/run_pilot_streaming.py": "28a0f664411b1076c4636960a786fc87cdfdc89b3a7edbf61ca829ea7118cc0e",
+    "third_party/sabench/tasks.jsonl": "8d9db31d41388df2c2fec830a75c658a43604f39780465340d55633958841779"
+  },
+  "evidence_hashes": {
+    "run-00001": {
+      "result.json": "32e35c509cfe89b0195e110811029865c4dbcf446a4c7a408fa031fee9893a03",
+      "events.jsonl": "57f41380a7e035183d424f5e3fbdf697c1d9c55dd07d419a48596d20892ddaae",
+      "effects.sqlite3": "9c8c748895134b82f6542977a453133b78d3bf00cf46d607a8385f2060b8f60e",
+      "transcript.jsonl": "3b296f713fed340fd450224f5a1fa2e3bd08d67a7bb2dcf6bd21dcf18c1a8898"
+    },
+    "run-00002": {
+      "result.json": "978f9591bcd5e04859fec3b4fc6a561d2d9a56ff33d0c7aa7b11108d2eb0b2a9",
+      "events.jsonl": "e6b4121dd5036d20721e1ca55ff8ba49bf6ab132097ae4a54983360918d9e51d",
+      "effects.sqlite3": "a901fc20d72e5f5e0b5c7d020563e2f5b79d9f7daf27387db58c06e18b5bdf18",
+      "transcript.jsonl": "91773e46380685334b961cfe13844b18cb431471fae943e6462f9d67bacc2dc4"
+    },
+    "run-00003": {
+      "result.json": "11132a011a806b1cf25128b23474a5606075929539e9159b70342f4fbcc8f863",
+      "events.jsonl": "b9c38f1728b53373666eca21628e01706f7b1bd752d3ecb4e93adc576e682aef",
+      "effects.sqlite3": "28c716c6efe40bcf6fe3f633fb6932b616869b15a80dddcb72f272e4e168b4cc",
+      "transcript.jsonl": "969443fa82243632ee33bf9d8f3efe4493dc0de9fc2aea3eba70793696ee03e7"
+    },
+    "run-00004": {
+      "result.json": "9b31d2a1f0202d6b35c884aa610b40330bf173426a002c53f4c94e8ecd187b64",
+      "events.jsonl": "a82f49faf0105b24576fa62bbac89e1be95310b53bbf31657d28ff28c34e50f7",
+      "effects.sqlite3": "359ee6c0770775516c8df9b8e9061c0a9e5e2578381d477bf4ebb866e267d777",
+      "transcript.jsonl": "cb7195e961721d46b28e5b899a08bb532b91a21a59d616e20a957a1e8671ebbf"
+    },
+    "run-00005": {
+      "result.json": "647f2f514f2013ab5b064b8aa8467e4f3e0fa33c2b3c170f78f009b5702910fb",
+      "events.jsonl": "d7aad9e09c0d8e4b4cb6c0889ab6be08098eb6bbbdb99f5d9a5c2e3bec0b382b",
+      "effects.sqlite3": "08da118e0746da4420f90ccd6a5dccfe483bd1c7d12f406809f64e84eb5dc4d3",
+      "transcript.jsonl": "a4569c63d1fdbb3486b5a8e035af44b78fa7653503b6b88e6356bf3de5aa85d4"
+    },
+    "run-00006": {
+      "result.json": "59df57993d8b7cb98a1b944acd0edd323821a428fc061bfec3eaabaeb3b00156",
+      "events.jsonl": "b9c38f1728b53373666eca21628e01706f7b1bd752d3ecb4e93adc576e682aef",
+      "effects.sqlite3": "28c716c6efe40bcf6fe3f633fb6932b616869b15a80dddcb72f272e4e168b4cc",
+      "transcript.jsonl": "d0b8392606cec059fd59b5dae706e95a1988b5a40cad838c33f691dc1be077d0"
+    },
+    "run-00007": {
+      "result.json": "d68e601e5211cddb079ac914a26ce7002b704a050221b536f0756af7e0da0a2e",
+      "events.jsonl": "088ec4a867bcf512a9b37876ad028cb10cfe9bad0dd148f70c35a010ba79c686",
+      "effects.sqlite3": "a901fc20d72e5f5e0b5c7d020563e2f5b79d9f7daf27387db58c06e18b5bdf18",
+      "transcript.jsonl": "9d89ad38a275232f2e01c0d3580f0ebfff3322e0e868a687f75130f5cf0af2cf"
+    },
+    "run-00008": {
+      "result.json": "037f840ac22888a701f6e133ac97f54811d4dc55e18ca480841322135f4ba5db",
+      "events.jsonl": "12593ed60520734ff471f0a52e829f84a2432e6af413fb454a6caa43c21a05f9",
+      "effects.sqlite3": "3faca6f2487364053dabc716f5a416670252420701ca28a54161cf42077bdb7f",
+      "transcript.jsonl": "a70aa6d917f57f9c55d0e721648e2605c5a7656d3ba7038f4b06643341fc0cfe"
+    },
+    "run-00009": {
+      "result.json": "b8ee2c04172ebf74e12737ce5c8388653f753da838b915b65e03cde30a6294f3",
+      "events.jsonl": "9eedd4073bdaf6909f2c4eac1133b85da9c556ef64baf55266b71e7b12182ea6",
+      "effects.sqlite3": "bece23321b6e1ec960e8ef0e7f56992674de23b7264955ce27ef94d23be1942a",
+      "transcript.jsonl": "23e7fa4b3d8e8bd113b8560c2dbd1e8ef59cf3650d847e6af4de7206cd8aa0b9"
+    },
+    "run-00010": {
+      "result.json": "366d5c0b112edf5f7c4377253525b06a435f98865af4c8e3b77ec520d6807b7e",
+      "events.jsonl": "13088bd126553c1d03246f936db828bd9f523dc06aff8bb19f7c491985d62d4a",
+      "effects.sqlite3": "e093094e38f70c2279c363b7a86bf42705a09db0134258634138d78f1a45b21c",
+      "transcript.jsonl": "a76b31f618c20e6702e3da7c5d83a05d5c94f838499422d78b158767993ef9fd"
+    },
+    "run-00011": {
+      "result.json": "06115fbdb21a30cab38e43e15a2ab4624557a4848ae17045a32d352b71478da2",
+      "events.jsonl": "317b84c9b0b2209f6a5f18cc9083257f3ca52122d691d27e865ac927c6ae0e94",
+      "effects.sqlite3": "4f36a11e33cbc8ad29ca755eed821b80a7a05304a457db971856b1d314960c80",
+      "transcript.jsonl": "deb197843a1e2200f73e090ea222bf1c598a7576db9ad54d1e5b7b93f8e96c75"
+    },
+    "run-00012": {
+      "result.json": "ce94a10b0c093affdbb54604f16f740cc13c3fdf1d688cff183bd47b8191e1fa",
+      "events.jsonl": "57f41380a7e035183d424f5e3fbdf697c1d9c55dd07d419a48596d20892ddaae",
+      "effects.sqlite3": "9c8c748895134b82f6542977a453133b78d3bf00cf46d607a8385f2060b8f60e",
+      "transcript.jsonl": "5a14cd7f01791b466cb21b6854157309d2bd65fd998ccb5aadf7d7edec759d5e"
+    },
+    "run-00013": {
+      "result.json": "e018afabfd06b92e28aeb5d3c42bc85f8f9fd883928f04d150bd9bf0705a982a",
+      "events.jsonl": "abae120a2d31bd8f60a07be82d1a578cf20795bd54d9616e9043160d262f58cf",
+      "effects.sqlite3": "54f314f732fbe7c4e1fb25010545dc7b84192884072fef319d1695b2c048cabc",
+      "transcript.jsonl": "9ff3051dffd7893ba0f200c5188b2358cda3e646b8ccf059b852bb95fbadf24e"
+    },
+    "run-00014": {
+      "result.json": "31defbe26c5b65a4ec443dd01f3bc3e133b226c74b7cce213ab028bb6ef7d302",
+      "events.jsonl": "039c84c14bbcdbb3277319d777848dbf58dcc751ac3d90853cc7870386c9790d",
+      "effects.sqlite3": "1178e3a39971050ba0f3263fa8b35b8f433dc988769882777c9d15e0399d55c6",
+      "transcript.jsonl": "6821dcc66beba2f93a1ef4577b8ff76e35b4ec37bfd79b844426d49313d4d343"
+    },
+    "run-00015": {
+      "result.json": "e622c1f624293ff9576e3abdf27d7a5881ee46627c6a31a54d2a2e086483dcc9",
+      "events.jsonl": "b98e66822cd76ccd405c7da5c18f0723ca3e81d8ae267b5993f449a54383d511",
+      "effects.sqlite3": "55e02b4dbb6a0b03e67616809ec2d9dcbfd5a0d4fd8f9b0c48dbf4d2f9fa8284",
+      "transcript.jsonl": "59ad6c3e84c31dcb12a811e5cc57c2555e5a325869a5157fe5999ae88c75a058"
+    },
+    "run-00016": {
+      "result.json": "e0bf1a7dbdeb47b44d859d18a22b5ad60c5b3256f877f600bbbd9c9068689ec4",
+      "events.jsonl": null,
+      "effects.sqlite3": "7ea9f1ff4144b13de71962455972e8148188d3c7f60f93d12f2d0984e0a4815d",
+      "transcript.jsonl": "2e95e9dd7fd48c056f2eadcd03e5d35e9416715a71546552c7a00c953d2b5b52"
+    },
+    "run-00017": {
+      "result.json": "4e01c941a0015586172350e7300e2afe3446d49f6fea883e8b0e6de6275b8795",
+      "events.jsonl": "5c5c99230bdc444c36daaa284a77f9af8ce372427244c5a033c6c9734f7c4cb3",
+      "effects.sqlite3": "2a34ef8193fd3139450f56416395232bef0491978f8e91f9fca5bedc03d95697",
+      "transcript.jsonl": "24f05a7572c414b70840eed3472fe0afbc0a307976d1f2da51a4c6e4ae2d79bc"
+    },
+    "run-00018": {
+      "result.json": "a563318b83bb839027415a200a153bdc0dceddf21b387f571f3c034ef601988e",
+      "events.jsonl": "b3bf6840defe37f2c7ff3f2fcce4cc1d8702d5335612e83a836e7782b66dab6b",
+      "effects.sqlite3": "bab9af840d25d62ab39f6c5a73f9500327902d6bf7952f1595b4c9cdad700789",
+      "transcript.jsonl": "049679a209a3219a1fa1bda5326d859a135478dad9ee69703313aee25440cb47"
+    },
+    "run-00019": {
+      "result.json": "61fa9c39e1d3decfad97e8362a33ab5aaedc99c429ac41510c74c4e43bb6a669",
+      "events.jsonl": "cbd98500061c06a1456b80f4b96a57e4eb5babbd628d600c428e198aeb009db9",
+      "effects.sqlite3": "1c6e9ccac9d9d523146a50d6ff424dc5c700477eb58243a604d1b92fb95b3ff5",
+      "transcript.jsonl": "f25285e2099898c4271da73b8c67824e7adf4626169b5b1201af02c2e7c57b40"
+    },
+    "run-00020": {
+      "result.json": "463731a991f959d44bc180f175ffa1d3d3fcfb2cf016427b0be76fbf229a78d8",
+      "events.jsonl": "f6dd49d1391d6cc80e87d5c00095fc0f21f221857142dfe27c1f7c192dcf220c",
+      "effects.sqlite3": "2b524dff71f45e6778e9721a41e00036c01f3a5a21be20d045fe51eedaa7dd47",
+      "transcript.jsonl": "f1b6e6764e49c631df373fda0f0d24471cfba0d823fed5c500fc9eff3169a024"
+    },
+    "run-00021": {
+      "result.json": "ae8f555172b59ed7e966c5df39bec513dc899552598901a67c3e570f6a02ec50",
+      "events.jsonl": "df3b17b8eba80d7f06ea08b4bb112668ebc7770013152faa6b68213542ed39e6",
+      "effects.sqlite3": "424e64eab3bcf40f026a9c7cc1fbea4653ab2defd53382c6d53721632c1427b1",
+      "transcript.jsonl": "7175ed780d1981dfd6d6fa58fb4f90a4357b27279603b23e807dc88ef94d9fe7"
+    },
+    "run-00022": {
+      "result.json": "044c932419521d54356531502d55a83e092aea04179ce6771429631655f02bfc",
+      "events.jsonl": "a16441757ac8c44fcb994e14c89c9fec40fc13fd845f59c5d746af15810f62a1",
+      "effects.sqlite3": "daeafb0f597104aaa758c5d6e44c746de090c173f394e4c120549a868f29d923",
+      "transcript.jsonl": "e27e15fa42fc4ffcbb46f7daf721ea2c68dcc76d1e643f5a0f916844bcfcdedc"
+    },
+    "run-00023": {
+      "result.json": "485778ca64fe03346de05a6d1b78a3c43e215a4d5889c8b36e4c48e5ede6e702",
+      "events.jsonl": "22fe6fefa1bf9b371331961f75a8e92a3d7979f50a7de6df7e470b977e2b3027",
+      "effects.sqlite3": "6729531d15012f9e3cbd8a0f17baf8c7e49ffc1dd1be6f361b1f7406d63c84aa",
+      "transcript.jsonl": "89e691e2bc1933c102a69b84caa7794c493f1bbd27b09475f08215469f87b614"
+    },
+    "run-00024": {
+      "result.json": "100dd41e8d6ae448c8f9000e7e4963bafeffe90ae29bc406755633bf13b4effd",
+      "events.jsonl": "7e014cbe634baf6b0e235d1a73ce4ceecc5ddde05ea7cfd7c7d1b578cd59ed9e",
+      "effects.sqlite3": "28c716c6efe40bcf6fe3f633fb6932b616869b15a80dddcb72f272e4e168b4cc",
+      "transcript.jsonl": "cca76b328aa23a006dcaaf04ff6c7b5951e2f4dae2120751d344c27079580910"
+    },
+    "run-00025": {
+      "result.json": "6160579260a56215773fb6faaa611aff9549bb57b3e6d9d859fe33b3b87fc160",
+      "events.jsonl": null,
+      "effects.sqlite3": "7ea9f1ff4144b13de71962455972e8148188d3c7f60f93d12f2d0984e0a4815d",
+      "transcript.jsonl": "77f7babdbe3317f44afd7e9730b02145dc6b3a758f9af24f542742a115be04eb"
+    },
+    "run-00026": {
+      "result.json": "2c9b21f24946a0cc7af1810829e77a116edce6c8f5f187407358f58bb3676c80",
+      "events.jsonl": null,
+      "effects.sqlite3": "7ea9f1ff4144b13de71962455972e8148188d3c7f60f93d12f2d0984e0a4815d",
+      "transcript.jsonl": "e70d1452f358e08e8e4215e21019b8cd4e01f8edea59af2576fe0f6d7c91ee62"
+    },
+    "run-00027": {
+      "result.json": "c9e8cb7ee900f64419f764c11c64aab068c2f4aa18ad54afcabd4a5be4c9c4b9",
+      "events.jsonl": "8b5e41fded414a9ce7b4854f3ae73fe8dce12900f6ee6d62b47c11689a9cf543",
+      "effects.sqlite3": "3a4d4b3981854636830fb8428bd7cabefa59e728dcf40ec36a9693347f3c5b71",
+      "transcript.jsonl": "e48ce1024710cac4d72a89d4d92f0fa77fb6ce0de18807e7d53cff5b1fb95116"
+    },
+    "run-00028": {
+      "result.json": "9be69480511c0d51dc3c62d7295fce29e0f14be27d223ae0760575c14b1cfe19",
+      "events.jsonl": "b1480347207b669b623c93da38199613f283b14caa7fa51ab8738e8557871503",
+      "effects.sqlite3": "3faca6f2487364053dabc716f5a416670252420701ca28a54161cf42077bdb7f",
+      "transcript.jsonl": "5aa7c6adb4a4a40432158ba4fce880fb265bb8c884369adbcf479e89a932c80e"
+    },
+    "run-00029": {
+      "result.json": "7204ff2e0618a67d99e7d909446c3b3d8264e5bc2d9f8bc48dfbdfa998c2849a",
+      "events.jsonl": "7e014cbe634baf6b0e235d1a73ce4ceecc5ddde05ea7cfd7c7d1b578cd59ed9e",
+      "effects.sqlite3": "28c716c6efe40bcf6fe3f633fb6932b616869b15a80dddcb72f272e4e168b4cc",
+      "transcript.jsonl": "6de379e72434d7541aa08d6d1399b69318503cc0b56eac5c73dfcf7d1b96c962"
+    },
+    "run-00030": {
+      "result.json": "2faa50818bd1f65555a797314f59cac96d3b87008c61231fe4560f54f780a973",
+      "events.jsonl": "b673f8667f1d42c1f1353f6ad64f5f2153030ca2af24a57b6192ddc6f6cf69f3",
+      "effects.sqlite3": "608e2c1af2f765223c14f181ab11d2ab518557d7724cbd3a3ff056787d4ab919",
+      "transcript.jsonl": "829307b3b117b195ca2f0dc3212c5eecd75435658a3640bc55331afacb3717e0"
+    },
+    "run-00031": {
+      "result.json": "c25ebbce07cc714fb4910c51f732337bcb0628e9e60e269b855f2142b0e05926",
+      "events.jsonl": "4779c8388ba705a3658554cc2058902c1284607ca9c3dbe162304584d70c8893",
+      "effects.sqlite3": "47a91b99198674f29bddad5c9504dc0ec59cdf1f821946f54a09af80694607b0",
+      "transcript.jsonl": "07e1329bfabd3d218a0a728074b298494aae0e540f6a32c9627694f5d9688cd9"
+    },
+    "run-00032": {
+      "result.json": "5e92e6913d08003a6d6180bd2bb55aebcbc11daa96d27e063a87175f37828351",
+      "events.jsonl": "b3bf6840defe37f2c7ff3f2fcce4cc1d8702d5335612e83a836e7782b66dab6b",
+      "effects.sqlite3": "bab9af840d25d62ab39f6c5a73f9500327902d6bf7952f1595b4c9cdad700789",
+      "transcript.jsonl": "8337d8cd12d9ef0eec56ed0453db53cc83f6e30cf3d5e8f59756c9033fed31f7"
+    },
+    "run-00033": {
+      "result.json": "29e771bf44066decfe188c3e38138d46b29f955b0b631e77c74f04f1e1c87c2e",
+      "events.jsonl": "1541757ebb0f5026a7596dfa99cea34e910560eddde0f490a567072b507e70a3",
+      "effects.sqlite3": "bf30bfa221be5e3b920694477466a18012f5c3aea83ed5a969aa1ae8e1858dbc",
+      "transcript.jsonl": "fd9e605bdfb953a3fea7344c0a9467d4f660051bd134fb877253ed8688d00aab"
+    },
+    "run-00034": {
+      "result.json": "af6f772006be2d7b7bbe4cdb822e3b7b5b3e3b963aca60cbfb0681214608be05",
+      "events.jsonl": null,
+      "effects.sqlite3": "7ea9f1ff4144b13de71962455972e8148188d3c7f60f93d12f2d0984e0a4815d",
+      "transcript.jsonl": "4f1fc761f8522f6d8152068981642a3a418e2d9c8ec5a6c6bf92d4d1bcd8f86a"
+    },
+    "run-00035": {
+      "result.json": "b39ec723a55854450ce846516e18619fad614cbc79cf9af700aa795f8dbcece8",
+      "events.jsonl": null,
+      "effects.sqlite3": "7ea9f1ff4144b13de71962455972e8148188d3c7f60f93d12f2d0984e0a4815d",
+      "transcript.jsonl": "8300f261a1c38391671eab99fceff6dfe2806a4481789735d7978370ec57d938"
+    },
+    "run-00036": {
+      "result.json": "524620871113be5969c38fa3db298ee68eea0ec90813ada6b8c2360d625716fc",
+      "events.jsonl": "abae120a2d31bd8f60a07be82d1a578cf20795bd54d9616e9043160d262f58cf",
+      "effects.sqlite3": "54f314f732fbe7c4e1fb25010545dc7b84192884072fef319d1695b2c048cabc",
+      "transcript.jsonl": "343927597e0c654e14d21dae5730bf4cfbf6ac3e09bff8e164f3f7c2c2121892"
+    },
+    "run-00037": {
+      "result.json": "635e6b487c9c09f8edddf8bb57d3af5f00e4eede4d9803d55f983dc3d9989f20",
+      "events.jsonl": "1b77bb556f37c1619f372d1e9bd000143bd96ab6e7df216ac22f8c803d671b9d",
+      "effects.sqlite3": "de4c6f6beb04fb56b6e0c72935c3c0cd474f321cc239435363549631609adea3",
+      "transcript.jsonl": "379af18257dcfd0d87e483db2b954fb3238bbbeb6fe289e4033da8e64b1638ba"
+    },
+    "run-00038": {
+      "result.json": "55d1021512db428856fa272eaea199c5cca8992f762195beca5b16deab8571d9",
+      "events.jsonl": null,
+      "effects.sqlite3": "7ea9f1ff4144b13de71962455972e8148188d3c7f60f93d12f2d0984e0a4815d",
+      "transcript.jsonl": "0d371b00c02e707ae9e61faf2ed06d03f394f85eaa5b782145590eaabce1e2cb"
+    },
+    "run-00039": {
+      "result.json": "8d036562bb914fdff6625808ffbae88a2de930ae4dcedde12d7bae13af7504b9",
+      "events.jsonl": "a853000fc59c59d24074b4a43cf0fd55c5904c937600631f707860886d25e029",
+      "effects.sqlite3": "d7cd21fdb27a6f644c80ed2e25f8a6d3131387f7ba7f545a52e6479b608dd183",
+      "transcript.jsonl": "bf845338b63ec5db4fff9ffe4a9798108327b318326e8a7128f84c9981a832d3"
+    },
+    "run-00040": {
+      "result.json": "d550b71fc37e547ba41ee4aeaf21bc23ae66a4c172da2542bd66e0549269a2a3",
+      "events.jsonl": "648c6fb230382787e41785e392008bd289a33e3a25f5df3b4ef6a2d1382f83f8",
+      "effects.sqlite3": "bab9af840d25d62ab39f6c5a73f9500327902d6bf7952f1595b4c9cdad700789",
+      "transcript.jsonl": "d26ae43fbbcb0f58895f1d0f0c3b8185c82e1feada1fe049596ef10f55c34229"
+    },
+    "run-00041": {
+      "result.json": "083019d5fa32fab1afd7bbf78af476119e3d5715836129a45d966502679e622f",
+      "events.jsonl": null,
+      "effects.sqlite3": "7ea9f1ff4144b13de71962455972e8148188d3c7f60f93d12f2d0984e0a4815d",
+      "transcript.jsonl": "b5858cfb57842625cbfaa1d1c110092ae9e16396fc840ed15c4615aff5793830"
+    },
+    "run-00042": {
+      "result.json": "22f75beb83c57dec160e5aae371d406edf5977f51baf4db917b0823ddae00ba6",
+      "events.jsonl": null,
+      "effects.sqlite3": "7ea9f1ff4144b13de71962455972e8148188d3c7f60f93d12f2d0984e0a4815d",
+      "transcript.jsonl": "c91e88623c653629fc1f4a227086f3917628102eba61889e09f1ac7156064207"
+    },
+    "run-00043": {
+      "result.json": "870500d83d643efad58866e327fb577a4b62124892d6658b38906e49ab81b656",
+      "events.jsonl": "9f29ad3b5e964ac7feda14873ef6210ebc119744cc31624293d02e06ef52349f",
+      "effects.sqlite3": "3a4d4b3981854636830fb8428bd7cabefa59e728dcf40ec36a9693347f3c5b71",
+      "transcript.jsonl": "0969a5a7cec83ca78df400654dfdb60798912ff6a60e2e9ab92670de14d8e638"
+    },
+    "run-00044": {
+      "result.json": "e3fcddbd2ca3b228be2baff2fea0f425461d330fe487ddfd8eb4430ded377b5b",
+      "events.jsonl": "47a85c483d321a54aadab20b6098276e3c8d45754b633c3a807993255963d9f6",
+      "effects.sqlite3": "08da118e0746da4420f90ccd6a5dccfe483bd1c7d12f406809f64e84eb5dc4d3",
+      "transcript.jsonl": "b6f5875f495aaf01d3d01dbe4761113710555b4248349691582fe3601f293562"
+    },
+    "run-00045": {
+      "result.json": "10e450679212a0b5861c0b04bac1e45c2ae0f4b76a1b0c7d1cf968b4c5125782",
+      "events.jsonl": "6070ed8ce689c7af51662cc172705f8b250df69d51c866de1640669359a809e6",
+      "effects.sqlite3": "5b67ba696f4af9e22c03c2189ec48af0878e2e128955d3062a2e6d74fca71c14",
+      "transcript.jsonl": "bfd8822e5d07d935ff1826017f1a8a54bc87e965b71e262c7dfb1f07d34e85bc"
+    },
+    "run-00046": {
+      "result.json": "35ffd163d28997e803e64104820cdf548020273ee6a3d9eab2ee2065fd7f8d18",
+      "events.jsonl": "4e3382dbf4d924b06235ad45fca3aa9d48b23395503058421362e15ab35c528a",
+      "effects.sqlite3": "fe82fc9b645b7938e04fa92e4b70f68565548f7a0e8961e0874c21e0a375d0dc",
+      "transcript.jsonl": "305490220957ac97e32b78717c4ddf81360b05a8bb9abc307a3c5b9813fab97c"
+    },
+    "run-00047": {
+      "result.json": "e4c5ea43f8e9558efadda81561bef60644310b1ba456a4d8505d76e7059d22d6",
+      "events.jsonl": "e95ac6afa353893447e276ce7096908604446a1ca0941efbc767a1dc361ad3a1",
+      "effects.sqlite3": "54f314f732fbe7c4e1fb25010545dc7b84192884072fef319d1695b2c048cabc",
+      "transcript.jsonl": "f87bba9a79890544b8d1ac404472cdbcfd179b7681e68ac2b7249f74069a36c0"
+    },
+    "run-00048": {
+      "result.json": "6a2c18caae5fe49f6fc419f1d97ab7740b6b109b4d720961240df5f6199233e4",
+      "events.jsonl": "a1e3d51a7d587fb8559e89858f12508d4c72981517a83a93e051bf5027aada6b",
+      "effects.sqlite3": "c25d0193f204e2d2c38a85679fd5c1c72117204a9abb525220b3e59b30f5f7ca",
+      "transcript.jsonl": "3aef24db394c65e13953ffc87098014c1124219f782330862f5027255aab5b8d"
+    },
+    "run-00049": {
+      "result.json": "033f93e34c9d6417e655c8a2bdd427adf4baf6413836a0b37a0244ba7237b3a0",
+      "events.jsonl": null,
+      "effects.sqlite3": "7ea9f1ff4144b13de71962455972e8148188d3c7f60f93d12f2d0984e0a4815d",
+      "transcript.jsonl": "0f02da14aa8f62987a88a050eb4aac992433619d213b6feb72cbd25d6f1c3083"
+    },
+    "run-00050": {
+      "result.json": "7dc05cb3557f5fbc8704249e7c764e6b5c5af36b39a8da3c2256efbfbd4d500b",
+      "events.jsonl": "a82f49faf0105b24576fa62bbac89e1be95310b53bbf31657d28ff28c34e50f7",
+      "effects.sqlite3": "359ee6c0770775516c8df9b8e9061c0a9e5e2578381d477bf4ebb866e267d777",
+      "transcript.jsonl": "192be1c882fcf8a57b1e9a3668ffe0679cd01be2e128479c2a768022a2fd78cd"
+    },
+    "run-00051": {
+      "result.json": "3f1b172dd55dfe11e736debb6bb0744b4c92580ef5df54419c3112185066de48",
+      "events.jsonl": "69c48763a5c70291cfb6f1ed568fc3aa669e7093a20a709c5d1ba9cc4fe775f1",
+      "effects.sqlite3": "218dcfb39080bcf9c79ca9e12d0f21fb32c8161b802cdee71d31c7d2dd832794",
+      "transcript.jsonl": "ae71eb72959ce30314d6dbf29035d20c559fdd73d28fbd25611a82880182cc86"
+    },
+    "run-00052": {
+      "result.json": "20d727507b29662feca1fae234277b89825bababd4bde80cec412a4f69d5b9f7",
+      "events.jsonl": "4bab3761a496b61e3deef8361414b6b11dd6206de11ff09ad085b24bb8f0e5bd",
+      "effects.sqlite3": "b506e994953d3b32b3ab22ea9af7af02c21741643c22cf21d72d8dcca4bf96a5",
+      "transcript.jsonl": "4b11a27f0c081288c00bd13becac0766c3ee4291474cbf4a4ac5f1606a54b697"
+    },
+    "run-00053": {
+      "result.json": "14a1f4b73d30c5135274d7a8660f698abd00deffe562ef994805d912a3d7b52a",
+      "events.jsonl": "d7aad9e09c0d8e4b4cb6c0889ab6be08098eb6bbbdb99f5d9a5c2e3bec0b382b",
+      "effects.sqlite3": "08da118e0746da4420f90ccd6a5dccfe483bd1c7d12f406809f64e84eb5dc4d3",
+      "transcript.jsonl": "9ae0989726de6236ce353c0cffd9fa906faee5792f3597c913420391edc7b734"
+    },
+    "run-00054": {
+      "result.json": "cc7bc749259d2bab045ce24965dc65197469597bbb266e35cb7752cdaf0e2e3d",
+      "events.jsonl": "2f7625eb2b2cfb5e151d3cef9b2c14223be69850e734f01b42a211c829776cda",
+      "effects.sqlite3": "bf30bfa221be5e3b920694477466a18012f5c3aea83ed5a969aa1ae8e1858dbc",
+      "transcript.jsonl": "7bfb1a0860b10fe9ec94a0cde0be61f9b46cc74f65464c5bb6e37b720acac968"
+    },
+    "run-00055": {
+      "result.json": "4018772f0d07f69e3a84de9226778491a43c8d44805b184f9da4833dc98e2bd0",
+      "events.jsonl": "a31d0e6d14da19bf2fdc6f694a755a661bf4f0d4d43bfa1031db506813d99612",
+      "effects.sqlite3": "c6f8005d8af2458164779590a9b45728445cdedce9cd57f677859b4ecdd3ac89",
+      "transcript.jsonl": "cb17b26a19a590da0e4c4e9474ba69468296a5b578954c040d98bb71e98b3f54"
+    },
+    "run-00056": {
+      "result.json": "4a105c6069b6ee7c54d89670a1ad52a390d19f86d4771bb1be58cdffa97996ae",
+      "events.jsonl": "9503712110f995d6e1c22f6459af5270dc1695c4277fa65bf9fd4bb5774470e2",
+      "effects.sqlite3": "d1655ce5bb88163e8b82f2ef7c715cec9b739649f6c378b80ae84b515cd450cf",
+      "transcript.jsonl": "0bffbcdbb19cc661b40d5ce7e85ee8fbd0e5197fc49c472f91c2a262b04a204d"
+    },
+    "run-00057": {
+      "result.json": "412b787b1261d60e14750f5550992ea0e24807cb05a5c95e34d27c8746d5fb58",
+      "events.jsonl": "6ede8831ecc910a3ab2ada3462e6e28724c52a6a392b200829271db85cdaf39a",
+      "effects.sqlite3": "73b0041b2d82769d0fe6b746ee53b308cb1976ab29dec1193d8a9e3786ab218d",
+      "transcript.jsonl": "9d299cb0d59cf5ba1c6c2383e8f336ddf02ef6645558c67e2c6eb00607ad681f"
+    },
+    "run-00058": {
+      "result.json": "864cac00fbcb73a659766951bca4e856d08163b93b80295ce497847fec55f6d7",
+      "events.jsonl": "e95ac6afa353893447e276ce7096908604446a1ca0941efbc767a1dc361ad3a1",
+      "effects.sqlite3": "54f314f732fbe7c4e1fb25010545dc7b84192884072fef319d1695b2c048cabc",
+      "transcript.jsonl": "26e4ec35494d8fa84aac6159ab8b5e053c1ebf934ac39e806de1c3e3e1248343"
+    },
+    "run-00059": {
+      "result.json": "4abff47a855140b390d18b1addcafb0ba28ab9758dc92868045927c286c47b9e",
+      "events.jsonl": "12593ed60520734ff471f0a52e829f84a2432e6af413fb454a6caa43c21a05f9",
+      "effects.sqlite3": "3faca6f2487364053dabc716f5a416670252420701ca28a54161cf42077bdb7f",
+      "transcript.jsonl": "76f1c73e7d90ad04d680849d312f8b06b7dfd5b084ff29311add821198cc55e2"
+    },
+    "run-00060": {
+      "result.json": "a98ca8209f7c2c24f8b826d2e529d69faec237b35328b1a1e57bbba5c25233d1",
+      "events.jsonl": null,
+      "effects.sqlite3": "7ea9f1ff4144b13de71962455972e8148188d3c7f60f93d12f2d0984e0a4815d",
+      "transcript.jsonl": "0fa7835ca9faa328bea604bf98f20c273a768562628de41c617ae6ef0d660e2a"
+    },
+    "run-00061": {
+      "result.json": "6b15d0e4b8059f9e44f290bace5222e4094389b5e2fe953178d5d663458ac207",
+      "events.jsonl": "2a704e98ca4813345661f7de568fb52a32e232c421f2684f581914f7a27838df",
+      "effects.sqlite3": "d943a2797e882242876e22097aa48da3af6d320683e1a5f078006a6fc9e9686b",
+      "transcript.jsonl": "6b36ccf0c2d5076880c7a7c03b5b729b58e0875c9f01db28f8c7c9bd20daab61"
+    },
+    "run-00062": {
+      "result.json": "d2f7b15b863f7f613968c9355df5ea21bcc674b8cf436f31f43ab2ebcfe0c0e5",
+      "events.jsonl": "c1fbbfeddee0880e265fe1cd27047a673532a0c88f24dbc398602fe10f9fbb7d",
+      "effects.sqlite3": "12df29714aa9cc2c9702cfb1ed8473926fe116926202a4c02b5d26584bc46853",
+      "transcript.jsonl": "df33a5f0b55dad7424496f887b9edecec9ff9eaf413d9a3fa1edfc37e3b10b63"
+    },
+    "run-00063": {
+      "result.json": "ac0da9e39e451cdf71b64fb5c5070f670feb7db2293649d6d3030cefc0d0319b",
+      "events.jsonl": "a82f49faf0105b24576fa62bbac89e1be95310b53bbf31657d28ff28c34e50f7",
+      "effects.sqlite3": "359ee6c0770775516c8df9b8e9061c0a9e5e2578381d477bf4ebb866e267d777",
+      "transcript.jsonl": "3225cc65db41ec69931fcf27e7d15c49700e0436aa5c43af5184e4184fa6f0d4"
+    },
+    "run-00064": {
+      "result.json": "ac55b01d7f3bab1b2f96b25560d73684e23b44f3163682712cc4d66427d226a8",
+      "events.jsonl": "12593ed60520734ff471f0a52e829f84a2432e6af413fb454a6caa43c21a05f9",
+      "effects.sqlite3": "3faca6f2487364053dabc716f5a416670252420701ca28a54161cf42077bdb7f",
+      "transcript.jsonl": "eaaf203feea88f8e9af3eb8f7b098c54c0852f34393a3296e1b6909a6c61c504"
+    },
+    "run-00065": {
+      "result.json": "883c45aa81ce3f755dc198b5537baf5876f9fe8d4ceac8c7e2fc7df7389b0ff3",
+      "events.jsonl": "e42e7b814c34c3d390fea8582a57696d52aa1c01d9928048b87f336e315cf7de",
+      "effects.sqlite3": "564405ea04f7056ae8938ceac6b914f626c88eb14c62e8ffccccb5c51673059d",
+      "transcript.jsonl": "83e5c13976813106cd960e7d382a1de28e045889e824617d8a2566ed64ff5b15"
+    },
+    "run-00066": {
+      "result.json": "269da0ebb6308b18b4b1af06a07b72bf4bcd6884d1f2b8eb9ea2cabaad192b51",
+      "events.jsonl": "3ce4046b526af611112a794e2e3a583a729fe5b387cb91c5982e4ebc5e1c6304",
+      "effects.sqlite3": "d71dd13dfe2e801cd6c190535e0793509c434d4a75985cf00fb0a2c75df84b98",
+      "transcript.jsonl": "4c1b67e234c5a9d01b8b9eae5d905ed88fa7ba5c79847295edce15b69e48adcd"
+    },
+    "run-00067": {
+      "result.json": "590598b1a521d38cc8fd7ba92bb3e22cd73888b7c1730bc2f60037fca6180f8a",
+      "events.jsonl": null,
+      "effects.sqlite3": "7ea9f1ff4144b13de71962455972e8148188d3c7f60f93d12f2d0984e0a4815d",
+      "transcript.jsonl": "d7f5430081a8627189960f0004ff603116fe9fd0b05737bac480371ae0edca18"
+    },
+    "run-00068": {
+      "result.json": "6aecada46f16d9b243bfafbf08a018cb1920cbe9df70ac631eb9821b4a7cf828",
+      "events.jsonl": "2f7625eb2b2cfb5e151d3cef9b2c14223be69850e734f01b42a211c829776cda",
+      "effects.sqlite3": "bf30bfa221be5e3b920694477466a18012f5c3aea83ed5a969aa1ae8e1858dbc",
+      "transcript.jsonl": "4c513fa3b2e1edf5d6a5180f8705795303bb2bd1854174bbef0d90a9d232b872"
+    },
+    "run-00069": {
+      "result.json": "90e10c8ac993b64f380df401369886f58125188b4d1fb7d2bd0775491a4dd917",
+      "events.jsonl": "9f29ad3b5e964ac7feda14873ef6210ebc119744cc31624293d02e06ef52349f",
+      "effects.sqlite3": "3a4d4b3981854636830fb8428bd7cabefa59e728dcf40ec36a9693347f3c5b71",
+      "transcript.jsonl": "e9e8691aeee992f9a7eb74aaa0985352adcdad0337c98e8a52fb673190644b19"
+    },
+    "run-00070": {
+      "result.json": "7c6f81036d1595364f16845f4c64b61eb21121a49eb5d504aa044ed4f647721f",
+      "events.jsonl": "088ec4a867bcf512a9b37876ad028cb10cfe9bad0dd148f70c35a010ba79c686",
+      "effects.sqlite3": "a901fc20d72e5f5e0b5c7d020563e2f5b79d9f7daf27387db58c06e18b5bdf18",
+      "transcript.jsonl": "35d110ef3e9c8f9efc8261f3d22c85f3fa1ef3ceb4715231206c923a4cc211f3"
+    },
+    "run-00071": {
+      "result.json": "8b19de01deb1b81ecbb49ac9ae16439eeb6ba19eec704f33607c990ba700748f",
+      "events.jsonl": "1541757ebb0f5026a7596dfa99cea34e910560eddde0f490a567072b507e70a3",
+      "effects.sqlite3": "bf30bfa221be5e3b920694477466a18012f5c3aea83ed5a969aa1ae8e1858dbc",
+      "transcript.jsonl": "86c60a02dac3314abf9ede53bb11771417797597eb7358140110fef2e1195b3a"
+    },
+    "run-00072": {
+      "result.json": "e9a0fdcad66048a6bfbc1986b3deb50c14026b0596aed473710907245b867519",
+      "events.jsonl": "b2f4e966d6b1b78a5bb7952493b7f76fad3b504c06cbdc873bb117217184d0e9",
+      "effects.sqlite3": "1d4352dd92436475c908def6adc7f94f6e5edceb5c9dd63d18c986fe2b3ce382",
+      "transcript.jsonl": "0f6cb768267cd315d8bf0286d90a6abbce44f619e2364957d115220438f908e6"
+    },
+    "run-00073": {
+      "result.json": "609a9341a8658415c0ab958f52c80703c26fdaa24cbf157d0456dbd29afec7f7",
+      "events.jsonl": "e6b4121dd5036d20721e1ca55ff8ba49bf6ab132097ae4a54983360918d9e51d",
+      "effects.sqlite3": "a901fc20d72e5f5e0b5c7d020563e2f5b79d9f7daf27387db58c06e18b5bdf18",
+      "transcript.jsonl": "6e1c6c30070da6752bc726ca628b03319b42dffaa59e9525661afbe0b0cdf119"
+    },
+    "run-00074": {
+      "result.json": "fc7f1381922d4603288fa4ef856b1d1b9bcd389231a2349784da4daf6b3ef35a",
+      "events.jsonl": "e6b4121dd5036d20721e1ca55ff8ba49bf6ab132097ae4a54983360918d9e51d",
+      "effects.sqlite3": "a901fc20d72e5f5e0b5c7d020563e2f5b79d9f7daf27387db58c06e18b5bdf18",
+      "transcript.jsonl": "6176d8a057aad88853f3eb8fe487b04b68aadd6b055779fceeb724f2f136ec49"
+    },
+    "run-00075": {
+      "result.json": "fc076c009213708a671f5779eedc851bc07ca4d727e00d194ea72f47970a7cde",
+      "events.jsonl": "abae120a2d31bd8f60a07be82d1a578cf20795bd54d9616e9043160d262f58cf",
+      "effects.sqlite3": "54f314f732fbe7c4e1fb25010545dc7b84192884072fef319d1695b2c048cabc",
+      "transcript.jsonl": "8354441fb8003ad6a627dfe735e4a7392f06967584a66bc4079fa49b79b8a61a"
+    },
+    "run-00076": {
+      "result.json": "e4f67eecd7b01ed0f6f29caf5b8ce349a99163375bfa76ba56eb592699c04d06",
+      "events.jsonl": "ae4ec6389c5b643a305428a82d31159d7f46804fa44f4cebe5c8a2bf7e5d4c37",
+      "effects.sqlite3": "49268877f9a1fd165675c68527d5f14a11ec05b12f8ff33531075de94db02f66",
+      "transcript.jsonl": "54fc7ae1a90a10a3587095959c50705036a0bcee82d76d73409078968e610a33"
+    },
+    "run-00077": {
+      "result.json": "c528622e1a3113faa241962d71b8e98d38b0d318a4f8f6dfdf5ac6f910cb6d07",
+      "events.jsonl": "9f29ad3b5e964ac7feda14873ef6210ebc119744cc31624293d02e06ef52349f",
+      "effects.sqlite3": "3a4d4b3981854636830fb8428bd7cabefa59e728dcf40ec36a9693347f3c5b71",
+      "transcript.jsonl": "ec5fbdd5fe9bc76f8da2ac111fe06c0fe919f36a2e8aad3b259f3916337edde7"
+    },
+    "run-00078": {
+      "result.json": "dc5647490dab3f5cc60505aade3768aadfa136e760d1891377bef8822dde7b4b",
+      "events.jsonl": "e6b4121dd5036d20721e1ca55ff8ba49bf6ab132097ae4a54983360918d9e51d",
+      "effects.sqlite3": "a901fc20d72e5f5e0b5c7d020563e2f5b79d9f7daf27387db58c06e18b5bdf18",
+      "transcript.jsonl": "f52d1b62aab6daa17ff0874542c830cfa97f9ede79d8a43315f8b03f75cd4518"
+    },
+    "run-00079": {
+      "result.json": "b2e659a98c5fe130bcdb77b137d8cfbe85d782aeef34239bf3aa63d13cfba8b7",
+      "events.jsonl": "1444f5fb01e8fa0931416e0748c9127bf153164bfa106c5ba56d0e6fc1b0cb61",
+      "effects.sqlite3": "8f6a8113891db412032703c40991f288d2915eb161d66001c34995aa74565ce4",
+      "transcript.jsonl": "8e998693485be831e98e1523ad26002c508e52211c8a96a0b925058c6a9e04be"
+    },
+    "run-00080": {
+      "result.json": "9706720707f648b21737f229ca266273c5b6b26ea5e23eea063c12808f7c9a0c",
+      "events.jsonl": "b9c38f1728b53373666eca21628e01706f7b1bd752d3ecb4e93adc576e682aef",
+      "effects.sqlite3": "28c716c6efe40bcf6fe3f633fb6932b616869b15a80dddcb72f272e4e168b4cc",
+      "transcript.jsonl": "9972f72c3a721761c5ba658f1a46353b7a64931b4c50c6376667092434b6f954"
+    },
+    "run-00081": {
+      "result.json": "10f2b0a7d0a128115a2c7b1d99eaf51458357c05e346ad5a723fc0f49c4edf60",
+      "events.jsonl": "ee408dd8e1a46714291a0282039dc3c325eaf7d700b5bd91ec783a5b633aed3b",
+      "effects.sqlite3": "12b8661b1208991279fb12bdac449589d34ed9b6291d6cda1486da854fdce335",
+      "transcript.jsonl": "14dd8b668f2c43880b9afc9d5b0383a2076c9015024b3c53a5bab15673f70d7b"
+    },
+    "run-00082": {
+      "result.json": "6ee14902022bf0a3c87c3b8d1c1e375abe32f11b85e13fbb9eaf0888edce6a4f",
+      "events.jsonl": "b1480347207b669b623c93da38199613f283b14caa7fa51ab8738e8557871503",
+      "effects.sqlite3": "3faca6f2487364053dabc716f5a416670252420701ca28a54161cf42077bdb7f",
+      "transcript.jsonl": "7959073662c77e4606c7d692d9feb3cd2ac95277d730a1251922933de5804efd"
+    },
+    "run-00083": {
+      "result.json": "62179661ec30f8d6996150cc8e1745388cda65e7943ccc8c9852f234645197e1",
+      "events.jsonl": "47a85c483d321a54aadab20b6098276e3c8d45754b633c3a807993255963d9f6",
+      "effects.sqlite3": "08da118e0746da4420f90ccd6a5dccfe483bd1c7d12f406809f64e84eb5dc4d3",
+      "transcript.jsonl": "e97da425f23d747d0d19601fa113d24ec403d53b35138e1f765d47dc6a0a7ccb"
+    },
+    "run-00084": {
+      "result.json": "8aa04d20076dd3434d96ef5ec92a77b0c74415c278e2cae5707d532e30bbff24",
+      "events.jsonl": "47a85c483d321a54aadab20b6098276e3c8d45754b633c3a807993255963d9f6",
+      "effects.sqlite3": "08da118e0746da4420f90ccd6a5dccfe483bd1c7d12f406809f64e84eb5dc4d3",
+      "transcript.jsonl": "b44ee407c27fffe07023fcc3834e3dd24ff2442c40cd5475911a8b370d295b25"
+    },
+    "run-00085": {
+      "result.json": "74672494d852dbba4fc0bb771b855a3cce8562a28f81567aaa8bf6f5df7ef75e",
+      "events.jsonl": "99b062a65c1bad8de2b917582b272da6e27b17bc0e5366d52bdff26b1deb8962",
+      "effects.sqlite3": "dd02aabe1508879c09898264305e5eea8cf4e53b33bd5c37ee4475eb0edaaafe",
+      "transcript.jsonl": "e4556796344ae2c477497ae87d7b3037258de4ff4263bbce97b43dca0b1df928"
+    },
+    "run-00086": {
+      "result.json": "f5373171c0f3f42c8ca80edb04befa18a8f47101dd17ea8931f5ca21852ec76f",
+      "events.jsonl": "b2f4e966d6b1b78a5bb7952493b7f76fad3b504c06cbdc873bb117217184d0e9",
+      "effects.sqlite3": "1d4352dd92436475c908def6adc7f94f6e5edceb5c9dd63d18c986fe2b3ce382",
+      "transcript.jsonl": "2a450e6c7cb9d02df115f6e332bce9b1ebd862ac69a3f37f43cb2766260332b3"
+    },
+    "run-00087": {
+      "result.json": "aee0291abc1d1c0a74dbcabc73f657ed8470c5cf1a29282d360be4856beb7e10",
+      "events.jsonl": "31fb0b3308bb1e1578c093961517748222450ce1dc3c55977fbc095bd4e25161",
+      "effects.sqlite3": "0a15152161d4fb9b9b46122b1080ffe3bf8416f97324e0596f115c63e676feef",
+      "transcript.jsonl": "e65b99e934a0e3b617c6614fc5f4eab40f04a4310873375b2e38565a98b99898"
+    },
+    "run-00088": {
+      "result.json": "1feedcb497b81a0f8649e79427be66d15c3f097afb2861be717bf8c72be6c208",
+      "events.jsonl": "1b77bb556f37c1619f372d1e9bd000143bd96ab6e7df216ac22f8c803d671b9d",
+      "effects.sqlite3": "de4c6f6beb04fb56b6e0c72935c3c0cd474f321cc239435363549631609adea3",
+      "transcript.jsonl": "fa8841274e2757fb314217505a9b8961a5a4a9534ea3f6b049d0b3af74dd58ec"
+    },
+    "run-00089": {
+      "result.json": "a597745bb51110a52385c61ab432a8d943e032ac1515b8f1a19f79dbc3c59ced",
+      "events.jsonl": null,
+      "effects.sqlite3": "7ea9f1ff4144b13de71962455972e8148188d3c7f60f93d12f2d0984e0a4815d",
+      "transcript.jsonl": "a3cd639ba9b6548c6ef1b7ea69340a31db150713e3aaf6e0a070e9caaa06b87a"
+    },
+    "run-00090": {
+      "result.json": "d920b30646bbdc690daecaff4e83e4fbed5afdefb2a7e7a8ce13c7ac6f990fac",
+      "events.jsonl": "14f036f2d0531b2fdf70b8db97045f31eecec6294679597869f68186391cf889",
+      "effects.sqlite3": "688c0a3a97c5b3da7158828832b7554bcf2e4b969ff0c4f204ce2d4dc71ddda2",
+      "transcript.jsonl": "70f37dd01513393ee183318f9d07ee77cdb28a751ce1d36559c867c160498e60"
+    },
+    "run-00091": {
+      "result.json": "f5e2777de2881df4e7460a57f4ab4a087fbace05e8413426d10e3cf5d0f03fb0",
+      "events.jsonl": "b9c38f1728b53373666eca21628e01706f7b1bd752d3ecb4e93adc576e682aef",
+      "effects.sqlite3": "28c716c6efe40bcf6fe3f633fb6932b616869b15a80dddcb72f272e4e168b4cc",
+      "transcript.jsonl": "94e0b63ef30edfe683f97754bc5414d0f01add795a7c2256dcb4c2d0d161e707"
+    },
+    "run-00092": {
+      "result.json": "db1b0a98173818334725478fe63eeccdc55c431096f940818c196d1ee0b7cad3",
+      "events.jsonl": "f36996fb459a5da8243bbd969257cfbeff1fdce60100340c51d0a03c49b7f019",
+      "effects.sqlite3": "761602141b6b8c57e1fdc5a2f0224af23f579df1fc2bf1b7c2732d55c3dc5cd7",
+      "transcript.jsonl": "39b037af81c0ab0a837c7a9e3551a9c0069a0f3637372b5f9426ec83976d3d21"
+    },
+    "run-00093": {
+      "result.json": "6cf3589ff5f95b1c396c3d370faa131254a9d097e425fba24d1f4fbd559a68e8",
+      "events.jsonl": "2ea1e89f3f00b09325f8bd9bffc24a91d59f96a224a9c095f574237ad2ba0d6f",
+      "effects.sqlite3": "6ca9342f2f42e029a074a4b2dff543c9178cb1093857f5a4f6cac0999c87f72a",
+      "transcript.jsonl": "fe87f4a15b754fa5c43a6f19102d905fdfadce23b9ccb2237460835ac838ca48"
+    },
+    "run-00094": {
+      "result.json": "4d8858b4a049cd1f9e7f66659e35908cc014a2a9f568648c1e788c4f2a241424",
+      "events.jsonl": "ce6c02489445181f6457585266ddeebc45e868f4002b1d8a47ba9def7e75fc43",
+      "effects.sqlite3": "1094ba8eaba55070acbb282961dd1fbfb3462c692d0c8f43f8006259645c8f95",
+      "transcript.jsonl": "62e4ebb1807497c774212a35408adc45fb2c440b792188165b82d264fd370bcd"
+    },
+    "run-00095": {
+      "result.json": "f9d1583e32851c6586d1bea273f5af25cb1dd940c14f360180f7bf61cebc10cb",
+      "events.jsonl": "12593ed60520734ff471f0a52e829f84a2432e6af413fb454a6caa43c21a05f9",
+      "effects.sqlite3": "3faca6f2487364053dabc716f5a416670252420701ca28a54161cf42077bdb7f",
+      "transcript.jsonl": "bc931a29451e2c1983a9c0fbf8db55d1928cb14782166c91c73ad4c6da6108b7"
+    },
+    "run-00096": {
+      "result.json": "deda67108ec4123845cc396e1aab33078a6133a4514f7cafb2412f74ef4c3d14",
+      "events.jsonl": "41a9264f4673c8ee84f4fb2369c7c34fe0ea225b5f756f662bf35662a5e15b27",
+      "effects.sqlite3": "d0dcb32a26c700a96d561e6fee4bf67f07c03b99d2e1c048677f66d7434d5faf",
+      "transcript.jsonl": "c4468ebec2cecec355c13308956566086d67fe05a0ed37e41d4a3f1bc8b1fd64"
+    }
+  },
+  "episodes_sha256": "aba18707d0352f5ed5915d9f68b9ac20cb243f3773ea04cad4a5d6aad990018e",
+  "execution": {
+    "finished_at": "2026-11-11T04:17:08.541721+00:00",
+    "pid": 76286,
+    "started_at": "2026-11-11T04:13:38.179965+00:00",
+    "status": "finished"
+  },
+  "api_audit": {
+    "actor_requests": 224,
+    "actor_responses": 224,
+    "resolved_models": {
+      "astra": [
+        "gpt-6-astra"
+      ],
+      "fable": [
+        "claude-fable-5-2"
+      ]
+    }
+  },
+  "network_recovery": null,
+  "config": {
+    "arms": [
+      "plain",
+      "reminder",
+      "planner"
+    ],
+    "max_estimated_usd": null,
+    "max_output_tokens": 16384,
+    "max_steps": 16,
+    "models": {
+      "astra": {
+        "model": "gpt-6-astra",
+        "provider": "openai",
+        "request_extra": {
+          "reasoning": {
+            "effort": "high"
+          }
+        }
+      },
+      "fable": {
+        "model": "claude-fable-5-2",
+        "provider": "anthropic",
+        "request_extra": {
+          "output_config": {
+            "effort": "high"
+          },
+          "tool_choice": {
+            "disable_parallel_tool_use": true,
+            "type": "auto"
+          }
+        }
+      }
+    },
+    "rates": {
+      "claude-fable-5-2": {
+        "input": 8.0,
+        "output": 40.0
+      },
+      "gpt-6-astra": {
+        "input": 10.0,
+        "output": 50.0
+      }
+    },
+    "scope_estimator": "gpt-6-astra",
+    "temperature": null,
+    "workers": 6
+  },
+  "limitations": [
+    "Scope estimates and all feedback use x/s0/public tools only; A/G are scoring-only.",
+    "Inference overhead is shared by feedback arms and reported separately; actor budgets match.",
+    "SABench is a short synthetic office benchmark. Exact finite planning degenerates on one-write tasks.",
+    "Template-level holdout and template-clustered intervals; development results are exploratory.",
+    "API failures/refusals retain incomplete outcomes and observed positive violations.",
+    "No provider safeguard changes, external office actions, model fallbacks, or episode replays."
+  ]
+}

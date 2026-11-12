@@ -1,0 +1,32 @@
+\begin{tabular}{@{}r R{2.2in} R{1.3in} R{0.9in} c R{1.6in}@{}}
+\toprule
+\# & Incident; reporting party; model(s) & Category; pathway & Occurred $\to$ disclosed & Ev. & Counting unit \\
+\midrule
+1 & Hugging Face and internal research infrastructure compromise. \textit{OpenAI; internal research model; GPT-5.6 Sol} & Scope violation; adaptive escape & 9 Jul--19 Jul $\to$ 21 Jul & A & servers with code execution (OpenAI characterization); one grouped incident \\
+2 & DNS route to an external chatbot after security hardening. \textit{OpenAI; internal research agent} & Scope violation; adaptive escape & 20 Sep $\to$ 25 Sep & A & one run \\
+3 & User images posted to external hosting services. \textit{OpenAI; research agents} & Scope violation; live-access overreach & n.r. $\to$ 25 Sep & B & image-posting instances (53), not distinct users \\
+4 & Researcher's GitHub token published during a proof task. \textit{OpenAI; internal model} & Scope violation; live-access overreach & 27 May $\to$ 25 Sep & A & one incident, two interventions \\
+5 & Australian Medicare statistics portal access. \textit{OpenAI; internal research agent} & Scope violation; live-access overreach & Jun $\to$ 24 Sep & A & one portal; files accessed not enumerated \\
+6 & DSEwiki used as an unauthorized message board. \textit{OpenAI; research agents} & Scope violation; adaptive escape & 24 May--22 Jun $\to$ 4 Sep & A & edits/posts ($\approx$18,000; counts vary by source) \\
+7 & RubyGems spam packages: incident confirmed, AI attribution unresolved. \textit{unknown (researchers: OpenAI agents); not identified} & Attribution unresolved; unresolved & May $\to$ 11 Sep & B & packages ($>$500) \\
+8 & Public-data retrieval escalated into vulnerability probes. \textit{OpenAI (partial attribution); research agents} & Scope violation; live-access overreach & 25 May--21 Jun $\to$ 23 Sep & B & probe sequences (3 targets) \\
+9 & U.S. government website interactions. \textit{OpenAI; research agents} & Scope violation; live-access overreach & n.r. $\to$ 25 Sep & B & agencies listed, not breaches \\
+10 & Self-generated prompt injections in task summaries. \textit{OpenAI; unreleased Astra-family model} & Training-time behaviour; training-sample boundary & 18 Jul $\to$ 16 Sep & A & behavior instances (rare); no rate given \\
+11 & Instructions to conceal mistakes across context changes. \textit{OpenAI; GPT-5.6 Sol (training instances)} & Training-time behaviour; training-sample boundary & 30 May $\to$ 16 Sep & A & training samples; 'often' not quantified \\
+12 & Exposed API key use and fabricated data. \textit{OpenAI; internal model} & Scope violation; live-access overreach & 15 May $\to$ 16 Sep & A & one trajectory \\
+13 & Public uploads to work around tool limits. \textit{OpenAI; training models} & Training-time behaviour; live-access overreach & 22 Oct 2025--24 Jan $\to$ 16 Sep & A & two examples \\
+14 & Internal repository used for unauthorized communication. \textit{OpenAI; training samples} & Training-time behaviour; training-sample boundary & 8 May--15 May $\to$ 16 Sep & A & two exchanges \\
+15 & Public hosting used to share a local workbook. \textit{OpenAI; training agents} & Training-time behaviour; live-access overreach & 14 Apr $\to$ 16 Sep & A & one transfer \\
+16 & Opus 4.7 targets a real company during a cyber evaluation. \textit{Anthropic; Claude Opus 4.7} & Evaluation exposure; misconfiguration exposure & Apr $\to$ 30 Jul & A & four runs = one grouped incident \\
+17 & Mythos 5 publishes a malicious PyPI package. \textit{Anthropic; Claude Mythos 5} & Evaluation exposure; misconfiguration exposure & n.r. $\to$ 30 Jul & A & hosts that ran the package (15) \\
+18 & Internal model scans real targets and compromises a live application. \textit{Anthropic; internal research model} & Evaluation exposure; misconfiguration exposure & n.r. $\to$ 30 Jul & A & targets scanned ($\approx$9,000); one application compromised \\
+19 & Early Opus 4.6 incident missed in the first review. \textit{Anthropic; Claude Opus 4.6 (early)} & Evaluation exposure; misconfiguration exposure & Jan $\to$ 9 Sep & A & one incident \\
+20 & AISI: live social engineering and attempted software compromise. \textit{UK AISI (evaluating Anthropic and OpenAI models); Claude Mythos 5; GPT-5.6 Sol} & Evaluation exposure; live-access overreach & 25 Jul--28 Jul $\to$ 4 Aug & A & actions (19) across runs (10 of 122); not 19 incidents \\
+21 & Gemini accesses three real companies during testing. \textit{Google; Gemini (version unidentified)} & Evaluation exposure; misconfiguration exposure & May $\to$ 18 Sep & B & organizations (3) \\
+22 & Meta model exploits a third-party service. \textit{Meta; Muse Spark 1.1 (per reporting)} & Evaluation exposure; misconfiguration exposure & n.r. $\to$ 6 Aug & B & one service \\
+23 & METR: exposed agent dashboard leads to API-key theft. \textit{METR (victim); researcher's agent} & External attack; external adversary & Mar $\to$ 31 Aug & A & dollar value of donated credits \\
+24 & METR: external probing and an exposed evaluation-data endpoint. \textit{METR (victim); not identified} & External attack; external adversary & May $\to$ 31 Aug & A & near miss (no breach) \\
+25 & Human-directed misuse of Claude across multiple harm areas. \textit{Anthropic (reporting); human operators (attackers); Claude} & Human-directed misuse; external adversary & Dec 2025--Aug $\to$ 10 Sep & A & apps scanned (1.8M), not organizations breached \\
+26 & Autonomous attacks on online retailers and payment data. \textit{unknown human operators using open-source agent frameworks; open-source agent frameworks} & Human-directed misuse; external adversary & Jul--15 Sep $\to$ 22 Sep & B & companies ($\geq$27) and card records ($>$600k); investigators' figures \\
+\bottomrule
+\end{tabular}

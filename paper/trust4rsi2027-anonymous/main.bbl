@@ -1,0 +1,234 @@
+\begin{thebibliography}{33}
+\providecommand{\natexlab}[1]{#1}
+
+\bibitem[{Alshiekh et~al.(2017)Alshiekh, Bloem, Ehlers, K{\"o}nighofer, Niekum,
+  and Topcu}]{shielding2017}
+Alshiekh, M.; Bloem, R.; Ehlers, R.; K{\"o}nighofer, B.; Niekum, S.; and Topcu,
+  U. 2017.
+\newblock Safe Reinforcement Learning via Shielding.
+\newblock arXiv:1708.08611.
+
+\bibitem[{Andriushchenko et~al.(2025)Andriushchenko, Souly, Dziemian, Duenas,
+  Lin, Wang, Hendrycks, Zou, Kolter, Fredrikson, Winsor, Wynne, Gal, and
+  Davies}]{agentharm2025}
+Andriushchenko, M.; Souly, A.; Dziemian, M.; Duenas, D.; Lin, M.; Wang, J.;
+  Hendrycks, D.; Zou, A.; Kolter, Z.; Fredrikson, M.; Winsor, E.; Wynne, J.;
+  Gal, Y.; and Davies, X. 2025.
+\newblock {AgentHarm}: A Benchmark for Measuring Harmfulness of {LLM} Agents.
+\newblock In \emph{International Conference on Learning Representations}.
+
+\bibitem[{{Anthropic}(2026{\natexlab{a}})}]{anthropic2026cyber}
+{Anthropic}. 2026{\natexlab{a}}.
+\newblock An Alignment Assessment of Recent Cybersecurity Incidents.
+\newblock Research report, September 9.
+  \url{https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{{Anthropic}(2026{\natexlab{b}})}]{anthropic2026aisi}
+{Anthropic}. 2026{\natexlab{b}}.
+\newblock An Alignment Assessment of the {UK AISI} Cybertesting Incident.
+\newblock Research report, October 23.
+  \url{https://www.anthropic.com/research/alignment-assessment-ukaisi}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{{Anthropic}(2026{\natexlab{c}})}]{anthropic2026actions}
+{Anthropic}. 2026{\natexlab{c}}.
+\newblock Investigating Unintended Model Actions in Our Evaluations and
+  Internal Use.
+\newblock Research report, October 9; corrected October 12.
+  \url{https://www.anthropic.com/research/investigating-unintended-model-actions}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{Baek et~al.(2026)Baek, Li, Gupta, Mahbub, Shi, Tegmark, and
+  Feng}]{baek2026}
+Baek, D.~D.; Li, X.; Gupta, A.; Mahbub, T.; Shi, K.; Tegmark, M.; and Feng, S.
+  2026.
+\newblock Sycophancy Towards Researchers Drives Performative Misalignment.
+\newblock arXiv:2606.08629.
+
+\bibitem[{Debenedetti et~al.(2024)Debenedetti, Zhang, Balunovi{\'c},
+  Beurer-Kellner, Fischer, and Tram{\`e}r}]{agentdojo2024}
+Debenedetti, E.; Zhang, J.; Balunovi{\'c}, M.; Beurer-Kellner, L.; Fischer, M.;
+  and Tram{\`e}r, F. 2024.
+\newblock {AgentDojo}: A Dynamic Environment to Evaluate Prompt Injection
+  Attacks and Defenses for {LLM} Agents.
+\newblock arXiv:2406.13352.
+
+\bibitem[{Dennett(1987)}]{dennett1987}
+Dennett, D.~C. 1987.
+\newblock \emph{The Intentional Stance}.
+\newblock MIT Press.
+
+\bibitem[{Greenblatt, Cotra, and Wijk(2026)}]{metr2026incident}
+Greenblatt, R.; Cotra, A.; and Wijk, H. 2026.
+\newblock Brief Independent Investigation of Agents' Behavior, Reasoning and
+  Collaboration in the {OpenAI} / {Hugging Face} Hacking Incident.
+\newblock METR and Redwood Research, August 26.
+  \url{https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{Greenblatt et~al.(2023)Greenblatt, Shlegeris, Sachan, and
+  Roger}]{control2023}
+Greenblatt, R.; Shlegeris, B.; Sachan, K.; and Roger, F. 2023.
+\newblock {AI} Control: Improving Safety Despite Intentional Subversion.
+\newblock arXiv:2312.06942.
+
+\bibitem[{Hadfield-Menell et~al.(2016)Hadfield-Menell, Dragan, Abbeel, and
+  Russell}]{cirl2016}
+Hadfield-Menell, D.; Dragan, A.; Abbeel, P.; and Russell, S. 2016.
+\newblock Cooperative Inverse Reinforcement Learning.
+\newblock In \emph{Advances in Neural Information Processing Systems},
+  volume~29.
+
+\bibitem[{Holmstr{\"o}m(1979)}]{holmstrom1979}
+Holmstr{\"o}m, B. 1979.
+\newblock Moral Hazard and Observability.
+\newblock \emph{The Bell Journal of Economics}, 10(1): 74--91.
+
+\bibitem[{Kapoor et~al.(2026)Kapoor, Kirgis, Schwartz, Rabanser, Allaire,
+  Bommasani, Coppock, Dubois, Hadfield, Hall, Hooker, Lazar, Newman,
+  Papailiopoulos, Tekofsky, Toner, Ududec, and Narayanan}]{kapoor2026}
+Kapoor, S.; Kirgis, P.; Schwartz, A.; Rabanser, S.; Allaire, J.~J.; Bommasani,
+  R.; Coppock, H.; Dubois, M.; Hadfield, G.~K.; Hall, A.~B.; Hooker, S.; Lazar,
+  S.; Newman, S.; Papailiopoulos, D.; Tekofsky, S.; Toner, H.; Ududec, C.; and
+  Narayanan, A. 2026.
+\newblock Open-World Evaluations for Measuring Frontier {AI} Capabilities.
+\newblock arXiv:2605.20520.
+
+\bibitem[{Ma et~al.(2026)Ma, Qu, Bobu, and Hadfield-Menell}]{ma2026}
+Ma, R.; Qu, J.; Bobu, A.; and Hadfield-Menell, D. 2026.
+\newblock Flexible Agent Alignment with Goal Inference from Open-Ended Dialog.
+\newblock arXiv:2508.15119, version 2.
+
+\bibitem[{McDonald and Hadfield-Menell(2022)}]{mcdonald2022}
+McDonald, M.~J.; and Hadfield-Menell, D. 2022.
+\newblock Guided Imitation of Task and Motion Planning.
+\newblock In \emph{Proceedings of the 5th Conference on Robot Learning}, volume
+  164 of \emph{Proceedings of Machine Learning Research}, 630--640. PMLR.
+
+\bibitem[{Mei et~al.(2025)Mei, Zhu, Xu, Hua, Jin, Li, Xu, Ye, Ge, and
+  Zhang}]{aios2025}
+Mei, K.; Zhu, X.; Xu, W.; Hua, W.; Jin, M.; Li, Z.; Xu, S.; Ye, R.; Ge, Y.; and
+  Zhang, Y. 2025.
+\newblock {AIOS}: {LLM} Agent Operating System.
+\newblock In \emph{Conference on Language Modeling}.
+
+\bibitem[{Nissenbaum(2004)}]{nissenbaum2004}
+Nissenbaum, H. 2004.
+\newblock Privacy as Contextual Integrity.
+\newblock \emph{Washington Law Review}, 79(1): 119--158.
+
+\bibitem[{{OpenAI}(2026{\natexlab{a}})}]{openai2026dns}
+{OpenAI}. 2026{\natexlab{a}}.
+\newblock An Agent Used {DNS} to Reach an External Chatbot.
+\newblock Incident report, September 25.
+  \url{https://alignment.openai.com/misalignment-reports/an-agent-used-dns-to-reach-an-external-chatbot/}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{{OpenAI}(2026{\natexlab{b}})}]{openai2026incident}
+{OpenAI}. 2026{\natexlab{b}}.
+\newblock The {Hugging Face} Incident and the Road Ahead.
+\newblock Incident report, August 26.
+  \url{https://openai.com/index/hugging-face-incident-and-the-road-ahead/}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{{OpenAI}(2026{\natexlab{c}})}]{openai2026monitoring}
+{OpenAI}. 2026{\natexlab{c}}.
+\newblock Suppressing Misalignment Monitoring Alerts and Disabling Misalignment
+  Monitoring.
+\newblock Incident report, October 20.
+  \url{https://alignment.openai.com/misalignment-reports/suppressing-misalignment-monitoring-alerts-and-disabling-misalignment-monitoring/}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{{OpenAI}(2026{\natexlab{d}})}]{openai2026workbook}
+{OpenAI}. 2026{\natexlab{d}}.
+\newblock Unauthorized Communication via Temporary File Hosting Services.
+\newblock Incident report, September 16.
+  \url{https://alignment.openai.com/misalignment-reports/unauthorized-communication-via-temporary-file-hosting-services/}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{{OpenAI}(2026{\natexlab{e}})}]{openai2026artifactory}
+{OpenAI}. 2026{\natexlab{e}}.
+\newblock Unsanctioned {Artifactory} Writes and Cross-Sample Communication.
+\newblock Incident report, September 16.
+  \url{https://alignment.openai.com/misalignment-reports/unauthorized-artifactory-writes-and-cross-sample-communication/}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{Premack and Woodruff(1978)}]{premack1978}
+Premack, D.; and Woodruff, G. 1978.
+\newblock Does the Chimpanzee Have a Theory of Mind?
+\newblock \emph{Behavioral and Brain Sciences}, 1(4): 515--526.
+
+\bibitem[{Raftari(2026)}]{raftari2026}
+Raftari, A. 2026.
+\newblock From Reactive Containment to Proactive Assurance: Lessons from
+  {OpenAI}, {Anthropic}, and {Google} Agent Security Incidents.
+\newblock arXiv:2610.12463.
+
+\bibitem[{Ruan et~al.(2023)Ruan, Dong, Wang, Pitis, Zhou, Ba, Dubois, Maddison,
+  and Hashimoto}]{toolemu2023}
+Ruan, Y.; Dong, H.; Wang, A.; Pitis, S.; Zhou, Y.; Ba, J.; Dubois, Y.;
+  Maddison, C.~J.; and Hashimoto, T. 2023.
+\newblock Identifying the Risks of {LM} Agents with an {LM}-Emulated Sandbox.
+\newblock arXiv:2309.15817.
+
+\bibitem[{{SAGE, Princeton University}(2026)}]{crux2026}
+{SAGE, Princeton University}. 2026.
+\newblock {CRUX-in-a-Box}: Autonomous Agent Deployment Starter and Design
+  Documentation.
+\newblock Software repository.
+  \url{https://github.com/sage-princeton/crux-in-a-box}.
+\newblock README and design.md, accessed November 9, 2026.
+
+\bibitem[{Shinn et~al.(2023)Shinn, Cassano, Berman, Gopinath, Narasimhan, and
+  Yao}]{reflexion2023}
+Shinn, N.; Cassano, F.; Berman, E.; Gopinath, A.; Narasimhan, K.; and Yao, S.
+  2023.
+\newblock Reflexion: Language Agents with Verbal Reinforcement Learning.
+\newblock arXiv:2303.11366.
+
+\bibitem[{{UK AI Security Institute}(2026)}]{aisi2026incident}
+{UK AI Security Institute}. 2026.
+\newblock Incident Report: Unsanctioned Agent Behaviour during Cyber Testing.
+\newblock Incident report, August 4.
+  \url{https://www.aisi.gov.uk/blog/incident-report-unsanctioned-agent-behaviour-during-cyber-testing}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{{UK AI Security Institute} and {Meridian
+  Labs}(2026{\natexlab{a}})}]{inspect2026}
+{UK AI Security Institute}; and {Meridian Labs}. 2026{\natexlab{a}}.
+\newblock Inspect: An Open-Source Framework for Large Language Model
+  Evaluations.
+\newblock Software documentation. \url{https://inspect.aisi.org.uk/}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{{UK AI Security Institute} and {Meridian
+  Labs}(2026{\natexlab{b}})}]{inspectsandbox2026}
+{UK AI Security Institute}; and {Meridian Labs}. 2026{\natexlab{b}}.
+\newblock Inspect: Sandboxing.
+\newblock Software documentation.
+  \url{https://inspect.aisi.org.uk/sandboxing.html}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{{UK AI Security Institute} and {Meridian
+  Labs}(2026{\natexlab{c}})}]{inspectapproval2026}
+{UK AI Security Institute}; and {Meridian Labs}. 2026{\natexlab{c}}.
+\newblock Inspect: Tool Approval.
+\newblock Software documentation.
+  \url{https://inspect.aisi.org.uk/approval.html}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{{UK AI Security Institute} and {Meridian
+  Labs}(2026{\natexlab{d}})}]{inspectreview2026}
+{UK AI Security Institute}; and {Meridian Labs}. 2026{\natexlab{d}}.
+\newblock Inspect: Tool Result Review.
+\newblock Software documentation.
+  \url{https://inspect.aisi.org.uk/review.html}.
+\newblock Accessed November 9, 2026.
+
+\bibitem[{Zhou et~al.(2026)Zhou, Chen, Wang, Neubig, Sap, and Wang}]{zhou2026}
+Zhou, X.; Chen, V.; Wang, Z.~Z.; Neubig, G.; Sap, M.; and Wang, X. 2026.
+\newblock {TOM-SWE}: User Mental Modeling for Software Engineering Agents.
+\newblock arXiv:2510.21903, version 2.
+
+\end{thebibliography}

@@ -1,0 +1,43 @@
+{
+ "sources": [
+  {
+   "asset": "figures/incidents/artifactory-unauthorized-communication/incident-14-artifactory-unauthorized-communication.spec.json",
+   "sha256": "e91fc7beb67c5be76f31c4f1021ec6648f0edebf8b3310d69e6130ba519a8ef6"
+  },
+  {
+   "asset": "figures/incidents/artifactory-unauthorized-communication/incident-14-artifactory-unauthorized-communication.png",
+   "sha256": "8ae518a36d1a8eeb57ec28d237f046d9ae92268aadcd90cfd76e58fb487c7bae"
+  },
+  {
+   "asset": "figures/incidents/public-hosting-local-workbook/incident-15-public-hosting-local-workbook.spec.json",
+   "sha256": "9555915c554b6e7c51ab4c4fe381f0cc26acba7c3ea8141127cf3e07b0239660"
+  },
+  {
+   "asset": "figures/incidents/public-hosting-local-workbook/incident-15-public-hosting-local-workbook.png",
+   "sha256": "41e94be06bddca41b74159307d2626b085b337c2d648fd39a1120232ed10086c"
+  },
+  {
+   "asset": "figures/incidents/aisi-live-social-engineering/incident-20-aisi-live-social-engineering.spec.json",
+   "sha256": "b39a6cbba6d05b6cb8d4bbc242fd061e577d94d08ce12a85da267ff8d679801b"
+  },
+  {
+   "asset": "figures/incidents/aisi-live-social-engineering/incident-20-aisi-live-social-engineering.png",
+   "sha256": "1e9065d411c1ac3a0d52fca56a7361184e6a9e00ae466988542a1855961b9476"
+  },
+  {
+   "asset": "archive/figures/experiments/judge-reliability/judge-reliability-natural-results.pdf",
+   "sha256": "3e124b849a0f104bb79914060d767dcf3093e3a24c8cd267525ee0414ed0abd0"
+  }
+ ],
+ "adaptation": "Incident pathways condensed and redrawn as vector diagrams at publication size. Judge matrix reconstructed from archived majority labels, cross-checked against all saved draws.",
+ "source_correction": "The workbook pathway states only that the uploader verified download. The cited primary report does not establish collaborator download; that detail from the source slide is omitted.",
+ "anonymity": "Only relative asset identifiers and content hashes retained; no local paths or author repository links.",
+ "incident_examples": "Appendix entries 14 and 20 are redrawn as vector diagrams from the library figure specifications; text content is unchanged apart from wrapping. Icons are omitted. Entry 20 replaces the repeated entry-15 workbook example as Figure 7.",
+ "incident_library": {
+  "records": 26,
+  "sha256": "547c23420ab9f0e3860aac2134e528d56137b1292c572bcd721e8bb4078cc39d",
+  "note": "Derived from the 27 September 2026 public-source briefing records; codings are analyst drafts."
+ },
+ "featured_incident": "Main-text featured-workbook.pdf uses the same detailed renderer as the appendix incident diagrams and is derived from the entry-15 specification. It retains grouped panels, numbered arrows, the blocked local path, timeline, legend, and source notes. The outcome is corrected to uploader-verified download; the unsupported collaborator-receipt arrow is omitted. The final card labels recovery, probing, permission requests, and stopping as proposed policy choices.",
+ "layout_update": "Judge legend outline centered within canvas; right-column headings separated. Library examples retain original text and card type sizes with compressed vertical whitespace for a shared appendix page."
+}

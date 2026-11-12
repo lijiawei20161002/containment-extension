@@ -13,6 +13,7 @@ authors = [{name = "Jiawei Li"}]
 dependencies = []
 
 [project.optional-dependencies]
+dashboard = ["markdown-it-py>=3"]
 inspect = ["inspect-ai>=0.3.200"]
 impossiblebench = [
     "inspect-ai==0.3.200",

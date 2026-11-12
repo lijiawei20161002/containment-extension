@@ -1,0 +1,20 @@
+{
+  "retrieved": "2026-11-11",
+  "code_source": "https://github.com/hjj194/sabench-artifact",
+  "data_source": "https://huggingface.co/datasets/Phaedrus/sabench",
+  "code_license": "MIT",
+  "dataset_license": "CC BY 4.0",
+  "files_sha256": {
+    "LICENSE": "afe6307050815d8fd8bf662b8b8b10aa8abe6c0cf6565068d5d8503e0ae4d6b9",
+    "README.md": "0cfc2ab9fe33661355ae04ad814a61f822bf1f93fa1260e0672aac5327508b43",
+    "tasks.jsonl": "8d9db31d41388df2c2fec830a75c658a43604f39780465340d55633958841779",
+    "scripts/run_pilot_streaming.py": "28a0f664411b1076c4636960a786fc87cdfdc89b3a7edbf61ca829ea7118cc0e",
+    "sabench_re/models.py": "b707ba769b81f5cd801ba8056a2208840080528062d7cb0e051a4f728f272f98",
+    "sabench_re/registry.py": "fdec3cce529b851872ef2efdfaabdfb13ea6a6a8cacfe5209c91e331778b29f6",
+    "sabench_re/io.py": "7a458032aa76525e2140ed52fbddebf3e6fa66bdb847427f4c326464c699bb9b",
+    "sabench_re/__init__.py": "8394a89019707f45771530dd43ed085d4208c2d3658674752c6fc32161450894",
+    "sabench_re/oracle.py": "39d82b88442fd5980b03c9139d50cb80a94f7d6a833b35aabc0134ae16317279",
+    "sabench_re/state.py": "fbe1c17a2adcc9896f4a259c6017625a51982b6d93bf2c95f51344fe461ad57c"
+  },
+  "note": "Unmodified upstream runtime and oracle. Local adapter is separate. All task state is synthetic."
+}

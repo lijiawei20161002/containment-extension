@@ -34,8 +34,12 @@ def request_json(provider: str, path: str, payload: dict | None = None) -> dict:
         base = "https://api.anthropic.com/v1"
         headers = {"x-api-key": secret("ANTHROPIC_API_KEY"), "anthropic-version": "2023-06-01"}
         allowed_paths = {"/models", "/messages"}
+    elif provider == "openrouter":
+        base = "https://openrouter.ai/api/v1"
+        headers = {"Authorization": "Bearer " + secret("OPENROUTER_API_KEY")}
+        allowed_paths = {"/models", "/responses"}
     else:
-        raise ValueError("Provider must be openai or anthropic")
+        raise ValueError("Provider must be openai, anthropic or openrouter")
     if path not in allowed_paths:
         raise ValueError("Unsupported inference route")
     headers["Content-Type"] = "application/json"
@@ -80,8 +84,9 @@ class NativeAgent:
                  system_prompt: str = SYSTEM_PROMPT, task_prompt: str = TASK_PROMPT,
                  temperature: float | None = None, transport=None,
                  tool_description: str = TOOL_DESCRIPTION, tool_parameters: dict | None = None,
-                 request_extra: dict | None = None, tool_name: str = "lab_request"):
-        if provider not in {"openai", "anthropic"}:
+                 request_extra: dict | None = None, tool_name: str = "lab_request",
+                 max_history_bytes: int = 80_000, tool_definitions: list[dict] | None = None):
+        if provider not in {"openai", "anthropic", "openrouter"}:
             raise ValueError("Unknown provider")
         self.provider, self.model = provider, model
         self.max_output_tokens = max_output_tokens
@@ -89,10 +94,21 @@ class NativeAgent:
         self.temperature = temperature
         # Extra provider request fields (for example Anthropic thinking/effort settings).
         self.request_extra = deepcopy(request_extra or {})
+        protected = {"model", "input", "messages", "instructions", "system", "tools",
+                     "max_tokens", "max_output_tokens", "temperature", "store", "stream"}
+        if protected.intersection(self.request_extra):
+            raise ValueError("Extra request fields cannot override model, prompts, tools or limits")
+        self.max_history_bytes = max_history_bytes
         self.transport = transport or request_json
         self.tool_description = tool_description
         self.tool_name = tool_name
         self.tool_parameters = deepcopy(TOOL_PARAMETERS if tool_parameters is None else tool_parameters)
+        self.tool_definitions = deepcopy(tool_definitions) if tool_definitions is not None else [
+            {"name": tool_name, "description": tool_description,
+             "parameters": self.tool_parameters, "strict": True}]
+        if not self.tool_definitions or any(not isinstance(t.get("name"), str) or
+                not isinstance(t.get("parameters"), dict) for t in self.tool_definitions):
+            raise ValueError("Invalid tool definitions")
         self.history: list[dict] = [{"role": "user", "content": task_prompt}]
 
     def restore_history(self, history: list[dict]) -> None:
@@ -101,7 +117,7 @@ class NativeAgent:
             raise ValueError("Restored history must retain the original task")
         pending, seen = set(), set()
         for message in history:
-            blocks = ([message] if self.provider == "openai" else
+            blocks = ([message] if self.provider in {"openai", "openrouter"} else
                       message.get("content", []) if isinstance(message.get("content"), list)
                       else [])
             for block in blocks:
@@ -122,18 +138,16 @@ class NativeAgent:
         self.history = deepcopy(history)
 
     def step(self) -> Turn:
-        if len(json.dumps(self.history).encode()) > 80_000:
+        if len(json.dumps(self.history).encode()) > self.max_history_bytes:
             raise ProviderError("Input history byte budget exceeded")
-        if self.provider == "openai":
-            raw = self.transport("openai", "/responses", {
+        if self.provider in {"openai", "openrouter"}:
+            raw = self.transport(self.provider, "/responses", {
                 "model": self.model, "instructions": self.system_prompt,
                 "input": self.history, "max_output_tokens": self.max_output_tokens,
                 "store": False, "include": ["reasoning.encrypted_content"],
-                "parallel_tool_calls": False,
+                **({"parallel_tool_calls": False} if self.provider == "openai" else {}),
                 **({"temperature": self.temperature} if self.temperature is not None else {}),
-                "tools": [{"type": "function", "name": self.tool_name,
-                           "description": self.tool_description, "parameters": self.tool_parameters,
-                           "strict": True}],
+                "tools": [{"type": "function", **definition} for definition in self.tool_definitions],
                 **self.request_extra,
             })
             if "output" not in raw:
@@ -155,8 +169,8 @@ class NativeAgent:
                 "model": self.model, "system": self.system_prompt, "messages": self.history,
                 "max_tokens": self.max_output_tokens,
                 **({"temperature": self.temperature} if self.temperature is not None else {}),
-                "tools": [{"name": self.tool_name, "description": self.tool_description,
-                           "input_schema": self.tool_parameters}],
+                "tools": [{"name": definition["name"], "description": definition.get("description", ""),
+                           "input_schema": definition["parameters"]} for definition in self.tool_definitions],
                 **self.request_extra,
             })
             if "content" not in raw:
@@ -173,7 +187,7 @@ class NativeAgent:
         return Turn(raw, calls, text, input_tokens, usage.get("output_tokens", 0))
 
     def results(self, results: list[tuple[Call, dict]]) -> None:
-        if self.provider == "openai":
+        if self.provider in {"openai", "openrouter"}:
             self.history.extend({"type": "function_call_output", "call_id": call.id,
                                  "output": json.dumps(response)} for call, response in results)
         else:

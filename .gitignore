@@ -12,6 +12,15 @@ dist/
 build/
 runs/
 .DS_Store
+/tmp/
+
+# LaTeX working files; retain manuscript sources and distributable PDFs.
+paper/**/*.aux
+paper/**/*.blg
+paper/**/*.fdb_latexmk
+paper/**/*.fls
+paper/**/*.log
+paper/**/*.synctex.gz
 
 # Preserve the local-only status of relocated evidence and working exports.
 archive/runs/

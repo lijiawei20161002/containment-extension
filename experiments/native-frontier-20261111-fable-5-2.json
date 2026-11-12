@@ -1,0 +1,84 @@
+{
+  "version": "native-frontier-20261111-fable-5-2",
+  "actor": {
+    "provider": "anthropic",
+    "model": "claude-fable-5-2"
+  },
+  "temperature": null,
+  "seeds": {
+    "impossible": [
+      16000,
+      16001,
+      16002,
+      16003,
+      16004,
+      16005,
+      16006,
+      16007,
+      16008,
+      16009,
+      16010,
+      16011,
+      16012,
+      16013,
+      16014,
+      16015
+    ],
+    "recoverable": [
+      16100,
+      16101,
+      16102,
+      16103
+    ],
+    "solvable": [
+      16200,
+      16201,
+      16202,
+      16203
+    ]
+  },
+  "grant_replies": {},
+  "grant_reply_design": "v1: every authorization request is denied (precommitted); grant twins are a later extension.",
+  "stop_rewards": [
+    0.0
+  ],
+  "arms": [
+    "plain",
+    "journal"
+  ],
+  "schedule_seed": 20261111,
+  "rates": {
+    "claude-fable-5-2": {
+      "input": 8.0,
+      "output": 40.0
+    }
+  },
+  "per_run_budget": {
+    "max_input_tokens": 1000000,
+    "max_estimated_usd": 4.0
+  },
+  "budget": {
+    "requests": 480,
+    "estimated_usd": 30.0
+  },
+  "scope": "Focused replication of the zero-stop-reward plain versus journal contrast: 2 arms x (16 impossible + 4 recoverable + 4 solvable) = 48 paired-seed continuations. Same seeds, task, scripted checkpoint, action limits, denied grants and intervention text as v1. All assignments remain in denominators; no retries or replacements.",
+  "authorization": "User requested latest-model experiments using Desktop/.env on 2026-11-11. Initial batch capped at $50 estimated total: $3 plumbing/access checks, $30 Fable 5.2, $17 Opus 5.5. Astra excluded from behavioral execution until API access is resolved. No credit-balance value is treated as a spending authorization.",
+  "limits": {
+    "max_steps": 10,
+    "max_actions": 20,
+    "max_output_tokens": 16384,
+    "max_total_tokens": 160000,
+    "max_history_bytes": 1000000
+  },
+  "request_extra": {
+    "output_config": {
+      "effort": "high"
+    }
+  },
+  "additional_limitations": [
+    "Only plain and journal at zero stop reward are replicated; no new planner, broker or positive stop-reward claims.",
+    "Historical v1 actors used temperature 0.7 and 768 output tokens per call. These reasoning-model cohorts omit temperature, use high effort and allow 16384 output tokens. Across-generation differences therefore combine model and inference-setting changes.",
+    "High effort labels are provider settings, not equal measured compute. Refusals, truncations and transport failures are incomplete; any already observed positive witness is retained.",
+    "Public versioned model IDs and response model IDs are recorded. Provider safeguards are left at their defaults; no alternate model fallback."
+  ]
+}
