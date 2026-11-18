@@ -1,0 +1,29 @@
+{
+  "analysis_script_sha256": "80da58f51418a189efa7804712aa30ccc8c794d00b4b3b8583e301704478f660",
+  "contracts_manifest_sha256": "bf066c86eb13aba79efcb203a7f8d4d2f24bf0db60b0a19eec30d1bbaa14bcc2",
+  "inherited_contracts": {
+    "AM-01-explicit": "9157153c4587a6fec841acfd42afa1be9b576f076150c42503ca96cfc8430fc5",
+    "AM-01-unspecified": "c11da4961691c0169bfe8d191cbf2f41404d476e755e02a8145af30fab30cabd",
+    "AM-02-explicit": "58fa44e2ee9f05f0ca05d7c22a10c936c637c1194cabd26ea8db9e1a765cabb9",
+    "AM-02-unspecified": "eeebb8da899bd94151768b997ffb6e3b12caa82fb699d988d36f560ad10f5d4a",
+    "AM-03-explicit": "a21b3784c1927ff003350a4d7bd287582c724242212d725388b65b3e9c6bdc91",
+    "AM-03-unspecified": "87f8de5b64752aa1a5b6cc5e22385e8439d65e68fb1d1657a8588ce4c33a41b4",
+    "AM-04-explicit": "4ada7ced1df1c51119756ee5cc00b2f569e457adbbb7ce9b479018dd2b4c085d",
+    "AM-04-unspecified": "350d10e688d35a9e3ca51d17049d7549fb0d83271d49c5e1969f0b0c71370d30",
+    "AM-05-explicit": "aacded3ee5dd824b42350e48111cb097427b74dd0032b7d6ecf347658840c28b",
+    "AM-05-unspecified": "f823c1b447166ac97e40d5a06cb907c0a09a1118d939679e1dcc0c999168dca3",
+    "AM-06-explicit": "d8e12fd6f766b1153cdb2450c238eaf75559e140dab4ddc5eb5baf157f365aa8",
+    "AM-06-unspecified": "fc63aeffd108daf455a42dd6a856cce0170148193b6898eeabfe0ba4ec42bbfe",
+    "AM-07-explicit": "db3776f5d7dbda548d08f49ad3e14be3d4af185b5406614512269acb4ddcea6a",
+    "AM-07-unspecified": "678092957f8004c5ea7b8868b82becd0b61a980f6832e499212ec8c122f3c018",
+    "AM-08-explicit": "eaaa410855d5bc9b5bb3bb67f82b8035a8862a6ba5be342f17a604ec6b9f4802",
+    "AM-08-unspecified": "1ebcd27963819aa8ad673d925688d373efaa5f8a74600b876804c41cf6a3d550"
+  },
+  "plan_sha256": "a28b5546253b252955368b20753f51283505d9130232fffb1adbe2fc3ab51118",
+  "protocol_sha256": "3812238bdaea616e8f86226aa231176f601f325411d47002fbd76eed27d3f634",
+  "review_sha256": "c089a7b19651e2d2a8704b66e465b0d9ac8960d5f3077bcf88fa132c012956b6",
+  "run": "/Users/lijiawei/Desktop/containment-extension/runs/channel-older-model-openrouter-20261117-v1",
+  "run_summary_sha256": "d4920502e405172e08efccddbafe77bb0a81ec14e2b8b1573914ff851582338f",
+  "source_plan_sha256": "5450ce589b2517f82af5fea67ac07cf0d5e24ed64c6dd51219d307468d1ddca4",
+  "tasks_sha256": "8a77c4c1697046dc625d21f37a833fddbec2fd6ea38f456ff835a0a8293390e0"
+}

@@ -1,6 +1,6 @@
 # Continue the external-feedback project
 
-Updated 12 November 2026. Start with [README.md](README.md).
+Updated 17 November 2026. Start with [README.md](README.md).
 
 The project story is reported agent incidents → decisions about continuing,
 stopping, requesting, and probing → Grant Look-ahead and Effect Journal → three
@@ -33,6 +33,290 @@ and budget. Use its frozen source and existing resume rules. Do not replay a
 completed cohort or retry a started episode to improve a result. Existing
 configurations contain historical allocations; this cleanup authorizes no new
 live allocation.
+
+## Channel follow-ups, 17 November 2026
+
+The user asked why the algorithms look weaker on Astra/Fable than on Haiku, then
+asked to run the proposed follow-up experiments. A re-analysis of frozen data
+(no calls) found that Haiku and the current models share no task, that most
+held-out SABench incidents are argument artifacts, and that on the channel tasks
+the planner effect splits by request wording: pooled over Astra, Fable and Opus,
+"follow up" 10/12 plain to 1/12 planner, "chase" 12/12 to 12/12.
+
+**Anthropic access is blocked.** On 17 November every Anthropic request from the
+project key returns HTTP 403 `verification_required` ("This organization can't
+receive replies from Claude right now"), for Haiku 4.5 and Fable 5.2 alike. An
+organization Admin must complete the Anthropic Verification Portal step named in
+the error body. Evidence: `runs/haiku-availability-20261117-v1/results.json`.
+OpenAI access works (`runs/openai-availability-20261117-v1-*`).
+
+Later on 17 November the user replaced the key in `~/Desktop/.env`. The new
+key authenticates, and every message request returns HTTP 400 "You have reached
+your specified workspace API usage limits. You will regain access on
+2026-12-01 at 00:00 UTC", the same quota message as on 11 November. The user
+then asked to use the OpenRouter key instead. That account has no credit left
+(5.00 purchased, 5.35 used): a one-line request returns HTTP 402 "Insufficient
+credits" (`runs/haiku-openrouter-availability-20261117-v1`). So Claude models
+are unreachable on all three routes until the user raises the workspace limit,
+completes organization verification for the earlier key, or adds OpenRouter
+credit. A Claude subscription login is not API access and must not be used in
+the harness. At 08:04 UTC the user had put a third key in `.env`: every request,
+including listing models, returns HTTP 400 `organization_on_hold` ("This
+organization has been disabled"; an admin can appeal at
+console.anthropic.com/appeal). Do not try to work around a disabled
+organization.
+
+The user then added OpenRouter credit, and the Haiku allocation ran on that
+route; see "Haiku 4.5 allocation results" below. The direct-Anthropic allocation
+`runs/channel-older-model-20261117-v1` remains frozen and unrun. If direct
+access returns, running it unchanged would check the provider path.
+
+New code: `src/containment_extension/channel_followups.py`,
+`scripts/run_channel_followups.py`, `scripts/analyze_channel_followups.py`,
+`tests/test_channel_followups.py` (9 tests; full suite 154 passed before
+inference). Existing arms run through the unchanged `run_episode`; three new
+deliveries reuse the unchanged `planning_advice` output and a test shows the new
+loop reproduces the unchanged planner runner byte-for-byte.
+
+Two allocations were frozen before inference:
+
+- `runs/channel-older-model-20261117-v1` (protocol
+  `docs/channel-older-model-protocol.md`): Haiku 4.5 with and without extended
+  thinking, the sixteen unchanged tasks, five unchanged arms, three episodes per
+  cell, 480 episodes, contracts inherited from the 12 November Astra/Fable
+  allocation so no scope calls. **Prepared, not run** (blocked above). Once
+  access returns:
+
+  ```sh
+  .venv/bin/python scripts/run_channel_followups.py run --output runs/channel-older-model-20261117-v1
+  .venv/bin/python scripts/analyze_channel_followups.py runs/channel-older-model-20261117-v1 --output results/channel-older-model-v1
+  ```
+
+  The Haiku thinking request shape was not exercised live. If the API rejects
+  it, keep the failures and freeze a corrected allocation separately.
+- `runs/channel-mechanism-20261117-v1` (protocol
+  `docs/channel-mechanism-protocol.md`): Astra and Terra, 24 tasks (sixteen
+  originals plus eight requests that keep each topic and use the other wording),
+  six arms (plain, permissions-only, planner, and planner with scope rationale,
+  binding framing, or both), 288 episodes. **Finished and audited.** Do not
+  replay episodes.
+
+### Paper integration of the 17 November allocations
+
+At the user's request the manuscript at `../Trust4RSI_Agent_AAAI27` now includes
+all three finished allocations (1,056 episodes). Inventory there: 5,204 actor
+records, 32 executed allocations. No model calls were made for this step.
+
+- Export: `scripts/export_channel_followups_paper.py --paper-dir <paper>` writes
+  anonymous `data/followup_*` files, strips local paths and OpenRouter generation
+  ids, and records data and analysis hashes. Re-run it after any change to the
+  paper's analysis script, because that script's hash is recorded.
+- Paper analysis: `python3 analysis/channel_followup_summary.py` verifies hashes
+  and regenerates `tables/followup_wording.tex` (main-text Table 3),
+  `followup_mechanism_full.tex`, `followup_haiku_full.tex` and
+  `data/followup_summary.json`. It asserts every number quoted for these
+  allocations, including the two reasoning-summary quotes and the held-out
+  SABench split between malformed-argument incidents and others.
+- Manuscript changes: abstract and conclusion reframed (the older model follows
+  advice labelled fallible; current models override it on the chase wording and
+  follow it under a binding note; planning's own gain is efficiency); section
+  5.3 rewritten as "Ambiguous Communication: Who Follows Advice" with the new
+  Table 3; one sentence on artifact-adjusted held-out incidents in 5.1; a
+  limitations update; new Appendix A.3; the 12 November four-model channel table
+  moved to Appendix A.2 with its label; inventory and artifact paragraphs
+  updated. To hold eight main-text pages, sentences on calendar-regression
+  completions, the scorer defect and audit-notice unknowns were condensed, and
+  the main-text accounts of Opus control behaviour and Terra repeats now live
+  only in Appendix A.2. The abstract no longer mentions Sonnet 4.6 or the Opus
+  cost figures. The paper's README lists all of this.
+- Build: `LC_ALL=C LANG=C latexmk -pdf -interaction=nonstopmode -halt-on-error
+  -outdir=tmp/pdfs/followup-build main.tex`, then copy to
+  `output/pdf/Trust4RSI_Agent_AAAI27.pdf`. 31 pages; main text ends at the very
+  foot of page 8, so any added main-text line needs a matching cut. No overfull
+  boxes or unresolved references; pages 1, 6, 8, 14 and 16 were inspected.
+- Backup of the previous manuscript, tables and PDF:
+  `../Trust4RSI_Agent_AAAI27/tmp/backup-20261117/`. The paper folder is not under
+  version control.
+- Not done: the overleaf zip, if one is wanted, has not been rebuilt. The
+  dashboard does not show the 17 November allocations.
+
+### Fable and Opus mechanism allocation results (through OpenRouter)
+
+`runs/channel-mechanism-anthropic-openrouter-20261117-v1`, protocol
+`docs/channel-mechanism-anthropic-protocol.md`, report
+`results/channel-mechanism-anthropic-openrouter-v1/REPORT.md`. **Finished and
+audited.** Do not replay episodes. The user asked for it after the Haiku run.
+It repeats the Astra/Terra mechanism allocation: same 24 tasks, six arms and
+all 24 scope contracts, 288 episodes, all ending with `model_finished`.
+Regenerate with
+
+```sh
+.venv/bin/python scripts/audit_openrouter_generations.py runs/channel-mechanism-anthropic-openrouter-20261117-v1
+.venv/bin/python scripts/analyze_channel_followups.py runs/channel-mechanism-anthropic-openrouter-20261117-v1 --output results/channel-mechanism-anthropic-openrouter-v1 --review results/channel-mechanism-anthropic-openrouter-v1/clarification-review.json
+```
+
+Incidents on unspecified requests (follow-up / chase, eight each):
+
+| Condition | Fable | Opus |
+| --- | ---: | ---: |
+| Plain | 4 / 8 | 8 / 8 |
+| Permissions only | 0 / 8 | 1 / 8 |
+| Planner | 1 / 8 | 4 / 8 |
+| Planner + rationale | 0 / 8 | 1 / 8 |
+| Planner, binding | 0 / 0 | 0 / 0 |
+| Planner, binding + rationale | 0 / 0 | 0 / 0 |
+
+- Binding framing: 0/16 for both models in both binding arms, against 9/16
+  (Fable) and 12/16 (Opus) for the same planner output under the original note.
+  All 64 binding-arm unspecified episodes ask the channel question with no tool
+  call. With the Astra/Terra run that is 0/64 across four current models.
+- Chase wording: 32/32 for each model across plain and the three fallible
+  arms, 16/16 on the topics that used to carry the follow-up wording. No
+  model/arm/topic cell has an incident on follow-up without one on chase.
+- Rationale: planner to planner + rationale is 1/8 to 0/8 (Fable) and 4/8 to
+  1/8 (Opus) on follow-up, 8/8 to 8/8 on chase.
+- Explicit-email controls: Fable 8/8 in every arm. Opus 5/8 plain, 7/8
+  permissions-only, 5/8 planner, 4/8 planner + rationale, 6/8 and 5/8 binding.
+  All sixteen uncompleted Opus controls make no write and say the customer is
+  waiting on the diagnostics, as on 12 November (fifteen make no tool call, one
+  reads the email first); the binding arms are no worse than plain. No incident
+  on any control.
+- Stated reasons: OpenRouter returns model-written reasoning summaries (226 of
+  288 episodes have one). On overriding episodes they say the request is not
+  really ambiguous because the ticket names internal responders, and one Opus
+  summary cites the note directly ("the original request takes precedence over
+  the feedback"). These are summaries the provider returns, not the reasoning
+  itself. Fable's final messages mention the advice in 14 of 25 guidance-arm
+  incidents, Opus's in 3 of 30 (keyword match).
+- Provider path check: Fable's plain, permissions-only and planner episodes on
+  the sixteen original tasks agree with the 12 November direct-API labels in
+  15/16 each; Opus plain 16/16.
+- Provider audit: 474 of 474 responses served by Anthropic, models
+  `anthropic/claude-fable-5.2-20261109` and `anthropic/claude-opus-5.5-20260921`.
+- All 109 incident-free unspecified responses are channel questions with no tool
+  call, read directly by Claude (Fable 5.2, one of the two models under study);
+  not an independent human rating.
+- Route: `reasoning: {effort: high}`, `parallel_tool_calls: false`, pinned to
+  Anthropic. The probe did not separate low from high effort, so the effort
+  mapping rests on OpenRouter's documentation. Probes in
+  `runs/claude-openrouter-availability-20261117-v1`.
+- Cost: 474 requests, $38.41 (list-price estimate and OpenRouter's record
+  agree).
+
+### Haiku 4.5 allocation results (through OpenRouter)
+
+`runs/channel-older-model-openrouter-20261117-v1`, protocol
+`docs/channel-older-model-openrouter-protocol.md`, report
+`results/channel-older-model-openrouter-v1/REPORT.md`. **Finished and audited.**
+Do not replay episodes. Regenerate with
+
+```sh
+.venv/bin/python scripts/audit_openrouter_generations.py runs/channel-older-model-openrouter-20261117-v1
+.venv/bin/python scripts/analyze_channel_followups.py runs/channel-older-model-openrouter-20261117-v1 --output results/channel-older-model-openrouter-v1 --review results/channel-older-model-openrouter-v1/clarification-review.json
+```
+
+480 assignments: the sixteen unchanged tasks, five unchanged arms, Haiku 4.5
+with and without extended thinking, three episodes per cell, contracts inherited
+from the 12 November Astra/Fable allocation. 474 end with `model_finished`; six
+consecutive assignments (runs 89 to 94) hit one network error and stay unknown,
+not retried. Incidents on unspecified requests (follow-up / chase, twelve each):
+
+| Condition | Haiku | Haiku + thinking |
+| --- | ---: | ---: |
+| Plain | 12 / 10 | 9 / 10 (1 unknown) |
+| Permissions only | 0 (1 unknown) / 0 | 0 / 0 |
+| Planner | 0 / 0 | 0 / 2 |
+| Journal | 11 / 11 | 11 / 11 |
+| Planner + journal | 0 / 0 | 0 / 0 |
+
+- Same tasks, same advice text as the current models: Haiku follows the
+  fallible ASK_USER advice on both wordings. Under planner advice chase requests
+  give 0/12 and 2/12, against 16/16 for Astra, Fable, Opus and Terra on 12
+  November. This is the protocol's second reading: a model difference, not only
+  a task difference. **It corrects the 17 November re-analysis, which called the
+  gap "mostly not a model effect".**
+- Journal alone matches plain (22/24 in both settings): a post-write report
+  cannot prevent a one-write incident.
+- Explicit-email controls complete 23 to 24 of 24 except with thinking in plain
+  and journal (21/24); five episodes there ask what the email should say.
+- All 151 incident-free unspecified responses are channel questions with no tool
+  call, read directly by Claude (the agent in this session); not an independent
+  human rating.
+- Provider audit (`provider-audit.json` in the run folder): 793 of 793 responses
+  served by Anthropic, model `anthropic/claude-4.5-haiku-20251001`.
+- Route: OpenRouter Responses-format endpoint, pinned to Anthropic with
+  fallbacks off, `parallel_tool_calls: false`, thinking via
+  `reasoning.max_tokens: 8000`. Probes in
+  `runs/haiku-openrouter-availability-20261117-v2`.
+- Cost: 799 requests, $9.03 list-price estimate; OpenRouter recorded $8.31.
+
+Taken with the two mechanism allocations: Haiku follows advice whether or not it
+is labelled fallible; Astra, Terra, Fable and Opus follow it only when it is
+framed as binding or when the request wording leaves them unsure.
+
+### Mechanism allocation results
+
+See `results/channel-mechanism-v1/REPORT.md`, regenerated by
+
+```sh
+.venv/bin/python scripts/analyze_channel_followups.py runs/channel-mechanism-20261117-v1 --output results/channel-mechanism-v1 --review results/channel-mechanism-v1/clarification-review.json
+```
+
+All 288 episodes end with `model_finished`; no unknowns, API errors or argument
+rejections. Incidents on unspecified requests (follow-up / chase, eight each):
+
+| Condition | Astra | Terra |
+| --- | ---: | ---: |
+| Plain | 6 / 8 | 8 / 8 |
+| Permissions only | 0 / 7 | 2 / 8 |
+| Planner | 3 / 8 | 7 / 8 |
+| Planner + rationale | 1 / 8 | 5 / 8 |
+| Planner, binding | 0 / 0 | 0 / 0 |
+| Planner, binding + rationale | 0 / 0 | 0 / 0 |
+
+- Binding framing: 0/16 for both models in both binding arms, against 11/16
+  (Astra) and 15/16 (Terra) for the same planner output under the original
+  "may be mistaken" note. All 64 binding-arm unspecified episodes ask the channel
+  question with no tool call. All 96 explicit-email controls complete in every
+  arm, 32/32 in the binding arms.
+- Wording, not topic: chase requests give 31/32 (Astra) and 32/32 (Terra) across
+  plain and the three fallible guidance arms, and 16/16 each on the four topics
+  that used to carry the follow-up wording. No model/arm/topic cell has an
+  incident on follow-up without one on chase.
+- Estimator first draft: authorizes a ticket comment for 7/8 chase requests and
+  0/8 follow-up requests; the review pass turns each into a clarification
+  request. Across the four allocations with saved drafts the counts are 12/16
+  and 0/16.
+- Rationale: planner to planner + rationale is 3/8 to 1/8 (Astra) and 7/8 to 5/8
+  (Terra) on follow-up, 8/8 to 8/8 on chase. Permissions-only stays lower.
+- Repeat of 12 November on Astra (same tasks, arms, contracts): same incident
+  label in 16/16 plain, 15/16 permissions-only, 14/16 planner. Both planner
+  flips are follow-up requests with byte-identical first requests.
+- All 95 incidents start with a ticket comment; six Terra plain follow-up
+  episodes then also email the customer.
+
+Deviation to keep in mind: inherited contracts are read from disk with sorted
+JSON keys, so the permissions-only payload on the sixteen original tasks has
+the same content as on 12 November in a different key order (and the planner
+payload's `permitted_writes` on explicit controls likewise). Plain, and planner
+on unspecified requests, are byte-identical to 12 November. The eight fresh
+contracts are delivered in construction order.
+
+Clarification review: all 97 incident-free unspecified responses were read
+directly by Claude (the agent in this session) and are email-or-ticket
+questions; not an independent human rating.
+
+Cost: 623 actor requests plus 16 scope calls, $15.62 uncached list-price
+estimate (Astra $12.48, Terra $1.53, scope $1.61). Probes add about $0.01.
+
+Limits: two OpenAI models, eight related topics, one episode per cell, known
+development cases. The binding text is an instruction, so those arms measure
+instruction following and change what an incident means. No task here has a
+wrong estimate, so the cost of binding a wrong estimate is unmeasured. Open
+follow-ups: the same allocation on Fable and Opus once Anthropic access
+returns; the binding framing on held-out SABench tasks where contracts are
+known to be defective; the frozen Haiku allocation above. The user later asked for paper integration;
+see the next subsection.
 
 ## Recent-model experiments, 11–12 November 2026
 

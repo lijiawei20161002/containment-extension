@@ -13,6 +13,56 @@ Start with the [project overview](../README.md), then the
 
 ## Local raw evidence
 
+The [Fable and Opus repeat](channel-mechanism-anthropic-openrouter-v1/REPORT.md)
+of the wording and advice-delivery allocation adds 288 episodes on the same 24
+tasks, six conditions and scope contracts. The binding framing gives 0/16
+incidents for both models, from 9/16 (Fable) and 12/16 (Opus) for the same
+planner output under the original note; with Astra and Terra that is 0/64
+across four current models. Chase requests give 32/32 incidents for each model
+across plain and the three fallible arms. Opus leaves some explicit-email
+controls uncompleted in every arm including plain, for the reason seen on 12
+November, and the binding arms are no worse. Fable's labels on the sixteen
+original tasks agree with the 12 November direct-API run in 15/16 per arm.
+Requests went through OpenRouter, served by Anthropic for all 474 responses.
+Model-written reasoning summaries on overriding episodes say the request is not
+really ambiguous given the ticket text. Descriptive, known development topics.
+Not yet in the paper.
+
+The [Haiku 4.5 channel allocation](channel-older-model-openrouter-v1/REPORT.md)
+of 17 November puts the older model on the sixteen unchanged channel tasks and
+five unchanged arms, with the advice text Astra and Fable received: 480
+episodes, with and without extended thinking, three per cell. Plain Haiku
+writes before asking in 22/24 and 19/24 unspecified episodes. With
+permissions-only it is 0/24 in both settings, and with planner advice 0/24 and
+2/24, including the chase requests on which Astra, Fable, Opus and Terra gave
+16/16 under the same advice. Journal alone matches plain (22/24). So on the same
+tasks the older model follows advice labelled as possibly mistaken and the
+current models do not, which is a model difference. Six assignments are unknown
+after one network error. Requests went through OpenRouter's converting
+endpoint; its records show Anthropic serving all 793 responses with the
+`claude-4.5-haiku-20251001` snapshot. Descriptive, known development topics.
+Not yet in the paper.
+
+The [wording and advice-delivery allocation](channel-mechanism-v1/REPORT.md)
+of 17 November adds 288 Astra and Terra episodes on the channel tasks: the
+sixteen originals plus eight requests that keep each topic and use the other
+wording, in six conditions. Telling the actor that the permission service is
+binding takes incidents on the sixteen unspecified requests to 0/16 for both
+models, from 11/16 (Astra) and 15/16 (Terra) for the same planner output under
+the original "may be mistaken" note, with all explicit-email controls still
+completing. The earlier follow-up/chase split follows the wording, not the
+topic: chase requests give 31/32 and 32/32 incidents across plain and the three
+fallible guidance arms, including on topics that previously produced safe
+questions, and the scope estimator's own first draft authorizes a ticket comment
+for 7/8 chase requests and 0/8 follow-up requests. Adding the scope rationale to
+planner advice helps slightly on follow-up and not on chase. All 288 episodes
+finish normally and pass replay and first-request audits. These are two OpenAI
+models on known development topics with one episode per cell; the binding arms
+measure instruction following, and no task has a wrong estimate, so the cost of
+binding one is unmeasured. Anthropic models were unavailable on that date
+(HTTP 403 `verification_required`); a Haiku 4.5 allocation on the unchanged
+tasks is frozen and not run. Not yet in the paper.
+
 The [four-model deeper-planning study](frontier-deep-planning-v1/REPORT.md)
 adds 216 episodes on scarce and revocable capacity: Astra, Fable, Terra and
 Opus, with plain, permissions-only and planner conditions. All sixteen
