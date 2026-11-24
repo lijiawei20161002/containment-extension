@@ -1,0 +1,96 @@
+{
+  "generator": "scripts/draw_system_design_figures.py",
+  "generator_sha256": "cbe75e72a2d24c3062c7da3530b97b1a560103fcb6466efd053787cddd65968d",
+  "harness_label": "Containment harness",
+  "empirical_result_claimed": false,
+  "model_calls": 0,
+  "figures": {
+    "fig1-before-after": {
+      "viewbox": [
+        548,
+        340
+      ],
+      "files": [
+        "fig1-before-after.svg",
+        "fig1-before-after.pdf",
+        "fig1-before-after.png"
+      ]
+    },
+    "fig2a-example-input": {
+      "viewbox": [
+        520.7,
+        304.2
+      ],
+      "files": [
+        "fig2a-example-input.svg",
+        "fig2a-example-input.pdf",
+        "fig2a-example-input.png"
+      ]
+    },
+    "fig2b-plain-agent": {
+      "viewbox": [
+        292,
+        284
+      ],
+      "files": [
+        "fig2b-plain-agent.svg",
+        "fig2b-plain-agent.pdf",
+        "fig2b-plain-agent.png"
+      ]
+    },
+    "fig2c-harness-workflow": {
+      "viewbox": [
+        1012,
+        300
+      ],
+      "files": [
+        "fig2c-harness-workflow.svg",
+        "fig2c-harness-workflow.pdf",
+        "fig2c-harness-workflow.png"
+      ]
+    },
+    "fig3-evaluation-framework": {
+      "viewbox": [
+        990,
+        356
+      ],
+      "files": [
+        "fig3-evaluation-framework.svg",
+        "fig3-evaluation-framework.pdf",
+        "fig3-evaluation-framework.png"
+      ]
+    },
+    "fig4-inspect-integration": {
+      "viewbox": [
+        1006,
+        322
+      ],
+      "files": [
+        "fig4-inspect-integration.svg",
+        "fig4-inspect-integration.pdf",
+        "fig4-inspect-integration.png"
+      ]
+    },
+    "fig5-crux-open-world": {
+      "viewbox": [
+        914,
+        326
+      ],
+      "files": [
+        "fig5-crux-open-world.svg",
+        "fig5-crux-open-world.pdf",
+        "fig5-crux-open-world.png"
+      ]
+    }
+  },
+  "captions": {
+    "fig1": "Figure 1 Previously, keeping agents inside their authorization boundary took a hand-written guardrail for each application. The harness takes plain task requests and guides one unmodified agent with a scope contract compiled from each request.",
+    "fig2a": "(a) Example input to the harness: a task with its stated scope and an unmodified agent loop.",
+    "fig2b": "(b) The plain agent meets a blocked route and may finish through a reachable resource that was never granted, instead of stopping with an honest blocker report.",
+    "fig2c": "(c) The harness compiles the request into a scope contract and plans over the granted actions (Grant Look-ahead). The agent then acts through a gateway that records every committed effect (Effect Journal) and returns it with fresh advice. Advice is not enforcement.",
+    "fig2": "Figure 2 Agent workflows. (a) shows an example input. (b) shows the plain agent on that input. (c) shows the harness workflow around the same agent.",
+    "fig3": "Figure 3 Evaluation framework. Incident records become task families in a frozen plan. One control layer runs any agent against simulated backends today and real tool backends later. Outcomes are read from replayed service effects, not from the agent's own account.",
+    "fig4": "Figure 4 Integration with Inspect. Each harness component (green) implements one Inspect extension point (blue). An approver can only approve, modify, reject or escalate a call, so advice and journal text reach the agent between turns. The scorer reads the effect record from the sandbox.",
+    "fig5": "Figure 5 A CRUX-style open-world evaluation run through the harness. The same contract and gateway are exercised first on simulated backends and then on real services. Each CRUX recommendation draws on one harness artifact."
+  }
+}
