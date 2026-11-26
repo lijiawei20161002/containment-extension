@@ -1,0 +1,139 @@
+1
+00:00:00,320 --> 00:00:08,339
+What happens when an AI assistant handles your email? Let's follow one concrete workflow, and see where the containment extension fits.
+
+2
+00:00:08,439 --> 00:00:15,432
+This animation replays existing code against a local mail fixture. The actor is scripted, and no live email is sent.
+
+3
+00:00:16,278 --> 00:00:24,861
+Inspect is an open-source framework for evaluating AI systems. It organizes tasks, agents, tools, logs, and scoring.
+
+4
+00:00:24,961 --> 00:00:33,916
+CRUX is a research project for open-world evaluations: longer, realistic tasks, with close observation and documented human interventions.
+
+5
+00:00:34,016 --> 00:00:41,926
+CRUX is not a plugin loader. Inspect is the software framework; CRUX describes how researchers investigate performance in real work.
+
+6
+00:00:42,778 --> 00:00:50,258
+A customer reports a delivery delay. The user asks the assistant to request the missing diagnostics by replying to that email.
+
+7
+00:00:50,358 --> 00:00:58,710
+The instruction also says: do not update the internal ticket. Reading related information does not authorize every possible follow-up action.
+
+8
+00:00:59,570 --> 00:01:06,636
+For this demonstration, we declare the scope directly from the user's instruction, then run the existing contract compiler.
+
+9
+00:01:06,736 --> 00:01:15,732
+Grant Look-ahead recommends replying to message zero one. The ticket write is outside that scope. This is advice; the actor still chooses its actions.
+
+10
+00:01:16,612 --> 00:01:23,027
+The scripted assistant fetches the message, drafts a request for diagnostics, and calls email reply.
+
+11
+00:01:23,127 --> 00:01:30,877
+The local service records one reply to the original sender. The internal ticket remains unchanged. No real inbox is contacted.
+
+12
+00:01:31,737 --> 00:01:38,161
+The Effect Journal records the committed reply and marks it within the declared scope. The planner now recommends finishing.
+
+13
+00:01:38,261 --> 00:01:45,092
+This fixture checks the operation and its target. It does not judge the free-form email body or prove real-world delivery.
+
+14
+00:01:45,945 --> 00:01:53,574
+Now replay an alternate branch. After the authorized reply, the scripted actor ignores the finish advice and adds a ticket comment.
+
+15
+00:01:53,674 --> 00:01:59,949
+The current tool runtime executes it. The journal flags the committed write as outside scope, but cannot undo it.
+
+16
+00:02:00,049 --> 00:02:06,561
+Blocking a write before execution requires a separate approval or enforcement layer. A journal alone is not that layer.
+
+17
+00:02:07,403 --> 00:02:15,336
+If the user only says, follow up, the channel is unclear. In this branch, our declared contract requires clarification.
+
+18
+00:02:15,436 --> 00:02:24,473
+The existing planner returns ask user: email the customer, or comment on the ticket? The scripted actor makes no writes while that choice remains unresolved.
+
+19
+00:02:25,320 --> 00:02:34,049
+Begin with a dataset: one email request and workspace per sample. An Inspect task combines setup, an agent, tools, and scorers.
+
+20
+00:02:34,149 --> 00:02:40,526
+Inspect's model layer selects the provider and generation settings. The built-in ReAct agent can run the tool loop.
+
+21
+00:02:40,626 --> 00:02:47,060
+Our extension adds the scope contract, planner advice, and effect feedback inside that existing structure.
+
+22
+00:02:47,903 --> 00:02:57,886
+Before the first model turn, a setup solver would provide scope and initial advice. A continuation callback can supply updated planner and journal feedback between turns.
+
+23
+00:02:57,986 --> 00:03:08,647
+Email actions would use Inspect custom tools, or locally executed MCP tools. A separate approval policy can approve, reject, or escalate before execution.
+
+24
+00:03:08,747 --> 00:03:15,452
+The tool backend must still record the effects it actually commits. An approval decision alone is not proof of what happened.
+
+25
+00:03:16,320 --> 00:03:23,695
+Inspect eval sets can organize the same tasks across models and feedback conditions, with concurrency and execution limits.
+
+26
+00:03:23,795 --> 00:03:31,710
+We would explicitly configure retries and stopping rules, retain incomplete outcomes, and keep every trial's workspace isolated.
+
+27
+00:03:31,810 --> 00:03:41,692
+Inspect View, data frames, and transcript scanners support analysis. Our scorers would report unauthorized effects and authorized completion from the service record.
+
+28
+00:03:42,570 --> 00:03:50,804
+Inspect supports packaged tasks, solvers, tools, scorers, approvers, and monitoring hooks through its extension system.
+
+29
+00:03:50,904 --> 00:04:00,092
+That can make setup convenient once the adapter exists. Installing a package alone does not connect arbitrary mail systems or add containment to every task.
+
+30
+00:04:00,192 --> 00:04:08,716
+Other features follow the task: multimodal input for attachments, multiple agents for separate roles, or a sandbox for untrusted code.
+
+31
+00:04:09,570 --> 00:04:15,754
+For a CRUX-style study, researchers could compare agents with and without this feedback during longer tasks.
+
+32
+00:04:15,854 --> 00:04:24,925
+They would retain the action trace, actual effects, user clarifications, and human interventions, then review where the advice changed behavior.
+
+33
+00:04:25,778 --> 00:04:32,019
+The planner, journal, and local office fixture already run. This video executes those components.
+
+34
+00:04:32,119 --> 00:04:39,707
+The repository has a legacy ImpossibleBench-specific Inspect adapter, but no general one-click Inspect or CRUX integration.
+
+35
+00:04:39,807 --> 00:04:47,069
+The next step is a tested Inspect adapter with real tool bindings, effect collection, and any required approval policy.

@@ -61,6 +61,20 @@ step through three scenarios, and explore the proposed Inspect and CRUX
 integrations. Teaching simulations and recorded experimental results are shown
 separately.
 
+The [narrated email workflow video](demos/mail-workflow/containment-mail-workflow.mp4)
+introduces Inspect and CRUX, then animates actual local fixture execution for an
+authorized reply, an extra ticket write, and channel clarification. It uses a
+scripted actor and declared scope; the [replay source and trace](demos/mail-workflow/README.md)
+document what executes and which integration steps remain proposed.
+
+The [Inspect × CRUX coding walkthrough](demos/inspect-crux-walkthrough/index.html)
+explains the proposed integration through 14 chapters of animated code and
+implementation steps. Its [7-minute English video](demos/inspect-crux-walkthrough/inspect-crux-coding-walkthrough.mp4)
+covers native Inspect components and a CRUX-style research brief, intervention
+log and case export. These are teaching sketches; no models or evaluations run.
+See the [walkthrough guide](demos/inspect-crux-walkthrough/README.md) for downloads,
+chapter timestamps and build instructions.
+
 The incident library contains 26 heterogeneous public-report records, with draft
 analyst codings. It motivates the experiments; it is not an estimate of how often
 deployed agents violate scope. The [native Haiku pilot](docs/native-algorithms-results.md)

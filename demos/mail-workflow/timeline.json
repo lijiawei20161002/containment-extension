@@ -1,0 +1,394 @@
+[
+  {
+    "id": "intro",
+    "chapter": "01 / THE CONTEXT",
+    "title": "An agent, an inbox, and a boundary.",
+    "subtitle": "How containment-extension fits an everyday email workflow",
+    "mode": "EXPLAINER",
+    "lines": [
+      "What happens when an AI assistant handles your email? Let's follow one concrete workflow, and see where the containment extension fits.",
+      "This animation replays existing code against a local mail fixture. The actor is scripted, and no live email is sent."
+    ],
+    "start": 0.0,
+    "end": 15.958321995464853,
+    "utterances": [
+      {
+        "start": 0.32,
+        "end": 8.15891156462585,
+        "text": "What happens when an AI assistant handles your email? Let's follow one concrete workflow, and see where the containment extension fits."
+      },
+      {
+        "start": 8.438911564625851,
+        "end": 15.2518820861678,
+        "text": "This animation replays existing code against a local mail fixture. The actor is scripted, and no live email is sent."
+      }
+    ]
+  },
+  {
+    "id": "context",
+    "chapter": "01 / THE CONTEXT",
+    "title": "Inspect runs evaluations. CRUX studies real work.",
+    "subtitle": "A software framework and an open-world evaluation project",
+    "mode": "EXPLAINER",
+    "lines": [
+      "Inspect is an open-source framework for evaluating AI systems. It organizes tasks, agents, tools, logs, and scoring.",
+      "CRUX is a research project for open-world evaluations: longer, realistic tasks, with close observation and documented human interventions.",
+      "CRUX is not a plugin loader. Inspect is the software framework; CRUX describes how researchers investigate performance in real work."
+    ],
+    "start": 15.958321995464853,
+    "end": 42.45832199546485,
+    "utterances": [
+      {
+        "start": 0.3200000000000003,
+        "end": 8.722630385487527,
+        "text": "Inspect is an open-source framework for evaluating AI systems. It organizes tasks, agents, tools, logs, and scoring."
+      },
+      {
+        "start": 9.002630385487528,
+        "end": 17.777823129251697,
+        "text": "CRUX is a research project for open-world evaluations: longer, realistic tasks, with close observation and documented human interventions."
+      },
+      {
+        "start": 18.057823129251698,
+        "end": 25.7881179138322,
+        "text": "CRUX is not a plugin loader. Inspect is the software framework; CRUX describes how researchers investigate performance in real work."
+      }
+    ]
+  },
+  {
+    "id": "request",
+    "chapter": "02 / THE EMAIL WORKFLOW",
+    "title": "A customer is waiting for a reply.",
+    "subtitle": "A received message is already present in the local inbox fixture",
+    "mode": "LOCAL CODE REPLAY",
+    "lines": [
+      "A customer reports a delivery delay. The user asks the assistant to request the missing diagnostics by replying to that email.",
+      "The instruction also says: do not update the internal ticket. Reading related information does not authorize every possible follow-up action."
+    ],
+    "start": 42.45832199546485,
+    "end": 59.249977324263035,
+    "utterances": [
+      {
+        "start": 0.3200000000000003,
+        "end": 7.619365079365082,
+        "text": "A customer reports a delivery delay. The user asks the assistant to request the missing diagnostics by replying to that email."
+      },
+      {
+        "start": 7.899365079365083,
+        "end": 16.07124716553288,
+        "text": "The instruction also says: do not update the internal ticket. Reading related information does not authorize every possible follow-up action."
+      }
+    ]
+  },
+  {
+    "id": "scope",
+    "chapter": "02 / THE EMAIL WORKFLOW",
+    "title": "Turn the request into an explicit boundary.",
+    "subtitle": "The demo declares scope; the existing compiler and planner execute it",
+    "mode": "LOCAL CODE REPLAY",
+    "lines": [
+      "For this demonstration, we declare the scope directly from the user's instruction, then run the existing contract compiler.",
+      "Grant Look-ahead recommends replying to message zero one. The ticket write is outside that scope. This is advice; the actor still chooses its actions."
+    ],
+    "start": 59.249977324263035,
+    "end": 76.29165532879819,
+    "utterances": [
+      {
+        "start": 0.3200000000000003,
+        "end": 7.206167800453521,
+        "text": "For this demonstration, we declare the scope directly from the user's instruction, then run the existing contract compiler."
+      },
+      {
+        "start": 7.486167800453522,
+        "end": 16.301859410430843,
+        "text": "Grant Look-ahead recommends replying to message zero one. The ticket write is outside that scope. This is advice; the actor still chooses its actions."
+      }
+    ]
+  },
+  {
+    "id": "send",
+    "chapter": "02 / THE EMAIL WORKFLOW",
+    "title": "Read. Compose. Reply.",
+    "subtitle": "Actual tool calls in the fixture, visualized as an email client",
+    "mode": "LOCAL CODE REPLAY",
+    "lines": [
+      "The scripted assistant fetches the message, drafts a request for diagnostics, and calls email reply.",
+      "The local service records one reply to the original sender. The internal ticket remains unchanged. No real inbox is contacted."
+    ],
+    "start": 76.29165532879819,
+    "end": 91.41668934240363,
+    "utterances": [
+      {
+        "start": 0.3200000000000074,
+        "end": 6.5550113378684784,
+        "text": "The scripted assistant fetches the message, drafts a request for diagnostics, and calls email reply."
+      },
+      {
+        "start": 6.83501133786848,
+        "end": 14.405170068027218,
+        "text": "The local service records one reply to the original sender. The internal ticket remains unchanged. No real inbox is contacted."
+      }
+    ]
+  },
+  {
+    "id": "journal",
+    "chapter": "02 / THE EMAIL WORKFLOW",
+    "title": "Record the effect that actually happened.",
+    "subtitle": "Effect Journal evaluates the committed structural operation",
+    "mode": "LOCAL CODE REPLAY",
+    "lines": [
+      "The Effect Journal records the committed reply and marks it within the declared scope. The planner now recommends finishing.",
+      "This fixture checks the operation and its target. It does not judge the free-form email body or prove real-world delivery."
+    ],
+    "start": 91.41668934240363,
+    "end": 105.62498866213151,
+    "utterances": [
+      {
+        "start": 0.3199999999999932,
+        "end": 6.564761904761909,
+        "text": "The Effect Journal records the committed reply and marks it within the declared scope. The planner now recommends finishing."
+      },
+      {
+        "start": 6.84476190476191,
+        "end": 13.495646258503399,
+        "text": "This fixture checks the operation and its target. It does not judge the free-form email body or prove real-world delivery."
+      }
+    ]
+  },
+  {
+    "id": "extra",
+    "chapter": "03 / WHEN THE AGENT GOES FURTHER",
+    "title": "What if the agent also updates the ticket?",
+    "subtitle": "Alternate branch: the same reply, followed by an unrequested comment",
+    "mode": "LOCAL CODE REPLAY",
+    "lines": [
+      "Now replay an alternate branch. After the authorized reply, the scripted actor ignores the finish advice and adds a ticket comment.",
+      "The current tool runtime executes it. The journal flags the committed write as outside scope, but cannot undo it.",
+      "Blocking a write before execution requires a separate approval or enforcement layer. A journal alone is not that layer."
+    ],
+    "start": 105.62498866213151,
+    "end": 127.0833560090703,
+    "utterances": [
+      {
+        "start": 0.3200000000000074,
+        "end": 7.768616780045363,
+        "text": "Now replay an alternate branch. After the authorized reply, the scripted actor ignores the finish advice and adds a ticket comment."
+      },
+      {
+        "start": 8.04861678004535,
+        "end": 14.144308390022687,
+        "text": "The current tool runtime executes it. The journal flags the committed write as outside scope, but cannot undo it."
+      },
+      {
+        "start": 14.424308390022688,
+        "end": 20.7564172335601,
+        "text": "Blocking a write before execution requires a separate approval or enforcement layer. A journal alone is not that layer."
+      }
+    ]
+  },
+  {
+    "id": "ambiguous",
+    "chapter": "03 / WHEN THE REQUEST IS UNCLEAR",
+    "title": "“Follow up” leaves a decision unresolved.",
+    "subtitle": "Alternate request: email and the internal ticket are both plausible channels",
+    "mode": "LOCAL CODE REPLAY",
+    "lines": [
+      "If the user only says, follow up, the channel is unclear. In this branch, our declared contract requires clarification.",
+      "The existing planner returns ask user: email the customer, or comment on the ticket? The scripted actor makes no writes while that choice remains unresolved."
+    ],
+    "start": 127.0833560090703,
+    "end": 145.0,
+    "utterances": [
+      {
+        "start": 0.3199999999999932,
+        "end": 8.072471655328783,
+        "text": "If the user only says, follow up, the channel is unclear. In this branch, our declared contract requires clarification."
+      },
+      {
+        "start": 8.352471655328785,
+        "end": 17.2093424036281,
+        "text": "The existing planner returns ask user: email the customer, or comment on the ticket? The scripted actor makes no writes while that choice remains unresolved."
+      }
+    ]
+  },
+  {
+    "id": "components",
+    "chapter": "04 / THE INTEGRATION",
+    "title": "Build on Inspect’s native components.",
+    "subtitle": "Proposed design: Inspect runs the experiment; the extension supplies domain feedback",
+    "mode": "PROPOSED INTEGRATION",
+    "lines": [
+      "Begin with a dataset: one email request and workspace per sample. An Inspect task combines setup, an agent, tools, and scorers.",
+      "Inspect's model layer selects the provider and generation settings. The built-in ReAct agent can run the tool loop.",
+      "Our extension adds the scope contract, planner advice, and effect feedback inside that existing structure."
+    ],
+    "start": 145.0,
+    "end": 167.58331065759637,
+    "utterances": [
+      {
+        "start": 0.3199999999999932,
+        "end": 8.869206349206337,
+        "text": "Begin with a dataset: one email request and workspace per sample. An Inspect task combines setup, an agent, tools, and scorers."
+      },
+      {
+        "start": 9.149206349206338,
+        "end": 15.345941043083911,
+        "text": "Inspect's model layer selects the provider and generation settings. The built-in ReAct agent can run the tool loop."
+      },
+      {
+        "start": 15.625941043083913,
+        "end": 21.88013605442177,
+        "text": "Our extension adds the scope contract, planner advice, and effect feedback inside that existing structure."
+      }
+    ]
+  },
+  {
+    "id": "inspect",
+    "chapter": "04 / THE INTEGRATION",
+    "title": "One email action through Inspect’s native loop.",
+    "subtitle": "Proposed adapter: native agent and tool execution, with containment feedback",
+    "mode": "PROPOSED INTEGRATION",
+    "lines": [
+      "Before the first model turn, a setup solver would provide scope and initial advice. A continuation callback can supply updated planner and journal feedback between turns.",
+      "Email actions would use Inspect custom tools, or locally executed MCP tools. A separate approval policy can approve, reject, or escalate before execution.",
+      "The tool backend must still record the effects it actually commits. An approval decision alone is not proof of what happened."
+    ],
+    "start": 167.58331065759637,
+    "end": 196.0,
+    "utterances": [
+      {
+        "start": 0.3199999999999932,
+        "end": 10.12308390022676,
+        "text": "Before the first model turn, a setup solver would provide scope and initial advice. A continuation callback can supply updated planner and journal feedback between turns."
+      },
+      {
+        "start": 10.403083900226761,
+        "end": 20.883446712018127,
+        "text": "Email actions would use Inspect custom tools, or locally executed MCP tools. A separate approval policy can approve, reject, or escalate before execution."
+      },
+      {
+        "start": 21.16344671201813,
+        "end": 27.68870748299321,
+        "text": "The tool backend must still record the effects it actually commits. An approval decision alone is not proof of what happened."
+      }
+    ]
+  },
+  {
+    "id": "operations",
+    "chapter": "04 / THE INTEGRATION",
+    "title": "Run comparisons. Open the evidence.",
+    "subtitle": "Proposed use of Inspect Running and Analysis capabilities",
+    "mode": "PROPOSED INTEGRATION",
+    "lines": [
+      "Inspect eval sets can organize the same tasks across models and feedback conditions, with concurrency and execution limits.",
+      "We would explicitly configure retries and stopping rules, retain incomplete outcomes, and keep every trial's workspace isolated.",
+      "Inspect View, data frames, and transcript scanners support analysis. Our scorers would report unauthorized effects and authorized completion from the service record."
+    ],
+    "start": 196.0,
+    "end": 222.24997732426303,
+    "utterances": [
+      {
+        "start": 0.3199999999999932,
+        "end": 7.515192743764175,
+        "text": "Inspect eval sets can organize the same tasks across models and feedback conditions, with concurrency and execution limits."
+      },
+      {
+        "start": 7.795192743764176,
+        "end": 15.529750566893426,
+        "text": "We would explicitly configure retries and stopping rules, retain incomplete outcomes, and keep every trial's workspace isolated."
+      },
+      {
+        "start": 15.809750566893428,
+        "end": 25.512290249433107,
+        "text": "Inspect View, data frames, and transcript scanners support analysis. Our scorers would report unauthorized effects and authorized completion from the service record."
+      }
+    ]
+  },
+  {
+    "id": "packaging",
+    "chapter": "04 / THE INTEGRATION",
+    "title": "Package the adapter as an Inspect extension.",
+    "subtitle": "Proposed packaging — discovery makes components available; the task wires them together",
+    "mode": "PROPOSED INTEGRATION",
+    "lines": [
+      "Inspect supports packaged tasks, solvers, tools, scorers, approvers, and monitoring hooks through its extension system.",
+      "That can make setup convenient once the adapter exists. Installing a package alone does not connect arbitrary mail systems or add containment to every task.",
+      "Other features follow the task: multimodal input for attachments, multiple agents for separate roles, or a sandbox for untrusted code."
+    ],
+    "start": 222.24997732426303,
+    "end": 249.24997732426303,
+    "utterances": [
+      {
+        "start": 0.3200000000000216,
+        "end": 8.373922902494343,
+        "text": "Inspect supports packaged tasks, solvers, tools, scorers, approvers, and monitoring hooks through its extension system."
+      },
+      {
+        "start": 8.653922902494344,
+        "end": 17.661632653061247,
+        "text": "That can make setup convenient once the adapter exists. Installing a package alone does not connect arbitrary mail systems or add containment to every task."
+      },
+      {
+        "start": 17.941632653061248,
+        "end": 26.285623582766448,
+        "text": "Other features follow the task: multimodal input for attachments, multiple agents for separate roles, or a sandbox for untrusted code."
+      }
+    ]
+  },
+  {
+    "id": "crux",
+    "chapter": "04 / THE INTEGRATION",
+    "title": "CRUX would use it as an experimental intervention.",
+    "subtitle": "A proposed workflow for longer, realistic tasks",
+    "mode": "PROPOSED INTEGRATION",
+    "lines": [
+      "For a CRUX-style study, researchers could compare agents with and without this feedback during longer tasks.",
+      "They would retain the action trace, actual effects, user clarifications, and human interventions, then review where the advice changed behavior."
+    ],
+    "start": 249.24997732426303,
+    "end": 265.45832199546487,
+    "utterances": [
+      {
+        "start": 0.3200000000000216,
+        "end": 6.32380952380953,
+        "text": "For a CRUX-style study, researchers could compare agents with and without this feedback during longer tasks."
+      },
+      {
+        "start": 6.603809523809531,
+        "end": 15.495510204081626,
+        "text": "They would retain the action trace, actual effects, user clarifications, and human interventions, then review where the advice changed behavior."
+      }
+    ]
+  },
+  {
+    "id": "ready",
+    "chapter": "05 / WHAT IS READY",
+    "title": "Can I load it with one click? Not yet.",
+    "subtitle": "Current repository status, with a concrete route to integration",
+    "mode": "CURRENT STATUS",
+    "lines": [
+      "The planner, journal, and local office fixture already run. This video executes those components.",
+      "The repository has a legacy ImpossibleBench-specific Inspect adapter, but no general one-click Inspect or CRUX integration.",
+      "The next step is a tested Inspect adapter with real tool bindings, effect collection, and any required approval policy."
+    ],
+    "start": 265.45832199546487,
+    "end": 287.6249886621315,
+    "utterances": [
+      {
+        "start": 0.3199999999999932,
+        "end": 6.380861678004521,
+        "text": "The planner, journal, and local office fixture already run. This video executes those components."
+      },
+      {
+        "start": 6.660861678004494,
+        "end": 14.068480725623544,
+        "text": "The repository has a legacy ImpossibleBench-specific Inspect adapter, but no general one-click Inspect or CRUX integration."
+      },
+      {
+        "start": 14.348480725623574,
+        "end": 21.43102040816325,
+        "text": "The next step is a tested Inspect adapter with real tool bindings, effect collection, and any required approval policy."
+      }
+    ]
+  }
+]

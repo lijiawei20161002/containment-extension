@@ -1,0 +1,84 @@
+
+01. Start with a task and a sample
+
+Let's write a task. Each sample holds a user request and a workspace identifier. Keep the scoring target separate from the agent's input.
+The task connects setup, the agent, and scoring. These named functions are our adapter pieces, which we will define next.
+The arm parameter selects a feedback condition. Keep the task and tools comparable so differences in feedback remain interpretable.
+
+02. Prepare scope before the first decision
+
+A setup solver creates isolated state for each sample. Every name beginning with c e is our own adapter work, not an Inspect API.
+Compile scope from the visible request. Start with a declared contract, handle ambiguity explicitly, and never use the hidden scoring target to create permissions.
+Deliver initial advice before the first model call. Existing contract and planner functions can be adapted here, while later feedback belongs between turns.
+
+03. Bind a tool to an observable effect
+
+Wrap email reply as an Inspect tool. Typed arguments and descriptions define how the model calls it; they do not establish permission.
+Resolve this sample's backend, then execute the reply. For real mail, handle retries and uncertain delivery without blindly sending the message twice.
+Record the backend receipt before returning. The journal needs evidence of the effect, not just the assistant's claim that it sent the email.
+
+04. Let ReAct run the agent loop
+
+Use Inspect's ReAct agent rather than writing another tool loop. The plain condition continues without adding containment feedback.
+The callable returns a feedback message between iterations. It selects planner advice, journal entries, or both, and records what the agent actually saw.
+Supply tools and keep one submission attempt. Also handle final effects at scoring time, because completion may leave no next turn for feedback.
+
+05. Choose advice or enforcement explicitly
+
+Inspect supplies the approval mechanism. Our policy supplies the authorization decision, including explicit handling of reads, writes, and submission.
+Record the proposal and decision. A rejected ticket update is a blocked attempt; it must not be counted as a committed ticket change.
+Attach the gate only for an enforcement condition. If every advice condition also blocks writes, you cannot isolate whether the agent followed the advice.
+
+06. Score the record, including unknowns
+
+The scorer reads the effect record and task expectations. A final answer saying done is not enough to establish what the service committed.
+Retain completion, incidents, repeated effects, and observation coverage. A useful reply does not erase an extra unauthorized ticket update.
+Leave aggregate metrics unfinished until unknown handling is defined. An interrupted run without complete receipts must not silently become an incident-free success.
+
+07. Configure models and a comparison run
+
+Select a model through Inspect and record generation settings. The provider string here is a placeholder; no model request is made by this tutorial.
+Create the feedback conditions and set concurrency, token, and time limits. Every trial needs isolated state, even when samples run in parallel.
+Implement retry settings deliberately. Replaying a failed mail action may duplicate a real effect, and dropping failed trials can bias the comparison.
+
+08. Make the trajectory inspectable
+
+Read sample and event data from Inspect logs. These paths are future outputs; the tutorial has not generated evaluation results.
+Join the receipts and ask what feedback was visible before each choice. Separate advice-following, useful completion, and unauthorized effects.
+Use the viewer and validated transcript scanners for closer review. Transcript judgments complement service evidence; they do not replace it.
+
+09. Package the adapter for reuse
+
+Package the adapter with an Inspect entry point. This module path is proposed; you must create and test it before installation can discover anything.
+Import the decorated components in the registry. Discovery makes them available, while the selected task wires them to the tools and feedback.
+Use lifecycle hooks for monitoring and export. Keep enforcement in approvers and feedback in explicit agent integration points.
+
+10. Add features when the task needs them
+
+Use multimodal input for customer screenshots and a sandbox for untrusted execution. A simple in-memory mail fixture can start much smaller.
+Add multiple agents only when roles justify them. For MCP tools, choose an execution route that preserves the approval and observation guarantees you need.
+Treat tutorials, benchmark listings, and the reference as resources. Caching and batch settings are deliberate experiment choices, not features to turn on automatically.
+
+11. Write the research brief, not an SDK import
+
+Now switch from the execution framework to study design. CRUX is an open-world evaluation project, not an SDK to import.
+Write down the task, authority, evidence, and human contributions. Our containment boundary is an experimental intervention that must be described explicitly.
+Specify stopping and reporting before the main case. Keep the dry run and any protocol changes visible, so readers can assess what was actually tested.
+
+12. Record interventions and scope changes
+
+Record who intervened, when, and why. Clarification, new permission, and repairing a broken environment should remain distinguishable in the case history.
+Version any scope change through a trusted operator path. Neither the assistant's feedback nor an incoming email should silently create new authority.
+Retain agent messages, service effects, and human interventions as linked records. This supports case analysis and makes the degree of human assistance visible.
+
+13. Use Inspect to execute the case and export evidence
+
+Use a fixture backend for a dry run, then build the longer task. Real mail requires credentials, reliable receipts, bounded waits, and explicit stopping behavior.
+Inspect can execute the case, but CRUX does not require this particular framework. Keep external waiting and human intervention connected to the run history.
+Export the protocol, logs, effects, interventions, and costs. Analyze the case and its limitations; a completion label alone is not the full result.
+
+14. Turn the sketches into a small working adapter
+
+Start small: pin Inspect, use a declared scope, and wrap the local fixture tools. Make the effect record reliable before adding real services.
+Verify feedback timing, approval behavior, completion, and unknown outcomes. These checks validate the integration; they are not evidence that feedback improves models.
+Then add the study record and a real backend. Download the sketches and notes as your implementation guide; this walkthrough has not run an evaluation.
