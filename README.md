@@ -55,6 +55,12 @@ flowchart LR
 | 4. Awareness | [Evaluation-awareness study](docs/evaluation-awareness.md) | Cue and reward contrasts, with interpretation limits |
 | 5. Next work | [Focused roadmap](docs/experiment-roadmap.md) | Remaining work organized by the three questions |
 
+The [interactive field guide](demos/containment-explorer.html) is a self-contained
+English demo that opens directly in a browser, including offline. Drag components,
+step through three scenarios, and explore the proposed Inspect and CRUX
+integrations. Teaching simulations and recorded experimental results are shown
+separately.
+
 The incident library contains 26 heterogeneous public-report records, with draft
 analyst codings. It motivates the experiments; it is not an estimate of how often
 deployed agents violate scope. The [native Haiku pilot](docs/native-algorithms-results.md)
