@@ -1,0 +1,59 @@
+{
+  "v": 5,
+  "createdOnFiles": { "v": 1, "at": "2026-11-26T02:18:55Z" },
+  "lists": "css",
+  "format": { "v": 1, "shared": ["project/deck.css"] },
+  "title": "External Guidance for Agents Under Bounded Authority: paper walkthrough",
+  "cover": "cover",
+  "order": [
+    "cover",
+    "glance",
+    "patterns",
+    "workbook",
+    "questions",
+    "mechanisms",
+    "lookahead",
+    "settings",
+    "channel",
+    "allocation",
+    "sabench",
+    "native",
+    "incentives",
+    "monitor",
+    "limits",
+    "next"
+  ],
+  "sections": {
+    "s1": {
+      "description": "Overview: what the paper asks, what it proposes and the headline evidence.",
+      "start": "cover"
+    },
+    "s2": {
+      "description": "Motivation: why agents crossing delegated boundaries is a decision problem, shown through recent incident reports.",
+      "start": "patterns"
+    },
+    "s3": {
+      "description": "Method: the two external mechanisms, Grant Look-ahead and Effect Journal, and how the planner works.",
+      "start": "mechanisms"
+    },
+    "s4": {
+      "description": "Experiments: the five simulation settings and what each one found.",
+      "start": "settings"
+    },
+    "s5": {
+      "description": "Outlook: what the evidence does not cover and where the work goes next.",
+      "start": "limits"
+    }
+  },
+  "faces": {
+    "hanken-grotesk": {
+      "family": "Hanken Grotesk",
+      "href": "https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap"
+    },
+    "jetbrains-mono": {
+      "family": "JetBrains Mono",
+      "href": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500;600&display=swap"
+    }
+  },
+  "designSystems": []
+}

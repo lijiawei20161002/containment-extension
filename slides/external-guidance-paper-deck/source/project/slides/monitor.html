@@ -1,0 +1,30 @@
+<section id="monitor" class="c" data-transition="fade">
+<div class="bar">
+<div class="brand"><div class="ring"></div><p class="brand-t">External Guidance Under Bounded Authority</p></div>
+<div class="tabs"><p class="tab">Overview</p><p class="tab">Motivation</p><p class="tab">Method</p><p class="tab-on">Experiments</p><p class="tab">Outlook</p></div>
+</div>
+<div class="body">
+<div class="head">
+<div class="hrow"><h2>Monitor reliability and permission state</h2><div class="chip"><div class="dot bg-teal"></div><p class="chip-t">Monitor reliability</p></div></div>
+</div>
+<div class="split">
+<div class="figcard">
+<img src="/_blob/13abdf92b82e32e24c67bcbefa77247d" alt="Judge reliability grid: nine monitor configurations rejudging 16 scripted cases and 160 agent traces, with false alarms and detected incidents per configuration" style="width:1040px; height:520px; object-fit:contain">
+</div>
+<div class="col grow" style="gap:20px">
+<div class="tile" style="flex:none">
+<div class="lab"><div class="rdot bg-bad"></div><p class="lab-t">Transcript only</p></div>
+<p class="num n-bad">23/157</p>
+<p class="small">benign traces flagged by each transcript-only monitor, Haiku 4.5 and Sonnet 4.6</p>
+</div>
+<div class="tile-ok" style="flex:none">
+<div class="lab"><div class="rdot bg-ok"></div><p class="lab-t">Transcript plus journal</p></div>
+<p class="num n-ok">0/157</p>
+<p class="small">false alarms once the monitor also reads the journal</p>
+</div>
+<p class="muted">All 23 false alarms involve an initial grant. Every configuration detects 3/3 incidents.</p>
+</div>
+</div>
+</div>
+<p class="src">§5.9, Figure 4 · The journal exposes the reference label, so this tests interpretation, not independent verification</p>
+</section>

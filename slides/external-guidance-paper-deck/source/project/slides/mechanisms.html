@@ -1,0 +1,45 @@
+<section id="mechanisms" class="c" data-transition="fade">
+<div class="bar">
+<div class="brand"><div class="ring"></div><p class="brand-t">External Guidance Under Bounded Authority</p></div>
+<div class="tabs"><p class="tab">Overview</p><p class="tab">Motivation</p><p class="tab-on">Method</p><p class="tab">Experiments</p><p class="tab">Outlook</p></div>
+</div>
+<div class="body">
+<div class="head">
+<div class="hrow"><h2>Two mechanisms outside the agent</h2></div>
+</div>
+<!-- nodes (left,top,width,height): A 0,185,300,230  B 390,0,440,230  C 390,370,440,230  D 920,185,260,230  E 1270,185,394,230 -->
+<div class="dia">
+<div class="node-grant" style="left:0; top:185px; width:300px; height:230px">
+<h3>Trusted grant</h3>
+<p class="small">Permission and service state the agent cannot write</p>
+</div>
+<div class="node-mech" style="left:390px; top:0; width:440px; height:230px">
+<p class="when">Before an action</p>
+<h3>Grant Look-ahead</h3>
+<p class="small">The permitted actions, their values and one recommendation</p>
+</div>
+<div class="node-mech" style="left:390px; top:370px; width:440px; height:230px">
+<p class="when">After an action</p>
+<h3>Effect Journal</h3>
+<p class="small">Each committed effect, labelled authorized or unauthorized</p>
+</div>
+<div class="node-actor" style="left:920px; top:185px; width:260px; height:230px">
+<h3 class="h3-w">LLM actor</h3>
+<p class="small-w">Chooses its own action</p>
+</div>
+<div class="node" style="left:1270px; top:185px; width:394px; height:230px">
+<h3>Service dispatcher</h3>
+<p class="small">Permissive in feedback arms. The broker arm rejects excluded calls.</p>
+</div>
+<x-connector class="wire" x1="150" y1="185" x2="390" y2="115" route="vh"></x-connector>
+<x-connector class="wire" x1="830" y1="115" x2="1050" y2="185" route="hv"></x-connector>
+<x-connector class="wire" x1="830" y1="485" x2="1050" y2="415" route="hv"></x-connector>
+<x-connector class="wire" x1="1180" y1="300" x2="1270" y2="300"></x-connector>
+<x-connector class="wire" x1="1467" y1="415" x2="830" y2="545" route="vh"></x-connector>
+<p class="dlabel" style="left:0; top:435px; width:300px">Only a trusted reply changes the grant</p>
+<p class="dlabel" style="left:850px; top:62px; width:360px">advice before each decision</p>
+<p class="dlabel" style="left:850px; top:558px; width:400px">effects after dispatch</p>
+</div>
+</div>
+<p class="src">Adapted from Figure 2 and Algorithm 1</p>
+</section>

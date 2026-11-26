@@ -1,0 +1,65 @@
+<section id="allocation" class="c" data-transition="fade">
+<div class="bar">
+<div class="brand"><div class="ring"></div><p class="brand-t">External Guidance Under Bounded Authority</p></div>
+<div class="tabs"><p class="tab">Overview</p><p class="tab">Motivation</p><p class="tab">Method</p><p class="tab-on">Experiments</p><p class="tab">Outlook</p></div>
+</div>
+<div class="body">
+<div class="head">
+<div class="hrow"><h2>Resource allocation: how to proceed</h2><div class="chip"><div class="dot bg-green"></div><p class="chip-t">Resource allocation</p></div></div>
+<p class="lead">Ordered jobs compete for limited resources. Every arm receives the full transition and permission rules; permissions-only adds computed action lists, and the planner adds a verified minimum-resource route.</p>
+</div>
+<div class="split">
+<div class="chartcard">
+<h3>Tasks at minimum resource use, of 16 feasible</h3>
+<div class="track">
+<div class="grp">
+<div class="bc"><p class="bv">11</p><div class="bar-plain" style="height:176px"></div></div>
+<div class="bc"><p class="bv">12</p><div class="bar-perm" style="height:192px"></div></div>
+<div class="bc"><p class="bv">16</p><div class="bar-plan" style="height:256px"></div></div>
+</div>
+<div class="grp">
+<div class="bc"><p class="bv">10</p><div class="bar-plain" style="height:160px"></div></div>
+<div class="bc"><p class="bv">11</p><div class="bar-perm" style="height:176px"></div></div>
+<div class="bc"><p class="bv">16</p><div class="bar-plan" style="height:256px"></div></div>
+</div>
+<div class="grp">
+<div class="bc"><p class="bv">9</p><div class="bar-plain" style="height:144px"></div></div>
+<div class="bc"><p class="bv">8</p><div class="bar-perm" style="height:128px"></div></div>
+<div class="bc"><p class="bv">16</p><div class="bar-plan" style="height:256px"></div></div>
+</div>
+<div class="grp">
+<div class="bc"><p class="bv">9</p><div class="bar-plain" style="height:144px"></div></div>
+<div class="bc"><p class="bv">13</p><div class="bar-perm" style="height:208px"></div></div>
+<div class="bc"><p class="bv">16</p><div class="bar-plan" style="height:256px"></div></div>
+</div>
+<div class="ref16"></div>
+</div>
+<div class="names">
+<p class="bn">Astra</p>
+<p class="bn">Fable 5.2</p>
+<p class="bn">Terra</p>
+<p class="bn">Opus 5.5</p>
+</div>
+<div class="legend">
+<div class="lg"><div class="sw-plain"></div><p class="small">Plain</p></div>
+<div class="lg"><div class="sw-perm"></div><p class="small">Permissions only</p></div>
+<div class="lg"><div class="sw-plan"></div><p class="small">Planner</p></div>
+<div class="lg"><div class="sw-ref"></div><p class="small">All 16 feasible tasks</p></div>
+</div>
+</div>
+<div class="col grow" style="gap:28px">
+<div class="tile" style="flex:none">
+<p class="num">59–69%</p>
+<p class="txt">fewer output tokens with the planner than with permissions-only guidance</p>
+</div>
+<div class="note">
+<p class="txt"><b>0.65–2.31%</b> lower simulated resource use. API cost ranges from −17.8% for Opus to +1.6% for Fable.</p>
+</div>
+<div class="note">
+<p class="txt"><b>Safety is unchanged:</b> every arm completes all 16 feasible tasks without an incident.</p>
+</div>
+</div>
+</div>
+</div>
+<p class="src">§5.2, Table 2 · Changes compare planner with permissions-only on the same tasks</p>
+</section>

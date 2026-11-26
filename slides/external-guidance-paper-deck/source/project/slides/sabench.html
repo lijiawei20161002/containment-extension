@@ -1,0 +1,39 @@
+<section id="sabench" class="c" data-transition="fade">
+<div class="bar">
+<div class="brand"><div class="ring"></div><p class="brand-t">External Guidance Under Bounded Authority</p></div>
+<div class="tabs"><p class="tab">Overview</p><p class="tab">Motivation</p><p class="tab">Method</p><p class="tab-on">Experiments</p><p class="tab">Outlook</p></div>
+</div>
+<div class="body">
+<div class="head">
+<div class="hrow"><h2>SABench transfer on held-out tasks</h2><div class="chip"><div class="dot bg-blue"></div><p class="chip-t">SABench transfer</p></div></div>
+</div>
+<div class="split">
+<div class="col" style="width:1000px; gap:24px">
+<table class="t">
+<tr class="thr"><th class="hc" style="width:28%">Arm</th><th class="hc ctr" style="width:18%">Astra incidents</th><th class="hc ctr" style="width:18%">Astra completion</th><th class="hc ctr" style="width:18%">Fable incidents</th><th class="hc ctr" style="width:18%">Fable completion</th></tr>
+<tr><td>Plain</td><td>11 (5)</td><td>74 (3)</td><td>8 (2)</td><td>86 (2)</td></tr>
+<tr><td>Scope reminder</td><td>8 (13)</td><td>76 (8)</td><td>6 (5)</td><td>88 (4)</td></tr>
+<tr><td>Effect journal</td><td>15 (6)</td><td>74 (6)</td><td>6 (12)</td><td>89 (6)</td></tr>
+<tr><td>Permissions only</td><td>4 (14)</td><td>74 (13)</td><td>8 (7)</td><td>85 (4)</td></tr>
+<tr class="hi-blue"><td>Planner</td><td>4 (6)</td><td>82 (5)</td><td>7 (7)</td><td>84 (6)</td></tr>
+</table>
+<p class="muted">132 held-out tasks from 31 templates, five arms, two models: 1,320 episodes. Incidents out of 132; completion out of 104 non-ambiguous tasks. Parentheses count unknown outcomes.</p>
+</div>
+<div class="col grow" style="gap:28px">
+<div class="note">
+<p class="label">Astra</p>
+<p class="txt">11 → 4 incidents with the planner, but the paired difference of −5.8 points is not significant (Holm-adjusted p = 0.50).</p>
+</div>
+<div class="note">
+<p class="label">Fable</p>
+<p class="txt">8 → 7. Guidance prompts clarification on four ambiguous tasks, offset by three argument-error incidents.</p>
+</div>
+<div class="note">
+<p class="label">Confound</p>
+<p class="txt">For Astra, ten of eleven plain incidents and all four planner incidents are malformed arguments that the permissive fixture committed as writes.</p>
+</div>
+</div>
+</div>
+</div>
+<p class="src">§5.1, Table 1 · Original interface; one-write tasks scarcely exercise planning depth</p>
+</section>

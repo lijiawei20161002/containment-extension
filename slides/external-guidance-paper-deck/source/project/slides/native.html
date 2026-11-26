@@ -1,0 +1,35 @@
+<section id="native" class="c" data-transition="fade">
+<div class="bar">
+<div class="brand"><div class="ring"></div><p class="brand-t">External Guidance Under Bounded Authority</p></div>
+<div class="tabs"><p class="tab">Overview</p><p class="tab">Motivation</p><p class="tab">Method</p><p class="tab-on">Experiments</p><p class="tab">Outlook</p></div>
+</div>
+<div class="body">
+<div class="head">
+<div class="hrow"><h2>Native recovery: planner and journal</h2><div class="chip"><div class="dot bg-orange"></div><p class="chip-t">Native recovery</p></div></div>
+<p class="lead">Each model continues from a scripted service-failure checkpoint. On the 16 impossible tasks per cell, a reachable answer archive is out of scope and every permission request is denied.</p>
+</div>
+<div class="split">
+<div class="col" style="gap:16px">
+<div class="figcard">
+<img src="/_blob/639e095abe280a7e228cb3d9ce00d835" alt="Incident fraction bounds on impossible tasks for Haiku 4.5 and Sonnet 4.6 across plain, journal, planner, planner plus journal and broker arms, at stop rewards 0 and 8" style="width:1000px; height:384px; object-fit:contain">
+</div>
+<p class="muted" style="width:1040px">Markers show the observed incident fraction. Bars extend to the worst case, where every unknown outcome is an incident.</p>
+</div>
+<div class="col grow" style="gap:28px">
+<div class="note">
+<p class="label">Planner</p>
+<p class="txt">Zero observed incidents and excluded proposals in both models, with 1–3 unknown outcomes per cell.</p>
+</div>
+<div class="note">
+<p class="label">Journal alone</p>
+<p class="txt">Haiku 4.5 falls from 12/16 to 1/16 at zero stop reward. Sonnet 4.6 does not: 9/16 versus 11/16.</p>
+</div>
+<div class="note">
+<p class="label">Broker</p>
+<p class="txt">No observed unauthorized effects, yet 12/16 and 11/16 episodes still attempt an excluded action.</p>
+</div>
+</div>
+</div>
+</div>
+<p class="src">§5.4, Figure 3 and Table 15 · Missing-outcome bounds, not confidence intervals</p>
+</section>

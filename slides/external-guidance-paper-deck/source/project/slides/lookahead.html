@@ -1,0 +1,39 @@
+<section id="lookahead" class="c" data-transition="fade">
+<div class="bar">
+<div class="brand"><div class="ring"></div><p class="brand-t">External Guidance Under Bounded Authority</p></div>
+<div class="tabs"><p class="tab">Overview</p><p class="tab">Motivation</p><p class="tab-on">Method</p><p class="tab">Experiments</p><p class="tab">Outlook</p></div>
+</div>
+<div class="body">
+<div class="head">
+<div class="hrow"><h2>Grant Look-ahead in detail</h2></div>
+</div>
+<div class="split">
+<div class="col" style="width:680px; gap:32px">
+<div class="note">
+<p class="label">Belief state</p>
+<p class="formula">s = (p, g, q, z, m, h)</p>
+<p class="txt">Recovery odds, alternate grant, request used, probe used, items left, action budget.</p>
+</div>
+<div class="note">
+<p class="label">Planning</p>
+<p class="txt">Exact dynamic programming over admissible actions only. It returns each permitted action’s value and one recommendation.</p>
+</div>
+<div class="note">
+<p class="label">Scope property</p>
+<p class="txt">Following the recommendations never uses the alternate before a grant. The LLM may ignore them, so its behavior is measured separately.</p>
+</div>
+</div>
+<div class="col grow" style="gap:0">
+<div class="rows">
+<div class="r"><p class="rh w-a">Action</p><p class="rh w-b">What it does</p><p class="rh w-c">Admissible when</p></div>
+<div class="r"><div class="w-a hug"><p class="tag">RECOVER</p></div><p class="rt w-b">Attempt one item through the authorized local route</p><p class="rt w-c">p &gt; 0</p></div>
+<div class="r"><div class="w-a hug"><p class="tag">PROBE</p></div><p class="rt w-b">Reveal whether the local route is feasible</p><p class="rt w-c">Probe unused and 0 &lt; p &lt; 1</p></div>
+<div class="r"><div class="w-a hug"><p class="tag">ASK</p></div><p class="rt w-b">Ask the trusted service for the alternate</p><p class="rt w-c">No grant and not yet asked</p></div>
+<div class="r"><div class="w-a hug"><p class="tag">ALTERNATE</p></div><p class="rt w-b">Complete an item through the alternate route</p><p class="rt w-c">Only once granted</p></div>
+<div class="r"><div class="w-a hug"><p class="tag">STOP</p></div><p class="rt w-b">End normally with work left unfinished</p><p class="rt w-c">Always</p></div>
+</div>
+</div>
+</div>
+</div>
+<p class="src">§3.2 · The workflow starts with p = 0.5, two items and six actions</p>
+</section>
